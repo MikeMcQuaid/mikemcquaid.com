@@ -1,0 +1,576 @@
+/*
+Theme Name: NightSkyLine
+Theme URI: https://github.com/mikemcquaid/NightSkyLine
+Description: A clean, readable theme with mobile support.
+Version: 1.2.3
+Author: Mike McQuaid
+Author URI: http://mikemcquaid.com/
+Copyright: Mike McQuaid
+Email: mike@mikemcquaid.com
+License: MIT License
+License URI: http://en.wikipedia.org/wiki/MIT_License
+Tags: black, white, dark, one-column, flexible-width, custom-header, custom-menu, microformats, sticky-post, threaded-comments
+*/
+$page-background-colour: #111;
+$page-background-dark-colour: black;
+$page-text-colour: #eee;
+$page-text-dark-colour: black;
+$text-background-colour: #fcfcfc;
+$text-min-width: 25em;
+$text-min-width-mobile: 10em;
+$text-max-width: 35em;
+$shadow-colour: black;
+$border-colour-light: #ccc;
+$border-colour-dark: black;
+
+@mixin border($colour) {
+  border: 1px solid $colour;
+}
+
+html, body {
+  font: 1.1em Georgia, serif;
+  line-height: 150%;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  background-color: $page-background-colour;
+  color: $page-text-colour;
+
+  @media print {
+    background-color: white;
+    color: black;
+  }
+
+  @media only screen and (max-device-width: 480px) {
+    font-size: 1.0em;
+    line-height: 125%;
+  }
+}
+
+a {
+  &:link, &:visited {
+    color: inherit;
+  }
+
+  @media print {
+    text-decoration: none;
+  }
+}
+
+
+#header {
+  min-width: 29em;
+  background-color: $page-background-dark-colour;
+}
+
+#title {
+  text-shadow: 0 0 3px $shadow-colour;
+  font-weight: bold;
+}
+
+#title, #menu {
+  // @extend?
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+
+  @media only screen and (max-device-width: 480px) {
+    font-size: 1.6em;
+    padding-top: 0.25em;
+  }
+}
+
+h1, h2, #menu, .post_date, .comment-meta {
+  a {
+    &:link, &:visited {
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+#title h1, #description {
+  padding: 0.5em 0 0;
+  margin: 0;
+}
+
+#title h1 {
+  font-size: 48px;
+
+  @media only screen and (max-device-width: 480px) {
+    padding-top: 5px;
+    font-size: 24px;
+  }
+}
+
+#description {
+  font-size: 28px;
+
+  @media only screen and (max-device-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+@mixin menu-gradient($start-decimal, $start-colour, $stop-decimal, $stop-colour, $prefix: "") {
+  background: #{$prefix}gradient(linear, left bottom, left top, color-stop($start-decimal, $start-colour), color-stop($stop-decimal, $stop-colour));
+}
+
+@mixin menu-gradients {
+  $start-decimal: 0.7;
+  $stop-decimal: 1;
+  $start-colour: $page-background-colour;
+  $stop-colour: $page-background-dark-colour;
+
+  @each $prefix in "-moz-", "-webkit-", "-khtml-", "" {
+    @if $prefix == "-moz-" {
+      $start-percent: $start-decimal*100%;
+      $stop-percent: $stop-decimal*100%;
+      background: -moz-linear-gradient(center bottom, $start-colour $start-percent, $stop-colour $stop-percent);
+    } @else {
+      background: #{$prefix}gradient(linear, left bottom, left top, color-stop($start-decimal, $start-colour), color-stop($stop-decimal, $stop-colour));
+    }
+  }
+}
+
+#menu {
+  font: {
+    weight: bold;
+    size: 1.2em;
+  }
+  text: {
+    decoration: none;
+    transform: lowercase;
+  }
+  border-bottom: solid $border-colour-dark 1px;
+  @include menu-gradients;
+  padding: 0.5em 0 0.25em 0;
+
+  li {
+    display: inline-block;
+    position: relative;
+
+    @media only screen and (max-device-width: 480px) {
+      position: inherit;
+    }
+
+    ul {
+      text-align: left;
+      display: none;
+      position: absolute;
+      z-index: 1;
+      background-color: $page-background-dark-colour;
+      box-shadow: 0 0.2em 0.2em 0.2em $page-background-dark-colour;
+
+      @media only screen and (max-device-width: 480px) {
+        display: inline;
+        position: inherit;
+        background-color: inherit;
+        box-shadow: 0 0;
+      }
+    }
+
+
+    ul a, &:hover ul {
+      display: block;
+      @media only screen and (max-device-width: 480px) {
+        display: inline;
+      }
+    }
+  }
+
+  a {
+    padding: 0 0.5em;
+    width: 100%;
+
+    @media only screen and (max-device-width: 480px) {
+      font-size: 0.9em;
+      padding: 0 0.7em;
+
+    }
+  }
+}
+
+#main {
+  background-color: $text-background-colour;
+  color: $page-background-dark-colour;
+}
+
+#main, #footer {
+  padding: 0 1em;
+  min-width: $text-min-width + 2em;
+}
+
+@mixin hyphens-auto {
+  @each $prefix in "-moz-", "-webkit-", "" {
+    #{$prefix}hyphens: auto;
+  }
+}
+
+#header, #main, #footer {
+  @media only screen and (max-device-width: 480px) {
+    min-width: $text-min-width-mobile + 2em;
+  }
+}
+
+#content, #sidebar {
+  margin: 0 auto;
+  min-width: $text-min-width;
+  max-width: $text-max-width;
+  overflow: auto;
+  @include hyphens-auto;
+
+  @media only screen and (max-device-width: 480px) {
+    min-width: $text-min-width-mobile;
+  }
+
+}
+
+.type-post, .type-page, #posts_title, #page_nav {
+  padding-bottom: 2em;
+}
+
+#content_outer p {
+  text-align: justify;
+}
+
+.post_category, .post_tags, .comments_link, .more-link {
+  margin: 0;
+  font-weight: bold;
+}
+
+h2 {
+  font: {
+    weight: bold;
+    size: 1.8em;
+  }
+  line-height: 110%;
+  margin: 0;
+  padding: 0.5em 0 0 0;
+
+  @media only screen and (max-device-width: 480px) {
+    font-size: 1.4em;
+  }
+}
+
+.post_date {
+  font: {
+    style: normal;
+    variant: normal;
+    size: 1.2em;
+  }
+  margin: 0.2em 0;
+
+  @media only screen and (max-device-width: 480px) {
+    font-size: 1.1em;
+  }
+}
+
+img {
+  text-decoration: none;
+  border: none;
+}
+
+td #content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+#content {
+  embed, object {
+    max-width: 100%;
+  }
+}
+
+h3 {
+  font-size: 1.4em;
+  margin: 1.5em 0 -0.5em 0;
+
+  @media only screen and (max-device-width: 480px) {
+    font-size: 1.2em;
+  }
+}
+
+h4 {
+  font-size: 1.2em;
+  margin: 1.5em 0 -0.8em 0;
+
+  @media only screen and (max-device-width: 480px) {
+    font-size: 1.0em;
+  }
+}
+
+#content, td
+{
+  img {
+    padding: 4px;
+    @include border($border-colour-light);
+    border-radius: 5px;
+  }
+}
+
+.type-post img {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
+#content .wp-smiley {
+  border: none;
+  display: inline;
+}
+
+table caption {
+  font: {
+    weight: bold;
+    size: 1.1em;
+  }
+  text-align: left;
+}
+
+table, thead, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+tbody td {
+  text-align: center;
+  padding: 0 0.2em;
+}
+
+th, tfoot {
+  font-weight: bold;
+  border: 1px $border-colour-dark none;
+}
+
+#sidebar {
+  th, tfoot {
+    border-color: $page-text-colour;
+  }
+}
+
+th {
+  text-align: center;
+  border-bottom-style: solid;
+}
+
+tfoot {
+  border-top-style: solid;
+}
+
+.noborder, .noborders img {
+  border: none !important;
+}
+
+.aligncenter {
+  text-align: center;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin align($side) {
+  text-align: $side;
+  margin-#{$side}: 0.5em;
+  float: $side;
+}
+
+.alignleft {
+  @include align(left);
+}
+
+.alignright {
+  @include align(right);
+}
+
+.wp-caption-text {
+  text-align: center;
+  margin: 0 4px;
+}
+
+blockquote {
+  &:before {
+    display: block;
+    font-size: 5em;
+    content: '\201C';
+    height: 0;
+    margin: 0.5em 0 -0.3em -0.45em;
+  }
+
+  @media only screen and (max-device-width: 480px) {
+    margin-right: 0;
+  }
+}
+
+#comments {
+  padding-bottom: 0.5em;
+}
+
+.comment, .pingback, .trackback {
+  @include border($border-colour-light);
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  background-color: $text-background-colour;
+  color: $page-text-dark-colour;
+  overflow: auto;
+
+  @media only screen and (max-device-width: 480px) {
+    padding: 0.5em;
+  }
+}
+
+#comments_list > div.bypostauthor,
+#comments_list .parent > div.bypostauthor {
+  background: $page-background-colour;
+  color: $page-text-colour;
+}
+
+.comment-author {
+  .avatar {
+    float: right;
+    clear: right;
+    margin: 0.5em 0 0.5em 0.5em;
+    @include border($border-colour-light);
+  }
+
+  cite {
+    font-style: normal;
+  }
+}
+
+#commentform {
+  label, .required {
+    font-weight: bold;
+  }
+
+  textarea {
+    width: 35em;
+  }
+
+  #author, #email, #url {
+    margin-right: 2em;
+    float: left;
+  }
+}
+
+.comment-form-comment label, .widget_search label, .form-allowed-tags {
+  display: none;
+}
+
+#footer {
+  background-color: $page-background-colour;
+}
+
+#sidebar {
+  border-top: solid $border-colour-dark 1px;
+}
+
+#leftbar {
+  width: 60%;
+  float: left;
+}
+
+#rightbar {
+  width: 40%;
+  float: right;
+}
+
+.linkcattitle {
+  display: none;
+}
+
+.sidebartext {
+  font-size: 0.8em;
+  padding-right: 1em;
+}
+
+#sidebar h2 {
+  font-size: 1.2em;
+  margin: 0.5em 0 0 0;
+}
+
+#sidebar, #menu {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+#sidebar, #menu {
+  li {
+    list-style: none;
+  }
+}
+
+.clearboth {
+  clear: both;
+}
+
+.gallery-icon img {
+  margin: 0 auto;
+}
+
+.sticky, .gallery-caption {
+  /* Needed by Wordpress theme review but doesn't need to do anything! */
+}
+
+@media print {
+  body {
+    margin: 0 12pt;
+    font-size: 12pt;
+  }
+
+  h1, h2, h3, h4 {
+    page: {
+      break-inside: avoid;
+      break-after: avoid;
+    }
+  }
+
+  p {
+    page-break-inside: avoid;
+  }
+
+  .pagebreak {
+    page-break-before: always;
+  }
+
+  #header, #footer, #page_nav, .post_category, .post_tags,
+  .comments_link, object, .more-link {
+    display: none;
+  }
+
+  #content {
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  #leftbar, #rightbar, #commentform textarea {
+    width: 100%;
+    float: none;
+  }
+
+  #commentform input {
+    width: 15em;
+  }
+
+  #page_nav a {
+    padding-bottom: 0.5em;
+    display: inline-block;
+  }
+}

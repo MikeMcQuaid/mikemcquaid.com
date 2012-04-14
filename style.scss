@@ -1,0 +1,33 @@
+---
+---
+#title {
+	min-height: 104px;
+	background: url(/images/header.jpg) repeat-x top left;
+	color: #EEE;
+}
+
+#title h1 {
+	padding-top: 1.0em !important;
+}
+
+#sidebar {
+	margin-top: 1em !important;
+}
+
+#content ul {
+	padding-left: 0;
+}
+
+@media only screen and (max-device-width: 480px) {
+	#title {
+		min-height: 52px;
+		background-size: 393px 52px;
+	}
+}
+
+.highlight code {
+	font-size: 0.9em;
+}
+
+@import "_wordpress";
+@import "_pygments";
