@@ -8,7 +8,8 @@ I've managed to emulate this functionality in Windows by using the login scripts
 
 * Create a file named LockWorkStation.vbs with the contents:
 {% highlight vbnet %}
-	WScript.CreateObject("WScript.Shell").Run("rundll32 user32.dll,LockWorkStation")
+WScript.CreateObject("WScript.Shell").Run(_
+	"rundll32 user32.dll,LockWorkStation")
 {% endhighlight %}
 
 * Access the hidden Advanced Users Control Panel by running "`control.exe userpasswords2`" from a Run dialog or command prompt.

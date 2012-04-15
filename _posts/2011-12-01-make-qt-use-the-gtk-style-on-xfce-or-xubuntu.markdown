@@ -11,7 +11,8 @@ To fix this we can use a simple script:
 {% highlight bash %}
 #!/bin/sh
 DEFAULT_XFCE_THEME=greybird
-XFCE_THEME=$(xfconf-query -c xsettings -p /Net/ThemeName 2>/dev/null)
+XFCE_THEME=$(xfconf-query -c xsettings \
+	-p /Net/ThemeName 2>/dev/null)
 GTK2_RC_FILES=$HOME/.config/xfce4/gtkrc
 [ -z "$XFCE_THEME" ] && XFCE_THEME=$DEFAULT_XFCE_THEME
 echo gtk-theme-name = $XFCE_THEME > $GTK2_RC_FILES

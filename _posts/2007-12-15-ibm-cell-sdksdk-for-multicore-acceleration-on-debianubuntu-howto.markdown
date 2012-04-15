@@ -17,7 +17,8 @@ We've downloaded the two RPMs by IBM. If you install these on Fedora they will p
 
 If you are running **Ubuntu Gutsy on x86_64 or x86** run:
 {% highlight bash %}
-apt-get install ppu-gcc ppu-gdb spu-g++ spu-gdb cell-programming-primer
+apt-get install ppu-gcc ppu-gdb spu-g++ \
+	spu-gdb cell-programming-primer
 {% endhighlight %}
 If you are running **Ubuntu Gutsy on the Cell** run:
 {% highlight bash %}
@@ -28,9 +29,7 @@ apt-get install cell-sdk
 apt-get install wget #Install wget if it is not already
 mkdir openrpm
 cd openrpm
-CELLURL="http://www.bsc.es/projects/deepcomputing/linuxoncell/cellsimulator/"
-CELLURL="$CELLURL""sdk3.0/CellSDK-Open-Fedora/x86_64/"
-wget -l 1 -c -np -nd -r $CELLURL -A .rpm
+wget -l 1 -c -np -nd -r http://www.bsc.es/projects/deepcomputing/linuxoncell/cellsimulator/ -A .rpm
 {% endhighlight %}
 The above assumes you are on an x86\_64 machine. If you are using the Cell, a regular x86 or a PPC 64-bit machine change the **'x86_64'** to **'cbea'**, **'x86'** or **'ppc64'** accordingly.
 
@@ -47,7 +46,7 @@ for i in `ls -d */`
 do
 	cd $i
 	sed -ie 's/Architecture: i386/Architecture: amd64/' \
-		 debian/control
+		debian/control
 	dpkg-buildpackage
 	cd "$OWD"
 	rm -r */ *.gz *.changes *.dsc
