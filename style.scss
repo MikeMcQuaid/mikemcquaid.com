@@ -1,5 +1,9 @@
 ---
 ---
+
+@import "_wordpress";
+@import "_pygments";
+
 #title {
 	min-height: 104px;
 	background: url(/images/header.jpg) repeat-x top left;
@@ -23,7 +27,14 @@
 		min-height: 52px;
 		background-size: 393px 52px;
 	}
-}
 
-@import "_wordpress";
-@import "_pygments";
+	#leftbar {
+	  width: 60% !important;
+	  float: left;
+	}
+
+	#rightbar {
+	  width: 40% !important;
+	  float: right;
+	}
+}
