@@ -220,7 +220,6 @@ h1, h2, #menu, .post_date, .comment-meta {
   margin: 0 auto;
   min-width: $text-min-width;
   max-width: $text-max-width;
-  overflow: hidden;
   word-wrap: break-word;
   @include hyphens-auto;
 
@@ -423,7 +422,6 @@ blockquote {
   margin: 1em 0;
   background-color: $text-background-colour;
   color: $page-text-dark-colour;
-  overflow: hidden;
   word-wrap: break-word;
 
   @media only screen and (max-device-width: 480px) {
