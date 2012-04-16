@@ -10,7 +10,7 @@ file pygments_css do
 end
 
 task :build => pygments_css do
-  system "jekyll"
+  sh "jekyll"
 end
 
 task :minify => :build do
