@@ -30,7 +30,7 @@ Added CPack packaging support, Windows support, many other features and bug-fixe
 
 #### [Qt Creator](http://qt.gitorious.org/qt-creator)
 ![QtCreator](/images/a/qtcreator.png)  
-Technical lead for team that created the analysis mode and integrated Valgrind's Memcheck, Callgrind and Cachegrind tools. Personally focused on tool visualisations.
+Technical lead for team that created the analysis mode and integrated Valgrind's Memcheck, Callgrind and Cachegrind tools. Personally focused on tool visualisations. [Released in 2.3.0](http://labs.qt.nokia.com/2011/09/01/qt-creator-2-3-0-released/).
 
 #### [Mendeley Desktop](http://www.mendeley.com/download-mendeley-desktop/)
 ![Mendeley](/images/a/mendeley.png)  
@@ -41,22 +41,22 @@ Ported Qt/MSVC++ application from Windows to CMake, OSX and Linux. Proposed, imp
 Worked on KDE on Mac integration/bug fixing. Improved the [KBlog XML-RPC API](http://api.kde.org/4.0-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals from KOrganizer](http://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
 
 #### [CMake](http://www.cmake.org/)
-Fixed bugs in and improved cross-platform packaging in CPack. Added Qt plugin support. Created [DeployQt4 module](http://mikemcquaid.com/2012/01/deploying-qt-applications-with-deployqt4/) for easy deployment of Qt applications.
+Fixed bugs in and improved cross-platform packaging in CPack. Added Qt plugin support. Created [DeployQt4 module](http://mikemcquaid.com/2012/01/deploying-qt-applications-with-deployqt4/) for easy deployment of Qt applications. [Released in 2.8.7](http://www.kitware.com/news/home/browse/CMake?2012_01_02&CMake+2.8.7+Now+Available).
 
 #### [Linux kernel](http://www.kernel.org/)
 Wrote WM8711 Linux kernel driver which was [released in 2.6.26](https://github.com/mirrors/linux-2.6/commit/bd6d417743d941c3e5eabb21abbcac9737f11061).
 
 #### [D-Bus](http://www.freedesktop.org/wiki/Software/dbus)
-Improved and merged the [long-running launchd patchset](https://bugs.freedesktop.org/show_bug.cgi?id=14259). Bug fixes for OSX.
+Improved and merged the [long-running launchd patchset](https://bugs.freedesktop.org/show_bug.cgi?id=14259). Bug fixes for OSX. [Released in 1.4.1](http://dbus.freedesktop.org/doc/NEWS).
 
 #### [libgcal](http://code.google.com/p/libgcal/)
-Added the CMake build-system and migrated to Git.
+Added the CMake build-system and migrated to Git. [Released in 0.9](http://gitorious.org/libgcal/libgcal/blobs/master/Changelog.txt).
 
 #### [QtScriptGenerator](http://code.google.com/p/qtscriptgenerator/)
-Improved support for parsing and generating non-Qt C++ code.
+Improved support for parsing and generating non-Qt C++ code. Released in 0.2.0.
 
 #### [PRISM](http://www.prismmodelchecker.org/people.php)
-Added OpenDocument support and JFreeChart integration..
+Added OpenDocument support and JFreeChart integration. [Released in 3.2.beta1](http://www.prismmodelchecker.org/doc/CHANGELOG.txt).
 
 #### [OpenZaurus](http://openzaurus.org)
-Fixed a [noisy LCD issue](http://bugs.openembedded.org/show_bug.cgi?id=1316).
+Fixed a [noisy LCD issue](http://bugs.openembedded.org/show_bug.cgi?id=1316). [Released in 3.5.4.2-rc2](http://marcin.juszkiewicz.com.pl/2006/09/02/openzaurus-3542-rc2/).
