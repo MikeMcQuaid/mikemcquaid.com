@@ -13,6 +13,8 @@ No recruiters who won't immediately tell me the name of the company.
 Broughty Ferry, Scotland  
 [mike@mikemcquaid.com](mailto:mike@mikemcquaid.com)  
 [mikemcquaid.com/projects/](http://mikemcquaid.com/projects/)  
+[github.com/mikemcquaid](https://github.com/mikemcquaid)  
+[stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid)  
 [linkedin.com/in/mkmcqd](http://www.linkedin.com/in/mkmcqd)  
 [@MikeMcQuaid](http://twitter.com/MikeMcQuaid)  
 +44 (0)773 405 2864
