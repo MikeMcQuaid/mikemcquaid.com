@@ -24,5 +24,5 @@ task :minify => :build do
 end
 
 task :deploy => :minify do
-  sh "rsync --rsh=ssh --recursive --times --delete --delete-after --delay-updates --compress --human-readable --stats _site.min/ www:/var/www/jekyll/"
+  sh "rsync --rsh=ssh --recursive --times --delete --delete-after --delay-updates --compress --human-readable --stats _site.min/ www:/var/www/"
 end
