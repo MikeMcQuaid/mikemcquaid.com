@@ -3,7 +3,8 @@ layout: default
 title: Curriculum Vitae
 ---
 ### Mike McQuaid
-I’m a software engineer who loves solving difficult problems to simply people's lives.  
+#### Full Stack Software Engineer
+I love solving difficult problems to simply people's lives.  
 
 I always welcome new opportunities and will travel 1/6 weeks to work anywhere in the world. The other 5/6 weeks I must be able to telecommute from my home in Scotland.  
 
