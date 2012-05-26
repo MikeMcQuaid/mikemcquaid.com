@@ -20,6 +20,10 @@ Creator. A collection of Qt wrappers for OSX's Cocoa widgets.
 Maintainer. Added support for OSX 10.6 and Qt/Cocoa, added CPack packaging support and OSX installer creation, migrated to Git and bug fixing.
 
 ### Past
+#### [Whiteboard](https://github.com/mikemcquaid/Whiteboard)
+![Whiteboard](/images/a/whiteboard.png)  
+Android app that hosts an HTML5-based whiteboard server.
+
 #### [Fabula](https://github.com/mikemcquaid/Fabula)
 ![Fabula](/images/a/fabula.png)  
 A cross-platform Qt RPG conversation editor. Abandoned due to original potential users no longer needing it.
