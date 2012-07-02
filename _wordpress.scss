@@ -2,7 +2,7 @@
 Theme Name: NightSkyLine
 Theme URI: https://github.com/mikemcquaid/NightSkyLine
 Description: A clean, readable theme with mobile support.
-Version: 1.2.3
+Version: 1.2.4
 Author: Mike McQuaid
 Author URI: http://mikemcquaid.com/
 Copyright: Mike McQuaid
@@ -197,6 +197,7 @@ h1, h2, #menu, .post_date, .comment-meta {
 #main {
   background-color: $text-background-colour;
   color: $page-background-dark-colour;
+  border-bottom: solid $border-colour-dark 1px;
 }
 
 #main, #footer {
@@ -469,10 +470,6 @@ blockquote {
 
 #footer {
   background-color: $page-background-colour;
-}
-
-#sidebar {
-  border-top: solid $border-colour-dark 1px;
 }
 
 #leftbar {
