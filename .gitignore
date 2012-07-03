@@ -1,4 +1,5 @@
 _site/
 _site.min/
 .sass-cache/
+images/gravatar.jpg
 _pygments.scss

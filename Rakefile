@@ -9,7 +9,11 @@ file pygments_css do
   sh "pygmentize -S default -f html > #{pygments_css}"
 end
 
-task :build => pygments_css do
+task :gravatar do
+  sh "curl http://www.gravatar.com/avatar/215e0166d4d8265395c5d9076da73c70.jpg -o images/gravatar.jpg"
+end
+
+task :build => [pygments_css, :gravatar] do
   sh "jekyll"
 end
 
