@@ -18,6 +18,7 @@ Presented at the KDAB company meeting in 2012.
 ### Homebrew
 How to install, use, file bugs, create and contribute packages to Homebrew with some history of the project along the way.  
 Presented at [ConFoo.ca](http://confoo.ca) in 2012.  
+<iframe class="youtube-player" type="text/html" width="640" height="510" src="http://www.youtube.com/embed/9ckwvn5fvyQ" frameborder="0"></iframe>  
 <script async class="speakerdeck-embed" data-id="4f5121f68a37d6001f001693" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Git for beginners
