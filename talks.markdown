@@ -13,6 +13,7 @@ Presented at the KDAB company meeting in 2012.
 ### HTML5
 An outline for non-web developers of the new technologies in HTML5.  
 Presented at the KDAB company meeting in 2012.  
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/WNfhVKNbZHo" frameborder="0"></iframe>  
 <script async class="speakerdeck-embed" data-id="4fcdd8f02e36780022010add" data-ratio="1.7777777777777777" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Homebrew
