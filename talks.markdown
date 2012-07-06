@@ -24,6 +24,7 @@ Presented at [ConFoo.ca](http://confoo.ca) in 2012.
 ### Git for beginners
 An overview of the essentials required to use Git.  
 Presented at [ConFoo.ca](http://confoo.ca) in 2012.  
+[Demo repository available on GitHub](https://github.com/mikemcquaid/GitForBeginnersDemo).  
 <script async class="speakerdeck-embed" data-id="4f4e54e3f120e9001f01da56" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Advanced Git
