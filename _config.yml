@@ -4,5 +4,6 @@ server_port: 8080
 permalink: pretty
 markdown: rdiscount
 pygments: true
+exclude: CNAME, Gemfile, Gemfile.lock, Rakefile, ReadMe.md, pygments.scss, vendor, wordpress.scss, 
 rdiscount:
   extensions: [smart]
