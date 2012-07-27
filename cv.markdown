@@ -41,7 +41,10 @@ Porting software between Windows, Mac and Linux. Administering Linux servers, Wi
 [CPack](http://speakerdeck.com/u/mikemcquaid/p/cpack)
 
 ### Experience
-#### [KDAB](http://kdab.com/) (2009 - Present)
+#### [AllTrails](http://alltrails.com/) (2012 - Present)
+Ruby on Rails engineer.
+
+#### [KDAB](http://kdab.com/) (2009 - 2012)
 Technical team lead providing international cross-platform consultancy. Led several teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract. Regularly travel internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback.
 
 #### [Mendeley](http://www.mendeley.com/) (2008 - 2009)
