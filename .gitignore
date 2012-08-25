@@ -1,6 +1,7 @@
-.sass-cache/
+bin/
 _site/
 _site.min/
+_vendor/ruby
+.sass-cache/
 images/gravatar.jpg
-pygments.scss
-vendor/ruby
+_pygments.scss

@@ -3,7 +3,7 @@ require 'rake'
 
 task :default => :build
 
-pygments_css = "pygments.scss"
+pygments_css = "_pygments.scss"
 
 file pygments_css do
   sh "pygmentize -S default -f html > #{pygments_css}"
