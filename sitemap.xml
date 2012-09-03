@@ -8,7 +8,7 @@ layout: nil
 		<changefreq>weekly</changefreq>
 		<priority>1</priority>
 	</url>
-	{% for page in site.pages %}{% if page.layout == 'default' %}
+	{% for page in site.pages %}{% if page.layout == 'page' %}
 	<url>
 		<loc>{{ site.url }}{{ page.url }}</loc>
 		<changefreq>weekly</changefreq>

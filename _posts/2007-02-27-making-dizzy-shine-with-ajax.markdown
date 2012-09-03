@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: Making Dizzy Shine With Ajax
 ---
 ### Abstract 

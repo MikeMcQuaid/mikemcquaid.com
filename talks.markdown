@@ -1,6 +1,6 @@
 ---
-layout: default
 slug: talks
+layout: page
 title: Talks
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>

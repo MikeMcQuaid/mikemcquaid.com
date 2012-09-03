@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: Community Driven Software Development
 ---
 ### Abstract

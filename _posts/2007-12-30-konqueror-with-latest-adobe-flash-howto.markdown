@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 slug: konqueror-with-latest-adobe-flash-howto
 title: Konqueror with latest Adobe Flash HOWTO (Outdated)
 ---

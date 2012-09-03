@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: Using .asoundrc to remap ALSA channels for Audacity
 ---
 My sound card (a [Creative Sound Blaster Audigy 2](http://en.wikipedia.org/wiki/Sound_Blaster_Audigy)) has got **lots of inputs**, especially with the nice drive bay expansion port.

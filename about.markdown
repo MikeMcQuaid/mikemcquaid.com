@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: About
 ---
 Hello. My name is Mike McQuaid and I'm a software engineer.  
