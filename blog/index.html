@@ -1,0 +1,20 @@
+---
+layout: blog_base
+title: A Liberal Christian Liberal
+---
+<ul id="index-list">
+{% for page in site.posts%}{% if page.layout == 'blog_post' %}
+	<li style="list-style-type: none;">
+		<a href="{{ page.url }}" title="{{ page.title }}">
+			<h2 style="font-size: 1.2em;">
+				{{ page.title }}
+			</h2>
+		</a>
+			<p class="post_date">
+				{{ page.date || date_to_long_string }}
+			</p>
+		<br/>
+		<div class="clearboth"></div>
+	</li>
+{% endif %}{% endfor %}
+</ul>
