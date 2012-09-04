@@ -8,6 +8,11 @@ layout: nil
 		<changefreq>weekly</changefreq>
 		<priority>1</priority>
 	</url>
+	<url>
+		<loc>{{ site.url }}/blog/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>1</priority>
+	</url>
 	{% for page in site.pages %}{% if page.layout == 'page' or page.layout == 'blog_page' %}
 	<url>
 		<loc>{{ site.url }}{{ page.url }}</loc>
