@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: About Me
 ---
 Hello. My name is Mike McQuaid and I'm a software engineer.  
 
