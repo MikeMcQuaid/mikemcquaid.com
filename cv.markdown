@@ -33,6 +33,10 @@ Porting software between Windows, Mac and Linux. Administering Linux servers, Wi
 [BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
 
 ### Conference Talks
+#### [DunDDD](http://dun.dddscotland.co.uk/) (2012)
+[Advanced Git (and GitHub)](https://speakerdeck.com/mikemcquaid/advanced-git-and-github)  
+[Git for beginners](http://speakerdeck.com/u/mikemcquaid/p/git-for-beginners)
+
 #### [ConFoo.ca](http://confoo.ca) (2012)
 [Homebrew](http://speakerdeck.com/u/mikemcquaid/p/homebrew)  
 [Git for beginners](http://speakerdeck.com/u/mikemcquaid/p/git-for-beginners)
