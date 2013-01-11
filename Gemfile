@@ -1,8 +1,14 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "sass"
-gem "rake"
-gem "pygmentize"
-gem "rdiscount"
-gem "RedCloth"
-gem "jekyll"
+gem 'sass'
+gem 'rake'
+gem 'pygmentize'
+
+# Same as GitHub Pages
+# https://help.github.com/articles/using-jekyll-with-pages#troubleshooting
+gem 'jekyll',     '=0.12.0'
+gem 'liquid',     '=2.4.1'
+gem 'redcarpet',  '=2.1.1'
+gem 'maruku',     '=0.6.0'
+gem 'rdiscount',  '=1.6.8'
+gem 'RedCloth',   '=4.2.9'
