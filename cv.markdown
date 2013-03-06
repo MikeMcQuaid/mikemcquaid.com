@@ -21,9 +21,9 @@ Broughty Ferry, Scotland
 +44 (0)773 405 2864
 
 ### Skills
-Extensive experience in Qt, C++, Ruby, C, PHP, Python, CMake, Git, Java, shell scripting and JavaScript. Casual experience with Perl, Objective-C, Automake, VB.NET and Android. Productive with other languages in days.  
+Extensive experience in Ruby, Rails, Git, JavaScript, SASS, Qt, C++, C, PHP, MySQL, CoffeeScript, Python, CMake, Java and shell scripting. Casual experience with Perl, Objective-C, AWS, Chef, Automake, VB.NET and Android. Productive with other languages in days.  
 
-Porting software between Windows, Mac and Linux. Administering Linux servers, Windows and Mac machines.  
+Porting software between Windows, Mac and Linux. Administering Linux servers (virtual and physical), Windows and Mac machines. Passionately advocating, designing and implementing CI systems.  
 
 [Considerable experience](http://www.ohloh.net/accounts/mikemcquaid) contributing to open-source software and getting patches accepted upstream.
 
@@ -46,10 +46,13 @@ Porting software between Windows, Mac and Linux. Administering Linux servers, Wi
 
 ### Experience
 #### [AllTrails](http://alltrails.com/) (2012 - Present)
-Ruby on Rails engineer.
+Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](http://allsnow.com). Develop features, APIs and optimise performance. Setup CI and automatic deployment for Rails and mobile applications. Manage and improve AWS infrastructure.
+
+#### [Homebrew](https://github.com/mxcl/homebrew/) (2009 - Present)
+Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/brew-test-bot) which was funded in two hours (out of 30 days) to create a CI system for Homebrew.
 
 #### [KDAB](http://kdab.com/) (2009 - 2012)
-Technical team lead providing international cross-platform consultancy. Led several teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract. Regularly travel internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback.
+Technical team lead providing international cross-platform consultancy. Led several teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract. Regularly travel internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback. Created a new CI system which replaced the previous one to improve company productivity.
 
 #### [Mendeley](http://www.mendeley.com/) (2008 - 2009)
 [First employee](http://blog.mendeley.com/start-up-life/mike-arthur-joins-team-mendeley/) and lead developer for Mendeley Desktop. Setup all servers and software systems. Created a workflow focused on quick deployment and high quality through automated builds, tests, packages for Windows, Mac and Linux. Designed, ran technical interviews and personally [recruited](http://blog.mendeley.com/start-up-life/introducing-fred-amir-and-a-bond-villain/)&nbsp; [three](http://blog.mendeley.com/academic-life/an-excellent-euroscience-adventure-part-ii/)&nbsp; [engineers](http://blog.mendeley.com/research-miscellanea/a-new-knight-joins-mendeleys-round-table/).  
@@ -64,9 +67,6 @@ Worked on the [KDE](http://www.kde.org/) project. Improved the [KBlog XML-RPC AP
 
 #### [Wolfson Microelectronics](http://www.wolfsonmicro.com/) (2006)
 Wrote battery driver, improved Auxiliary ADC code for Intel XScale on Windows CE. Wrote WM8711 Linux kernel driver which was [released in 2.6.26](https://github.com/mirrors/linux-2.6/commit/bd6d417743d941c3e5eabb21abbcac9737f11061). Improved AC'97, I2S audio drivers and fixed a [noisy LCD issue](http://bugs.openembedded.org/show_bug.cgi?id=1316).
-
-#### Run Deep (2005)
-Created internal tools and modules for the in-house CMS, managed SQL Server, tested sites and performed system administration.
 
 ### Outside Interests
 Philosophy, martial arts, skiing, cooking, guitars, photography and politics.

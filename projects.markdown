@@ -5,8 +5,14 @@ title: Projects
 ### Current
 #### [Homebrew](https://github.com/mxcl/homebrew)
 ![Homebrew](/images/a/homebrew.png)  
-Core contributor. Fix, add packages and develop new features (such as binary packages).
+Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/brew-test-bot) which was funded in two hours (out of 30 days) to create a CI system for Homebrew.
 
+#### [AllTrails](https://alltrails.com) and [AllSnow](https://allsnow.com)
+![AllTrails](/images/a/alltrails.png)  
+![AllSnow](/images/a/allsnow.png)  
+Develop features, APIs and optimise performance. Setup CI and automatic deployment for Rails and mobile applications. Manage and improve AWS infrastructure.
+
+### Past
 #### [NightSkyLine](https://github.com/mikemcquaid/NightSkyLine)
 ![NightSkyLine](/images/a/nightskyline.png)  
 Creator. A readable HTML5 and CSS3 theme for Wordpress.
@@ -19,7 +25,6 @@ Creator. A collection of Qt wrappers for OSX's Cocoa widgets.
 ![Charm](/images/a/charm.png)  
 Maintainer. Added support for OSX 10.6 and Qt/Cocoa, added CPack packaging support and OSX installer creation, migrated to Git and bug fixing.
 
-### Past
 #### [Whiteboard](https://github.com/mikemcquaid/Whiteboard)
 ![Whiteboard](/images/a/whiteboard.png)  
 Android app that hosts an HTML5-based whiteboard server.
