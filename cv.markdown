@@ -11,7 +11,7 @@ I always welcome new opportunities and will travel 1/6 weeks to work anywhere in
 No recruiters who won't immediately tell me the name of the company.
 
 ### Personal
-Broughty Ferry, Scotland  
+Edinburgh, Scotland  
 [mike@mikemcquaid.com](mailto:mike@mikemcquaid.com)  
 [mikemcquaid.com/projects/](http://mikemcquaid.com/projects/)  
 [github.com/mikemcquaid](https://github.com/mikemcquaid)  
