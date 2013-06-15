@@ -6,7 +6,7 @@ title: KDE - Blog from KOrganizer HOWTO
 
 Firstly open **KOrganizer**.
 
-When it has opened right-click anywhere in the _"Calendars"_ area in the bottom-left  and select _"Add..."_ from the drop-down menu that appears.
+When it has opened right-click anywhere in the _"Calendars"_ area in the bottom-left and select _"Add..."_ from the drop-down menu that appears.
 
 Select _"Journal in a blog"_ from the _"Resource Configuration"_ dialog.
 

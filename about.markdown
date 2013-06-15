@@ -2,11 +2,11 @@
 layout: page
 title: About Me
 ---
-Hello. My name is Mike McQuaid and I'm a software engineer.  
+Hello. My name is Mike McQuaid and I'm a software engineer.<br>
 
-I currently live in Edinburgh, Scotland.  
+I currently live in Edinburgh, Scotland.<br>
 
-Feel free to [email me](mailto:mike@mikemcquaid.com) to talk about a new project, ask for help or say hello.  
+Feel free to [email me](mailto:mike@mikemcquaid.com) to talk about a new project, ask for help or say hello.<br>
 
 My [curriculum vitae/resume](/cv/) details my professional experience.
 

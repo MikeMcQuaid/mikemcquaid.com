@@ -12,4 +12,4 @@ Personally, I hope he wins as it would be nice to have a US President with a les
 
 I leave you with a quote that I think is particularly relevant:
 
->  [Obama] said -- and I'm going to paraphrase a little here: think about who I am -- my father was Kenyan; I have close relatives in a small rural village in Kenya to this day; and I spent several years of my childhood living in Jakarta, Indonesia. Think about what it's going to mean in many parts of the world -- parts of the world that we really care about -- when I show up as the President of the United States. I'll be fundamentally changing the world's perception of what the United States is all about.
+> [Obama] said -- and I'm going to paraphrase a little here: think about who I am -- my father was Kenyan; I have close relatives in a small rural village in Kenya to this day; and I spent several years of my childhood living in Jakarta, Indonesia. Think about what it's going to mean in many parts of the world -- parts of the world that we really care about -- when I show up as the President of the United States. I'll be fundamentally changing the world's perception of what the United States is all about.

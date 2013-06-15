@@ -4,49 +4,49 @@ title: Projects
 ---
 ### Current
 #### [Homebrew](https://github.com/mxcl/homebrew)
-![Homebrew](/images/a/homebrew.png)
+![Homebrew](/images/a/homebrew.png)<br>
 Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
 #### [AllTrails](https://alltrails.com) and [AllSnow](https://allsnow.com)
-![AllTrails](/images/a/alltrails.png)  
-![AllSnow](/images/a/allsnow.png)  
+![AllTrails](/images/a/alltrails.png)<br>
+![AllSnow](/images/a/allsnow.png)<br>
 Develop features, APIs and optimise performance. Setup CI and automatic deployment for Rails and mobile applications. Manage and improve AWS infrastructure.
 
 ### Past
 #### [NightSkyLine](https://github.com/mikemcquaid/NightSkyLine)
-![NightSkyLine](/images/a/nightskyline.png)  
+![NightSkyLine](/images/a/nightskyline.png)<br><br>
 Creator. A readable HTML5 and CSS3 theme for Wordpress.
 
 #### [Qocoa](https://github.com/mikemcquaid/Qocoa)
-![Qocoa](/images/a/qocoa.png)  
+![Qocoa](/images/a/qocoa.png)<br><br>
 Creator. A collection of Qt wrappers for OSX's Cocoa widgets.
 
 #### [Charm](https://github.com/KDAB/Charm)
-![Charm](/images/a/charm.png)  
+![Charm](/images/a/charm.png)<br><br>
 Maintainer. Added support for OSX 10.6 and Qt/Cocoa, added CPack packaging support and OSX installer creation, migrated to Git and bug fixing.
 
 #### [Whiteboard](https://github.com/mikemcquaid/Whiteboard)
-![Whiteboard](/images/a/whiteboard.png)  
+![Whiteboard](/images/a/whiteboard.png)<br><br>
 Android app that hosts an HTML5-based whiteboard server.
 
 #### [Fabula](https://github.com/mikemcquaid/Fabula)
-![Fabula](/images/a/fabula.png)  
+![Fabula](/images/a/fabula.png)<br><br>
 A cross-platform Qt RPG conversation editor. Abandoned due to original potential users no longer needing it.
 
 #### [Make-O-Matic](https://github.com/KDAB/Make-O-Matic)
-![Make-O-Matic](/images/a/make-o-matic.png)  
+![Make-O-Matic](/images/a/make-o-matic.png)<br><br>
 Added CPack packaging support, Windows support, many other features and bug-fixes.
 
 #### [Qt Creator](http://qt.gitorious.org/qt-creator)
-![QtCreator](/images/a/qtcreator.png)  
+![QtCreator](/images/a/qtcreator.png)<br><br>
 Technical lead for team that created the analysis mode and integrated Valgrind's Memcheck, Callgrind and Cachegrind tools. Personally focused on tool visualisations. [Released in 2.3.0](http://labs.qt.nokia.com/2011/09/01/qt-creator-2-3-0-released/).
 
 #### [Mendeley Desktop](http://www.mendeley.com/download-mendeley-desktop/)
-![Mendeley](/images/a/mendeley.png)  
+![Mendeley](/images/a/mendeley.png)<br><br>
 Ported Qt/MSVC++ application from Windows to CMake, OSX and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/)&nbsp; [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web
 
 #### [KDE](http://kde.org/)
-![Kontact](/images/a/kontact.png)  
+![Kontact](/images/a/kontact.png)<br><br>
 Worked on KDE on Mac integration/bug fixing. Improved the [KBlog XML-RPC API](http://api.kde.org/4.0-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals from KOrganizer](http://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
 
 #### [CMake](http://www.cmake.org/)
