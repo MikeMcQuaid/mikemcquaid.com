@@ -4,8 +4,8 @@ title: Projects
 ---
 ### Current
 #### [Homebrew](https://github.com/mxcl/homebrew)
-![Homebrew](/images/a/homebrew.png)  
-Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/brew-test-bot) which was funded in two hours (out of 30 days) to create a CI system for Homebrew.
+![Homebrew](/images/a/homebrew.png)
+Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
 #### [AllTrails](https://alltrails.com) and [AllSnow](https://allsnow.com)
 ![AllTrails](/images/a/alltrails.png)  
