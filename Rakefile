@@ -18,9 +18,7 @@ file css => FileList['*.scss'] do
 end
 
 task :generate => [pygments, css] do
-  # Same as GitHub Pages
-  # https://help.github.com/articles/using-jekyll-with-pages#troubleshooting
-  sh 'jekyll', '--pygments', '--no-lsi', '--safe'
+  sh 'jekyll', 'build'
 end
 
 task :minify => :generate do

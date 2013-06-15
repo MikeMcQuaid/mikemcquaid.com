@@ -2,6 +2,10 @@ title: Mike McQuaid
 url: mikemcquaid.com
 permalink: pretty
 markdown: rdiscount
-pygments: true
 rdiscount:
   extensions: [smart]
+# Same as GitHub Pages
+# https://help.github.com/articles/using-jekyll-with-pages#troubleshooting
+safe: true
+lsi: false
+pygments: true
