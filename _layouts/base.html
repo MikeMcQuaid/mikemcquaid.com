@@ -23,6 +23,9 @@
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
+    {% if page.redirect %}
+    <meta http-equiv="refresh" content="0;url={{ page.redirect }}" />
+    {% endif %}
 	</head>
 	<body>
 		<div id="header">
