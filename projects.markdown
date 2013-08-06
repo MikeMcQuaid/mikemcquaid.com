@@ -12,6 +12,10 @@ Core contributor. Invented Homebrew binary packages (bottles), fix users issues 
 ![AllSnow](/images/a/allsnow.png)<br>
 Develop features, APIs and optimise performance. Setup CI and automatic deployment for Rails and mobile applications. Manage and improve AWS infrastructure.
 
+#### [Audioscrobbler.app](https://github.com/mxcl/Audioscrobbler.app)
+![Audioscrobbler.app](/images/a/audioscrobbler.png)<br>
+Maintainer. Added HiDPI support, merge contributions and fix bugs.
+
 ### Past
 #### [NightSkyLine](https://github.com/mikemcquaid/NightSkyLine)
 ![NightSkyLine](/images/a/nightskyline.png)<br><br>
