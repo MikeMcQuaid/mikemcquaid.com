@@ -10,6 +10,10 @@ Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [TechM
 <iframe width="640" height="385" src="//www.youtube.com/embed/VSLNrap-gY4" frameborder="0" allowfullscreen></iframe><br>
 <script async class="speakerdeck-embed" data-id="4f5121f68a37d6001f001693" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
+### Homebrew Kickstarter
+The video for the [Homebrew Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot).
+<iframe width="640" height="385" src="//www.youtube.com/embed/5T3HiO8gqyQ" frameborder="0" allowfullscreen></iframe>
+
 ### Advanced Git (and GitHub)
 A walkthrough of some useful but rarely known features in Git and GitHub.<br>
 Presented at [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
