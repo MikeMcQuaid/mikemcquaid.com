@@ -4,6 +4,12 @@ title: Talks
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
+### Homebrew
+How to install, use, file bugs, create and contribute packages to Homebrew with some history of the project along the way.<br>
+Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [TechMeetup Dundee](http://techdundee.eventbrite.co.uk/), [SydJS](http://www.sydjs.com), [ConFoo.ca](http://confoo.ca) in 2012.<br>
+<iframe width="640" height="385" src="//www.youtube.com/embed/VSLNrap-gY4" frameborder="0" allowfullscreen></iframe><br>
+<script async class="speakerdeck-embed" data-id="4f5121f68a37d6001f001693" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Advanced Git (and GitHub)
 A walkthrough of some useful but rarely known features in Git and GitHub.<br>
 Presented at [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
@@ -19,12 +25,6 @@ An outline for non-web developers of the new technologies in HTML5.<br>
 Presented at [KDAB](http://www.kdab.com) in 2012.<br>
 <iframe class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/WNfhVKNbZHo" frameborder="0"></iframe><br>
 <script async class="speakerdeck-embed" data-id="4fcdd8f02e36780022010add" data-ratio="1.7777777777777777" src="//speakerdeck.com/assets/embed.js"></script>
-
-### Homebrew
-How to install, use, file bugs, create and contribute packages to Homebrew with some history of the project along the way.<br>
-Presented at [TechMeetup Dundee](http://techdundee.eventbrite.co.uk/), [SydJS](http://www.sydjs.com) and [ConFoo.ca](http://confoo.ca) in 2012.<br>
-<iframe class="youtube-player" type="text/html" width="640" height="510" src="http://www.youtube.com/embed/9ckwvn5fvyQ" frameborder="0"></iframe><br>
-<script async class="speakerdeck-embed" data-id="4f5121f68a37d6001f001693" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Git for beginners
 An overview of the essentials required to use Git.<br>
