@@ -27,7 +27,7 @@ Presented at the [KDAB](http://www.kdab.com) in 2012.<br>
 ### HTML5
 An outline for non-web developers of the new technologies in HTML5.<br>
 Presented at [KDAB](http://www.kdab.com) in 2012.<br>
-<iframe class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/WNfhVKNbZHo" frameborder="0"></iframe><br>
+<iframe width="640" height="385" src="//www.youtube.com/embed/WNfhVKNbZHo" frameborder="0" allowfullscreen></iframe><br>
 <script async class="speakerdeck-embed" data-id="4fcdd8f02e36780022010add" data-ratio="1.7777777777777777" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Git for beginners
@@ -39,7 +39,7 @@ Presented at [DunDDD](http://dun.dddscotland.co.uk/), [RIM](http://www.rim.com) 
 ### Advanced Git
 A walkthrough of some lesser-known advanced features in Git.<br>
 Presented at the [KDAB](http://www.kdab.com) in 2011.<br>
-<iframe class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/UwPO0MwOC8k" frameborder="0"></iframe><br>
+<iframe width="640" height="385" src="//www.youtube.com/embed/UwPO0MwOC8k" frameborder="0" allowfullscreen></iframe><br>
 <script async class="speakerdeck-embed" data-id="4f4e51c73f09700022014d32" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### CPack
