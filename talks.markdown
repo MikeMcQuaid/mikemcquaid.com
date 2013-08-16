@@ -4,6 +4,12 @@ title: Talks
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
+### Advanced Git (and GitHub)
+A walkthrough of some useful but rarely known features in Git and GitHub.<br>
+Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
+<iframe width="640" height="385" src="//www.youtube.com/embed/c6rFzbZa6x0" frameborder="0" allowfullscreen></iframe><br>
+<script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Homebrew
 How to install, use, file bugs, create and contribute packages to Homebrew with some history of the project along the way.<br>
 Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [TechMeetup Dundee](http://techdundee.eventbrite.co.uk/), [SydJS](http://www.sydjs.com), [ConFoo.ca](http://confoo.ca) in 2012.<br>
@@ -13,11 +19,6 @@ Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [TechM
 ### Homebrew Kickstarter
 The video for the [Homebrew Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot).
 <iframe width="640" height="385" src="//www.youtube.com/embed/5T3HiO8gqyQ" frameborder="0" allowfullscreen></iframe>
-
-### Advanced Git (and GitHub)
-A walkthrough of some useful but rarely known features in Git and GitHub.<br>
-Presented at [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
-<script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### How to make OSX users not hate you
 How to avoid the common usability failings of cross-platform OSX applications.<br>
