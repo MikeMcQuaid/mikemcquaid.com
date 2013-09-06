@@ -14,7 +14,10 @@
 		<meta http-equiv="X-XRDS-Location" content="http://www.myopenid.com/xrds?username=mikemcquaid.myopenid.com" />
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-22891731-1']);
+			var pluginUrl =
+			 '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+			_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+			_gaq.push(['_setAccount', 'UA-22891731-2']);
 			_gaq.push(['_trackPageview']);
 
 			(function() {
