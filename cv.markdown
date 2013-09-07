@@ -69,4 +69,4 @@ Worked on the [KDE](http://www.kde.org/) project. Improved the [KBlog XML-RPC AP
 Wrote battery driver, improved Auxiliary ADC code for Intel XScale on Windows CE. Wrote WM8711 Linux kernel driver which was [released in 2.6.26](https://github.com/mirrors/linux-2.6/commit/bd6d417743d941c3e5eabb21abbcac9737f11061). Improved AC'97, I2S audio drivers and fixed a [noisy LCD issue](http://bugs.openembedded.org/show_bug.cgi?id=1316).
 
 ### Outside Interests
-Philosophy, martial arts, skiing, cooking, guitars, photography and politics.
+Cycling, guitars, cooking, cinema, politics, photography, philosophy and skiing.
