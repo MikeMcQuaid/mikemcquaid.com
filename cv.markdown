@@ -3,7 +3,7 @@ layout: page
 title: Curriculum Vitae
 ---
 ### Mike McQuaid
-#### Full Stack Software Engineer
+#### Software Engineer
 I love solving difficult problems to simplify people's lives.<br>
 
 I always welcome new opportunities and will travel 1/6 weeks to work anywhere in the world. The other 5/6 weeks I must be able to telecommute from my home in Scotland.<br>
@@ -45,7 +45,10 @@ Porting software between Windows, Mac and Linux. Administering Linux servers (vi
 [CPack](http://speakerdeck.com/u/mikemcquaid/p/cpack)
 
 ### Experience
-#### [AllTrails](http://alltrails.com/) (2012 - Present)
+#### [GitHub](http://github.com/) (2013 - Present)
+Test Automation Engineer.
+
+#### [AllTrails](http://alltrails.com/) (2012 - 2013)
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](http://allsnow.com). Develop features, APIs and optimise performance. Setup CI and automatic deployment for Rails and mobile applications. Manage and improve AWS infrastructure.
 
 #### [Homebrew](https://github.com/mxcl/homebrew/) (2009 - Present)
