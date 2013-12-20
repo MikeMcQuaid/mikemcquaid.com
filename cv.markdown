@@ -51,7 +51,7 @@ Test Automation Engineer.
 #### [AllTrails](http://alltrails.com/) (2012 - 2013)
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](http://allsnow.com). Develop features, APIs and optimise performance. Setup CI and automatic deployment for Rails and mobile applications. Manage and improve AWS infrastructure.
 
-#### [Homebrew](https://github.com/mxcl/homebrew/) (2009 - Present)
+#### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
 Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
 #### [KDAB](http://kdab.com/) (2009 - 2012)
