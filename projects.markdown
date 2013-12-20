@@ -7,16 +7,16 @@ title: Projects
 ![Homebrew](/images/a/homebrew.png)<br>
 Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
-#### [AllTrails](https://alltrails.com) and [AllSnow](https://allsnow.com)
-![AllTrails](/images/a/alltrails.png)<br>
-![AllSnow](/images/a/allsnow.png)<br>
-Develop features, APIs and optimise performance. Setup CI and automatic deployment for Rails and mobile applications. Manage and improve AWS infrastructure.
-
 #### [Audioscrobbler.app](https://github.com/mxcl/Audioscrobbler.app)
 ![Audioscrobbler.app](/images/a/audioscrobbler.png)<br>
 Maintainer. Added HiDPI support, merge contributions and fix bugs.
 
 ### Past
+#### [AllTrails](https://alltrails.com) and [AllSnow](https://allsnow.com)
+![AllTrails](/images/a/alltrails.png)<br>
+![AllSnow](/images/a/allsnow.png)<br>
+Developed features, APIs and optimised performance. Setup CI and automatic deployment for Rails and mobile applications. Managed and improved AWS infrastructure.
+
 #### [NightSkyLine](https://github.com/mikemcquaid/NightSkyLine)
 ![NightSkyLine](/images/a/nightskyline.png)<br><br>
 Creator. A readable HTML5 and CSS3 theme for Wordpress.
