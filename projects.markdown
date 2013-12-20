@@ -3,6 +3,9 @@ layout: page
 title: Projects
 ---
 ### Current
+#### [GitHub Enterprise](https://enterprise.github.com)
+![Homebrew](/images/a/github-enterprise.png)<br>
+
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 ![Homebrew](/images/a/homebrew.png)<br>
 Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
