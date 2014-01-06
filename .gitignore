@@ -1,4 +1,6 @@
 _site/
 _site.min/
-_vendor/ruby
+.bundle/
 .sass-cache/
+bin/
+vendor/
