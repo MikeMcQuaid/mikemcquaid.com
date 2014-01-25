@@ -8,6 +8,7 @@ css = 'style.css'
 scss = FileList['*.scss']
 site = '_site'
 site_min = '_site.min'
+dizzy = "_posts/2007-02-27-making-dizzy-shine-with-ajax.html"
 
 file pygments do
   sh "pygmentize -S default -f html > #{pygments}"
@@ -17,7 +18,12 @@ file css => FileList['*.scss'] do
   sh "sass --style compressed style.scss #{css}"
 end
 
-task :generate => [pygments, css] do
+file dizzy => '_posts/_2007-02-27-making-dizzy-shine-with-ajax.asciidoc' do
+  #
+  sh "(echo \"---\nlayout: article\ntitle: Making Dizzy Shine With Ajax\n---\"; asciidoctor _posts/_2007-02-27-making-dizzy-shine-with-ajax.asciidoc --no-header-footer --out-file -) > #{dizzy}"
+end
+
+task :generate => [pygments, css, dizzy] do
   sh 'jekyll', 'build'
 end
 
