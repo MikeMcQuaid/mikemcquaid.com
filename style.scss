@@ -16,7 +16,6 @@ $border-colour-dark: black;
   border: 1px solid $colour;
 }
 
-// TODO: remove unused rules.
 html, body {
   font: 1.1em Georgia, serif;
   line-height: 150%;
@@ -61,8 +60,7 @@ a {
   background-size: cover;
 }
 
-#header, #footer, #page_nav, .post_category, .post_tags,
-.comments_link, object, .more-link {
+#header, #footer, object {
   @media print {
     display: none;
   }
@@ -72,7 +70,9 @@ a {
   font-weight: bold;
   color: #EEE;
 
-  @media only screen and (max-device-width: 480px) {
+  h1 {
+    margin: 0 0.4em 0.4em;
+    padding-top: 0.5em;
   }
 }
 
@@ -89,7 +89,7 @@ h1 {
   }
 }
 
-h1, h2, #menu, .post_date, .comment-meta {
+h1, h2, #menu, .post_date {
   a {
     &:link, &:visited {
       text-decoration: none;
@@ -109,19 +109,6 @@ h1, h2, h3, h4 {
   }
 }
 
-#title h1, #description {
-  margin: 0 0.4em 0.4em;
-  padding-top: 0.5em;
-}
-
-#description {
-  font-size: 28px;
-
-  @media only screen and (max-device-width: 480px) {
-    font-size: 16px;
-  }
-}
-
 #menu {
   font: {
     weight: bold;
@@ -136,33 +123,6 @@ h1, h2, h3, h4 {
   li {
     display: inline-block;
     position: relative;
-
-    @media only screen and (max-device-width: 480px) {
-      position: inherit;
-    }
-
-    ul {
-      text-align: left;
-      display: none;
-      position: absolute;
-      z-index: 1;
-      background-color: $page-background-dark-colour;
-      box-shadow: 0 0.2em 0.2em 0.2em $page-background-dark-colour;
-
-      @media only screen and (max-device-width: 480px) {
-        display: inline;
-        position: inherit;
-        background-color: inherit;
-        box-shadow: 0 0;
-      }
-    }
-
-    ul a, &:hover ul {
-      display: block;
-      @media only screen and (max-device-width: 480px) {
-        display: inline;
-      }
-    }
   }
 
   a {
@@ -212,36 +172,14 @@ h1, h2, h3, h4 {
   }
 }
 
-.type-post, .type-page, #posts_title, #page_nav {
+.type-post, .type-page {
   padding-bottom: 2em;
-}
-
-#content_outer p {
-  text-align: justify;
 }
 
 p {
   @media print {
     page-break-inside: avoid;
   }
-}
-
-.pagebreak {
-  @media print {
-    page-break-before: always;
-  }
-}
-
-#page_nav a {
-  @media only screen and (max-device-width: 480px) {
-    padding-bottom: 0.5em;
-    display: inline-block;
-  }
-}
-
-.post_category, .post_tags, .comments_link, .more-link {
-  margin: 0;
-  font-weight: bold;
 }
 
 h2 {
@@ -373,26 +311,10 @@ tfoot {
   border: none !important;
 }
 
-.aligncenter {
-  text-align: center;
-  margin: {
-    left: auto;
-    right: auto;
-  }
-}
-
 @mixin align($side) {
   text-align: $side;
   margin-#{$side}: 0.5em;
   float: $side;
-}
-
-.alignleft {
-  @include align(left);
-}
-
-.alignright {
-  @include align(right);
 }
 
 blockquote {
@@ -409,73 +331,6 @@ blockquote {
   }
 }
 
-#comments {
-  padding-bottom: 0.5em;
-}
-
-.comment, .pingback, .trackback {
-  @include border($border-colour-light);
-  border-radius: 5px;
-  padding: 0.5em 1em;
-  margin: 1em 0;
-  background-color: $text-background-colour;
-  color: $page-text-dark-colour;
-  word-wrap: break-word;
-
-  @media only screen and (max-device-width: 480px) {
-    padding: 0.5em;
-  }
-}
-
-#comments_list > div.bypostauthor,
-#comments_list .parent > div.bypostauthor {
-  background: $page-background-colour;
-  color: $page-text-colour;
-}
-
-.comment-author {
-  .avatar {
-    float: right;
-    clear: right;
-    margin: 0.5em 0 0.5em 0.5em;
-    @include border($border-colour-light);
-  }
-
-  cite {
-    font-style: normal;
-  }
-}
-
-#commentform {
-  label, .required {
-    font-weight: bold;
-  }
-
-  textarea {
-    width: 35em;
-
-    @media only screen and (max-device-width: 480px) {
-      width: 100%;
-      float: none;
-    }
-  }
-
-  input {
-    @media only screen and (max-device-width: 480px) {
-      width: 15em;
-    }
-  }
-
-  #author, #email, #url {
-    margin-right: 2em;
-    float: left;
-  }
-}
-
-.comment-form-comment label, .widget_search label, .form-allowed-tags {
-  display: none;
-}
-
 #footer {
   background-color: $page-background-colour;
 }
@@ -488,10 +343,6 @@ blockquote {
 #rightbar {
   width: 40%;
   float: right;
-}
-
-.linkcattitle {
-  display: none;
 }
 
 .sidebartext {
@@ -509,9 +360,7 @@ blockquote {
     padding: 0;
     margin: 0;
   }
-}
 
-#sidebar, #menu {
   li {
     list-style: none;
   }
@@ -525,8 +374,4 @@ blockquote {
 
 .clearboth {
   clear: both;
-}
-
-.gallery-icon img {
-  margin: 0 auto;
 }
