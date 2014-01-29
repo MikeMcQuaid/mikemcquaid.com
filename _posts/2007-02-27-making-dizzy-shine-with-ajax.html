@@ -6,20 +6,19 @@ title: Making Dizzy Shine With Ajax
 <h2 id="_abstract">Abstract</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>“<em>Ajax applications can provide a more effective user interface than
-those of GUI desktop or classic Web applications with fewer drawbacks
-than either individual approach.</em>”</p>
+<p>"<em>Ajax applications can provide a more effective user interface than those of
+GUI desktop or classic Web applications with fewer drawbacks than either
+individual approach.</em>"</p>
 </div>
 <div class="paragraph">
-<p>In this report, the preceding hypothesis was evaluated by developing an
-Ajax Web application for the Dizzy chemical kinetics stochastic
-simulator &lt;<a href="#13">[13]</a>&gt; and analysing the benefits and drawbacks
-compared with the existing Dizzy classic Web application and Dizzy GUI
-desktop application. Among the benefits were those of a more responsive
-interface, less bandwidth usage and allowing logic to be run on the
-client. The drawbacks included the challenge of ensuring cross-browser
-compatibility, unfamiliarity to the user, JavaScript debugging issues
-and the time-consuming nature of re-engineering an existing Web
+<p>In this report, the preceding hypothesis was evaluated by developing an Ajax
+Web application for the Dizzy chemical kinetics stochastic simulator &lt;<a href="#13">[13]</a>&gt;
+and analysing the benefits and drawbacks compared with the existing Dizzy
+classic Web application and Dizzy GUI desktop application. Among the benefits
+were those of a more responsive interface, less bandwidth usage and allowing
+logic to be run on the client. The drawbacks included the challenge of ensuring
+cross-browser compatibility, unfamiliarity to the user, JavaScript debugging
+issues and the time-consuming nature of re-engineering an existing Web
 application.</p>
 </div>
 </div>
@@ -33,29 +32,28 @@ application.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project supervisor <em>Stephen Gilmore</em> and group supervisor <em>Julian
-Bradfield</em> for guidance and help.</p>
+<p>Project supervisor <em>Stephen Gilmore</em> and group supervisor <em>Julian Bradfield</em>
+for guidance and help.</p>
 </li>
 <li>
 <p><em>John Oberlander</em> for clarification and help with HCI issues.</p>
 </li>
 <li>
-<p><em>Gareth Saunders</em> and <em>Patrick Thomson</em> for greatly aiding my
-proof-reading of this report.</p>
+<p><em>Gareth Saunders</em> and <em>Patrick Thomson</em> for greatly aiding my proof-reading
+of this report.</p>
 </li>
 <li>
-<p>The developers of Firebug, Subversion and Eclipse for invaluable
-debugging and development tools.</p>
+<p>The developers of Firebug, Subversion and Eclipse for invaluable debugging
+and development tools.</p>
 </li>
 <li>
 <p>Team Klingon: <em>Chris Paton, Charles Harley, Benjamin Rollinson, Colin
 Silcock, Iain Hendry, Raj Khokhar, Alan Campbell, John Mark Ritchie</em> and
-<em>Alistair Strachan</em> for the development of the classic web application
-and <em>Alistair Strachan&#8217;s</em> help with the existing code base.</p>
+<em>Alistair Strachan</em> for the development of the classic web application and
+<em>Alistair Strachan&#8217;s</em> help with the existing code base.</p>
 </li>
 <li>
-<p>The developers of Batik, Apache Commons and JFreeChart for the used
-libraries.</p>
+<p>The developers of Batik, Apache Commons and JFreeChart for the used libraries.</p>
 </li>
 <li>
 <p><em>Steve Moitozo</em> for the Password Quality Meter.</p>
@@ -73,14 +71,14 @@ libraries.</p>
 <div class="sect2">
 <h3 id="_what_is_ajax">1.1. What is Ajax?</h3>
 <div class="paragraph">
-<p>Ajax is shorthand for “Asynchronous JavaScript and XML” and is a recent
-technique for developing more interactive Web applications, allowing
-faster input and better usability, striving for similar interfaces to
-those provided by GUI desktop applications.</p>
+<p>Ajax is shorthand for "Asynchronous JavaScript and XML" and is a recent
+technique for developing more interactive Web applications, allowing faster
+input and better usability, striving for similar interfaces to those provided
+by GUI desktop applications.</p>
 </div>
 <div class="paragraph">
-<p>Figure 1 shows the main differences
-between a classic Web application and an Ajax Web application.</p>
+<p>Figure 1 shows the main differences between a classic Web application and an
+Ajax Web application.</p>
 </div>
 <div id="figure-1" class="imageblock">
 <div class="content">
@@ -89,25 +87,23 @@ between a classic Web application and an Ajax Web application.</p>
 <div class="title">Figure 1. Comparing Ajax and classic Web application models (<em>Copyright Adaptive Path, LLC 2005</em>)</div>
 </div>
 <div class="paragraph">
-<p>A classic Web application sends a request to a server which generates
-the page, perhaps from a database, returning a page which is then
-displayed in the client&#8217;s browser. On each new page request or the
-retrieval or submission of new data, the whole page must be re-requested
-from the server.</p>
+<p>A classic Web application sends a request to a server which generates the page,
+perhaps from a database, returning a page which is then displayed in the
+client&#8217;s browser. On each new page request or the retrieval or submission of
+new data, the whole page must be re-requested from the server.</p>
 </div>
 <div class="paragraph">
-<p>An Ajax Web application follows the same pattern on the initial
-retrieval of a page, however, when new data needs to be sent or received
-from the server, instead of re-requesting the whole page, the browser
-can call a method written in JavaScript. JavaScript is a browser
-scripting language and in this case can be used to retrieve the data
-asynchronously. This data is normally returned as XML, which is then
-parsed by the JavaScript and used to modify the DOM and CSS of the page.</p>
+<p>An Ajax Web application follows the same pattern on the initial retrieval of a
+page, however, when new data needs to be sent or received from the server,
+instead of re-requesting the whole page, the browser can call a method written
+in JavaScript. JavaScript is a browser scripting language and in this case can
+be used to retrieve the data asynchronously. This data is normally returned as
+XML, which is then parsed by the JavaScript and used to modify the DOM and CSS
+of the page.</p>
 </div>
 <div class="paragraph">
-<p>Figure 2 compares the typical
-interaction model between a classic Web application and an Ajax Web
-application.</p>
+<p>Figure 2 compares the typical interaction model between a classic Web
+application and an Ajax Web application.</p>
 </div>
 <div id="figure-2" class="imageblock">
 <div class="content">
@@ -118,79 +114,71 @@ application.</p>
 <div class="paragraph">
 <p>The classic Web application requires user activity to take place then be
 submitted to the server and the data must be processed and returned
-successfully to the client before the user can commence any more
-interaction.</p>
+successfully to the client before the user can commence any more interaction.</p>
 </div>
 <div class="paragraph">
-<p>The Ajax Web application allows continuous user activity. On certain
-events JavaScript functions will be run by the browser, allowing
-client-side processing of data, such as input validation. If necessary,
-this data can then be sent to the server and/or the server return more
-data. This usage pattern is closely similar to that of a GUI desktop
-application where the user does not typically have to wait for the
-completion of tasks and can work without worrying about manually
-initiating interaction with the “server”.</p>
+<p>The Ajax Web application allows continuous user activity. On certain events
+JavaScript functions will be run by the browser, allowing client-side
+processing of data, such as input validation. If necessary, this data can then
+be sent to the server and/or the server return more data. This usage pattern is
+closely similar to that of a GUI desktop application where the user does not
+typically have to wait for the completion of tasks and can work without
+worrying about manually initiating interaction with the "server".</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_when_is_ajax_used">1.2. When is Ajax used?</h3>
 <div class="paragraph">
-<p>With increased bandwidth now available to large proportions of the
-first-world population, Web applications are becoming feasible
-replacements for GUI desktop applications. This movement is known by
-some as “Web 2.0”. One of ideas behind “Web 2.0” is the Web as an
-application platform, replacing GUI desktop applications, allowing
-cross-platform applications and allowing data to be easily shared and
-manipulated between machines in different geographical localities. The
-only prerequisites for these applications are an Internet connection and
-a relatively modern browser.</p>
+<p>With increased bandwidth now available to large proportions of the first-world
+population, Web applications are becoming feasible replacements for GUI desktop
+applications. This movement is known by some as "Web 2.0". One of ideas behind
+"Web 2.0" is the Web as an application platform, replacing GUI desktop
+applications, allowing cross-platform applications and allowing data to be
+easily shared and manipulated between machines in different geographical
+localities. The only prerequisites for these applications are an Internet
+connection and a relatively modern browser.</p>
 </div>
 <div class="paragraph">
-<p>The first wave of these applications to move online was email. There has
-been Web-based email for over 10 years and it is many users' sole way of
-accessing their email. Google&#8217;s email application, Gmail, was one of the
-first uses of Ajax technology on the Internet. For browsers that support
-Ajax, the user interface is similar to a GUI desktop application, with
-the ability to drag items and quickly open and close emails without the
-whole page reloading.</p>
+<p>The first wave of these applications to move online was email. There has been
+Web-based email for over 10 years and it is many users' sole way of accessing
+their email. Google&#8217;s email application, Gmail, was one of the first uses of
+Ajax technology on the Internet. For browsers that support Ajax, the user
+interface is similar to a GUI desktop application, with the ability to drag
+items and quickly open and close emails without the whole page reloading.</p>
 </div>
 <div class="paragraph">
-<p>With Ajax the goal of moving GUI desktop applications online may finally
-be realised. As shown in <a href="#figure-2">Figure 2</a>, Ajax finally allowed the user
-of an Ajax Web application to have an uninterrupted workflow. This can
-potentially greatly boost their productivity, bringing it more in-line
-with that from GUI desktop applications, whilst keeping the benefits of
-a Web application such as distributed processing, no need for local
-backups, high up-time and portability.</p>
+<p>With Ajax the goal of moving GUI desktop applications online may finally be
+realised. As shown in <a href="#figure-2">Figure 2</a>, Ajax finally allowed the user of
+an Ajax Web application to have an uninterrupted workflow. This can potentially
+greatly boost their productivity, bringing it more in-line with that from GUI
+desktop applications, whilst keeping the benefits of a Web application such as
+distributed processing, no need for local backups, high up-time and portability.</p>
 </div>
 <div class="paragraph">
-<p>Now users and developers wishing to take advantage of Ajax have many
-options available to them. For developers, many Ajax libraries are now
-available, making Ajax user interface development as simple as importing
-any other library. Users can now find Ajax applications for word
-processing, spreadsheets, picture management, email, satellite mapping
-and more.</p>
+<p>Now users and developers wishing to take advantage of Ajax have many options
+available to them. For developers, many Ajax libraries are now available,
+making Ajax user interface development as simple as importing any other
+library. Users can now find Ajax applications for word processing,
+spreadsheets, picture management, email, satellite mapping and more.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_what_are_the_problems_with_ajax">1.3. What are the problems with Ajax?</h3>
 <div class="paragraph">
-<p>Ajax technologies, while being useful to both users and developers, are
-still in their infancy. Ajax applications frequently suffer from
-niggling bugs such as “breaking” the expected functionality of the
-“Back” button, causing other unexpected browser behaviour and may have
-security risks. It is also currently unclear whether the claimed
-benefits of Ajax actually result in better user interfaces. The role of
-this project is to try and discover any benefits and problems and see
-whether Ajax Web applications provide interface improvements over
-classic Web applications and existing GUI desktop applications, whilst
-having fewer disadvantages than either individual approach. A literature
-review was conducted in order to discover the need for this discussion.
-An existing classic Web application was modified into an Ajax
-application after critically evaluating the user interface failings of
-the existing classic Web application and GUI desktop application.
-Finally, the new Ajax Web application was evaluated and through this the
-strengths and weaknesses of Ajax were discussed.</p>
+<p>Ajax technologies, while being useful to both users and developers, are still
+in their infancy. Ajax applications frequently suffer from niggling bugs such
+as "breaking" the expected functionality of the "Back" button, causing other
+unexpected browser behaviour and may have security risks. It is also currently
+unclear whether the claimed benefits of Ajax actually result in better user
+interfaces. The role of this project is to try and discover any benefits and
+problems and see whether Ajax Web applications provide interface improvements
+over classic Web applications and existing GUI desktop applications, whilst
+having fewer disadvantages than either individual approach. A literature review
+was conducted in order to discover the need for this discussion. An existing
+classic Web application was modified into an Ajax application after critically
+evaluating the user interface failings of the existing classic Web application
+and GUI desktop application. Finally, the new Ajax Web application was
+evaluated and through this the strengths and weaknesses of Ajax were discussed.</p>
 </div>
 </div>
 </div>
@@ -201,16 +189,14 @@ strengths and weaknesses of Ajax were discussed.</p>
 <div class="sect2">
 <h3 id="_ajax_a_new_approach_to_web_applications">2.1. Ajax: A New Approach to Web Applications</h3>
 <div class="paragraph">
-<p>The term “Ajax” was first used in “Ajax: A New Approach to Web
-Applications” &lt;<a href="#2">[2]</a>&gt;, an article about interaction
-design. The two examples referenced as examples of Ajax were Google&#8217;s
-Suggest and Maps services.</p>
+<p>The term "Ajax" was first used in "Ajax: A New Approach to Web Applications"
+&lt;<a href="#2">[2]</a>&gt;, an article about interaction design. The two examples referenced as
+examples of Ajax were Google&#8217;s Suggest and Maps services.</p>
 </div>
 <div class="paragraph">
-<p>Figure 3 shows an example of Google Suggest
-in progress. As search queries are entered, suggestions for the search
-query are displayed, updating almost instantaneously with no other user
-interaction.</p>
+<p>Figure 3 shows an example of Google Suggest in progress. As search queries are
+entered, suggestions for the search query are displayed, updating almost
+instantaneously with no other user interaction.</p>
 </div>
 <div id="figure-3" class="imageblock">
 <div class="content">
@@ -219,12 +205,11 @@ interaction.</p>
 <div class="title">Figure 3. Google Suggest</div>
 </div>
 <div class="paragraph">
-<p>Figure 4 displays an example of Google Maps'
-usage. This figure does not convey the use of the interface as well as a
-demonstration, but the map can be manipulated by clicking and dragging
-around the map, and the map is dynamically loaded and updated, with no
-need to press reload. Also, take note of the shadow overlay from the
-Address “bubble”, again, dynamically updated in real-time.</p>
+<p>Figure 4 displays an example of Google Maps' usage. This figure does not convey
+the use of the interface as well as a demonstration, but the map can be
+manipulated by clicking and dragging around the map, and the map is dynamically
+loaded and updated, with no need to press reload. Also, take note of the shadow
+overlay from the Address "bubble", again, dynamically updated in real-time.</p>
 </div>
 <div id="figure-4" class="imageblock">
 <div class="content">
@@ -233,96 +218,89 @@ Address “bubble”, again, dynamically updated in real-time.</p>
 <div class="title">Figure 4. Google Maps</div>
 </div>
 <div class="paragraph">
-<p>These applications are an example of what Adaptive Path called Ajax.
-Ajax makes use of the manipulation of XHTML and CSS, using the DOM, by
-JavaScript, and information retrieval and manipulation using XML, XSLT,
-XMLHttpRequest and JavaScript. The information retrieval is done by
-regular polling of XML data using JavaScript, providing the
-interactivity not existing in classic Web applications.</p>
+<p>These applications are an example of what Adaptive Path called Ajax. Ajax makes
+use of the manipulation of XHTML and CSS, using the DOM, by JavaScript, and
+information retrieval and manipulation using XML, XSLT, XMLHttpRequest and
+JavaScript. The information retrieval is done by regular polling of XML data
+using JavaScript, providing the interactivity not existing in classic Web
+applications.</p>
 </div>
 <div class="paragraph">
-<p>At the time of this article, the main users of Ajax were Google, making
-use of it on their Gmail, Groups, and the aforementioned Suggest and
-Maps services, but it also saw use in Flickr and Amazon&#8217;s A9 search
-engine. The article provided a clear explanation of both the technical
-usages of Ajax, its implementation and merits, and paved the ground for
-future studies in using Ajax for rich-client applications. Although this
-article was the first mention of Ajax, analysis of the usability of
-related technologies have been seen before, albeit with different
-terminology, such as DHTML.</p>
+<p>At the time of this article, the main users of Ajax were Google, making use of
+it on their Gmail, Groups, and the aforementioned Suggest and Maps services,
+but it also saw use in Flickr and Amazon&#8217;s A9 search engine. The article
+provided a clear explanation of both the technical usages of Ajax, its
+implementation and merits, and paved the ground for future studies in using
+Ajax for rich-client applications. Although this article was the first mention
+of Ajax, analysis of the usability of related technologies have been seen
+before, albeit with different terminology, such as DHTML.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_navigating_the_applet_browser_divide">2.2. Navigating the Applet-Browser Divide</h3>
 <div class="paragraph">
-<p>Comparable issues to those spawned by Ajax have been analysed before,
-such as in “Navigating the Applet-Browser Divide” &lt;<a href="#9">[9]</a>&gt;. The
-feel of browser applets was very different to that of classic Web
-applications and raised similar usability problems to those encountered
-with Ajax applications. Users were found to instinctively press the
-browser&#8217;s “Back” button when intending to return to a previous stage in
-the applet process, which, if the applet had not taken this into
-consideration, wiped all progress they had undertaken so far in the
-applet, causing the user to have to start again. Again, applets brought
-claims of allowing the user to “dynamically interact with information”,
-similar to those claims made today with the rise of “Web 2.0” and Ajax.
-This article contained the results from a usability study which found
-that users tended to depend on the browser navigation buttons to
-navigate through the applet. When navigation buttons were provided
-inside the applet the users were found to have fewer problems with
-integration and navigation. This article also highlighted the now
-so-relevant issue of ensuring compatibility between browsers.</p>
+<p>Comparable issues to those spawned by Ajax have been analysed before, such as
+in "Navigating the Applet-Browser Divide" &lt;<a href="#9">[9]</a>&gt;. The feel of browser applets
+was very different to that of classic Web applications and raised similar
+usability problems to those encountered with Ajax applications. Users were
+found to instinctively press the browser&#8217;s "Back" button when intending to
+return to a previous stage in the applet process, which, if the applet had not
+taken this into consideration, wiped all progress they had undertaken so far in
+the applet, causing the user to have to start again. Again, applets brought
+claims of allowing the user to "dynamically interact with information", similar
+to those claims made today with the rise of "Web 2.0" and Ajax. This article
+contained the results from a usability study which found that users tended to
+depend on the browser navigation buttons to navigate through the applet. When
+navigation buttons were provided inside the applet the users were found to have
+fewer problems with integration and navigation. This article also highlighted
+the now so-relevant issue of ensuring compatibility between browsers.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_ajax_how_to_handle_bookmarks_and_back_button">2.3. Ajax: How to Handle Bookmarks and Back Button</h3>
 <div class="paragraph">
-<p>The issue with the “Back” button was further explored in “Ajax: How to
-Handle Bookmarks and Back Button” &lt;<a href="#8">[8]</a>&gt; . The
-problem was raised by using Gmail as a case study. Once a user enters
-Gmail, at the time of publishing, the URL remained the same throughout
-the session, so if a user entered an email message, and then wished to
-leave the message and go back to the inbox by clicking the browser&#8217;s
-“Back” button, to their surprise they would find themselves out of
-Gmail.</p>
+<p>The issue with the "Back" button was further explored in "Ajax: How to Handle
+Bookmarks and Back Button" &lt;<a href="#8">[8]</a>&gt; . The problem was raised by using Gmail as a
+case study. Once a user enters Gmail, at the time of publishing, the URL
+remained the same throughout the session, so if a user entered an email
+message, and then wished to leave the message and go back to the inbox by
+clicking the browser&#8217;s "Back" button, to their surprise they would find
+themselves out of Gmail.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_dhtml_accessibility_solving_the_javascript_accessibility_problem">2.4. DHTML accessibility: solving the JavaScript accessibility problem</h3>
 <div class="paragraph">
-<p>Before the term “Ajax” became popular, some of the technologies used
-were referred to as DHTML. “DHTML accessibility: solving the JavaScript
-accessibility problem” &lt;<a href="#3">[3]</a>&gt; discussed some of the
-other issues arising from the usage of these technologies, focusing on
-the difficulty in providing content accessible to those with
-disabilities when the application relies on JavaScript. The main
-problems highlighted were dealing with focus on dynamic content and
-providing semantic data for GUIs, to allow the use of purely text-based
-input and display. It also called for a paradigm shift to ensure that
-interfaces are all usable through a keyboard interface and other
-assisting technologies, hopefully providing interfaces that can be
-better than the existing alternatives for disabled users.</p>
+<p>Before the term "Ajax" became popular, some of the technologies used were
+referred to as DHTML. "DHTML accessibility: solving the JavaScript
+accessibility problem" &lt;<a href="#3">[3]</a>&gt; discussed some of the other issues arising from
+the usage of these technologies, focusing on the difficulty in providing
+content accessible to those with disabilities when the application relies on
+JavaScript. The main problems highlighted were dealing with focus on dynamic
+content and providing semantic data for GUIs, to allow the use of purely
+text-based input and display. It also called for a paradigm shift to ensure
+that interfaces are all usable through a keyboard interface and other assisting
+technologies, hopefully providing interfaces that can be better than the
+existing alternatives for disabled users.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_beyond_ajax">2.5. Beyond Ajax</h3>
 <div class="paragraph">
-<p>“Beyond Ajax” &lt;<a href="#4">[4]</a>&gt; discussed both the potential of Ajax Web
-applications and their limits. The first limit shown is that Ajax
-applications cannot allow realtime event notification, instead requiring
-a polling loop; the more regular the poll, the more bandwidth and
-processing used, both on the client and server. The second limit raised
-is, that although most processing-intensive tasks can and have been made
-into Web applications, the GUI desktop equivalents provide certain
-advantages. An example of this is direct hardware access, which is not
-possible without browser plugins, such as Adobe&#8217;s Reader or Flash, the
-latter providing video and audio recording, with user-controllable
-security levels (see Figure 5). This paper showed some of
-the possible advantages of Ajax such as dramatic bandwidth savings in
-leveraging the transfer of XML using JavaScript rather than reloading
-whole pages. However, the benefits and costs of migrating GUI desktop
-applications online must be weighed up, with respect to security,
-bandwidth, response and interactivity issues.</p>
+<p>"Beyond Ajax" &lt;<a href="#4">[4]</a>&gt; discussed both the potential of Ajax Web applications and
+their limits. The first limit shown is that Ajax applications cannot allow
+realtime event notification, instead requiring a polling loop; the more regular
+the poll, the more bandwidth and processing used, both on the client and
+server. The second limit raised is, that although most processing-intensive
+tasks can and have been made into Web applications, the GUI desktop equivalents
+provide certain advantages. An example of this is direct hardware access, which
+is not possible without browser plugins, such as Adobe&#8217;s Reader or Flash, the
+latter providing video and audio recording, with user-controllable security
+levels (see Figure 5). This paper showed some of the possible advantages of
+Ajax such as dramatic bandwidth savings in leveraging the transfer of XML using
+JavaScript rather than reloading whole pages. However, the benefits and costs
+of migrating GUI desktop applications online must be weighed up, with respect
+to security, bandwidth, response and interactivity issues.</p>
 </div>
 <div id="figure-5" class="imageblock">
 <div class="content">
@@ -334,102 +312,94 @@ bandwidth, response and interactivity issues.</p>
 <div class="sect2">
 <h3 id="_web_2_0_next_big_thing_or_next_big_internet_bubble">2.6. Web 2.0 Next Big Thing or Next Big Internet Bubble?</h3>
 <div class="paragraph">
-<p>The term “Web 2.0” was first used publicly by O&#8217;Reilly Media as a name
-for a conference in 2005. It has become rather popular in technology
-circles, describing the rise in the use of Ajax and other XML
-technologies and also the growth of Web-based communities around these
-technologies. “Web 2.0 Next Big Thing or Next Big Internet Bubble?”
-&lt;<a href="#1">[1]</a>&gt; emphasised the large number of technology start-ups based
-on these concepts and made comparisons made to the “Dot Com Bubble”.
-This article highlighted the use of a “Rich User Experience”, which
-refers to the use of Web applications attempting to behave more like
-their GUI desktop counterparts. Also, the importance of dynamic content,
-user participation, metadata and markup were raised, allowing a way for
-users to both create and find information more effectively. This article
-reiterated the previously mentioned issues accompanying Ajax
-technologies, such as lack of JavaScript availability and “breaking” the
-“Back” button, also the difficulty of bookmarking dynamically generated
-pages with varying states, meaning that storing the state of pages for a
-bookmark may be very difficult.</p>
+<p>The term "Web 2.0" was first used publicly by O&#8217;Reilly Media as a name for a
+conference in 2005. It has become rather popular in technology circles,
+describing the rise in the use of Ajax and other XML technologies and also the
+growth of Web-based communities around these technologies. "Web 2.0 Next Big
+Thing or Next Big Internet Bubble?" &lt;<a href="#1">[1]</a>&gt; emphasised the large number of
+technology start-ups based on these concepts and made comparisons made to the
+"Dot Com Bubble". This article highlighted the use of a "Rich User Experience",
+which refers to the use of Web applications attempting to behave more like
+their GUI desktop counterparts. Also, the importance of dynamic content, user
+participation, metadata and markup were raised, allowing a way for users to
+both create and find information more effectively. This article reiterated the
+previously mentioned issues accompanying Ajax technologies, such as lack of
+JavaScript availability and "breaking" the "Back" button, also the difficulty
+of bookmarking dynamically generated pages with varying states, meaning that
+storing the state of pages for a bookmark may be very difficult.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_beyond_the_desktop_metaphor_in_seven_dimensions">2.7. Beyond the Desktop Metaphor in Seven Dimensions</h3>
 <div class="paragraph">
-<p>The issue of creating more rich-Web applications was discussed in
-“Beyond the Desktop Metaphor in Seven Dimensions” &lt;<a href="#7">[7]</a>&gt;. It
-mentioned the use of Ajax technologies to create far more GUI-like Web
-interfaces, allowing them to be more familiar to users and updated
-without user intervention. It also pointed to the recent growth of Ajax
-applications being used, forming the previously mentioned “Web 2.0”,
-bringing a shift from applications (such as those on the desktop) to
-online services, frequently using Ajax, storing personal information and
-documents outside of an office machine.</p>
+<p>The issue of creating more rich-Web applications was discussed in "Beyond the
+Desktop Metaphor in Seven Dimensions" &lt;<a href="#7">[7]</a>&gt;. It mentioned the use of Ajax
+technologies to create far more GUI-like Web interfaces, allowing them to be
+more familiar to users and updated without user intervention. It also pointed
+to the recent growth of Ajax applications being used, forming the previously
+mentioned "Web 2.0", bringing a shift from applications (such as those on the
+desktop) to online services, frequently using Ajax, storing personal
+information and documents outside of an office machine.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_an_architectural_style_for_ajax">2.8. An Architectural Style for Ajax</h3>
 <div class="paragraph">
-<p>“An Architectural Style for Ajax” &lt;<a href="#6">[6]</a>&gt; discussed the
-use of various frameworks for the creation of Ajax-enabled pages,
-allowing the Web developer to worry more about content than writing the
-JavaScript manually. The main focus of the paper was the styles for
-architecture of Ajax-based solutions. It introduced the idea that Ajax
-applications can be seen as a hybrid, combining features from GUI
-desktop and Web applications. This brought the conclusion that an
-architectural style must be created, rather than simply reusing existing
-desktop or Web styles. The style described in this paper is known as
-“SPIAR”, and highlights the factors of intractability, latency, network
+<p>"An Architectural Style for Ajax" &lt;<a href="#6">[6]</a>&gt; discussed the use of various
+frameworks for the creation of Ajax-enabled pages, allowing the Web developer
+to worry more about content than writing the JavaScript manually. The main
+focus of the paper was the styles for architecture of Ajax-based solutions. It
+introduced the idea that Ajax applications can be seen as a hybrid, combining
+features from GUI desktop and Web applications. This brought the conclusion
+that an architectural style must be created, rather than simply reusing
+existing desktop or Web styles. The style described in this paper is known as
+"SPIAR", and highlights the factors of intractability, latency, network
 performance, simplicity, scalability, portability and visibility in Ajax
-application design. The rest of the paper focused more on specific
-application development techniques.</p>
+application design. The rest of the paper focused more on specific application
+development techniques.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_usability_in_web_design">2.9. Usability in Web Design</h3>
 <div class="paragraph">
-<p>“Usability in Web Design” &lt;<a href="#5">[5]</a>&gt; revealed Ajax as a
-technique for increasing the speed of page loading, especially when only
-a small change is made to the page content. It also emphasised the need
-for accessibility considerations when using client-side technologies,
-such as Ajax, to continue to ensure the separation of style and content,
-and ensuring the page falls back correctly to browsers without
-JavaScript.</p>
+<p>"Usability in Web Design" &lt;<a href="#5">[5]</a>&gt; revealed Ajax as a technique for increasing
+the speed of page loading, especially when only a small change is made to the
+page content. It also emphasised the need for accessibility considerations when
+using client-side technologies, such as Ajax, to continue to ensure the
+separation of style and content, and ensuring the page falls back correctly to
+browsers without JavaScript.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_emotionally_centred_design">2.10. Emotionally centred design</h3>
 <div class="paragraph">
-<p>The concept of Rich Internet Applications was discussed in “Emotionally
-centred design” &lt;<a href="#10">[10]</a>&gt;. Rich Internet Applications
-are Web applications that have similar functionality and features as a
-GUI desktop application, but run in a Web browser. Ajax technologies are
-normally used in the creation of RIA. The paper posed a question,
-examining a different dimension of Ajax technologies, “why are these
-[<em>Ajax sites</em>] so compelling?”. The reasons returned were those of fluid
-movement and immediate responses to user input, which create “engaging
-interfaces”. However, the issue of Ajax becoming a development trend was
-raised. A call is made for detailed studies into user interaction with
-RIA, rather than developers to creating RIA for the sake of personal
-exploration and jumping on the latest technological bandwagon, instead
-trying to use RIA interfaces to improve user effectiveness and
-engagement.</p>
+<p>The concept of Rich Internet Applications was discussed in "Emotionally centred
+design" &lt;<a href="#10">[10]</a>&gt;. Rich Internet Applications are Web applications that have
+similar functionality and features as a GUI desktop application, but run in a
+Web browser. Ajax technologies are normally used in the creation of RIA. The
+paper posed a question, examining a different dimension of Ajax technologies,
+"why are these [<em>Ajax sites</em>] so compelling?". The reasons returned were those
+of fluid movement and immediate responses to user input, which create "engaging
+interfaces". However, the issue of Ajax becoming a development trend was
+raised. A call is made for detailed studies into user interaction with RIA,
+rather than developers to creating RIA for the sake of personal exploration and
+jumping on the latest technological bandwagon, instead trying to use RIA
+interfaces to improve user effectiveness and engagement.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_literature_evaluation">2.11. Literature Evaluation</h3>
 <div class="paragraph">
-<p>The previously analysed literature provides a detailed examination of
-both the advantages and drawbacks arising from using Ajax in Web
-application development. However, multiple articles call for a detailed
-usability study into the efficiency of user interaction with a Ajax
-application, and a direct study of this does not appear to have been
-done. This is a major problem as most of the articles are speculative on
-the benefits of using Ajax. This means that there is a real difficulty
-for developers currently debating whether to re-engineer a classic Web
-or GUI desktop application using Ajax or create a new Ajax application
-due to the lack of “hard” data to support the conclusions found in the
-current available literature.</p>
+<p>The previously analysed literature provides a detailed examination of both the
+advantages and drawbacks arising from using Ajax in Web application
+development. However, multiple articles call for a detailed usability study
+into the efficiency of user interaction with a Ajax application, and a direct
+study of this does not appear to have been done. This is a major problem as
+most of the articles are speculative on the benefits of using Ajax. This means
+that there is a real difficulty for developers currently debating whether to
+re-engineer a classic Web or GUI desktop application using Ajax or create a new
+Ajax application due to the lack of "hard" data to support the conclusions
+found in the current available literature.</p>
 </div>
 </div>
 </div>
@@ -438,31 +408,30 @@ current available literature.</p>
 <h2 id="_background">3. Background</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dizzy is a chemical kinetics stochastic simulator written in Java,
-available as a GUI desktop application. It provides a model definition
-environment and an implementation of the Gillespie, Gibson-Bruck, and
-Tau-Leap stochastic algorithms &lt;<a href="#13">[13]</a>&gt;. This application was
-modified to use Enterprise Java technologies and run on a J2EE Web
-application server (such as Tomcat) by a group of students in 2005,
-known as “<em>Team Klingon</em>”. This means there is currently an application
-that is feature-complete, with two implementations, Web-based and
-desktop-based.</p>
+<p>Dizzy is a chemical kinetics stochastic simulator written in Java, available as
+a GUI desktop application. It provides a model definition environment and an
+implementation of the Gillespie, Gibson-Bruck, and Tau-Leap stochastic
+algorithms &lt;<a href="#13">[13]</a>&gt;. This application was modified to use Enterprise Java
+technologies and run on a J2EE Web application server (such as Tomcat) by a
+group of students in 2005, known as "<em>Team Klingon</em>". This means there is
+currently an application that is feature-complete, with two implementations,
+Web-based and desktop-based.</p>
 </div>
 <div class="paragraph">
-<p>This report will consist of creating a third implementation using Ajax.
-This will be performed by modification of the Web-based implementation,
-using the desktop-based implementation as a reference, to try to create
-a more usable interface, from evaluation of the drawbacks of the
-previous two interfaces. This new interface will receive a detailed
-usability study aiming to fill the gaps in papers highlighted in the
-Literature Survey: the need for a usability study of Ajax technologies,
-compared with both GUI desktop and classic Web applications.</p>
+<p>This report will consist of creating a third implementation using Ajax. This
+will be performed by modification of the Web-based implementation, using the
+desktop-based implementation as a reference, to try to create a more usable
+interface, from evaluation of the drawbacks of the previous two interfaces.
+This new interface will receive a detailed usability study aiming to fill the
+gaps in papers highlighted in the Literature Survey: the need for a usability
+study of Ajax technologies, compared with both GUI desktop and classic Web
+applications.</p>
 </div>
 <div class="paragraph">
-<p>From here onwards, for ease of explanation, the GUI Dizzy implementation
-will simply be known as Dizzy, the non-Ajax Web-application version as
-Klingon (as it was designed by “<em>Team Klingon</em>”) and the Ajax version as
-Shiny (referencing the title of this report).</p>
+<p>From here onwards, for ease of explanation, the GUI Dizzy implementation will
+simply be known as Dizzy, the non-Ajax Web-application version as Klingon (as
+it was designed by "<em>Team Klingon</em>") and the Ajax version as Shiny (referencing
+the title of this report).</p>
 </div>
 </div>
 </div>
@@ -472,52 +441,48 @@ Shiny (referencing the title of this report).</p>
 <div class="paragraph">
 <p>The aim of this report is to test the following hypothesis:</p>
 </div>
-<div class="quoteblock">
-<blockquote>
 <div class="paragraph">
-<p>“<em>Ajax applications can provide a more effective interface user
-interface than those of GUI desktop or classic Web applications with
-fewer drawbacks than either individual approach.</em>”</p>
-</div>
-</blockquote>
+<p>"<em>Ajax applications can provide a more effective interface user interface than
+those of GUI desktop or classic Web applications with fewer drawbacks than
+either individual approach.</em>"</p>
 </div>
 <div class="paragraph">
-<p>This hypothesis will be evaluated by examination of the following
-criteria &lt;<a href="#11">[11]</a>&gt;:</p>
+<p>This hypothesis will be evaluated by examination of the following criteria
+&lt;<a href="#11">[11]</a>&gt;:</p>
 </div>
 <div class="sect2">
 <h3 id="_learnability">4.1. Learnability</h3>
 <div class="paragraph">
-<p>Ajax applications allow the user to have an interface that is more
-predictable and allows greater response feedback than either of the
-alternative applications.</p>
+<p>Ajax applications allow the user to have an interface that is more predictable
+and allows greater response feedback than either of the alternative
+applications.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_flexibility">4.2. Flexibility</h3>
 <div class="paragraph">
-<p>Ajax applications match the user&#8217;s interface expectations better than
-the alternative applications, allowing them to take better control of
-dialogue flow, and allowing support for more threads of simultaneous
-operation. Different forms of input are better facilitated and the
-interface can be more customisable.</p>
+<p>Ajax applications match the user&#8217;s interface expectations better than the
+alternative applications, allowing them to take better control of dialogue
+flow, and allowing support for more threads of simultaneous operation.
+Different forms of input are better facilitated and the interface can be more
+customisable.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_robustness">4.3. Robustness</h3>
 <div class="paragraph">
-<p>Ajax applications allow for a more honest interface, better indicating
-the user&#8217;s action history and current state in the application. Errors
-are more rapidly repaired and prevented. The application is more
-responsive, providing better feedback to user input.</p>
+<p>Ajax applications allow for a more honest interface, better indicating the
+user&#8217;s action history and current state in the application. Errors are more
+rapidly repaired and prevented. The application is more responsive, providing
+better feedback to user input.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_time_affordances">4.4. Time Affordances</h3>
 <div class="paragraph">
 <p>Ajax applications allow fewer or no more unpredictable delays than the
-alternative applications. The Ajax application allows for greater
-reassurance to unavoidable delay than alternative applications.</p>
+alternative applications. The Ajax application allows for greater reassurance
+to unavoidable delay than alternative applications.</p>
 </div>
 </div>
 </div>
@@ -526,34 +491,32 @@ reassurance to unavoidable delay than alternative applications.</p>
 <h2 id="_specification">5. Specification</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In comparing Dizzy&#8217;s implementation with Klingon&#8217;s, the benefits
-provided by the Web application (e.g. distributed processing,
-client-server architecture, portability etc.) are ignored and instead
-the focus of this report is on the functional user interface differences
-between the two applications. These differences can be split into two
-areas: features lost from the original application by moving to a static
-Web interface and new problems introduced by the online application.</p>
+<p>In comparing Dizzy&#8217;s implementation with Klingon&#8217;s, the benefits provided by
+the Web application (e.g. distributed processing, client-server architecture,
+portability etc.) are ignored and instead the focus of this report is on the
+functional user interface differences between the two applications. These
+differences can be split into two areas: features lost from the original
+application by moving to a static Web interface and new problems introduced by
+the online application.</p>
 </div>
 <div class="sect2">
 <h3 id="_lost_functionality">5.1. Lost functionality</h3>
 <div class="sect3">
 <h4 id="_run_progress">5.1.1. Run progress</h4>
 <div class="paragraph">
-<p>One of the main problems encountered when using Klingon, compared with
-Dizzy, was informing the user of the progress of a run. The application
-performs runs which can vary greatly in time consumed, ranging from
-milliseconds to hours, depending on the complexity, machine load and
-other factors.</p>
+<p>One of the main problems encountered when using Klingon, compared with Dizzy,
+was informing the user of the progress of a run. The application performs runs
+which can vary greatly in time consumed, ranging from milliseconds to hours,
+depending on the complexity, machine load and other factors.</p>
 </div>
 <div class="sect4">
 <h5 id="_dizzy">Dizzy</h5>
 <div class="paragraph">
-<p>Figure 6 displays the
-interface&#8217;s appearance while a run is in progress. The main elements to
-change and update are the progress-bar in the bottom left, and the
-estimated time remaining in the bottom right. There is also the facility
-to cancel or pause a run if it seems to be taking too long or system
-resources are temporarily needed for another task.</p>
+<p>Figure 6 displays the interface&#8217;s appearance while a run is in progress. The
+main elements to change and update are the progress-bar in the bottom left, and
+the estimated time remaining in the bottom right. There is also the facility to
+cancel or pause a run if it seems to be taking too long or system resources are
+temporarily needed for another task.</p>
 </div>
 <div id="figure-6" class="imageblock">
 <div class="content">
@@ -565,15 +528,13 @@ resources are temporarily needed for another task.</p>
 <div class="sect4">
 <h5 id="_klingon">Klingon</h5>
 <div class="paragraph">
-<p>In Figure 7 there is
-no such progress indication. The user of the system is informed that the
-simulation “may take some time”, without indicating how long this may
-be, and the user is expected to wait at the page, with no progress
-indication, until the run is completed. Furthermore, there is no
-functionality provided to pause or cancel a run, so if the run takes an
-excessive amount of time it is unclear to the user how to terminate
-this, meaning server time may be wasted simply because the user is
-unable to stop an unnecessary run.</p>
+<p>In Figure 7 there is no such progress indication. The user of the system is
+informed that the simulation "may take some time", without indicating how long
+this may be, and the user is expected to wait at the page, with no progress
+indication, until the run is completed. Furthermore, there is no functionality
+provided to pause or cancel a run, so if the run takes an excessive amount of
+time it is unclear to the user how to terminate this, meaning server time may
+be wasted simply because the user is unable to stop an unnecessary run.</p>
 </div>
 <div id="figure-7" class="imageblock">
 <div class="content">
@@ -586,27 +547,25 @@ unable to stop an unnecessary run.</p>
 <div class="sect3">
 <h4 id="_simulation_parameter_validation">5.1.2. Simulation parameter validation</h4>
 <div class="paragraph">
-<p>When performing a run of a simulation the user must enter some
-parameters for the run itself and for the calculation of results from
-the run&#8217;s conclusion. These parameters are subject to various
-constraints, e.g. the “stop time” cannot be before the “start time” and
-the “step size” must be fractional. These constraints must be checked at
-some stage, either at the user interface or simulator level, or the run
-will fail.</p>
+<p>When performing a run of a simulation the user must enter some parameters for
+the run itself and for the calculation of results from the run&#8217;s conclusion.
+These parameters are subject to various constraints, e.g. the "stop time"
+cannot be before the "start time" and the "step size" must be fractional. These
+constraints must be checked at some stage, either at the user interface or
+simulator level, or the run will fail.</p>
 </div>
 <div class="sect4">
 <h5 id="_dizzy_2">Dizzy</h5>
 <div class="paragraph">
-<p>Figure 8 shows the results from when
-the user presses the “start” button to run a simulation with an invalid
-“stop time”. The dialogue prints the output from an internal exception
-in the simulator, an “AccuracyException”, and informs the user that it
-is “unable to determine any scale” at a certain time. This error is
-cryptic as it does not indicate which field had an incorrect value, nor
-the acceptable constraints of the value. Pressing the “show details”
-button provides no further help, simply printing the stack trace of the
-exception; very little help to a non-programmer. Also, this error does
-not appear until the user decides to run the simulation.</p>
+<p>Figure 8 shows the results from when the user presses the "start" button to run
+a simulation with an invalid "stop time". The dialogue prints the output from
+an internal exception in the simulator, an "AccuracyException", and informs the
+user that it is "unable to determine any scale" at a certain time. This error
+is cryptic as it does not indicate which field had an incorrect value, nor the
+acceptable constraints of the value. Pressing the "show details" button
+provides no further help, simply printing the stack trace of the exception;
+very little help to a non-programmer. Also, this error does not appear until
+the user decides to run the simulation.</p>
 </div>
 <div id="figure-8" class="imageblock">
 <div class="content">
@@ -615,13 +574,12 @@ not appear until the user decides to run the simulation.</p>
 <div class="title">Figure 8. Stop time failure with Dizzy</div>
 </div>
 <div class="paragraph">
-<p>Figure 9 shows the results from
-when the user presses the “start” button to run a simulation with an
-invalid number of result points. This time the dialogue is slightly more
-helpful, with no confusing jargon, but it still does not refer exactly
-to the field, referencing “number of samples” rather than “number of
-results points”. Again, this error does not appear until the “start”
-button is pressed.</p>
+<p>Figure 9 shows the results from when the user presses the "start" button to run
+a simulation with an invalid number of result points. This time the dialogue is
+slightly more helpful, with no confusing jargon, but it still does not refer
+exactly to the field, referencing "number of samples" rather than "number of
+results points". Again, this error does not appear until the "start" button is
+pressed.</p>
 </div>
 <div id="figure-9" class="imageblock">
 <div class="content">
@@ -630,16 +588,15 @@ button is pressed.</p>
 <div class="title">Figure 9. Result point failure with Dizzy</div>
 </div>
 <div class="paragraph">
-<p>Figure 10 shows the results from
-when the user runs a simulation with an invalid “number of result
-points”. This error is similar to the first, in that it simply outputs
-the Java exception that caused the error. The main problem, that cannot
-be seen from the screenshot alone, is that this error only appears on
-run completion, meaning that if the parameter for “relative error” was
-invalid and a long run was performed that time has been wasted
-performing a run that outputs no data. As before the terminology
-displayed in the error is different from that used in the GUI, “relative
-tolerance” in the error but “relative error” in the GUI.</p>
+<p>Figure 10 shows the results from when the user runs a simulation with an
+invalid "number of result points". This error is similar to the first, in that
+it simply outputs the Java exception that caused the error. The main problem,
+that cannot be seen from the screenshot alone, is that this error only appears
+on run completion, meaning that if the parameter for "relative error" was
+invalid and a long run was performed that time has been wasted performing a run
+that outputs no data. As before the terminology displayed in the error is
+different from that used in the GUI, "relative tolerance" in the error but
+"relative error" in the GUI.</p>
 </div>
 <div id="figure-10" class="imageblock">
 <div class="content">
@@ -649,59 +606,57 @@ tolerance” in the error but “relative error” in the GUI.</p>
 </div>
 <div class="paragraph">
 <p>The problem consistent across the errors is a lack of indication of the
-constraints of the parameter validation. Another problem is the decision
-to only perform validation when the “start” button is pressed. Java&#8217;s
-GUI libraries provide facilities to manage and handle the user&#8217;s input
-on each individual field&#8217;s entry, but this is not done. Due to this the
-process to ensure data is correct is slow as only one error is thrown at
-a time, so if multiple there are multiple errors, these must be sorted
-one-by-one before the run can be started.</p>
+constraints of the parameter validation. Another problem is the decision to
+only perform validation when the "start" button is pressed. Java&#8217;s GUI
+libraries provide facilities to manage and handle the user&#8217;s input on each
+individual field&#8217;s entry, but this is not done. Due to this the process to
+ensure data is correct is slow as only one error is thrown at a time, so if
+multiple there are multiple errors, these must be sorted one-by-one before the
+run can be started.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_klingon_2">Klingon</h5>
 <div class="paragraph">
-<p>Figure 11 indicates
-the outcome from entering bad data into every field of the form. This
-data is then sent to the server which validates it and in the case of
-error redirects the user back to the original page marking the errors.
-If the data was valid the user would simply be forwarded to the next
-stage of the form.</p>
+<p>Figure 11 indicates the outcome from entering bad data into every field of the
+form. This data is then sent to the server which validates it and in the case
+of error redirects the user back to the original page marking the errors. If
+the data was valid the user would simply be forwarded to the next stage of the
+form.</p>
 </div>
-<div id="figure-11" class="paragraph">
-<div class="title">Simulation parameter verification with Klingon</div>
-<p>image::/images/dizzy/klingonvalidation.png[image:
-klingonvalidation.png]</p>
+<div id="figure-11" class="imageblock">
+<div class="content">
+<img src="/images/dizzy/klingonvalidation.png" alt="klingonvalidation">
 </div>
-<div class="paragraph">
-<p><em>(Note: The values displayed are not invalid. Klingon&#8217;s server-side
-validation does not return the invalid values, instead displaying the
-errors on a new page)</em></p>
+<div class="title">Figure 11. Simulation parameter verification with Klingon</div>
 </div>
 <div class="paragraph">
-<p>The first problem seen with the errors is that for the values that were
-“out of legal range” there is no indication of what the range is so if
-the user&#8217;s entry was correct but just too high to simulate they will
-have to use trial and error to find out what are the maximum values they
-can use.</p>
+<p><em>(Note: The values displayed are not invalid. Klingon&#8217;s server-side validation
+does not return the invalid values, instead displaying the errors on a new
+page)</em></p>
 </div>
 <div class="paragraph">
-<p>The errors caused by non-double or non-integer values occurred due to
-the entry of letters rather than numbers in those fields. In this case
-the indication of the datatype for the field is provided, however this
-could be made clearer still.</p>
+<p>The first problem seen with the errors is that for the values that were "out of
+legal range" there is no indication of what the range is so if the user&#8217;s entry
+was correct but just too high to simulate they will have to use trial and error
+to find out what are the maximum values they can use.</p>
+</div>
+<div class="paragraph">
+<p>The errors caused by non-double or non-integer values occurred due to the entry
+of letters rather than numbers in those fields. In this case the indication of
+the datatype for the field is provided, however this could be made clearer
+still.</p>
 </div>
 <div class="paragraph">
 <p>The main problem with the Klingon approach is, due to purely server-side
-validation, the user receives no feedback on bad parameters until they
-have submitted the form to be evaluated. In addition, due to the
-redirect mechanism, the previous values they entered are lost on the
-failure of the parameter validation (as observed in Figure
-11). The server-side
-mechanism proves little problem on high-bandwidth connections, but when
-either the client or the server has a low-bandwidth connection this
-could become a painful process, requiring the data to be re-posted and
-all the page content reloaded on every mistake made in the form.</p>
+validation, the user receives no feedback on bad parameters until they have
+submitted the form to be evaluated. In addition, due to the redirect mechanism,
+the previous values they entered are lost on the failure of the parameter
+validation (as observed in Figure 11). The server-side mechanism proves little
+problem on high-bandwidth connections, but when either the client or the server
+has a low-bandwidth connection this could become a painful process, requiring
+the data to be re-posted and all the page content reloaded on every mistake
+made in the form.</p>
 </div>
 </div>
 </div>
@@ -710,69 +665,65 @@ all the page content reloaded on every mistake made in the form.</p>
 <div class="sect4">
 <h5 id="_dizzy_3">Dizzy</h5>
 <div class="paragraph">
-<p><a href="#figure-6">Figure 6</a> shows the
-Dizzy interface mid-simulation. The datasets for the graph/table/CSV
-file are chosen before the run is started and cannot be changed after
-the run has completed. Figure 12 graphically represents
-the output from a simulation. In this example, if the most relevant axis
-on examination was G4_RNA, there is a problem. As the software does not
-allow modification of the axes without performing the run again and the
-graph output is a raster rather than vector image, the axis cannot be
-viewed more closely without repeating the run.</p>
+<p><a href="#figure-6">Figure 6</a> shows the Dizzy interface mid-simulation. The datasets
+for the graph/table/CSV file are chosen before the run is started and cannot be
+changed after the run has completed. Figure 12 graphically represents the
+output from a simulation. In this example, if the most relevant axis on
+examination was G4_RNA, there is a problem. As the software does not allow
+modification of the axes without performing the run again and the graph output
+is a raster rather than vector image, the axis cannot be viewed more closely
+without repeating the run.</p>
 </div>
 <div id="figure-12" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/dizzygraph.png" alt="dizzygraph">
 </div>
-<div class="title">Figure 11. Chart generation with Dizzy</div>
+<div class="title">Figure 12. Chart generation with Dizzy</div>
 </div>
 <div class="paragraph">
-<p>Figure 13 shows the
-output after performing the run again. It is much clearer now what the
-data represents, and far more useful, but sadly the same simulation was
-run twice and the other datasets discarded the second time. This
-simulation data could have instead been cached, reprocessed every time
-an image is generated.</p>
+<p>Figure 13 shows the output after performing the run again. It is much clearer
+now what the data represents, and far more useful, but sadly the same
+simulation was run twice and the other datasets discarded the second time. This
+simulation data could have instead been cached, reprocessed every time an image
+is generated.</p>
 </div>
 <div id="figure-13" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/dizzygraph2.png" alt="dizzygraph2">
 </div>
-<div class="title">Figure 12. Chart generation with Dizzy (a single-axis)</div>
+<div class="title">Figure 13. Chart generation with Dizzy (a single-axis)</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_klingon_3">Klingon</h5>
 <div class="paragraph">
-<p>Klingon handles simulations differently. Rather than performing a run
-and immediately producing the output, the simulation data is cached in a
-database and this data is used every time the user chooses to generate a
-graph, table or CSV file.</p>
+<p>Klingon handles simulations differently. Rather than performing a run and
+immediately producing the output, the simulation data is cached in a database
+and this data is used every time the user chooses to generate a graph, table or
+CSV file.</p>
 </div>
 <div class="paragraph">
-<p>Figure 14 shows the axis
-selection, very similar to Dizzy.</p>
+<p>Figure 14 shows the axis selection, very similar to Dizzy.</p>
 </div>
 <div id="figure-14" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/klingongraphsetup.png" alt="klingongraphsetup">
 </div>
-<div class="title">Figure 13. Chart setup with Klingon</div>
+<div class="title">Figure 14. Chart setup with Klingon</div>
 </div>
 <div class="paragraph">
-<p>Figure 15 shows the chart
-generated for the user on a new page. If a similar approach is taken to
-that with Dizzy, wanting to focus on the G4_RNA, there is no need to
-perform the run again but it is necessary to hit the “Back” button in
-the browser and re-choose the axes. This method does not require redoing
-the run, but the user still has to navigate between different pages to
-make the new choices.</p>
+<p>Figure 15 shows the chart generated for the user on a new page. If a similar
+approach is taken to that with Dizzy, wanting to focus on the G4_RNA, there is
+no need to perform the run again but it is necessary to hit the "Back" button
+in the browser and re-choose the axes. This method does not require redoing the
+run, but the user still has to navigate between different pages to make the new
+choices.</p>
 </div>
 <div id="figure-15" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/klingongraph.png" alt="klingongraph">
 </div>
-<div class="title">Figure 14. Chart generation with Klingon</div>
+<div class="title">Figure 15. Chart generation with Klingon</div>
 </div>
 </div>
 </div>
@@ -780,76 +731,71 @@ make the new choices.</p>
 <div class="sect2">
 <h3 id="_online_problems">5.2. Online problems</h3>
 <div class="paragraph">
-<p>The following problems are those introduced only in Klingon, due to its
-online interface. These do not have comparable equivalent problems in
-Dizzy.</p>
+<p>The following problems are those introduced only in Klingon, due to its online
+interface. These do not have comparable equivalent problems in Dizzy.</p>
 </div>
 <div class="sect3">
 <h4 id="_saving_files">5.2.1. Saving files</h4>
 <div class="paragraph">
-<p>Rather than using Dizzy&#8217;s method of requesting a local file location for
-the simulator file for every run, Klingon allows two methods to create
-these files. The first is to manually enter the file into an editor and
-the second to upload the file. The latter will be covered in the next
-subsection.</p>
+<p>Rather than using Dizzy&#8217;s method of requesting a local file location for the
+simulator file for every run, Klingon allows two methods to create these files.
+The first is to manually enter the file into an editor and the second to upload
+the file. The latter will be covered in the next subsection.</p>
 </div>
 <div class="paragraph">
-<p>Figure 16 shows the text
-editor available in Klingon. This can be used to create simulator model
-files or modify existing model files. The main problem with the editor
-is that when “Update file” is clicked the browser sends the new contents
-and the page redirects. This means that to edit the file once more the
+<p>Figure 16 shows the text editor available in Klingon. This can be used to
+create simulator model files or modify existing model files. The main problem
+with the editor is that when "Update file" is clicked the browser sends the new
+contents and the page redirects. This means that to edit the file once more the
 user must reselect the file and open the editor again.</p>
 </div>
 <div id="figure-16" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/klingoneditor.png" alt="klingoneditor">
 </div>
-<div class="title">Figure 15. Simulator file editing in Klingon</div>
+<div class="title">Figure 16. Simulator file editing in Klingon</div>
 </div>
 <div class="paragraph">
-<p>The problem with this is that it encourages users to not save the file
-until they are finished, and with files upwards of 100 lines, if the
-browser crashed this could be frustrating for the user.</p>
+<p>The problem with this is that it encourages users to not save the file until
+they are finished, and with files upwards of 100 lines, if the browser crashed
+this could be frustrating for the user.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_upload_progress">5.2.2. Upload progress</h4>
 <div class="paragraph">
-<p>As mentioned in the last section, model files can be uploaded. However,
-these files can get quite large, and over a slow network connection or a
-loaded server, the page appears to hang, with the browser indicating it
-is “Busy” until the upload completes. It would be useful for the user to
-be notified of the progress of the upload, so they can estimate how long
-it will take and whether to allow it to complete.</p>
+<p>As mentioned in the last section, model files can be uploaded. However, these
+files can get quite large, and over a slow network connection or a loaded
+server, the page appears to hang, with the browser indicating it is "Busy"
+until the upload completes. It would be useful for the user to be notified of
+the progress of the upload, so they can estimate how long it will take and
+whether to allow it to complete.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_password_update">5.2.3. Password update</h4>
 <div class="paragraph">
-<p>In the form seen in Figure 17, the user
-is invited to enter the old password, the new password and confirm the
-new password. If the new password does not match the confirmation, the
-request still requires to be sent to the server before this is notified
-to the client. It would be sensible, in this situation, to check the
-fields differ before this information is sent to the server. Similarly
-it would be sensible to check the old and new passwords are not the
+<p>In the form seen in Figure 17, the user is invited to enter the old password,
+the new password and confirm the new password. If the new password does not
+match the confirmation, the request still requires to be sent to the server
+before this is notified to the client. It would be sensible, in this situation,
+to check the fields differ before this information is sent to the server.
+Similarly it would be sensible to check the old and new passwords are not the
 same.</p>
 </div>
 <div id="figure-17" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/klingonupdatedetails.png" alt="klingonupdatedetails">
 </div>
-<div class="title">Figure 16. Updating the users details in Klingon</div>
+<div class="title">Figure 17. Updating the users details in Klingon</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_solutions">5.3. Solutions</h3>
 <div class="paragraph">
-<p>The aforementioned problems, while not the only problems in the
-application, are broadly summarised into six main areas with Dizzy
-and/or Klingon:</p>
+<p>The aforementioned problems, while not the only problems in the application,
+are broadly summarised into six main areas with Dizzy and/or Klingon:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -874,17 +820,16 @@ and/or Klingon:</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>These areas are those that can be considered to affect the usability of
-these applications most severely. Simple aesthetic and organisational
-changes have been ignored, as the focus of this report is on using Ajax
-to improve applications, not classic Web design or usability techniques.</p>
+<p>These areas are those that can be considered to affect the usability of these
+applications most severely. Simple aesthetic and organisational changes have
+been ignored, as the focus of this report is on using Ajax to improve
+applications, not classic Web design or usability techniques.</p>
 </div>
 <div class="paragraph">
-<p>These will be approached in Shiny by using Klingon as a base, and using
-Ajax techniques, modifying both the front and backend code, but leaving
-the simulator logic itself intact. The difficulties in implementing
-these solutions and an evaluation of their effectiveness will then
-follow.</p>
+<p>These will be approached in Shiny by using Klingon as a base, and using Ajax
+techniques, modifying both the front and backend code, but leaving the
+simulator logic itself intact. The difficulties in implementing these solutions
+and an evaluation of their effectiveness will then follow.</p>
 </div>
 </div>
 </div>
@@ -893,62 +838,56 @@ follow.</p>
 <h2 id="_implementation">6. Implementation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For each of the problems mentioned in <a href="#_solutions">Solutions</a>
-the implementation of the solution will be outlined, any problems
-encountered and a detailed explanation of the workings of the solution.
-Each section also includes a subsection to discuss how the solution
-gracefully falls back to browsers that do not support the needed Ajax
-functionality.</p>
+<p>For each of the problems mentioned in <a href="#_solutions">Solutions</a> the
+implementation of the solution will be outlined, any problems encountered and a
+detailed explanation of the workings of the solution. Each section also
+includes a subsection to discuss how the solution gracefully falls back to
+browsers that do not support the needed Ajax functionality.</p>
 </div>
 <div class="sect2">
 <h3 id="_feedback_for_long_running_server_side_tasks">6.1. Feedback for long-running server-side tasks</h3>
 <div class="paragraph">
-<p>The first step in implementing this feature was adding the necessary
-hooks into the existing parts of the Web application used to run the
-chemical simulations. This was needed as the previous method of
-performing simulations was by a blocking method called from the JSP.
-This was made non-blocking, and the progress was made available to the
-JSP which allowed the implementation of a graceful fallback method for
-long-running simulations.</p>
+<p>The first step in implementing this feature was adding the necessary hooks into
+the existing parts of the Web application used to run the chemical simulations.
+This was needed as the previous method of performing simulations was by a
+blocking method called from the JSP. This was made non-blocking, and the
+progress was made available to the JSP which allowed the implementation of a
+graceful fallback method for long-running simulations.</p>
 </div>
 <div class="paragraph">
 <p>With all Ajax applications, as there is not currently universal browser
-support, it is essential to ensure that applications fallback gracefully
-if the XMLHttpRequest object cannot be created or if JavaScript is not
-running on the browser at all. With this in mind, the progress data now
-available to the JSP pages was used to create a static page that
-contained the progress-bar and time remaining. However, for the user to
-be able to see the current progress of the run, the page has to be
-regularly refreshed periodically. While this is possible using the Meta
-refresh tag, it is discouraged by the W3C&#8217;s Web Content Accessibility
-Guidelines &lt;<a href="#12">[12]</a>&gt; as if the user is in the middle of
-another task in the Web browser, such as entering a new URL, this could
-be interrupted or lost by a page refresh. Also, as the progress page is
-around 3KB, with 26KB of other data (that can be cached), this a large
-amount to be periodically refreshed without user intervention. It was
-decided to simply allow the user to manually refresh the page, and they
-would be automatically redirected and informed on run completion. This
-is an improvement on the complete lack of progress feedback in Klingon,
-but far from a desirable result, as it still requires user interaction,
-unlike Dizzy.</p>
+support, it is essential to ensure that applications fallback gracefully if the
+XMLHttpRequest object cannot be created or if JavaScript is not running on the
+browser at all. With this in mind, the progress data now available to the JSP
+pages was used to create a static page that contained the progress-bar and time
+remaining. However, for the user to be able to see the current progress of the
+run, the page has to be regularly refreshed periodically. While this is
+possible using the Meta refresh tag, it is discouraged by the W3C&#8217;s Web Content
+Accessibility Guidelines &lt;<a href="#12">[12]</a>&gt; as if the user is in the middle of another
+task in the Web browser, such as entering a new URL, this could be interrupted
+or lost by a page refresh. Also, as the progress page is around 3KB, with 26KB
+of other data (that can be cached), this a large amount to be periodically
+refreshed without user intervention. It was decided to simply allow the user to
+manually refresh the page, and they would be automatically redirected and
+informed on run completion. This is an improvement on the complete lack of
+progress feedback in Klingon, but far from a desirable result, as it still
+requires user interaction, unlike Dizzy.</p>
 </div>
 <div class="paragraph">
-<p>With Ajax this user interaction is not required. A few mechanisms on the
-client and server are combined to give a transparent update of data. The
-first step is creating an XML server. A JSP file makes use of a
-server-side session variable to locate which user and run are requested
-and then returns an XML file containing the progress and the time
-remaining. The next step is creating the necessary client-side
-JavaScript, which is run by the browser automatically on the page load.
-This JavaScript creates the XMLHttpRequest object and sets the URL to
-asynchronously get the XML file generated by the server. Rather than
-busy-waiting on a response from the server, a callback method is set
-which is run on a change of the ready state of the XMLHttpRequest. This
-state progresses from the initial value to open, sent, receiving and
-finally loaded. When it is loaded, the callback method checks the status
-of the HTTP response. The XML server makes use of the HTTP response&#8217;s
-status codes to provide information about the status of the run; a lower
-bandwidth method than using XML.</p>
+<p>With Ajax this user interaction is not required. A few mechanisms on the client
+and server are combined to give a transparent update of data. The first step is
+creating an XML server. A JSP file makes use of a server-side session variable
+to locate which user and run are requested and then returns an XML file
+containing the progress and the time remaining. The next step is creating the
+necessary client-side JavaScript, which is run by the browser automatically on
+the page load. This JavaScript creates the XMLHttpRequest object and sets the
+URL to asynchronously get the XML file generated by the server. Rather than
+busy-waiting on a response from the server, a callback method is set which is
+run on a change of the ready state of the XMLHttpRequest. This state progresses
+from the initial value to open, sent, receiving and finally loaded. When it is
+loaded, the callback method checks the status of the HTTP response. The XML
+server makes use of the HTTP response&#8217;s status codes to provide information
+about the status of the run; a lower bandwidth method than using XML.</p>
 </div>
 <div class="paragraph">
 <p>The following status codes are used:</p>
@@ -956,8 +895,8 @@ bandwidth method than using XML.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>200 OK - This code indicates there has been a change since the last
-client progress update, and that progress data is available.</p>
+<p>200 OK - This code indicates there has been a change since the last client
+progress update, and that progress data is available.</p>
 </li>
 <li>
 <p>303 See Other - This code indicates that the run has completed.</p>
@@ -969,43 +908,40 @@ progress since the last client progress update.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The OK status code provides the progress data as XML, whereas the other
-two provide no XML content. This is slightly more complex than using a
-purely XML-based method but is more bandwidth-efficient as no XML data
-is transferred and the client does not need to respond to the server&#8217;s
-initial HTTP response.</p>
+<p>The OK status code provides the progress data as XML, whereas the other two
+provide no XML content. This is slightly more complex than using a purely
+XML-based method but is more bandwidth-efficient as no XML data is transferred
+and the client does not need to respond to the server&#8217;s initial HTTP response.</p>
 </div>
 <div class="paragraph">
-<p>On an OK status code the callback method parses the XML provided by the
-server to obtain the progress information. This information is used to
-then manipulate the DOM and CSS of the progress page in the browser,
-updating the colour and length of the progress-bar, the progress
-percentage and the estimated time remaining. This can be seen in Figure
-18.</p>
+<p>On an OK status code the callback method parses the XML provided by the server
+to obtain the progress information. This information is used to then manipulate
+the DOM and CSS of the progress page in the browser, updating the colour and
+length of the progress-bar, the progress percentage and the estimated time
+remaining. This can be seen in Figure 18.</p>
 </div>
 <div id="figure-18" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/shinyprogress.png" alt="shinyprogress">
 </div>
-<div class="title">Figure 17. Shiny run progress</div>
+<div class="title">Figure 18. Shiny run progress</div>
 </div>
 <div class="paragraph">
-<p>On a See Other status code the page is redirected to the runs page, as
-occurred in Klingon on completion of a run.</p>
+<p>On a See Other status code the page is redirected to the runs page, as occurred
+in Klingon on completion of a run.</p>
 </div>
 <div class="paragraph">
-<p>On a No Content status code the page is not updated, but in order to
-inform the user an update but no new progress data was available has
-occurred the status bar of the browser displays “No Update”.</p>
+<p>On a No Content status code the page is not updated, but in order to inform the
+user an update but no new progress data was available has occurred the status
+bar of the browser displays "No Update".</p>
 </div>
 <div class="paragraph">
-<p>Regardless of the status code, on the evaluation of the code and
-associated response, the callback method is set to run again in a one
-second.</p>
+<p>Regardless of the status code, on the evaluation of the code and associated
+response, the callback method is set to run again in a one second.</p>
 </div>
 <div class="paragraph">
-<p>To further optimise the XML size, the XML tag names were shortened as
-this XML will not be read or downloaded other than by JavaScript.</p>
+<p>To further optimise the XML size, the XML tag names were shortened as this XML
+will not be read or downloaded other than by JavaScript.</p>
 </div>
 <div class="paragraph">
 <p>For example, a typical XML response with non-optimised tags might be the
@@ -1031,183 +967,168 @@ following:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The optimised XML file is, on average, around 82 bytes. Compared with
-the 3KB minimum from the meta refresh method, it is clear that for large
-amounts of clients, or low-bandwidth connections, the Ajax method is far
-more efficient.</p>
+<p>The optimised XML file is, on average, around 82 bytes. Compared with the 3KB
+minimum from the meta refresh method, it is clear that for large amounts of
+clients, or low-bandwidth connections, the Ajax method is far more efficient.</p>
 </div>
 <div class="paragraph">
-<p>Also added to Shiny was the ability for the run to complete in the
-background, allowing the user to accomplish other tasks while the run
-was completed on the server. This was facilitated by the method of
-handling runs, and also the new progress-bar. The progress-bar code was
-designed to be portable, so it was easily embedded into the navigation
-bar as a small reminder of the run progress; this can be seen in Figure
-19.</p>
+<p>Also added to Shiny was the ability for the run to complete in the background,
+allowing the user to accomplish other tasks while the run was completed on the
+server. This was facilitated by the method of handling runs, and also the new
+progress-bar. The progress-bar code was designed to be portable, so it was
+easily embedded into the navigation bar as a small reminder of the run
+progress; this can be seen in Figure 19.</p>
 </div>
 <div id="figure-19" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/shinyprogress2.png" alt="shinyprogress2">
 </div>
-<div class="title">Figure 18. Shiny run progress embedded in the navigation bar</div>
+<div class="title">Figure 19. Shiny run progress embedded in the navigation bar</div>
 </div>
 <div class="sect3">
 <h4 id="_graceful_fallback">6.1.1. Graceful Fallback</h4>
 <div class="paragraph">
 <p>In event of the XMLHttpRequest object failing to be created or disabled
-JavaScript the progress will simply update whenever the user takes a
-navigation action in the browser. For instance, when they move to a new
-page it will display the latest progress in the navigation bar, as shown
-in Figure 19 or if the user simply
-refreshes the progress page they will see a display similar to Figure
-18 The only difference will be a lack of
-animation due to the updates being initiated by the user rather than the
-server.</p>
+JavaScript the progress will simply update whenever the user takes a navigation
+action in the browser. For instance, when they move to a new page it will
+display the latest progress in the navigation bar, as shown in Figure 19 or if
+the user simply refreshes the progress page they will see a display similar to
+Figure 18 The only difference will be a lack of animation due to the updates
+being initiated by the user rather than the server.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_input_validation_from_server_side_parameters">6.2. Input validation from server-side parameters</h3>
 <div class="paragraph">
-<p>Due to previous input validation in Klingon occurring on the
-server-side, there was no need to delve too deeply into the existing
-code in order to access the server-side parameter checking. The first
-step in this case was creating an XML server to serve the error
-information to the client. The previous method in Klingon sent the
-contents of the form to the server, which was validated and then
-accepted or returned with any errors. In Shiny this was handled by
-sending the output of a single input box from the form, and the unique
-identifier for the input box to the server. With Shiny this is not done
-on submission of the form but instead when the current input box loses
-focus, that is the user moves the text entry indicator to another input
-box.</p>
+<p>Due to previous input validation in Klingon occurring on the server-side, there
+was no need to delve too deeply into the existing code in order to access the
+server-side parameter checking. The first step in this case was creating an XML
+server to serve the error information to the client. The previous method in
+Klingon sent the contents of the form to the server, which was validated and
+then accepted or returned with any errors. In Shiny this was handled by sending
+the output of a single input box from the form, and the unique identifier for
+the input box to the server. With Shiny this is not done on submission of the
+form but instead when the current input box loses focus, that is the user moves
+the text entry indicator to another input box.</p>
 </div>
 <div class="paragraph">
-<p>The transmission of the value is done in much the same way as the
-progress indicator, except this time the XML server accepts the
-previously mentioned parameters and, in event of an error, produces a
-relevant error message. Also, as in the progress example, this is done
-by means of an XMLHttpRequest in JavaScript, not on direct user
-prompting, with HTTP status codes and XML optimisation again used to
-save bandwidth. This method, however, is not a regular poll, but only
-occurs when the user has changed the text entry indicator, indicating
-that they have finished with that field.</p>
+<p>The transmission of the value is done in much the same way as the progress
+indicator, except this time the XML server accepts the previously mentioned
+parameters and, in event of an error, produces a relevant error message. Also,
+as in the progress example, this is done by means of an XMLHttpRequest in
+JavaScript, not on direct user prompting, with HTTP status codes and XML
+optimisation again used to save bandwidth. This method, however, is not a
+regular poll, but only occurs when the user has changed the text entry
+indicator, indicating that they have finished with that field.</p>
 </div>
 <div class="paragraph">
-<p>Figure 20 shows the results of
-an incorrect start time. This looks very similar to the results from
-Klingon, but there are two key differences. Firstly, the illegal value
-is still displayed. Secondly, the invalid value will be displayed
-instantly, with only 64 bytes used in the transmission of this error;
-Klingon&#8217;s method requires 6-11KB. The error messages provided are not
-any more helpful, but this was felt to be not an Ajax-related issue, and
-could have been fixed trivially. The main advantage the Shiny solution
-provides is the speed the use trial-and-error to find acceptable values,
-with near-instantaneous feedback without the removal of the invalid
-value.</p>
+<p>Figure 20 shows the results of an incorrect start time. This looks very similar
+to the results from Klingon, but there are two key differences. Firstly, the
+illegal value is still displayed. Secondly, the invalid value will be displayed
+instantly, with only 64 bytes used in the transmission of this error; Klingon&#8217;s
+method requires 6-11KB. The error messages provided are not any more helpful,
+but this was felt to be not an Ajax-related issue, and could have been fixed
+trivially. The main advantage the Shiny solution provides is the speed the use
+trial-and-error to find acceptable values, with near-instantaneous feedback
+without the removal of the invalid value.</p>
 </div>
 <div id="figure-20" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/shinyvalidationfailed.png" alt="shinyvalidationfailed">
 </div>
-<div class="title">Figure 19. Shiny server-side validation</div>
+<div class="title">Figure 20. Shiny server-side validation</div>
 </div>
 <div class="paragraph">
-<p>A possible alternative to the Ajax method used in Shiny would simply be
-to use pure JavaScript to do input validation. This is discussed in
-<a href="#_input_validation_based_on_client_side_data">Input validation based on client-side data</a> but was not used in this
-case. An advantage of this method of server-side validation is that the
-input parameters are not made known to the user. This could be seen as a
-disadvantage, but it can help with two factors: security and
-flexibility.</p>
+<p>A possible alternative to the Ajax method used in Shiny would simply be to use
+pure JavaScript to do input validation. This is discussed in
+<a href="#_input_validation_based_on_client_side_data">Input validation based on
+client-side data</a> but was not used in this case. An advantage of this method
+of server-side validation is that the input parameters are not made known to
+the user. This could be seen as a disadvantage, but it can help with two
+factors: security and flexibility.</p>
 </div>
 <div class="paragraph">
-<p>The first benefit is that using server-side validation allows the
-criteria for input rejection to be kept secret from a client, requiring
-brute-force attacks in order to attempt to work out the acceptable
-range. If this were done using JavaScript client-side validation, the
-ranges could be easily determined and attacked more effectively. Also,
-if only client-side validation is used, a malicious client could simply
-disable JavaScript support in the browser and their input would not be
-subject to any validation.</p>
+<p>The first benefit is that using server-side validation allows the criteria for
+input rejection to be kept secret from a client, requiring brute-force attacks
+in order to attempt to work out the acceptable range. If this were done using
+JavaScript client-side validation, the ranges could be easily determined and
+attacked more effectively. Also, if only client-side validation is used, a
+malicious client could simply disable JavaScript support in the browser and
+their input would not be subject to any validation.</p>
 </div>
 <div class="paragraph">
-<p>The other benefit comes in the handling of change. In this example, if a
-server administrator wanted to immediately change the validation ranges,
-or remove them completely, any clients who had a Webpage with the
-existing JavaScript code downloaded or cached would check the old ranges
-rather than the new.</p>
+<p>The other benefit comes in the handling of change. In this example, if a server
+administrator wanted to immediately change the validation ranges, or remove
+them completely, any clients who had a Webpage with the existing JavaScript
+code downloaded or cached would check the old ranges rather than the new.</p>
 </div>
 <div class="sect3">
 <h4 id="_graceful_fallback_2">6.2.1. Graceful Fallback</h4>
 <div class="paragraph">
 <p>In event of the XMLHttpRequest object failing to be created or disabled
-JavaScript the parameters will simply be evaluated in the same manner as
-in Klingon, posting the whole form to the server upon the user&#8217;s
-request.</p>
+JavaScript the parameters will simply be evaluated in the same manner as in
+Klingon, posting the whole form to the server upon the user&#8217;s request.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_quickly_modifying_the_output_dataset">6.3. Quickly modifying the output dataset</h3>
 <div class="paragraph">
-<p>Users frequently make mistakes. They are required in Dizzy and Klingon
-to make decisions on output, with no idea of what the output will look
-like. This problem was amplified in Dizzy, as to change the output it
-was necessary to redo a lengthy simulation. With Klingon, it was still
-necessary to for the user to navigate back and forth, losing the
-previous output in order to modify its appearance.</p>
+<p>Users frequently make mistakes. They are required in Dizzy and Klingon to make
+decisions on output, with no idea of what the output will look like. This
+problem was amplified in Dizzy, as to change the output it was necessary to
+redo a lengthy simulation. With Klingon, it was still necessary to for the user
+to navigate back and forth, losing the previous output in order to modify its
+appearance.</p>
 </div>
 <div class="paragraph">
-<p>Figure 21 shows the new
-selectbox available in Shiny to modify the chart on the fly. In this
-example, the chart is not very useful if evaluation of the differences
-between G80_RNA and G80_protein was needed, as these two values are far
-too small to be useful. The selectbox allows the user to select the
-desired axis and have the chart updated. The “Update Axis” button calls
-a JavaScript function that forms a new image source URL for the desired
-new image, downloading it in the background and updating the source for
-the image when the download has completed. This means that the user can
-now observe the graph as they decide on the new datasets and also not
-lose this chart while the new one is updating.</p>
+<p>Figure 21 shows the new selectbox available in Shiny to modify the chart on the
+fly. In this example, the chart is not very useful if evaluation of the
+differences between G80_RNA and G80_protein was needed, as these two values are
+far too small to be useful. The selectbox allows the user to select the desired
+axis and have the chart updated. The "Update Axis" button calls a JavaScript
+function that forms a new image source URL for the desired new image,
+downloading it in the background and updating the source for the image when the
+download has completed. This means that the user can now observe the graph as
+they decide on the new datasets and also not lose this chart while the new one
+is updating.</p>
 </div>
 <div id="figure-21" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/shinygraph.png" alt="shinygraph">
 </div>
-<div class="title">Figure 20. Chart generation with Shiny</div>
+<div class="title">Figure 21. Chart generation with Shiny</div>
 </div>
 <div class="paragraph">
-<p>Figure 22 displays the result of the
-update. The comparison of the two datasets is far easier now, as the
-Y-Axis scale has been adjusted dynamically.</p>
+<p>Figure 22 displays the result of the update. The comparison of the two datasets
+is far easier now, as the Y-Axis scale has been adjusted dynamically.</p>
 </div>
 <div id="figure-22" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/shinygraph2.png" alt="shinygraph2">
 </div>
-<div class="title">Figure 21. Chart update with Shiny</div>
+<div class="title">Figure 22. Chart update with Shiny</div>
 </div>
 <div class="paragraph">
-<p>Also added was the ability to export charts as SVGs, allowing the chart
-to be dynamically resized after generation and therefore viewed or
-printed at high quality at any resolution, due to the nature of vector
-graphics, something lacking in the previous PNG format. The text in an
-SVG file, such as chart axes in this case, can be searched through and
-copied. Using an SVG editor such as Inkscape, these charts can be easily
-modified, annotated or edited; difficult with a PNG file. The SVG output
-library used generated large SVGs (in the above example 44KB compared
-with a 12KB PNG), Thankfully this was not an issue as it can be
-compressed automatically by the Web server and client&#8217;s Web browser, as
-most modern browsers support gzip compression, after which the PNG is
-11KB but the SVG only 3.8KB (with default compression). The added SVG
-functionality also has many possible extensions that could not be
-currently implemented. These are explained further in <a href="#_svg">SVG</a> and <a href="#_svg_2_">SVG</a>.</p>
+<p>Also added was the ability to export charts as SVGs, allowing the chart to be
+dynamically resized after generation and therefore viewed or printed at high
+quality at any resolution, due to the nature of vector graphics, something
+lacking in the previous PNG format. The text in an SVG file, such as chart axes
+in this case, can be searched through and copied. Using an SVG editor such as
+Inkscape, these charts can be easily modified, annotated or edited; difficult
+with a PNG file. The SVG output library used generated large SVGs (in the above
+example 44KB compared with a 12KB PNG), Thankfully this was not an issue as it
+can be compressed automatically by the Web server and client&#8217;s Web browser, as
+most modern browsers support gzip compression, after which the PNG is 11KB but
+the SVG only 3.8KB (with default compression). The added SVG functionality also
+has many possible extensions that could not be currently implemented. These are
+explained further in <a href="#_svg">SVG</a> and <a href="#_svg_2_">SVG</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="_graceful_fallback_3">6.3.1. Graceful Fallback</h4>
 <div class="paragraph">
-<p>With disabled JavaScript the “Update Axis” button will simply update the
+<p>With disabled JavaScript the "Update Axis" button will simply update the
 current page, reloading everything, but also updating the image.</p>
 </div>
 </div>
@@ -1215,323 +1136,303 @@ current page, reloading everything, but also updating the image.</p>
 <div class="sect2">
 <h3 id="_save_status_without_redirection">6.4. Save status without redirection</h3>
 <div class="paragraph">
-<p>Web browsers, like any applications, are not without bugs. They are
-complex applications required to do increasing numbers of differing
-tasks, and increasing numbers concurrently. This is one of the reasons
-some Web browsers become unstable. A common problem with long-running
-user tasks using the Web browser is, on event of a crash, everything is
-lost.</p>
+<p>Web browsers, like any applications, are not without bugs. They are complex
+applications required to do increasing numbers of differing tasks, and
+increasing numbers concurrently. This is one of the reasons some Web browsers
+become unstable. A common problem with long-running user tasks using the Web
+browser is, on event of a crash, everything is lost.</p>
 </div>
 <div class="paragraph">
-<p>The previous method used in Klingon of creating and editing simulator
-files was shown to be problematic. It was necessary for a user to
-navigate away from the current page, losing focus in the file, every
-time they wanted to make a save. This naturally encourages users to not
-navigate away, and therefore, not to save. More technical users may type
-the file up in an application that allows saving first, before entering
-it into the browser, but this is not an ideal solution.</p>
+<p>The previous method used in Klingon of creating and editing simulator files was
+shown to be problematic. It was necessary for a user to navigate away from the
+current page, losing focus in the file, every time they wanted to make a save.
+This naturally encourages users to not navigate away, and therefore, not to
+save. More technical users may type the file up in an application that allows
+saving first, before entering it into the browser, but this is not an ideal
+solution.</p>
 </div>
 <div class="paragraph">
-<p>The previous sections have already shown that browsers with Ajax support
-can easily send and receive information from a server asynchronously,
-without breaking the user&#8217;s workflow. For editing simulator files Shiny
-uses JavaScript to submit the contents of the editor, using a form, in
-the background, using the XMLHttpRequest object. This form data is sent
-to the server in exactly the same format as in Klingon, but this way was
-done behind the scenes and did not require page navigation to return to
-work.</p>
+<p>The previous sections have already shown that browsers with Ajax support can
+easily send and receive information from a server asynchronously, without
+breaking the user&#8217;s workflow. For editing simulator files Shiny uses JavaScript
+to submit the contents of the editor, using a form, in the background, using
+the XMLHttpRequest object. This form data is sent to the server in exactly the
+same format as in Klingon, but this way was done behind the scenes and did not
+require page navigation to return to work.</p>
 </div>
 <div class="paragraph">
-<p>Figure 23 shows the result of
-a successful save. The file has been updated and stored on the server,
-with no need to break the user&#8217;s workflow. If the users were trusted
-even less, these updates could be made after a certain number of
+<p>Figure 23 shows the result of a successful save. The file has been updated and
+stored on the server, with no need to break the user&#8217;s workflow. If the users
+were trusted even less, these updates could be made after a certain number of
 keypresses or fixed time periods.</p>
 </div>
 <div id="figure-23" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/shinyeditor.png" alt="shinyeditor">
 </div>
-<div class="title">Figure 22. Simulator file saving in Shiny</div>
+<div class="title">Figure 23. Simulator file saving in Shiny</div>
 </div>
 <div class="sect3">
 <h4 id="_graceful_fallback_4">6.4.1. Graceful Fallback</h4>
 <div class="paragraph">
 <p>In event of the XMLHttpRequest object failing to be created or disabled
-JavaScript the file will saved in the same manner as in Klingon, posting
-a form, redirecting to another page and requiring the user to navigate
-back.</p>
+JavaScript the file will saved in the same manner as in Klingon, posting a
+form, redirecting to another page and requiring the user to navigate back.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_feedback_for_lengthy_client_server_interaction">6.5. Feedback for lengthy client/server interaction</h3>
 <div class="paragraph">
-<p>The other way of adding files to the server is by traditional HTTP
-uploading. The previous Klingon method works satisfactorily for small
-uploads, but for larger uploads or slow Internet connections, the page
-will appear to hang until the file has finished uploading, and, as with
-the Klingon&#8217;s simulation runs, there is no indication as to how long
-this will take.</p>
+<p>The other way of adding files to the server is by traditional HTTP uploading.
+The previous Klingon method works satisfactorily for small uploads, but for
+larger uploads or slow Internet connections, the page will appear to hang until
+the file has finished uploading, and, as with the Klingon&#8217;s simulation runs,
+there is no indication as to how long this will take.</p>
 </div>
 <div class="paragraph">
-<p>The Klingon backend code made use of an external module to handle file
-uploads. The latest beta of this module added the ability to associate a
-given upload with a progress listener. This was used to create an XML
-server for the upload progress. When a file is sent to the server the
-browser informs the server of the number of files being sent and the
-size of each file. The progress listener can then use this information,
-combined with the size of file already uploaded, to calculate the
-percentage through the upload. An XMLHttpRequest object is used with
-callback objects to asynchronously poll the XML server for the file
+<p>The Klingon backend code made use of an external module to handle file uploads.
+The latest beta of this module added the ability to associate a given upload
+with a progress listener. This was used to create an XML server for the upload
+progress. When a file is sent to the server the browser informs the server of
+the number of files being sent and the size of each file. The progress listener
+can then use this information, combined with the size of file already uploaded,
+to calculate the percentage through the upload. An XMLHttpRequest object is
+used with callback objects to asynchronously poll the XML server for the file
 upload status, and display a progress-bar on the page while the file is
-uploaded. A example of an upload in progress can be seen in Figure
-24.</p>
+uploaded. A example of an upload in progress can be seen in Figure 24.</p>
 </div>
 <div id="figure-24" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/shinyupload.png" alt="shinyupload">
 </div>
-<div class="title">Figure 23. File upload in Shiny</div>
+<div class="title">Figure 24. File upload in Shiny</div>
 </div>
 <div class="paragraph">
 <p>This method is less successful than the simulation run progress-bar, as
-uploading the file will make maximum use of either client or server
-bandwidth, so polling the progress from the server is far slower than
-with the simulation progress-bar, as the connection is being saturated.
-However, this method still allows a user to more easily estimate how
-long an upload will take and can be useful for large uploads.</p>
+uploading the file will make maximum use of either client or server bandwidth,
+so polling the progress from the server is far slower than with the simulation
+progress-bar, as the connection is being saturated. However, this method still
+allows a user to more easily estimate how long an upload will take and can be
+useful for large uploads.</p>
 </div>
 <div class="sect3">
 <h4 id="_graceful_fallback_5">6.5.1. Graceful Fallback</h4>
 <div class="paragraph">
 <p>In event of the XMLHttpRequest object failing to be created or disabled
-JavaScript the progress-bar will simply not be created and the client
-will see the same as with Klingon: the page appearing to be busy until
-the upload completes.</p>
+JavaScript the progress-bar will simply not be created and the client will see
+the same as with Klingon: the page appearing to be busy until the upload
+completes.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_input_validation_based_on_client_side_data">6.6. Input validation based on client-side data</h3>
 <div class="paragraph">
-<p>Sometimes input validation on the client-side is actually more secure
-and sensible than using a server-side method. For example, when checking
-password data over a non-secure link, it is sensible to not send the
-password in plain-text over an untrusted network. Also, for basic checks
-it may be a waste of resources relying on the server to validate data,
-for example checking the similarity of two strings.</p>
+<p>Sometimes input validation on the client-side is actually more secure and
+sensible than using a server-side method. For example, when checking password
+data over a non-secure link, it is sensible to not send the password in
+plain-text over an untrusted network. Also, for basic checks it may be a waste
+of resources relying on the server to validate data, for example checking the
+similarity of two strings.</p>
 </div>
 <div class="paragraph">
-<p>An example of this is the password update page. The user should be
-warned if the old and new passwords match or if the new password and the
-confirmation do not match. This was handled easily and efficiently using
-JavaScript. On every change of a relevant input box a JavaScript
-function is called to check the validity of the input and, if necessary,
-modify the DOM to insert warning text. An example of this can be seen in
-Figure 25.</p>
+<p>An example of this is the password update page. The user should be warned if
+the old and new passwords match or if the new password and the confirmation do
+not match. This was handled easily and efficiently using JavaScript. On every
+change of a relevant input box a JavaScript function is called to check the
+validity of the input and, if necessary, modify the DOM to insert warning text.
+An example of this can be seen in Figure 25.</p>
 </div>
 <div id="figure-25" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/shinypassword.png" alt="shinypassword">
 </div>
-<div class="title">Figure 24. Password validation in Shiny</div>
+<div class="title">Figure 25. Password validation in Shiny</div>
 </div>
 <div class="paragraph">
 <p>With aid of a BSD-licensed password library, JavaScript was also used to
-perform slightly more advanced client-side tasks. A simple password
-strength meter was added, with a graphical progress-bar, to allow the
-user to see how strong the new password is, before they decide to update
-the details on the server. The password strength bar and form can be
-seen in Figure 26.</p>
+perform slightly more advanced client-side tasks. A simple password strength
+meter was added, with a graphical progress-bar, to allow the user to see how
+strong the new password is, before they decide to update the details on the
+server. The password strength bar and form can be seen in Figure 26.</p>
 </div>
 <div id="figure-26" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/shinypassword2.png" alt="shinypassword2">
 </div>
-<div class="title">Figure 25. Password strength validation in Shiny</div>
+<div class="title">Figure 26. Password strength validation in Shiny</div>
 </div>
 <div class="sect3">
 <h4 id="_graceful_fallback_6">6.6.1. Graceful Fallback</h4>
 <div class="paragraph">
-<p>With no JavaScript the client-side input validation is impossible so the
-user will not see any effects from any of the otherwise triggering
-criteria. The “Update Details” page will perform identically to Klingon.</p>
+<p>With no JavaScript the client-side input validation is impossible so the user
+will not see any effects from any of the otherwise triggering criteria. The
+"Update Details" page will perform identically to Klingon.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_problems_encountered">6.7. Problems Encountered</h3>
 <div class="paragraph">
-<p>As with any program, some problems were encountered in the creation of
-Shiny. However, some of these problems are not specific to Shiny itself,
-and may be prevalent with the development of Ajax applications.</p>
+<p>As with any program, some problems were encountered in the creation of Shiny.
+However, some of these problems are not specific to Shiny itself, and may be
+prevalent with the development of Ajax applications.</p>
 </div>
 <div class="sect3">
 <h4 id="_design_of_previous_system">6.7.1. Design of previous system</h4>
 <div class="paragraph">
-<p>The architecture of Klingon was carefully thought out and planned to
-allow proper, secure access to the needed underlying elements of the
-application using JavaBeans, reducing the need for the JSP to worry
-about the logic occurring in the chemical simulator, instead focusing on
-the UI and I/O with the user.</p>
+<p>The architecture of Klingon was carefully thought out and planned to allow
+proper, secure access to the needed underlying elements of the application
+using JavaBeans, reducing the need for the JSP to worry about the logic
+occurring in the chemical simulator, instead focusing on the UI and I/O with
+the user.</p>
 </div>
 <div class="paragraph">
-<p>A problem that arrives early on with developing an Ajax application, and
-in this case took a large proportion of the development time is
-re-engineering the existing system to allow the new Ajax elements of the
-Web application to present meaningful data to the client. The simulation
-run&#8217;s progress-bar, specifically required information that was
-previously only available in the lowest levels of the application,
-communicating directly with the logic of the chemical simulator. This
-meant that with the multi-tier architecture in place it became very
-difficult to retrieve this information cleanly for use in the browser.
-This is not a criticism of the previous code in Klingon; the application
-was designed in an efficient and secure structure, but these very
-strengths actually worked against the implementation of the Ajax
-feedback. Fundamentally Ajax relies on the user being kept up-to-date
-with any actions, and allowing the user to incrementally access the
-backend logic, rather than simply submitting a request for a lengthy
-operation and receiving a result, as with a standard Web application. As
-mentioned in “An Architectural Style for Ajax” &lt;<a href="#6">[6]</a>&gt;,
-The approach to writing Ajax Web applications is more similar to writing
-a GUI desktop application with the added difficulties of multi-user
-access, security and distributed processing that occur from writing a
-Web application. Fundamentally, the strengths from both applications can
-be combined, but in order to do so an Ajax software engineer is usually
-also required to battle with the difficulties of both.</p>
+<p>A problem that arrives early on with developing an Ajax application, and in
+this case took a large proportion of the development time is re-engineering the
+existing system to allow the new Ajax elements of the Web application to
+present meaningful data to the client. The simulation run&#8217;s progress-bar,
+specifically required information that was previously only available in the
+lowest levels of the application, communicating directly with the logic of the
+chemical simulator. This meant that with the multi-tier architecture in place
+it became very difficult to retrieve this information cleanly for use in the
+browser. This is not a criticism of the previous code in Klingon; the
+application was designed in an efficient and secure structure, but these very
+strengths actually worked against the implementation of the Ajax feedback.
+Fundamentally Ajax relies on the user being kept up-to-date with any actions,
+and allowing the user to incrementally access the backend logic, rather than
+simply submitting a request for a lengthy operation and receiving a result, as
+with a standard Web application. As mentioned in "An Architectural Style for
+Ajax" &lt;<a href="#6">[6]</a>&gt;, The approach to writing Ajax Web applications is more similar to
+writing a GUI desktop application with the added difficulties of multi-user
+access, security and distributed processing that occur from writing a Web
+application. Fundamentally, the strengths from both applications can be
+combined, but in order to do so an Ajax software engineer is usually also
+required to battle with the difficulties of both.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_javascript">6.7.2. JavaScript</h4>
 <div class="paragraph">
-<p>Ajax applications rely heavily on JavaScript for the development of the
-UI, the logic and the asynchronous communication with the server.
-However, using JavaScript brings new problems to application
-development.</p>
+<p>Ajax applications rely heavily on JavaScript for the development of the UI, the
+logic and the asynchronous communication with the server. However, using
+JavaScript brings new problems to application development.</p>
 </div>
 <div class="sect4">
 <h5 id="_cross_browser_compatibility">Cross-browser compatibility</h5>
 <div class="paragraph">
-<p>One of the main problems with all Web programming is that of
-cross-browser compatibility. Each of the main browser rendering engines
-(Opera, Webkit/KHTML, Gecko, Internet Explorer) have different quirks,
-their own unique features and bugs. In the case of Microsoft Internet
-Explorer, pages that render in other browsers perfectly frequently fail
-in Internet Explorer. JavaScript, sadly, is no different. The DOM is
-slightly different between browser implementations and, again, Internet
-Explorer is the main contender for problems, even with the latest
-version (Internet Explorer 7.0) failing to meet the DOM specification
-fully. Also, as mentioned earlier, Ajax makes use of CSS manipulation to
-style the page, and with the two main browsers (Mozilla Firefox and
-Microsoft Internet Explorer) failing to fully meet the CSS2
-specification more difficulties arise.</p>
+<p>One of the main problems with all Web programming is that of cross-browser
+compatibility. Each of the main browser rendering engines (Opera, Webkit/KHTML,
+Gecko, Internet Explorer) have different quirks, their own unique features and
+bugs. In the case of Microsoft Internet Explorer, pages that render in other
+browsers perfectly frequently fail in Internet Explorer. JavaScript, sadly, is
+no different. The DOM is slightly different between browser implementations
+and, again, Internet Explorer is the main contender for problems, even with the
+latest version (Internet Explorer 7.0) failing to meet the DOM specification
+fully. Also, as mentioned earlier, Ajax makes use of CSS manipulation to style
+the page, and with the two main browsers (Mozilla Firefox and Microsoft
+Internet Explorer) failing to fully meet the CSS2 specification more
+difficulties arise.</p>
 </div>
 <div class="paragraph">
-<p>Essentially, a truly cross platform Ajax application must be rigorously
-tested across all the main browsers and must try to detect the current
-running browser and use different code-paths depending on that browser&#8217;s
-quirks and bugs. For this reason, in Shiny, browser compatibility was only
-checked with the latest stable versions of Mozilla Firefox (2.0.0.2) and
-KDE&#8217;s Konqueror (3.5.6) available at the time of writing.</p>
+<p>Essentially, a truly cross platform Ajax application must be rigorously tested
+across all the main browsers and must try to detect the current running browser
+and use different code-paths depending on that browser&#8217;s quirks and bugs. For
+this reason, in Shiny, browser compatibility was only checked with the latest
+stable versions of Mozilla Firefox (2.0.0.2) and KDE&#8217;s Konqueror (3.5.6)
+available at the time of writing.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_debugging">Debugging</h5>
 <div class="paragraph">
-<p>As has been established, JavaScript code may need to be modified to work
-across different browsers. When trying to implement and test this code,
-where unexpected behaviour is found, it can be very difficult to debug.
-This is partly due to the nature of JavaScript. JavaScript is a
-weakly-typed interpreted language, and for programmers coming from
-strictly-typed or even compiled language backgrounds this can be a
-difficult transition. When JavaScript code fails in a standard browser,
-by default, rather than returning an error to the user, it simply stops
-executing. For example, a common stumbling block is trying to access a
-method in a DOM object that does not exist. This will simply cause the
-script to stop executing at this attempted method call. Mozilla Firefox
-and Microsoft Internet Explorer both have debuggers available, but these
-are not shipped with the default install of the application and are
-still in continual development.</p>
+<p>As has been established, JavaScript code may need to be modified to work across
+different browsers. When trying to implement and test this code, where
+unexpected behaviour is found, it can be very difficult to debug. This is
+partly due to the nature of JavaScript. JavaScript is a weakly-typed
+interpreted language, and for programmers coming from strictly-typed or even
+compiled language backgrounds this can be a difficult transition. When
+JavaScript code fails in a standard browser, by default, rather than returning
+an error to the user, it simply stops executing. For example, a common
+stumbling block is trying to access a method in a DOM object that does not
+exist. This will simply cause the script to stop executing at this attempted
+method call. Mozilla Firefox and Microsoft Internet Explorer both have
+debuggers available, but these are not shipped with the default install of the
+application and are still in continual development.</p>
 </div>
 <div class="paragraph">
-<p>Another minor “gotcha” in JavaScript debugging is that most browsers
-will, like any Web content, attempt to cache JavaScript. This means
-forcing the browser to not use its cache or forcefully flush it every
-time a script is modified. This is easily done during development, but
-with large-scale Ajax applications it can be hard to ensure all clients
-have the latest version of the JavaScript logic needed for the
-application.</p>
+<p>Another minor "gotcha" in JavaScript debugging is that most browsers will, like
+any Web content, attempt to cache JavaScript. This means forcing the browser to
+not use its cache or forcefully flush it every time a script is modified. This
+is easily done during development, but with large-scale Ajax applications it
+can be hard to ensure all clients have the latest version of the JavaScript
+logic needed for the application.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_speed">Speed</h5>
 <div class="paragraph">
-<p>This is a minor problem but being a interpreted language the source code
-for a JavaScript application must be fully downloaded before its
-execution, and executed dynamically inside the browser. As a result
-JavaScript is far slower than compiled languages, and logic in
-JavaScript will generally be far slower than logic executed on the
-server itself. Also, for large JavaScript applications the long download
-time can cause a noticeable delay in the execution of an application.</p>
+<p>This is a minor problem but being a interpreted language the source code for a
+JavaScript application must be fully downloaded before its execution, and
+executed dynamically inside the browser. As a result JavaScript is far slower
+than compiled languages, and logic in JavaScript will generally be far slower
+than logic executed on the server itself. Also, for large JavaScript
+applications the long download time can cause a noticeable delay in the
+execution of an application.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_security">Security</h5>
 <div class="paragraph">
-<p>JavaScript applications are server-provided applications to a client,
-and are transparently run without the users' request (by default) on
-accessing a page. As Shiny has demonstrated, JavaScript can be used to
-send and receive files from a server, connect to external URLs and
-perform large calculations that may cause the browser to lock up. With
-modern browsers it can be difficult to arbitrarily access files from
-disk without the user&#8217;s consent, but cookies, for example, may store
-confidential information and could be scanned, processed and uploaded to
-a server if containing any information useful to the malicious provider
-of the script. Cross-site scripting (XSS) is a broad term used to
+<p>JavaScript applications are server-provided applications to a client, and are
+transparently run without the users' request (by default) on accessing a page.
+As Shiny has demonstrated, JavaScript can be used to send and receive files
+from a server, connect to external URLs and perform large calculations that may
+cause the browser to lock up. With modern browsers it can be difficult to
+arbitrarily access files from disk without the user&#8217;s consent, but cookies, for
+example, may store confidential information and could be scanned, processed and
+uploaded to a server if containing any information useful to the malicious
+provider of the script. Cross-site scripting (XSS) is a broad term used to
 describe some of these attacks, allowing an attacker to do anything from
-bypassing the browser&#8217;s sandbox, accessing local files in Internet
-Explorer, to stealing passwords stored in browser session cookies.</p>
+bypassing the browser&#8217;s sandbox, accessing local files in Internet Explorer, to
+stealing passwords stored in browser session cookies.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_svg">6.7.3. SVG</h4>
 <div class="paragraph">
-<p>SVG is a language for describing 2D graphics in XML. Their primary use
-is in vector graphics, but they can also embed raster graphics and text.
-These graphics can also be interactive and scriptable, much like
-traditional XHTML and can be embedded in browsers. They may be slightly
-larger than raster equivalents, but when using gzip compression,
-commonly used by both servers and browsers, they are almost always
-smaller. SVG is an open format and the specification maintained by the
-W3C.</p>
+<p>SVG is a language for describing 2D graphics in XML. Their primary use is in
+vector graphics, but they can also embed raster graphics and text. These
+graphics can also be interactive and scriptable, much like traditional XHTML
+and can be embedded in browsers. They may be slightly larger than raster
+equivalents, but when using gzip compression, commonly used by both servers and
+browsers, they are almost always smaller. SVG is an open format and the
+specification maintained by the W3C.</p>
 </div>
 <div class="paragraph">
-<p>SVGs are promising contenders in the future development of Ajax
-applications. So much of Ajax relies on XML and JavaScript technologies,
-both of which can be easily utilised both within and dealing with SVGs.
-SVGs can contain JavaScript within the file, animation, hyperlinks and
-are valid parseable XML.</p>
+<p>SVGs are promising contenders in the future development of Ajax applications.
+So much of Ajax relies on XML and JavaScript technologies, both of which can be
+easily utilised both within and dealing with SVGs. SVGs can contain JavaScript
+within the file, animation, hyperlinks and are valid parseable XML.</p>
 </div>
 <div class="paragraph">
-<p>Shiny has basic SVG support, allowing the export of charts to SVG
-format. However, this was intended to be more fully-formed, but sadly
-some of the current problems with SVG hampered the efforts made.
-Currently the main problem with SVG is the simple lack of complete
-support across browsers. Most of the main browsers now support SVG in
-some form, but none completely implement the SVG Full 1.2 specification,
-the W3Cs most comprehensive SVG specification. Sadly this means that
-using SVG in Ajax is currently fairly buggy and difficult. Potentially
-the goal for SVGs in this project was to allow each chart axis to be
-downloaded dynamically from the server when needed, however, this would
-have required more full support for JavaScript inside the SVG format,
-not seemingly possible across the browsers used. This technology is
-still in its infancy and with the growing popularity of Ajax
-applications, SVG could well see its place inside Ajax, allowing Ajax to
-be a serious competitor for applications currently implemented as Adobe
-Flash or applets, with the added animation and graphical support SVG
-provides.</p>
+<p>Shiny has basic SVG support, allowing the export of charts to SVG format.
+However, this was intended to be more fully-formed, but sadly some of the
+current problems with SVG hampered the efforts made. Currently the main problem
+with SVG is the simple lack of complete support across browsers. Most of the
+main browsers now support SVG in some form, but none completely implement the
+SVG Full 1.2 specification, the W3Cs most comprehensive SVG specification.
+Sadly this means that using SVG in Ajax is currently fairly buggy and
+difficult. Potentially the goal for SVGs in this project was to allow each
+chart axis to be downloaded dynamically from the server when needed, however,
+this would have required more full support for JavaScript inside the SVG
+format, not seemingly possible across the browsers used. This technology is
+still in its infancy and with the growing popularity of Ajax applications, SVG
+could well see its place inside Ajax, allowing Ajax to be a serious competitor
+for applications currently implemented as Adobe Flash or applets, with the
+added animation and graphical support SVG provides.</p>
 </div>
 </div>
 </div>
@@ -1541,200 +1442,185 @@ provides.</p>
 <h2 id="_evaluation">7. Evaluation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#_theory_">Theory</a> set an explicit hypothesis to test, and four
-criteria used to evaluate its validity.</p>
+<p><a href="#_theory_">Theory</a> set an explicit hypothesis to test, and four criteria used
+to evaluate its validity.</p>
 </div>
 <div class="sect2">
 <h3 id="_learnability_2">7.1. Learnability</h3>
 <div class="paragraph">
-<p>For an application to be easily learnable it should seem to be
-deterministic, so that every user action has an obvious, expected and
-consistent response. For Shiny, as the application is being run in a Web
-browser, the expected response is for the application to behave in
-similar manner as other Web applications.</p>
+<p>For an application to be easily learnable it should seem to be deterministic,
+so that every user action has an obvious, expected and consistent response. For
+Shiny, as the application is being run in a Web browser, the expected response
+is for the application to behave in similar manner as other Web applications.</p>
 </div>
 <div class="paragraph">
-<p>The newly introduced feedback for long-running tasks would not be
-familiar to a user who has never used an Ajax application, but as this
-merely presents information on progress rather than information that the
-user needs to process this does not detract from the learnability of the
-application. Classic Web applications don&#8217;t make use of extensive
-long-running server-side processing, so the progress indication could
-provide indication that the application hasn&#8217;t crashed or “broken”. The
-presentation of the progress-bars naturally leads to comparison between
-those of GUI desktop applications performing long-running operations,
-and a user who had downloaded files from the Internet or copied files to
-removable media would be familiar with the concept of progress-bars.</p>
+<p>The newly introduced feedback for long-running tasks would not be familiar to a
+user who has never used an Ajax application, but as this merely presents
+information on progress rather than information that the user needs to process
+this does not detract from the learnability of the application. Classic Web
+applications don&#8217;t make use of extensive long-running server-side processing,
+so the progress indication could provide indication that the application hasn&#8217;t
+crashed or "broken". The presentation of the progress-bars naturally leads to
+comparison between those of GUI desktop applications performing long-running
+operations, and a user who had downloaded files from the Internet or copied
+files to removable media would be familiar with the concept of progress-bars.</p>
 </div>
 <div class="paragraph">
-<p>The input validation may be slightly confusing to a new user as the
-error messages may seem to appear and disappear without the user
-noticing, causing confusion when they later encounter them. Classic Web
-and GUI desktop applications tend to respond to errors in forms when the
-form is completed rather than while the form is in progress. This may
-make an Ajax application slightly harder to learn, however, these
-provide far great response feedback than the previous methods used, and
-the error generation is predictable and deterministic, so after a few
-errors the user will quickly realise the difference with this type of
-application.</p>
+<p>The input validation may be slightly confusing to a new user as the error
+messages may seem to appear and disappear without the user noticing, causing
+confusion when they later encounter them. Classic Web and GUI desktop
+applications tend to respond to errors in forms when the form is completed
+rather than while the form is in progress. This may make an Ajax application
+slightly harder to learn, however, these provide far great response feedback
+than the previous methods used, and the error generation is predictable and
+deterministic, so after a few errors the user will quickly realise the
+difference with this type of application.</p>
 </div>
 <div class="paragraph">
-<p>The modification of on-screen datasets (in this case, charts) without
-page reloading is also a novel concept to users experienced only with
-classic Web applications. However, this is used constantly in GUI
-desktop applications, so it may be slightly unexpected at first but
-should not break the flow of the application or the work. This applies
-equally with the saving of status without navigation (in this case the
-contents of a file). Were there no feedback on the operation the user
-may become confused as to why the action they took has not caused the
-traditional click-load-newpage cycle expected in a browser, but a status
-message is updated, informing the user of their last action&#8217;s result and
+<p>The modification of on-screen datasets (in this case, charts) without page
+reloading is also a novel concept to users experienced only with classic Web
+applications. However, this is used constantly in GUI desktop applications, so
+it may be slightly unexpected at first but should not break the flow of the
+application or the work. This applies equally with the saving of status without
+navigation (in this case the contents of a file). Were there no feedback on the
+operation the user may become confused as to why the action they took has not
+caused the traditional click-load-newpage cycle expected in a browser, but a
+status message is updated, informing the user of their last action&#8217;s result and
 success.</p>
 </div>
 <div class="paragraph">
-<p>Ajax applications are becoming more commonplace, with sites like
-YouTube, Flickr, Facebook and Google Maps used regularly by average Web
-users. To a user unfamiliar with these applications the instant response
-and animated feedback may be initially confusing, but as the method of
-input is still the same as classic Web applications this confusion will
-rapidly pass, and the new Ajax applications provide more rapid feedback
-on user input and therefore a faster interface.</p>
+<p>Ajax applications are becoming more commonplace, with sites like YouTube,
+Flickr, Facebook and Google Maps used regularly by average Web users. To a user
+unfamiliar with these applications the instant response and animated feedback
+may be initially confusing, but as the method of input is still the same as
+classic Web applications this confusion will rapidly pass, and the new Ajax
+applications provide more rapid feedback on user input and therefore a faster
+interface.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_flexibility_2">7.2. Flexibility</h3>
 <div class="paragraph">
-<p>A flexible application should allow the automation of routine tasks,
-support for simultaneous tasks and give the user control of the task
-execution.</p>
+<p>A flexible application should allow the automation of routine tasks, support
+for simultaneous tasks and give the user control of the task execution.</p>
 </div>
 <div class="paragraph">
-<p>The progress-bar introduced in Shiny allows the user to perform other
-tasks, such as editing files, whilst keeping up to date with the
-progress of the current simulation. It also allows a user to stop a
-current run. In addition, throughout the application there is automation
-of tasks such as repetitive form submission or moving back and forward
-to perform input validation, change a dataset or submit some data to the
-server. This allows the user&#8217;s actions to be preempted, providing
-information in less time than it would take them to request it
-traditionally. However, a problem with this method is that the user is
-not in complete control of task execution, as many of the input
-validation operations occur without any direct request from the user,
-merely on input.</p>
+<p>The progress-bar introduced in Shiny allows the user to perform other tasks,
+such as editing files, whilst keeping up to date with the progress of the
+current simulation. It also allows a user to stop a current run. In addition,
+throughout the application there is automation of tasks such as repetitive form
+submission or moving back and forward to perform input validation, change a
+dataset or submit some data to the server. This allows the user&#8217;s actions to be
+preempted, providing information in less time than it would take them to
+request it traditionally. However, a problem with this method is that the user
+is not in complete control of task execution, as many of the input validation
+operations occur without any direct request from the user, merely on input.</p>
 </div>
 <div class="paragraph">
-<p>Most Ajax applications are similar in this regard, second-guessing the
-users current task to provide shortcuts to its completion. In Shiny, due
-to the simplistic and short nature of tasks, this works well as there is
-only usually one path the user can take to complete an action but other
-applications may result in a user having to fight with the interface in
-order to perform a task in a way that was not expected by the designers
-of the application. In Shiny the interface is not made customisable to
-the user, but applications such as the Google Customised Home and Google
-Maps use Ajax technologies to provide interface customisation, as can be
-seen in Figure 27.</p>
+<p>Most Ajax applications are similar in this regard, second-guessing the users
+current task to provide shortcuts to its completion. In Shiny, due to the
+simplistic and short nature of tasks, this works well as there is only usually
+one path the user can take to complete an action but other applications may
+result in a user having to fight with the interface in order to perform a task
+in a way that was not expected by the designers of the application. In Shiny
+the interface is not made customisable to the user, but applications such as
+the Google Customised Home and Google Maps use Ajax technologies to provide
+interface customisation, as can be seen in Figure 27.</p>
 </div>
 <div id="figure-27" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/googleig.png" alt="googleig">
 </div>
-<div class="title">Figure 26. Moving an object in Google Customised Homepage</div>
+<div class="title">Figure 27. Moving an object in Google Customised Homepage</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_robustness_2">7.3. Robustness</h3>
 <div class="paragraph">
-<p>An application&#8217;s robustness can be shown through its indication of its
-past, present and possible future states, the ability to undo errors,
-responsiveness and providing sufficient functionality to conform to user
-tasks.</p>
+<p>An application&#8217;s robustness can be shown through its indication of its past,
+present and possible future states, the ability to undo errors, responsiveness
+and providing sufficient functionality to conform to user tasks.</p>
 </div>
 <div class="paragraph">
-<p>Moving a GUI desktop application to a Web browser automatically gives it
-a state-based architecture, allowing navigation between these states and
-a history indicating the user&#8217;s movement through these states. Also,
-with classic Web applications, this allows simple errors such as a
-misdirected click to be easily remedied: simply click the “Back” button.
-However, with Ajax applications this becomes more difficult. This was
-highlighted earlier, instead referring to applets, in “Navigating the
-Applet-Browser divide” &lt;<a href="#9">[9]</a>&gt; and “Ajax: How to Handle
-Bookmarks and Back Buttons” &lt;<a href="#8">[8]</a>&gt;. Users of Web
-applications instinctively press the “Back” button to try and undo an
-action or return backwards in a process. Ajax applications rely heavily
-on JavaScript running on each page, manually updating the DOM, and this
-information is not stored in the browsers history stack, meaning that
-moving backwards through the history a user of a Web application may not
-see what they were expecting. In Shiny this is relatively minor, and
-only clicking back to progress-bar pages may present some confusion, as
-the progress-bars simply do not appear, or appear to be not progressing,
-the latter should not be confusing to the user as the run has already
-been visibly completed.</p>
+<p>Moving a GUI desktop application to a Web browser automatically gives it a
+state-based architecture, allowing navigation between these states and a
+history indicating the user&#8217;s movement through these states. Also, with classic
+Web applications, this allows simple errors such as a misdirected click to be
+easily remedied: simply click the "Back" button. However, with Ajax
+applications this becomes more difficult. This was highlighted earlier, instead
+referring to applets, in "Navigating the Applet-Browser divide" &lt;<a href="#9">[9]</a>&gt; and
+"Ajax: How to Handle Bookmarks and Back Buttons" &lt;<a href="#8">[8]</a>&gt;. Users of Web
+applications instinctively press the "Back" button to try and undo an action or
+return backwards in a process. Ajax applications rely heavily on JavaScript
+running on each page, manually updating the DOM, and this information is not
+stored in the browsers history stack, meaning that moving backwards through the
+history a user of a Web application may not see what they were expecting. In
+Shiny this is relatively minor, and only clicking back to progress-bar pages
+may present some confusion, as the progress-bars simply do not appear, or
+appear to be not progressing, the latter should not be confusing to the user as
+the run has already been visibly completed.</p>
 </div>
 <div class="paragraph">
-<p>With larger, more dynamic Ajax applications such as GMail, this presents
-more of a problem. For example, once logged in to a GMail account, a
-user would find themselves at the “Inbox”. If they decide to navigate to
-the “All Mail” folder they simply click on the link on the navigation
-bar. However, as this is an Ajax application this new folder is loaded
-dynamically using Ajax, so the address bar does not change. If the user
-then decides to navigate backwards to the “Inbox”, they may
-instinctively press the “Back” button. With limited testing it was seen
-that this did not always return to the “Inbox” sometimes returning to
-the login screen and sometimes even “breaking” the application,
-returning the confusing error seen in Figure
-28. In this strange situation, clicking the
-“Forward” button again results in the same error, with the only way to
-return to the “Inbox” again being to keep pressing the “Back” button
+<p>With larger, more dynamic Ajax applications such as GMail, this presents more
+of a problem. For example, once logged in to a GMail account, a user would find
+themselves at the "Inbox". If they decide to navigate to the "All Mail" folder
+they simply click on the link on the navigation bar. However, as this is an
+Ajax application this new folder is loaded dynamically using Ajax, so the
+address bar does not change. If the user then decides to navigate backwards to
+the "Inbox", they may instinctively press the "Back" button. With limited
+testing it was seen that this did not always return to the "Inbox" sometimes
+returning to the login screen and sometimes even "breaking" the application,
+returning the confusing error seen in Figure 28. In this strange situation,
+clicking the "Forward" button again results in the same error, with the only
+way to return to the "Inbox" again being to keep pressing the "Back" button
 until the login screen is seen and logging in once more.</p>
 </div>
 <div id="figure-28" class="imageblock">
 <div class="content">
 <img src="/images/dizzy/gmail.png" alt="gmail">
 </div>
-<div class="title">Figure 27. Going back with GMail</div>
+<div class="title">Figure 28. Going back with GMail</div>
 </div>
 <div class="paragraph">
-<p>As mentioned in the last chapter, Ajax solutions tend to use lots of
-small requests for data, rather than re-requesting the page. This allows
-Ajax applications to provide more responsive interfaces, both to user
-input and when changing datasets is required, as only the new data need
-be transferred. A possible criticism is that this requires bandwidth,
-but the total bandwidth used is far less when using an Ajax method than
-a classic Web application.</p>
+<p>As mentioned in the last chapter, Ajax solutions tend to use lots of small
+requests for data, rather than re-requesting the page. This allows Ajax
+applications to provide more responsive interfaces, both to user input and when
+changing datasets is required, as only the new data need be transferred. A
+possible criticism is that this requires bandwidth, but the total bandwidth
+used is far less when using an Ajax method than a classic Web application.</p>
 </div>
 <div class="paragraph">
-<p>Providing the needed functionality in an Ajax application is simply a
-matter of implementation. It may require more to implement, but
-ultimately the sky is the limit as far as Ajax is concerned, as
-interfaces can be created that are far more dynamic than a classic Web
-application and may equal the usability of a GUI desktop application.</p>
+<p>Providing the needed functionality in an Ajax application is simply a matter of
+implementation. It may require more to implement, but ultimately the sky is the
+limit as far as Ajax is concerned, as interfaces can be created that are far
+more dynamic than a classic Web application and may equal the usability of a
+GUI desktop application.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_time_affordances_2">7.4. Time Affordances</h3>
 <div class="paragraph">
-<p>Evaluating Time Affordances in an application requires examining
-possible and forced delays and reassurance on long running operations
-completion. The reassurance on long task completion have already been
-covered in <a href="#_learnability">Learnability</a>, and delays and
-application speed in <a href="#_robustness">Robustness</a>.</p>
+<p>Evaluating Time Affordances in an application requires examining possible and
+forced delays and reassurance on long running operations completion. The
+reassurance on long task completion have already been covered in
+<a href="#_learnability">Learnability</a>, and delays and application speed in
+<a href="#_robustness">Robustness</a>.</p>
 </div>
 <div class="paragraph">
-<p>Essentially, Ajax Web applications allow the creator to provide to the
-user a method of input equally as quick as a GUI desktop application and
-provide faster data transfer, due to the lighter overhead of using XML
-to transfer data than an HTML page with all the other content that is
-needed. This essentially allows the browser to not only cache the images
-and stylesheets for a page but actually some of the other content (such
-as navigation bars) by simply modifying the current page rather than
-reloading it in its entirety. Also provided is the ability for some
-processing of data and input validation to be performed on the client
-rather than server-side, further reducing the latency in making requests
-and bringing the speed of the application closer still to that of a GUI
-desktop application, whilst still providing the benefits of a Web
+<p>Essentially, Ajax Web applications allow the creator to provide to the user a
+method of input equally as quick as a GUI desktop application and provide
+faster data transfer, due to the lighter overhead of using XML to transfer data
+than an HTML page with all the other content that is needed. This essentially
+allows the browser to not only cache the images and stylesheets for a page but
+actually some of the other content (such as navigation bars) by simply
+modifying the current page rather than reloading it in its entirety. Also
+provided is the ability for some processing of data and input validation to be
+performed on the client rather than server-side, further reducing the latency
+in making requests and bringing the speed of the application closer still to
+that of a GUI desktop application, whilst still providing the benefits of a Web
 application. With an application such as Shiny, with a powerful server
-performing the simulations, this may be far faster than using Dizzy on
-the local machine.</p>
+performing the simulations, this may be far faster than using Dizzy on the
+local machine.</p>
 </div>
 </div>
 </div>
@@ -1743,52 +1629,49 @@ the local machine.</p>
 <h2 id="_further_work">8. Further Work</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Some areas of this project have been limited by time, expertise or
-technical infrastructure. Increased resources in any of these areas
-could be used to perform further work related to this project.</p>
+<p>Some areas of this project have been limited by time, expertise or technical
+infrastructure. Increased resources in any of these areas could be used to
+perform further work related to this project.</p>
 </div>
 <div class="sect2">
 <h3 id="_svg_2">8.1. SVG</h3>
 <div class="paragraph">
-<p>As previously mentioned, SVG is a vector graphic format that can be
-embedded in Webpages. SVGs can potentially be used to create
-event-driven graphics and animations, allow dynamic retrieval, scripting
-and animation. It is an open standard, and the tools to create, view and
-edit SVGs are freely available, with both open-source and proprietary
-solutions.</p>
+<p>As previously mentioned, SVG is a vector graphic format that can be embedded in
+Webpages. SVGs can potentially be used to create event-driven graphics and
+animations, allow dynamic retrieval, scripting and animation. It is an open
+standard, and the tools to create, view and edit SVGs are freely available,
+with both open-source and proprietary solutions.</p>
 </div>
 <div class="paragraph">
-<p>The current problem with SVG is the lack of browser support. No browser
-fully meets the latest specification and the most commonly used browser
-(Microsoft Internet Explorer) has no native SVG support. As a result,
-this technology does not have much usage on the Web, with most SVGs used
-for vector art offline, such as icons or diagrams.</p>
+<p>The current problem with SVG is the lack of browser support. No browser fully
+meets the latest specification and the most commonly used browser (Microsoft
+Internet Explorer) has no native SVG support. As a result, this technology does
+not have much usage on the Web, with most SVGs used for vector art offline,
+such as icons or diagrams.</p>
 </div>
 <div class="paragraph">
 <p>With increased support and compatibility between browsers, SVG could
-potentially allow for even more rich interfaces than Ajax alone allows,
-and Ajax can be used within SVGs for dynamic content retrieval.
-Furthermore, SVG, with its ability to be scripted and animated, could
-feasibly topple Adobe Flash as a tool for creating dynamic, animated
-Websites while allowing pages to be individually bookmarked and give a
-more browser-native feel to dynamic applications, common criticisms of
-Websites using Adobe Flash.</p>
+potentially allow for even more rich interfaces than Ajax alone allows, and
+Ajax can be used within SVGs for dynamic content retrieval. Furthermore, SVG,
+with its ability to be scripted and animated, could feasibly topple Adobe Flash
+as a tool for creating dynamic, animated Websites while allowing pages to be
+individually bookmarked and give a more browser-native feel to dynamic
+applications, common criticisms of Websites using Adobe Flash.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_more_vigorous_usability_testing">8.2. More vigorous usability testing</h3>
 <div class="paragraph">
-<p>This project did not make use of user-based usability validation,
-instead relying on guideline and task based evaluation methods. A more
-in depth user-focused usability study could make aware of some of the
-more subtle effects of Ajax on usability, such as how likely users are
-to attempt to use the “Back” and “Forward” buttons. With Shiny the
-changes made and added functionality was sufficiently small to allow
-guideline based evaluation to be sufficient, but a comparative
-evaluation of GMail or another Ajax version of a common, complicated GUI
-desktop application, such as a word processor or spreadsheet, could be
-beneficial, allowing developers to ensure their focus is directed to any
-common stumbling-blocks users encounter when trying to use Ajax
+<p>This project did not make use of user-based usability validation, instead
+relying on guideline and task based evaluation methods. A more in depth
+user-focused usability study could make aware of some of the more subtle
+effects of Ajax on usability, such as how likely users are to attempt to use
+the "Back" and "Forward" buttons. With Shiny the changes made and added
+functionality was sufficiently small to allow guideline based evaluation to be
+sufficient, but a comparative evaluation of GMail or another Ajax version of a
+common, complicated GUI desktop application, such as a word processor or
+spreadsheet, could be beneficial, allowing developers to ensure their focus is
+directed to any common stumbling-blocks users encounter when trying to use Ajax
 applications in a working environment.</p>
 </div>
 </div>
@@ -1796,31 +1679,29 @@ applications in a working environment.</p>
 <h3 id="_testing_under_poor_network_conditions">8.3. Testing under poor network conditions</h3>
 <div class="paragraph">
 <p>An examination of the negative implications for Ajax of a low-bandwidth
-connection was discussed in this report, but not that of other
-conditions such as packet loss or high latency. High latency in
-particular is an area in which Ajax applications could potentially
-suffer greatly compared with classic Web applications. Due to
-insufficient infrastructure available to test this further, this report
-does examine the effects under these conditions, however the frequent
-small update structure usually used in Ajax applications will result in
-a sluggish or “broken” application with poor network conditions, so a
-formal quantitative analysis of this could be beneficial for evaluating
-the potential for Ajax replacements for GUI desktop applications.</p>
+connection was discussed in this report, but not that of other conditions such
+as packet loss or high latency. High latency in particular is an area in which
+Ajax applications could potentially suffer greatly compared with classic Web
+applications. Due to insufficient infrastructure available to test this
+further, this report does examine the effects under these conditions, however
+the frequent small update structure usually used in Ajax applications will
+result in a sluggish or "broken" application with poor network conditions, so a
+formal quantitative analysis of this could be beneficial for evaluating the
+potential for Ajax replacements for GUI desktop applications.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_security_2">8.4. Security</h3>
 <div class="paragraph">
-<p>A common criticism of the wave of Ajax applications and the increased
-use of these to replace GUI desktop applications is the perceived lack
-of attention to security. Previously mentioned are the possibilities of
-cross-site scripting vulnerabilities in JavaScript but also the
-weakly-typed nature of JavaScript, the dependence on client checking the
-client data, the inability to prevent modification of the local copy of
-JavaScript and poor error handling all create potential security flaws,
-bringing security risks to the server and/or the client. A recent virus
-named “Yamanner” spread through the Yahoo! Mail service, sending the
-contents of a targeted user&#8217;s address book to a remote server.</p>
+<p>A common criticism of the wave of Ajax applications and the increased use of
+these to replace GUI desktop applications is the perceived lack of attention to
+security. Previously mentioned are the possibilities of cross-site scripting
+vulnerabilities in JavaScript but also the weakly-typed nature of JavaScript,
+the dependence on client checking the client data, the inability to prevent
+modification of the local copy of JavaScript and poor error handling all create
+potential security flaws, bringing security risks to the server and/or the
+client. A recent virus named "Yamanner" spread through the Yahoo! Mail service,
+sending the contents of a targeted user&#8217;s address book to a remote server.</p>
 </div>
 <div class="paragraph">
 <p>Clearly there are potential and real security problems with Ajax, but a
@@ -1833,32 +1714,30 @@ developing Ajax applications.</p>
 <div class="sect2">
 <h3 id="_comet">8.5. Comet</h3>
 <div class="paragraph">
-<p>Comet is a further evolution of Ajax. Where Ajax relies on a polling
-loop to check for changes on a server and to mimic event-driven
-behaviour. This model is flawed when the client must wait for an event
-to occur on the server, as it relies on the client checking for the
-event before it can be handled or detected. A better solution to this
-problem would be allowing the server to notify the client on the event,
-but this is not possible with Ajax. Comet is a technique that, rather
-than using a polling loop keeps a consistent HTTP connection between
-client and server, allowing the server to send data to the client on an
-event without the client requesting it.</p>
+<p>Comet is a further evolution of Ajax. Where Ajax relies on a polling loop to
+check for changes on a server and to mimic event-driven behaviour. This model
+is flawed when the client must wait for an event to occur on the server, as it
+relies on the client checking for the event before it can be handled or
+detected. A better solution to this problem would be allowing the server to
+notify the client on the event, but this is not possible with Ajax. Comet is a
+technique that, rather than using a polling loop keeps a consistent HTTP
+connection between client and server, allowing the server to send data to the
+client on an event without the client requesting it.</p>
 </div>
 <div class="paragraph">
-<p>Comet was, at the planning stages of this project, very much a
-bleeding-edge technology. During this project more frameworks have
-become available and Comet is becoming a viable option for event-based
-user interfaces. Some of the concerns still remaining with Comet are on
-its scalability, with each client requiring a long HTTP connection to
-the server, and existing Web servers are not designed for such a large
-number of connections.</p>
+<p>Comet was, at the planning stages of this project, very much a bleeding-edge
+technology. During this project more frameworks have become available and Comet
+is becoming a viable option for event-based user interfaces. Some of the
+concerns still remaining with Comet are on its scalability, with each client
+requiring a long HTTP connection to the server, and existing Web servers are
+not designed for such a large number of connections.</p>
 </div>
 <div class="paragraph">
-<p>Shiny&#8217;s progress feedback relied on the client checking for new data
-from the server, and sometimes it would not be available. With Comet
-this could have occurred whenever the server had new data, rather than
-the client unnecessarily polling, resulting in lower bandwidth usage and
-also a more smooth progress indication mechanism.</p>
+<p>Shiny&#8217;s progress feedback relied on the client checking for new data from the
+server, and sometimes it would not be available. With Comet this could have
+occurred whenever the server had new data, rather than the client unnecessarily
+polling, resulting in lower bandwidth usage and also a more smooth progress
+indication mechanism.</p>
 </div>
 </div>
 </div>
@@ -1872,100 +1751,92 @@ also a more smooth progress indication mechanism.</p>
 <p>To restate the hypothesis of this project:</p>
 </div>
 <div class="paragraph">
-<p>“<em>Ajax applications can provide a more effective interface user
-interface than those of GUI desktop or classic Web applications with
-fewer drawbacks than either individual approach.</em>”</p>
+<p>"<em>Ajax applications can provide a more effective interface user interface than
+those of GUI desktop or classic Web applications with fewer drawbacks than
+either individual approach.</em>"</p>
 </div>
 <div class="paragraph">
 <p>The conclusion of this project, as expected, is not a clear agreement or
-contradiction of the hypothesis, but more complex. The key outcomes of
-this report and the project are split into the benefits and drawbacks of
-using an Ajax application.</p>
+contradiction of the hypothesis, but more complex. The key outcomes of this
+report and the project are split into the benefits and drawbacks of using an
+Ajax application.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_benefits">9.2. Benefits</h3>
 <div class="paragraph">
-<p>Ajax applications, due to the nature of their interaction with the
-server, can provide a far more responsive and rich user interface. Users
-can now drag and drop items, be notified on server events without
-requesting, and transform datasets on the fly without the need to reload
-the page. Their input can be quickly regulated and automatically
-corrected, minimising the use of bandwidth. Lengthy interactions with
-the server can have their progress indicated, whilst allowing other
-tasks to continue, allowing better multitasking.</p>
+<p>Ajax applications, due to the nature of their interaction with the server, can
+provide a far more responsive and rich user interface. Users can now drag and
+drop items, be notified on server events without requesting, and transform
+datasets on the fly without the need to reload the page. Their input can be
+quickly regulated and automatically corrected, minimising the use of bandwidth.
+Lengthy interactions with the server can have their progress indicated, whilst
+allowing other tasks to continue, allowing better multitasking.</p>
 </div>
 <div class="paragraph">
-<p>The application developer can benefit through the ability to offload
-some of the application logic and processing to the client and needing
-to send only required data, rather than repeatedly send the same
-stylistic information. Also, the creation of these applications becomes
-increasingly less complex with the addition of new Ajax libraries to aid
-the developer.</p>
+<p>The application developer can benefit through the ability to offload some of
+the application logic and processing to the client and needing to send only
+required data, rather than repeatedly send the same stylistic information.
+Also, the creation of these applications becomes increasingly less complex with
+the addition of new Ajax libraries to aid the developer.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_drawbacks">9.3. Drawbacks</h3>
 <div class="paragraph">
-<p>One of the biggest struggles with Ajax development are the difficulties
-arising from the use of JavaScript. JavaScript suffers from its
-weak-typing, security risks and different implementations across
-browsers and also that some users may have disabled JavaScript within
-their browsers. In addition, debugging can be very difficult and time
-consuming as Ajax applications frequently make use of multithreaded
-JavaScript, resulting in race conditions and obscure bugs. For logic
-implementation, JavaScript, as an interpreted language, is frequently
+<p>One of the biggest struggles with Ajax development are the difficulties arising
+from the use of JavaScript. JavaScript suffers from its weak-typing, security
+risks and different implementations across browsers and also that some users
+may have disabled JavaScript within their browsers. In addition, debugging can
+be very difficult and time consuming as Ajax applications frequently make use
+of multithreaded JavaScript, resulting in race conditions and obscure bugs. For
+logic implementation, JavaScript, as an interpreted language, is frequently
 slow and can use a lot of memory, leaving client machines somewhat
-unresponsive. In addition, the nature of an application in a browser
-means that other potentially “buggy” sites may crash the browser and
-cause loss of work by the user. A minor issue is that of retaining
-backwards compatibility. An Ajax application must be accessible to
-clients without JavaScript, those with text-based browsers or search
-engines.</p>
+unresponsive. In addition, the nature of an application in a browser means that
+other potentially "buggy" sites may crash the browser and cause loss of work by
+the user. A minor issue is that of retaining backwards compatibility. An Ajax
+application must be accessible to clients without JavaScript, those with
+text-based browsers or search engines.</p>
 </div>
 <div class="paragraph">
-<p>Ajax&#8217;s lack of browser compatibility is evident from the need for
-“hacks” to make the same code work in different browsers and how easily
-Ajax applications “break” common functionality such as the “Back”
-button. This leads onto an argument growing somewhat less valid now;
-Ajax applications are unfamiliar to a user of classic Web applications
-and can cause confusion.</p>
+<p>Ajax&#8217;s lack of browser compatibility is evident from the need for "hacks" to
+make the same code work in different browsers and how easily Ajax applications
+"break" common functionality such as the "Back" button. This leads onto an
+argument growing somewhat less valid now; Ajax applications are unfamiliar to a
+user of classic Web applications and can cause confusion.</p>
 </div>
 <div class="paragraph">
-<p>The largest development pitfall encountered in the development of Shiny
-was the difference in architecture between Ajax and classic Web
-applications. With Ajax applications, the logic needs to be easily
-manipulated and accessed by the Ajax code, and long running tasks buried
-deep within an application need to be made accessible to a user
-interface, necessitating large amounts of re-engineering in order to
-access this.</p>
+<p>The largest development pitfall encountered in the development of Shiny was the
+difference in architecture between Ajax and classic Web applications. With Ajax
+applications, the logic needs to be easily manipulated and accessed by the Ajax
+code, and long running tasks buried deep within an application need to be made
+accessible to a user interface, necessitating large amounts of re-engineering
+in order to access this.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_contribution">9.4. Contribution</h3>
 <div class="paragraph">
-<p>This report has provided a glimpse into some of the usability benefits
-and drawbacks of Ajax Web applications. The usability study provided
-between Dizzy, Klingon and Shiny could be used to evaluate moving a
-classic Web application or GUI desktop application onto the Web. For
-creating new Web applications, Ajax can be a powerful tool in providing
-more usable, intuitive and responsive user interfaces. However, porting
-existing Web applications to Ajax could prove to be very time consuming
-and difficult and therefore must be analysed carefully before
-implementation. There are no clear benefits of Ajax application
-interfaces over those GUI desktop applications, but the benefits of
-distributed storage, computing and portability can be counted in the
-favour of Ajax. Technologies such as SVG and Comet are likely to push
-the boundaries for these applications even further.</p>
+<p>This report has provided a glimpse into some of the usability benefits and
+drawbacks of Ajax Web applications. The usability study provided between Dizzy,
+Klingon and Shiny could be used to evaluate moving a classic Web application or
+GUI desktop application onto the Web. For creating new Web applications, Ajax
+can be a powerful tool in providing more usable, intuitive and responsive user
+interfaces. However, porting existing Web applications to Ajax could prove to
+be very time consuming and difficult and therefore must be analysed carefully
+before implementation. There are no clear benefits of Ajax application
+interfaces over those GUI desktop applications, but the benefits of distributed
+storage, computing and portability can be counted in the favour of Ajax.
+Technologies such as SVG and Comet are likely to push the boundaries for these
+applications even further.</p>
 </div>
 <div class="paragraph">
-<p>Ajax is a new technology that has captured the imagination of many
-application developers. The dream of the Internet as an application
-platform may be realised and as browser support and libraries make
-development easier and users become more familiar with the new
-interfaces, Ajax Web applications will provide more services to users in
-an easy-to-use manner from anywhere with an Internet connection, without
-the requirement of a plug-in.</p>
+<p>Ajax is a new technology that has captured the imagination of many application
+developers. The dream of the Internet as an application platform may be
+realised and as browser support and libraries make development easier and users
+become more familiar with the new interfaces, Ajax Web applications will
+provide more services to users in an easy-to-use manner from anywhere with an
+Internet connection, without the requirement of a plug-in.</p>
 </div>
 </div>
 </div>
@@ -1977,17 +1848,16 @@ the requirement of a plug-in.</p>
 <ul>
 <li>
 <p><a id="1"></a>[1] Best, D. and Eindhoven, T.U., "Web 2.0 Next Big Thing or Next Big
-Internet Bubble?" (2006).
-<a href="http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf">http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf</a></p>
+Internet Bubble?" (2006). <a href="http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf">http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf</a></p>
 </li>
 <li>
 <p><a id="2"></a>[2] Garret, J.J., "Ajax: A New Approach to Web Applications", February
 (2005).</p>
 </li>
 <li>
-<p><a id="3"></a>[3] Gibson, B., "DHTML accessibility: solving the JavaScript accessibility
-problem", <em>Proceedings of the 7th international ACM SIGACCESS conference
-on Computers and accessibility</em> (2005), pp. 202&#8212;203.
+<p><a id="3"></a>[3] Gibson, B., "DHTML accessibility: solving the JavaScript
+accessibility problem", <em>Proceedings of the 7th international ACM SIGACCESS
+conference on Computers and accessibility</em> (2005), pp. 202&#8212;203.
 <a href="http://doi.acm.org/10.1145/1090785.1090830">http://doi.acm.org/10.1145/1090785.1090830</a></p>
 </li>
 <li>
@@ -1996,13 +1866,11 @@ on Computers and accessibility</em> (2005), pp. 202&#8212;203.
 </li>
 <li>
 <p><a id="5"></a>[5] MacKenzie, J. and McAlister, A. and Desai, S. and McCarthy, K.,
-"Usability in Web Design" (2006).
-<a href="http://osddp.org/files/issues/Usability.pdf">http://osddp.org/files/issues/Usability.pdf</a></p>
+"Usability in Web Design" (2006). <a href="http://osddp.org/files/issues/Usability.pdf">http://osddp.org/files/issues/Usability.pdf</a></p>
 </li>
 <li>
 <p><a id="6"></a>[6] Mesbah, A. and van Deursen, A., "An Architectural Style for Ajax",
-<em>Arxiv preprint cs.SE/0608111</em> (2006).
-<a href="http://arxiv.org/pdf/cs.SE/0608111">http://arxiv.org/pdf/cs.SE/0608111</a></p>
+<em>Arxiv preprint cs.SE/0608111</em> (2006). <a href="http://arxiv.org/pdf/cs.SE/0608111">http://arxiv.org/pdf/cs.SE/0608111</a></p>
 </li>
 <li>
 <p><a id="7"></a>[7] Moran, T.P. and Zhai, S., "Beyond the Desktop Metaphor in Seven
@@ -2040,109 +1908,104 @@ Dimensions" (2006).
 <dl>
 <dt class="hdlist1">Adobe Flash</dt>
 <dd>
-<p>Flash allows a developer, with aid of a plug-in in a
-client browser and Adobe development tools, to create a application that
-runs in a browser window providing animation, video, interactivity and
-vector graphics to a user.</p>
+<p>Flash allows a developer, with aid of a plug-in in a client
+browser and Adobe development tools, to create a application that runs in a
+browser window providing animation, video, interactivity and vector graphics to
+a user.</p>
 </dd>
 <dt class="hdlist1">Ajax</dt>
 <dd>
 <p>Asynchronous JavaScript and XML is a technique for creating Web
-applications, using existing technologies to improve responsiveness with
-more small interchanges of data, rather than simply reloading on user
-changes. Uses XHTML, DOM, XMLHttpRequest, JavaScript and XML to perform
-this.</p>
+applications, using existing technologies to improve responsiveness with more
+small interchanges of data, rather than simply reloading on user changes. Uses
+XHTML, DOM, XMLHttpRequest, JavaScript and XML to perform this.</p>
 </dd>
 <dt class="hdlist1">Applet</dt>
 <dd>
-<p>An applet, in the context of this report, refers specifically
-to a Java applet, which is a software application that can run within
-the Web browser, with a plug-in providing a virtual machine running Java
-code.</p>
+<p>An applet, in the context of this report, refers specifically to a
+Java applet, which is a software application that can run within the Web
+browser, with a plug-in providing a virtual machine running Java code.</p>
 </dd>
 <dt class="hdlist1">CSS</dt>
 <dd>
-<p>Cascading Style Sheets is a language used with HTML or XHTML to
-describe the appearance of a document, allowing this to be separated
-from document content.</p>
+<p>Cascading Style Sheets is a language used with HTML or XHTML to describe
+the appearance of a document, allowing this to be separated from document
+content.</p>
 </dd>
 <dt class="hdlist1">DHTML</dt>
 <dd>
-<p>Dynamic HTML, like Ajax, is a technique for creating more
-interactive Web-pages, by use of JavaScript to allow the interface to
-appear to change without reload. This phrase was used before Ajax, and
-is rarely used now, instead being superseded by Ajax.</p>
+<p>Dynamic HTML, like Ajax, is a technique for creating more interactive
+Web-pages, by use of JavaScript to allow the interface to appear to change
+without reload. This phrase was used before Ajax, and is rarely used now,
+instead being superseded by Ajax.</p>
 </dd>
 <dt class="hdlist1">DOM</dt>
 <dd>
-<p>Document Object Model is a representation of an XML or HTML
-document as a tree, and is used by JavaScript in manipulating the
-document structure or content.</p>
+<p>Document Object Model is a representation of an XML or HTML document as a
+tree, and is used by JavaScript in manipulating the document structure or
+content.</p>
 </dd>
 <dt class="hdlist1">HTML</dt>
 <dd>
-<p>HyperText Markup Language is the language used in creating Web
-pages, describing style elements for basic text, by annotating the text
-with text markup elements.</p>
+<p>HyperText Markup Language is the language used in creating Web pages,
+describing style elements for basic text, by annotating the text with text
+markup elements.</p>
 </dd>
 <dt class="hdlist1">JavaScript</dt>
 <dd>
-<p>This is the implementation of the ECMAScript standard, and
-is implemented in Web browsers to allow scripting of Web pages by page
-creators. Confusingly, it is only distantly related to Java, and bears
-little resemblance outside of syntax.</p>
+<p>This is the implementation of the ECMAScript standard, and is
+implemented in Web browsers to allow scripting of Web pages by page creators.
+Confusingly, it is only distantly related to Java, and bears little resemblance
+outside of syntax.</p>
 </dd>
 <dt class="hdlist1">RIA</dt>
 <dd>
-<p>Rich Internet Applications are Web applications that provide an
-interface and features similar to those provided by a GUI desktop
-application, but generally, perform most of the processing on the
-server.</p>
+<p>Rich Internet Applications are Web applications that provide an interface
+and features similar to those provided by a GUI desktop application, but
+generally, perform most of the processing on the server.</p>
 </dd>
 <dt class="hdlist1">SVG</dt>
 <dd>
-<p>Scalable Vector Graphics is an XML language for 2D graphics,
-usually used for vector images.</p>
+<p>Scalable Vector Graphics is an XML language for 2D graphics, usually used
+for vector images.</p>
 </dd>
 <dt class="hdlist1">W3C</dt>
 <dd>
-<p>The World Wide Web Consortium is the main standards body for the
-World Wide Web, creating and maintaining standards for HTML, XHTML, SVG
-and XML and others.</p>
+<p>The World Wide Web Consortium is the main standards body for the World
+Wide Web, creating and maintaining standards for HTML, XHTML, SVG and XML and
+others.</p>
 </dd>
 <dt class="hdlist1">Web 2.0</dt>
 <dd>
-<p>Web 2.0 refers to the the recent growth in collaborative
-Internet services and Web applications, frequently making use of Ajax
-techniques to provide a more interactive and desktop-like user
-interface. It can also describe the growth of GUI desktop applications
-ported to Web applications providing the same functionality.</p>
+<p>Web 2.0 refers to the the recent growth in collaborative Internet
+services and Web applications, frequently making use of Ajax techniques to
+provide a more interactive and desktop-like user interface. It can also
+describe the growth of GUI desktop applications ported to Web applications
+providing the same functionality.</p>
 </dd>
 <dt class="hdlist1">XHTML</dt>
 <dd>
-<p>Extensible HTML is very similar to HTML, but, as an application
-of XML, is more restrictive, and allows easier validation and parsing.
-It is considered to be the latest version of HTML.</p>
+<p>Extensible HTML is very similar to HTML, but, as an application of XML,
+is more restrictive, and allows easier validation and parsing. It is considered
+to be the latest version of HTML.</p>
 </dd>
 <dt class="hdlist1">XML</dt>
 <dd>
-<p>The Extensible Markup Language is a general purpose language used
-for sharing data across different information systems easily,
-particularly the Internet. XHTML and SVG are two examples of XML.</p>
+<p>The Extensible Markup Language is a general purpose language used for
+sharing data across different information systems easily, particularly the</p>
 </dd>
-<dt class="hdlist1">XMLHttpRequest</dt>
+<dt class="hdlist1">Internet. XHTML and SVG are two examples of XML. XMLHttpRequest</dt>
 <dd>
-<p>XMLHttpRequest is an API used by JavaScript to
-transfer data to or from a Web server using HTTP. It usually returns XML
-data, and allows the use of the Ajax technique in the browsers that
-support it.</p>
+<p>XMLHttpRequest is an API used by JavaScript to transfer data to or from a Web
+server using HTTP. It usually returns XML data, and allows the use of the Ajax
+technique in the browsers that support it.</p>
 </dd>
 <dt class="hdlist1">XSLT</dt>
 <dd>
-<p>Extensible Stylesheet Language Transformations are an XML-based
-language for transforming XML documents into other XML documents. It is
-frequently involved in changing the structure or appearance of an XML
-document, or translating XML applications, such as XHTML.</p>
+<p>Extensible Stylesheet Language Transformations are an XML-based language
+for transforming XML documents into other XML documents. It is frequently
+involved in changing the structure or appearance of an XML document, or
+translating XML applications, such as XHTML.</p>
 </dd>
 </dl>
 </div>
