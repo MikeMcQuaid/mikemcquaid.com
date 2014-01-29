@@ -1,6 +1,8 @@
 ---
 layout: article
 title: Deploying Qt applications with DeployQt4
+redirect_from:
+  - /2012/01/deploying-qt-applications-with-deployqt4/
 ---
 [CMake 2.8.7 has been released](http://www.kitware.com/news/home/browse/CMake?2012_01_02&CMake+2.8.7+Now+Available) and includes the DeployQt4 module I created.
 

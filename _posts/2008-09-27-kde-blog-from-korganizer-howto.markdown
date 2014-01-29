@@ -1,6 +1,8 @@
 ---
 layout: article
 title: KDE - Blog from KOrganizer HOWTO
+redirect_from:
+  - /2008/09/kde-blog-from-korganizer-howto/
 ---
 **Blog from KOrganizer?** What kind of **madness** is this? Apparently some crazy fool decided to give you the ability to post journals from KOrganizer to your blog. Let's learn how to do it!
 

@@ -2,6 +2,8 @@
 layout: article
 slug: why-i-left-linux
 title: Why I Left Linux and went to Apple
+redirect_from:
+  - /2010/09/why-i-left-linux/
 ---
 I originally bought a MacBook to use as a nice Linux laptop and for some iPhone and Qt OSX development. Shortly afterwards I got engaged which made me think about the future and how I spent my time a bit more. Linux is great for many use-cases but I just kept finding myself getting increasingly fed up with trying to use it on the desktop. My problems included having DVD playback not work quite correctly, having to manually edit configuration files in a text editor just to get some piece of hardware that worked instantly in OSX and Windows working and various other issues that wasted my time. Due to a kernel bug in Linux affecting my MacBook, I found myself using OSX more and more for work and finally moved across completely to my MacBook and also removing Linux from my desktop to relegate it to a Windows-only games machine. I'm now only running Linux on my NAS, this server, TV and phone.
 

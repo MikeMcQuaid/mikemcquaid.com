@@ -1,6 +1,8 @@
 ---
 layout: article
 title: Make Qt use the GTK Style on XFCE or Xubuntu
+redirect_from:
+  - /2011/12/make-qt-use-the-gtk-style-on-xfce-or-xubuntu/
 ---
 I'm a Qt developer and use Xubuntu in my Linux VMs as it is lighter than KDE and doesn't get in my way (unlike Unity).
 
