@@ -6,7 +6,10 @@ rdiscount:
   extensions: [smart]
 # Same as GitHub Pages
 # https://help.github.com/articles/using-jekyll-with-pages#troubleshooting
-safe: true
+# Disable despite enabled on GitHub Pages for supported plugins to work.
+# safe: true
 lsi: false
 pygments: true
 exclude: [bin, vendor]
+gems:
+  - jekyll-redirect-from
