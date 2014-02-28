@@ -8,7 +8,7 @@ I love solving difficult problems to simplify people's lives.<br>
 
 I always welcome new opportunities and will travel 1/6 weeks to work anywhere in the world. The other 5/6 weeks I must be able to telecommute from my home in Edinburgh, Scotland.<br>
 
-No recruiters who won't immediately tell me the name of the company.
+No recruiters, please.
 
 ### Personal
 Edinburgh, Scotland<br>
