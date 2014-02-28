@@ -44,6 +44,10 @@ Porting software between Windows, Mac and Linux. Administering Linux servers (vi
 #### Gran Canaria Desktop Summit (2009)
 [CPack](http://speakerdeck.com/u/mikemcquaid/p/cpack)
 
+### Awards
+#### [UK Open Source Awards](http://opensourceawards.org/) (2014)
+[Shortlisted](http://opensourceawards.org/index.php/awards-shortlist) for the person/project prize.
+
 ### Experience
 #### [GitHub](http://github.com/) (2013 - Present)
 Test Automation Engineer.
