@@ -10,6 +10,7 @@ rdiscount:
 # safe: true
 lsi: false
 pygments: true
-exclude: [bin, vendor]
+exclude: [bin, vendor, CNAME, Gemfile, Gemfile.lock, Guardfile, Rakefile,
+          ReadMe.md, style.scss]
 gems:
   - jekyll-redirect-from
