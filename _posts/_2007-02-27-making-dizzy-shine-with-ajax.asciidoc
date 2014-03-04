@@ -1,3 +1,8 @@
+---
+layout: article
+title: Making Dizzy Shine With Ajax
+---
+
 = Making Dizzy Shiny With Ajax
 Mike Arthur <mike@mikearthur.co.uk>
 :article:
