@@ -6,12 +6,11 @@ title: Curriculum Vitae
 #### Software Engineer
 I love solving difficult problems to simplify people's lives.<br>
 
-I always welcome new opportunities and will travel 1/6 weeks to work anywhere in the world. The other 5/6 weeks I must be able to telecommute from my home in Edinburgh, Scotland.<br>
+I live in Edinburgh, Scotland and will not consider relocating for work. However, I'm happy to work remotely from my home here and travel regularly to anywhere in the world.<br>
 
 No recruiters, please.
 
 ### Personal
-Edinburgh, Scotland<br>
 [mike@mikemcquaid.com](mailto:mike@mikemcquaid.com)<br>
 [mikemcquaid.com/projects/](http://mikemcquaid.com/projects/)<br>
 [github.com/mikemcquaid](https://github.com/mikemcquaid)<br>
