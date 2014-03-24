@@ -355,6 +355,15 @@ blockquote {
   margin: 0.5em 0 0 0;
 }
 
+.stealth-lists {
+  ul {
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+}
+
 #sidebar, #menu {
   ul {
     padding: 0;

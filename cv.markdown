@@ -1,28 +1,29 @@
 ---
 layout: page
 title: Curriculum Vitae
+classes: stealth-lists
 ---
 ### Mike McQuaid
 #### Software Engineer
-I love solving difficult problems to simplify people's lives.<br>
+I love solving difficult problems to simplify people's lives.
 
-I live in Edinburgh, Scotland and will not consider relocating for work. However, I'm happy to work remotely from my home here and travel regularly to anywhere in the world.<br>
+I live in Edinburgh, Scotland and will not consider relocating for work. However, I'm happy to work remotely from my home here and travel regularly to anywhere in the world.
 
 No recruiters, please.
 
 ### Personal
-[mike@mikemcquaid.com](mailto:mike@mikemcquaid.com)<br>
-[mikemcquaid.com/projects/](http://mikemcquaid.com/projects/)<br>
-[github.com/mikemcquaid](https://github.com/mikemcquaid)<br>
-[stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid)<br>
-[linkedin.com/in/mkmcqd](http://www.linkedin.com/in/mkmcqd)<br>
-[@MikeMcQuaid](http://twitter.com/MikeMcQuaid)<br>
-+44 (0)773 405 2864
+* [mike@mikemcquaid.com](mailto:mike@mikemcquaid.com)
+* [mikemcquaid.com/projects/](http://mikemcquaid.com/projects/)
+* [github.com/mikemcquaid](https://github.com/mikemcquaid)
+* [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid)
+* [linkedin.com/in/mkmcqd](http://www.linkedin.com/in/mkmcqd)
+* [@MikeMcQuaid](http://twitter.com/MikeMcQuaid)
+* +44 (0)773 405 2864
 
 ### Skills
-Extensive experience in Ruby, Rails, Git, JavaScript, SASS, Qt, C++, C, PHP, MySQL, CoffeeScript, Python, CMake, Java and shell scripting. Casual experience with Perl, Objective-C, AWS, Chef, Automake, VB.NET and Android. Productive with other languages in days.<br>
+Extensive experience in Ruby, Rails, Git, JavaScript, SASS, Qt, C++, C, PHP, MySQL, CoffeeScript, Python, CMake, Java and shell scripting. Casual experience with Perl, Objective-C, AWS, Chef, Automake, VB.NET and Android. Productive with other languages in days.
 
-Porting software between Windows, Mac and Linux. Administering Linux servers (virtual and physical), Windows and Mac machines. Passionately advocating, designing and implementing CI systems.<br>
+Porting software between Windows, Mac and Linux. Administering Linux servers (virtual and physical), Windows and Mac machines. Passionately advocating, designing and implementing CI systems.
 
 [Considerable experience](http://www.ohloh.net/accounts/mikemcquaid) contributing to open-source software and getting patches accepted upstream.
 
@@ -33,12 +34,12 @@ Porting software between Windows, Mac and Linux. Administering Linux servers (vi
 
 ### Conference Talks
 #### [DunDDD](http://dun.dddscotland.co.uk/) (2012)
-[Advanced Git (and GitHub)](https://speakerdeck.com/mikemcquaid/advanced-git-and-github)<br>
-[Git for beginners](http://speakerdeck.com/u/mikemcquaid/p/git-for-beginners)
+* [Advanced Git (and GitHub)](https://speakerdeck.com/mikemcquaid/advanced-git-and-github)
+* [Git for beginners](http://speakerdeck.com/u/mikemcquaid/p/git-for-beginners)
 
 #### [ConFoo.ca](http://confoo.ca) (2012)
-[Homebrew](http://speakerdeck.com/u/mikemcquaid/p/homebrew)<br>
-[Git for beginners](http://speakerdeck.com/u/mikemcquaid/p/git-for-beginners)
+* [Homebrew](http://speakerdeck.com/u/mikemcquaid/p/homebrew)
+* [Git for beginners](http://speakerdeck.com/u/mikemcquaid/p/git-for-beginners)
 
 #### Gran Canaria Desktop Summit (2009)
 [CPack](http://speakerdeck.com/u/mikemcquaid/p/cpack)
@@ -61,9 +62,9 @@ Core contributor. Invented Homebrew binary packages (bottles), fix users issues 
 Technical team lead providing international cross-platform consultancy. Led several teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract. Regularly travel internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback. Created a new CI system which replaced the previous one to improve company productivity.
 
 #### [Mendeley](http://www.mendeley.com/) (2008 - 2009)
-[First employee](http://blog.mendeley.com/start-up-life/mike-arthur-joins-team-mendeley/) and lead developer for Mendeley Desktop. Setup all servers and software systems. Created a workflow focused on quick deployment and high quality through automated builds, tests, packages for Windows, Mac and Linux. Designed, ran technical interviews and personally [recruited](http://blog.mendeley.com/start-up-life/introducing-fred-amir-and-a-bond-villain/)&nbsp; [three](http://blog.mendeley.com/academic-life/an-excellent-euroscience-adventure-part-ii/)&nbsp; [engineers](http://blog.mendeley.com/research-miscellanea/a-new-knight-joins-mendeleys-round-table/).<br>
+[First employee](http://blog.mendeley.com/start-up-life/mike-arthur-joins-team-mendeley/) and lead developer for Mendeley Desktop. Setup all servers and software systems. Created a workflow focused on quick deployment and high quality through automated builds, tests, packages for Windows, Mac and Linux. Designed, ran technical interviews and personally [recruited](http://blog.mendeley.com/start-up-life/introducing-fred-amir-and-a-bond-villain/) [three](http://blog.mendeley.com/academic-life/an-excellent-euroscience-adventure-part-ii/) [engineers](http://blog.mendeley.com/research-miscellanea/a-new-knight-joins-mendeleys-round-table/).
 
-Ported Qt/MSVC++ application from Windows to CMake, OSX and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/)&nbsp; [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web.
+Ported Qt/MSVC++ application from Windows to CMake, OSX and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web.
 
 #### [BT](http://www.bt.com/) (2007 - 2008)
 Created record-breaking high-performance network analysis applications on the IBM Cell Processor. Taught others about and setup version control, continuous integration and issue trackers. Won a place on the [graduate scheme](http://www.btplc.com/careercentre/graduates/index.cfm).

@@ -16,10 +16,12 @@ For example an OSX application bundle before DeployQt4 might look like:
 and afterwards like:
 ![After DeployQt4 directory tree](/images/a/deployqt4-after.png)
 
-The most commonly used DeployQt4 function is `INSTALL_QT4_EXECUTABLE` function. For example:<br>
+The most commonly used DeployQt4 function is `INSTALL_QT4_EXECUTABLE` function. For example:
+
 `INSTALL_QT4_EXECUTABLE(${EXECUTABLE_PATH} qsqlite)`
 
-If you wanted to do this in a CMake script rather than at install time (i.e. for an already compiled executable) you could instead call:<br>
+If you wanted to do this in a CMake script rather than at install time (i.e. for an already compiled executable) you could instead call:
+
 `FIXUP_QT4_EXECUTABLE(${EXECUTABLE_PATH} qsqlite)`
 
 Other DeployQt4 options include manually specifying libraries or non-Qt plugins to install their linked dependencies, additional directories to check for linked dependencies (the Qt directories are added by default), override the default plugin installation directory, override whether a `qt.conf` file is installed and the use of CMake `INSTALL` components.
