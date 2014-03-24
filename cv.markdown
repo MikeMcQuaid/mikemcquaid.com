@@ -76,3 +76,5 @@ Wrote battery driver, improved Auxiliary ADC code for Intel XScale on Windows CE
 
 ### Outside Interests
 Cycling, guitars, cooking, cinema, politics, photography, philosophy and skiing.
+
+### [References](/references/)
