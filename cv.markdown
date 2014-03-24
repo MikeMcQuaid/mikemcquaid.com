@@ -49,10 +49,10 @@ Porting software between Windows, Mac and Linux. Administering Linux servers (vi
 
 ### Experience
 #### [GitHub](http://github.com/) (2013 - Present)
-Test Automation Engineer.
+Improving the testing, packaging, deployment and release process for [GitHub Enterprise](https://enterprise.github.com).
 
 #### [AllTrails](http://alltrails.com/) (2012 - 2013)
-Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](http://allsnow.com). Develop features, APIs and optimise performance. Setup CI and automatic deployment for Rails and mobile applications. Manage and improve AWS infrastructure.
+Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](http://allsnow.com). Developed features, APIs and optimized performance. Setup CI and automatic deployment for Rails and mobile applications. Managed and improved AWS infrastructure.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
 Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
