@@ -28,7 +28,6 @@ Porting software between Windows, Mac and Linux. Administering Linux servers (vi
 [Considerable experience](http://www.ohloh.net/accounts/mikemcquaid) contributing to open-source software and getting patches accepted upstream.
 
 ### Education
-
 #### [The University of Edinburgh](http://www.ed.ac.uk/home) (2003 - 2007)
 [BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
 
