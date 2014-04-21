@@ -4,6 +4,21 @@ title: Talks
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
+### GitHub for Beginners
+How to setup and use GitHub and the GitHub desktop applications. Aimed at non-programmers. Presented at [Trans*H4CK](http://www.transhack.org) Chicago in 2014.
+
+<script async class="speakerdeck-embed" data-id="5ed38c70ab6c0131cbe70e9464dacf0d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+### Career Hacks for Software Engineers
+How people in the technology industry can get paid better and get their dream job by learning from my career mistakes. Presented at [The University of Edinburgh CompSoc](https://comp-soc.com/) and [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2014.
+
+<script async class="speakerdeck-embed" data-id="ad422910ab6c0131cbe50e9464dacf0d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+### Software Architecture, Process and Management (In the Real World)
+How software architecture, process and management plays out in the real world with some best practices and things to avoid. Presented as a guest lecture at The University of Edinburgh's [Software Architecture, Process and Management course](http://www.inf.ed.ac.uk/teaching/courses/sapm/) in 2014.
+
+<script async class="speakerdeck-embed" data-id="4e4c3690ab6f013155733279fa910c9f" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Advanced Git (and GitHub)
 A walkthrough of some useful but rarely known features in Git and GitHub. Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
 
