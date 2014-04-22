@@ -11,7 +11,7 @@ Improving the testing, packaging, deployment and release process for [GitHub Ent
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 ![Homebrew](/images/a/homebrew.png)
 
-Core contributor. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
+Maintainer. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
 #### [Audioscrobbler.app](https://github.com/mxcl/Audioscrobbler.app)
 ![Audioscrobbler.app](/images/a/audioscrobbler.png)
@@ -49,7 +49,7 @@ Android app that hosts an HTML5-based whiteboard server.
 #### [Fabula](https://github.com/mikemcquaid/Fabula)
 ![Fabula](/images/a/fabula.png)
 
-A cross-platform Qt RPG conversation editor. Abandoned due to original potential users no longer needing it.
+Creator. A cross-platform Qt RPG conversation editor. Abandoned due to original potential users no longer needing it.
 
 #### [Make-O-Matic](https://github.com/KDAB/Make-O-Matic)
 ![Make-O-Matic](/images/a/make-o-matic.png)
