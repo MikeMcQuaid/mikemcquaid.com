@@ -2,7 +2,7 @@
 layout: article
 title: Why use version control?
 ---
-_This is an appendix from my book [Git In Practice](http://affiliate.manning.com/idevaffiliate.php?id=1292_382)._
+_This is an appendix from my book [Git In Practice](http://www.manning.com/mcquaid/)._
 
 You may not be familiar with version control concepts or why version control systems are useful for managing changes to text. Let's start off by asking why you should use version control.
 
