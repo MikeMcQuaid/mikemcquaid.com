@@ -55,8 +55,8 @@ a {
 
 #header {
   min-width: 29em;
-  background-color: $page-background-dark-colour;
-  background: url(/images/header.jpg) right no-repeat;
+  background-color: black;
+  background: url(/images/header.jpg) left bottom no-repeat;
   background-size: cover;
 }
 
