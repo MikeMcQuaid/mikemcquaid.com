@@ -14,3 +14,4 @@ exclude: [bin, vendor, CNAME, Gemfile, Gemfile.lock, Guardfile, Rakefile,
           ReadMe.md, style.scss]
 gems:
   - jekyll-redirect-from
+  - jekyll-sitemap
