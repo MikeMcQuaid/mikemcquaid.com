@@ -13,12 +13,12 @@ Improving the testing, packaging, deployment and release process for [GitHub Ent
 
 Maintainer. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
+### Past
 #### [Audioscrobbler.app](https://github.com/mxcl/Audioscrobbler.app)
 ![Audioscrobbler.app](/images/a/audioscrobbler.png)
 
-Maintainer. Added HiDPI support, merge contributions and fix bugs.
+Maintainer. Added HiDPI support, merged contributions and fixed bugs.
 
-### Past
 #### [AllTrails](https://alltrails.com) and [AllSnow](https://allsnow.com)
 ![AllTrails](/images/a/alltrails.png)
 
