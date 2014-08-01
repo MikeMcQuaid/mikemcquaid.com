@@ -1,7 +1,6 @@
 ENV['GUARD_NOTIFY'] = "false"
 
 guard 'rake', :task => :deps do
-  watch /.+\.scss$/
   watch %r{_posts/.+\.(asciidoc)$}
 end
 

@@ -1,17 +1,39 @@
 title: Mike McQuaid
 url: http://mikemcquaid.com
 permalink: pretty
-markdown: rdiscount
-rdiscount:
-  extensions: [smart]
+
 # Same as GitHub Pages
 # https://help.github.com/articles/using-jekyll-with-pages#troubleshooting
 # Disable despite enabled on GitHub Pages for supported plugins to work.
 # safe: true
 lsi: false
-pygments: true
+highlighter: pygments
+
 exclude: [bin, vendor, CNAME, Gemfile, Gemfile.lock, Guardfile, Rakefile,
           ReadMe.md, style.scss]
 gems:
   - jekyll-redirect-from
+  - jekyll-sass-converter
   - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: :compressed
+defaults:
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "article"
+  -
+    scope:
+      path: "blog/_posts"
+      type: "post"
+    values:
+      layout: "blog_post"
+  -
+    scope:
+      path: "blog"
+      type: "page"
+    values:
+      layout: "blog_page"
