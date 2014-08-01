@@ -1,5 +1,4 @@
 ---
-layout: blog_post
 title: Missing the point
 ---
 I just had a great but unexpected evening of discussion with new friend. He's a Catholic and was also at boarding school so we have a fair amount in common to discuss.

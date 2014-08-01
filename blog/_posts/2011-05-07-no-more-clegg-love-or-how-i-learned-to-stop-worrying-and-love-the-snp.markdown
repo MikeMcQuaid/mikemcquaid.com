@@ -1,5 +1,4 @@
 ---
-layout: blog_post
 title: No more Clegg love or How I Learned to Stop Worrying and Love the SNP
 ---
 ![Nick Clegg looking sad.](/blog/images/a/nick-clegg-sad.jpg)

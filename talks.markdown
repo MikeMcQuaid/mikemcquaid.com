@@ -1,6 +1,6 @@
 ---
-layout: page
 title: Talks
+layout: page
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 

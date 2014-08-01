@@ -1,5 +1,4 @@
 ---
-layout: blog_post
 title: Unity against terrorism
 ---
 Britain again came under fire from Islamic extremists last week with attempted bombings in London and Glasgow. Thankfully no-one except the one of the perpetrators were hurt and their fairly inept attempts to disrupt and terrorise failed.

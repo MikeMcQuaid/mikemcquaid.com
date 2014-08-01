@@ -1,5 +1,4 @@
 ---
-layout: article
 title: Why use version control?
 ---
 _This is partly based on some content from my book [Git In Practice](http://www.manning.com/mcquaid/?a_aid=MikeMcQuaid&a_bid=5688bbf4)._

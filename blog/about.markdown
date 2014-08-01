@@ -1,5 +1,4 @@
 ---
-layout: blog_page
 title: About
 ---
 Hello. My name is Mike McQuaid and I'm a liberal Christian and Christian liberal.

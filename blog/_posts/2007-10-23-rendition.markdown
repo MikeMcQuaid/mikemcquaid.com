@@ -1,5 +1,4 @@
 ---
-layout: blog_post
 title: Rendition
 ---
 I had the fortune of seeing Rendition on Friday night. Rendition is a film about the US extradition of suspected terrorists to prisons outside of the US where they can be legally tortured.

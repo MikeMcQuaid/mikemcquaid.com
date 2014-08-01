@@ -1,5 +1,4 @@
 ---
-layout: article
 title: Deploying Qt applications with DeployQt4
 redirect_from:
   - /2012/01/deploying-qt-applications-with-deployqt4/

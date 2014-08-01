@@ -1,5 +1,4 @@
 ---
-layout: article
 title: Windows Autologin Lock Screen
 redirect_from:
   - /2010/09/windows-autologin-lock-screen/

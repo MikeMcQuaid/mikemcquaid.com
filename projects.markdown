@@ -1,6 +1,6 @@
 ---
-layout: page
 title: Projects
+layout: page
 ---
 ### Current
 #### [GitHub Enterprise](https://enterprise.github.com)

@@ -1,5 +1,4 @@
 ---
-layout: article
 slug: why-i-left-linux
 title: Why I Left Linux and went to Apple
 redirect_from:

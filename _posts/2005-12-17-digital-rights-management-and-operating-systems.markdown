@@ -1,5 +1,4 @@
 ---
-layout: article
 title: Digital Rights Management and Operating Systems
 ---
 _"Sony has recalled many millions of its music CDs, because they contain 'copy protection software' that may damage computers. Describe and explain this story; compare Sony's approach with other attempts to achieve copy protection, and discuss the future for digital rights management in operating systems design."_

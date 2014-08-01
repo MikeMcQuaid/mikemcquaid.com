@@ -1,6 +1,5 @@
 ---
-layout: article
-title: 'The Social Network: A Defence of Programming'
+title: "The Social Network: A Defence of Programming"
 ---
 I recently saw [The Social Network](http://www.imdb.com/title/tt1285016/), a dramatisation of the creation of Facebook. It was a thoroughly enjoyable film with brilliant direction, casting (Eisenberg and Timberlake in particular) and writing. It also had an incredibly realistic hacking scene (using wget and perl scripts) and featured KDE on the desktop of most of the programmers in the film. I highly recommend seeing it, regardless of your thoughts on Facebook.
 

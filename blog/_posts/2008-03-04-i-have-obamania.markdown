@@ -1,5 +1,4 @@
 ---
-layout: blog_post
 title: I have Obamania!
 ---
 I've got a fever and the only prescription is Barack Obama.

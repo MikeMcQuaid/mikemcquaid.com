@@ -1,6 +1,6 @@
 ---
-layout: page
 title: References
+layout: page
 ---
 ### [Homebrew](https://github.com/Homebrew/homebrew/)
 > Homebrew is one of the most used pieces of software in the world and the project with the highest rate of contribution on GitHub. There is no handbook on how to create, cultivate and maintain something like Homebrew, but if there was one, Mike would be the one who wrote it.

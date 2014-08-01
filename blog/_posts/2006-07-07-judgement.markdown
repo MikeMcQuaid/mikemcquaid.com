@@ -1,5 +1,4 @@
 ---
-layout: blog_post
 title: Judgement
 ---
 I've been a Christian 4 years. It's without a doubt the best thing to ever happen to me, and was followed a week after to the second best thing to happen to me, Lindsay, but that's another story...

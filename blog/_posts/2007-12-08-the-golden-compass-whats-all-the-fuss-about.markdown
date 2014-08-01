@@ -1,5 +1,4 @@
 ---
-layout: blog_post
 title: The Golden Compass - What's all the fuss about?
 ---
 The Catholic League in the US has called for a boycott of The Golden Compass, the film based on Philip Pullman's novel Northern Lights.

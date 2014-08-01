@@ -1,5 +1,4 @@
 ---
-layout: article
 title: Make Qt use the GTK Style on XFCE or Xubuntu
 redirect_from:
   - /2011/12/make-qt-use-the-gtk-style-on-xfce-or-xubuntu/

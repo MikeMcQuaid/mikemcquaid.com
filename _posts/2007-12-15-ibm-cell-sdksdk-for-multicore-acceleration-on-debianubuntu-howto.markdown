@@ -1,5 +1,4 @@
 ---
-layout: article
 title: IBM Cell SDK/SDK for Multicore Acceleration on Debian/Ubuntu HOWTO
 ---
 Today I battled with trying to get **IBM's Cell SDK 3.0** _(now known as the **SDK for Multicore Acceleration**)_ installed on my Debian AMD64 machine. This would cause slight grief even with a regular Debian machine as IBM only formally supports Fedora and RHEL so only provides RPMs. This is worsened by the fact that **a bunch of the packages aren't even available from IBM** but require perusal of some provided yum configuration files to find.

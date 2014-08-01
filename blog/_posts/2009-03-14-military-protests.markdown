@@ -1,5 +1,4 @@
 ---
-layout: blog_post
 title: Military Protests
 ---
 Some of you may have read about the [protests of returning troops to England from Iraq last week](http://news.bbc.co.uk/1/hi/england/beds/bucks/herts/7936485.stm). They were greeted by a friendly welcome by the majority with a minority holding signs describing them as "_Butchers_" and "_Terrorists_".

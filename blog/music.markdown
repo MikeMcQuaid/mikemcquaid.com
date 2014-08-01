@@ -1,5 +1,4 @@
 ---
-layout: blog_page
 title: Music
 ---
 ### Instruments

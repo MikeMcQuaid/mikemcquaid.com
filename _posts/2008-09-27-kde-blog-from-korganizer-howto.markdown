@@ -1,5 +1,4 @@
 ---
-layout: article
 title: KDE - Blog from KOrganizer HOWTO
 redirect_from:
   - /2008/09/kde-blog-from-korganizer-howto/
