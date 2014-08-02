@@ -158,4 +158,3 @@ DEPENDENCIES
   guard-rake
   pygments.rb
   rake
-  sass

@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'sass'
 gem 'rake'
 gem 'pygments.rb'
 gem 'asciidoctor'
