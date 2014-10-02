@@ -33,7 +33,16 @@ Porting software between Windows, Mac and Linux. Administering Linux servers (vi
 #### [The University of Edinburgh](http://www.ed.ac.uk/home) (2003 - 2007)
 [BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
 
+### Publications
+
+#### [Git in Practice](https://training.github.com/kit/foundations/) (2014)
+An intermediate/advanced Git techniques book published with Manning Publications in September 2014.
+
 ### Conference Talks
+
+#### [Java One](https://www.oracle.com/javaone/index.html) (2014)
+* [Advanced Git (and GitHub)](https://speakerdeck.com/mikemcquaid/advanced-git-and-github)
+* [The Foundations of Git and GitHub](https://training.github.com/kit/foundations/)
 
 #### [DunDDD](http://dun.dddscotland.co.uk/) (2012)
 * [Advanced Git (and GitHub)](https://speakerdeck.com/mikemcquaid/advanced-git-and-github)

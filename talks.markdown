@@ -20,7 +20,7 @@ How software architecture, process and management plays out in the real world wi
 <script async class="speakerdeck-embed" data-id="4e4c3690ab6f013155733279fa910c9f" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Advanced Git (and GitHub)
-A walkthrough of some useful but rarely known features in Git and GitHub. Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
+A walkthrough of some useful but rarely known features in Git and GitHub. Presented at [Java One](https://www.oracle.com/javaone/index.html) in 2014,  [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
 
 <iframe width="640" height="385" src="//www.youtube.com/embed/c6rFzbZa6x0" frameborder="0" allowfullscreen></iframe>
 
