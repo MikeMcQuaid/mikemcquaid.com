@@ -4,6 +4,7 @@ layout: page
 classes: stealth-lists
 ---
 ### Mike McQuaid
+
 #### Software Engineer
 I love solving difficult problems to simplify people's lives.
 
@@ -28,10 +29,12 @@ Porting software between Windows, Mac and Linux. Administering Linux servers (vi
 [Considerable experience](http://www.ohloh.net/accounts/mikemcquaid) contributing to open-source software and getting patches accepted upstream.
 
 ### Education
+
 #### [The University of Edinburgh](http://www.ed.ac.uk/home) (2003 - 2007)
 [BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
 
 ### Conference Talks
+
 #### [DunDDD](http://dun.dddscotland.co.uk/) (2012)
 * [Advanced Git (and GitHub)](https://speakerdeck.com/mikemcquaid/advanced-git-and-github)
 * [Git for beginners](http://speakerdeck.com/u/mikemcquaid/p/git-for-beginners)
@@ -44,10 +47,12 @@ Porting software between Windows, Mac and Linux. Administering Linux servers (vi
 [CPack](http://speakerdeck.com/u/mikemcquaid/p/cpack)
 
 ### Awards
+
 #### [UK Open Source Awards](http://opensourceawards.org/) (2014)
 [Shortlisted](http://opensourceawards.org/index.php/awards-shortlist) for the person/project prize.
 
 ### Experience
+
 #### [GitHub](http://github.com/) (2013 - Present)
 Improving the testing, packaging, deployment and release process for [GitHub Enterprise](https://enterprise.github.com).
 
