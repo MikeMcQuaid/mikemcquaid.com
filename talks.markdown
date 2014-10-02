@@ -4,6 +4,13 @@ layout: page
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
+### Advanced Git (and GitHub)
+A walkthrough of some useful but rarely known features in Git and GitHub. Presented at [Java One](https://www.oracle.com/javaone/index.html) in 2014,  [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
+
+<iframe width="640" height="385" src="//www.youtube.com/embed/c6rFzbZa6x0" frameborder="0" allowfullscreen></iframe>
+
+<script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### GitHub for Beginners
 How to setup and use GitHub and the GitHub desktop applications. Aimed at non-programmers. Presented at [Trans*H4CK](http://www.transhack.org) Chicago in 2014.
 
@@ -18,13 +25,6 @@ How people in the technology industry can get paid better and get their dream jo
 How software architecture, process and management plays out in the real world with some best practices and things to avoid. Presented as a guest lecture at The University of Edinburgh's [Software Architecture, Process and Management course](http://www.inf.ed.ac.uk/teaching/courses/sapm/) in 2014.
 
 <script async class="speakerdeck-embed" data-id="4e4c3690ab6f013155733279fa910c9f" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
-### Advanced Git (and GitHub)
-A walkthrough of some useful but rarely known features in Git and GitHub. Presented at [Java One](https://www.oracle.com/javaone/index.html) in 2014,  [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
-
-<iframe width="640" height="385" src="//www.youtube.com/embed/c6rFzbZa6x0" frameborder="0" allowfullscreen></iframe>
-
-<script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Homebrew
 How to install, use, file bugs, create and contribute packages to Homebrew with some history of the project along the way. Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [TechMeetup Dundee](http://techdundee.eventbrite.co.uk/), [SydJS](http://www.sydjs.com), [ConFoo.ca](http://confoo.ca) in 2012.
