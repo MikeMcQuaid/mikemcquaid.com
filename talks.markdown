@@ -16,6 +16,11 @@ How to setup and use GitHub and the GitHub desktop applications. Aimed at non-pr
 
 <script async class="speakerdeck-embed" data-id="5ed38c70ab6c0131cbe70e9464dacf0d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
+### How I Got Into Programming
+A brief overview of how I got involved with programming and ended up working as a software engineer. Presented at [GitHub Patchwork Edinburgh](https://github.com/blog/1907-patchwork-edinburgh) in 2014.
+
+<script async class="speakerdeck-embed" data-id="e4ae29503d990132b6be56cb37b563fb" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Career Hacks for Software Engineers
 How people in the technology industry can get paid better and get their dream job by learning from my career mistakes. Presented at [The University of Edinburgh CompSoc](https://comp-soc.com/) and [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2014.
 
