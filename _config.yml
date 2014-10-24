@@ -22,18 +22,18 @@ defaults:
   -
     scope:
       path: ""
-      type: "post"
+      type: "posts"
     values:
       layout: "article"
   -
     scope:
       path: "blog/_posts"
-      type: "post"
+      type: "posts"
     values:
       layout: "blog_post"
   -
     scope:
       path: "blog"
-      type: "page"
+      type: "pages"
     values:
       layout: "blog_page"
