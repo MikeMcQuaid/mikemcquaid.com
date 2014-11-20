@@ -11,6 +11,11 @@ A walkthrough of some useful but rarely known features in Git and GitHub. Presen
 
 <script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
+### Building GitHub Enterprise (and other things) with GitHub
+Presented to potential GitHub Enterprise customers in 2014.
+
+<script async class="speakerdeck-embed" data-id="ae79961052050132090736a37b6e3dcd" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### GitHub for Beginners
 How to setup and use GitHub and the GitHub desktop applications. Aimed at non-programmers. Presented at [Trans*H4CK](http://www.transhack.org) Chicago in 2014.
 
