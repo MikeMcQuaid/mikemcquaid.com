@@ -1,4 +1,5 @@
 ---
+title: Working from home
 ---
 ![Home office with guitar](/images/a/home_office.jpg)
 

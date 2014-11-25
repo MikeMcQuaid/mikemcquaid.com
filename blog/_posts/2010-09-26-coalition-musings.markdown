@@ -1,5 +1,5 @@
 ---
-title: Coalition Musings
+title: Coalition musings
 ---
 It's been over 4 months since the [2010 UK elections](http://en.wikipedia.org/wiki/United_Kingdom_general_election,_2010), the first election I'd say I researched to a significant level and followed closely. I watched many of the debates, interacted in many political discussions in person, on Facebook and on Twitter and consumed huge quantities of mainstream and social media discussion. It was a very strange election for a Liberal Democrat member; my party was thrust into the mainstream far more by the televised debates and ended up deciding who would form a government; finally deciding on forming one with the Conservatives.
 

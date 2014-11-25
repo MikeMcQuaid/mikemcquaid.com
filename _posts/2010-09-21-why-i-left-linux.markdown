@@ -1,6 +1,6 @@
 ---
 slug: why-i-left-linux
-title: Why I Left Linux and went to Apple
+title: Why I left Linux and went to Apple
 redirect_from:
   - /2010/09/why-i-left-linux/
 ---
