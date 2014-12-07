@@ -1,7 +1,7 @@
 ---
 title: Working from home
 ---
-![Home office with guitar](/images/a/home_office.jpg)
+![Home office with guitar](/images/a/home_office_guitar.jpg)
 
 I used to have a list of "Things I Will Never Do In My Job" when I was at university. Looking back at the 7 years since I graduated I realise I've done almost all of them.
 
@@ -14,7 +14,7 @@ I always vowed I'd never work from home but yet I've found myself doing it (pret
 - I don't waste time commuting.
 - My puppy can sleep here:
 
-![Puppy sleeping on my lap](/images/a/puppy.jpg)
+![Puppy sleeping on my lap](/images/a/puppy_lap.jpg)
 
 Now that remote working is becoming more widely available various guides keep popping up about all the things you must ensure you always/never do if you want to work from home successfully. I tend to nod along with about half of each article and strongly disagree with the other half. With that caveat; here are the things I've found that help me work from home successfully:
 
