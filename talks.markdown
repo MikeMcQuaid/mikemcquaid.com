@@ -11,6 +11,11 @@ A walkthrough of some useful but rarely known features in Git and GitHub. Presen
 
 <script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
+### Homebrew - The Good, Bad and Ugly of OSX Packaging
+Some of the things that Homebrew does well, badly and the special challenges that OSX packagers need to deal with. Presented at [FOSDEM](https://fosdem.org) in 2015.
+
+<script async class="speakerdeck-embed" data-id="492fc76c5fda4044b08129f33d18278c" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Building GitHub Enterprise (and other things) with GitHub
 Presented to potential GitHub Enterprise customers in 2014.
 
