@@ -43,7 +43,7 @@ An intermediate/advanced Git techniques book published with Manning Publications
 #### [FOSDEM](https://fosdem.org) (2015)
 * [Homebrew - The Good, Bad and Ugly of OSX Packaging](https://speakerdeck.com/mikemcquaid/homebrew-the-good-bad-and-ugly-of-osx-packaging)
 
-#### [Java One](https://www.oracle.com/javaone/index.html) (2014)
+#### [JavaOne](https://www.oracle.com/javaone/index.html) (2014)
 * [Advanced Git (and GitHub)](https://speakerdeck.com/mikemcquaid/advanced-git-and-github)
 * [The Foundations of Git and GitHub](https://training.github.com/kit/foundations/)
 
@@ -59,6 +59,8 @@ An intermediate/advanced Git techniques book published with Manning Publications
 [CPack](http://speakerdeck.com/u/mikemcquaid/p/cpack)
 
 ### Awards
+### [JavaOne Rock Star](https://www.oracle.com/javaone/rock-stars/index.html#McQuaid) (2014)
+The JavaOne Rock Star Program "recognize[s] speakers for their outstanding session content and speaking ability".
 
 #### [UK Open Source Awards](http://opensourceawards.org/) (2014)
 [Shortlisted](http://opensourceawards.org/index.php/awards-shortlist) for the person/project prize.

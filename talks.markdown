@@ -5,7 +5,7 @@ layout: page
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
 ### Advanced Git (and GitHub)
-A walkthrough of some useful but rarely known features in Git and GitHub. Presented at [Java One](https://www.oracle.com/javaone/index.html) in 2014,  [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
+A walkthrough of some useful but rarely known features in Git and GitHub. Presented at [JavaOne](https://www.oracle.com/javaone/index.html) in 2014, [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
 
 <iframe width="640" height="385" src="//www.youtube.com/embed/c6rFzbZa6x0" frameborder="0" allowfullscreen></iframe>
 
