@@ -59,8 +59,9 @@ An intermediate/advanced Git techniques book published with Manning Publications
 [CPack](http://speakerdeck.com/u/mikemcquaid/p/cpack)
 
 ### Awards
+
 ### [JavaOne Rock Star](https://www.oracle.com/javaone/rock-stars/index.html#McQuaid) (2014)
-The JavaOne Rock Star Program "recognize[s] speakers for their outstanding session content and speaking ability".
+The JavaOne Rock Star Program "recognise[s] speakers for their outstanding session content and speaking ability".
 
 #### [UK Open Source Awards](http://opensourceawards.org/) (2014)
 [Shortlisted](http://opensourceawards.org/index.php/awards-shortlist) for the person/project prize.
