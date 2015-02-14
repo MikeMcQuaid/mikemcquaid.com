@@ -5,7 +5,7 @@ layout: page
 ### Current
 
 #### [GitHub Enterprise](https://enterprise.github.com)
-![Homebrew](/images/a/github-enterprise.png)
+![GitHub Enterprise](/images/a/github-enterprise.png)
 
 Improving the testing, packaging, deployment and release process for [GitHub Enterprise](https://enterprise.github.com).
 
@@ -14,7 +14,16 @@ Improving the testing, packaging, deployment and release process for [GitHub Ent
 
 Maintainer. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
+#### [Hookhand]()
+![Hookhand](/images/a/hookhand.png)
+
+Creator. A small web application which runs scripts from webhooks.
+
 ### Past
+#### [ManningAsciiDoc](https://github.com/mikemcquaid/ManningAsciiDoc)
+![Homebrew](/images/a/manningasciidoc.png)
+
+Creator. Rake buildsystem for generating Manning DocBook and PDF files from AsciiDoc.
 
 #### [Audioscrobbler.app](https://github.com/mxcl/Audioscrobbler.app)
 ![Audioscrobbler.app](/images/a/audioscrobbler.png)
