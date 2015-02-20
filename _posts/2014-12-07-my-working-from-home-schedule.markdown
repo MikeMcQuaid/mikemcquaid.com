@@ -1,6 +1,5 @@
 ---
 title: My working from home schedule
-draft: true
 ---
 ![Home office desk](/images/a/home_office.jpg)
 Since my [last post](/2014/11/23/working-from-home/) on working from home a few people have asked me for a more specific breakdown of how I schedule my day. Obviously this varies a bit but here's my vague timetable:
