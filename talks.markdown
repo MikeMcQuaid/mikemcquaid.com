@@ -7,7 +7,7 @@ layout: page
 ### Advanced Git (and GitHub)
 A walkthrough of some useful but rarely known features in Git and GitHub. Presented at [JavaOne](https://www.oracle.com/javaone/index.html) in 2014, [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
 
-<iframe width="640" height="385" src="//www.youtube.com/embed/c6rFzbZa6x0" frameborder="0" allowfullscreen></iframe>
+<iframe width="678" height="408" src="//www.youtube.com/embed/c6rFzbZa6x0" frameborder="0" allowfullscreen></iframe>
 
 <script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
@@ -44,14 +44,14 @@ How software architecture, process and management plays out in the real world wi
 ### Homebrew
 How to install, use, file bugs, create and contribute packages to Homebrew with some history of the project along the way. Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [TechMeetup Dundee](http://techdundee.eventbrite.co.uk/), [SydJS](http://www.sydjs.com), [ConFoo.ca](http://confoo.ca) in 2012.
 
-<iframe width="640" height="385" src="//www.youtube.com/embed/VSLNrap-gY4" frameborder="0" allowfullscreen></iframe>
+<iframe width="678" height="408" src="//www.youtube.com/embed/VSLNrap-gY4" frameborder="0" allowfullscreen></iframe>
 
 <script async class="speakerdeck-embed" data-id="4f5121f68a37d6001f001693" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Homebrew Kickstarter
 The video for the [Homebrew Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot).
 
-<iframe width="640" height="385" src="//www.youtube.com/embed/5T3HiO8gqyQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="678" height="408" src="//www.youtube.com/embed/5T3HiO8gqyQ" frameborder="0" allowfullscreen></iframe>
 
 ### How to make OSX users not hate you
 How to avoid the common usability failings of cross-platform OSX applications. Presented at the [KDAB](http://www.kdab.com) in 2012.
@@ -61,7 +61,7 @@ How to avoid the common usability failings of cross-platform OSX applications. P
 ### HTML5
 An outline for non-web developers of the new technologies in HTML5. Presented at [KDAB](http://www.kdab.com) in 2012.
 
-<iframe width="640" height="385" src="//www.youtube.com/embed/WNfhVKNbZHo" frameborder="0" allowfullscreen></iframe>
+<iframe width="678" height="408" src="//www.youtube.com/embed/WNfhVKNbZHo" frameborder="0" allowfullscreen></iframe>
 
 <script async class="speakerdeck-embed" data-id="4fcdd8f02e36780022010add" data-ratio="1.7777777777777777" src="//speakerdeck.com/assets/embed.js"></script>
 
@@ -73,7 +73,7 @@ An overview of the essentials required to use Git. Presented at [DunDDD](http://
 ### Advanced Git
 A walkthrough of some lesser-known advanced features in Git. Presented at the [KDAB](http://www.kdab.com) in 2011.
 
-<iframe width="640" height="385" src="//www.youtube.com/embed/UwPO0MwOC8k" frameborder="0" allowfullscreen></iframe>
+<iframe width="678" height="408" src="//www.youtube.com/embed/UwPO0MwOC8k" frameborder="0" allowfullscreen></iframe>
 
 <script async class="speakerdeck-embed" data-id="4f4e51c73f09700022014d32" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
