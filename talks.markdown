@@ -4,17 +4,19 @@ layout: page
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
+### Homebrew - The Good, Bad and Ugly of OSX Packaging
+Some of the things that Homebrew does well, badly and the special challenges that OSX packagers need to deal with. Presented at [FOSDEM](https://fosdem.org) in 2015.
+
+<iframe width="678" height="408" src="//www.youtube.com/embed/Kh9d0uF_Qgo" frameborder="0" allowfullscreen></iframe>
+
+<script async class="speakerdeck-embed" data-id="492fc76c5fda4044b08129f33d18278c" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Advanced Git (and GitHub)
 A walkthrough of some useful but rarely known features in Git and GitHub. Presented at [JavaOne](https://www.oracle.com/javaone/index.html) in 2014, [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
 
 <iframe width="678" height="408" src="//www.youtube.com/embed/c6rFzbZa6x0" frameborder="0" allowfullscreen></iframe>
 
 <script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-
-### Homebrew - The Good, Bad and Ugly of OSX Packaging
-Some of the things that Homebrew does well, badly and the special challenges that OSX packagers need to deal with. Presented at [FOSDEM](https://fosdem.org) in 2015.
-
-<script async class="speakerdeck-embed" data-id="492fc76c5fda4044b08129f33d18278c" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### Building GitHub Enterprise (and other things) with GitHub
 Presented to potential GitHub Enterprise customers in 2014.
