@@ -18,6 +18,11 @@ A walkthrough of some useful but rarely known features in Git and GitHub. Presen
 
 <script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
+### Homebrew - Manage and Merge Many Pull Requests
+My workflow as a Homebrew maintainer. Presented at the GitHub Open Source Maintainers MiniSummit in 2015.
+
+<script async class="speakerdeck-embed" data-id="7571bc4dc5624245b0ba004c05231b54" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Building GitHub Enterprise (and other things) with GitHub
 Presented to potential GitHub Enterprise customers in 2014.
 
