@@ -26,7 +26,7 @@ Extensive experience in Ruby, Rails, Git, JavaScript, SASS, Qt, C++, C, PHP, MyS
 
 Porting software between Windows, Mac and Linux. Administering Linux servers (virtual and physical), Windows and Mac machines. Passionately advocating, designing and implementing CI systems.
 
-[Considerable experience](http://www.ohloh.net/accounts/mikemcquaid) contributing to open-source software and getting patches accepted upstream.
+[Considerable experience](https://www.openhub.net/accounts/mikemcquaid) contributing to open-source software and getting patches accepted upstream.
 
 ### Education
 
