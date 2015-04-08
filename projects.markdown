@@ -45,12 +45,12 @@ Creator. A readable HTML5 and CSS3 theme for Wordpress.
 #### [Qocoa](https://github.com/mikemcquaid/Qocoa)
 ![Qocoa](/images/a/qocoa.png)
 
-Creator. A collection of Qt wrappers for OSX's Cocoa widgets.
+Creator. A collection of Qt wrappers for OS X's Cocoa widgets.
 
 #### [Charm](https://github.com/KDAB/Charm)
 ![Charm](/images/a/charm.png)
 
-Maintainer. Added support for OSX 10.6 and Qt/Cocoa, added CPack packaging support and OSX installer creation, migrated to Git and bug fixing.
+Maintainer. Added support for OS X 10.6 and Qt/Cocoa, added CPack packaging support and OS X installer creation, migrated to Git and bug fixing.
 
 #### [Whiteboard](https://github.com/mikemcquaid/Whiteboard)
 ![Whiteboard](/images/a/whiteboard.png)
@@ -75,7 +75,7 @@ Technical lead for team that created the analysis mode and integrated Valgrind's
 #### [Mendeley Desktop](http://www.mendeley.com/download-mendeley-desktop/)
 ![Mendeley](/images/a/mendeley.png)
 
-Ported Qt/MSVC++ application from Windows to CMake, OSX and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web
+Ported Qt/MSVC++ application from Windows to CMake, OS X and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web
 
 #### [KDE](http://kde.org/)
 ![Kontact](/images/a/kontact.png)
@@ -89,7 +89,7 @@ Fixed bugs in and improved cross-platform packaging in CPack. Added Qt plugin su
 Wrote WM8711 Linux kernel driver which was [released in 2.6.26](https://github.com/mirrors/linux-2.6/commit/bd6d417743d941c3e5eabb21abbcac9737f11061).
 
 #### [D-Bus](http://www.freedesktop.org/wiki/Software/dbus)
-Improved and merged the [long-running launchd patchset](https://bugs.freedesktop.org/show_bug.cgi?id=14259). Bug fixes for OSX. [Released in 1.4.1](http://dbus.freedesktop.org/doc/NEWS).
+Improved and merged the [long-running launchd patchset](https://bugs.freedesktop.org/show_bug.cgi?id=14259). Bug fixes for OS X. [Released in 1.4.1](http://dbus.freedesktop.org/doc/NEWS).
 
 #### [libgcal](http://code.google.com/p/libgcal/)
 Added the CMake build-system and migrated to Git. [Released in 0.9](http://gitorious.org/libgcal/libgcal/blobs/master/Changelog.txt).

@@ -4,8 +4,8 @@ layout: page
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
-### Homebrew - The Good, Bad and Ugly of OSX Packaging
-Some of the things that Homebrew does well, badly and the special challenges that OSX packagers need to deal with. Presented at [FOSDEM](https://fosdem.org) in 2015.
+### Homebrew - The Good, Bad and Ugly of OS X Packaging
+Some of the things that Homebrew does well, badly and the special challenges that OS X packagers need to deal with. Presented at [FOSDEM](https://fosdem.org) in 2015.
 
 <iframe width="678" height="408" src="//www.youtube.com/embed/Kh9d0uF_Qgo" frameborder="0" allowfullscreen></iframe>
 
@@ -60,8 +60,8 @@ The video for the [Homebrew Kickstarter project](http://www.kickstarter.com/proj
 
 <iframe width="678" height="408" src="//www.youtube.com/embed/5T3HiO8gqyQ" frameborder="0" allowfullscreen></iframe>
 
-### How to make OSX users not hate you
-How to avoid the common usability failings of cross-platform OSX applications. Presented at the [KDAB](http://www.kdab.com) in 2012.
+### How to make OS X users not hate you
+How to avoid the common usability failings of cross-platform OS X applications. Presented at the [KDAB](http://www.kdab.com) in 2012.
 
 <script async class="speakerdeck-embed" data-id="4fcdd9442e3678001f010cff" data-ratio="1.7777777777777777" src="//speakerdeck.com/assets/embed.js"></script>
 
