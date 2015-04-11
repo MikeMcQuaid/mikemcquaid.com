@@ -142,6 +142,12 @@ h1, h2, h3, h4 {
   background-color: $text-background-colour;
   color: $page-background-dark-colour;
   border-bottom: solid $border-colour-dark 1px;
+
+  @media print {
+    border-bottom: none;
+    background-color: white;
+    color: black;
+  }
 }
 
 #main, #footer {
@@ -385,4 +391,18 @@ blockquote {
 
 .clearboth {
   clear: both;
+}
+
+#referencesreferences {
+  @media print {
+    display: none;
+  }
+}
+
+#references-available-on-request {
+  display: none;
+
+  @media print {
+    display: inherit;
+  }
 }
