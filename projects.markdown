@@ -7,7 +7,7 @@ layout: page
 #### [GitHub Enterprise](https://enterprise.github.com)
 ![GitHub Enterprise](/images/a/github-enterprise.png)
 
-Improving the testing, packaging, deployment and release process for [GitHub Enterprise](https://enterprise.github.com).
+Improving the quality for [GitHub Enterprise](https://enterprise.github.com) through bugfixing and improving manual QA, CI, packaging, deployment, automation and ChatOps around the release process.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 ![Homebrew](/images/a/homebrew.png)
