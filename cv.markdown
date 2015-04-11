@@ -22,9 +22,9 @@ No recruiters, please.
 * +44 (0)773 405 2864
 
 ### Skills
-Extensive experience in Ruby, Rails, Git, JavaScript, SASS, Qt, C++, C, PHP, MySQL, CoffeeScript, Python, CMake, Java and shell scripting. Casual experience with Perl, Objective-C, AWS, Chef, Automake, VB.NET and Android. Productive with other languages in days.
+Extensive experience in Ruby, Rails, Git, shell scripting, AWS, JavaScript, SASS, Qt, C++, C, PHP, MySQL, CoffeeScript, Python, CMake, Java and Puppet. Casual experience with Perl, Objective-C, Chef, Automake, VB.NET and Android. Productive with other languages in days.
 
-Porting software between Windows, Mac and Linux. Administering Linux servers (virtual and physical), Windows and Mac machines. Passionately advocating, designing and implementing CI systems.
+Porting software between Windows, Mac and Linux. Administering Linux servers (virtual and physical), Windows and Mac machines. Passionately advocating for, designing and implementing CI systems.
 
 [Considerable experience](https://www.openhub.net/accounts/mikemcquaid) contributing to open-source software and getting patches accepted upstream.
 
