@@ -14,6 +14,11 @@ Improving the quality for [GitHub Enterprise](https://enterprise.github.com) thr
 
 Maintainer. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
+#### [Boxen](https://github.com/boxen)
+![Boxen](/images/a/boxen.png)
+
+Maintainer. Improved Homebrew integration, general bugfixing and updates.
+
 #### [Hookhand]()
 ![Hookhand](/images/a/hookhand.png)
 

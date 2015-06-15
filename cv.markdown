@@ -5,7 +5,7 @@ classes: stealth-lists
 ---
 ### Mike McQuaid
 
-#### Software Engineer
+#### Senior Software Engineer
 I love solving difficult problems to simplify people's lives.
 
 I live in Edinburgh, Scotland and will not consider relocating for work. However, I'm happy to work remotely from my home here and travel regularly to anywhere in the world.
@@ -18,7 +18,6 @@ No recruiters, please.
 * [github.com/mikemcquaid](https://github.com/mikemcquaid)
 * [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid)
 * [linkedin.com/in/mkmcqd](http://www.linkedin.com/in/mkmcqd)
-* [@MikeMcQuaid](http://twitter.com/MikeMcQuaid)
 * +44 (0)773 405 2864
 
 ### Skills
@@ -69,7 +68,7 @@ The JavaOne Rock Star Program "recognise[s] speakers for their outstanding sessi
 ### Experience
 
 #### [GitHub](http://github.com/) (2013 - Present)
-Improving the quality for [GitHub Enterprise](https://enterprise.github.com) through bugfixing and improving manual QA, CI, packaging, deployment, automation and ChatOps around the release process.
+Senior Software Engineer improving the quality for [GitHub Enterprise](https://enterprise.github.com) through release management, engineering and improving manual QA, CI, packaging, deployment, automation and ChatOps around the release process. Primary on-call rotation for GitHub.com.
 
 #### [AllTrails](http://alltrails.com/) (2012 - 2013)
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](http://allsnow.com). Developed features, APIs and optimized performance. Setup CI and automatic deployment for Rails and mobile applications. Managed and improved AWS infrastructure.
