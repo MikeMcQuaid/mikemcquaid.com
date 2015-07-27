@@ -18,6 +18,11 @@ A walkthrough of some useful but rarely known features in Git and GitHub. Presen
 
 <script async class="speakerdeck-embed" data-id="5ced99801a3301309a9f1231381a9bc7" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
+### GitHub for New Young People
+An introduction to GitHub for young people. Presented at the Young Rewired State's 2015 Festival of Code in Edinburgh.
+
+<script async class="speakerdeck-embed" data-id="667ffe62cf14400caf55e94e44bfd3c2" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Homebrew - Manage and Merge Many Pull Requests
 My workflow as a Homebrew maintainer. Presented at the GitHub Open Source Maintainers MiniSummit in 2015.
 
