@@ -7,9 +7,6 @@ title: Music
 * [Ibanez SA260FM](http://ibanez.wikia.com/wiki/SA260FM) electric guitar (tuned BEADGC)
 * [Yamaha AC1R](http://europe.yamaha.com/en/products/musical-instruments/guitars-basses/el-ac-guitars/a_series/ac1r/) electric acoustic guitar
 
-### Preferences
-* [Last.fm profile page](http://www.last.fm/user/mikearthur)
-
 ### Recordings
 
 #### With Brian McWilliams
