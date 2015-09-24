@@ -4,27 +4,36 @@ layout: page
 ---
 ### Current
 
-#### [GitHub Enterprise](https://enterprise.github.com)
-![GitHub Enterprise](/images/a/github-enterprise.png)
-
-Improving the quality for [GitHub Enterprise](https://enterprise.github.com) through bugfixing and improving manual QA, CI, packaging, deployment, automation and ChatOps around the release process.
+#### [GitHub](https://github.com)
+Working on the GitHub API and webhooks
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 ![Homebrew](/images/a/homebrew.png)
 
 Maintainer. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
-#### [Boxen](https://github.com/boxen)
-![Boxen](/images/a/boxen.png)
+#### [Strap](https://github.com/mikemcquaid/strap)
+Creator. A script to bootstrap a minimal OS X development system.
 
-Maintainer. Improved Homebrew integration, general bugfixing and updates.
-
-#### [Hookhand]()
+#### [Hookhand](https://github.com/mikemcquaid/HookHand)
 ![Hookhand](/images/a/hookhand.png)
 
 Creator. A small web application which runs scripts from webhooks.
 
 ### Past
+
+#### [TwitterDelete](https://github.com/mikemcquaid/TwitterDelete)
+Creator. A small application to delete your old, unpopular tweets.
+
+#### [GitHub Enterprise](https://enterprise.github.com)
+![GitHub Enterprise](/images/a/github-enterprise.png)
+
+Improving the quality for [GitHub Enterprise](https://enterprise.github.com) through bugfixing and improving manual QA, CI, packaging, deployment, automation and ChatOps around the release process.
+
+#### [Boxen](https://github.com/boxen)
+![Boxen](/images/a/boxen.png)
+
+Maintainer. Improved Homebrew integration, general bugfixing and updates.
 
 #### [ManningAsciiDoc](https://github.com/mikemcquaid/ManningAsciiDoc)
 ![Homebrew](/images/a/manningasciidoc.png)

@@ -68,7 +68,7 @@ The JavaOne Rock Star Program "recognise[s] speakers for their outstanding sessi
 ### Experience
 
 #### [GitHub](http://github.com/) (2013 - Present)
-Senior Software Engineer improving the quality for [GitHub Enterprise](https://enterprise.github.com) through release management, engineering and improving manual QA, CI, packaging, deployment, automation and ChatOps around the release process. Primary on-call rotation for GitHub.com.
+Senior Software Engineer working on the GitHub API and webhooks. Previously improving the quality for [GitHub Enterprise](https://enterprise.github.com) through release management, engineering and improving manual QA, CI, packaging, deployment, automation and ChatOps around the release process. Primary on-call rotation for GitHub.com.
 
 #### [AllTrails](http://alltrails.com/) (2012 - 2013)
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](http://allsnow.com). Developed features, APIs and optimized performance. Setup CI and automatic deployment for Rails and mobile applications. Managed and improved AWS infrastructure.
