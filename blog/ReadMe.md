@@ -1,6 +1,6 @@
 # A Liberal Christian Liberal
 
-[A Liberal Christian Liberal](http://mikemcquaid.com/blog/) is the politics and religion blog by Mike McQuaid.
+[A Liberal Christian Liberal](http://mikemcquaid.com/blog/) is Mike McQuaid's musings on life blog.
 
 This site uses [Jekyll](http://github.com/mojombo/jekyll) for HTML generation and [SASS](http://sass-lang.com) for CSS generation.
 

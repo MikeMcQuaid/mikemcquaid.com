@@ -13,7 +13,7 @@ I live in Edinburgh, Scotland and will not consider relocating for work. However
 No recruiters, please.
 
 ### Personal
-* [mike@mikemcquaid.com](mailto:mike@mikemcquaid.com)
+* [{{ site.author.email }}](mailto:{{ site.author.email }})
 * [mikemcquaid.com/projects/](http://mikemcquaid.com/projects/)
 * [github.com/mikemcquaid](https://github.com/mikemcquaid)
 * [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid)
