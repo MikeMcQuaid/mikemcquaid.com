@@ -1,4 +1,9 @@
-title: Mike McQuaid
+name: Mike McQuaid
+description: The home page for a software engineer named Mike McQuaid.
+author:
+  name: Mike McQuaid
+  email: mike@mikemcquaid.com
+  uri: http://mikemcquaid.com
 url: http://mikemcquaid.com
 permalink: pretty
 
@@ -19,20 +24,17 @@ sass:
   sass_dir: _sass
   style: :compressed
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "article"
-  -
-    scope:
+  - scope:
       path: "blog/_posts"
       type: "posts"
     values:
       layout: "blog_post"
-  -
-    scope:
+  - scope:
       path: "blog"
       type: "pages"
     values:
