@@ -4,6 +4,13 @@ layout: page
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
+### Homebrew - Things We Do Differently
+Some of the things that Homebrew does well, badly and the special challenges that OS X packagers need to deal with. Presented at [FOSDEM](https://fosdem.org) in 2016.
+
+<iframe width="678" height="408" src="//www.youtube.com/embed/dIGQPqvBub4" frameborder="0" allowfullscreen></iframe>
+
+<script async class="speakerdeck-embed" data-id="0d4ce07dabf04dad8acf39d267874e68" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Homebrew - The Good, Bad and Ugly of OS X Packaging
 Some of the things that Homebrew does well, badly and the special challenges that OS X packagers need to deal with. Presented at [FOSDEM](https://fosdem.org) in 2015.
 
