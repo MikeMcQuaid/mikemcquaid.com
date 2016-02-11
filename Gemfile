@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'pygments.rb'
 gem 'asciidoctor'
 gem 'github-pages'
 

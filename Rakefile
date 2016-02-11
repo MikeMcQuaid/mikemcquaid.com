@@ -4,15 +4,9 @@ require "rake/clean"
 
 task :default => :jekyll
 
-pygments = "_sass/pygments.scss"
 dizzy_base = "2007-02-27-making-dizzy-shine-with-ajax"
 dizzy_adoc = "_posts/_#{dizzy_base}.asciidoc"
 dizzy = "_posts/#{dizzy_base}.html"
-
-file pygments do
-  require "pygments"
-  File.open(pygments, "w") {|f| f.write Pygments.css }
-end
 
 file dizzy => dizzy_adoc do
   require "asciidoctor"
@@ -28,10 +22,10 @@ file dizzy => dizzy_adoc do
   end
 end
 
-task :deps => [pygments, dizzy]
+task :deps => dizzy
 
 task :jekyll => :deps do
   sh "jekyll", "build"
 end
 
-CLEAN.include FileList[pygments, dizzy, "_site"]
+CLEAN.include FileList[dizzy, "_site"]

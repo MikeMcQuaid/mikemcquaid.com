@@ -1,7 +1,5 @@
 ---
 ---
-@import "pygments";
-
 $page-background-colour: #111;
 $page-background-dark-colour: black;
 $page-text-colour: #eee;
@@ -243,7 +241,7 @@ img {
   }
 }
 
-h3 {
+h3, #toctitle {
   font-size: 1.4em;
   margin: 1.5em 0 -0.5em 0;
 

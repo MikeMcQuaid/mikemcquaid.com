@@ -1,6 +1,89 @@
 ---
 title: Making Dizzy Shine With Ajax
 ---
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_abstract">Abstract</a></li>
+<li><a href="#_acknowledgements">Acknowledgements</a></li>
+<li><a href="#_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_what_is_ajax">1.1. What is Ajax?</a></li>
+<li><a href="#_when_is_ajax_used">1.2. When is Ajax used?</a></li>
+<li><a href="#_what_are_the_problems_with_ajax">1.3. What are the problems with Ajax?</a></li>
+</ul>
+</li>
+<li><a href="#_literature_survey">2. Literature Survey</a>
+<ul class="sectlevel2">
+<li><a href="#_ajax_a_new_approach_to_web_applications">2.1. Ajax: A New Approach to Web Applications</a></li>
+<li><a href="#_navigating_the_applet_browser_divide">2.2. Navigating the Applet-Browser Divide</a></li>
+<li><a href="#_ajax_how_to_handle_bookmarks_and_back_button">2.3. Ajax: How to Handle Bookmarks and Back Button</a></li>
+<li><a href="#_dhtml_accessibility_solving_the_javascript_accessibility_problem">2.4. DHTML accessibility: solving the JavaScript accessibility problem</a></li>
+<li><a href="#_beyond_ajax">2.5. Beyond Ajax</a></li>
+<li><a href="#_web_2_0_next_big_thing_or_next_big_internet_bubble">2.6. Web 2.0 Next Big Thing or Next Big Internet Bubble?</a></li>
+<li><a href="#_beyond_the_desktop_metaphor_in_seven_dimensions">2.7. Beyond the Desktop Metaphor in Seven Dimensions</a></li>
+<li><a href="#_an_architectural_style_for_ajax">2.8. An Architectural Style for Ajax</a></li>
+<li><a href="#_usability_in_web_design">2.9. Usability in Web Design</a></li>
+<li><a href="#_emotionally_centred_design">2.10. Emotionally centred design</a></li>
+<li><a href="#_literature_evaluation">2.11. Literature Evaluation</a></li>
+</ul>
+</li>
+<li><a href="#_background">3. Background</a></li>
+<li><a href="#_theory">4. Theory</a>
+<ul class="sectlevel2">
+<li><a href="#_learnability">4.1. Learnability</a></li>
+<li><a href="#_flexibility">4.2. Flexibility</a></li>
+<li><a href="#_robustness">4.3. Robustness</a></li>
+<li><a href="#_time_affordances">4.4. Time Affordances</a></li>
+</ul>
+</li>
+<li><a href="#_specification">5. Specification</a>
+<ul class="sectlevel2">
+<li><a href="#_lost_functionality">5.1. Lost functionality</a></li>
+<li><a href="#_online_problems">5.2. Online problems</a></li>
+<li><a href="#_solutions">5.3. Solutions</a></li>
+</ul>
+</li>
+<li><a href="#_implementation">6. Implementation</a>
+<ul class="sectlevel2">
+<li><a href="#_feedback_for_long_running_server_side_tasks">6.1. Feedback for long-running server-side tasks</a></li>
+<li><a href="#_input_validation_from_server_side_parameters">6.2. Input validation from server-side parameters</a></li>
+<li><a href="#_quickly_modifying_the_output_dataset">6.3. Quickly modifying the output dataset</a></li>
+<li><a href="#_save_status_without_redirection">6.4. Save status without redirection</a></li>
+<li><a href="#_feedback_for_lengthy_client_server_interaction">6.5. Feedback for lengthy client/server interaction</a></li>
+<li><a href="#_input_validation_based_on_client_side_data">6.6. Input validation based on client-side data</a></li>
+<li><a href="#_problems_encountered">6.7. Problems Encountered</a></li>
+</ul>
+</li>
+<li><a href="#_evaluation">7. Evaluation</a>
+<ul class="sectlevel2">
+<li><a href="#_learnability_2">7.1. Learnability</a></li>
+<li><a href="#_flexibility_2">7.2. Flexibility</a></li>
+<li><a href="#_robustness_2">7.3. Robustness</a></li>
+<li><a href="#_time_affordances_2">7.4. Time Affordances</a></li>
+</ul>
+</li>
+<li><a href="#_further_work">8. Further Work</a>
+<ul class="sectlevel2">
+<li><a href="#_svg_2">8.1. SVG</a></li>
+<li><a href="#_more_vigorous_usability_testing">8.2. More vigorous usability testing</a></li>
+<li><a href="#_testing_under_poor_network_conditions">8.3. Testing under poor network conditions</a></li>
+<li><a href="#_security_2">8.4. Security</a></li>
+<li><a href="#_comet">8.5. Comet</a></li>
+</ul>
+</li>
+<li><a href="#_conclusion">9. Conclusion</a>
+<ul class="sectlevel2">
+<li><a href="#_hypothesis">9.1. Hypothesis</a></li>
+<li><a href="#_benefits">9.2. Benefits</a></li>
+<li><a href="#_drawbacks">9.3. Drawbacks</a></li>
+<li><a href="#_contribution">9.4. Contribution</a></li>
+</ul>
+</li>
+<li><a href="#_references">References</a></li>
+<li><a href="#_glossary">Glossary</a></li>
+</ul>
+</div>
 <div class="sect1">
 <h2 id="_abstract">Abstract</h2>
 <div class="sectionbody">
@@ -1847,7 +1930,7 @@ Internet connection, without the requirement of a plug-in.</p>
 <ul>
 <li>
 <p><a id="1"></a>[1] Best, D. and Eindhoven, T.U., "Web 2.0 Next Big Thing or Next Big
-Internet Bubble?" (2006). <a href="http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf">http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf</a></p>
+Internet Bubble?" (2006). <a href="http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf" class="bare">http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf</a></p>
 </li>
 <li>
 <p><a id="2"></a>[2] Garret, J.J., "Ajax: A New Approach to Web Applications", February
@@ -1856,36 +1939,36 @@ Internet Bubble?" (2006). <a href="http://page.mi.fu-berlin.de/~best/uni/WIS/Web
 <li>
 <p><a id="3"></a>[3] Gibson, B., "DHTML accessibility: solving the JavaScript
 accessibility problem", <em>Proceedings of the 7th international ACM SIGACCESS
-conference on Computers and accessibility</em> (2005), pp. 202&#8212;203.
-<a href="http://doi.acm.org/10.1145/1090785.1090830">http://doi.acm.org/10.1145/1090785.1090830</a></p>
+conference on Computers and accessibility</em> (2005), pp. 202&#8212;&#8203;203.
+<a href="http://doi.acm.org/10.1145/1090785.1090830" class="bare">http://doi.acm.org/10.1145/1090785.1090830</a></p>
 </li>
 <li>
 <p><a id="4"></a>[4] Khare, R., "Beyond AJAX" (2005).
-<a href="http://www.knownow.com/products/docs/whitepapers/KN-Beyond-AJAX.pdf">http://www.knownow.com/products/docs/whitepapers/KN-Beyond-AJAX.pdf</a></p>
+<a href="http://www.knownow.com/products/docs/whitepapers/KN-Beyond-AJAX.pdf" class="bare">http://www.knownow.com/products/docs/whitepapers/KN-Beyond-AJAX.pdf</a></p>
 </li>
 <li>
 <p><a id="5"></a>[5] MacKenzie, J. and McAlister, A. and Desai, S. and McCarthy, K.,
-"Usability in Web Design" (2006). <a href="http://osddp.org/files/issues/Usability.pdf">http://osddp.org/files/issues/Usability.pdf</a></p>
+"Usability in Web Design" (2006). <a href="http://osddp.org/files/issues/Usability.pdf" class="bare">http://osddp.org/files/issues/Usability.pdf</a></p>
 </li>
 <li>
 <p><a id="6"></a>[6] Mesbah, A. and van Deursen, A., "An Architectural Style for Ajax",
-<em>Arxiv preprint cs.SE/0608111</em> (2006). <a href="http://arxiv.org/pdf/cs.SE/0608111">http://arxiv.org/pdf/cs.SE/0608111</a></p>
+<em>Arxiv preprint cs.SE/0608111</em> (2006). <a href="http://arxiv.org/pdf/cs.SE/0608111" class="bare">http://arxiv.org/pdf/cs.SE/0608111</a></p>
 </li>
 <li>
 <p><a id="7"></a>[7] Moran, T.P. and Zhai, S., "Beyond the Desktop Metaphor in Seven
 Dimensions" (2006).
-<a href="http://www.almaden.ibm.com/u/zhai/papers/DesktopMoranZhai.pdf">http://www.almaden.ibm.com/u/zhai/papers/DesktopMoranZhai.pdf</a></p>
+<a href="http://www.almaden.ibm.com/u/zhai/papers/DesktopMoranZhai.pdf" class="bare">http://www.almaden.ibm.com/u/zhai/papers/DesktopMoranZhai.pdf</a></p>
 </li>
 <li>
 <p><a id="8"></a>[8] Neuberg, B., "AJAX: How to Handle Bookmarks and Back Buttons" (2005).</p>
 </li>
 <li>
-<p><a id="9"></a>[9] Nielsen, J., "Navigating the Applet&#8212;Browser Divide" (1997).
-<a href="http://ieeexplore.ieee.org/iel4/52/13290/00605926.pdf">http://ieeexplore.ieee.org/iel4/52/13290/00605926.pdf</a></p>
+<p><a id="9"></a>[9] Nielsen, J., "Navigating the Applet&#8212;&#8203;Browser Divide" (1997).
+<a href="http://ieeexplore.ieee.org/iel4/52/13290/00605926.pdf" class="bare">http://ieeexplore.ieee.org/iel4/52/13290/00605926.pdf</a></p>
 </li>
 <li>
 <p><a id="10"></a>[10] Norman, D.A., "Emotionally centered design", <em>interactions</em> 13, 3
-(2006). <a href="http://doi.acm.org/10.1145/1125864.1125894">http://doi.acm.org/10.1145/1125864.1125894</a></p>
+(2006). <a href="http://doi.acm.org/10.1145/1125864.1125894" class="bare">http://doi.acm.org/10.1145/1125864.1125894</a></p>
 </li>
 <li>
 <p><a id="11"></a>[11] Oberlander, J., "Human-Computer Interaction" (2006).</p>

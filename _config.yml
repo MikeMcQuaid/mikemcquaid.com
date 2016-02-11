@@ -11,8 +11,11 @@ permalink: pretty
 # https://help.github.com/articles/using-jekyll-with-pages#troubleshooting
 # Disable despite enabled on GitHub Pages for supported plugins to work.
 # safe: true
+kramdown:
+  input: GFM
+  hard_wrap: false
 lsi: false
-highlighter: pygments
+highlighter: rouge
 
 exclude: [bin, vendor, CNAME, Gemfile, Gemfile.lock, Guardfile, Rakefile,
           ReadMe.md, style.scss]
@@ -30,7 +33,7 @@ defaults:
     values:
       layout: "article"
   - scope:
-      path: "blog/_posts"
+      path: "blog"
       type: "posts"
     values:
       layout: "blog_post"
