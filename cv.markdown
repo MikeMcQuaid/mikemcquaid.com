@@ -39,6 +39,9 @@ An intermediate/advanced Git techniques book published with Manning Publications
 
 ### Conference Talks
 
+#### [FOSDEM](https://fosdem.org) (2016)
+* [Homebrew - Things We Do Differently](https://speakerdeck.com/mikemcquaid/homebrew-things-we-do-differently)
+
 #### [FOSDEM](https://fosdem.org) (2015)
 * [Homebrew - The Good, Bad and Ugly of OS X Packaging](https://speakerdeck.com/mikemcquaid/homebrew-the-good-bad-and-ugly-of-osx-packaging)
 

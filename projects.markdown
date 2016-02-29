@@ -5,7 +5,7 @@ layout: page
 ### Current
 
 #### [GitHub](https://github.com)
-Working on the GitHub API and webhooks
+Working on the GitHub API and webhooks.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 ![Homebrew](/images/a/homebrew.png)
