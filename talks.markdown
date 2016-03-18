@@ -4,6 +4,11 @@ layout: page
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
+### Managing a healthy GitHub community
+Managing an open-source community is easy when your project is small but grows harder the larger your project becomes. Learn how to grow your project’s community and ensure that it remains a healthy, happy and fun place. Presented at [FOSSASIA](http://2016.fossasia.org) in 2016.
+
+<script async class="speakerdeck-embed" data-id="faba8ee511904614885388c81a33b0a4" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
 ### Homebrew - Things We Do Differently
 Some of the things that Homebrew does well, badly and the special challenges that OS X packagers need to deal with. Presented at [FOSDEM](https://fosdem.org) in 2016.
 

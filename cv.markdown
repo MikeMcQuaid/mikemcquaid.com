@@ -39,6 +39,9 @@ An intermediate/advanced Git techniques book published with Manning Publications
 
 ### Conference Talks
 
+#### [FOSSASIA](http://2016.fossasia.org) (keynote speaker, 2016)
+* [Managing a healthy GitHub community](https://speakerdeck.com/mikemcquaid/managing-a-healthy-github-community)
+
 #### [FOSDEM](https://fosdem.org) (2016)
 * [Homebrew - Things We Do Differently](https://speakerdeck.com/mikemcquaid/homebrew-things-we-do-differently)
 
