@@ -16,7 +16,7 @@ With these in mind: let's optimise your travel starting with organising it:
 5. Don't pay extortionate roaming charges. Download offline maps (and [TripAdvisor](https://www.tripadvisor.com)) for your destination. If you visit the same places often: consider getting a SIM card for that country or moving to a mobile phone network which gives you free data there (e.g. [Three's Feel At Home](http://www.three.co.uk/Discover/Phones/Feel_At_Home)).
 6. Get or prioritise cards that won't charge you too much for using them abroad. This saves you dealing with cash.
 7. Can you pack everything just in hand luggage? This will get you out the airport quicker which you'll be grateful for after a long flight.
-8. Check sites like [SeatGuru](http://www.seatguru.com) to pick good seats on your flight (e.g. with more leg room). Sadly airlines are increasingly charging for good seats but it's still worth reading a site like to work out what to do.
+8. Check sites like [SeatGuru](http://www.seatguru.com) to pick good seats on your flight (e.g. with more leg room). Sadly airlines are increasingly charging for good seats but it's still worth checking out.
 
 You booked your travel and now it's arrived and you have to actually do it. The main thing that causes people pain with long-distance travel is jet-lag. I have a personal, completely baseless system which works for me and might for you too:
 
