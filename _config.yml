@@ -23,6 +23,11 @@ gems:
   - jekyll-redirect-from
   - jekyll-sass-converter
   - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: atom.xml
+  
 sass:
   sass_dir: _sass
   style: :compressed
