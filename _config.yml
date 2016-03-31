@@ -4,6 +4,7 @@ author:
   name: Mike McQuaid
   email: mike@mikemcquaid.com
   uri: http://mikemcquaid.com
+  twitter: mikemcquaid
 url: http://mikemcquaid.com
 permalink: pretty
 
@@ -24,10 +25,11 @@ gems:
   - jekyll-sass-converter
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
 
 feed:
   path: atom.xml
-  
+
 sass:
   sass_dir: _sass
   style: :compressed
