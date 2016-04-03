@@ -3,7 +3,7 @@ layout: blog_base
 title: A Liberal Christian Liberal
 ---
 <ul id="index-list">
-{% for page in site.posts%}{% if page.layout == 'blog_post' %}
+{% for page in site.blog_posts reversed %}
 	<li style="list-style-type: none;">
 		<a href="{{ page.url }}" title="{{ page.title }}">
 			<h2 style="font-size: 1.2em;">
@@ -16,5 +16,5 @@ title: A Liberal Christian Liberal
 		<br/>
 		<div class="clearboth"></div>
 	</li>
-{% endif %}{% endfor %}
+{% endfor %}
 </ul>

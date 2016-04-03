@@ -7,6 +7,10 @@ author:
 url: http://mikemcquaid.com
 permalink: pretty
 
+blog:
+  name: A Liberal Christian Liberal
+  description: Mike McQuaid's musings on life blog.
+
 # Same as GitHub Pages
 # https://help.github.com/articles/using-jekyll-with-pages#troubleshooting
 # Disable despite enabled on GitHub Pages for supported plugins to work.
@@ -28,13 +32,11 @@ sass:
   style: :compressed
 defaults:
   - scope:
-      path: ""
       type: "posts"
     values:
       layout: "article"
   - scope:
-      path: "blog"
-      type: "posts"
+      type: "blog_posts"
     values:
       layout: "blog_post"
   - scope:
@@ -42,3 +44,7 @@ defaults:
       type: "pages"
     values:
       layout: "blog_page"
+collections:
+  blog_posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/

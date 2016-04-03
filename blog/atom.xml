@@ -8,14 +8,14 @@ layout:
 <link href="{{ site.url }}/blog/" rel="alternate" type="text/html" />
 <updated>{{ site.time | date_to_xmlschema }}</updated>
 <id>{{ site.url | xml_escape }}/blog/</id>
-<title>A Liberal Christian Liberal</title>
-<subtitle>Mike McQuaid's musings on life blog.</title>
+<title>{{ site.blog.name | xml_escape }}</title>
+<subtitle>{{ site.blog.description | xml_escape }}</title>
 <author>
 <name>{{ site.author.name | xml_escape }}</name>
 <email>{{ site.author.email | xml_escape }}</email>
 <uri>{{ site.author.uri | xml_escape }}</uri>
 </author>
-{% for post in site.posts %}{% if post.layout == 'blog_post' %}<entry>
+{% for post in site.blog_posts reversed %}<entry>
 <title>{{ post.title | markdownify | strip_html | strip_newlines | xml_escape }}</title>
 <link href="{{ post.url | prepend: site.url | xml_escape }}" rel="alternate" type="text/html" title="{{ post.title  | xml_escape }}" />
 <published>{{ post.date | date_to_xmlschema }}</published>
@@ -24,5 +24,5 @@ layout:
 <content type="html" xml:base="{{ post.url | prepend: site.url | xml_escape }}">{{ post.content | markdownify | xml_escape }}</content>
 <summary>{{ post.excerpt | markdownify | strip_html | strip_newlines | xml_escape }}</summary>
 </entry>
-{% endif %}{% endfor %}
+{% endfor %}
 </feed>

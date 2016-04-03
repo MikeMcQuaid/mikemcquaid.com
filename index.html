@@ -3,7 +3,7 @@ layout: base
 title: Mike McQuaid
 ---
 <ul id="index-list">
-{% for page in site.posts%}{% if page.layout == 'article' %}
+{% for page in site.posts %}
 	<li style="list-style-type: none;">
 		<a href="{{ page.url }}" title="{{ page.title }}">
 			<h2 style="font-size: 1.2em;">
@@ -13,5 +13,5 @@ title: Mike McQuaid
 		<br/>
 		<div class="clearboth"></div>
 	</li>
-{% endif %}{% endfor %}
+{% endfor %}
 </ul>

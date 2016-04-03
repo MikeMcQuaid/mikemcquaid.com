@@ -4,11 +4,11 @@
 		<link rel="stylesheet" type="text/css" href="/css/style.css" />
 		<title>{{ page.title }}</title>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Mike McQuaid's musings on life blog." />
+		<meta name="description" content="{{ site.blog.description }}" />
 		<meta name="author" content="{{ site.author.name }}" />
 		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
 		<meta name="generator" content="Jekyll {{ jekyll.version }}" />
-		<link rel="alternate" type="application/atom+xml" title="A Liberal Christian Liberal" href="{{ site.url }}/blog/atom.xml" />
+		<link rel="alternate" type="application/atom+xml" title="{{ site.blog.name }}" href="{{ site.url }}/blog/atom.xml" />
 		<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider" />
 		<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/1c09c8e2-a424-4648-81b5-283328dbdc71" />
 	</head>
@@ -16,7 +16,7 @@
 		<div id="header">
 			<div id="title">
 				<h1>
-					<a href="/blog/">A Liberal Christian Liberal</a>
+					<a href="/blog/">{{ site.blog.name }}</a>
 				</h1>
 			</div>
 			<div id="menu">
