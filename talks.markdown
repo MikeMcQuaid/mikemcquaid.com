@@ -46,7 +46,7 @@ Presented to potential GitHub Enterprise customers in 2014.
 <script async class="speakerdeck-embed" data-id="ae79961052050132090736a37b6e3dcd" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
 ### GitHub for Beginners
-How to setup and use GitHub and the GitHub desktop applications. Aimed at non-programmers. Presented at [Trans*H4CK](http://www.transhack.org) Chicago in 2014.
+How to setup and use GitHub and the GitHub desktop applications. Aimed at non-programmers. Presented at [Trans*H4CK](http://www.transhack.org) Chicago in 2014 and [Trans*Code](http://trans-code.org) in London in 2015.
 
 <script async class="speakerdeck-embed" data-id="5ed38c70ab6c0131cbe70e9464dacf0d" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
