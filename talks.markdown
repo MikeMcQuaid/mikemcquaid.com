@@ -4,10 +4,15 @@ layout: page
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
+### How GitHub Builds Software
+See every step how we ship changes to github.com starting from a new, empty MacBook. Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2016.
+
+{% include talk.html speakerdeck-id="dcaba2e4cf9f4b0c80d963ece88713fe" speakerdeck-ratio="1.77777777777778" youtube-id="mkj8vMeXoBI" %}
+
 ### Managing a healthy GitHub community
 Managing an open-source community is easy when your project is small but grows harder the larger your project becomes. Learn how to grow your project’s community and ensure that it remains a healthy, happy and fun place. Presented at [FOSSASIA](http://2016.fossasia.org) in 2016.
 
-{% include talk.html speakerdeck-id="faba8ee511904614885388c81a33b0a4" speakerdeck-ratio="1.77777777777778" %}
+{% include talk.html speakerdeck-id="faba8ee511904614885388c81a33b0a4" speakerdeck-ratio="1.77777777777778" youtube-id="gveZMBInqAg" %}
 
 ### Homebrew - Things We Do Differently
 Some of the things that Homebrew does well, badly and the special challenges that OS X packagers need to deal with. Presented at [FOSDEM](https://fosdem.org) in 2016.
