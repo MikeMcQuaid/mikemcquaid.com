@@ -4,6 +4,11 @@ layout: page
 ---
 <noscript>**Please enable JavaScript to view slides.**</noscript>
 
+### The Open Source Contributor Funnel
+Every open-source project wishes it had more maintainers to help run things. Learn from Mike McQuaid, maintainer of the Homebrew project for 7 years with over 5500 contributors, how to encourage and increase participation in your open-source project. Presented at CodeConf in 2016.
+
+{% include talk.html speakerdeck-id="21525a24a4b84030b024bae0b2bbba4a" speakerdeck-ratio="1.77777777777778" %}
+
 ### How GitHub Builds Software
 See every step how we ship changes to github.com starting from a new, empty MacBook. Presented at [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2016.
 
