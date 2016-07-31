@@ -1,0 +1,8 @@
+---
+title: CPack
+summary: Cross-platform packaging with CPack.
+speakerdeck-id: 4f4e50713f09700022014b63
+speakerdeck-ratio: 1.3333333333333333
+---
+Presented at the [Gran Canaria Desktop Summit](http://www.grancanariadesktopsummit.org) in 2009.
+

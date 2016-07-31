@@ -1,0 +1,26 @@
+---
+layout: base
+---
+<div class="type-post">
+	<a href="{{ post_url }}" title="{{ page.title }}">
+		<h2>
+			{{ page.title }}
+		</h2>
+	</a>
+	<p class="post_date">
+		<a href="{{ post_url }}" title="{{ page.title }}">
+			{{ page.date || date_to_long_string }}
+		</a>
+	</p>
+  {{ page.summary }}
+	{{ content }}
+
+	{% if page.youtube-id %}
+	<iframe width="678" height="408" src="//www.youtube.com/embed/{{ page.youtube-id }}" frameborder="0" allowfullscreen></iframe>
+	{% endif %}
+
+	{% if page.speakerdeck-id %}
+	<noscript>**Please enable JavaScript to view slides.**</noscript>
+	<script async class="speakerdeck-embed" data-id="{{ page.speakerdeck-id }}" data-ratio="{{ page.speakerdeck-ratio }}" src="//speakerdeck.com/assets/embed.js"></script>
+	{% endif %}
+</div>

@@ -1,0 +1,9 @@
+---
+title: HTML5
+summary: An outline for non-web developers of the new technologies in HTML5.
+speakerdeck-id: 4fcdd8f02e36780022010add
+speakerdeck-ratio: 1.77777777777778
+youtube-id: WNfhVKNbZHo
+
+---
+Presented at [KDAB](http://www.kdab.com) in 2012.

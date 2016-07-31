@@ -47,6 +47,10 @@ defaults:
     values:
       layout: "blog_post"
   - scope:
+      type: "talks"
+    values:
+      layout: "talk"
+  - scope:
       path: "blog"
       type: "pages"
     values:
@@ -55,3 +59,6 @@ collections:
   blog_posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
+  talks:
+    output: true
+    permalink: /talks/:title/

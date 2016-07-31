@@ -273,6 +273,13 @@ h4 {
   margin-bottom: 4px;
 }
 
+.speakerdeck-thumb {
+  height: 157px;
+  width: 210px;
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
 table caption {
   font: {
     weight: bold;
@@ -361,7 +368,11 @@ blockquote {
   margin: 0.5em 0 0 0;
 }
 
-.stealth-lists {
+.index-lists h2 {
+  font-size: 1.2em;
+}
+
+.index-lists, .stealth-lists {
   ul {
     padding: 0;
   }

@@ -1,0 +1,21 @@
+---
+title: Talks
+layout: base
+---
+<ul class="index-lists">
+{% for talk in site.talks reversed %}
+	<li>
+		<a href="{{ talk.url }}" title="{{ talk.title }}">
+		{% if talk.speakerdeck-id %}
+			<img class="speakerdeck-thumb" src="//speakerd.s3.amazonaws.com/presentations/{{ talk.speakerdeck-id }}/thumb_slide_0.jpg"/>
+		{% endif %}
+			<h2>
+				{{ talk.title }}
+			</h2>
+		</a>
+		{{ talk.summary }}
+		<br/>
+		<div class="clearboth"></div>
+	</li>
+{% endfor %}
+</ul>
