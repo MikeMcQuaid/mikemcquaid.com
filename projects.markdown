@@ -12,18 +12,32 @@ Improving the GitHub platform for developers inside and outside GitHub.
 
 Maintainer. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
-#### [Strap](https://github.com/mikemcquaid/strap)
+#### [Strap](https://github.com/MikeMcQuaid/strap)
+![Strap](/images/a/strap.png)
+
 Creator. A script to bootstrap a minimal OS X development system.
 
-#### [Hookhand](https://github.com/mikemcquaid/HookHand)
+#### [GitHub-Markdown.tmbundle](https://github.com/MikeMcQuaid/GitHub-Markdown.tmbundle)
+![GitHub-Markdown.tmbundle](/images/a/githubmarkdown.png)
+
+Creator. Provides some GitHub Flavoured Markdown extensions for TextMate to make working with GitHub Flavoured Markdown nicer.
+
+#### [TwitterDelete](https://github.com/MikeMcQuaid/TwitterDelete)
+![TwitterDelete](/images/a/twitterdelete.png)
+
+Creator. A small application to delete your old, unpopular tweets.
+
+#### [LockOldIssues](https://github.com/MikeMcQuaid/LockOldIssues)
+![LockOldIssues](/images/a/lockoldissues.png)
+
+Creator. A small application to lock your old, closed GitHub issues.
+
+#### [Hookhand](https://github.com/MikeMcQuaid/HookHand)
 ![Hookhand](/images/a/hookhand.png)
 
 Creator. A small web application which runs scripts from webhooks.
 
 ### Past
-
-#### [TwitterDelete](https://github.com/mikemcquaid/TwitterDelete)
-Creator. A small application to delete your old, unpopular tweets.
 
 #### [GitHub Enterprise](https://enterprise.github.com)
 ![GitHub Enterprise](/images/a/github-enterprise.png)
@@ -35,7 +49,7 @@ Improving the quality for [GitHub Enterprise](https://enterprise.github.com) thr
 
 Maintainer. Improved Homebrew integration, general bugfixing and updates.
 
-#### [ManningAsciiDoc](https://github.com/mikemcquaid/ManningAsciiDoc)
+#### [ManningAsciiDoc](https://github.com/MikeMcQuaid/ManningAsciiDoc)
 ![Homebrew](/images/a/manningasciidoc.png)
 
 Creator. Rake buildsystem for generating Manning DocBook and PDF files from AsciiDoc.
@@ -52,12 +66,12 @@ Maintainer. Added HiDPI support, merged contributions and fixed bugs.
 
 Developed features, APIs and optimized performance. Setup CI and automatic deployment for Rails and mobile applications. Managed and improved AWS infrastructure.
 
-#### [NightSkyLine](https://github.com/mikemcquaid/NightSkyLine)
+#### [NightSkyLine](https://github.com/MikeMcQuaid/NightSkyLine)
 ![NightSkyLine](/images/a/nightskyline.png)
 
 Creator. A readable HTML5 and CSS3 theme for Wordpress.
 
-#### [Qocoa](https://github.com/mikemcquaid/Qocoa)
+#### [Qocoa](https://github.com/MikeMcQuaid/Qocoa)
 ![Qocoa](/images/a/qocoa.png)
 
 Creator. A collection of Qt wrappers for OS X's Cocoa widgets.
@@ -67,12 +81,12 @@ Creator. A collection of Qt wrappers for OS X's Cocoa widgets.
 
 Maintainer. Added support for OS X 10.6 and Qt/Cocoa, added CPack packaging support and OS X installer creation, migrated to Git and bug fixing.
 
-#### [Whiteboard](https://github.com/mikemcquaid/Whiteboard)
+#### [Whiteboard](https://github.com/MikeMcQuaid/Whiteboard)
 ![Whiteboard](/images/a/whiteboard.png)
 
 Android app that hosts an HTML5-based whiteboard server.
 
-#### [Fabula](https://github.com/mikemcquaid/Fabula)
+#### [Fabula](https://github.com/MikeMcQuaid/Fabula)
 ![Fabula](/images/a/fabula.png)
 
 Creator. A cross-platform Qt RPG conversation editor. Abandoned due to original potential users no longer needing it.

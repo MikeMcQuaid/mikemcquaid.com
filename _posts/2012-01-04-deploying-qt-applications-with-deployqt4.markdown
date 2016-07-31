@@ -26,7 +26,7 @@ If you wanted to do this in a CMake script rather than at install time (i.e. for
 
 Other DeployQt4 options include manually specifying libraries or non-Qt plugins to install their linked dependencies, additional directories to check for linked dependencies (the Qt directories are added by default), override the default plugin installation directory, override whether a `qt.conf` file is installed and the use of CMake `INSTALL` components.
 
-You can see an example of using DeployQt4 (combined with CPack to generate installers) in [the CMakeLists.txt file for my Fabula project](https://github.com/mikemcquaid/Fabula/blob/master/CMakeLists.txt).
+You can see an example of using DeployQt4 (combined with CPack to generate installers) in [the CMakeLists.txt file for my Fabula project](https://github.com/MikeMcQuaid/Fabula/blob/master/CMakeLists.txt).
 
 For more information read the [DeployQt4 section of the official CMake documentation](http://cmake.org/cmake/help/cmake-2-8-docs.html#module:DeployQt4), read the [DeployQt4 source code](https://github.com/Kitware/CMake/blob/master/Modules/DeployQt4.cmake) or post a question in the comments.
 
