@@ -1,18 +1,19 @@
 ---
-layout: blog_base
 title: A Liberal Christian Liberal
+layout: blog_base
 ---
-<ul id="index-list">
-{% for page in site.blog_posts reversed %}
-	<li style="list-style-type: none;">
-		<a href="{{ page.url }}" title="{{ page.title }}">
-			<h2 style="font-size: 1.2em;">
-				{{ page.title }}
+<ul class="index-lists">
+{% for blog_post in site.blog_posts reversed %}
+	<li>
+		<a href="{{ blog_post.url }}" title="{{ blog_post.title }}">
+			<h2>
+				{{ blog_post.title }}
 			</h2>
 		</a>
 			<p class="post_date">
-				{{ page.date || date_to_long_string }}
+				{{ blog_post.date || date_to_long_string }}
 			</p>
+			<p>{{ blog_post.excerpt }}</p>
 		<br/>
 		<div class="clearboth"></div>
 	</li>

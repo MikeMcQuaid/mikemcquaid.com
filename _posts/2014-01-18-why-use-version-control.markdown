@@ -1,5 +1,6 @@
 ---
 title: Why use version control?
+excerpt: You may not be familiar with version control concepts or why version control systems are useful for managing changes to text. Let’s start off by asking why you should use version control.
 ---
 _This is partly based on some content from my book [Git In Practice](http://www.manning.com/mcquaid/?a_aid=MikeMcQuaid&a_bid=5688bbf4)._
 

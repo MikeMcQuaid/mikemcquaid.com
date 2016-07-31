@@ -2,7 +2,6 @@
 title: Working from home
 ---
 ![Home office with guitar](/images/a/home_office_guitar.jpg)
-
 I used to have a list of "Things I Will Never Do In My Job" when I was at university. Looking back at the 7 years since I graduated I realise I've done almost all of them.
 
 I always vowed I'd never work from home but yet I've found myself doing it (pretty much) exclusively for the last 5.5 years. First, the reasons why:

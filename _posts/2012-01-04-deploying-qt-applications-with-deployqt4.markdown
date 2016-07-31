@@ -1,5 +1,6 @@
 ---
 title: Deploying Qt applications with DeployQt4
+excerpt: DeployQt4 will take an executable and any specified Qt plugins and install and setup all the linked dependencies.
 redirect_from:
   - /2012/01/deploying-qt-applications-with-deployqt4/
 ---

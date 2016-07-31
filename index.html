@@ -1,15 +1,16 @@
 ---
-layout: base
 title: Mike McQuaid
+layout: base
 ---
-<ul id="index-list">
-{% for page in site.posts %}
-	<li style="list-style-type: none;">
-		<a href="{{ page.url }}" title="{{ page.title }}">
-			<h2 style="font-size: 1.2em;">
-				{{ page.title }}
+<ul class="index-lists">
+{% for post in site.posts %}
+	<li>
+		<a href="{{ post.url }}" title="{{ post.title }}">
+			<h2>
+				{{ post.title }}
 			</h2>
 		</a>
+		<p>{{ post.excerpt }}</p>
 		<br/>
 		<div class="clearboth"></div>
 	</li>
