@@ -36,4 +36,4 @@ WScript.CreateObject("WScript.Shell").Run(_
 You're now done. When you next log in, you shouldn't see the desktop at all (or incredibly briefly) and the screen should lock immediately and require your password to unlock while all your stuff happily loads in the background.
 
 **UPDATE:** This was [posted on Lifehacker](http://lifehacker.com/5645098/make-windows-load-your-desktop-before-you-log-in) and they made a video walkthrough for this post:
-<object type="application/x-shockwave-flash" style="width:640px; height:390px;" data="http://www.youtube.com/v/8sVzE-zInfM"><param name="movie" value="http://www.youtube.com/v/8sVzE-zInfM" /></object>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8sVzE-zInfM" frameborder="0" allowfullscreen></iframe>
