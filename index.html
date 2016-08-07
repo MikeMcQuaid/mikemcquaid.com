@@ -4,15 +4,15 @@ layout: base
 ---
 <ul class="index-lists">
 {% for post in site.posts %}
-	<li>
-		<a href="{{ post.url }}" title="{{ post.title }}">
-			<h2>
-				{{ post.title }}
-			</h2>
-		</a>
-		<p>{{ post.excerpt }}</p>
-		<br/>
-		<div class="clearboth"></div>
-	</li>
+  <li>
+    <a href="{{ post.url }}" title="{{ post.title }}">
+      <h2>
+        {{ post.title }}
+      </h2>
+    </a>
+    <p>{{ post.excerpt }}</p>
+    <br/>
+    <div class="clearboth"></div>
+  </li>
 {% endfor %}
 </ul>

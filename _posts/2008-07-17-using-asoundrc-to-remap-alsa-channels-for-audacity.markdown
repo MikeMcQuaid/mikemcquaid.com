@@ -12,13 +12,13 @@ I'm currently working on some **voice acting** for [**The Nameless Mod**](http:/
 I found that if I point [Audacity](http://audacity.sourceforge.net/) to record 16 channels from _"hw:0,2"_ then I can access **all the Audigy's input channels** (as JACK does) but unfortunately this means that every time I record I get all 16 channels (a PortAudio limitation from what I can tell from the source). This isn't ideal as it means, to record a bunch of lines in rapid succession, I need to spend **huge amounts of time** deleting the unwanted 15 other channels. As it's not possible to select the channels to record from [Audacity](http://audacity.sourceforge.net/) I needed to get a little more creative and ended up with this:
 {% highlight cl %}
 pcm.mic2 {
-	type plug
-	slave.pcm "hw:0,2"
-	slave.channels 16
-	ttable.0.8 1
-	ttable.1.9 1
-	ttable.8.0 1
-	ttable.9.1 1
+  type plug
+  slave.pcm "hw:0,2"
+  slave.channels 16
+  ttable.0.8 1
+  ttable.1.9 1
+  ttable.8.0 1
+  ttable.9.1 1
 }
 {% endhighlight %}
 

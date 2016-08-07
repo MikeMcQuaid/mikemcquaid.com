@@ -8,16 +8,16 @@ Firstly I recommend you download the **CellSDK-Devel-Fedora\_3.0.0.1.0.iso** and
 Then when you have downloaded them mount them somewhere on your filesystem.
 {% highlight bash %}
 mount -o loop $HOME/CellSDK-Devel-Fedora_3.0.0.1.0.iso \
-	/tmp/CellSDK-Devel-Fedora/
+  /tmp/CellSDK-Devel-Fedora/
 mount -o loop $HOME/CellSDK-Extras-Fedora_3.0.0.1.0.iso \
-	/tmp/CellSDK-Extras-Fedora/
+  /tmp/CellSDK-Extras-Fedora/
 {% endhighlight %}
 We've downloaded the two RPMs by IBM. If you install these on Fedora they will provide you with some **yum repositories for the Barcelona Supercomputing Centre**. These will need to be downloaded manually as we aren't on a RPM-based system.
 
 If you are running **Ubuntu Gutsy on x86_64 or x86** run:
 {% highlight bash %}
 apt-get install ppu-gcc ppu-gdb spu-g++ \
-	spu-gdb cell-programming-primer
+  spu-gdb cell-programming-primer
 {% endhighlight %}
 If you are running **Ubuntu Gutsy on the Cell** run:
 {% highlight bash %}
@@ -43,12 +43,12 @@ I recommend we name it _"fixcelldebsarch.sh"_ and stick it in your $HOME. This i
 OWD=`pwd`
 for i in `ls -d */`
 do
-	cd $i
-	sed -ie 's/Architecture: i386/Architecture: amd64/' \
-		debian/control
-	dpkg-buildpackage
-	cd "$OWD"
-	rm -r */ *.gz *.changes *.dsc
+  cd $i
+  sed -ie 's/Architecture: i386/Architecture: amd64/' \
+    debian/control
+  dpkg-buildpackage
+  cd "$OWD"
+  rm -r */ *.gz *.changes *.dsc
 done
 {% endhighlight %}
 _(Thanks to Jon for the fix to avoid mess when using symbolic links.)_
@@ -59,21 +59,21 @@ On the following lines replace the occurrences of '/**x86_64**/' with '/**cbea**
  {% highlight bash %}
 cd open
 for i in ../openrpm/*.rpm
-	do alien --scripts $i
+  do alien --scripts $i
 done
 ~/fixcelldebsarch.sh #Only needed on x86_64
 dpkg -i *.deb
 
 cd devel
 for i in /tmp/CellSDK-Devel-Fedora/x86_64/*.rpm
-	do alien --scripts $i
+  do alien --scripts $i
 done
 ~/fixcelldebsarch.sh #Only needed on x86_64
 dpkg -i *.deb
 
 cd extras
 for i in /tmp/CellSDK-Extras-Fedora/x86_64/*.rpm
-	do alien --scripts $i
+  do alien --scripts $i
 done
 ~/fixcelldebsarch.sh #Only needed on x86_64
 dpkg -i *.deb

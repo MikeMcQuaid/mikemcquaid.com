@@ -2,15 +2,15 @@
 layout: base
 ---
 <div class="type-post">
-	<a href="{{ post_url }}" title="{{ page.title }}">
-		<h2>
-			{{ page.title }}
-		</h2>
-	</a>
-	<p class="post_date">
-		<a href="{{ post_url }}" title="{{ page.title }}">
-			{{ page.date || date_to_long_string }}
-		</a>
-	</p>
-	{{ content }}
+  <a href="{{ post_url }}" title="{{ page.title }}">
+    <h2>
+      {{ page.title }}
+    </h2>
+  </a>
+  <p class="post_date">
+    <a href="{{ post_url }}" title="{{ page.title }}">
+      {{ page.date || date_to_long_string }}
+    </a>
+  </p>
+  {{ content }}
 </div>

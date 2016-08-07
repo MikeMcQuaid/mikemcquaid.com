@@ -1,73 +1,73 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-GB">
-	<head>
-		<link rel="stylesheet" type="text/css" href="/css/style.css" />
-		<title>{{ page.title }}</title>
-		<meta charset="UTF-8" />
-		<meta name="description" content="{{ site.blog.description }}" />
-		<meta name="author" content="{{ site.author.name }}" />
-		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
-		<meta name="generator" content="Jekyll {{ jekyll.version }}" />
-		<link rel="alternate" type="application/atom+xml" title="{{ site.blog.name }}" href="{{ site.url }}/blog/atom.xml" />
-		<link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider" />
-		<link rel="openid2.local_id" href="https://openid.stackexchange.com/user/1c09c8e2-a424-4648-81b5-283328dbdc71" />
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-22891731-2', 'auto');
-			ga('set', 'anonymizeIp', true);
-			ga('send', 'pageview');
-		</script>
-	</head>
-	<body>
-		<div id="header">
-			<div id="title">
-				<h1>
-					<a href="/blog/">{{ site.blog.name }}</a>
-				</h1>
-			</div>
-			<div id="menu">
-				<div>
-					<ul>
-						<li><a href="/blog/">Blog</a></li>
-						<li><a href="/blog/music/">Music</a></li>
-						<li><a href="/blog/about/">About</a></li>
-					</ul>
-				</div>
-			</div><!--[if lt IE 8]><div style='background: red; color: black; font-size: 1.5em; padding: 0.1em; text-align: center;'><p>This site will not appear correctly with your current version of Internet Explorer.</p><p><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">For a faster, safer browsing experience, upgrade for free today.</a></p></div> <![endif]-->
-		</div>
-		<div id="main">
-			<div id="content">
-				{{ content }}
-			</div>
-		</div>
-		<div id="footer">
-			<div id="sidebar" class="sidebartext">
-				<div id="leftbar">
-					<ul>
-						<li>
-							<img id='avatar' alt="Mike McQuaid" src='/images/me.jpg' width='80px' height='80px' />
-						</li>
-						<li>
-							© <a href="mailto:{{ site.author.email }}">Mike McQuaid</a>
-						</li>
-						<li>
-							<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/scotland/">CC-BY-NC-SA</a> license
-						</li>
-					</ul>
-				</div>
-				<div id="rightbar">
-					<ul>
-						<li><a href="https://www.facebook.com/mkmcqd">Facebook</a>
-						</li>
-						<li><a href="/blog/atom.xml">RSS</a>
-						</li>
-					</ul>
-				</div>
-				<div class="clearboth"></div>
-			</div>
-		</div>
-	</body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title>{{ page.title }}</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="{{ site.blog.description }}" />
+    <meta name="author" content="{{ site.author.name }}" />
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+    <meta name="generator" content="Jekyll {{ jekyll.version }}" />
+    <link rel="alternate" type="application/atom+xml" title="{{ site.blog.name }}" href="{{ site.url }}/blog/atom.xml" />
+    <link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider" />
+    <link rel="openid2.local_id" href="https://openid.stackexchange.com/user/1c09c8e2-a424-4648-81b5-283328dbdc71" />
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-22891731-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="title">
+        <h1>
+          <a href="/blog/">{{ site.blog.name }}</a>
+        </h1>
+      </div>
+      <div id="menu">
+        <div>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/blog/music/">Music</a></li>
+            <li><a href="/blog/about/">About</a></li>
+          </ul>
+        </div>
+      </div><!--[if lt IE 8]><div style='background: red; color: black; font-size: 1.5em; padding: 0.1em; text-align: center;'><p>This site will not appear correctly with your current version of Internet Explorer.</p><p><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">For a faster, safer browsing experience, upgrade for free today.</a></p></div> <![endif]-->
+    </div>
+    <div id="main">
+      <div id="content">
+        {{ content }}
+      </div>
+    </div>
+    <div id="footer">
+      <div id="sidebar" class="sidebartext">
+        <div id="leftbar">
+          <ul>
+            <li>
+              <img id='avatar' alt="Mike McQuaid" src='/images/me.jpg' width='80px' height='80px' />
+            </li>
+            <li>
+              © <a href="mailto:{{ site.author.email }}">Mike McQuaid</a>
+            </li>
+            <li>
+              <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/scotland/">CC-BY-NC-SA</a> license
+            </li>
+          </ul>
+        </div>
+        <div id="rightbar">
+          <ul>
+            <li><a href="https://www.facebook.com/mkmcqd">Facebook</a>
+            </li>
+            <li><a href="/blog/atom.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+        <div class="clearboth"></div>
+      </div>
+    </div>
+  </body>
 </html>

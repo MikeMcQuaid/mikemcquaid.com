@@ -22,10 +22,10 @@ KMPlayer is my media player of choice as it allows you to trivially switch betwe
 * **Run** the following commands:
 {% highlight bash %}
 kwriteconfig --file kmplayerrc \
-	--group "application/x-shockwave-flash" --key player npp
+  --group "application/x-shockwave-flash" --key player npp
 kwriteconfig --file kmplayerrc \
-	--group "application/x-shockwave-flash" --key plugin \
-	/usr/lib/flashplugin-nonfree/libflashplayer.so
+  --group "application/x-shockwave-flash" --key plugin \
+  /usr/lib/flashplugin-nonfree/libflashplayer.so
 {% endhighlight %}
 
 * **Change** the _"libflashplayer.so"_ section depending on where the Adobe Flash plugin was installed on your distribution. The above example is where it is installed on Gentoo. _(People have replied below with where it is stored on various systems. If you can't find yours, you probably have a **locate** program installed so trying running "locate libflashplayer.so" for an idea)_.
