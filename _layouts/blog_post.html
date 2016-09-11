@@ -9,7 +9,7 @@ layout: blog_base
   </a>
   <p class="post_date">
     <a href="{{ post_url }}" title="{{ page.title }}">
-      {{ page.date || date_to_long_string }}
+      {{ page.date | date_to_long_string }}
     </a>
   </p>
   {{ content }}

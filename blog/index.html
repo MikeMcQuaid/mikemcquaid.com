@@ -11,7 +11,7 @@ layout: blog_base
       </h2>
     </a>
       <p class="post_date">
-        {{ blog_post.date || date_to_long_string }}
+        {{ blog_post.date | date_to_long_string }}
       </p>
       <p>{{ blog_post.excerpt }}</p>
     <br/>
