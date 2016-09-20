@@ -80,7 +80,7 @@ Senior Software Engineer improving the GitHub platform for developers inside and
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](http://allsnow.com). Developed features, APIs and optimized performance. Setup CI and automatic deployment for Rails and mobile applications. Managed and improved AWS infrastructure.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
-Maintainer. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
+Lead Maintainer. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
 #### [KDAB](http://kdab.com/) (2009 - 2012)
 Technical team lead providing international cross-platform consultancy. Led several teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract. Regularly travelled internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback. Created a new CI system which replaced the previous one to improve company productivity.
