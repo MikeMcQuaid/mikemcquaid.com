@@ -5,4 +5,4 @@ speakerdeck-id: 5ced99801a3301309a9f1231381a9bc7
 speakerdeck-ratio: 1.33333333333333
 youtube-id: c6rFzbZa6x0
 ---
-Presented at [JavaOne](https://www.oracle.com/javaone/index.html) in 2014, [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
+Presented at [ScotSoft](http://www.scotlandis.com/developer-conference/) in 2016, [JavaOne](https://www.oracle.com/javaone/index.html) in 2014, [TechMeetup Edinburgh](http://techmeetup.co.uk/) in 2013 and [DunDDD](http://dun.dddscotland.co.uk/) in 2012.
