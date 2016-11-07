@@ -6,6 +6,10 @@ gem "github-pages", :group => :jekyll_plugins
 
 gem "nokogiri", "~>1.6.7.2"
 
+group :test do
+  gem "html-proofer"
+end
+
 group :development do
   gem "guard-rake"
   gem "guard-jekyll-plus"

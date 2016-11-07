@@ -29,3 +29,12 @@ task :jekyll => :deps do
 end
 
 CLEAN.include FileList[dizzy, "_site"]
+
+desc "Run html proofer to validate the HTML output."
+task :test => :jekyll do
+  require "html-proofer"
+  HTMLProofer.check_directory("./_site",
+      :parallel => { :in_threads => 4 },
+      :favicon => true
+  ).run
+end
