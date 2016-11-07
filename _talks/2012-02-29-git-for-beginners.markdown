@@ -5,4 +5,4 @@ speakerdeck-id: 4f4e54e3f120e9001f01da56
 speakerdeck-ratio: 1.3333333333333333
 ---
 [Demo repository available on GitHub](https://github.com/MikeMcQuaid/GitForBeginnersDemo).
-Presented at [DunDDD](http://dun.dddscotland.co.uk/), [RIM](http://www.rim.com) and [ConFoo.ca](http://confoo.ca) in 2012.
+Presented at [DunDDD](http://ddd.scot), [RIM](http://www.rim.com) and [ConFoo.ca](http://confoo.ca) in 2012.

@@ -1418,7 +1418,7 @@ Internet connection, without the requirement of a plug-in.
 [bibliography]
 == References
 - [[[1]]] Best, D. and Eindhoven, T.U., "Web 2.0 Next Big Thing or Next Big
-  Internet Bubble?" (2006). http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf
+  Internet Bubble?" (2006). https://web.archive.org/web/20060827005112/http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf
 - [[[2]]] Garret, J.J., "Ajax: A New Approach to Web Applications", February
   (2005).
 - [[[3]]] Gibson, B., "DHTML accessibility: solving the JavaScript

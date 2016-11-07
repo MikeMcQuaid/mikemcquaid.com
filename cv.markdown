@@ -17,7 +17,7 @@ No recruiters, please.
 * [mikemcquaid.com/projects/](http://mikemcquaid.com/projects/)
 * [github.com/mikemcquaid](https://github.com/mikemcquaid)
 * [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid)
-* [linkedin.com/in/mkmcqd](http://www.linkedin.com/in/mkmcqd)
+* [linkedin.com/in/mkmcqd](https://www.linkedin.com/in/mkmcqd)
 * +44 (0)773 405 2864
 
 ### Skills
@@ -46,13 +46,13 @@ An intermediate/advanced Git techniques book published with Manning Publications
 * [Homebrew - Things We Do Differently](https://speakerdeck.com/mikemcquaid/homebrew-things-we-do-differently)
 
 #### [FOSDEM](https://fosdem.org) (2015)
-* [Homebrew - The Good, Bad and Ugly of OS X Packaging](https://speakerdeck.com/mikemcquaid/homebrew-the-good-bad-and-ugly-of-osx-packaging)
+* [Homebrew - The Good, Bad and Ugly of OS X Packaging](https://speakerdeck.com/mikemcquaid/homebrew-the-good-bad-and-ugly-of-os-x-packaging)
 
 #### [JavaOne](https://www.oracle.com/javaone/index.html) (2014)
 * [Advanced Git (and GitHub)](https://speakerdeck.com/mikemcquaid/advanced-git-and-github)
-* [The Foundations of Git and GitHub](https://training.github.com/kit/foundations/)
+* The Foundations of Git and GitHub
 
-#### [DunDDD](http://dun.dddscotland.co.uk/) (2012)
+#### [DunDDD](http://ddd.scot) (2012)
 * [Advanced Git (and GitHub)](https://speakerdeck.com/mikemcquaid/advanced-git-and-github)
 * [Git for beginners](http://speakerdeck.com/u/mikemcquaid/p/git-for-beginners)
 
@@ -65,11 +65,11 @@ An intermediate/advanced Git techniques book published with Manning Publications
 
 ### Awards
 
-### [JavaOne Rock Star](https://www.oracle.com/javaone/rock-stars/index.html#McQuaid) (2014)
+### [JavaOne Rock Star](https://www.oracle.com/javaone/rock-star-wall-of-fame.html#McQuaid) (2014)
 The JavaOne Rock Star Program "recognise[s] speakers for their outstanding session content and speaking ability".
 
 #### [UK Open Source Awards](http://opensourceawards.org/) (2014)
-[Shortlisted](http://opensourceawards.org/index.php/awards-shortlist) for the person/project prize.
+[Shortlisted](https://web.archive.org/web/20140612092602/http://www.opensourceawards.org/index.php/winners) for the person/project prize.
 
 ### Experience
 
@@ -91,10 +91,10 @@ Technical team lead providing international cross-platform consultancy. Led seve
 Ported Qt/MSVC++ application from Windows to CMake, OS X and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web.
 
 #### [BT](http://www.bt.com/) (2007 - 2008)
-Created record-breaking high-performance network analysis applications on the IBM Cell Processor. Taught others about and setup version control, continuous integration and issue trackers. Won a place on the [graduate scheme](http://www.btplc.com/careercentre/graduates/index.cfm).
+Created record-breaking high-performance network analysis applications on the IBM Cell Processor. Taught others about and setup version control, continuous integration and issue trackers. Won a place on the graduate scheme.
 
 #### [Google Summer of Code](http://code.google.com/soc/) (2007)
-Worked on the [KDE](http://www.kde.org/) project. Improved the [KBlog XML-RPC API](http://api.kde.org/4.0-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals from KOrganizer](http://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
+Worked on the [KDE](http://www.kde.org/) project. Improved the [KBlog XML-RPC API](https://api.kde.org/4.12-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals from KOrganizer](http://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
 
 #### [Wolfson Microelectronics](http://www.wolfsonmicro.com/) (2006)
 Wrote battery driver, improved Auxiliary ADC code for Intel XScale on Windows CE. Wrote WM8711 Linux kernel driver which was [released in 2.6.26](https://github.com/mirrors/linux-2.6/commit/bd6d417743d941c3e5eabb21abbcac9737f11061). Improved AC'97, I2S audio drivers and fixed a [noisy LCD issue](http://bugs.openembedded.org/show_bug.cgi?id=1316).
