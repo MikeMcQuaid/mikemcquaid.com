@@ -2,9 +2,7 @@ source "https://rubygems.org"
 
 gem "rake"
 gem "asciidoctor"
-gem "github-pages", :group => :jekyll_plugins
-
-gem "nokogiri", "~>1.6.7.2"
+gem "github-pages", group: :jekyll_plugins
 
 group :test do
   gem "html-proofer"
