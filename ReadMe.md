@@ -4,4 +4,4 @@
 
 This site uses [Jekyll](http://github.com/mojombo/jekyll) for HTML generation and [SASS](http://sass-lang.com) for CSS generation.
 
-The code is licensed under the the [MIT License](http://en.wikipedia.org/wiki/MIT_License) and the text under the [Creative Commons Attribution-NonCommercial-ShareAlike 2.5 Scotland License](http://creativecommons.org/licenses/by-nc-sa/2.5/scotland/).
+The code is licensed under the the [AGPLv3 License](https://en.wikipedia.org/wiki/Affero_General_Public_License) and the text under the [Creative Commons Attribution-NonCommercial-ShareAlike 2.5 Scotland License](http://creativecommons.org/licenses/by-nc-sa/2.5/scotland/).
