@@ -1,6 +1,7 @@
 _site/
 _site.min/
 .bundle/
+.jekyll-metadata
 .sass-cache/
 bin/
 vendor/
