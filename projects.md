@@ -15,7 +15,12 @@ Lead Maintainer. Invented Homebrew binary packages (bottles), fix users issues a
 #### [Strap](https://github.com/MikeMcQuaid/strap)
 ![Strap](/images/a/strap.png)
 
-Creator. A script to bootstrap a minimal OS X development system.
+Creator. A script to bootstrap a minimal macOS development system.
+
+#### [Open Source Friday](https://opensourcefriday.com)
+![Open Source Friday](/images/a/opensourcefriday.png)
+
+Program manager and lead engineer. A program and site encouraging regular contribution to open source software during work hours.
 
 #### [GitHub-Markdown.tmbundle](https://github.com/MikeMcQuaid/GitHub-Markdown.tmbundle)
 ![GitHub-Markdown.tmbundle](/images/a/githubmarkdown.png)
@@ -74,12 +79,12 @@ Creator. A readable HTML5 and CSS3 theme for Wordpress.
 #### [Qocoa](https://github.com/MikeMcQuaid/Qocoa)
 ![Qocoa](/images/a/qocoa.png)
 
-Creator. A collection of Qt wrappers for OS X's Cocoa widgets.
+Creator. A collection of Qt wrappers for macOS's Cocoa widgets.
 
 #### [Charm](https://github.com/KDAB/Charm)
 ![Charm](/images/a/charm.png)
 
-Maintainer. Added support for OS X 10.6 and Qt/Cocoa, added CPack packaging support and OS X installer creation, migrated to Git and bug fixing.
+Maintainer. Added support for Mac OS X 10.6 and Qt/Cocoa, added CPack packaging support and macOS installer creation, migrated to Git and bug fixing.
 
 #### [Whiteboard](https://github.com/MikeMcQuaid/Whiteboard)
 ![Whiteboard](/images/a/whiteboard.png)
@@ -104,7 +109,7 @@ Technical lead for team that created the analysis mode and integrated Valgrind's
 #### [Mendeley Desktop](http://www.mendeley.com/download-mendeley-desktop/)
 ![Mendeley](/images/a/mendeley.png)
 
-Ported Qt/MSVC++ application from Windows to CMake, OS X and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web
+Ported Qt/MSVC++ application from Windows to CMake, macOS and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web
 
 #### [KDE](http://kde.org/)
 ![Kontact](/images/a/kontact.png)
@@ -118,7 +123,7 @@ Fixed bugs in and improved cross-platform packaging in CPack. Added Qt plugin su
 Wrote WM8711 Linux kernel driver which was [released in 2.6.26](https://github.com/mirrors/linux-2.6/commit/bd6d417743d941c3e5eabb21abbcac9737f11061).
 
 #### [D-Bus](http://www.freedesktop.org/wiki/Software/dbus)
-Improved and merged the [long-running launchd patchset](https://bugs.freedesktop.org/show_bug.cgi?id=14259). Bug fixes for OS X. [Released in 1.4.1](http://dbus.freedesktop.org/doc/NEWS).
+Improved and merged the [long-running launchd patchset](https://bugs.freedesktop.org/show_bug.cgi?id=14259). Bug fixes for macOS. [Released in 1.4.1](http://dbus.freedesktop.org/doc/NEWS).
 
 #### [libgcal](http://code.google.com/p/libgcal/)
 Added the CMake build-system and migrated to Git. [Released in 0.9](https://github.com/mback2k/libgcal/commit/90de69a72bd56902c21c13d8b467c5e6e841b283).

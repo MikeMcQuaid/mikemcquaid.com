@@ -5,6 +5,12 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Git and GitHub. Here are some examples:
 
+#### [GitHub launches Open Source Friday ](https://venturebeat.com/2017/06/27/github-says-fridays-are-for-open-source-work/)
+OpenSource.com, 27th June 2017
+
+#### [GitHub declares every Friday open source day](https://venturebeat.com/2017/06/27/github-says-fridays-are-for-open-source-work/)
+VentureBeat, 27th June 2017
+
 #### [How to avoid technical debt in open source communities](http://www.computerweekly.com/news/450419369/How-to-avoid-technical-debt-in-open-source-communities)
 ComputerWeekly, 23rd May 2017
 
