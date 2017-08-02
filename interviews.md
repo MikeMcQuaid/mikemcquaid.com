@@ -5,6 +5,9 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Git and GitHub. Here are some examples:
 
+#### [The Future of Open Source at OSCON 2017](https://changelog.com/podcast/259)
+The Changelog, 28th July 2017
+
 #### [GitHub launches Open Source Friday ](https://venturebeat.com/2017/06/27/github-says-fridays-are-for-open-source-work/)
 OpenSource.com, 27th June 2017
 
