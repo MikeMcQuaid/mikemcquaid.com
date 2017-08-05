@@ -9,15 +9,19 @@ title: Music
 
 ### Recordings
 
+####  Anticipated Hindsight
+Inspired by seeing La La Land, bizarrely, and deciding that I need to try and write some harder music rather than keep playing easy music before I had any children.
+
+<iframe style="border: 0; width: 100%; height: 274px;" src="https://bandcamp.com/EmbeddedPlayer/album=3202273045/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/" seamless><a href="http://mikemcquaid.bandcamp.com/album/anticipated-hindsight">Anticipated Hindsight by Mike McQuaid</a></iframe>
+
 #### With Brian McWilliams
 Progressive rock with a fellow fan.
 
-<iframe width="400" height="100" style="position: relative; display: block; width: 400px; height: 150px;" src="http://bandcamp.com/EmbeddedPlayer/v=2/track=177789470/size=grande/bgcol=FFFFFF/linkcol=000000/transparent=true/" allowtransparency="true" frameborder="0"><a href="http://mikemcquaid.bandcamp.com/track/undying-love-transatlantic-cover">Undying Love (Transatlantic Cover) by Mike McQuaid and Brian McWilliams</a></iframe>
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=177789470/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://mikemcquaid.bandcamp.com/track/undying-love-transatlantic-cover">Undying Love (Transatlantic Cover) by Mike McQuaid and Brian McWilliams</a></iframe>
 
 #### Four Musicians and a Drummer
 My band at The University of Edinburgh.
 
-<iframe width="400" height="410" style="position: relative; display: block; width: 400px; height: 450px;" src="http://bandcamp.com/EmbeddedPlayer/v=2/album=700483681/size=grande3/bgcol=FFFFFF/linkcol=000000/transparent=true/" allowtransparency="true" frameborder="0"><a href="http://mikemcquaid.bandcamp.com/album/live-at-the-jazz-bar">Live at The Jazz Bar by Four Musicians and a Drummer</a></iframe>
+<iframe style="border: 0; width: 100%; height: 439px;" src="https://bandcamp.com/EmbeddedPlayer/album=700483681/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/" seamless><a href="http://mikemcquaid.bandcamp.com/album/live-at-the-jazz-bar">Live at The Jazz Bar by Four Musicians and a Drummer</a></iframe>
 
-<iframe width="400" height="410" style="position: relative; display: block; width: 400px; height: 450px;" src="http://bandcamp.com/EmbeddedPlayer/v=2/album=1127121674/size=grande3/bgcol=FFFFFF/linkcol=000000/transparent=true/" allowtransparency="true" frameborder="0"><a href="http://mikemcquaid.bandcamp.com/album/live-at-the-lot">Live at The Lot by Four Musicians and a Drummer</a></iframe>
-
+<iframe style="border: 0; width: 100%; height: 439px;" src="https://bandcamp.com/EmbeddedPlayer/album=1127121674/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/" seamless><a href="http://mikemcquaid.bandcamp.com/album/live-at-the-lot">Live at The Lot by Four Musicians and a Drummer</a></iframe>

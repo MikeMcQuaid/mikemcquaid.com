@@ -15,7 +15,7 @@ No recruiters, please.
 ### Personal
 * [{{ site.author.email }}](mailto:{{ site.author.email }})
 * [mikemcquaid.com](/) (written articles, projects and talks)
-* [github.com/mikemcquaid](https://github.com/mikemcquaid) (open-source projects)
+* [github.com/MikeMcQuaid](https://github.com/MikeMcQuaid) (open-source projects)
 * [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid) (my StackExchange answers)
 
 ### Skills

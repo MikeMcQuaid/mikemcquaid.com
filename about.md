@@ -6,7 +6,7 @@ Hello. My name is Mike McQuaid and I'm a software engineer.
 
 I live in Edinburgh, Scotland.
 
-Feel free to [email me](mailto:{{ site.author.email }}) to ask for help or say hello.
+Feel free to [tweet me](http://twitter.com/MikeMcQuaid) or [email me](mailto:{{ site.author.email }}) to ask for help or say hello.
 
 My [curriculum vitae/resume](/cv.md) details my professional experience.
 
