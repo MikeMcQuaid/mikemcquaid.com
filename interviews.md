@@ -5,6 +5,9 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Git and GitHub. Here are some examples:
 
+#### [Homebrew with Mike McQuaid](https://manifest.fm/1)
+The Manifest, 16th August 2017
+
 #### [The Future of Open Source at OSCON 2017](https://changelog.com/podcast/259)
 The Changelog, 28th July 2017
 
