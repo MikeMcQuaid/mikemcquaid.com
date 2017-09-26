@@ -3,7 +3,7 @@ title: Interviews
 layout: page
 redirect_from: /press
 ---
-I sometimes give interviews about open source, Git and GitHub. Here are some examples:
+I sometimes give interviews about open source, Homebrew, Git and GitHub. Here are some examples:
 
 #### [Homebrew with Mike McQuaid](https://manifest.fm/1)
 The Manifest, 16th August 2017
@@ -28,6 +28,9 @@ ITPro, 22nd May 2017
 
 #### [GitHub Marketplace goes live](https://www.technative.io/github-marketplace-goes-live/)
 TechNative, 22nd May 2017
+
+#### [Homebrew MacOS package manager gets easier to use](https://www.infoworld.com/article/3194236/development-tools/homebrew-macos-package-manager-gets-easier-to-use.html)
+InfoWorld, 4th May 2017
 
 #### [Looking Back on Homebrew’s First Year with Conservancy](https://sfconservancy.org/blog/2017/feb/02/homebrew-year-in-review/)
 Software Freedom Conservancy blog, 2nd February 2017
