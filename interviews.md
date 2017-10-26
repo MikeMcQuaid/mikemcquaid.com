@@ -5,6 +5,9 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git and GitHub. Here are some examples:
 
+#### [7 years of open source: GitHub, Puppet, DataStax, Severalnines](http://www.computerweekly.com/blog/Open-Source-Insider/7-years-of-open-source-GitHub-Puppet)
+ComputerWeekly.com, 25th October 2016
+
 #### [Homebrew with Mike McQuaid](https://manifest.fm/1)
 The Manifest, 16th August 2017
 
