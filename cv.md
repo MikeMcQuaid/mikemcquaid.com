@@ -8,9 +8,7 @@ classes: stealth-lists
 #### Senior Software Engineer
 I love solving difficult problems to simplify people's lives.
 
-I live in Edinburgh, Scotland and will not consider relocating for work. However, I'm happy to work remotely from my home here and travel regularly to anywhere in the world.
-
-No recruiters, please.
+I happily live in Edinburgh, Scotland and will never consider relocating for work. However, I'm happy to work remotely from my home here and travel regularly to anywhere in the world. Recruiters: do not contact me if this is not possible in your organisation.
 
 ### Personal
 * [{{ site.author.email }}](mailto:{{ site.author.email }})
