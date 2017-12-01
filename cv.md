@@ -53,8 +53,8 @@ Wrote battery driver, improved Auxiliary ADC C++ code for Intel XScale on Window
 
 ### Publications
 
-#### [Git in Practice](https://training.github.com/kit/foundations/) (2014)
-An intermediate/advanced Git techniques book published with Manning Publications in September 2014.
+#### [Git in Practice](http://gitinpractice.com) (2014)
+An opinionated intermediate/advanced Git book published with Manning Publications in September 2014.
 
 ### Awards
 
