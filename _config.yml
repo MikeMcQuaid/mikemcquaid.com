@@ -1,11 +1,14 @@
-name: Mike McQuaid
+title: Mike McQuaid
 description: The home page for a software engineer named Mike McQuaid.
 author:
   name: Mike McQuaid
   email: mike@mikemcquaid.com
   uri: http://mikemcquaid.com
-  twitter: mikemcquaid
-url: http://mikemcquaid.com
+  twitter: MikeMcQuaid
+twitter:
+  username: MikeMcQuaid
+logo: /images/header.jpg
+
 permalink: pretty
 
 blog:
