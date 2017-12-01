@@ -25,7 +25,7 @@ kramdown:
 lsi: false
 highlighter: rouge
 
-gems:
+plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-feed
