@@ -5,4 +5,4 @@ speakerdeck-id: 939c3784951c4a4d8934f65ce2b7543c
 speakerdeck-ratio: 1.77777777777778
 youtube-id: ZQXy8bwKXlo
 ---
-Presented at [OSCON](https://conferences.oreilly.com/oscon/oscon-tx) in 2017.
+Presented at [OSCON](https://conferences.oreilly.com/oscon/oscon-tx) in 2017 and [FOSDEM](https://fosdem.org/) in 2018.
