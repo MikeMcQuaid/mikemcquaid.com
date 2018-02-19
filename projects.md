@@ -5,54 +5,88 @@ layout: page
 ### Current
 
 #### [GitHub](https://github.com)
-Improving GitHub for open-source software. Previously, improving the GitHub platform for developers inside and outside GitHub.
+![Homebrew](/images/a/github.png)
+
+Improving the GitHub.com site and subdomains. Previously improving GitHub for free and open-source software, improving the GitHub platform for developers inside and outside GitHub.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 ![Homebrew](/images/a/homebrew.png)
 
 Lead Maintainer. Invented Homebrew binary packages (bottles), fix users issues and develop features. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a CI system for Homebrew. Installed servers into data-centre and keep them running.
 
+#### [Open Source Guides](https://github.com/github/opensource.guide)
+![opensource.guide](/images/a/opensourceguide.png)
+
+Maintainer. Implemented language translations support and workflow, general bug-fixes and development.
+
+#### [Open Source Friday](https://opensourcefriday.com)
+![Open Source Friday](/images/a/opensourcefriday.png)
+
+Maintainer, program manager and lead engineer. A program and site encouraging regular contribution to open source software during work hours.
+
 #### [Strap](https://github.com/MikeMcQuaid/strap)
 ![Strap](/images/a/strap.png)
 
 Creator. A script to bootstrap a minimal macOS development system.
 
-#### [Open Source Friday](https://opensourcefriday.com)
-![Open Source Friday](/images/a/opensourcefriday.png)
+#### [Linter.tmbundle](https://github.com/MikeMcQuaid/Linter.tmbundle)
+![Linter.tmbundle](/images/a/linter.png)
 
-Program manager and lead engineer. A program and site encouraging regular contribution to open source software during work hours.
+Creator. Official TextMate bundle providing GitHub Flavoured Markdown extensions to make working with GitHub Flavoured Markdown nicer.
 
 #### [GitHub-Markdown.tmbundle](https://github.com/MikeMcQuaid/GitHub-Markdown.tmbundle)
 ![GitHub-Markdown.tmbundle](/images/a/githubmarkdown.png)
 
-Creator. Provides some GitHub Flavoured Markdown extensions for TextMate to make working with GitHub Flavoured Markdown nicer.
+Creator. Official TextMate bundle providing programming languages linter functionality.
+
+#### [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
+![Homebrew Bundle](/images/a/homebrewbundle.png)
+
+Maintainer. Like Ruby's bundler but for non-Ruby dependencies from Homebrew
 
 #### [TwitterDelete](https://github.com/MikeMcQuaid/TwitterDelete)
 ![TwitterDelete](/images/a/twitterdelete.png)
 
 Creator. A small application to delete your old, unpopular tweets.
 
-#### [LockOldIssues](https://github.com/MikeMcQuaid/LockOldIssues)
-![LockOldIssues](/images/a/lockoldissues.png)
+### Past
 
-Creator. A small application to lock your old, closed GitHub issues.
+#### [Git in Practice](https://www.manning.com/books/git-in-practice?a_bid=5688bbf4&a_aid=MikeMcQuaid)
+![Git in Practice](/images/a/gitinpractice.png)
+
+Author. An opinionated, intermediate/advanced Git book.
+
+#### [GitHub Enterprise](https://enterprise.github.com)
+![GitHub Enterprise](/images/a/github-enterprise.png)
+
+Improving the quality for [GitHub Enterprise](https://enterprise.github.com) through bugfixing and improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process.
+
+#### [AllTrails](https://alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?)
+![AllTrails](/images/a/alltrails.png)
+
+![AllSnow](/images/a/allsnow.png)
+
+Developed features, APIs and optimized performance. Setup CI and automatic deployment for Rails and mobile applications. Managed and improved AWS infrastructure.
+
+#### [Mendeley Desktop](http://www.mendeley.com/download-mendeley-desktop/)
+![Mendeley](/images/a/mendeley.png)
+
+Ported Qt/MSVC++ application from Windows to CMake, macOS and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web
+
+#### [Boxen](https://github.com/boxen)
+![Boxen](/images/a/boxen.png)
+
+Maintainer. Improved Homebrew integration, general bugfixing and updates.
 
 #### [Hookhand](https://github.com/MikeMcQuaid/HookHand)
 ![Hookhand](/images/a/hookhand.png)
 
 Creator. A small web application which runs scripts from webhooks.
 
-### Past
+#### [LockOldIssues](https://github.com/MikeMcQuaid/LockOldIssues)
+![LockOldIssues](/images/a/lockoldissues.png)
 
-#### [GitHub Enterprise](https://enterprise.github.com)
-![GitHub Enterprise](/images/a/github-enterprise.png)
-
-Improving the quality for [GitHub Enterprise](https://enterprise.github.com) through bugfixing and improving manual QA, CI, packaging, deployment, automation and ChatOps around the release process.
-
-#### [Boxen](https://github.com/boxen)
-![Boxen](/images/a/boxen.png)
-
-Maintainer. Improved Homebrew integration, general bugfixing and updates.
+Creator. A small application to lock your old, closed GitHub issues.
 
 #### [ManningAsciiDoc](https://github.com/MikeMcQuaid/ManningAsciiDoc)
 ![Homebrew](/images/a/manningasciidoc.png)
@@ -64,18 +98,6 @@ Creator. Rake buildsystem for generating Manning DocBook and PDF files from Asci
 
 Maintainer. Added HiDPI support, merged contributions and fixed bugs.
 
-#### [AllTrails](https://alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?)
-![AllTrails](/images/a/alltrails.png)
-
-![AllSnow](/images/a/allsnow.png)
-
-Developed features, APIs and optimized performance. Setup CI and automatic deployment for Rails and mobile applications. Managed and improved AWS infrastructure.
-
-#### [NightSkyLine](https://github.com/MikeMcQuaid/NightSkyLine)
-![NightSkyLine](/images/a/nightskyline.png)
-
-Creator. A readable HTML5 and CSS3 theme for Wordpress.
-
 #### [Qocoa](https://github.com/MikeMcQuaid/Qocoa)
 ![Qocoa](/images/a/qocoa.png)
 
@@ -86,30 +108,15 @@ Creator. A collection of Qt wrappers for macOS's Cocoa widgets.
 
 Maintainer. Added support for Mac OS X 10.6 and Qt/Cocoa, added CPack packaging support and macOS installer creation, migrated to Git and bug fixing.
 
-#### [Whiteboard](https://github.com/MikeMcQuaid/Whiteboard)
-![Whiteboard](/images/a/whiteboard.png)
-
-Android app that hosts an HTML5-based whiteboard server.
-
-#### [Fabula](https://github.com/MikeMcQuaid/Fabula)
-![Fabula](/images/a/fabula.png)
-
-Creator. A cross-platform Qt RPG conversation editor. Abandoned due to original potential users no longer needing it.
-
 #### [Make-O-Matic](https://github.com/KDAB/Make-O-Matic)
 ![Make-O-Matic](/images/a/make-o-matic.png)
 
-Added CPack packaging support, Windows support, many other features and bug-fixes.
+Added CPack packaging support, Windows support, other features and bug-fixes.
 
 #### [Qt Creator](http://code.qt.io/cgit/qt-creator/qt-creator.git)
 ![QtCreator](/images/a/qtcreator.png)
 
 Technical lead for team that created the analysis mode and integrated Valgrind's Memcheck, Callgrind and Cachegrind tools. Personally focused on tool visualisations. [Released in 2.3.0](https://blog.qt.io/blog/2011/09/01/qt-creator-2-3-0-released/).
-
-#### [Mendeley Desktop](http://www.mendeley.com/download-mendeley-desktop/)
-![Mendeley](/images/a/mendeley.png)
-
-Ported Qt/MSVC++ application from Windows to CMake, macOS and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web
 
 #### [KDE](http://kde.org/)
 ![Kontact](/images/a/kontact.png)

@@ -8,12 +8,12 @@ classes: stealth-lists
 #### Senior Software Engineer
 I love solving difficult problems to simplify people's lives.
 
-I happily live in Edinburgh, Scotland and will never consider relocating for work. However, I'm happy to work remotely from my home here and travel regularly to anywhere in the world. Recruiters: do not contact me if this is not possible in your organisation.
+I happily live in Edinburgh, Scotland and will never consider relocating for work. I'm happy to work remotely from my home here and travel regularly to anywhere in the world. Recruiters: do not contact me if this is not possible in your organisation.
 
 ### Personal
 * [{{ site.author.email }}](mailto:{{ site.author.email }})
 * [mikemcquaid.com](/) (written articles, projects and talks)
-* [github.com/MikeMcQuaid](https://github.com/MikeMcQuaid) (open-source projects)
+* [github.com/MikeMcQuaid](https://github.com/MikeMcQuaid) (my open-source projects)
 * [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid) (my StackExchange answers)
 
 ### Skills
@@ -26,7 +26,7 @@ Porting software between Windows, Mac and Linux. Administering Linux servers,  a
 ### Experience
 
 #### [GitHub](http://github.com/) (2013 - Present)
-Senior engineer improving GitHub for free and open-source software. Previously improving the GitHub platform for developers inside and outside GitHub, improving the quality for [GitHub Enterprise](https://enterprise.github.com) through release management, engineering primarily in Ruby and Bash and improving manual QA, CI, packaging, deployment, automation and ChatOps around the release process. Previously on service, ops and application on-call rotations for GitHub.com.
+Senior engineer improving the GitHub.com site and subdomains. Previously improving GitHub for free and open-source software, improving the GitHub platform for developers inside and outside GitHub, improving the quality for GitHub Enterprise through release management, engineering and improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process. Previously on service, ops and application on-call rotations for GitHub.com.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
 Lead Maintainer. Invented Homebrew binary packages (bottles), fix users issues, plan roadmap, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running.
@@ -35,7 +35,7 @@ Lead Maintainer. Invented Homebrew binary packages (bottles), fix users issues, 
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](http://allsnow.com). Developed features, APIs and optimised performance. Setup Jenkins CI and automatic Chef deployment for Rails and mobile applications HockeyApp deployment. Managed and improved AWS EC2 infrastructure.
 
 #### [KDAB](http://kdab.com/) (2009 - 2012)
-Technical team lead providing international Qt/C++ cross-platform consultancy. Led several teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract. Regularly travelled internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback. Created a new Buildbot/CPack based CI system which replaced the previous one to improve company productivity.
+Technical team lead providing international Qt/C++ cross-platform consultancy. Led teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract. Travelled internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback. Created a new Buildbot/CPack based CI system which replaced the previous one to improve company productivity.
 
 #### [Mendeley](http://www.mendeley.com/) (2008 - 2009)
 [First employee](http://blog.mendeley.com/start-up-life/mike-arthur-joins-team-mendeley/) and lead developer for Mendeley Desktop. Setup all Linux servers and software systems. Created a workflow focused on quick deployment and high quality through automated Buildbot builds, tests, CPack packages for Windows, Mac and Linux. Designed, ran technical interviews and personally [recruited](http://blog.mendeley.com/start-up-life/introducing-fred-amir-and-a-bond-villain/) [three](http://blog.mendeley.com/academic-life/an-excellent-euroscience-adventure-part-ii/) [engineers](http://blog.mendeley.com/research-miscellanea/a-new-knight-joins-mendeleys-round-table/).

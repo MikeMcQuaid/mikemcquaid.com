@@ -10,4 +10,4 @@ Feel free to [tweet me](http://twitter.com/MikeMcQuaid) or [email me](mailto:{{ 
 
 My [curriculum vitae/resume](/cv.md) details my professional experience.
 
-Until I was married in 2010 my name was Mike Arthur.
+Until I got married in 2010 my name was Mike Arthur.
