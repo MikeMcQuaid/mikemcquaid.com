@@ -62,9 +62,7 @@ Author. An opinionated, intermediate/advanced Git book.
 Improving the quality for [GitHub Enterprise](https://enterprise.github.com) through bugfixing and improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process.
 
 #### [AllTrails](https://alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?)
-![AllTrails](/images/a/alltrails.png)
-
-![AllSnow](/images/a/allsnow.png)
+![AllTrails and AllSnow](/images/a/alltrailssnow.png)
 
 Developed features, APIs and optimized performance. Setup CI and automatic deployment for Rails and mobile applications. Managed and improved AWS infrastructure.
 
