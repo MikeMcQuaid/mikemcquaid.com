@@ -1,12 +1,15 @@
 title: Mike McQuaid
 description: The home page for a software engineer named Mike McQuaid.
+
 author:
   name: Mike McQuaid
   email: mike@mikemcquaid.com
   uri: http://mikemcquaid.com
   twitter: MikeMcQuaid
+
 twitter:
   username: MikeMcQuaid
+
 logo: /images/header.jpg
 
 permalink: pretty
@@ -15,18 +18,14 @@ blog:
   name: A Liberal Christian Liberal
   description: Mike McQuaid's musings on life blog.
 
-exclude: [bin, vendor, CNAME, Gemfile, Gemfile.lock, Guardfile, Rakefile,
-          ReadMe.md, style.scss]
-
-# Same as GitHub Pages
-# https://help.github.com/articles/using-jekyll-with-pages#troubleshooting
-# Disable despite enabled on GitHub Pages for supported plugins to work.
-# safe: true
-kramdown:
-  input: GFM
-  hard_wrap: false
-lsi: false
-highlighter: rouge
+exclude:
+  - bin
+  - CNAME
+  - Gemfile*
+  - Guardfile
+  - Rakefile,
+  - ReadMe.md
+  - vendor
 
 plugins:
   - jekyll-redirect-from
@@ -41,27 +40,26 @@ feed:
   path: atom.xml
 
 sass:
-  sass_dir: _sass
   style: :compressed
 
 defaults:
   - scope:
-      type: "posts"
+      type: posts
     values:
-      layout: "article"
+      layout: article
   - scope:
-      type: "blog_posts"
+      type: blog_posts
     values:
-      layout: "blog_post"
+      layout: blog_post
   - scope:
-      type: "talks"
+      type: talks
     values:
-      layout: "talk"
+      layout: talk
   - scope:
-      path: "blog"
-      type: "pages"
+      path: blog
+      type: pages
     values:
-      layout: "blog_page"
+      layout: blog_page
 
 collections:
   blog_posts:
@@ -70,3 +68,6 @@ collections:
   talks:
     output: true
     permalink: /talks/:title/
+
+github:
+  repository_nwo: MikeMcQuaid/mikemcquaid.github.io
