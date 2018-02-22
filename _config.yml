@@ -10,7 +10,7 @@ author:
 twitter:
   username: MikeMcQuaid
 
-logo: /images/header.jpg
+logo: /images/apple-touch-icon.png
 
 permalink: pretty
 
@@ -60,6 +60,10 @@ defaults:
       type: pages
     values:
       layout: blog_page
+  - scope:
+      path: ""
+    values:
+      image: /images/apple-touch-icon.png
 
 collections:
   blog_posts:
