@@ -24,14 +24,14 @@ This provided a separation between the translation data in `_data/locales` handl
 
 Open Source Guides' original system for translations had a repository for each translation. With no merged translations and on the back of the Open Source Friday and Homebrew shared translation efforts I decided to [change the translation approach](https://github.com/github/opensource.guide/pull/543/files) to move all the translations into a single repository, again add a `t` helper variable and use the same location for YAML translations in `_data/locales`.
 
-The main difference with the Open Source Guides is that there are long-form articles written in Markdown instead of HTML pages with sporadic YAML translations. This meant that it made more sense to [provide Markdown files for each language](https://github.com/github/opensource.guide/tree/gh-pages/_articles/es) instead of trying to use YAML for majority textual content.
+The main difference with the Open Source Guides is that there are long-form articles written in Markdown instead of HTML pages with sporadic YAML translations. This meant that it made more sense to [provide Markdown files for each language](https://github.com/github/opensource.guide/tree/master/_articles/es) instead of trying to use YAML for majority textual content.
 
 ---
 
 My TL;DR on Rails and Jekyll translations:
 
 - For Ruby on Rails sites follow [the Rails internationalization guide](http://guides.rubyonrails.org/i18n.html)
-- Use the [Rails localisation file format](https://github.com/github/opensource.guide/blob/gh-pages/_data/locales/en.yml) for your GitHub Pages sites to make it easier to use other tools
+- Use the [Rails localisation file format](https://github.com/github/opensource.guide/blob/master/_data/locales/en.yml) for your GitHub Pages sites to make it easier to use other tools
 - Provide a Jekyll `t` helper variable with e.g.:
 ```liquid
 assign t = site.data.locales[page.lang][page.lang]

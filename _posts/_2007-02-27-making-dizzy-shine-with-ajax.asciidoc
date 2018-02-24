@@ -14,7 +14,7 @@ GUI desktop or classic Web applications with fewer drawbacks than either
 individual approach._"
 
 In this report, the preceding hypothesis was evaluated by developing an Ajax
-Web application for the Dizzy chemical kinetics stochastic simulator <<<13>>>
+Web application for the Dizzy chemical kinetics stochastic simulator <<<reference-13>>>
 and analysing the benefits and drawbacks compared with the existing Dizzy
 classic Web application and Dizzy GUI desktop application. Among the benefits
 were those of a more responsive interface, less bandwidth usage and allowing
@@ -138,7 +138,7 @@ evaluated and through this the strengths and weaknesses of Ajax were discussed.
 == Literature Survey
 === Ajax: A New Approach to Web Applications
 The term "Ajax" was first used in "Ajax: A New Approach to Web Applications"
-<<<2>>>, an article about interaction design. The two examples referenced as
+<<<reference-2>>>, an article about interaction design. The two examples referenced as
 examples of Ajax were Google's Suggest and Maps services.
 
 Figure 3 shows an example of Google Suggest in progress. As search queries are
@@ -177,7 +177,7 @@ before, albeit with different terminology, such as DHTML.
 
 === Navigating the Applet-Browser Divide
 Comparable issues to those spawned by Ajax have been analysed before, such as
-in "Navigating the Applet-Browser Divide" <<<9>>>. The feel of browser applets
+in "Navigating the Applet-Browser Divide" <<<reference-9>>>. The feel of browser applets
 was very different to that of classic Web applications and raised similar
 usability problems to those encountered with Ajax applications. Users were
 found to instinctively press the browser's "Back" button when intending to
@@ -194,7 +194,7 @@ the now so-relevant issue of ensuring compatibility between browsers.
 
 === Ajax: How to Handle Bookmarks and Back Button
 The issue with the "Back" button was further explored in "Ajax: How to Handle
-Bookmarks and Back Button" <<<8>>> . The problem was raised by using Gmail as a
+Bookmarks and Back Button" <<<reference-8>>> . The problem was raised by using Gmail as a
 case study. Once a user enters Gmail, at the time of publishing, the URL
 remained the same throughout the session, so if a user entered an email
 message, and then wished to leave the message and go back to the inbox by
@@ -204,7 +204,7 @@ themselves out of Gmail.
 === DHTML accessibility: solving the JavaScript accessibility problem
 Before the term "Ajax" became popular, some of the technologies used were
 referred to as DHTML. "DHTML accessibility: solving the JavaScript
-accessibility problem" <<<3>>> discussed some of the other issues arising from
+accessibility problem" <<<reference-3>>> discussed some of the other issues arising from
 the usage of these technologies, focusing on the difficulty in providing
 content accessible to those with disabilities when the application relies on
 JavaScript. The main problems highlighted were dealing with focus on dynamic
@@ -215,7 +215,7 @@ technologies, hopefully providing interfaces that can be better than the
 existing alternatives for disabled users.
 
 === Beyond Ajax
-"Beyond Ajax" <<<4>>> discussed both the potential of Ajax Web applications and
+"Beyond Ajax" <<<reference-4>>> discussed both the potential of Ajax Web applications and
 their limits. The first limit shown is that Ajax applications cannot allow
 realtime event notification, instead requiring a polling loop; the more regular
 the poll, the more bandwidth and processing used, both on the client and
@@ -239,7 +239,7 @@ The term "Web 2.0" was first used publicly by O'Reilly Media as a name for a
 conference in 2005. It has become rather popular in technology circles,
 describing the rise in the use of Ajax and other XML technologies and also the
 growth of Web-based communities around these technologies. "Web 2.0 Next Big
-Thing or Next Big Internet Bubble?" <<<1>>> emphasised the large number of
+Thing or Next Big Internet Bubble?" <<<reference-1>>> emphasised the large number of
 technology start-ups based on these concepts and made comparisons made to the
 "Dot Com Bubble". This article highlighted the use of a "Rich User Experience",
 which refers to the use of Web applications attempting to behave more like
@@ -253,7 +253,7 @@ storing the state of pages for a bookmark may be very difficult.
 
 === Beyond the Desktop Metaphor in Seven Dimensions
 The issue of creating more rich-Web applications was discussed in "Beyond the
-Desktop Metaphor in Seven Dimensions" <<<7>>>. It mentioned the use of Ajax
+Desktop Metaphor in Seven Dimensions" <<<reference-7>>>. It mentioned the use of Ajax
 technologies to create far more GUI-like Web interfaces, allowing them to be
 more familiar to users and updated without user intervention. It also pointed
 to the recent growth of Ajax applications being used, forming the previously
@@ -262,7 +262,7 @@ desktop) to online services, frequently using Ajax, storing personal
 information and documents outside of an office machine.
 
 === An Architectural Style for Ajax
-"An Architectural Style for Ajax" <<<6>>> discussed the use of various
+"An Architectural Style for Ajax" <<<reference-6>>> discussed the use of various
 frameworks for the creation of Ajax-enabled pages, allowing the Web developer
 to worry more about content than writing the JavaScript manually. The main
 focus of the paper was the styles for architecture of Ajax-based solutions. It
@@ -276,7 +276,7 @@ application design. The rest of the paper focused more on specific application
 development techniques.
 
 === Usability in Web Design
-"Usability in Web Design" <<<5>>> revealed Ajax as a technique for increasing
+"Usability in Web Design" <<<reference-5>>> revealed Ajax as a technique for increasing
 the speed of page loading, especially when only a small change is made to the
 page content. It also emphasised the need for accessibility considerations when
 using client-side technologies, such as Ajax, to continue to ensure the
@@ -285,7 +285,7 @@ browsers without JavaScript.
 
 === Emotionally centred design
 The concept of Rich Internet Applications was discussed in "Emotionally centred
-design" <<<10>>>. Rich Internet Applications are Web applications that have
+design" <<<reference-10>>>. Rich Internet Applications are Web applications that have
 similar functionality and features as a GUI desktop application, but run in a
 Web browser. Ajax technologies are normally used in the creation of RIA. The
 paper posed a question, examining a different dimension of Ajax technologies,
@@ -313,7 +313,7 @@ found in the current available literature.
 Dizzy is a chemical kinetics stochastic simulator written in Java, available as
 a GUI desktop application. It provides a model definition environment and an
 implementation of the Gillespie, Gibson-Bruck, and Tau-Leap stochastic
-algorithms <<<13>>>. This application was modified to use Enterprise Java
+algorithms <<<reference-13>>>. This application was modified to use Enterprise Java
 technologies and run on a J2EE Web application server (such as Tomcat) by a
 group of students in 2005, known as "_Team Klingon_". This means there is
 currently an application that is feature-complete, with two implementations,
@@ -341,7 +341,7 @@ those of GUI desktop or classic Web applications with fewer drawbacks than
 either individual approach._"
 
 This hypothesis will be evaluated by examination of the following criteria
-<<<11>>>:
+<<<reference-11>>>:
 
 === Learnability
 Ajax applications allow the user to have an interface that is more predictable
@@ -635,7 +635,7 @@ pages was used to create a static page that contained the progress-bar and time
 remaining. However, for the user to be able to see the current progress of the
 run, the page has to be regularly refreshed periodically. While this is
 possible using the Meta refresh tag, it is discouraged by the W3C's Web Content
-Accessibility Guidelines <<<12>>> as if the user is in the middle of another
+Accessibility Guidelines <<<reference-12>>> as if the user is in the middle of another
 task in the Web browser, such as entering a new URL, this could be interrupted
 or lost by a page refresh. Also, as the progress page is around 3KB, with 26KB
 of other data (that can be cached), this a large amount to be periodically
@@ -842,7 +842,7 @@ can be compressed automatically by the Web server and client's Web browser, as
 most modern browsers support gzip compression, after which the PNG is 11KB but
 the SVG only 3.8KB (with default compression). The added SVG functionality also
 has many possible extensions that could not be currently implemented. These are
-explained further in <<_svg, SVG>> and <<_svg_2_, SVG>>.
+explained further in <<_svg, SVG>> and <<_svg_2, SVG>>.
 
 ==== Graceful Fallback
 With disabled JavaScript the "Update Axis" button will simply update the
@@ -981,7 +981,7 @@ Fundamentally Ajax relies on the user being kept up-to-date with any actions,
 and allowing the user to incrementally access the backend logic, rather than
 simply submitting a request for a lengthy operation and receiving a result, as
 with a standard Web application. As mentioned in "An Architectural Style for
-Ajax" <<<6>>>, The approach to writing Ajax Web applications is more similar to
+Ajax" <<<reference-6>>>, The approach to writing Ajax Web applications is more similar to
 writing a GUI desktop application with the added difficulties of multi-user
 access, security and distributed processing that occur from writing a Web
 application. Fundamentally, the strengths from both applications can be
@@ -1090,7 +1090,7 @@ for applications currently implemented as Adobe Flash or applets, with the
 added animation and graphical support SVG provides.
 
 == Evaluation
-<<_theory_, Theory>> set an explicit hypothesis to test, and four criteria used
+<<_theory, Theory>> set an explicit hypothesis to test, and four criteria used
 to evaluate its validity.
 
 === Learnability
@@ -1179,8 +1179,8 @@ history indicating the user's movement through these states. Also, with classic
 Web applications, this allows simple errors such as a misdirected click to be
 easily remedied: simply click the "Back" button. However, with Ajax
 applications this becomes more difficult. This was highlighted earlier, instead
-referring to applets, in "Navigating the Applet-Browser divide" <<<9>>> and
-"Ajax: How to Handle Bookmarks and Back Buttons" <<<8>>>. Users of Web
+referring to applets, in "Navigating the Applet-Browser divide" <<<reference-9>>> and
+"Ajax: How to Handle Bookmarks and Back Buttons" <<<reference-8>>>. Users of Web
 applications instinctively press the "Back" button to try and undo an action or
 return backwards in a process. Ajax applications rely heavily on JavaScript
 running on each page, manually updating the DOM, and this information is not
@@ -1416,31 +1416,31 @@ Internet connection, without the requirement of a plug-in.
 :numbered!:
 [bibliography]
 == References
-- [[[1]]] Best, D. and Eindhoven, T.U., "Web 2.0 Next Big Thing or Next Big
+- [[[reference-1,1]]] Best, D. and Eindhoven, T.U., "Web 2.0 Next Big Thing or Next Big
   Internet Bubble?" (2006). https://web.archive.org/web/20060827005112/http://page.mi.fu-berlin.de/~best/uni/WIS/Web2.pdf
-- [[[2]]] Garret, J.J., "Ajax: A New Approach to Web Applications", February
+- [[[reference-2,2]]] Garret, J.J., "Ajax: A New Approach to Web Applications", February
   (2005).
-- [[[3]]] Gibson, B., "DHTML accessibility: solving the JavaScript
+- [[[reference-3,3]]] Gibson, B., "DHTML accessibility: solving the JavaScript
   accessibility problem", _Proceedings of the 7th international ACM SIGACCESS
   conference on Computers and accessibility_ (2005), pp. 202--203.
   http://doi.acm.org/10.1145/1090785.1090830
-- [[[4]]] Khare, R., "Beyond AJAX" (2005).
+- [[[reference-4,4]]] Khare, R., "Beyond AJAX" (2005).
   http://www.knownow.com/products/docs/whitepapers/KN-Beyond-AJAX.pdf
-- [[[5]]] MacKenzie, J. and McAlister, A. and Desai, S. and McCarthy, K.,
-  "Usability in Web Design" (2006). http://osddp.org/files/issues/Usability.pdf
-- [[[6]]] Mesbah, A. and van Deursen, A., "An Architectural Style for Ajax",
+- [[[reference-5,5]]] MacKenzie, J. and McAlister, A. and Desai, S. and McCarthy, K.,
+  "Usability in Web Design" (2006).
+- [[[reference-6,6]]] Mesbah, A. and van Deursen, A., "An Architectural Style for Ajax",
   _Arxiv preprint cs.SE/0608111_ (2006). http://arxiv.org/pdf/cs.SE/0608111
-- [[[7]]] Moran, T.P. and Zhai, S., "Beyond the Desktop Metaphor in Seven
+- [[[reference-7,7]]] Moran, T.P. and Zhai, S., "Beyond the Desktop Metaphor in Seven
   Dimensions" (2006).
-  http://www.almaden.ibm.com/u/zhai/papers/DesktopMoranZhai.pdf
-- [[[8]]] Neuberg, B., "AJAX: How to Handle Bookmarks and Back Buttons" (2005).
-- [[[9]]] Nielsen, J., "Navigating the Applet--Browser Divide" (1997).
+  http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.71.8838&rep=rep1&type=pdf
+- [[[reference-8,8]]] Neuberg, B., "AJAX: How to Handle Bookmarks and Back Buttons" (2005).
+- [[[reference-9,9]]] Nielsen, J., "Navigating the Applet--Browser Divide" (1997).
   http://ieeexplore.ieee.org/iel4/52/13290/00605926.pdf
-- [[[10]]] Norman, D.A., "Emotionally centered design", _interactions_ 13, 3
+- [[[reference-10,10]]] Norman, D.A., "Emotionally centered design", _interactions_ 13, 3
   (2006). http://doi.acm.org/10.1145/1125864.1125894
-- [[[11]]] Oberlander, J., "Human-Computer Interaction" (2006).
-- [[[12]]] W3C, "Web Content Accessibility Guidelines 1.0" (1999).
-- [[[13]]] Institute for Systems Biology, "Dizzy Home Page".
+- [[[reference-11,11]]] Oberlander, J., "Human-Computer Interaction" (2006).
+- [[[reference-12,12]]] W3C, "Web Content Accessibility Guidelines 1.0" (1999).
+- [[[reference-13,13]]] Institute for Systems Biology, "Dizzy Home Page".
 
 [glossary]
 == Glossary

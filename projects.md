@@ -106,7 +106,7 @@ Creator. A collection of Qt wrappers for macOS's Cocoa widgets.
 
 Maintainer. Added support for Mac OS X 10.6 and Qt/Cocoa, added CPack packaging support and macOS installer creation, migrated to Git and bug fixing.
 
-#### [Make-O-Matic](https://github.com/KDAB/Make-O-Matic)
+#### [Make-O-Matic](https://github.com/mirkoboehm/Make-O-Matic)
 ![Make-O-Matic](/images/a/make-o-matic.png)
 
 Added CPack packaging support, Windows support, other features and bug-fixes.
