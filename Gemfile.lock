@@ -118,7 +118,7 @@ GEM
       typhoeus (~> 0.7)
       yell (~> 2.0)
     http_parser.rb (0.6.0)
-    i18n (0.9.4)
+    i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jekyll (3.6.2)
       addressable (~> 2.4)
@@ -299,4 +299,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   1.15.3
+   1.16.1

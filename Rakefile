@@ -13,10 +13,10 @@ file dizzy => dizzy_adoc do
   options = { attributes: { "skip-front-matter" => true } }
   doc = Asciidoctor.load_file(dizzy_adoc, options)
   File.open(dizzy, "w") do |f|
-    f.write <<-EOS
----
-#{doc.attributes["front-matter"]}
----
+    f.write <<~EOS
+      ---
+      #{doc.attributes["front-matter"]}
+      ---
 EOS
     f.puts doc.render
   end
@@ -35,7 +35,16 @@ task test: :jekyll do
   require "html-proofer"
   HTMLProofer.check_directory(
     "./_site",
-    parallel: { in_threads: 4 },
-    favicon: true
+    url_ignore: %w[
+      https://www.facebook.com/mkmcqd
+    ],
+    parallel: { in_processes: 4 },
+    favicon: true,
+    http_status_ignore: [0, 503],
+    assume_extension: true,
+    check_external_hash: true,
+    check_favicon: true,
+    check_opengraph: true,
+    check_html: true
   ).run
 end
