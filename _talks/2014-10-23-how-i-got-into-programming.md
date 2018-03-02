@@ -3,4 +3,4 @@ summary: A brief overview of how I got involved with programming and ended up wo
 speakerdeck-id: e4ae29503d990132b6be56cb37b563fb
 speakerdeck-ratio: 1.77777777777778
 ---
-Presented at [GitHub Patchwork Edinburgh](https://github.com/blog/1907-patchwork-edinburgh) in 2014.
+Presented at [GitHub Patchwork Edinburgh](https://blog.github.com/2014-10-15-patchwork-edinburgh/) in 2014.
