@@ -1423,7 +1423,7 @@ Internet connection, without the requirement of a plug-in.
 - [[[reference-3,3]]] Gibson, B., "DHTML accessibility: solving the JavaScript
   accessibility problem", _Proceedings of the 7th international ACM SIGACCESS
   conference on Computers and accessibility_ (2005), pp. 202--203.
-  http://doi.acm.org/10.1145/1090785.1090830
+  https://dl.acm.org/citation.cfm?doid=1090785.1090830
 - [[[reference-4,4]]] Khare, R., "Beyond AJAX" (2005).
   http://www.knownow.com/products/docs/whitepapers/KN-Beyond-AJAX.pdf
 - [[[reference-5,5]]] MacKenzie, J. and McAlister, A. and Desai, S. and McCarthy, K.,
@@ -1437,7 +1437,7 @@ Internet connection, without the requirement of a plug-in.
 - [[[reference-9,9]]] Nielsen, J., "Navigating the Applet--Browser Divide" (1997).
   http://ieeexplore.ieee.org/iel4/52/13290/00605926.pdf
 - [[[reference-10,10]]] Norman, D.A., "Emotionally centered design", _interactions_ 13, 3
-  (2006). http://doi.acm.org/10.1145/1125864.1125894
+  (2006). https://dl.acm.org/citation.cfm?doid=1125864.1125894
 - [[[reference-11,11]]] Oberlander, J., "Human-Computer Interaction" (2006).
 - [[[reference-12,12]]] W3C, "Web Content Accessibility Guidelines 1.0" (1999).
 - [[[reference-13,13]]] Institute for Systems Biology, "Dizzy Home Page".
