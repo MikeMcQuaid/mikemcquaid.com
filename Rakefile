@@ -40,7 +40,7 @@ task test: :jekyll do
     ],
     parallel: { in_processes: 4 },
     favicon: true,
-    http_status_ignore: [0, 503],
+    http_status_ignore: [0, 301, 503],
     assume_extension: true,
     check_external_hash: true,
     check_favicon: true,
