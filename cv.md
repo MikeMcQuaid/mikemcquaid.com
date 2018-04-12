@@ -3,6 +3,7 @@ title: Curriculum Vitae
 layout: page
 classes: stealth-lists
 ---
+
 ### Mike McQuaid
 
 #### Senior Software Engineer

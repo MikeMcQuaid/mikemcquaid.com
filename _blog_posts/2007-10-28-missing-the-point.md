@@ -1,5 +1,8 @@
 ---
+title: Missing The Point
+date: 2007-10-28 00:00:00 Z
 ---
+
 I just had a great but unexpected evening of discussion with new friend. He's a Catholic and was also at boarding school so we have a fair amount in common to discuss.
 
 The first thing we were talking about is the bizarre way in which some people will behave in a working environment. I've always found people sucking up or toe the line a bit odd but it seems even stranger that some people intentionally misrepresent themselves at work; somehow hoping that this will be more likely to result in a promotion or recognition. Perhaps this results from society seemingly viewing how high you are on the work ladder and/or having a fancy title as being more important than actually being respected for your ability at your job.

@@ -1,6 +1,7 @@
 ---
 title: About
 ---
+
 Hello. My name is Mike McQuaid and I'm a liberal Christian and Christian liberal.
 
 I live in Edinburgh, Scotland.

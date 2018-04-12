@@ -1,3 +1,8 @@
+---
+title: Translations With Rails And Jekyll
+date: 2018-02-14 00:00:00 Z
+---
+
 I've been adding translations to open source [Ruby on Rails](http://rubyonrails.org) and [GitHub Pages](https://pages.github.com) (i.e. GitHub hosted [Jekyll](https://jekyllrb.com)) sites I maintain. For Rails there's [a fantastic Rails internationalisation guide](http://guides.rubyonrails.org/i18n.html) which walks you through everything you'd want to know. For GitHub Pages there's no such similarly standard resource. Plugins such as [Anthony-Gaudino/jekyll-multiple-languages-plugin](https://github.com/Anthony-Gaudino/jekyll-multiple-languages-plugin) are available but aren't supported by GitHub Pages so require checking in outputted HTML. This has always felt disgusting to me and reminds me of my C++ days when people checked binaries into Subversion 😭.
 
 What I wanted was a site translation system that would work consistently across Rails and GitHub Pages and allows at least partial translation through an external non-GitHub tool such as [Transifex](https://www.transifex.com) (recommended to me but I'm sure there are similar alternatives).

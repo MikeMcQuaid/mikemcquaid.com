@@ -1,77 +1,78 @@
+---
 title: Mike McQuaid
+timezone: UTC
+collections:
+  blog_posts:
+    title: Blog Posts
+    output: true
+    permalink: "/blog/:year/:month/:day/:title/"
+  posts:
+    title: Posts
+    output: true
+  talks:
+    title: Talks
+    output: true
+    permalink: "/talks/:title/"
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: article
+- scope:
+    path: ''
+    type: blog_posts
+  values:
+    layout: blog_post
+- scope:
+    path: ''
+    type: talks
+  values:
+    layout: talk
+- scope:
+    path: blog
+    type: pages
+  values:
+    layout: blog_page
+- scope:
+    path: ''
+  values:
+    image: "/images/header.jpg"
 description: The home page for a software engineer named Mike McQuaid.
-
 author:
   name: Mike McQuaid
   email: mike@mikemcquaid.com
   uri: http://mikemcquaid.com
   twitter: MikeMcQuaid
-
 twitter:
   username: MikeMcQuaid
-
-logo: /images/header.jpg
-
+logo: "/images/header.jpg"
 permalink: pretty
-
 blog:
   name: A Liberal Christian Liberal
   description: Mike McQuaid's musings on life blog.
-
 exclude:
-  - bin
-  - CNAME
-  - Gemfile*
-  - Guardfile
-  - Rakefile,
-  - ReadMe.md
-  - vendor
-
+- bin
+- CNAME
+- Gemfile*
+- Guardfile
+- Rakefile,
+- ReadMe.md
+- vendor
 plugins:
-  - jekyll-redirect-from
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-optional-front-matter
-  - jekyll-titles-from-headings
-  - jekyll-relative-links
-
+- jekyll-redirect-from
+- jekyll-sitemap
+- jekyll-feed
+- jekyll-seo-tag
+- jekyll-optional-front-matter
+- jekyll-titles-from-headings
+- jekyll-relative-links
 feed:
   path: atom.xml
-
 sass:
   style: :compressed
-
-defaults:
-  - scope:
-      type: posts
-    values:
-      layout: article
-  - scope:
-      type: blog_posts
-    values:
-      layout: blog_post
-  - scope:
-      type: talks
-    values:
-      layout: talk
-  - scope:
-      path: blog
-      type: pages
-    values:
-      layout: blog_page
-  - scope:
-      path: ""
-    values:
-      image: /images/header.jpg
-
-collections:
-  blog_posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title/
-  talks:
-    output: true
-    permalink: /talks/:title/
-
 github:
   repository_nwo: MikeMcQuaid/mikemcquaid.github.io

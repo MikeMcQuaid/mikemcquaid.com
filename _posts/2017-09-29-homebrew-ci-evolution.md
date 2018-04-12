@@ -1,5 +1,6 @@
 ---
 title: Homebrew's CI evolution
+date: 2017-09-29 00:00:00 Z
 ---
 
 When I started contributing to and then maintaining Homebrew in 2009 it had no continuous integration, automated testing or binary packages on the project. Contributors would create an issue with a link to a commit in their fork, Max Howell ([@mxcl](https://github.com/mxcl), Homebrew’s creator) or a maintainer would test the change locally and then push it to Homebrew’s `master` if it worked.

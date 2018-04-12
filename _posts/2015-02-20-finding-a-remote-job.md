@@ -1,3 +1,8 @@
+---
+title: Finding A Remote Job
+date: 2015-02-20 00:00:00 Z
+---
+
 In 2012 I found myself in an awkward position in my career. I was working at [KDAB](http://kdab.com/), a company of lovely, talented people with great bosses and working on (mostly) interesting projects. Sounds great, right?
 
 The problem was the technology we consulted in ([Qt](http://qt-project.org)) and I'd built my career becoming a bit of expert in was being used to solve problems that no longer interested me and I was convinced Qt was becoming legacy technology. I was writing mostly C++ (which I despise) and I wanted to pivot to working using Ruby (which I had experience with through [Homebrew](http://brew.sh)) or Objective-C (which I'd dabbled with and liked). Additionally, I wanted to keep being paid well (you can gauge average pay per-language on [IT Jobs Watch](http://www.itjobswatch.co.uk)), work on a product-focused company remotely from my home in Scotland for a company which was, ideally, based in San Francisco (I really liked the place). I thought it was pretty staggeringly unlikely I'd be able to meet most of those criteria but my last two jobs have met all of them.

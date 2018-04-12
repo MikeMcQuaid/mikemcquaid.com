@@ -1,3 +1,8 @@
+---
+title: How I Get Things Done
+date: 2015-05-24 00:00:00 Z
+---
+
 The first thing you need to accept is: your memory sucks. If you have ever had things you want to do in life (for yourself or for others) chances are you can't remember them all right now. That's why most people don't rely entirely on their own memory and have some sort of system to remind them what commitments they've made. I'll explain my system and hopefully a bit about why it is the way it is.
 
 Firstly, when someone asks me to do something I immediately write it down in my iPhone or MacBook's Notes app. This doesn't have any mechanism for storing dates or times but just lets me enter text. This is good because it's available and synced everywhere. If I have time (or when I next do) I then sort into lists based on topic matter. My long-running lists are: [GitHub](https://github.com/) (my current employer), [Homebrew](http://brew.sh) (an open-source project I work on) and Random is a general (short) dump for other things. Every time I do work for GitHub, Homebrew or myself I look on the relevant list to see what I should do.

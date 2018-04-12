@@ -1,8 +1,10 @@
 ---
 title: Make Qt Use The GTK Style On XFCE or Xubuntu
+date: 2011-12-01 00:00:00 Z
 redirect_from:
-  - /2011/12/make-qt-use-the-gtk-style-on-xfce-or-xubuntu/
+- "/2011/12/make-qt-use-the-gtk-style-on-xfce-or-xubuntu/"
 ---
+
 I'm a Qt developer and use Xubuntu in my Linux VMs as it is lighter than KDE and doesn't get in my way (unlike Unity).
 
 By default there is a problem with QGtkStyle which stops it correctly picking up the GTK theme as XFCE does not save it in the usual place.

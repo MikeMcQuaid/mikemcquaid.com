@@ -1,6 +1,8 @@
 ---
 title: Using .asoundrc To Remap ALSA channels For Audacity
+date: 2008-07-17 00:00:00 Z
 ---
+
 My sound card (a [Creative Sound Blaster Audigy 2](http://en.wikipedia.org/wiki/Sound_Blaster_Audigy)) has got **lots of inputs**, especially with the nice drive bay expansion port.
 
 Unfortunately, the default ALSA device seems to have no way to access the _"Line 2/Mic 2"_ channel on the **front drive-bay expansion** which I use for recording due to it seemingly being the lowest-noise channel.

@@ -1,3 +1,8 @@
+---
+title: Open Source Maintainers Owe You Nothing
+date: 2018-03-19 00:00:00 Z
+---
+
 This post is heavily inspired by my experience over the [last ten years participating in the open source community](https://mikemcquaid.com/projects/) and eight years as a maintainer of [Homebrew](https://github.com/Homebrew/brew) (which I've maintained longer than anyone else at this point).
 
 ---

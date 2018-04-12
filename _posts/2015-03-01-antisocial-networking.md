@@ -1,3 +1,8 @@
+---
+title: Antisocial Networking
+date: 2015-03-01 00:00:00 Z
+---
+
 Two recent posts made me reconsider how I used social networking.
 
 Previously I've always been one of these people who advocated "don't say anything on the Internet you wouldn't be happy being public and read by anyone you meet for the rest of your life". I still think that's good advice but what I didn't expect is that as I've grown older what views I'm happy to have attached to my person have changed quite a bit. This has nagged at me a little but just resulted in increased personal filtering (and not crossposting my tweets to Facebook) rather than anything dramatic.

@@ -1,6 +1,8 @@
 ---
-title: "The Social Network: A Defence Of Programming"
+title: 'The Social Network: A Defence Of Programming'
+date: 2010-11-11 00:00:00 Z
 ---
+
 I recently saw [The Social Network](http://www.imdb.com/title/tt1285016/), a dramatisation of the creation of Facebook. It was a thoroughly enjoyable film with brilliant direction, casting (Eisenberg and Timberlake in particular) and writing. It also had an incredibly realistic hacking scene (using wget and perl scripts) and featured KDE on the desktop of most of the programmers in the film. I highly recommend seeing it, regardless of your thoughts on Facebook.
 
 A friend sent me a [link to an interesting review](http://www.nybooks.com/articles/archives/2010/nov/25/generation-why/?pagination=false) that I was writing a long response to but thought I'd turn it into a blog post instead. The review is fantastically written by Zadie Smith but there's a few glaring holes in it that frustrated this post into existence.

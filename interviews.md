@@ -1,8 +1,9 @@
 ---
 title: Interviews
 layout: page
-redirect_from: /press
+redirect_from: "/press"
 ---
+
 I sometimes give interviews about open source, Homebrew, Git and GitHub. Here are some examples:
 
 #### [7 years of open source: GitHub, Puppet, DataStax, Severalnines](http://www.computerweekly.com/blog/Open-Source-Insider/7-years-of-open-source-GitHub-Puppet)

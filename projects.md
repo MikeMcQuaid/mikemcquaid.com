@@ -2,6 +2,7 @@
 title: Projects
 layout: page
 ---
+
 ### Current
 
 #### [GitHub](https://github.com)

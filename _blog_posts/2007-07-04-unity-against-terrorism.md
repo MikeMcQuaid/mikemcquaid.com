@@ -1,5 +1,8 @@
 ---
+title: Unity Against Terrorism
+date: 2007-07-04 00:00:00 Z
 ---
+
 Britain again came under fire from Islamic extremists last week with attempted bombings in London and Glasgow. Thankfully no-one except the one of the perpetrators were hurt and their fairly inept attempts to disrupt and terrorise failed.
 
 Two things have stuck in my mind when I finally heard the full story of events.

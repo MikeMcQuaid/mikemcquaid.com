@@ -1,3 +1,8 @@
+---
+title: Replacing Boxen
+date: 2016-06-15 00:00:00 Z
+---
+
 When I started working at [GitHub](https://github.com) my GitHub-provided MacBook was bootstrapped with [Boxen](https://github.com/boxen/boxen/). Boxen is a tool for managing OS X development machines using Puppet to install and update packages, start persistent services, install and bootstrap projects and apply security policies. Over time I went from a Boxen novice to power user to internal and external maintainer and finally to implementing its replacement for GitHub.
 
 Boxen relies heavily on Puppet so Puppet's strengths and weaknesses tend to be the same as Boxen itself. In my experience tools like Puppet and Chef work well given the following requirements:

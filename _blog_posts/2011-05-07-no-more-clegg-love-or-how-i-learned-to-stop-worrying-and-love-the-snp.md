@@ -1,6 +1,8 @@
 ---
 title: No More Clegg Love Or How I Learned To Stop Worrying And Love the SNP
+date: 2011-05-07 00:00:00 Z
 ---
+
 ![Nick Clegg looking sad.](/blog/images/a/nick-clegg-sad.jpg)
 As some of you may remember, I was very positive about Clegg's election to the Lib Dem leadership in 2007 and [less positive](/blog/2010/09/26/coalition-musings/) about his role enabling Conservative cuts but still remained a member of the party. On Thursday I voted SNP in the Scottish elections and saw with delight as the Lib Dems lost more than 70% of their seats. I was prompted my [a friend](http://madeleinedavies.co.uk/) to examine quite what prompted my dramatic turnaround.
 

@@ -1,6 +1,11 @@
 ---
-excerpt: Some people have suggested that the future of E-Commerce will be shaped by various kinds of “communities” (both online and offline); other are more sceptical about the potential.
+title: Community Driven Software Development
+date: 2007-06-01 00:00:00 Z
+excerpt: Some people have suggested that the future of E-Commerce will be shaped by
+  various kinds of “communities” (both online and offline); other are more sceptical
+  about the potential.
 ---
+
 ### Abstract
 Some people have suggested that the future of E-Commerce will be shaped by various kinds of _"communities"_ (both online and offline); other are more sceptical about the potential. This report analyses the competing argument, focusing on the key actors and using Free and Open Source Software (FOSS) as a case-study to analyse the effects of online communities.
 

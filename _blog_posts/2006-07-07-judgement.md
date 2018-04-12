@@ -1,5 +1,8 @@
 ---
+title: Judgement
+date: 2006-07-07 00:00:00 Z
 ---
+
 I've been a Christian 4 years. It's without a doubt the best thing to ever happen to me, and was followed a week after to the second best thing to happen to me, Lindsay, but that's another story...
 
 I feel, much like with driving, its only when you become a Christian that you actually start to understand what its about and/or apply it. God calls as we are, and says we will be happier if we change.

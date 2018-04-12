@@ -1,5 +1,8 @@
 ---
+title: Coalition Musings
+date: 2010-09-26 00:00:00 Z
 ---
+
 It's been over 4 months since the [2010 UK elections](http://en.wikipedia.org/wiki/United_Kingdom_general_election,_2010), the first election I'd say I researched to a significant level and followed closely. I watched many of the debates, interacted in many political discussions in person, on Facebook and on Twitter and consumed huge quantities of mainstream and social media discussion. It was a very strange election for a Liberal Democrat member; my party was thrust into the mainstream far more by the televised debates and ended up deciding who would form a government; finally deciding on forming one with the Conservatives.
 
 I was initially pleased to think that the Lib Dems might provide a balancing influence to the Conservatives cuts and that the Conservatives approach to the deficit and cost-cutting was correct. The more I read and observed however the more I realised that looking through Keynesian economics paints another picture from that painted by Cameron and Osbourne. Seemingly overnight Clegg turned from being someone who has loudly condemned the Conservatives cuts to being the very man who has enabled them to happen. I would obviously prefer the current coalition over a Conservative government but, once all the Lib Dem flag-waving died down, I realised that this was one of three choices (LibLab coalition, LibCon coalition, minority Con government) and, as I see it today, Clegg chose the option I'm least happy with. The emergency budget and hard cuts simply could not have been made with a minority government and I'm not sure this would be a bad thing. After all, all parties seemed to agree cuts needed to be made, it was just a question of where and by how much.

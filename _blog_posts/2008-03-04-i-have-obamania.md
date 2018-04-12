@@ -1,6 +1,8 @@
 ---
 title: I Have Obamania!
+date: 2008-03-04 00:00:00 Z
 ---
+
 I've got a fever and the only prescription is Barack Obama.
 
 I am, like a lot of people in Europe, strangely attracted to the US primaries and the Democratic race in particular (as it is actually still a race).

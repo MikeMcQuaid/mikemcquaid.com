@@ -1,5 +1,8 @@
 ---
+title: Military Protests
+date: 2009-03-14 00:00:00 Z
 ---
+
 Some of you may have read about the [protests of returning troops to England from Iraq last week](http://news.bbc.co.uk/1/hi/england/beds/bucks/herts/7936485.stm). They were greeted by a friendly welcome by the majority with a minority holding signs describing them as "_Butchers_" and "_Terrorists_".
 
 I read this and felt torn. On one hand the protesters are voicing their complaints against the British Army's part in death of thousands of civilians. On the other hand they are raising the issue in a hugely polarising way which probably does more damage to their cause than aid it. After this brief pondering I returned to my week.

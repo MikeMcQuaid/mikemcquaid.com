@@ -1,8 +1,10 @@
 ---
 title: KDE - Blog From KOrganizer HOWTO
+date: 2008-09-27 00:00:00 Z
 redirect_from:
-  - /2008/09/kde-blog-from-korganizer-howto/
+- "/2008/09/kde-blog-from-korganizer-howto/"
 ---
+
 **Blog from KOrganizer?** What kind of **madness** is this? Apparently some crazy fool decided to give you the ability to post journals from KOrganizer to your blog. Let's learn how to do it!
 
 Firstly open **KOrganizer**.

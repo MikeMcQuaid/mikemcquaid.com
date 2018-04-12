@@ -1,5 +1,8 @@
 ---
+title: Rendition
+date: 2007-10-23 00:00:00 Z
 ---
+
 I had the fortune of seeing Rendition on Friday night. Rendition is a film about the US extradition of suspected terrorists to prisons outside of the US where they can be legally tortured.
 
 I found the film really enjoyable and thought provoking. The camera work was bordering on beautiful, loads of still shots perpendicular to flat, bland surfaces helping you to focus in on the characters. The acting was convincing enough but it was the direction and story that really dragged me in and made me think.

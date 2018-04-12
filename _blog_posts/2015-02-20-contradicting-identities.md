@@ -1,5 +1,8 @@
 ---
+title: Contradicting Identities
+date: 2015-02-20 00:00:00 Z
 ---
+
 It's hard to place where religion and morality intersect, inform and interfere. Living in the age of ISIS, gay marriage, Je suis Charlie and new female bishops it's obvious that the tectonic plates of religious tolerance, expression and interpretation are building tensions which explode into violence, intolerance and isolation. Many of Dawkins' followers started arguing a few years ago that science and religion were fundamentally incompatible. This seems to have further polarised debates as people sink into their existing positions (or at least are increasingly being painted as doing so). There's little room in this new order of BBC balance (two equally blinkered fools bickering) for people to have multifaceted identities in which their politics, morals, religion and role in society contradict each other. No, you must go into your box with Others Like You.
 
 Marcus Borg, a hero of mine, died recently. He was a man who was able to live in contradictions in which many of us feel very uncomfortable. He was a liberal but also a life-long Christian. He believed in God but he did not believe almost any of Jesus's miracles happened. He believed the Bible to be crucially important but also almost entirely factually incorrect (and not even intended to be correct). I found great comfort in his writings as someone who has similarly felt conflicted and internally contradicted (if not on the same points of doctrine).

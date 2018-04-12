@@ -1,6 +1,8 @@
 ---
 title: The Golden Compass - What's All The Fuss About?
+date: 2007-12-08 00:00:00 Z
 ---
+
 The Catholic League in the US has called for a boycott of The Golden Compass, the film based on Philip Pullman's novel Northern Lights.
 
 I had the chance of seeing the film this afternoon and enjoyed it. The story is fairly predictable (in the film anyway) and the trailers I had seen ruined some of the twists and turns for me but this didn't detract overly from my enjoyment of the film. The main reason I went to see it, to be honest, was for the CGI which met far exceeded my expectations. I wish my grandparents were still around so I could show them some of the imagery that we can create with computers now, I think they'd be pretty blown away.

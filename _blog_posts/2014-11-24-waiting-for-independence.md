@@ -1,5 +1,8 @@
 ---
+title: Waiting For Independence
+date: 2014-11-24 00:00:00 Z
 ---
+
 ![Calton Hill independence march panorama.](/blog/images/a/independence_panorama.jpg)
 It ended up [taking me a while](/blog/2011/05/07/no-more-clegg-love-or-how-i-learned-to-stop-worrying-and-love-the-snp/) to elaborate on why I supported independence. In that time a referendum bill went through Holyrood, a question was decided ("Should Scotland be an independent country?") and Scotland decided it should not become independent (for the moment, at least) with the highest turnout in a UK election or referendum (85%) since universal suffrage.
 
