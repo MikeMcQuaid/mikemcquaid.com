@@ -58,7 +58,7 @@ An opinionated intermediate/advanced Git book published with Manning Publication
 
 ### Awards
 
-#### [JavaOne Rock Star](https://www.oracle.com/javaone/rock-star-wall-of-fame.html#McQuaid) (2014)
+#### JavaOne Rock Star (2014)
 The JavaOne Rock Star Program "recognise[s] speakers for their outstanding session content and speaking ability".
 
 #### [UK Open Source Awards](http://opensourceawards.org/) (2014)
