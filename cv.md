@@ -48,7 +48,7 @@ Created record-breaking high-performance network analysis applications in C on t
 #### [Google Summer of Code](http://code.google.com/soc/) (2007)
 Worked on the [KDE](http://www.kde.org/) Qt/C++ project. Improved the [KBlog XML-RPC API](https://api.kde.org/4.12-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals from KOrganizer](http://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
 
-#### [Wolfson Microelectronics](http://www.wolfsonmicro.com/) (2006)
+#### [Wolfson Microelectronics](https://en.wikipedia.org/wiki/Wolfson_Microelectronics) (2006)
 Wrote battery driver, improved Auxiliary ADC C++ code for Intel XScale on Windows CE. Wrote WM8711 Linux kernel driver in C which was [released in 2.6.26](https://github.com/mirrors/linux-2.6/commit/bd6d417743d941c3e5eabb21abbcac9737f11061). Improved AC'97, I2S audio drivers and fixed a [noisy LCD issue](http://bugs.openembedded.org/show_bug.cgi?id=1316).
 
 ### Publications

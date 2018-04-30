@@ -46,7 +46,7 @@ _Paul Foeckler, 2009, my manager at Mendeley_
 
 _Stephen Lynch, 2008, my manager at BT_
 
-### [Wolfson Microelectronics](http://www.wolfsonmicro.com/)
+### [Wolfson Microelectronics](https://en.wikipedia.org/wiki/Wolfson_Microelectronics)
 > Mike worked well above the level of a student software engineer whilst at Wolfson. He worked well within the Linux team and quickly learned aspects of Linux kernel driver development to complete difficult sections of a touchscreen driver.
 
 _Liam Girdwood, 2008, my manager at Wolfson Microelectronics_
