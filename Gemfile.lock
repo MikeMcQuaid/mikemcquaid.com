@@ -8,7 +8,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    asciidoctor (1.5.6.2)
+    asciidoctor (1.5.7)
     coderay (1.1.1)
     coffee-script (2.4.1)
       coffee-script-source
