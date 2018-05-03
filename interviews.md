@@ -5,8 +5,11 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git and GitHub. Here are some examples:
 
+#### [When should you open source your software?](http://www.idgconnect.com/abstract/30253/when-source-software)
+IDG Connect, 13th April 2018
+
 #### [7 years of open source: GitHub, Puppet, DataStax, Severalnines](http://www.computerweekly.com/blog/Open-Source-Insider/7-years-of-open-source-GitHub-Puppet)
-ComputerWeekly.com, 25th October 2016
+ComputerWeekly.com, 25th October 2017
 
 #### [Homebrew with Mike McQuaid](https://manifest.fm/1)
 The Manifest, 16th August 2017
