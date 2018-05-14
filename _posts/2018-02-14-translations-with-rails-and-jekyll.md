@@ -16,7 +16,7 @@ Transifex translates Rails applications by getting you to upload the [`en.yml`](
 
 ## brew.sh (v2)
 
-Homebrew's homepage translations were working well but there was a fair bit of duplication. Any new language was hardcoded in `_config.yml` and wasn't translated by Transifex as the translation data was YAML front-matter in HTML files. I decided to [refactor this](https://github.com/Homebrew/homebrew.github.io/pull/204/files) to have all locale files in `_data/locales/*.yml` (mirroring Rails' `config/locales/*.yml`) as [Jekyll data files](https://jekyllrb.com/docs/datafiles/). I also added a [`t` helper variable](https://github.com/MikeMcQuaid/homebrew.github.io/blob/bc5a12b3c94335a577629dbeffe225d88c000a75/_layouts/index.html#L4) to access translations (again, mirroring the `t` helper method in Rails).
+Homebrew's homepage translations were working well but there was a fair bit of duplication. Any new language was hardcoded in `_config.yml` and wasn't translated by Transifex as the translation data was YAML front-matter in HTML files. I decided to [refactor this](https://github.com/Homebrew/homebrew.github.io/pull/204/files) to have all locale files in `_data/locales/*.yml` (mirroring Rails' `config/locales/*.yml`) as [Jekyll data files](https://jekyllrb.com/docs/datafiles/). I also added a [`t` helper variable](https://github.com/Homebrew/homebrew.github.io/blob/bc5a12b3c94335a577629dbeffe225d88c000a75/_layouts/index.html#L4) to access translations (again, mirroring the `t` helper method in Rails).
 
 This provided a separation between the translation data in `_data/locales` handled by Transifex, HTML files with minimal front-matter content (`layout` and `lang`) and HTML layout files that use the translations.
 
