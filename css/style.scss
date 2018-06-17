@@ -85,7 +85,7 @@ h1 {
   font-size: 2.5em;
 
   @media only screen and (max-device-width: 480px) {
-    font-size: 1.6em;
+    font-size: 2.1em;
   }
 }
 
@@ -128,11 +128,7 @@ h1, h2, h3, h4 {
   a {
     padding: 0 0.5em;
     width: 100%;
-
-    @media only screen and (max-device-width: 480px) {
-      font-size: 0.85em;
-      padding: 0 0.3em;
-    }
+    line-height: 125%;
   }
 }
 
@@ -281,6 +277,14 @@ h4 {
   height: 157px;
   float: left;
   margin: 0 1em 1.5em 0;
+
+  img {
+    padding: 0 !important;
+  }
+
+  @media only screen and (max-device-width: 480px) {
+    float: none;
+  }
 }
 
 table caption {
@@ -356,19 +360,23 @@ blockquote {
 }
 
 #newsletter-email {
+  @include border($border-colour-light);
   margin-top: 0.5em;
   font-size: 1.2em;
-  width: 25em;
   padding: 0.1em;
   text-align: center;
+  width: 25em;
+  @media only screen and (max-device-width: 480px) {
+    width: 12em;
+  }
 }
 
 #newsletter-submit {
+  @include border($border-colour-light);
   font-size: 1.0em;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  @include border($border-colour-light);
   background-color: $text-background-colour;
   border-radius: 5px;
   padding: 0.25em 0.5em;
