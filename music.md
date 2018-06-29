@@ -1,5 +1,8 @@
 ---
 title: Music
+layout: page
+redirect_from:
+  - /blog/music/
 ---
 ### Recordings
 

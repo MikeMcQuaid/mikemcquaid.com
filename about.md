@@ -1,6 +1,8 @@
 ---
 title: About Me
 layout: page
+redirect_from:
+  - /blog/about/
 ---
 Hello. My name is Mike McQuaid and I'm a software engineer.
 
