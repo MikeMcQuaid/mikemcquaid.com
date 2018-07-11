@@ -5,4 +5,4 @@ speakerdeck-id: 514a7fee203a40bd9f03ff7600307c5d
 speakerdeck-ratio: 1.77777777777778
 youtube-id: TlQcwNnqpnE
 ---
-Presented at [GitHub Satellite](https://githubuniverse.com/satellite/) in 2017.
+Presented at [GitHub Satellite](https://githubsatellite.com) in 2017.
