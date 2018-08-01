@@ -58,7 +58,7 @@ An opinionated intermediate/advanced Git book published with Manning Publication
 
 ### Awards
 
-#### JavaOne Rock Star (2014)
+#### [JavaOne Rock Star](https://blogs.oracle.com/java/annoucing-javaone-2014-rock-stars-v2) (2014)
 The JavaOne Rock Star Program "recognise[s] speakers for their outstanding session content and speaking ability".
 
 #### [UK Open Source Awards](http://opensourceawards.org/) (2014)
