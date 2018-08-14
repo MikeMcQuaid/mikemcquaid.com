@@ -1,6 +1,5 @@
 ---
-title: How To (Not) Fail At Using Open Source Software
-In Your Organisation
+title: How To (Not) Fail At Using Open Source Software In Your Organisation
 summary: Learn how to use open source software in your organisation without succumbing to the most common of pitfalls.
 speakerdeck-id: a8a62c40a8f24ceea2348ec397f44bc5
 speakerdeck-ratio: 1.77777777777778
