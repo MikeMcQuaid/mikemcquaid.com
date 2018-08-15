@@ -1,5 +1,6 @@
 ---
 title: "The Open Source Contributor Funnel (or: Why People Don’t Contribute To Your Open Source Project)"
+image: /images/a/the-open-source-contributor-funnel.png
 ---
 
 Homebrew, the macOS package manager I maintain, is one of the most active community projects on GitHub. We regularly attract large numbers of new contributors and valuable, first-time open source contributions. We've done this by thinking about our users, contributors and maintainers going through a "contributor funnel". If you're wondering why people aren't contributing to your open source project (😭): thinking this way will help you fix this.
