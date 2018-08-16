@@ -5,3 +5,5 @@ speakerdeck-ratio: 1.77777777777778
 youtube-id: OsOZpF6LFcw
 ---
 Presented at CodeConf in 2016.
+
+Written up as a blog post: [The Open Source Contributor Funnel (or: Why People Don’t Contribute To Your Open Source Project)](/2018/08/14/the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project/).

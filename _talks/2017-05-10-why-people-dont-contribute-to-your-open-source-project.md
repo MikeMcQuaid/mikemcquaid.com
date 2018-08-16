@@ -6,3 +6,5 @@ speakerdeck-ratio: 1.77777777777778
 youtube-id: MXxII4aGx4Y
 ---
 Presented at [OSCON](https://conferences.oreilly.com/oscon/oscon-tx) in 2017 and [FOSDEM](https://fosdem.org/) in 2018.
+
+Written up as a blog post: [The Open Source Contributor Funnel (or: Why People Don’t Contribute To Your Open Source Project)](/2018/08/14/the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project/).
