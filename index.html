@@ -12,8 +12,13 @@ redirect_from:
         {{ post.title }}
       </h2>
     </a>
-    <span>{{ post.excerpt }}</span>
-    <br/>
+    <span>
+      {% if post.excerpt contains "<p>" %}
+        {{ post.excerpt }}
+      {% else %}
+        <p>{{ post.excerpt }}</p>
+      {% endif %}
+    </span>
     <div class="clearboth"></div>
   </li>
 {% endfor %}
