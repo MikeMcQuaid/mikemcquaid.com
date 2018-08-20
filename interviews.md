@@ -47,8 +47,5 @@ The Changelog, 7th October 2016
 #### [But What About The Stars?](http://5by5.tv/rubyonrails/221)
 Ruby on Rails Podcast, 4th October 2016
 
-#### [An Interview with Mike McQuaid, GitHub Engineer](https://www.acast.com/steercast/44-an-interview-with-mike-mcquaid-github-engineer)
-Steercast, 17th November 2015
-
 #### [Interview with Mike McQuaid about Git in Practice](https://www.infoq.com/articles/interview-Mike-McQuaid-git-practice)
 InfoQ, 4th March 2015
