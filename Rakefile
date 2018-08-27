@@ -1,4 +1,3 @@
-require "rubygems"
 require "rake"
 require "rake/clean"
 
@@ -35,16 +34,12 @@ task test: :jekyll do
   require "html-proofer"
   HTMLProofer.check_directory(
     "./_site",
-    url_ignore: %w[
-      https://www.facebook.com/mkmcqd
-    ],
-    parallel: { in_processes: 4 },
-    favicon: true,
-    http_status_ignore: [0, 301, 503],
-    assume_extension: true,
     check_external_hash: true,
     check_favicon: true,
     check_opengraph: true,
-    check_html: true
+    check_html: true,
+    check_img_http: true,
+    only_4xx: true,
+    parallel: { in_processes: 4 },
   ).run
 end
