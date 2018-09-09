@@ -1,11 +1,12 @@
 require "rake"
 require "rake/clean"
 
-task default: :jekyll
+task default: :test
 
 dizzy_base = "2007-02-27-making-dizzy-shine-with-ajax"
 dizzy_adoc = "_posts/_#{dizzy_base}.asciidoc"
 dizzy = "_posts/#{dizzy_base}.html"
+CLEAN.include FileList[dizzy, "_site"]
 
 file dizzy => dizzy_adoc do
   require "asciidoctor"
@@ -26,8 +27,6 @@ task deps: dizzy
 task jekyll: :deps do
   sh "jekyll", "build"
 end
-
-CLEAN.include FileList[dizzy, "_site"]
 
 desc "Run html proofer to validate the HTML output."
 task test: :jekyll do
