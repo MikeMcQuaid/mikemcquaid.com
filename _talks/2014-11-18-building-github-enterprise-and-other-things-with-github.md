@@ -1,6 +1,6 @@
 ---
 title: Building GitHub Enterprise (And Other Things) With GitHub
-summary: The GitHub Enterprise development workflow.
+description: The GitHub Enterprise development workflow.
 speakerdeck-id: ae79961052050132090736a37b6e3dcd
 speakerdeck-ratio: 1.77777777777778
 ---

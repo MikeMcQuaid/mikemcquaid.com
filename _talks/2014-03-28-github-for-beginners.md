@@ -1,6 +1,6 @@
 ---
 title: GitHub For Beginners
-summary: How to setup and use GitHub and the GitHub desktop applications.
+description: How to setup and use GitHub and the GitHub desktop applications.
 speakerdeck-id: 5ed38c70ab6c0131cbe70e9464dacf0d
 speakerdeck-ratio: 1.77777777777778
 ---

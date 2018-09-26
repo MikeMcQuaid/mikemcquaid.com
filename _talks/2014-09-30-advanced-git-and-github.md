@@ -1,6 +1,6 @@
 ---
 title: Advanced Git (And GitHub)
-summary: A walkthrough of some useful but rarely known features in Git and GitHub.
+description: A walkthrough of some useful but rarely known features in Git and GitHub.
 speakerdeck-id: 5ced99801a3301309a9f1231381a9bc7
 speakerdeck-ratio: 1.33333333333333
 youtube-id: c6rFzbZa6x0
