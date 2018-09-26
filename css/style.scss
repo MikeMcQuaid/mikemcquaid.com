@@ -273,13 +273,15 @@ h4 {
 }
 
 .speakerdeck-thumb {
-  width: 210px;
-  height: 157px;
+  width: 321px;
+  height: 181px;
   float: left;
   margin: 0 1em 1.5em 0;
+  padding-top: 0.75em;
 
   img {
     padding: 0 !important;
+    max-height: 181px;
   }
 
   @media only screen and (max-device-width: 480px) {
