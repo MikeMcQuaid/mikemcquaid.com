@@ -26,10 +26,10 @@ Porting software between Windows, Mac and Linux. Administering Linux servers,  a
 ### Experience
 
 #### [GitHub](http://github.com/) (2013 - Present)
-Senior engineer improving the GitHub.com site and subdomains. Previously improving GitHub for free and open-source software, improving the GitHub platform for developers inside and outside GitHub, improving the quality for GitHub Enterprise through release management, engineering and improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process. Previously on service, ops and application on-call rotations for GitHub.com.
+Senior engineer improving the GitHub.com site and subdomains. Previously improving GitHub for free and open-source software (collaborating with Google, Microsoft and Facebook), improving the GitHub platform for developers inside and outside GitHub, improving the quality for GitHub Enterprise through release management, engineering and improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process. Previously on service, ops and application on-call rotations for GitHub.com.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
-Lead Maintainer. Invented Homebrew binary packages (bottles), fix users issues, plan roadmap, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running.
+Lead Maintainer. Invented Homebrew binary packages (bottles) featured in Apple's Touch Bar MacBook Pro keynote and used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running.
 
 #### [AllTrails](http://alltrails.com/) (2012 - 2013)
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?). Developed features, APIs and optimised performance. Setup Jenkins CI and automatic Chef deployment for Rails and mobile applications HockeyApp deployment. Managed and improved AWS EC2 infrastructure.
