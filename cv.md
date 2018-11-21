@@ -19,17 +19,17 @@ I happily live in Edinburgh, Scotland and will never consider relocating for wor
 ### Skills
 Extensive experience in Ruby, Rails, Git, Bash/shell scripting, Qt, C++, C, MySQL and CMake. Productive with other languages and technologies in days.
 
-Porting software between Windows, Mac and Linux. Administering Linux servers,  automating Windows and Mac machines. Advocating for, designing and implementing CI systems.
+Porting software between Windows, Mac and Linux. Administering Linux servers, automating Windows and Mac machines. Advocating for, designing and implementing CI systems.
 
 [Widespread experience](https://www.openhub.net/accounts/mikemcquaid) contributing to open-source software and getting patches accepted upstream.
 
 ### Experience
 
 #### [GitHub](http://github.com/) (2013 - Present)
-Senior engineer improving the GitHub.com site and subdomains. Previously improving GitHub for free and open-source software (collaborating with Google, Microsoft and Facebook), improving the GitHub platform for developers inside and outside GitHub, improving the quality for GitHub Enterprise through release management, engineering and improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process. Previously on service, ops and application on-call rotations for GitHub.com.
+Senior engineer improving GitHub.com web services and separating into new micro-services. On GitHub.com application, escalation and service on-call rotations. Previously on GitHub.com ops/infrastructure on-call rotation. Previously improving GitHub for free and open-source software (collaborating with Google, Microsoft and Facebook), improving the GitHub platform for developers inside and outside GitHub, improving the robustness and quality of GitHub Enterprise through release management, engineering and improving manual QA, CI, availability, packaging, continuous deployment, automation and ChatOps for the release process.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
-Lead Maintainer. Invented Homebrew binary packages (bottles) featured in Apple's Touch Bar MacBook Pro keynote and used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running.
+Lead Maintainer. Invented Homebrew binary packages (bottles) featured in Apple's Touch Bar MacBook Pro keynote and used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running.
 
 #### [AllTrails](http://alltrails.com/) (2012 - 2013)
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?). Developed features, APIs and optimised performance. Setup Jenkins CI and automatic Chef deployment for Rails and mobile applications HockeyApp deployment. Managed and improved AWS EC2 infrastructure.
