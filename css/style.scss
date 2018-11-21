@@ -142,6 +142,11 @@ h1, h2, h3, h4 {
     background-color: white;
     color: black;
   }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $page-background-colour;
+    color: $page-text-colour;
+  }
 }
 
 #main, #footer {
