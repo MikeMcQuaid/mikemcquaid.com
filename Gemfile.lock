@@ -107,7 +107,7 @@ GEM
     guard-rake (1.0.0)
       guard
       rake
-    html-pipeline (2.9.2)
+    html-pipeline (2.10.0)
       activesupport (>= 2)
       nokogiri (>= 1.4)
     html-proofer (3.10.0)
