@@ -5,6 +5,9 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git and GitHub. Here are some examples:
 
+#### [Homebrew! Part Deux](https://changelog.com/podcast/337)
+The Changelog, 6th March 2019
+
 #### [When should you open source your software?](http://www.idgconnect.com/abstract/30253/when-source-software)
 IDG Connect, 13th April 2018
 
