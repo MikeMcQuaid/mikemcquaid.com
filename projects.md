@@ -69,7 +69,7 @@ Developed features, APIs and optimized performance. Setup CI and automatic deplo
 #### [Mendeley Desktop](http://www.mendeley.com/download-mendeley-desktop/)
 ![Mendeley](/images/a/mendeley.png)
 
-Ported Qt/MSVC++ application from Windows to CMake, macOS and Linux. Proposed, implemented the [successful](http://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](http://blog.mendeley.com/academic-features/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web
+Ported Qt/MSVC++ application from Windows to CMake, macOS and Linux. Proposed, implemented the [successful](https://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](https://blog.mendeley.com/2008/11/04/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web
 
 #### [Boxen](https://github.com/boxen)
 ![Boxen](/images/a/boxen.png)
@@ -140,4 +140,4 @@ Improved support for parsing and generating non-Qt C++ code. Released in 0.2.0.
 Added OpenDocument support and JFreeChart integration. [Released in 3.2.beta1](http://www.prismmodelchecker.org/doc/CHANGELOG.txt).
 
 #### [OpenZaurus](http://openzaurus.org)
-Fixed a [noisy LCD issue](http://bugs.openembedded.org/show_bug.cgi?id=1316). [Released in 3.5.4.2-rc2](http://marcin.juszkiewicz.com.pl/2006/09/02/openzaurus-3542-rc2/).
+Fixed a noisy LCD issue. [Released in 3.5.4.2-rc2](http://marcin.juszkiewicz.com.pl/2006/09/02/openzaurus-3542-rc2/).

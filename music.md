@@ -25,6 +25,6 @@ My band at The University of Edinburgh.
 
 ### Instruments
 * [Yamaha TRB 1006](http://europe.yamaha.com/en/products/musical-instruments/guitars-basses/el-basses/trb/trb1006/) six-string bass guitar
-* [Ibanez MC940BK](http://www.ibanezwiki.com/display/CATALOG/1985+-+Ibanez+String+Instruments+-+Musician+Bass+Series) fretless bass guitar (with black nylon strings)
+* [Ibanez MC940BK](https://ibanez.fandom.com/wiki/File:1985_USA_catalog_p30-31.jpg) fretless bass guitar (with black nylon strings)
 * [Ibanez SA260FM](http://ibanez.wikia.com/wiki/SA260FM) electric guitar (tuned BEADGC)
 * [Yamaha AC1R](http://europe.yamaha.com/en/products/musical-instruments/guitars-basses/el-ac-guitars/a_series/ac1r/) electric acoustic guitar

@@ -1425,7 +1425,7 @@ Internet connection, without the requirement of a plug-in.
   conference on Computers and accessibility_ (2005), pp. 202--203.
   https://dl.acm.org/citation.cfm?doid=1090785.1090830
 - [[[reference-4,4]]] Khare, R., "Beyond AJAX" (2005).
-  http://www.knownow.com/products/docs/whitepapers/KN-Beyond-AJAX.pdf
+  https://web.archive.org/web/20181215222733/http://www.knownow.com/products/docs/whitepapers/KN-Beyond-AJAX.pdf
 - [[[reference-5,5]]] MacKenzie, J. and McAlister, A. and Desai, S. and McCarthy, K.,
   "Usability in Web Design" (2006).
 - [[[reference-6,6]]] Mesbah, A. and van Deursen, A., "An Architectural Style for Ajax",

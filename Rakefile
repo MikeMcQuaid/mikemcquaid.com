@@ -38,7 +38,6 @@ task test: :jekyll do
     check_opengraph: true,
     check_html: true,
     check_img_http: true,
-    only_4xx: true,
     parallel: { in_processes: 4 },
   ).run
 end
