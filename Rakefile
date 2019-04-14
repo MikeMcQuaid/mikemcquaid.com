@@ -40,7 +40,7 @@ task test: :jekyll do
     check_img_http: true,
     parallel: { in_processes: 4 },
     url_ignore: [
-      "https://web.archive.org/",
+      %r{^https://web\.archive\.org/web/},
     ]
   ).run
 end
