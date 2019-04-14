@@ -13,11 +13,11 @@ file dizzy => dizzy_adoc do
   options = { attributes: { "skip-front-matter" => true } }
   doc = Asciidoctor.load_file(dizzy_adoc, options)
   File.open(dizzy, "w") do |f|
-    f.write <<~EOS
+    f.write <<~YAML
       ---
       #{doc.attributes["front-matter"]}
       ---
-EOS
+    YAML
     f.puts doc.render
   end
 end
@@ -39,5 +39,8 @@ task test: :jekyll do
     check_html: true,
     check_img_http: true,
     parallel: { in_processes: 4 },
+    url_ignore: [
+      "https://web.archive.org/",
+    ]
   ).run
 end
