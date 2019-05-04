@@ -8,6 +8,9 @@ I sometimes give interviews about open source, Homebrew, Git and GitHub. Here ar
 #### [Homebrew! Part Deux](https://changelog.com/podcast/337)
 The Changelog, 6th March 2019
 
+#### [Interview with Mike, a software engineer who works remotely at GitHub](https://remotehabits.com/interview/interview-with-mike-a-software-engineer-who-works-remotely-at-github/)
+Remote Habits, 20th August 2018
+
 #### [When should you open source your software?](http://www.idgconnect.com/abstract/30253/when-source-software)
 IDG Connect, 13th April 2018
 
