@@ -169,6 +169,6 @@ Improved support for parsing and generating non-Qt C++ code. Released in 0.2.0.
 
 Added OpenDocument support and JFreeChart integration. [Released in 3.2.beta1](http://www.prismmodelchecker.org/doc/CHANGELOG.txt).
 
-#### [OpenZaurus](http://openzaurus.org)
+#### [OpenZaurus](https://en.wikipedia.org/wiki/OpenZaurus)
 
 Fixed a noisy LCD issue. [Released in 3.5.4.2-rc2](http://marcin.juszkiewicz.com.pl/2006/09/02/openzaurus-3542-rc2/).
