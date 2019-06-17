@@ -10,7 +10,9 @@ addons:
 branches:
   only:
     - master
-script: bundle exec rake
+script:
+  - gem install bundler
+  - bundle exec rake
 notifications:
   email:
     on_success: never
