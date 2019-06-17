@@ -15,5 +15,5 @@ steps:
     bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
 
-- script: bundle exec rake
+- script: bundle exec rake || bundle exec rake
   displayName: 'bundle exec rake'
