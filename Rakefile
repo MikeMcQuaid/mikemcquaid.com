@@ -39,6 +39,9 @@ task test: :jekyll do
     check_html: true,
     check_img_http: true,
     parallel: { in_processes: 4 },
+    cache: {
+      timeframe: "1h",
+    },
     url_ignore: [
       %r{^https://web\.archive\.org/web/},
     ]
