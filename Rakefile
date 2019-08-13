@@ -38,6 +38,7 @@ task test: :jekyll do
     check_opengraph: true,
     check_html: true,
     check_img_http: true,
+    http_status_ignore: [0],
     parallel: { in_processes: 4 },
     cache: {
       timeframe: "1h",
