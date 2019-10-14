@@ -21,3 +21,7 @@ For predictable donations we set up the standard (at the time at least): a Patre
 We’d had [a section of our README soliciting donations](https://github.com/Homebrew/brew#donations) but this never got too much uptake. We’d previously wanted to make a similar global notification to users about our [opt-out analytics](https://docs.brew.sh/Analytics). This approach (a one-time message on interactive sessions) felt appropriate for donations too. We show users a one-time message on first install or on a Homebrew update to tell them we needed donations and where and how to do so.
 
 As soon as this message rolled out we saw a huge jump on donations eventually settling between [$2500-$3000 a month on Patreon](https://www.patreon.com/homebrew) along with some (large) one-off donations through the Software Freedom Conservancy. This provides us with the ability to pay for services and software we need and for maintainers to meet each other for high-bandwidth communication in person. This was achieved without selling our users attention or data (advertising), nagging them regularly (nagware) or making them pay for Homebrew (proprietary software licenses) so resulted in no backlash and a better funded project. Win/win!
+
+---
+
+Thanks to [Nadia Eghbal](https://nadiaeghbal.com) for reviewing this post.
