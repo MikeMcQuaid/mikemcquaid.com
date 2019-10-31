@@ -45,6 +45,8 @@ task test: :jekyll do
     },
     url_ignore: [
       %r{^https://web\.archive\.org/web/},
+      "https://github.com/pulls",
+      "https://conferences.oreilly.com/oscon/oscon-tx",
     ]
   ).run
 end
