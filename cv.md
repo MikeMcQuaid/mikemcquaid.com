@@ -82,7 +82,7 @@ The JavaOne Rock Star Program "recognise[s] speakers for their outstanding sessi
 
 ### Education
 
-#### [The University of Edinburgh](http://www.ed.ac.uk/home) (2003 - 2007)
+#### [The University of Edinburgh](http://www.ed.ac.uk/) (2003 - 2007)
 
 [BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
 
