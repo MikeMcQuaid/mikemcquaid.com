@@ -8,19 +8,19 @@ layout: page
 
 ![Homebrew](/images/a/github.png)
 
-Senior engineer. Currently doing GitHub feature development to improve GitHub for open source software maintainers and participate and train others on GitHub.com application and escalation on-call rotations. Previously on various GitHub.com microservices' and ops/infrastructure on-call rotations. Provided engineering resources to Marketing organisation building new JSON, Kafka and Go microservices to improve their productivity. Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com) and helping to build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/).
+Senior engineer. Currently a technical lead on [GitHub Sponsors](https://github.com/sponsors/) and participate and train others on GitHub.com application and escalation on-call rotations. Previously on various GitHub.com microservices' and ops/infrastructure on-call rotations. Provided engineering resources to Marketing organisation building new JSON, Kafka and Go microservices to improve their productivity. Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com) and helping to build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/).
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 
 ![Homebrew](/images/a/homebrew.png)
 
-Project Leader and longest-running maintainer. Invented Homebrew binary packages (bottles) featured in Apple's Touch Bar MacBook Pro keynote and used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored students in several [Google Summer of Codes](https://summerofcode.withgoogle.com) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting.
+Project Leader and longest-running maintainer (over 10 years). Invented Homebrew binary packages (bottles) featured in Apple's Touch Bar MacBook Pro keynote and used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored students in several [Google Summer of Codes](https://summerofcode.withgoogle.com) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting.
 
 #### [Strap](https://github.com/MikeMcQuaid/strap)
 
 ![Strap](/images/a/strap.png)
 
-Creator. A script to bootstrap a minimal macOS development system.
+Creator. A script to bootstrap a minimal macOS development system. Built for GitHub ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) to reduce development downtime for all GitHub-employed engineers.
 
 #### [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
 
@@ -33,6 +33,12 @@ Maintainer. Like Ruby's bundler but for non-Ruby dependencies from Homebrew and 
 ![TwitterDelete](/images/a/twitterdelete.png)
 
 Creator. A small application to delete your old, unpopular tweets.
+
+#### [Balancing Dads](https://balancingdads.com)
+
+![Balancing Dads](/images/a/balancingdads.png)
+
+A podcast that assumes it's normal for working dads to be present in their kids' lives. We speak to fathers about their work-life balance and what works (and doesn't) with their kids. Hosted by Paul Campbell and I.
 
 ### Past
 

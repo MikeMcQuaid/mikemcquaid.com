@@ -13,5 +13,3 @@ Feel free to [tweet me](http://twitter.com/MikeMcQuaid) or [email me](mailto:{{ 
 My [curriculum vitae/resume](/cv.md) details my professional experience.
 
 Until I got married in 2010 my name was Mike Arthur.
-
-I host a podcast about being a working dad called [Balancing Dads](https://balancingdads.com).

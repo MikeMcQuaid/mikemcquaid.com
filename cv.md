@@ -7,9 +7,9 @@ classes: stealth-lists
 
 #### Senior Engineer
 
-I love creating solutions to make people's lives more efficient.
+I love making people's lives more efficient through writing software, checklists and documentation.
 
-I happily live in Edinburgh, Scotland and will never consider relocating for work. I'm happy to work remotely from my home here and travel regularly to anywhere in the world. Recruiters: do not contact me if this is not possible in your organisation.
+I live in Edinburgh, Scotland and will never consider living or working in another city. I'm happy to work remotely from home here and travel regularly to anywhere in the world. This is a hard requirement: I will not work for an organisation that does not support this.
 
 ### Personal
 
@@ -22,21 +22,21 @@ I happily live in Edinburgh, Scotland and will never consider relocating for wor
 
 Widespread, proven experience maintaining, sustaining, growing and contributing to open source software projects and communities of all sizes.
 
-Extensive experience building, maintaining and fixing software using Ruby, Rails, Git, Bash/shell scripting, C, MySQL and CMake. Productive with other languages and technologies in hours. Led many cross-platform development/ports of applications.
+Extensive experience building, maintaining and fixing large and small, green field and legacy software using Ruby, Rails, Git, Bash/shell scripts, C, MySQL and CMake. Productive with other languages and technologies in hours. Led many cross-platform development/ports of applications.
 
 Regularly advocate for, design and implement CI/testing/automation systems and processes to make engineers dramatically more productive.
 
-I am a genuine full-stack engineer: I have happily worked on everything from HTML/CSS/JavaScript to Linux kernel development.
+I am a genuine full-stack engineer: I have happily worked on everything from HTML/CSS/JavaScript to Linux kernel hardware device driver development.
 
 ### Experience
 
 #### [GitHub](http://github.com/) (2013 - Present)
 
-Senior engineer. Currently doing GitHub feature development to improve GitHub for open source software maintainers and participate and train others on GitHub.com application and escalation on-call rotations. Previously on various GitHub.com microservices' and ops/infrastructure on-call rotations. Provided engineering resources to Marketing organisation building new JSON, Kafka and Go microservices to improve their productivity. Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com) and helping to build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://enterprise.github.com) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://githubengineering.com/runnable-documentation/).
+Senior engineer. Currently a technical lead on [GitHub Sponsors](https://github.com/sponsors/) and participate and train others on GitHub.com application and escalation on-call rotations. Previously on various GitHub.com micro-services' and ops/infrastructure on-call rotations. Provided engineering resources to Marketing organisation building new JSON, Kafka and Go micro-services to improve their productivity. Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com), helped build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved GitHub.com database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://enterprise.github.com) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://githubengineering.com/runnable-documentation/).
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
 
-Project Leader and longest-running maintainer. Invented Homebrew binary packages (bottles) featured in Apple's Touch Bar MacBook Pro keynote and used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored students in several [Google Summer of Codes](https://summerofcode.withgoogle.com) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting.
+Project Leader and longest-running maintainer (over 10 years). Invented Homebrew binary packages (bottles) which were featured in Apple's Touch Bar MacBook Pro keynote and are used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored students in several [Google Summer of Codes](https://summerofcode.withgoogle.com) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting.
 
 #### [AllTrails](http://alltrails.com/) (2012 - 2013)
 
@@ -44,11 +44,11 @@ Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-
 
 #### [KDAB](http://kdab.com/) (2009 - 2012)
 
-Technical team lead providing international Qt/C++ cross-platform consultancy. Led teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract. Travelled internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback. Created a new Buildbot/CPack based CI system which replaced the previous one to improve company productivity.
+Technical team lead providing international Qt/C++ cross-platform consultancy. Led teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract (with no previous sales experience). Travelled internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback. Created a new Buildbot/CPack based CI system to improve company productivity.
 
 #### [Mendeley](http://www.mendeley.com/) (2008 - 2009)
 
-[First non-founder employee](https://blog.mendeley.com/start-up-life/mike-arthur-joins-team-mendeley/) and lead developer for Mendeley Desktop. Setup all Linux servers and software systems. Created a workflow focused on quick deployment and high quality through automated Buildbot builds, tests, CPack packages for Windows, Mac and Linux. Designed, ran technical interviews and personally [recruited](https://blog.mendeley.com/start-up-life/introducing-fred-amir-and-a-bond-villain/) [three](https://blog.mendeley.com/academic-life/an-excellent-euroscience-adventure-part-ii/) [engineers](https://blog.mendeley.com/research-miscellanea/a-new-knight-joins-mendeleys-round-table/).
+[First non-founder employee](https://blog.mendeley.com/start-up-life/mike-arthur-joins-team-mendeley/) and lead developer for Mendeley Desktop. Setup all Linux servers and software systems. Created a workflow focused on quick deployment and high quality through automated Buildbot builds, tests, CPack packages for Windows, Mac and Linux. Designed, ran technical interviews and personally [recruited](https://blog.mendeley.com/start-up-life/introducing-fred-amir-and-a-bond-villain/) [three](https://blog.mendeley.com/academic-life/an-excellent-euroscience-adventure-part-ii/) [engineers](https://blog.mendeley.com/research-miscellanea/a-new-knight-joins-mendeleys-round-table/). These changes were instrumental in laying the technical foundation of the organisation.
 
 Ported Qt/MSVC++ application from Windows to CMake, macOS and Linux. Fought for successful Linux port. Proposed, implemented the [successful](https://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrite](https://blog.mendeley.com/2008/11/04/mendeley-desktop-the-about-dialogue-and-the-refactor/) of problematic contracted legacy code creating a faster application and happier users. Designed, implemented the REST XML protocol used between Mendeley Desktop and Web.
 
