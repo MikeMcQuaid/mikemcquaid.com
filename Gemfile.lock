@@ -250,7 +250,7 @@ GEM
       shellany (~> 0.0)
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
-    parallel (1.18.0)
+    parallel (1.19.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     pry (0.12.2)
