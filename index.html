@@ -2,10 +2,10 @@
 title: Mike McQuaid
 layout: base
 redirect_from:
-  - /blog/
+- /blog/
 ---
 <ul class="index-lists">
-{% for post in site.posts %}
+  {% for post in site.posts %}
   <li>
     <a href="{{ post.url }}" title="{{ post.title }}">
       <h2>
@@ -14,14 +14,14 @@ redirect_from:
     </a>
     <span>
       {% if post.excerpt contains "<p>" %}
-        {{ post.excerpt }}
+      {{ post.excerpt }}
       {% else %}
-        <p>{{ post.excerpt }}</p>
+      <p>{{ post.excerpt }}</p>
       {% endif %}
     </span>
     <div class="clearboth"></div>
   </li>
-{% endfor %}
+  {% endfor %}
 </ul>
 
 {%- include newsletter.html -%}

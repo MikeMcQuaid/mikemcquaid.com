@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-GB">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="Jekyll {{ jekyll.version }}" />
-    {% seo %}
-    {% feed_meta %}
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider" />
-    <link rel="openid2.local_id" href="https://openid.stackexchange.com/user/1c09c8e2-a424-4648-81b5-283328dbdc71" />
-  </head>
-  <body>
-    <div id="header">
-      <div id="title">
-        <h1>
-          <a href="/">{{ site.title }}</a>
-        </h1>
-      </div>
-      <div id="menu">
-        <div>
-          <ul>
-            <li><a href="/">Articles</a></li>
-            <li><a href="/projects/">Projects</a></li>
-            <li><a href="/talks/">Talks</a></li>
-            <li><a href="/interviews/">Interviews</a></li>
-            <li><a title="Curriculum Vitae" href="/cv/">CV</a></li>
-            <li><a href="/about/">About</a></li>
-          </ul>
-        </div>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="generator" content="Jekyll {{ jekyll.version }}" />
+  {% seo %}
+  {% feed_meta %}
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider" />
+  <link rel="openid2.local_id" href="https://openid.stackexchange.com/user/1c09c8e2-a424-4648-81b5-283328dbdc71" />
+</head>
+
+<body>
+  <div id="header">
+    <div id="title">
+      <h1>
+        <a href="/">{{ site.title }}</a>
+      </h1>
+    </div>
+    <div id="menu">
+      <div>
+        <ul>
+          <li><a href="/">Articles</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/talks/">Talks</a></li>
+          <li><a href="/interviews/">Interviews</a></li>
+          <li><a title="Curriculum Vitae" href="/cv/">CV</a></li>
+          <li><a href="/about/">About</a></li>
+        </ul>
       </div>
     </div>
-    <div id="main">
-      <div id="content">
-        {{ content }}
-      </div>
+  </div>
+  <div id="main">
+    <div id="content">
+      {{ content }}
     </div>
-    <div id="footer">
-      <div id="sidebar" class="sidebartext">
-        <div id="leftbar">
-          <ul>
-            <li>
-              <img id='avatar' alt="Mike McQuaid" src='/images/me.jpg' width='80px' height='80px' />
-            </li>
-            <li>
-              © <a href="mailto:{{ site.author.email }}">Mike McQuaid</a>
-            </li>
-            <li>
-              <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/scotland/">CC-BY-NC-SA</a> license
-            </li>
-          </ul>
-        </div>
-        <div id="rightbar">
-          <ul>
-            <li><a href="https://github.com/MikeMcQuaid">GitHub</a>
-            </li>
-            <li><a href="http://twitter.com/MikeMcQuaid">Twitter</a>
-            </li>
-            <li><a href="/atom.xml">RSS</a>
-            </li>
-          </ul>
-        </div>
-        <div class="clearboth"></div>
+  </div>
+  <div id="footer">
+    <div id="sidebar" class="sidebartext">
+      <div id="leftbar">
+        <ul>
+          <li>
+            <img id='avatar' alt="Mike McQuaid" src='/images/me.jpg' width='80px' height='80px' />
+          </li>
+          <li>
+            © <a href="mailto:{{ site.author.email }}">Mike McQuaid</a>
+          </li>
+          <li>
+            <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/scotland/">CC-BY-NC-SA</a> license
+          </li>
+        </ul>
       </div>
+      <div id="rightbar">
+        <ul>
+          <li><a href="https://github.com/MikeMcQuaid">GitHub</a>
+          </li>
+          <li><a href="http://twitter.com/MikeMcQuaid">Twitter</a>
+          </li>
+          <li><a href="/atom.xml">RSS</a>
+          </li>
+        </ul>
+      </div>
+      <div class="clearboth"></div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
