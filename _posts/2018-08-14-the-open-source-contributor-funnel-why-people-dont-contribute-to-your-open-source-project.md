@@ -19,7 +19,7 @@ You want to have more contributors and maintainers on your project. A few guidel
 - most maintainers were a contributor and user first (people don’t just jump into maintaining a project without helping to build it first)
 - maintainers cannot do a good job without remaining a user (to maintain context, passion and empathy)
 
-Combined, these start to look a bit like a [sales funnel](https://www.mailmunch.co/blog/sales-funnel/). People have to travel through each of the stages and there's a fairly hefty drop-off at each one.
+Combined, these start to look a bit like a [sales funnel](https://www.mailmunch.com/blog/sales-funnel/). People have to travel through each of the stages and there's a fairly hefty drop-off at each one.
 
 ![The Open Source Contributor Funnel](/images/a/the-open-source-contributor-funnel.png)
 

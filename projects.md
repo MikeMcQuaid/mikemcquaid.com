@@ -167,7 +167,7 @@ Improved and merged the [long-running launchd patchset](https://bugs.freedesktop
 
 Added the CMake build-system and migrated to Git. [Released in 0.9](https://github.com/mback2k/libgcal/commit/90de69a72bd56902c21c13d8b467c5e6e841b283).
 
-#### [QtScriptGenerator](http://code.google.com/p/qtscriptgenerator/)
+#### [QtScriptGenerator](https://github.com/qt-labs/qtscriptgenerator)
 
 Improved support for parsing and generating non-Qt C++ code. Released in 0.2.0.
 
