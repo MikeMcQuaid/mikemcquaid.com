@@ -77,7 +77,7 @@ Author. An opinionated, intermediate/advanced Git book.
 
 Hired to improve the quality of [GitHub Enterprise](https://enterprise.github.com) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://githubengineering.com/runnable-documentation/).
 
-#### [AllTrails](https://alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?)
+#### [AllTrails](https://www.alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?)
 
 ![AllTrails and AllSnow](/images/a/alltrailssnow.png)
 
@@ -163,7 +163,7 @@ Wrote WM8711 Linux kernel driver which was [released in 2.6.26](https://github.c
 
 Improved and merged the [long-running launchd patchset](https://bugs.freedesktop.org/show_bug.cgi?id=14259). Bug fixes for macOS. [Released in 1.4.1](http://dbus.freedesktop.org/doc/NEWS).
 
-#### [libgcal](http://code.google.com/p/libgcal/)
+#### [libgcal](https://code.google.com/archive/p/libgcal/)
 
 Added the CMake build-system and migrated to Git. [Released in 0.9](https://github.com/mback2k/libgcal/commit/90de69a72bd56902c21c13d8b467c5e6e841b283).
 
