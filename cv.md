@@ -38,9 +38,9 @@ Senior engineer. Currently a technical lead on [GitHub Sponsors](https://github.
 
 Project Leader and longest-running maintainer (over 10 years). Invented Homebrew binary packages (bottles) which were featured in Apple's Touch Bar MacBook Pro keynote and are used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored students in several [Google Summer of Codes](https://summerofcode.withgoogle.com) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting.
 
-#### [AllTrails](http://alltrails.com/) (2012 - 2013)
+#### [AllTrails](https://www.alltrails.com) (2012 - 2013)
 
-Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](http://alltrails.com/) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?). Developed features, APIs and optimised performance. Setup Jenkins CI and automatic Chef deployment for Rails and mobile applications HockeyApp deployment. Managed and improved AWS EC2 infrastructure.
+Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](https://www.alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?). Developed features, APIs and optimised performance. Setup Jenkins CI and automatic Chef deployment for Rails and mobile applications HockeyApp deployment. Managed and improved AWS EC2 infrastructure.
 
 #### [KDAB](http://kdab.com/) (2009 - 2012)
 

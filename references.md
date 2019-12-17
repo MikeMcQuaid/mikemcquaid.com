@@ -6,7 +6,7 @@ layout: page
 
 _Max Howell, 2013, creator of Homebrew_
 
-### [AllTrails](http://alltrails.com/)
+### [AllTrails](https://www.alltrails.com)
 > Mike is the rare actual "full stack" software engineer. He is familiar with servers and server details, databases, web services and protocols, and with front end design and implementation -- with various languages and technologies. Basically he is an exemplary all around software engineer and he solves problems and gets things done, the kind of person you want in a fast moving technical environment.
 
 _Charlie Collins, 2013, coworker at AllTrails_
