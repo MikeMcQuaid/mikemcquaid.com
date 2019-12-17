@@ -32,7 +32,7 @@ VentureBeat, 27th June 2017
 #### [How to avoid technical debt in open source communities](http://www.computerweekly.com/news/450419369/How-to-avoid-technical-debt-in-open-source-communities)
 ComputerWeekly, 23rd May 2017
 
-#### [Comment GitHub contribue à l’essor du développement en open source](http://www.numerama.com/tech/260469-comment-github-contribue-a-lessor-du-developpement-en-open-source.html)
+#### [Comment GitHub contribue à l’essor du développement en open source](https://www.numerama.com/tech/260469-comment-github-contribue-a-lessor-du-developpement-en-open-source.html)
 "How GitHub contributes to the development of open source development" (article is in French). Numerama,  23rd May 2017
 
 #### [GitHub launches app marketplace](http://www.itpro.co.uk/desktop-software/28699/github-launches-app-marketplace)
