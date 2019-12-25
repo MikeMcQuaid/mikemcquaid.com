@@ -157,7 +157,7 @@ Fixed bugs in and improved cross-platform packaging in CPack. Added Qt plugin su
 
 #### [Linux kernel](http://www.kernel.org/)
 
-Wrote WM8711 Linux kernel driver which was [released in 2.6.26](https://github.com/mirrors/linux-2.6/commit/bd6d417743d941c3e5eabb21abbcac9737f11061).
+Wrote WM8711 Linux kernel driver which was [released in 2.6.26](https://github.com/torvalds/linux/commit/bd6d417743d941c3e5eabb21abbcac9737f11061).
 
 #### [D-Bus](http://www.freedesktop.org/wiki/Software/dbus)
 

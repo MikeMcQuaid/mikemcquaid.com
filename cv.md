@@ -62,7 +62,7 @@ Worked on the [KDE](http://www.kde.org/) Qt/C++ project. Improved the [KBlog XML
 
 #### [Wolfson Microelectronics](https://en.wikipedia.org/wiki/Wolfson_Microelectronics) (2006)
 
-Wrote battery driver, improved Auxiliary ADC C++ code for Intel XScale on Windows CE. Wrote WM8711 Linux kernel driver in C which was [released in 2.6.26](https://github.com/mirrors/linux-2.6/commit/bd6d417743d941c3e5eabb21abbcac9737f11061). Improved AC'97, I2S audio drivers and fixed a noisy LCD issue.
+Wrote battery driver, improved Auxiliary ADC C++ code for Intel XScale on Windows CE. Wrote WM8711 Linux kernel driver in C which was [released in 2.6.26](https://github.com/torvalds/linux/commit/bd6d417743d941c3e5eabb21abbcac9737f11061). Improved AC'97, I2S audio drivers and fixed a noisy LCD issue.
 
 ### Publications
 

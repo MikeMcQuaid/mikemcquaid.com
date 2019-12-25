@@ -4,4 +4,4 @@ description: Learn about what went into Homebrew 1.0.0, how we got Homebrew read
 speakerdeck-id: 723d5fc895184b1384b43a5026147a44
 speakerdeck-ratio: 1.33333333333333
 ---
-Presented at [FOSDEM](https://fosdem.org) in 2017.
+Presented at [FOSDEM](https://archive.fosdem.org/2017/) in 2017.
