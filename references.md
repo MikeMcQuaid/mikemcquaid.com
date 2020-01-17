@@ -32,7 +32,7 @@ _Mirko Boehm, 2011, my manager at KDAB_
 
 _Christian Karlsson, 2010, client at KDAB_
 
-### [Mendeley](https://www.mendeley.com/)
+### [Mendeley](https://www.mendeley.com/?interaction_required=false)
 > Mike is a passionate and knowledgeable software engineer. At Mendeley he helped to setup the development procedure and coding standards for the desktop team, and was always was always happy to help out with server administration tasks.
 
 _Ben Dowling, 2009, coworker at Mendeley_

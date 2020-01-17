@@ -83,7 +83,7 @@ Hired to improve the quality of [GitHub Enterprise](https://enterprise.github.co
 
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end. Developed features, APIs and optimised performance. Setup Jenkins CI and automatic Chef deployment for Rails and mobile applications HockeyApp deployment. Managed and improved AWS EC2 infrastructure.
 
-#### [Mendeley Desktop](https://www.mendeley.com/download-mendeley-desktop/)
+#### [Mendeley Desktop](https://www.mendeley.com/reference-management/mendeley-desktop)
 
 ![Mendeley](/images/a/mendeley.png)
 
