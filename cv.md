@@ -46,7 +46,7 @@ Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-
 
 Technical team lead providing international Qt/C++ cross-platform consultancy. Led teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract (with no previous sales experience). Travelled internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback. Created a new Buildbot/CPack based CI system to improve company productivity.
 
-#### [Mendeley](https://www.mendeley.com/) (2008 - 2009)
+#### [Mendeley](https://www.mendeley.com/?interaction_required=false) (2008 - 2009)
 
 [First non-founder employee](https://blog.mendeley.com/start-up-life/mike-arthur-joins-team-mendeley/) and lead developer for Mendeley Desktop. Setup all Linux servers and software systems. Created a workflow focused on quick deployment and high quality through automated Buildbot builds, tests, CPack packages for Windows, Mac and Linux. Designed, ran technical interviews and personally [recruited](https://blog.mendeley.com/start-up-life/introducing-fred-amir-and-a-bond-villain/) [three](https://blog.mendeley.com/academic-life/an-excellent-euroscience-adventure-part-ii/) [engineers](https://blog.mendeley.com/research-miscellanea/a-new-knight-joins-mendeleys-round-table/). These changes were instrumental in laying the technical foundation of the organisation.
 
