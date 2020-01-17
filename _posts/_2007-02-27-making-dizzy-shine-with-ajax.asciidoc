@@ -3,7 +3,7 @@ excerpt: <em>“Ajax applications can provide a more effective user interface th
 ---
 
 = Making Dizzy Shiny With Ajax
-Mike Arthur <mike@mikearthur.co.uk>
+Mike McQuaid <mike@mikemcquaid.com>
 :article:
 :toc:
 
