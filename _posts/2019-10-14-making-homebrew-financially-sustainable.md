@@ -6,7 +6,7 @@ More and more open source projects are seeking to get financial support from the
 
 In 2013 Homebrew’s method of building binary packages (bottles) involved me manually doing so in a VM on my Mac. Similarly, user contributions were tested by being run on the machines of the reviewing maintainer. This wasn’t going to scale. I decided the solution was for us to have our own dedicated Macs to run CI on pull requests and build our binary packages.
 
-[Homebrew launched a Kickstarter](https://www.kickstarter.com/projects/homebrew/brew-test-bot) to pay for these Macs and it was completely funded in less than 24h and we made nearly 10x our original goal. The lovely [Positive Internet Company](https://www.positive-internet.net) also offered to host the new Mac Minis for free so we had a high-speed, reliable connection and host.
+[Homebrew launched a Kickstarter](https://www.kickstarter.com/projects/homebrew/brew-test-bot) to pay for these Macs and it was completely funded in less than 24h and we made nearly 10x our original goal. The lovely [Positive Internet Company](https://positive-internet.com) also offered to host the new Mac Minis for free so we had a high-speed, reliable connection and host.
 
 This predated the existence of free, decent Mac CI or cloud hosting services (and my becoming a father) so a lot of time had to be invested for initial setup and configuration and ongoing maintenance and upgrades. Most of this fell on my shoulders as I was the main person willing and encouraging the work.
 

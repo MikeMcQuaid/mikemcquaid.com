@@ -22,7 +22,7 @@ This process still required a bunch of manual intervention from contributors and
 
 I started to notice that when we turned "pedantic" comments by maintainers on pull requests into `brew audit` checks run locally and by CI, contributors ceased accusations of pedantry and usually complied without argument to the requests of the tool, often without any human intervention being necessary.
 
-Over the years we've tried to turn all repeatable review comments into code checks on pull requests using `brew audit` and tools like [RuboCop](https://github.com/bbatsov/rubocop) to enforce consistent Ruby code style. This has now even enabled us to run `brew audit` checks directly in your text editor. This avoids different standards between maintainers and the previous arguments about pedantry: developers accept that robots are by definition pedantic and consistent so don't try to convince the robot to make an exception.
+Over the years we've tried to turn all repeatable review comments into code checks on pull requests using `brew audit` and tools like [RuboCop](https://github.com/rubocop-hq/rubocop) to enforce consistent Ruby code style. This has now even enabled us to run `brew audit` checks directly in your text editor. This avoids different standards between maintainers and the previous arguments about pedantry: developers accept that robots are by definition pedantic and consistent so don't try to convince the robot to make an exception.
 
 It's hard to state how much time it saves to not have arguments between maintainers and contributors on pull requests on style preferences or technical minutiae. Instead these discussions are on the original implementation of the rules instead of their application.
 
