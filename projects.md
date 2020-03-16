@@ -60,7 +60,7 @@ Maintainer, program manager and lead engineer. A program and site encouraging re
 
 Creator. Official TextMate bundle providing GitHub Flavoured Markdown extensions to make working with GitHub Flavoured Markdown nicer.
 
-#### [GitHub-Markdown.tmbundle](https://github.com/MikeMcQuaid/GitHub-Markdown.tmbundle)
+#### [GitHub-Markdown.tmbundle](https://github.com/textmate/GitHub-Markdown.tmbundle)
 
 ![GitHub-Markdown.tmbundle](/images/a/githubmarkdown.png)
 
@@ -72,10 +72,11 @@ Creator. Official TextMate bundle providing programming languages linter functio
 
 Author. An opinionated, intermediate/advanced Git book.
 
-#### [GitHub Enterprise](https://enterprise.github.com)
+#### [GitHub Enterprise](https://github.com/enterprise)
+
 ![GitHub Enterprise](/images/a/github-enterprise.png)
 
-Hired to improve the quality of [GitHub Enterprise](https://enterprise.github.com) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://githubengineering.com/runnable-documentation/).
+Hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://githubengineering.com/runnable-documentation/).
 
 #### [AllTrails](https://www.alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?)
 

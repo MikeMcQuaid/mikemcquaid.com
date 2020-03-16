@@ -33,7 +33,6 @@ task test: :jekyll do
   require "html-proofer"
   HTMLProofer.check_directory(
     "./_site",
-    check_external_hash: true,
     check_favicon: true,
     check_opengraph: true,
     check_html: true,
