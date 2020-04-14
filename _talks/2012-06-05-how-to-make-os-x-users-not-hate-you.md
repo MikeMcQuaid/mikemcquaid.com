@@ -4,4 +4,4 @@ description: How to avoid the common usability failings of cross-platform OS X a
 speakerdeck-id: 4fcdd9442e3678001f010cff
 speakerdeck-ratio: 1.77777777777778
 ---
-Presented at the [KDAB](http://www.kdab.com) in 2012.
+Presented at the [KDAB](http://www.kdab.com) company meeting in 2012.
