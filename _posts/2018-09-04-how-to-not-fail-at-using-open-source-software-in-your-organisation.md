@@ -156,7 +156,7 @@ If you follow these steps your experience using and modifying OSS will be much m
 You need to be willing to put in the time and effort to make it easier for others to help you. Starting with the easiest:
 
 - 📖 read all the documentation before asking for help
-- 🔍 create [minimally reproducible](https://stackoverflow.com/help/mcve) issues
+- 🔍 create [minimally reproducible](https://stackoverflow.com/help/minimal-reproducible-example) issues
 - 👀 look at the code you think might be relevant
 - 🛠 try to edit the relevant code and see if it fixes the problem
 - 💁‍ submit the fix to the problem as a pull request
