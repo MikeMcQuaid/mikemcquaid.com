@@ -6,7 +6,7 @@ layout: page
 
 #### [GitHub](https://github.com)
 
-![Homebrew](/images/a/github.png)
+![GitHub](/images/a/github.png)
 
 Senior engineer. Currently a technical lead on [GitHub Sponsors](https://github.com/sponsors/) and participate and train others on GitHub.com application and escalation on-call rotations. Previously on various GitHub.com microservices' and ops/infrastructure on-call rotations. Provided engineering resources to Marketing organisation building new JSON, Kafka and Go microservices to improve their productivity. Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com) and helping to build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/).
 
