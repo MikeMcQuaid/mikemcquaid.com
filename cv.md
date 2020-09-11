@@ -5,7 +5,7 @@ classes: stealth-lists
 ---
 ### Mike McQuaid
 
-#### Senior Engineer
+#### Staff Engineer
 
 I love making people's lives more efficient through writing software, checklists and documentation.
 
@@ -30,13 +30,17 @@ I am a genuine full-stack engineer: I have happily worked on everything from HTM
 
 ### Experience
 
-#### [GitHub](http://github.com/) (2013 - Present)
+#### [GitHub](http://github.com/) (2020 - Present)
 
-Senior engineer. Currently a technical lead on [GitHub Sponsors](https://github.com/sponsors/) and participate and train others on GitHub.com application and escalation on-call rotations. Previously on various GitHub.com micro-services' and ops/infrastructure on-call rotations. Provided engineering resources to Marketing organisation building new JSON, Kafka and Go micro-services to improve their productivity. Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com), helped build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved GitHub.com database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://githubengineering.com/runnable-documentation/).
+Staff engineer. Working on cross-team engineering work including designing and building tooling for automatic identification of service and team ownership within the GitHub.com Rails monolith for code review, issue triage and service-based on-call rotations. Use my expertise in maintaining and contributing to open source software to provide internal product feedback and mentorship to other engineers across the company.
+
+#### [GitHub](http://github.com/) (2013 - 2020)
+
+Senior engineer. Technical lead on [GitHub Sponsors](https://github.com/sponsors/) and participated in and trained others on GitHub.com application and escalation on-call rotations. On various GitHub.com micro-services' and ops/infrastructure on-call rotations. Provided engineering resources to Marketing organisation building new JSON, Kafka and Go micro-services to improve their productivity. Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com), helped build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved GitHub.com database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://githubengineering.com/runnable-documentation/).
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
 
-Project Leader and longest-running maintainer (over 10 years). Invented Homebrew binary packages (bottles) which were featured in Apple's Touch Bar MacBook Pro keynote and are used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored students in several [Google Summer of Codes](https://summerofcode.withgoogle.com) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting.
+Project Leader and longest-running maintainer. Invented Homebrew binary packages (bottles) which were featured in Apple's Touch Bar MacBook Pro keynote and are used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored students in several [Google Summer of Codes](https://summerofcode.withgoogle.com) a [MLH Fellowship](https://fellowship.mlh.io) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting.
 
 #### [AllTrails](https://www.alltrails.com) (2012 - 2013)
 
