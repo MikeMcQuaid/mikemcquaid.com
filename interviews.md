@@ -11,7 +11,7 @@ The Changelog, 6th March 2019
 #### [Interview with Mike, a software engineer who works remotely at GitHub](https://remotehabits.com/interview/interview-with-mike-a-software-engineer-who-works-remotely-at-github/)
 Remote Habits, 20th August 2018
 
-#### [When should you open source your software?](http://www.idgconnect.com/abstract/30253/when-source-software)
+#### [When should you open source your software?](https://www.idgconnect.com/article/3579444/when-should-you-open-source-your-software.html)
 IDG Connect, 13th April 2018
 
 #### [7 years of open source: GitHub, Puppet, DataStax, Severalnines](http://www.computerweekly.com/blog/Open-Source-Insider/7-years-of-open-source-GitHub-Puppet)
