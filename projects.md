@@ -60,13 +60,13 @@ Maintainer, program manager and lead engineer. A program and site encouraging re
 
 ![Linter.tmbundle](/images/a/linter.png)
 
-Creator. Official TextMate bundle providing GitHub Flavoured Markdown extensions to make working with GitHub Flavoured Markdown nicer.
+Creator. Official TextMate bundle providing programming languages linter functionality.
 
 #### [GitHub-Markdown.tmbundle](https://github.com/textmate/GitHub-Markdown.tmbundle)
 
 ![GitHub-Markdown.tmbundle](/images/a/githubmarkdown.png)
 
-Creator. Official TextMate bundle providing programming languages linter functionality.
+Creator. Official TextMate bundle providing GitHub Flavoured Markdown extensions to make working with GitHub Flavoured Markdown nicer.
 
 #### [Git in Practice](https://www.manning.com/books/git-in-practice?a_bid=5688bbf4&a_aid=MikeMcQuaid)
 
