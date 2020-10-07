@@ -152,7 +152,7 @@ Technical lead for team that created the analysis mode and integrated Valgrind's
 
 ![Kontact](/images/a/kontact.png)
 
-Worked on KDE on Mac integration/bug fixing. Improved the [KBlog XML-RPC API](https://api.kde.org/4.12-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals (as blog posts) from KOrganizer](http://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
+Worked on KDE on Mac integration/bug fixing. Improved the [KBlog XML-RPC API](https://web.archive.org/web/20190303012538/https://api.kde.org/4.12-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals (as blog posts) from KOrganizer](http://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
 
 #### [CMake](http://www.cmake.org/)
 
@@ -180,4 +180,4 @@ Added OpenDocument support and JFreeChart integration. [Released in 3.2.beta1](h
 
 #### [OpenZaurus](https://en.wikipedia.org/wiki/OpenZaurus)
 
-Fixed a noisy LCD issue. [Released in 3.5.4.2-rc2](http://marcin.juszkiewicz.com.pl/2006/09/02/openzaurus-3542-rc2/).
+Fixed a noisy LCD issue. [Released in 3.5.4.2-rc2](https://web.archive.org/web/20190303012720/https://marcin.juszkiewicz.com.pl/2006/09/02/openzaurus-3542-rc2/).
