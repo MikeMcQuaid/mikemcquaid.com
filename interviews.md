@@ -17,7 +17,7 @@ IDG Connect, 13th April 2018
 #### [7 years of open source: GitHub, Puppet, DataStax, Severalnines](http://www.computerweekly.com/blog/Open-Source-Insider/7-years-of-open-source-GitHub-Puppet)
 ComputerWeekly.com, 25th October 2017
 
-#### [Homebrew with Mike McQuaid](https://manifest.fm/1)
+#### [Homebrew with Mike McQuaid](https://web.archive.org/web/20200909040104/https://manifest.fm/1)
 The Manifest, 16th August 2017
 
 #### [The Future of Open Source at OSCON 2017](https://changelog.com/podcast/259)
