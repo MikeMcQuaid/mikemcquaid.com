@@ -31,7 +31,7 @@ GEM
     faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
-    ffi (1.13.1)
+    ffi (1.14.1)
     formatador (0.2.5)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
