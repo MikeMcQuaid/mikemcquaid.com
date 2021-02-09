@@ -46,6 +46,7 @@ task test: :jekyll do
       %r{^https://web\.archive\.org/web/},
       "https://github.com/pulls",
       "https://twitter.com/MikeMcQuaid",
+      "https://www.manning.com/books/git-in-practice?a_bid=5688bbf4&a_aid=MikeMcQuaid",
     ]
   ).run
 end
