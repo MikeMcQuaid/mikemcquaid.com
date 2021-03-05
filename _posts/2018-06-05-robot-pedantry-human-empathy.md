@@ -18,7 +18,7 @@ The first attempt at addressing this was [the addition of a `brew audit` command
 
 ## Enter BrewTestBot
 
-This process still required a bunch of manual intervention from contributors and maintainers; what we needed was to automate this process. To meet this goal I started and ran a [successful Kickstarter project](http://www.kickstarter.com/projects/homebrew/brew-test-bot) to fund CI machines for Homebrew. After I'd set up these machines, the automatic `brew audit` of GitHub pull requests provided much quicker feedback to contributors.
+This process still required a bunch of manual intervention from contributors and maintainers; what we needed was to automate this process. To meet this goal I started and ran a [successful Kickstarter project](https://www.kickstarter.com/projects/homebrew/brew-test-bot) to fund CI machines for Homebrew. After I'd set up these machines, the automatic `brew audit` of GitHub pull requests provided much quicker feedback to contributors.
 
 I started to notice that when we turned "pedantic" comments by maintainers on pull requests into `brew audit` checks run locally and by CI, contributors ceased accusations of pedantry and usually complied without argument to the requests of the tool, often without any human intervention being necessary.
 
