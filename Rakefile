@@ -47,6 +47,7 @@ task test: :jekyll do
       "https://github.com/pulls",
       "https://twitter.com/MikeMcQuaid",
       "https://www.manning.com/books/git-in-practice?a_bid=5688bbf4&a_aid=MikeMcQuaid",
+      "https://blogs.oracle.com/java/annoucing-javaone-2014-rock-stars-v2",
     ]
   ).run
 end
