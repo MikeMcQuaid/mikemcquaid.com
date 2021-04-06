@@ -11,7 +11,7 @@ As you may be aware the latest versions of Flash depend on **XEmbed** support wh
 
 Mike needs his **YouTube** fix without haxors running rife on his box. Who can save him?
 
-**[KMPlayer](http://www.kde.org/applications/multimedia/kmplayer/) to the rescue!**
+**[KMPlayer](https://apps.kde.org/kmplayer/) to the rescue!**
 
 KMPlayer is my media player of choice as it allows you to trivially switch between **XINE**, **MPlayer** and **GStreamer** backends and, as of version 0.10.0, has a nifty backend that allows you to use XEmbed-supporting plugins, including Adobe's Flash plugin, which can then be embedded in Konqueror to allow Flash to work trivially.
 
