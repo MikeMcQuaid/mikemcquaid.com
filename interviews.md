@@ -5,6 +5,9 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git and GitHub. Here are some examples:
 
+#### [Mike McQuaid (GitHub)](https://podcast.staffeng.com/1687069/8247672-mike-mcquaid-github)
+StaffEng, 6th April 2021
+
 #### [Homebrew! Part Deux](https://changelog.com/podcast/337)
 The Changelog, 6th March 2019
 
