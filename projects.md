@@ -10,7 +10,7 @@ layout: page
 
 Staff engineer. Working on cross-team engineering work including designing and building tooling for automatic identification of service and team ownership within the GitHub.com Rails monolith for code review, issue triage and service-based on-call rotations. Use my expertise in maintaining and contributing to open source software to provide internal product feedback and mentorship to other engineers across the company.
 
-Previously, technical lead on [GitHub Sponsors](https://github.com/sponsors/). Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com), helped build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved GitHub.com database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://githubengineering.com/runnable-documentation/).
+Previously, technical lead on [GitHub Sponsors](https://github.com/sponsors/). Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com), helped build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved GitHub.com database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://github.blog/2015-10-06-runnable-documentation/).
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 
@@ -78,7 +78,7 @@ Author. An opinionated, intermediate/advanced Git book.
 
 ![GitHub Enterprise](/images/a/github-enterprise.png)
 
-Hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://githubengineering.com/runnable-documentation/).
+Hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://github.blog/2015-10-06-runnable-documentation/).
 
 #### [AllTrails](https://www.alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?)
 
