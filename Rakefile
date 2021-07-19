@@ -50,6 +50,7 @@ task test: :jekyll do
       "https://blogs.oracle.com/java/annoucing-javaone-2014-rock-stars-v2",
       "https://www.mailmunch.com/blog/sales-funnel/",
       "https://www.kickstarter.com/projects/homebrew/brew-test-bot",
+      "https://www.tripadvisor.com",
     ]
   ).run
 end
