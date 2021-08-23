@@ -42,7 +42,7 @@ Creator. A small application to delete your old, unpopular tweets.
 
 ![Balancing Dads](/images/a/balancingdads.png)
 
-Creator. An inactive podcast that assumes it's normal for working dads to be present in their kids' lives. We speak to fathers about their work-life balance and what works (and doesn't) with their kids. Was hosted by [Paul Campbell](http://pabcas.com) and I.
+Creator. An inactive podcast that assumes it's normal for working dads to be present in their kids' lives. We speak to fathers about their work-life balance and what works (and doesn't) with their kids. Was hosted by [Paul Campbell](https://twitter.com/paulca) and I.
 
 #### [Open Source Guides](https://github.com/github/opensource.guide)
 
