@@ -9,8 +9,9 @@ author:
 
 twitter:
   username: MikeMcQuaid
+  card: summary
 
-logo: /images/header.jpg
+logo: /images/default-card.png
 
 permalink: pretty
 
@@ -50,7 +51,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /images/header.jpg
+      image: /images/default-card.png
 
 collections:
   talks:
