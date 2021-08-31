@@ -13,6 +13,13 @@ twitter:
 
 logo: /images/default-card.png
 
+social:
+  name: Mike McQuaid
+  links:
+    - https://twitter.com/MikeMcQuaid
+    - https://github.com/MikeMcQuaid
+    - https://www.linkedin.com/in/mkmcqd
+
 permalink: pretty
 
 exclude:
