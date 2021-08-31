@@ -100,7 +100,7 @@ h1, h2, #menu, .post_date {
   }
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   @media print {
     page: {
       break-inside: avoid;
@@ -261,6 +261,11 @@ h4 {
   @media only screen and (max-device-width: 480px) {
     font-size: 1.0em;
   }
+}
+
+h5 {
+  font-size: 1.0em;
+  margin: 1.5em 0 -0.8em 0;
 }
 
 #content, td
