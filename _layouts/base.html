@@ -7,10 +7,10 @@
   <meta name="generator" content="Jekyll {{ jekyll.version }}" />
   {% seo %}
   {% feed_meta %}
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/images/icon.png">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="stylesheet" type="text/css" href="{{ '/css/style.css' | absolute_url }}" />
+  <link rel="icon" type="image/x-icon" sizes="any" href="{{ '/images/favicon.ico' | absolute_url }}">
+  <link rel="icon" type="image/png" href="{{ '/images/icon.png' | absolute_url }}">
+  <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | absolute_url }}">
   <link rel="openid2.provider" href="https://openid.stackexchange.com/openid/provider" />
   <link rel="openid2.local_id" href="https://openid.stackexchange.com/user/1c09c8e2-a424-4648-81b5-283328dbdc71" />
 </head>
@@ -19,18 +19,18 @@
   <div id="header">
     <div id="title">
       <h1>
-        <a href="/">{{ site.title }}</a>
+        <a href="{{ '/' | absolute_url }}">{{ site.title }}</a>
       </h1>
     </div>
     <div id="menu">
       <div>
         <ul>
-          <li><a href="/">Articles</a></li>
-          <li><a href="/projects/">Projects</a></li>
-          <li><a href="/talks/">Talks</a></li>
-          <li><a href="/interviews/">Interviews</a></li>
-          <li><a title="Curriculum Vitae" href="/cv/">CV</a></li>
-          <li><a href="/about/">About</a></li>
+          <li><a href="{{ '/' | absolute_url }}">Articles</a></li>
+          <li><a href="{{ '/projects/' | absolute_url }}">Projects</a></li>
+          <li><a href="{{ '/talks/' | absolute_url }}">Talks</a></li>
+          <li><a href="{{ '/interviews/' | absolute_url }}">Interviews</a></li>
+          <li><a title="Curriculum Vitae" href="{{ '/cv/' | absolute_url }}">CV</a></li>
+          <li><a href="{{ '/about/' | absolute_url }}">About</a></li>
         </ul>
       </div>
     </div>
@@ -45,7 +45,8 @@
       <div id="leftbar">
         <ul>
           <li>
-            <img id='avatar' alt="Mike McQuaid" src='/images/me.jpg' width='80px' height='80px' />
+            <img id="avatar" alt="Mike McQuaid" width="80px" height="80px"
+              src="{{ '/images/me.jpg' | absolute_url }}" />
           </li>
           <li>
             © <a href="mailto:{{ site.author.email }}">Mike McQuaid</a>
@@ -61,7 +62,7 @@
           </li>
           <li><a href="https://twitter.com/MikeMcQuaid">Twitter</a>
           </li>
-          <li><a href="/atom.xml">RSS</a>
+          <li><a href="{{ '/atom.xml' | absolute_url }}">RSS</a>
           </li>
         </ul>
       </div>

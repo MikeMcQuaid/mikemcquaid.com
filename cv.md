@@ -14,7 +14,7 @@ I live in Edinburgh, Scotland and will never consider living or working in anoth
 ### Personal
 
 * [{{ site.author.email }}](mailto:{{ site.author.email }})
-* [mikemcquaid.com](/) (written articles, projects and talks)
+* [mikemcquaid.com]({{ '/' | absolute_url }}) (written articles, projects and talks')
 * [github.com/MikeMcQuaid](https://github.com/MikeMcQuaid) (my open-source projects)
 * [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid) (my StackExchange answers)
 
@@ -96,6 +96,6 @@ The JavaOne Rock Star Program "recognise[s] speakers for their outstanding sessi
 
 [BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
 
-### [References](/references.md)
+### [References]({{ '/references/' | absolute_url }})
 
 #### More references available on request

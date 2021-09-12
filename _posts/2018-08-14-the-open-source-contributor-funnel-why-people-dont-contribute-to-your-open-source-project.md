@@ -21,19 +21,19 @@ You want to have more contributors and maintainers on your project. A few guidel
 
 Combined, these start to look a bit like a [sales funnel](https://www.mailmunch.com/blog/sales-funnel/). People have to travel through each of the stages and there's a fairly hefty drop-off at each one.
 
-![The Open Source Contributor Funnel](/images/a/the-open-source-contributor-funnel.png)
+![The Open Source Contributor Funnel]({{ '/images/a/the-open-source-contributor-funnel.png' | absolute_url }})
 
 In Homebrew's case, we have millions of users, thousands of contributors and tens of maintainers (ever). Think about these numbers when you're wondering why your project with ten users doesn't have more contributors. That said, you can help to push people through this funnel with some gentle nudges.
 
 ### How to get more, better contributions
 
-![Twitter mention to issue report](/images/a/twitter-issue.png)
+![Twitter mention to issue report]({{ '/images/a/twitter-issue.png' | absolute_url }})
 When your project gets a random Twitter mention you can consider asking them to submit an issue instead (and your issue template may help them submit a good one).
 
-![Step by step issue creation guide](/images/a/step-by-step.png)
+![Step by step issue creation guide]({{ '/images/a/step-by-step.png' | absolute_url }})
 If you get a bad issue report consider asking people questions like this to figure out what the actual problem is and teach people how to file better issues in future.
 
-![Try to open a pull request](/images/a/try-open-pr.png)
+![Try to open a pull request]({{ '/images/a/try-open-pr.png' | absolute_url }})
 People will need encouragement to fix their own issues. Encourage them to submit a pull request rather than just asking for help. It helps if you can document how to create pull requests for your project (e.g. check out [Homebrew's "How To Open A Homebrew Pull Request" documentation](https://docs.brew.sh/How-To-Open-a-Homebrew-Pull-Request.html)). You may need to help some people use Git and GitHub to do this. Some people have amazing coding skills but have not used GitHub before.
 
 Look at the contributors to your project to find new maintainers but bear in mind new maintainers will usually need to be talked into it. Maintainers don’t tend stick up their hands and say “me me”; in my experience, when they do it’s often a bad sign. They need to be encouraged and invited. Document what the expectations are for maintainers so they can see before you ask them (e.g. check out [Homebrew's "New Maintainer Checklist" documentation](https://docs.brew.sh/New-Maintainer-Checklist.html).

@@ -33,7 +33,7 @@ You may have heard someone on the internet (not me 🐧) say:
 
 > “Desktop Linux is only free if your time is worth nothing”
 
-This alludes to the point I've made above. Desktop Linux works great for many people ([not me, sadly](/2010/09/21/why-i-left-linux/)) but it often requires more time to setup, configure and verify hardware compatability. When your time is less valuable (e.g. when I was a student) it's more appealing than when your time is more valuable (e.g. when I'm working and have a family).
+This alludes to the point I've made above. Desktop Linux works great for many people ([not me, sadly]({{ '/2010/09/21/why-i-left-linux/' | absolute_url }})) but it often requires more time to setup, configure and verify hardware compatability. When your time is less valuable (e.g. when I was a student) it's more appealing than when your time is more valuable (e.g. when I'm working and have a family).
 
 > proprietary software costs 💵 and OSS is 🆓!
 
