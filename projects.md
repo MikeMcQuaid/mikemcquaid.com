@@ -96,7 +96,7 @@ Ported Qt/MSVC++ application from Windows to CMake, macOS and Linux. Fought for 
 
 ![Boxen]({{ '/images/a/boxen.png' | absolute_url }})
 
-Maintainer. Improved Homebrew integration, general bug fixing and updates. [Migrated GitHub]({{ '/2016/06/15/replacing-boxen/) to use [Strap](https://github.com/MikeMcQuaid/strap) instead. Transitioned project to community ownership and (eventually' | absolute_url }}) archived status.
+Maintainer. Improved Homebrew integration, general bug fixing and updates. [Migrated GitHub]({{ '/2016/06/15/replacing-boxen/' | absolute_url }}) to use [Strap](https://github.com/MikeMcQuaid/strap) instead. Transitioned project to community ownership and (eventually) archived status.
 
 #### [Hookhand](https://github.com/MikeMcQuaid/HookHand)
 

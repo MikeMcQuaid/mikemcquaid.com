@@ -2,7 +2,7 @@
 title: How Becoming A Dad Has Changed How I Work
 ---
 
-I became a father for the first time in 2017, took 3 months paternity leave alone with my eldest in 2018 (thanks to GitHub for 5 months paid paternity leave). I had another child two weeks ago so I'm on paternity leave (again) right now and expect to take more in 2020. This has given me time to reflect on how becoming a father has changed the way I do my paid (currently a "Senior Engineer" at GitHub) and unpaid (open source, currently primarily as the "Homebrew Project Leader") work and how this differs from [my previous schedule]({{ '/2014/12/07/my-working-from-home-schedule/) and [ways of getting things done](/2015/05/24/how-i-get-things-done/' | absolute_url }}). This may be of interest to you if you're currently, planning or debating becoming a parent in future.
+I became a father for the first time in 2017, took 3 months paternity leave alone with my eldest in 2018 (thanks to GitHub for 5 months paid paternity leave). I had another child two weeks ago so I'm on paternity leave (again) right now and expect to take more in 2020. This has given me time to reflect on how becoming a father has changed the way I do my paid (currently a "Senior Engineer" at GitHub) and unpaid (open source, currently primarily as the "Homebrew Project Leader") work and how this differs from [my previous schedule]({{ '/2014/12/07/my-working-from-home-schedule/' | absolute_url }}) and [ways of getting things done]({{ '/2015/05/24/how-i-get-things-done/' | absolute_url }}). This may be of interest to you if you're currently, planning or debating becoming a parent in future.
 
 ## Less work time
 
