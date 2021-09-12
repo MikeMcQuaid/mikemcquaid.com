@@ -56,7 +56,7 @@ a {
 #header {
   min-width: 29em;
   background-color: black;
-  background: url(/images/header.jpg) bottom;
+  background: url({{ '/images/header.jpg' | absolute_url }}) bottom;
   background-size: cover;
 }
 

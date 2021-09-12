@@ -20,7 +20,7 @@ The mentor and mentee relationship is important but to remain grounded and bette
 
 The above approach to mentors, peers and mentees can be summarised by this “mentorship diamond”:
 
-![Mentorship Diamond](/images/a/mentorship-diamond.png)
+![Mentorship Diamond]({{ '/images/a/mentorship-diamond.png' | absolute_url }})
 
 ### How important is mentorship to my current role?
 

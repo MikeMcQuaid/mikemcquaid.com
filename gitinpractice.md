@@ -2,7 +2,7 @@
 title: Git In Practice
 layout: page
 ---
-![Git In Practice](/images/a/gitinpractice.png)
+![Git In Practice]({{ '/images/a/gitinpractice.png' | absolute_url }})
 
 An opinionated, intermediate/advanced-level Git book by Mike McQuaid.
 

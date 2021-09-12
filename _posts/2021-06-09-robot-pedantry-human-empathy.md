@@ -10,19 +10,19 @@ Homebrew was the first open source project I've maintained where I've had to rev
 
 ## 👩‍💻 Manual Process
 
-I've [written before about how Homebrew's CI system has evolved over time](/2017/09/29/homebrew-ci-evolution/) but not what I've had to learn to make it work as well as it does.
+I've [written before about how Homebrew's CI system has evolved over time]({{ '/2017/09/29/homebrew-ci-evolution/' | absolute_url }}) but not what I've had to learn to make it work as well as it does.
 
 In the earlier days of Homebrew all review and testing was manual. This involved a maintainer checking out a GitHub pull request onto their local Homebrew installation and verifying it worked as expected. I'm obsessed in my personal, professional and open source lives in reducing the friction to perform common tasks so [my first commit to the Homebrew package manager (i.e. not a package) was to add a `brew pull` command to simplify this process](https://github.com/Homebrew/brew/commit/7933bd4e657ee82207914683d0e689c48465d83a).
 
 When maintainers found problems in a pull request they reported back to contributors, contributors fixed them and the pull request got merged. Contributors did not expect a merge of their contribution unless it worked, after all. Where it got tricky was when a change "worked" but violated a technical standard. Often when giving feedback in these cases there would be accusations of pedantry or personal preference.
 
-![brew pull command](/images/a/brew-pull.png)
+![brew pull command]({{ '/images/a/brew-pull.png' | absolute_url }})
 
 The first attempt at addressing this was [the addition of a `brew audit` command](https://github.com/Homebrew/brew/commit/c51d74a2e36b9ca339a2b4ebd83c1c000e6f058b) by [@adamv](https://github.com/adamv) (the first Homebrew maintainer that wasn't [@mxcl](https://github.com/adamv), the creator of Homebrew). This command, simple at first, was turning lessons learned from code review into a command run to verify correctness. Maintainers and contributors ran this command on their local machines and contributors accepted that a warning flagged by this command was not personal preference but a codified standard.
 
 ## 🤖 Enter [BrewTestBot](https://github.com/BrewTestBot)
 
-![brew-test-bot Kickstarter](/images/a/brew-test-bot-kickstarter.png)
+![brew-test-bot Kickstarter]({{ '/images/a/brew-test-bot-kickstarter.png' | absolute_url }})
 
 This process still required a bunch of manual intervention from contributors and maintainers; what we needed was to automate this process. To meet this goal I started and ran a [successful Kickstarter project](https://www.kickstarter.com/projects/homebrew/brew-test-bot) to fund CI machines for Homebrew. After I'd set up these machines, the automatic `brew audit` of GitHub pull requests provided much quicker feedback to contributors.
 
@@ -42,7 +42,7 @@ I wanted to address this but at the same time recognised that this isn't somethi
 
 My first implementation of this was using [TextExpander](https://textexpander.com/) to allow me to e.g. type `;thx` and have it expand to `Thanks so much for your contribution! Without people like you submitting PRs we couldn't run this project. You rock!`. This can then be further tweaked to add their name, a note about their specific contribution or if it's their first to further add a human touch. People have told me both online (and in person when I've met them at conferences) that this made them feel great about their contribution and made them want to contribute again. They still felt this way even when I told them how I did so because they understood that my underlying gratitude is not proportional to the time I spent typing a message. A robot messaging them would not have had the same positive effect.
 
-![GitHub saved replies](/images/a/saved-replies.png)
+![GitHub saved replies]({{ '/images/a/saved-replies.png' | absolute_url }})
 
 As I work at GitHub I've been able to further improve my process to [add keyboard shortcuts to GitHub's saved replies](https://blog.github.com/2018-03-02-saved-replies-keyboard-shortcuts/) which means that I don't need other software and can do this all in GitHub.
 

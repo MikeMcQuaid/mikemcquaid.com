@@ -11,10 +11,10 @@ DeployQt4 will take an executable and any specified Qt plugins and install and s
 DeployQt4 does this by using e.g. `otool`, `ldd` or `depends.exe` to find the linked libraries, installing a `qt.conf` file (if needed) to ensure the correct Qt is used and install any specified Qt plugins to the default Qt application plugin path. On OS X it will also use `install_name_tool` to make sure your application is linked directly to the libraries inside its bundle.
 
 For example an OS X application bundle before DeployQt4 might look like:
-![Before DeployQt4 directory tree](/images/a/deployqt4-before.png)
+![Before DeployQt4 directory tree]({{ '/images/a/deployqt4-before.png' | absolute_url }})
 
 and afterwards like:
-![After DeployQt4 directory tree](/images/a/deployqt4-after.png)
+![After DeployQt4 directory tree]({{ '/images/a/deployqt4-after.png' | absolute_url }})
 
 The most commonly used DeployQt4 function is `INSTALL_QT4_EXECUTABLE` function. For example:
 

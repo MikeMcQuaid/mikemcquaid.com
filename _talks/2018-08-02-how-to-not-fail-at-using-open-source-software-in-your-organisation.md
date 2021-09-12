@@ -8,4 +8,4 @@ youtube-id: WMBvlTnlVao
 ---
 Presented at [Mode 2 Meetup](https://twitter.com/mode2meetup) and [Turing Fest](https://www.turingfest.com/2018/speakers/mike-mcquaid) in 2018 and [TechMeetup Edinburgh](https://techmeetup.co.uk/edinburgh.html) in 2019.
 
-Written up as a blog post: [How To (Not) Fail At Using Open Source Software In Your Organisation](/2018/09/04/how-to-not-fail-at-using-open-source-software-in-your-organisation/).
+Written up as a blog post: [How To (Not) Fail At Using Open Source Software In Your Organisation]({{ '/2018/09/04/how-to-not-fail-at-using-open-source-software-in-your-organisation/' | absolute_url }}).

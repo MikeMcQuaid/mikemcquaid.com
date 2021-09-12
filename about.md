@@ -10,4 +10,4 @@ I live in Edinburgh, Scotland.
 
 Feel free to [tweet me](https://twitter.com/MikeMcQuaid) or [email me](mailto:{{ site.author.email }}) to say hello.
 
-My [curriculum vitae/resume](/cv.md) details my professional experience.
+My [curriculum vitae/resume]({{ '/cv/' | absolute_url }}) details my professional experience.
