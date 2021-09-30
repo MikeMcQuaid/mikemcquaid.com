@@ -51,6 +51,7 @@ task test: :jekyll do
       "https://www.mailmunch.com/blog/sales-funnel/",
       "https://www.kickstarter.com/projects/homebrew/brew-test-bot",
       "https://www.tripadvisor.com",
+      "https://www.linkedin.com/in/mkmcqd/",
     ]
   ).run
 end
