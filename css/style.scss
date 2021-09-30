@@ -274,6 +274,7 @@ h5 {
     padding: 4px;
     @include border($border-colour-light);
     border-radius: 5px;
+    background-color: $text-background-colour;
   }
 }
 
