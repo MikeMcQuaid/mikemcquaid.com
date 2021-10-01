@@ -42,6 +42,9 @@ plugins:
 
 feed:
   path: atom.xml
+  posts_limit: 25
+  collections:
+    - talks
 
 sass:
   style: :compressed
