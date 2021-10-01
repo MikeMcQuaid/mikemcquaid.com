@@ -1,5 +1,6 @@
-![Home office desk]({{ '/images/a/home_office.jpg' | absolute_url }})
 Since my [last post]({{ '/2014/11/23/working-from-home/' | absolute_url }}) on working from home a few people have asked me for a more specific breakdown of how I schedule my day. Obviously this varies a bit but here's my vague timetable:
+
+![Home office desk]({{ '/images/a/home_office.jpg' | absolute_url }})
 
 - 0700: wake up unpleasantly early (as my spouse wakes up for work anyway so I may as well). Feed, walk, clean up after the dog (and myself).
 - 0745: read through my work, personal and open-source emails. Triage them and just do any quick (i.e. under 5m) tasks that arise from them.
