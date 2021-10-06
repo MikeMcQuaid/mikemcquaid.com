@@ -62,7 +62,6 @@ Despite it being a fairly well-trodden path in the technology industry at this p
 - [StaffEng podcast](https://staffeng.com/stories) (also on [staffeng.com](https://podcast.staffeng.com)). Check out [my episode](https://podcast.staffeng.com/1687069/8247672-mike-mcquaid-github) if you're interested.
 - [Rands Leadership Slack](https://randsinrepose.com/welcome-to-rands-leadership-slack/)'s [`#staff-principal-engineering`](https://rands-leadership.slack.com/archives/CUAAP1A3G) channel
 
-
 ---
 
 Thanks to [Graeme Arthur](https://www.graemearthur.com), [Sarah Vessels](https://github.com/cheshire137), [Keith Duncan](https://github.com/keithduncan) and [Luke Hefson](https://lukehefson.com) for reviewing this post and providing helpful feedback.
