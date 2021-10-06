@@ -4,4 +4,5 @@ _site.min/
 .jekyll-metadata
 .sass-cache/
 bin/
+tmp/
 vendor/

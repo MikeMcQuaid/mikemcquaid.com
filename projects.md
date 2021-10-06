@@ -8,7 +8,7 @@ layout: page
 
 ![GitHub]({{ '/images/a/github.png' | absolute_url }})
 
-Employee #232. Built [Codespaces for GitHub's internal usage](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/), [GitHub Sponsors](https://github.com/sponsors/), [repository archiving](https://github.blog/2017-11-08-archiving-repositories/), [Open Source Friday](https://opensourcefriday.com), [Open Source Guides](https://opensource.guide), [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)), [new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/), [GitHub Enterprise's](https://github.com/enterprise) [release process](https://github.blog/2015-10-06-runnable-documentation/) and many more changes invisible to those outside GitHub.
+Employee #232. Built [Codespaces for GitHub's internal usage](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/), [GitHub Sponsors](https://github.com/sponsors/), [repository archiving](https://github.blog/2017-11-08-archiving-repositories/), [Open Source Friday](https://opensourcefriday.com), [Open Source Guides](https://opensource.guide), [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({{ '/2016/06/15/replacing-boxen/' | absolute_url }})), [new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/), [GitHub Enterprise's](https://github.com/enterprise) [release process](https://github.blog/2015-10-06-runnable-documentation/) and many more changes invisible to those outside GitHub.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 
@@ -20,7 +20,7 @@ Project Leader and longest-running maintainer (over 10 years). Invented Homebrew
 
 ![Strap]({{ '/images/a/strap.png' | absolute_url }})
 
-Creator. A script to bootstrap a minimal macOS development system. Built for GitHub ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) to reduce development downtime for all GitHub-employed engineers.
+Creator. A script to bootstrap a minimal macOS development system. Built for GitHub ([replacing Boxen]({{ '/2016/06/15/replacing-boxen/' | absolute_url }})) to reduce development downtime for all GitHub-employed engineers.
 
 #### [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
 
@@ -36,7 +36,7 @@ Creator. A small application to delete your old, unpopular tweets.
 
 ### Past
 
-#### [Balancing Dads](https://mikemcquaid.com/balancingdads/)
+#### [Balancing Dads]{{ '/balancingdads/' | absolute_url }})
 
 ![Balancing Dads]({{ '/images/a/balancingdads.png' | absolute_url }})
 

@@ -34,7 +34,7 @@ Of course, if the code is unspeakably messy/buggy so that it takes forever to do
 
 ### Motivation is the fuel of open source
 
-I've written previously about how [open source maintainers owe you nothing](https://mikemcquaid.com/2018/03/19/open-source-maintainers-owe-you-nothing/) and this is essentially the same thing.
+I've written previously about how [open source maintainers owe you nothing]({{ '/2018/03/19/open-source-maintainers-owe-you-nothing/' | absolute_url }}) and this is essentially the same thing.
 
 Motivation isn't the same for everyone. For some, it's financial (hence my work on [GitHub Sponsors](https://github.com/sponsors)). For others, it's about having fun (so blocking unfun, rude people makes sense).
 
@@ -44,7 +44,7 @@ When using/contributing to/submitting issues for open source: don't try to make 
 
 ### Every time you agree to do something: write it down
 
-I've written previously about [how I get things done](https://mikemcquaid.com/2015/05/24/how-i-get-things-done/) but this is the cornerstone.
+I've written previously about [how I get things done]({{ '/2015/05/24/how-i-get-things-done/' | absolute_url }}) but this is the cornerstone.
 
 Anyone I know who does this is generally fairly organised. Everyone I know who doesn't is not. The worst are those who have "a system" which doesn't involve writing anything down and they feel like they are organised and aren't. Don't be that person.
 
@@ -58,7 +58,7 @@ If you say no to everything the first time you hear it then you'll be able to mo
 
 ### Automate everything
 
-People respond way better to [pedantry from robots and empathy from humans](https://mikemcquaid.com/2018/06/05/robot-pedantry-human-empathy/). As a result, prioritise your time as an engineer on turning your desire for cleanliness and pedantry into automated checks.
+People respond way better to [pedantry from robots and empathy from humans]({{ '/2018/06/05/robot-pedantry-human-empathy/' | absolute_url }}). As a result, prioritise your time as an engineer on turning your desire for cleanliness and pedantry into automated checks.
 
 Don't check that list once a month, get a bot to do it for you. Don't remember to follow a deployment process, turn it into a script/application.
 

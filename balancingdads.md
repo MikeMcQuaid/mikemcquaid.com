@@ -12,4 +12,4 @@ Download or listen on:
 - [Google Podcasts](https://podcasts.google.com/feed/aHR0cHM6Ly9taWtlbWNxdWFpZC5jb20vYmFsYW5jaW5nZGFkcy54bWw)
 - [Spotify](https://open.spotify.com/show/07rdnm3rGWXvaJF7385fxq)
 - [The Internet Archive](https://archive.org/details/balancing-dads)
-- [Podcast Atom Feed](https://mikemcquaid.com/balancingdads.xml)
+- [Podcast Atom Feed]({{ '/balancingdads.xml' | absolute_url }})

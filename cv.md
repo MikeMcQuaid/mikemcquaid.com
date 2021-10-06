@@ -42,7 +42,7 @@ Improved GitHub for open source (collaborating with Google, Microsoft and Facebo
 
 ##### Senior Engineer (2013 - 2016, 2018 - 2020)
 
- Technical lead on [GitHub Sponsors](https://github.com/sponsors/) and participated in and trained others on GitHub.com application and escalation on-call rotations. On various GitHub.com micro-services' and ops/infrastructure on-call rotations. Provided improved marketing organisation productivity by building new JSON, Kafka and Go micro-services. Improved GitHub.com database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://github.blog/2015-10-06-runnable-documentation/).
+ Technical lead on [GitHub Sponsors](https://github.com/sponsors/) and participated in and trained others on GitHub.com application and escalation on-call rotations. On various GitHub.com micro-services' and ops/infrastructure on-call rotations. Provided improved marketing organisation productivity by building new JSON, Kafka and Go micro-services. Improved GitHub.com database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({{ '/2016/06/15/replacing-boxen/' | absolute_url }})) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://github.blog/2015-10-06-runnable-documentation/).
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
 
@@ -76,7 +76,7 @@ Wrote battery driver, improved Auxiliary ADC C++ code for Intel XScale on Window
 
 ### Publications
 
-#### [Git in Practice](https://mikemcquaid.com/gitinpractice/) (2014)
+#### [Git in Practice]({{ '/gitinpractice/' | absolute_url }}) (2014)
 
 An opinionated intermediate/advanced Git book published with Manning Publications in September 2014.
 

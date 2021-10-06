@@ -25,14 +25,18 @@ end
 task deps: dizzy
 
 task jekyll: :deps do
-  sh "jekyll", "build"
+  require "jekyll"
+  Jekyll::Commands::Build.process({})
 end
 
 desc "Run html proofer to validate the HTML output."
 task test: :jekyll do
   require "html-proofer"
+
   HTMLProofer.check_directory(
     "./_site",
+    allow_missing_href: false,
+    check_external_hash: true,
     check_favicon: true,
     check_opengraph: true,
     check_html: true,
@@ -52,6 +56,14 @@ task test: :jekyll do
       "https://www.kickstarter.com/projects/homebrew/brew-test-bot",
       "https://www.tripadvisor.com",
       "https://www.linkedin.com/in/mkmcqd/",
-    ]
+    ],
+    validation: {
+      report_eof_tags: true,
+      report_invalid_tags: true,
+      report_mismatched_tags: true,
+      report_missing_doctype: true,
+      report_missing_names: true,
+      report_script_embeds: true,
+    }
   ).run
 end

@@ -7,7 +7,7 @@ If you're an open source maintainer lucky enough to have a significant number of
 
 Your project should be as easy to contribute to as possible. There should be good, up-to-date documentation on what you can do to get started and how you can contribute to the project. Homebrew even has a single command (`brew bump-formula-pr`) which allows you to make your first pull request without even using Git. Make use of pull request templates and automated checks (that contributors can run locally) to encourage high quality pull requests.
 
-[You can't automate empathy, though](https://mikemcquaid.com/2018/06/05/robot-pedantry-human-empathy/). The most important use of your time on first-time contributors is congratulating them for being awesome when you merge their PRs so they contribute a second time.
+[You can't automate empathy, though]({{ '/2018/06/05/robot-pedantry-human-empathy/' | absolute_url }}). The most important use of your time on first-time contributors is congratulating them for being awesome when you merge their PRs so they contribute a second time.
 
 ## Second-time contributors
 
