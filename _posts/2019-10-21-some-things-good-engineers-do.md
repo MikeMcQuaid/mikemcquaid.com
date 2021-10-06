@@ -24,4 +24,4 @@ For your own work, try to ensure that you gather the requirements for a task bef
 
 ---
 
-Thanks to [Graeme Arthur](https://www.graemearthur.com) for reviewing this post and pointing out that avoiding multitasking and proriotising unblocking are [tenets of Kanban](https://en.wikipedia.org/wiki/Kanban_(development)#Kanban_boards_for_software_development).
+Thanks to [Graeme Arthur](https://www.graemearthur.com) for reviewing this post and pointing out that avoiding multitasking and proriotising unblocking are [tenets of Kanban](https://en.wikipedia.org/wiki/Kanban_(development)).
