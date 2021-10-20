@@ -56,6 +56,7 @@ task test: :jekyll do
       "https://www.kickstarter.com/projects/homebrew/brew-test-bot",
       "https://www.tripadvisor.com",
       "https://www.linkedin.com/in/mkmcqd/",
+      "https://podcasts.apple.com/sk/podcast/balancing-dads/id1483910799",
     ],
     validation: {
       report_eof_tags: true,
