@@ -26,7 +26,7 @@ task deps: dizzy
 
 task jekyll: :deps do
   require "jekyll"
-  Jekyll::Commands::Build.process({})
+  Jekyll::Commands::Build.process({ future: true })
 end
 
 desc "Run html proofer to validate the HTML output."
@@ -55,7 +55,7 @@ task test: :jekyll do
       "https://www.mailmunch.com/blog/sales-funnel/",
       "https://www.kickstarter.com/projects/homebrew/brew-test-bot",
       "https://www.tripadvisor.com",
-      "https://www.linkedin.com/in/mkmcqd/",
+      %r{^https://www\.linkedin\.com/},
       "https://podcasts.apple.com/sk/podcast/balancing-dads/id1483910799",
     ],
     validation: {
