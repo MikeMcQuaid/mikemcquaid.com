@@ -1,6 +1,7 @@
 ---
 title: "The Open Source Contributor Funnel (or: Why People Don’t Contribute To Your Open Source Project)"
 image: /images/a/the-open-source-contributor-funnel.png
+redirect_from: /2018/08/14/the-open-source-contributor-funnel/
 ---
 
 Homebrew, the macOS package manager I maintain, is one of the most active community projects on GitHub. We regularly attract large numbers of new contributors and valuable, [first-time open source contributions]({{ '/2019/02/16/stop-mentoring-first-time-contributors/' | absolute_url }}). We've done this by thinking about our users, contributors and maintainers going through a "contributor funnel". If you're wondering why people aren't contributing to your open source project (😭): thinking this way will help you fix this.
@@ -14,7 +15,7 @@ Let's start with defining groups of open source project users by looking at how 
 - 🛠 the **maintainers** of an open source project are the people who review and merge contributors from contributors and generally run the project. They have commit access. A maintained project has at least one of these: the person who started the project. Once there are no more maintainers, the project is abandoned.
 
 You want to have more contributors and maintainers on your project. A few guidelines in thinking about this:
-
+`
 - most contributors were users first ("scratching your own itch": most people start contributing to an open source project to solve a problem they are experiencing)
 - most maintainers were a contributor and user first (people don’t just jump into maintaining a project without helping to build it first)
 - maintainers cannot do a good job without remaining a user (to maintain context, passion and empathy)

@@ -1,6 +1,5 @@
 ---
-redirect_from:
-  - /2015/05/24/how-i-get-things-done/
+redirect_from: /2015/05/24/how-i-get-things-done/
 ---
 
 The first thing you need to accept is: your memory sucks. If you have tasks you want or need to do in life (for yourself or for others) chances are you can't remember them all. That's why organised people don't rely on their own memory and instead have a system to track their commitments. In this post I'll explain my system and why it is the way it is.
