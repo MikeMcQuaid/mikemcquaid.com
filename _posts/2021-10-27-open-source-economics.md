@@ -48,7 +48,9 @@ Viewed through a labour-centric rather than money-centric lens, the "more money 
 
 There are some aspects of running an open source project that can only be done by maintainers (or their automation). These include merging pull requests, making releases and closing issues. Without new commits, merged pull requests or releases: a project is effectively dead.
 
-As a result, maintainers should focus their time on what only they can do and delegate as much as possible to automation and community members. For example:
+As a result, maintainers should focus their time on what only they can do and delegate as much as possible to automation and community members.
+
+For some (GitHub-centric, it's where I've done all of my open source work for years before I worked there) examples:
 
 [![Homebrew/brew issue form]({{ '/images/a/homebrew_brew_issue_form.png' | absolute_url }})](https://github.com/Homebrew/brew/issues/new?assignees=&labels=bug&template=bug.yml)
 
