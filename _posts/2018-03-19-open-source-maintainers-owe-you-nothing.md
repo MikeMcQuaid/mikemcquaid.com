@@ -1,4 +1,4 @@
-This post is heavily inspired by my experience over the [last ten years participating in the open source community](https://mikemcquaid.com/projects/) and eight years as a maintainer of [Homebrew](https://github.com/Homebrew/brew) (which I've maintained longer than anyone else at this point).
+This post is heavily inspired by my experience over the [last ten years participating in the open source community]({{ '/projects/' | absolute_url }}) and eight years as a maintainer of [Homebrew](https://github.com/Homebrew/brew) (which I've maintained longer than anyone else at this point).
 
 ---
 

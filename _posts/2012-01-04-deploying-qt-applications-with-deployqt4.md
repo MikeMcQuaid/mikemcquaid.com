@@ -1,8 +1,7 @@
 ---
 title: Deploying Qt applications With DeployQt4
 excerpt: DeployQt4 will take an executable and any specified Qt plugins and install and setup all the linked dependencies.
-redirect_from:
-  - /2012/01/deploying-qt-applications-with-deployqt4/
+redirect_from: /2012/01/deploying-qt-applications-with-deployqt4/
 ---
 [CMake 2.8.7 has been released](http://www.kitware.com/news/home/browse/CMake?2012_01_02&CMake+2.8.7+Now+Available) and includes the DeployQt4 module I created.
 
@@ -11,10 +10,10 @@ DeployQt4 will take an executable and any specified Qt plugins and install and s
 DeployQt4 does this by using e.g. `otool`, `ldd` or `depends.exe` to find the linked libraries, installing a `qt.conf` file (if needed) to ensure the correct Qt is used and install any specified Qt plugins to the default Qt application plugin path. On OS X it will also use `install_name_tool` to make sure your application is linked directly to the libraries inside its bundle.
 
 For example an OS X application bundle before DeployQt4 might look like:
-![Before DeployQt4 directory tree](/images/a/deployqt4-before.png)
+![Before DeployQt4 directory tree]({{ '/images/a/deployqt4-before.png' | absolute_url }})
 
 and afterwards like:
-![After DeployQt4 directory tree](/images/a/deployqt4-after.png)
+![After DeployQt4 directory tree]({{ '/images/a/deployqt4-after.png' | absolute_url }})
 
 The most commonly used DeployQt4 function is `INSTALL_QT4_EXECUTABLE` function. For example:
 

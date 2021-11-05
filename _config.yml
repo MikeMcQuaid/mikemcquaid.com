@@ -9,8 +9,16 @@ author:
 
 twitter:
   username: MikeMcQuaid
+  card: summary
 
-logo: /images/header.jpg
+logo: /images/default-card.png
+
+social:
+  name: Mike McQuaid
+  links:
+    - https://twitter.com/MikeMcQuaid
+    - https://github.com/MikeMcQuaid
+    - https://www.linkedin.com/in/mkmcqd
 
 permalink: pretty
 
@@ -34,6 +42,9 @@ plugins:
 
 feed:
   path: atom.xml
+  posts_limit: 25
+  collections:
+    - talks
 
 sass:
   style: :compressed
@@ -50,7 +61,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /images/header.jpg
+      image: /images/default-card.png
 
 collections:
   talks:

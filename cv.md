@@ -14,7 +14,7 @@ I live in Edinburgh, Scotland and will never consider living or working in anoth
 ### Personal
 
 * [{{ site.author.email }}](mailto:{{ site.author.email }})
-* [mikemcquaid.com](/) (written articles, projects and talks)
+* [mikemcquaid.com]({{ '/' | absolute_url }}) (written articles, projects and talks')
 * [github.com/MikeMcQuaid](https://github.com/MikeMcQuaid) (my open-source projects)
 * [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid) (my StackExchange answers)
 
@@ -30,13 +30,19 @@ I am a genuine full-stack engineer: I have happily worked on everything from HTM
 
 ### Experience
 
-#### [GitHub](http://github.com/) (2020 - Present)
+#### [GitHub](http://github.com/) (2013 - Present)
 
-Staff engineer. Working on cross-team engineering work including designing and building tooling for automatic identification of service and team ownership within the GitHub.com Rails monolith for code review, issue triage and service-based on-call rotations. Use my expertise in maintaining and contributing to open source software to provide internal product feedback and mentorship to other engineers across the company.
+##### Staff Engineer (2020 - Present)
 
-#### [GitHub](http://github.com/) (2013 - 2020)
+Solving cross-team developer productivity/experience and architecture problems. Designed and built tooling for automated service and team ownership within the GitHub.com Rails monolith for code review, issue triage and service-based on-call rotations. Use my expertise in developer experience/productivity and open source software to provide internal product feedback and mentorship to other engineers across the company. Lead the [migration of GitHub engineering to Codespaces](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/) further improving productivity of all GitHub-employed engineers. Optimised setup of the GitHub.com Rails monolith saving ~375 developer hours a week (or: at least 9 engineers 40-hour work weeks).
 
-Senior engineer. Technical lead on [GitHub Sponsors](https://github.com/sponsors/) and participated in and trained others on GitHub.com application and escalation on-call rotations. On various GitHub.com micro-services' and ops/infrastructure on-call rotations. Provided engineering resources to Marketing organisation building new JSON, Kafka and Go micro-services to improve their productivity. Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com), helped build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Improved GitHub.com database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen](https://mikemcquaid.com/2016/06/15/replacing-boxen/)) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://github.blog/2015-10-06-runnable-documentation/).
+##### Senior Developer Advocate (2016 - 2018)
+
+Improved GitHub for open source (collaborating with Google, Microsoft and Facebook) conceiving and building [Open Source Friday](https://opensourcefriday.com) and [the archiving repositories feature](https://github.blog/2017-11-08-archiving-repositories/), helped build [Open Source Guides](https://opensource.guide) and other GitHub open source programs. Ran open-source maintainer events and built a maintainers community on GitHub for product feedback in return for early-access betas of new features. Collaborated extensively with [Nadia Eghbal](https://nadiaeghbal.com) who credits and references me in her book [Working In Public](https://www.amazon.co.uk/dp/0578675862/).
+
+##### Senior Engineer (2013 - 2016, 2018 - 2020)
+
+ Technical lead on [GitHub Sponsors](https://github.com/sponsors/) and participated in and trained others on GitHub.com application and escalation on-call rotations. On various GitHub.com micro-services' and ops/infrastructure on-call rotations. Provided improved marketing organisation productivity by building new JSON, Kafka and Go micro-services. Improved GitHub.com database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({{ '/2016/06/15/replacing-boxen/' | absolute_url }})) which reduced development downtime for all GitHub-employed engineers. Improved the GitHub API and web hooks platform by fixing bugs, building process and [conceiving and creating new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Originally hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://github.blog/2015-10-06-runnable-documentation/).
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
 
@@ -70,7 +76,7 @@ Wrote battery driver, improved Auxiliary ADC C++ code for Intel XScale on Window
 
 ### Publications
 
-#### [Git in Practice](https://mikemcquaid.com/gitinpractice/) (2014)
+#### [Git in Practice]({{ '/gitinpractice/' | absolute_url }}) (2014)
 
 An opinionated intermediate/advanced Git book published with Manning Publications in September 2014.
 
@@ -90,6 +96,6 @@ The JavaOne Rock Star Program "recognise[s] speakers for their outstanding sessi
 
 [BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
 
-### [References](/references.md)
+### [References]({{ '/references/' | absolute_url }})
 
 #### More references available on request

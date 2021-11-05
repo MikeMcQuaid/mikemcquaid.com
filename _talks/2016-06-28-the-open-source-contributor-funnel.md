@@ -7,4 +7,4 @@ image: https://speakerd.s3.amazonaws.com/presentations/21525a24a4b84030b024bae0b
 ---
 Presented at CodeConf in 2016.
 
-Written up as a blog post: [The Open Source Contributor Funnel (or: Why People Don’t Contribute To Your Open Source Project)](/2018/08/14/the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project/).
+Written up as a blog post: [The Open Source Contributor Funnel (or: Why People Don’t Contribute To Your Open Source Project)]({{ '/2018/08/14/the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project/' | absolute_url }}).

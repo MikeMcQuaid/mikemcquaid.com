@@ -56,7 +56,7 @@ a {
 #header {
   min-width: 29em;
   background-color: black;
-  background: url(/images/header.jpg) bottom center no-repeat;
+  background: url({{ '/images/header.jpg' | absolute_url }}) bottom;
   background-size: cover;
 }
 
@@ -100,7 +100,7 @@ h1, h2, #menu, .post_date {
   }
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   @media print {
     page: {
       break-inside: avoid;
@@ -263,12 +263,18 @@ h4 {
   }
 }
 
+h5 {
+  font-size: 1.0em;
+  margin: 1.5em 0 -0.8em 0;
+}
+
 #content, td
 {
   img {
     padding: 4px;
     @include border($border-colour-light);
     border-radius: 5px;
+    background-color: $text-background-colour;
   }
 }
 
@@ -372,7 +378,7 @@ blockquote {
   font-size: 1.2em;
   padding: 0.1em;
   text-align: center;
-  width: 25em;
+  width: 20.5em;
   @media only screen and (max-device-width: 480px) {
     width: 12em;
   }
@@ -385,13 +391,15 @@ blockquote {
   -moz-appearance: none;
   appearance: none;
   background-color: $text-background-colour;
+  color: $page-background-dark-colour;
   border-radius: 5px;
   padding: 0.25em 0.5em;
   box-shadow: 0 1px 1px $border-colour-light;
 }
 
 #footer {
-  background-color: $page-background-colour;
+  background-color: $page-background-dark-colour;
+  padding: 0.5em 1em;
 }
 
 #leftbar {
@@ -402,6 +410,7 @@ blockquote {
 #rightbar {
   width: 40%;
   float: right;
+  padding-top: 1em;
 }
 
 .sidebartext {

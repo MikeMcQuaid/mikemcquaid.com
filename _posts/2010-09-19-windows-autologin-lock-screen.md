@@ -1,6 +1,5 @@
 ---
-redirect_from:
-  - /2010/09/windows-autologin-lock-screen/
+redirect_from: /2010/09/windows-autologin-lock-screen/
 ---
 Something I miss when I used Windows is the nice autologin feature from KDE's login manager (KDM). Autologin always struck me as a bit insecure; why have a password if you are going to bypass it completely? KDM's solution was pretty nice, it allowed you to be logged in automatically (so that everything that runs on startup started loading) and lock the desktop before it appeared so that when you turned on your computer you would still get a password prompt but would unlock it to find that all your applications had already loaded.
 
@@ -35,4 +34,4 @@ WScript.CreateObject("WScript.Shell").Run(_
 You're now done. When you next log in, you shouldn't see the desktop at all (or incredibly briefly) and the screen should lock immediately and require your password to unlock while all your stuff happily loads in the background.
 
 **UPDATE:** This was [posted on Lifehacker](https://lifehacker.com/make-windows-load-your-desktop-before-you-log-in-5645098) and they made a video walkthrough for this post:
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8sVzE-zInfM" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/8sVzE-zInfM" frameborder="0" allowfullscreen></iframe>
