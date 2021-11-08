@@ -36,7 +36,7 @@ Creator. A small application to delete your old, unpopular tweets.
 
 ### Past
 
-#### [Balancing Dads]{{ '/balancingdads/' | absolute_url }})
+#### [Balancing Dads]({{ '/balancingdads/' | absolute_url }})
 
 ![Balancing Dads]({{ '/images/a/balancingdads.png' | absolute_url }})
 
