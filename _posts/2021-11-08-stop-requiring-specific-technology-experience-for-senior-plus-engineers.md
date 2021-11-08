@@ -20,7 +20,7 @@ There's many assumptions being made here that may or may not apply in your organ
 - having written `$TECHNOLOGY` for `$X` years means they will be able to get up to speed with your codebase using `$TECHNOLOGY` because they won't have to learn `$TECHNOLOGY` on the job
 - all your existing use of `$TECHNOLOGY` is so perfectly idiomatic that it will be trivial for anyone with `$X` years experience in `$TECHNOLOGY` to understand the code
 - the main blocker in getting up to speed quickly will be learning `$TECHNOLOGY` rather than learning your version control system, deployment system, company engineering culture, etc.
-- there is a sufficient supply of engineers at least `$X` years in `$TECHNOLOGY` that will want to work at your organisation for the compensation you're willing to pay and loosening these constrains will not get a better hire
+- there is a sufficient supply of engineers at least `$X` years in `$TECHNOLOGY` that will want to work at your organisation for the compensation you're willing to pay and loosening these constraints will not get a better hire
 - the short-term optimisation for getting up to speed quickly will be a good decision in the medium/long-term
 
 You also may or may not have thought about the following:
