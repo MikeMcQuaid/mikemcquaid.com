@@ -154,7 +154,7 @@ Worked on KDE on Mac integration/bug fixing. Improved the [KBlog XML-RPC API](ht
 
 #### [CMake](http://www.cmake.org/)
 
-Fixed bugs in and improved cross-platform packaging in CPack. Added Qt plugin support. Created [DeployQt4 module](http://mikemcquaid.com/2012/01/deploying-qt-applications-with-deployqt4/) for easy deployment of Qt applications. [Released in 2.8.7](http://www.kitware.com/news/home/browse/CMake?2012_01_02&CMake+2.8.7+Now+Available).
+Fixed bugs in and improved cross-platform packaging in CPack. Added Qt plugin support. Created [DeployQt4 module](http://mikemcquaid.com/2012/01/deploying-qt-applications-with-deployqt4/) for easy deployment of Qt applications. [Released in 2.8.7](https://www.kitware.com/cmake-2-8-7-now-available/).
 
 #### [Linux kernel](http://www.kernel.org/)
 
