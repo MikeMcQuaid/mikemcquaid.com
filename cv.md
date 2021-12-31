@@ -14,7 +14,7 @@ I live in Edinburgh, Scotland and will never consider living or working in anoth
 ### Personal
 
 * [{{ site.author.email }}](mailto:{{ site.author.email }})
-* [mikemcquaid.com]({{ '/' | absolute_url }}) (written articles, projects and talks')
+* [mikemcquaid.com]({{ '/' | absolute_url }}) (written articles, projects and talks)
 * [github.com/MikeMcQuaid](https://github.com/MikeMcQuaid) (my open-source projects)
 * [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid) (my StackExchange answers)
 
@@ -46,7 +46,7 @@ Improved GitHub for open source (collaborating with Google, Microsoft and Facebo
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
 
-Project Leader and longest-running maintainer. Invented Homebrew binary packages (bottles) which were featured in Apple's Touch Bar MacBook Pro keynote and are used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](https://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored students in several [Google Summer of Codes](https://summerofcode.withgoogle.com) a [MLH Fellowship](https://fellowship.mlh.io) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting.
+Project Leader and longest-running maintainer. Invented Homebrew binary packages (bottles) which were featured in Apple's Touch Bar MacBook Pro keynote and are used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](https://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored people in several [Google Summer of Codes](https://summerofcode.withgoogle.com) a [MLH Fellowship](https://fellowship.mlh.io) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting.
 
 #### [AllTrails](https://www.alltrails.com) (2012 - 2013)
 
