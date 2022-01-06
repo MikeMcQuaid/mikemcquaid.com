@@ -7,9 +7,9 @@ classes: stealth-lists
 
 #### Staff Engineer
 
-I love making people's lives more efficient through writing software, checklists and documentation.
+I am a product-focused engineer with a love for making people more efficient through my work on developer tools and open source software.
 
-I live in Edinburgh, Scotland and will never consider living or working in another city. I'm happy to work remotely from home here and travel regularly to anywhere in the world. This is a hard requirement: I will not work for an organisation that does not support this.
+**I live in Edinburgh, Scotland and will never consider living or working in another city, sorry! I'm happy to work remotely from home here and travel periodically to anywhere in the world. This is a hard requirement: I will not work for an organisation that does not support this, thanks.**
 
 ### Personal
 
@@ -20,13 +20,13 @@ I live in Edinburgh, Scotland and will never consider living or working in anoth
 
 ### Skills
 
-Widespread, proven experience maintaining, sustaining, growing and contributing to open source software projects and communities of all sizes.
+I am a genuine full-stack engineer: I have happily worked on everything from HTML/CSS/JavaScript to Linux kernel hardware device driver development.
 
-Extensive experience building, maintaining and fixing large and small, green field and legacy software using Ruby, Rails, Git, Bash/shell scripts, C, MySQL and CMake. Productive with other languages and technologies in hours. Led many cross-platform development/ports of applications.
+Widespread, proven experience leading, maintaining, sustaining, growing and contributing to open source software projects and communities of all sizes.
 
 Regularly advocate for, design and implement CI/testing/automation systems and processes to make engineers dramatically more productive.
 
-I am a genuine full-stack engineer: I have happily worked on everything from HTML/CSS/JavaScript to Linux kernel hardware device driver development.
+Extensive experience building, maintaining and fixing large and small, green field and legacy software using Ruby, Rails, Git, Bash/shell scripts, C, MySQL and CMake. Productive with other languages and technologies in hours. Led many cross-platform development/ports of applications.
 
 ### Experience
 
