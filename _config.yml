@@ -53,7 +53,7 @@ defaults:
   - scope:
       type: posts
     values:
-      layout: article
+      layout: post
   - scope:
       type: talks
     values:
