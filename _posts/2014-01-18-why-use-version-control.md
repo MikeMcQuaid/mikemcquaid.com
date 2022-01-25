@@ -12,7 +12,7 @@ A common problem when dealing with information stored on a computer is handling 
 
 A naïve method for handling multiple file versions is often simply creating duplicate files with differing filenames and contents (`Important Document V4 FINAL FINAL.doc` may sound sadly familiar).
 
-At a more advanced level you may be sharing a document with other people and, rather than just undoing and redoing changes, wish to know who made a change, why they made it, when they made it, what the change was and perhaps even store multiple versions of the document in parallel. A _version control system_ (such as [Git](http://www.git-scm.com)) allows all these operations and more.
+At a more advanced level you may be sharing a document with other people and, rather than just undoing and redoing changes, wish to know who made a change, why they made it, when they made it, what the change was and perhaps even store multiple versions of the document in parallel. A _version control system_ (such as [Git](https://www.git-scm.com)) allows all these operations and more.
 
 ![Versioning with multiple files]({{ '/images/a/versioning-with-multiple-files.png' | absolute_url }})
 

@@ -122,7 +122,7 @@ Yeah I think so. Yeah that's fair.
 
 > What tools do you use to work on, or to contribute to Homebrew? And I'm using tools in a really broad sense.
 
-Yeah, cool. So [GitHub](https://github.com) and the products that it's hosted by. I use that pretty heavily. I use [Git](https://git-scm.com) the version control system and I use [Visual Studio Code](https://code.visualstudio.com). Currently it's my text editor of choice and then I use a plethora of other open source tools to do bits and pieces here and there. Those initial three would be the main three things that I use.
+Yeah, cool. So [GitHub](https://github.com) and the products that it's hosted by. I use that pretty heavily. I use [Git](https://www.git-scm.com) the version control system and I use [Visual Studio Code](https://code.visualstudio.com). Currently it's my text editor of choice and then I use a plethora of other open source tools to do bits and pieces here and there. Those initial three would be the main three things that I use.
 
 > You mentioned using open source tools. What is your relationship with open source, itself? Some treat it as political, some might treat it pragmatically in terms of development, etc. There are different perspectives on what it means. I'm just curious how you relate to open source?
 
