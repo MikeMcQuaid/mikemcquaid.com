@@ -364,6 +364,13 @@ blockquote {
   }
 }
 
+#latest-posts {
+  padding-bottom: 2em;
+  h3 {
+    margin-top: 0;
+  }
+}
+
 #newsletter {
   @include border($border-colour-light);
   margin-bottom: 3em;
