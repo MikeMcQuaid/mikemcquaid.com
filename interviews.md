@@ -73,7 +73,7 @@ Software Freedom Conservancy blog, 2nd February 2017
 
 The Changelog, 7th October 2016
 
-#### [But What About The Stars?](http://5by5.tv/rubyonrails/221)
+#### [But What About The Stars?](https://web.archive.org/web/20210511225548/https://5by5.tv/rubyonrails/221)
 
 Ruby on Rails Podcast, 4th October 2016
 
