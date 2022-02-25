@@ -25,8 +25,8 @@ The compensation scales and expected areas of influence for each level are also 
 
 - Senior Engineers and Engineering Managers mostly focus on the engineering output of a single team
 - Staff Engineers and Directors of Engineering mostly focus on the engineering output of a single group of teams/"organisation"/"department" (i.e. more than one team)
-- Principal Engineers and Vice Presidents (VPs) of Engineering mostly focus on the engineering output of multiple groups of teams/"organisations"/"departments" (i.e. many teams)
-- Distinguished Engineer and Head of Engineering focus on the engineering output of the entire company
+- Principal Engineers and Senior Directors of Engineering mostly focus on the engineering output of multiple groups of teams/"organisations"/"departments" (i.e. many teams)
+- Distinguished Engineer and Vice Presidents (VPs) of Engineering focus on the engineering output of the entire company
 
 Similarly, Principal Engineers output is expected to affect the entire company and Distinguished Engineers output across more than just the company (i.e. the industry).
 
