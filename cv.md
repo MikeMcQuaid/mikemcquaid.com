@@ -5,7 +5,7 @@ classes: stealth-lists
 ---
 ### Mike McQuaid
 
-#### Staff Engineer
+#### Principal Engineer
 
 I am a product-focused engineer with a love for making people more efficient through my work on developer tools and open source software.
 
@@ -32,9 +32,13 @@ Extensive experience building, maintaining and fixing large and small, green fie
 
 #### [GitHub](http://github.com/) (2013 - Present)
 
-##### Staff Engineer (2020 - Present)
+##### Principal Engineer (2022 - Present)
 
-Solving cross-team developer productivity/experience and architecture problems. Designed and built tooling for automated service and team ownership within the GitHub.com Rails monolith for code review, issue triage and service-based on-call rotations. Use my expertise in developer experience/productivity and open source software to provide internal product feedback and mentorship to other engineers across the company. Lead the [migration of GitHub engineering to Codespaces](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/) further improving productivity of all GitHub-employed engineers. Optimised setup of the GitHub.com Rails monolith saving ~375 developer hours a week (or: at least 9 engineers 40-hour work weeks).
+Solving cross-team developer productivity/experience and architecture problems.
+
+##### Staff Engineer (2020 - 2022)
+
+Designed and built tooling for automated service and team ownership within the GitHub.com Rails monolith for code review, issue triage and service-based on-call rotations. Use my expertise in developer experience/productivity and open source software to provide internal product feedback and mentorship to other engineers across the company. Lead the [migration of GitHub engineering to Codespaces](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/) further improving productivity of all GitHub-employed engineers. Optimised setup of the GitHub.com Rails monolith saving ~375 developer hours a week (or: at least 9 engineers 40-hour work weeks).
 
 ##### Senior Developer Advocate (2016 - 2018)
 
