@@ -57,6 +57,7 @@ task test: :jekyll do
       "https://www.tripadvisor.com",
       %r{^https://www\.linkedin\.com/},
       "https://podcasts.apple.com/sk/podcast/balancing-dads/id1483910799",
+      "https://www.patreon.com/homebrew",
     ],
     validation: {
       report_eof_tags: true,
