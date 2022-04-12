@@ -87,7 +87,7 @@ This is now both a true statement and a good reason to use OSS: it's become the 
 
 #### Forking and not updating
 
-[GitHub](https://github.com) has made it easy to quickly [fork](https://guides.github.com/activities/forking/) existing OSS to make your own modifications. The thought process one typically adopts when doing so is:
+[GitHub](https://github.com) has made it easy to quickly [fork](https://docs.github.com/en/get-started/quickstart/contributing-to-projects#forking-a-repository) existing OSS to make your own modifications. The thought process one typically adopts when doing so is:
 
 > let’s just fork 🍴 and edit this for now
 
