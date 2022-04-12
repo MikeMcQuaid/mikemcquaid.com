@@ -48,6 +48,8 @@ task test: :jekyll do
     },
     url_ignore: [
       %r{^https://web\.archive\.org/web/},
+      %r{^https://www\.linkedin\.com/},
+      %r{^https://docs\.github\.com/en/},
       "https://github.com/pulls",
       "https://twitter.com/MikeMcQuaid",
       "https://www.manning.com/books/git-in-practice?a_bid=5688bbf4&a_aid=MikeMcQuaid",
@@ -55,7 +57,6 @@ task test: :jekyll do
       "https://www.mailmunch.com/blog/sales-funnel/",
       "https://www.kickstarter.com/projects/homebrew/brew-test-bot",
       "https://www.tripadvisor.com",
-      %r{^https://www\.linkedin\.com/},
       "https://podcasts.apple.com/sk/podcast/balancing-dads/id1483910799",
       "https://www.patreon.com/homebrew",
     ],
