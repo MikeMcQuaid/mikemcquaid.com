@@ -7,7 +7,7 @@ classes: stealth-lists
 
 #### Principal Engineer
 
-I am a product-focused engineer with a love for making people more efficient through my work on developer tools and open source software.
+I am a product-focused engineer who loves making software developers more efficient through my work on improving developer productivity through work on developer tools, open source software, developer experience and developer relations.
 
 **I live in Edinburgh, Scotland and will never consider living or working in another city, sorry! I'm happy to work remotely from home here and travel periodically to anywhere in the world. This is a hard requirement: I will not work for an organisation that does not support this, thanks.**
 
