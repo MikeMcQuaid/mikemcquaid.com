@@ -1,8 +1,4 @@
 _site/
-_site.min/
-.bundle/
 .jekyll-metadata
-.sass-cache/
-bin/
-tmp/
 vendor/
+Gemfile.lock
