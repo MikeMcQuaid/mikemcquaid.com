@@ -19,6 +19,11 @@ layout: base
   <h3>Latest Articles</h3>
   <ul>
     {% for post in site.posts limit:5 %}
+
+    {% if page.url == post.url %}
+    {% continue %}
+    {% endif %}
+
     <li>
       <a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
     </li>
