@@ -9,24 +9,7 @@ classes: stealth-lists
 
 I am a product-focused engineer who loves making software developers more efficient through my work on improving developer productivity through work on developer tools, open source software, developer experience and developer relations.
 
-**I live in Edinburgh, Scotland and will never consider living or working in another city, sorry! I'm happy to work remotely from home here and travel periodically to anywhere in the world. This is a hard requirement: I will not work for an organisation that does not support this, thanks.**
-
-### Personal
-
-* [{{ site.author.email }}](mailto:{{ site.author.email }})
-* [mikemcquaid.com]({{ '/' | absolute_url }}) (written articles, projects and talks)
-* [github.com/MikeMcQuaid](https://github.com/MikeMcQuaid) (my open-source projects)
-* [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid) (my StackExchange answers)
-
-### Skills
-
-I am a genuine full-stack engineer: I have happily worked on everything from HTML/CSS/JavaScript to Linux kernel hardware device driver development.
-
-Widespread, proven experience leading, maintaining, sustaining, growing and contributing to open source software projects and communities of all sizes.
-
-Regularly advocate for, design and implement CI/testing/automation systems and processes to make engineers dramatically more productive.
-
-Extensive experience building, maintaining and fixing large and small, green field and legacy software using Ruby, Rails, Git, Bash/shell scripts, C, MySQL and CMake. Productive with other languages and technologies in hours. Led many cross-platform development/ports of applications.
+**I work from home in Edinburgh, Scotland and will never consider moving or commuting to another city, sorry!**
 
 ### Experience
 
@@ -34,7 +17,7 @@ Extensive experience building, maintaining and fixing large and small, green fie
 
 ##### Principal Engineer (2022 - Present)
 
-First Principal Engineer in Communities. Solving cross-team developer productivity/experience and architecture problems. Shipped a document to provide a heuristic on when internal teams should build in the monolith vs. a microservice. Working with GitHub's OSPO to improve internal and external open source project management tooling.
+Solving cross-team developer productivity/experience and architecture problems. Shipped a document to provide a heuristic on when internal teams should build in the monolith vs. a microservice. Working with GitHub's OSPO to improve internal and external open source project management tooling.
 
 ##### Staff Engineer (2020 - 2022)
 
@@ -84,21 +67,28 @@ Wrote battery driver, improved Auxiliary ADC C++ code for Intel XScale on Window
 
 An opinionated intermediate/advanced Git book published with Manning Publications in September 2014.
 
-### Awards
-
-#### [JavaOne Rock Star](https://blogs.oracle.com/java/annoucing-javaone-2014-rock-stars-v2) (2014)
-
-The JavaOne Rock Star Program "recognise[s] speakers for their outstanding session content and speaking ability".
-
-#### [UK Open Source Awards](http://opensourceawards.org/) (2014)
-
-[Shortlisted](https://web.archive.org/web/20140612092602/http://www.opensourceawards.org/index.php/winners) for the person/project prize.
-
 ### Education
 
 #### [The University of Edinburgh](http://www.ed.ac.uk/) (2003 - 2007)
 
 [BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
+
+### Skills
+
+I am a genuine full-stack engineer: I have happily worked on everything from HTML/CSS/JavaScript to Linux kernel hardware device driver development.
+
+Widespread, proven experience leading, maintaining, sustaining, growing and contributing to open source software projects and communities of all sizes.
+
+Regularly advocate for, design and implement CI/testing/automation systems and processes to make engineers dramatically more productive.
+
+Extensive experience building, maintaining and fixing large and small, green field and legacy software using Ruby, Rails, Git, Bash/shell scripts, C, MySQL and CMake. Productive with other languages and technologies in hours. Led many cross-platform development/ports of applications.
+
+### Personal
+
+* [{{ site.author.email }}](mailto:{{ site.author.email }})
+* [mikemcquaid.com]({{ '/' | absolute_url }}) (written articles, projects and talks)
+* [github.com/MikeMcQuaid](https://github.com/MikeMcQuaid) (my open-source projects)
+* [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid) (my StackExchange answers)
 
 ### [References]({{ '/references/' | absolute_url }})
 
