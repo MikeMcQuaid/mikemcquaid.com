@@ -53,6 +53,9 @@ task test: :jekyll do
     enforce_https: false,
     # TODO: disable
     ignore_empty_alt: true,
+    ignore_files: [
+      %r{/making-dizzy-shine-with-ajax/},
+    ],
     ignore_status_codes: [0, 302, 303, 429, 521],
     ignore_urls: [
       %r{^https://web\.archive\.org/web/},
