@@ -2,13 +2,13 @@
 layout: base
 ---
 <div class="type-post">
-  <a href="{{ post_url | absolute_url }}" title="{{ page.title }}">
+  <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
     <h2>
       {{ page.title }}
     </h2>
   </a>
   <p class="post_date">
-    <a href="{{ post_url | absolute_url }}" title="{{ page.title }}">
+    <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
       {{ page.date | date_to_long_string }}
     </a>
   </p>

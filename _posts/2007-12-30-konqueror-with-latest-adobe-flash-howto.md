@@ -3,7 +3,7 @@ slug: konqueror-with-latest-adobe-flash-howto
 title: Konqueror With Latest Adobe Flash HOWTO (Outdated)
 excerpt: I agree with Lubos. <a href="http://blogs.kde.org/node/3162">Flash sucks</a>. However, most of us have or want to use it for things like YouTube or <a href="http://weebls-stuff.com/toons/badgers/">watching badgers</a>.
 ---
-**This page is outdated. In KDE4 Konqueror will work with the latest Adobe Flash plugin and there is now [a 64-bit version of Flash available for Linux](http://get.adobe.com/flashplayer/). I highly recommend you use one of these instead of the guide below but I'm leaving it here in case you need to use it for another reason.**
+**This page is outdated. In KDE4 Konqueror will work with the latest Adobe Flash plugin and there is now a 64-bit version of Flash available for Linux. I highly recommend you use one of these instead of the guide below but I'm leaving it here in case you need to use it for another reason.**
 
 I agree with Lubos. [Flash sucks.](http://blogs.kde.org/node/3162) However, most of us _have_ or _want_ to use it for things like YouTube or [watching badgers](http://weebls-stuff.com/toons/badgers/).
 

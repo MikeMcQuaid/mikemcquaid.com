@@ -12,7 +12,7 @@ A problem remained though; this approach was custom to Homebrew and didn't suppo
 
 [Open Source Friday](https://opensourcefriday.com) launched as a minimal Rails site without any support or expectation of translations. Thanks to the incredible work of **@miurahr** we now have [translation support in the application](https://github.com/github/opensourcefriday/pull/138/files) and [a translation of the entire site into Japanese](https://github.com/github/opensourcefriday/pull/129/files) (using the approach detailed in the [Rails internationalisation guide](http://guides.rubyonrails.org/i18n.html)). On recommendation we also set up the Open Source Friday Transifex page so people can translate the application without GitHub.
 
-Transifex translates Rails applications by getting you to upload the [`en.yml`](https://github.com/github/opensourcefriday/blob/master/config/locales/en.yml) as your base resource and the relevant language resource e.g. [`ja.yml`](https://github.com/github/opensourcefriday/blob/master/config/locales/ja.yml) for each of your languages. This got me thinking; if all it's taking is a YAML file in a particular format: why not use this format in Jekyll too?
+Transifex translates Rails applications by getting you to upload the [`en.yml`](https://github.com/github/opensourcefriday/blob/1a67bb4c467fd5a55ce3e808b0f16aa23a800e2d/config/locales/en.yml) as your base resource and the relevant language resource e.g. [`ja.yml`](https://github.com/github/opensourcefriday/blob/1a67bb4c467fd5a55ce3e808b0f16aa23a800e2d/config/locales/ja.yml) for each of your languages. This got me thinking; if all it's taking is a YAML file in a particular format: why not use this format in Jekyll too?
 
 ## brew.sh (v2)
 
@@ -33,9 +33,11 @@ My TL;DR on Rails and Jekyll translations:
 - For Ruby on Rails sites follow [the Rails internationalization guide](http://guides.rubyonrails.org/i18n.html)
 - Use the [Rails localisation file format](https://github.com/github/opensource.guide/blob/master/_data/locales/en.yml) for your GitHub Pages sites to make it easier to use other tools
 - Provide a Jekyll `t` helper variable with e.g.:
+
 ```liquid
 assign t = site.data.locales[page.lang][page.lang]
 ```
+
 - Use translated Markdown files for text heavy content and translated YAML files for HTML heavy content.
 - Keep all your translations in the same repository to allow mass addition of new strings for translation. These can be in English until translated.
 - Setup [Transifex](https://www.transifex.com) to allow translators that are less technical to contribute to your project without needing to use GitHub.
