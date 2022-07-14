@@ -9,4 +9,4 @@ image: https://speakerd.s3.amazonaws.com/presentations/939c3784951c4a4d8934f65ce
 ---
 Presented at [OSCON](https://web.archive.org/web/20200203205645/https://conferences.oreilly.com/oscon/oscon-tx) in 2017 and [FOSDEM](https://archive.fosdem.org/2018/) in 2018.
 
-Written up as a blog post: [The Open Source Contributor Funnel (or: Why People Don’t Contribute To Your Open Source Project)]({{ '/2018/08/14/the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project/' | absolute_url }}).
+Written up as a blog post: [The Open Source Contributor Funnel (or: Why People Don’t Contribute To Your Open Source Project)]({% post_url 2018-08-14-the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project %}).

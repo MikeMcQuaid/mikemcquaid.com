@@ -33,7 +33,7 @@ You may have heard someone on the internet (not me 🐧) say:
 
 > “Desktop Linux is only free if your time is worth nothing”
 
-This alludes to the point I've made above. Desktop Linux works great for many people ([not me, sadly]({{ '/2010/09/21/why-i-left-linux/' | absolute_url }})) but it often requires more time to setup, configure and verify hardware compatability. When your time is less valuable (e.g. when I was a student) it's more appealing than when your time is more valuable (e.g. when I'm working and have a family).
+This alludes to the point I've made above. Desktop Linux works great for many people ([not me, sadly]({% post_url 2010-09-21-why-i-left-linux %})) but it often requires more time to setup, configure and verify hardware compatability. When your time is less valuable (e.g. when I was a student) it's more appealing than when your time is more valuable (e.g. when I'm working and have a family).
 
 > proprietary software costs 💵 and OSS is 🆓!
 
@@ -117,7 +117,7 @@ Many OSS projects receive comments like this from Very Important Engineers (some
 
 ![If you’re unhappy with an open source project you’re entitled to a full, immediate refund to the $0.00 you paid for it. Alternatively, get involved with the project to make it better.](/images/a/twitter-oss-refund.png)
 
-A little cheeky, I know, but it's worth remembering that, as I've written before, [open source maintainers owe you nothing]({{ '/2018/03/19/open-source-maintainers-owe-you-nothing/' | absolute_url }}). They've provided you with software, tooling and a license to allow you to fix your own problems. If they fix your problems (lucky you!): great but you cannot expect someone you are not paying to do so for you.
+A little cheeky, I know, but it's worth remembering that, as I've written before, [open source maintainers owe you nothing]({% post_url 2018-03-19-open-source-maintainers-owe-you-nothing %}). They've provided you with software, tooling and a license to allow you to fix your own problems. If they fix your problems (lucky you!): great but you cannot expect someone you are not paying to do so for you.
 
 #### Open sourcing internal projects for free labour
 
@@ -129,7 +129,7 @@ This is a common reason for making new open source projects as a company. Unfort
 
 > let’s open source this so people will make it 👍🏻 if it’s already 👍🏻 and we help them!
 
-[The Open Source Contributor Funnel]({{ '/2018/08/14/the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project/' | absolute_url }}) helps explain this a bit more; if you want to have lots of people contributing to or maintaining your recently open-sourced internal project you're going to need lots of people using it first. That requires it to be useful, well documented and for a bunch of people to have heard of it. [Homebrew](https://brew.sh) (which I maintain) has millions of users, thousands of contributors and tens of maintainers today. Consider this when your internal project has ten external users and you’re wondering why none of them are contributing back.
+[The Open Source Contributor Funnel]({% post_url 2018-08-14-the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project %}) helps explain this a bit more; if you want to have lots of people contributing to or maintaining your recently open-sourced internal project you're going to need lots of people using it first. That requires it to be useful, well documented and for a bunch of people to have heard of it. [Homebrew](https://brew.sh) (which I maintain) has millions of users, thousands of contributors and tens of maintainers today. Consider this when your internal project has ten external users and you’re wondering why none of them are contributing back.
 
 ### How to win at using OSS 😎
 

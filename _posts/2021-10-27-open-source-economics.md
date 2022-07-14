@@ -23,13 +23,13 @@ An "economic problem" is one which requires the allocation of limited resources 
 
 Open source software is a little different because of small pool of "labour" (maintainers) with knowledge of a project (perhaps single person) most of whom do their work voluntarily for no direct financial compensation. Many widely used open source projects are built by a single maintainer and, if so, this maintainer is the only person who can make all releases, review and merge all pull requests. Even with multiple maintainers, a widely used project will have a much smaller number of people doing this work than consuming the results. This means that domain knowledge and access control is limited to this one person or limited group of people.
 
-[The Open Source Contributor Funnel]({{ '/2018/08/14/the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project/' | absolute_url }}) is pretty stark. In Homebrew's case: there's millions of users, thousands of contributors and tens of maintainers.
+[The Open Source Contributor Funnel]({% post_url 2018-08-14-the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project %}) is pretty stark. In Homebrew's case: there's millions of users, thousands of contributors and tens of maintainers.
 
 ![The Open Source Contributor Funnel]({{ '/images/a/the-open-source-contributor-funnel.png' | absolute_url }})
 
 Relatedly, the time that these maintainers spend on the project may not be optimally allocated for the continued progress of the project. It's easy for their time to become monopolised by niche problems from a few users that require a lot of individual attention at the detriment of writing code to improve the project for the majority of users. This makes sense from the incentives of each user to just get their problem solved but not for the project as a whole (and may not even be the best for the user if it slows or halts feature development).
 
-Relatedly, this is why you should [stop mentoring first-time contributors]({{ '/2019/02/16/stop-mentoring-first-time-contributors/' | absolute_url }}).
+Relatedly, this is why you should [stop mentoring first-time contributors]({% post_url 2019-02-16-stop-mentoring-first-time-contributors %}).
 
 [![Working In Public]({{ '/images/a/working-in-public.png' | absolute_url }})](https://www.amazon.co.uk/Working-Public-Making-Maintenance-Software/dp/0578675862)
 
@@ -59,7 +59,7 @@ For some (GitHub-centric, it's where I've done all of my open source work for ye
 - instead of walking individual community members through the solutions to their problems, enable [GitHub Discussions](https://docs.github.com/en/discussions) (which maintainers that should not feel obligated to respond can unwatch) so community members where they can help each other
 - instead of asking the same questions for every new issue that is opened, enable [Issue Forms](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms) to make answering these questions a requirement to open a new issue
 
-Finally, and most importantly, maintainers should primarily focus on what they most enjoy doing. In all open source projects (and particularly those that are mostly volunteer run): the motivation of the maintainers is what keeps the project running. Remember: [open source maintainers owe you nothing]({{ '/2018/03/19/open-source-maintainers-owe-you-nothing/' | absolute_url }})! If the maintainers spend most of their time doing things they don't enjoy, this motivation will deplete and eventually expire and the maintainer will abandon the project, perhaps with no-one to replace them.
+Finally, and most importantly, maintainers should primarily focus on what they most enjoy doing. In all open source projects (and particularly those that are mostly volunteer run): the motivation of the maintainers is what keeps the project running. Remember: [open source maintainers owe you nothing]({% post_url 2018-03-19-open-source-maintainers-owe-you-nothing %})! If the maintainers spend most of their time doing things they don't enjoy, this motivation will deplete and eventually expire and the maintainer will abandon the project, perhaps with no-one to replace them.
 
 #### 💷 How to Spend Money
 

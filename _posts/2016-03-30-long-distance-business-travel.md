@@ -1,4 +1,4 @@
-One of the side effects of successfully [finding a remote job]({{ '/2015/02/20/finding-a-remote-job/' | absolute_url }}) and [working from home]({{ '/2014/11/23/working-from-home/' | absolute_url }}) is that you may find yourself having to travel internationally for work. In comparison to traveling for your own pleasure there's a few attributes that may differ:
+One of the side effects of successfully [finding a remote job]({% post_url 2015-02-20-finding-a-remote-job %}) and [working from home]({% post_url 2014-11-23-working-from-home %}) is that you may find yourself having to travel internationally for work. In comparison to traveling for your own pleasure there's a few attributes that may differ:
 
 1. You might not need to pick the cheapest possible hotel, airline and flights
 2. You need to be productive the day of or day after travelling

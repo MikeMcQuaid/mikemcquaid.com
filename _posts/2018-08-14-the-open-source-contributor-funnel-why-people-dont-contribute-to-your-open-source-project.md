@@ -4,7 +4,7 @@ image: /images/a/the-open-source-contributor-funnel.png
 redirect_from: /2018/08/14/the-open-source-contributor-funnel/
 ---
 
-Homebrew, the macOS package manager I maintain, is one of the most active community projects on GitHub. We regularly attract large numbers of new contributors and valuable, [first-time open source contributions]({{ '/2019/02/16/stop-mentoring-first-time-contributors/' | absolute_url }}). We've done this by thinking about our users, contributors and maintainers going through a "contributor funnel". If you're wondering why people aren't contributing to your open source project (😭): thinking this way will help you fix this.
+Homebrew, the macOS package manager I maintain, is one of the most active community projects on GitHub. We regularly attract large numbers of new contributors and valuable, [first-time open source contributions]({% post_url 2019-02-16-stop-mentoring-first-time-contributors %}). We've done this by thinking about our users, contributors and maintainers going through a "contributor funnel". If you're wondering why people aren't contributing to your open source project (😭): thinking this way will help you fix this.
 
 ### Who uses your software?
 
@@ -16,6 +16,7 @@ Let's start with defining groups of open source project users by looking at how 
 
 You want to have more contributors and maintainers on your project. A few guidelines in thinking about this:
 `
+
 - most contributors were users first ("scratching your own itch": most people start contributing to an open source project to solve a problem they are experiencing)
 - most maintainers were a contributor and user first (people don’t just jump into maintaining a project without helping to build it first)
 - maintainers cannot do a good job without remaining a user (to maintain context, passion and empathy)
@@ -44,16 +45,16 @@ Look at the contributors to your project to find new maintainers but bear in min
 There's no point in you getting more contributors, maintainers and even users if they leave your project quickly. I’m not talking about their initial attraction but retention on your project. Each group of your users need different things to stick around:
 
 - 👩‍👩‍👧‍👦 **users**:
-    - 💰 Keep your project high quality. If you do a mass refactoring and introduce loads of bugs: people aren't going to want to use your software.
-    - 😰 No "guilty merges". Don't merge work from contributors you know isn't good enough just because you feel bad about the work they've put in.
-    - 🏗 No v2.0. By this I mean don't do a mass rewrite or refactor that makes using your software radically different. Respect your users' existing workflows and learnings on how to use your software.
+  - 💰 Keep your project high quality. If you do a mass refactoring and introduce loads of bugs: people aren't going to want to use your software.
+  - 😰 No "guilty merges". Don't merge work from contributors you know isn't good enough just because you feel bad about the work they've put in.
+  - 🏗 No v2.0. By this I mean don't do a mass rewrite or refactor that makes using your software radically different. Respect your users' existing workflows and learnings on how to use your software.
 - 📣 **contributors**:
-    - 🚳 No [bikeshedding](https://en.wiktionary.org/wiki/bikeshedding). Avoid long discussions about things that don't really matter. It's a waste of everyone's time.
-    - ☎️ Open discussions. Conversely, ensure there's a place contributors can talk about the development of your software and ask questions that aren't bug reports.
-    - 🔐 No feature issues. Don't fill your issue tracker with "feature requests" you know will never be implemented. Learn to say "no".
+  - 🚳 No [bikeshedding](https://en.wiktionary.org/wiki/bikeshedding). Avoid long discussions about things that don't really matter. It's a waste of everyone's time.
+  - ☎️ Open discussions. Conversely, ensure there's a place contributors can talk about the development of your software and ask questions that aren't bug reports.
+  - 🔐 No feature issues. Don't fill your issue tracker with "feature requests" you know will never be implemented. Learn to say "no".
 - 🛠 **maintainers**:
-    - 💝 Code of Conduct. These help set expectations of acceptable behaviour on a project. Toxic users, contributors or maintainers make open source no fun and people don't want to spend their time on projects that aren't fun.
-    - 🔏 Private chat. Give the maintainers somewhere to bond, discuss and resolve conflict privately. Not everyone feels comfortable doing this publicly.
-    - 🌳 Keep adding maintainers. Most maintainers have a shelf-life so you need to keep looking for more maintainers for when the current ones leave. This also allows people to focus on the bits they find most enjoyable.
+  - 💝 Code of Conduct. These help set expectations of acceptable behaviour on a project. Toxic users, contributors or maintainers make open source no fun and people don't want to spend their time on projects that aren't fun.
+  - 🔏 Private chat. Give the maintainers somewhere to bond, discuss and resolve conflict privately. Not everyone feels comfortable doing this publicly.
+  - 🌳 Keep adding maintainers. Most maintainers have a shelf-life so you need to keep looking for more maintainers for when the current ones leave. This also allows people to focus on the bits they find most enjoyable.
 
 After doing the above you'll understand why people contribute to your project 😍 (and how to find more). Good luck!

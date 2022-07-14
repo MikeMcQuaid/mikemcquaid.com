@@ -8,4 +8,4 @@ youtube-id: YRo8OA9i-YI
 ---
 Presented at [GitHub's Global Maintainer Summit 2021](https://globalmaintainersummit.github.com/schedule).
 
-Written up as a blog post: [Robot Pedantry, Human Empathy]({{ '/2021/06/09/robot-pedantry-human-empathy/' | absolute_url }}).
+Written up as a blog post: [Robot Pedantry, Human Empathy]({% post_url 2021-06-09-robot-pedantry-human-empathy %}).

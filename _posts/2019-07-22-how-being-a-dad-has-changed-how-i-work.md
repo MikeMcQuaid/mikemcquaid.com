@@ -2,7 +2,7 @@
 title: How Becoming A Dad Has Changed How I Work
 ---
 
-I became a father for the first time in 2017, took 3 months paternity leave alone with my eldest in 2018 (thanks to GitHub for 5 months paid paternity leave). I had another child two weeks ago so I'm on paternity leave (again) right now and expect to take more in 2020. This has given me time to reflect on how becoming a father has changed the way I do my paid (currently a "Senior Engineer" at GitHub) and unpaid (open source, currently primarily as the "Homebrew Project Leader") work and how this differs from [my previous schedule]({{ '/2014/12/07/my-working-from-home-schedule/' | absolute_url }}) and [ways of getting things done]({{ '/2015/05/24/how-i-get-things-done/' | absolute_url }}). This may be of interest to you if you're currently, planning or debating becoming a parent in future.
+I became a father for the first time in 2017, took 3 months paternity leave alone with my eldest in 2018 (thanks to GitHub for 5 months paid paternity leave). I had another child two weeks ago so I'm on paternity leave (again) right now and expect to take more in 2020. This has given me time to reflect on how becoming a father has changed the way I do my paid (currently a "Senior Engineer" at GitHub) and unpaid (open source, currently primarily as the "Homebrew Project Leader") work and how this differs from [my previous schedule]({% post_url 2014-12-07-my-working-from-home-schedule %}) and [ways of getting things done]({% post_url 2021-07-21-how-i-get-things-done %}). This may be of interest to you if you're currently, planning or debating becoming a parent in future.
 
 ## Less work time
 
@@ -18,7 +18,7 @@ I tend to now do more of my open source work during working hours when I have do
 
 ## Less travel
 
-I've lost my British Airways silver status due to less [long distance business travel]({{ '/2016/03/30/long-distance-business-travel/' | absolute_url }}) and almost no holiday travel. This pained me but was a nice sign that I'm spending more time with my family (which I enjoy). The travel I do do is much harder because of how much I miss my family and knowing it's harder for my wife while away (even with the help she gets from my lovely in-laws).
+I've lost my British Airways silver status due to less [long distance business travel]({% post_url 2016-03-30-long-distance-business-travel %}) and almost no holiday travel. This pained me but was a nice sign that I'm spending more time with my family (which I enjoy). The travel I do do is much harder because of how much I miss my family and knowing it's harder for my wife while away (even with the help she gets from my lovely in-laws).
 
 ## More love of remote work
 
@@ -26,7 +26,7 @@ I've moved my home office from a room in my house into a (separate building) gar
 
 ## Less obligation
 
-I've written previously about how [open source maintainers owe you nothing]({{ '/2018/03/19/open-source-maintainers-owe-you-nothing/' | absolute_url }}) but this has become far more engrained for me. I'm far quicker to block people being unpleasant and resolve interpersonal issues amongst Homebrew maintainers because my open source time is more precious and focused. Additionally, previous upsets with people in open source that I've just tolerated have made me irritable and detached from my family when we're spending time together. I'm not willing to put up with that any more.
+I've written previously about how [open source maintainers owe you nothing]({% post_url 2018-03-19-open-source-maintainers-owe-you-nothing %}) but this has become far more engrained for me. I'm far quicker to block people being unpleasant and resolve interpersonal issues amongst Homebrew maintainers because my open source time is more precious and focused. Additionally, previous upsets with people in open source that I've just tolerated have made me irritable and detached from my family when we're spending time together. I'm not willing to put up with that any more.
 
 ## More joy
 

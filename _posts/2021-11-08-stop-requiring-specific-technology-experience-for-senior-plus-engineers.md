@@ -42,4 +42,4 @@ This can be a hard adjustment to make but it's one the best engineering intervie
 
 ---
 
-By "a senior-plus experience" I mean e.g. senior, staff, principal engineers etc. Never heard of staff or principal engineers? Check out [my "What is a Staff (or Staff-Plus or Principal) Engineer?" article]({{ '/2021/10/01/what-is-a-staff-plus-principal-engineer/' | absolute_url }}) .
+By "a senior-plus experience" I mean e.g. senior, staff, principal engineers etc. Never heard of staff or principal engineers? Check out [my "What is a Staff (or Staff-Plus or Principal) Engineer?" article]({% post_url 2021-10-01-what-is-a-staff-plus-principal-engineer %}) .

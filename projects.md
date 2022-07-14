@@ -8,7 +8,7 @@ layout: page
 
 ![GitHub]({{ '/images/a/github.png' | absolute_url }})
 
-Employee #232. Built [Codespaces for GitHub's internal usage](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/), [GitHub Sponsors](https://github.com/sponsors/), [repository archiving](https://github.blog/2017-11-08-archiving-repositories/), [Open Source Friday](https://opensourcefriday.com), [Open Source Guides](https://opensource.guide), [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({{ '/2016/06/15/replacing-boxen/' | absolute_url }})), [new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/), [GitHub Enterprise's](https://github.com/enterprise) [release process](https://github.blog/2015-10-06-runnable-documentation/) and many more changes invisible to those outside GitHub.
+Employee #232. Built [Codespaces for GitHub's internal usage](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/), [GitHub Sponsors](https://github.com/sponsors/), [repository archiving](https://github.blog/2017-11-08-archiving-repositories/), [Open Source Friday](https://opensourcefriday.com), [Open Source Guides](https://opensource.guide), [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})), [new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/), [GitHub Enterprise's](https://github.com/enterprise) [release process](https://github.blog/2015-10-06-runnable-documentation/) and many more changes invisible to those outside GitHub.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 
@@ -20,7 +20,7 @@ Project Leader and longest-running maintainer. Invented Homebrew binary packages
 
 ![Strap]({{ '/images/a/strap.png' | absolute_url }})
 
-Creator. A script to bootstrap a minimal macOS development system. Built for GitHub ([replacing Boxen]({{ '/2016/06/15/replacing-boxen/' | absolute_url }})) to reduce development downtime for all GitHub-employed engineers.
+Creator. A script to bootstrap a minimal macOS development system. Built for GitHub ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})) to reduce development downtime for all GitHub-employed engineers.
 
 #### [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
 
@@ -96,7 +96,7 @@ Ported Qt/MSVC++ application from Windows to CMake, macOS and Linux. Fought for 
 
 ![Boxen]({{ '/images/a/boxen.png' | absolute_url }})
 
-Maintainer. Improved Homebrew integration, general bug fixing and updates. [Migrated GitHub]({{ '/2016/06/15/replacing-boxen/' | absolute_url }}) to use [Strap](https://github.com/MikeMcQuaid/strap) instead. Transitioned project to community ownership and (eventually) archived status.
+Maintainer. Improved Homebrew integration, general bug fixing and updates. [Migrated GitHub]({% post_url 2016-06-15-replacing-boxen %}) to use [Strap](https://github.com/MikeMcQuaid/strap) instead. Transitioned project to community ownership and (eventually) archived status.
 
 #### [Hookhand](https://github.com/MikeMcQuaid/HookHand)
 

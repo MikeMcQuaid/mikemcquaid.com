@@ -34,7 +34,7 @@ Similarly, Principal Engineers' output is expected to affect the entire company 
 
 The difference in responsibilities between an Engineering Manager and Senior Engineer is generally well understood. An EM should have regular 1:1s with their direct reports, will provide their performance reviews and, depending on the organisation, may provide some technical leadership, product management, project management, or even coding beyond their primary people management responsibilities.
 
-A Staff/Principal/Distinguished Engineer should have no people management responsibilities whereas their EM/Director/VP counterpart will find that taking up a significant part of their role. The Staff/Principal/Distinguished Engineer will take responsibility for technical leadership, [mentorship]({{ '/2021/09/09/the-mentorship-diamond/' | absolute_url }}) and is likely to still code and, in some cases, spend the majority of their time still doing so.
+A Staff/Principal/Distinguished Engineer should have no people management responsibilities whereas their EM/Director/VP counterpart will find that taking up a significant part of their role. The Staff/Principal/Distinguished Engineer will take responsibility for technical leadership, [mentorship]({% post_url 2021-09-09-the-mentorship-diamond %}) and is likely to still code and, in some cases, spend the majority of their time still doing so.
 
 ### My Role
 

@@ -10,7 +10,7 @@ Homebrew was the first open source project I've maintained where I've had to rev
 
 ## 👩‍💻 Manual Process
 
-I've [written before about how Homebrew's CI system has evolved over time]({{ '/2017/09/29/homebrew-ci-evolution/' | absolute_url }}) but not what I've had to learn to make it work as well as it does.
+I've [written before about how Homebrew's CI system has evolved over time]({% post_url 2017-09-29-homebrew-ci-evolution %}) but not what I've had to learn to make it work as well as it does.
 
 In the earlier days of Homebrew all review and testing was manual. This involved a maintainer checking out a GitHub pull request onto their local Homebrew installation and verifying it worked as expected. I'm obsessed in my personal, professional and open source lives in reducing the friction to perform common tasks so [my first commit to the Homebrew package manager (i.e. not a package) was to add a `brew pull` command to simplify this process](https://github.com/Homebrew/brew/commit/7933bd4e657ee82207914683d0e689c48465d83a).
 

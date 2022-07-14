@@ -10,4 +10,4 @@ In this talk, I'll present another way: the staff-plus IC career track, allowing
 
 Presented at [Level Up 2022](https://www.turingfest.com/level-up/).
 
-Written up as a blog post: [What is a Staff (or Staff-Plus or Principal) Engineer?]({{ '/2021/10/01/what-is-a-staff-plus-principal-engineer/' | absolute_url }}).
+Written up as a blog post: [What is a Staff (or Staff-Plus or Principal) Engineer?]({% post_url 2021-10-01-what-is-a-staff-plus-principal-engineer %}).
