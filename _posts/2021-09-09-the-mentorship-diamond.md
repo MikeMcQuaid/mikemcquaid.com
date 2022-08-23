@@ -1,3 +1,7 @@
+---
+redirect_from:
+- /2021/09/09/the-mentorship-diamond/
+---
 I’ve been very lucky to have some great mentors and mentees in my time at GitHub. Through weekly 1:1s with [@seejohnrun](https://twitter.com/seejohnrun) explaining to me what a staff engineer should (and should not) be doing I was able to get the role and (hopefully!) do a reasonable job at it. Currently, I’m lucky to have regular mentorship from [@eileencodes](https://github.com/eileencodes) who guides me on how to think about the most important work I could be doing and avoid pitfalls that I would not otherwise have seen.
 
 On the mentee side, I did most of my mentorship initially outside GitHub through mentoring new Homebrew maintainers informally and then more formally through Google Summer of Code. I’ve been lucky enough to work with folks such as [@itsbagpack](https://github.com/itsbagpack) and [@gallexi](https://github.com/gallexi) through their promotions to staff and senior engineer respectively; helping them figure out their role, strengths and weaknesses, review work and documents for them and generally have fun hanging out with inspiring engineers like them.
@@ -79,7 +83,7 @@ Thanks to [@nerdneha](https://github.com/nerdneha) for suggesting, reviewing and
 
 ### Additional Reading
 
-* [https://leaddev.com/mentoring-coaching-feedback/maximize-your-mentorship-establish-absorb-and-connect](https://leaddev.com/mentoring-coaching-feedback/maximize-your-mentorship-establish-absorb-and-connect)
-* [https://larahogan.me/blog/what-sponsorship-looks-like/](https://larahogan.me/blog/what-sponsorship-looks-like/)
-* [https://blog.pragmaticengineer.com/developers-mentoring-other-developers/](https://blog.pragmaticengineer.com/developers-mentoring-other-developers/)
-* [https://opensource.com/life/14/12/mentoring-open-source-and-everywhere-else](https://opensource.com/life/14/12/mentoring-open-source-and-everywhere-else)
+- [https://leaddev.com/mentoring-coaching-feedback/maximize-your-mentorship-establish-absorb-and-connect](https://leaddev.com/mentoring-coaching-feedback/maximize-your-mentorship-establish-absorb-and-connect)
+- [https://larahogan.me/blog/what-sponsorship-looks-like/](https://larahogan.me/blog/what-sponsorship-looks-like/)
+- [https://blog.pragmaticengineer.com/developers-mentoring-other-developers/](https://blog.pragmaticengineer.com/developers-mentoring-other-developers/)
+- [https://opensource.com/life/14/12/mentoring-open-source-and-everywhere-else](https://opensource.com/life/14/12/mentoring-open-source-and-everywhere-else)

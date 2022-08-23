@@ -1,5 +1,7 @@
 ---
 title: Stop Mentoring First-Time Contributors
+redirect_from:
+- /2019/02/16/stop-mentoring-first-time-contributors/
 ---
 If you're an open source maintainer lucky enough to have a significant number of contributors you need to learn to mentor efficiently. [First timer issues]({% post_url 2018-01-29-issues-with-first-timer-issues %}) are not the right good way to get people involved in your project nor mentoring individual first-time contributors. Instead, do things that help all of them.
 

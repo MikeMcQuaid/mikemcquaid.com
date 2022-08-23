@@ -1,5 +1,7 @@
 ---
-redirect_from: /2010/09/windows-autologin-lock-screen/
+redirect_from:
+- /2010/09/windows-autologin-lock-screen/
+- /2010/09/19/windows-autologin-lock-screen/
 ---
 Something I miss when I used Windows is the nice autologin feature from KDE's login manager (KDM). Autologin always struck me as a bit insecure; why have a password if you are going to bypass it completely? KDM's solution was pretty nice, it allowed you to be logged in automatically (so that everything that runs on startup started loading) and lock the desktop before it appeared so that when you turned on your computer you would still get a password prompt but would unlock it to find that all your applications had already loaded.
 

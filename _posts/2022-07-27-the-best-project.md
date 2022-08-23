@@ -1,5 +1,7 @@
 ---
 title: "The Best Project"
+redirect_from:
+- /2022/07/27/the-best-project/
 ---
 
 This project was the best.

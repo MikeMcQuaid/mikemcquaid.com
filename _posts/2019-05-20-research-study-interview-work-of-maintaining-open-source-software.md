@@ -1,5 +1,7 @@
 ---
 title: "Research Study Interview: The Work of Maintaining Open Source Software"
+redirect_from:
+- /2019/05/20/research-study-interview-work-of-maintaining-open-source-software/
 ---
 
 I was recently interviewed as part of a research study into the work of maintaining open-source software. I asked if I could make the (lightly edited) transcript public and they agreed. This will be an interesting read for anyone interested in some of the deeper questions about maintaining a project like Homebrew for 10 years.

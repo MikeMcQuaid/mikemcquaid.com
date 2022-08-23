@@ -1,3 +1,7 @@
+---
+redirect_from:
+- /2018/01/29/issues-with-first-timer-issues/
+---
 I've noticed more open source software projects creating "first timer issues". Written up in more detail than usual these issues explain a known, easy-to-solve problem reserved for first time contributors to that project. At their most extreme they spell out everything down to the commands and exact text changes required to make a contribution.
 
 This post highlights problems I have with this approach. Note I'm intentionally not linking to any other posts or projects because any project doing this has shown admirable empathy for new contributors and I want to add to a wider discussion and not grumpily wag my finger at anyone.

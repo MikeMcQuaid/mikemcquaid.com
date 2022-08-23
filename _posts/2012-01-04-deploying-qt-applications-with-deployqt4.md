@@ -1,7 +1,9 @@
 ---
 title: Deploying Qt applications With DeployQt4
 excerpt: DeployQt4 will take an executable and any specified Qt plugins and install and setup all the linked dependencies.
-redirect_from: /2012/01/deploying-qt-applications-with-deployqt4/
+redirect_from:
+- /2012/01/deploying-qt-applications-with-deployqt4/
+- /2012/01/04/deploying-qt-applications-with-deployqt4/
 ---
 [CMake 2.8.7 has been released](https://www.kitware.com/cmake-2-8-7-now-available/) and includes the DeployQt4 module I created.
 

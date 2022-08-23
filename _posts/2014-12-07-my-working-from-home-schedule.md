@@ -1,3 +1,7 @@
+---
+redirect_from:
+- /2014/12/07/my-working-from-home-schedule/
+---
 Since my [last post]({% post_url 2014-11-23-working-from-home %}) on working from home a few people have asked me for a more specific breakdown of how I schedule my day. Obviously this varies a bit but here's my vague timetable:
 
 ![Home office desk]({{ '/images/a/home_office.jpg' | absolute_url }})

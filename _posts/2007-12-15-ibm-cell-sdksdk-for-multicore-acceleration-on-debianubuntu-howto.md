@@ -1,9 +1,11 @@
 ---
 title: IBM Cell SDK/SDK For Multicore Acceleration On Debian/Ubuntu HOWTO
+redirect_from:
+- /2007/12/15/ibm-cell-sdksdk-for-multicore-acceleration-on-debianubuntu-howto/
 ---
 Today I battled with trying to get **IBM's Cell SDK 3.0** _(now known as the **SDK for Multicore Acceleration**)_ installed on my Debian AMD64 machine. This would cause slight grief even with a regular Debian machine as IBM only formally supports Fedora and RHEL so only provides RPMs. This is worsened by the fact that **a bunch of the packages aren't even available from IBM** but require perusal of some provided yum configuration files to find.
 
-Firstly I recommend you download the **CellSDK-Devel-Fedora\_3.0.0.1.0.iso** and **CellSDK-Extras-Fedora\_3.0.0.1.0.iso** (*current at time of writing*) from _somewhere_ (unfortunately IBM no longer hosts this download).
+Firstly I recommend you download the **CellSDK-Devel-Fedora\_3.0.0.1.0.iso** and **CellSDK-Extras-Fedora\_3.0.0.1.0.iso** (_current at time of writing_) from _somewhere_ (unfortunately IBM no longer hosts this download).
 
 Then when you have downloaded them mount them somewhere on your filesystem.
 {% highlight bash %}
@@ -28,7 +30,7 @@ apt-get install cell-sdk
 apt-get install wget #Install wget if it is not already
 mkdir openrpm
 cd openrpm
-wget -l 1 -c -np -nd -r http://www.bsc.es/projects/deepcomputing/linuxoncell/cellsimulator/ -A .rpm
+wget -l 1 -c -np -nd -r <http://www.bsc.es/projects/deepcomputing/linuxoncell/cellsimulator/> -A .rpm
 {% endhighlight %}
 The above assumes you are on an x86\_64 machine. If you are using the Cell, a regular x86 or a PPC 64-bit machine change the **'x86_64'** to **'cbea'**, **'x86'** or **'ppc64'** accordingly.
 
@@ -38,8 +40,11 @@ Next, if we are on **x86_64**, we want to create a nice little script to handily
 
 I recommend we name it _"fixcelldebsarch.sh"_ and stick it in your $HOME. This is only necessary if you are on **x86\_64 not x86** and _(probably)_ won't work on the Cell or another PPC64.
 {% highlight bash %}
-#!/bin/bash
-#~/fixcelldebsarch.sh
+
+# !/bin/bash
+
+# ~/fixcelldebsarch.sh
+
 OWD=`pwd`
 for i in `ls -d */`
 do
@@ -48,7 +53,7 @@ do
     debian/control
   dpkg-buildpackage
   cd "$OWD"
-  rm -r */ *.gz *.changes *.dsc
+  rm -r _/_.gz _.changes_.dsc
 done
 {% endhighlight %}
 _(Thanks to Jon for the fix to avoid mess when using symbolic links.)_
@@ -62,21 +67,21 @@ for i in ../openrpm/*.rpm
   do alien --scripts $i
 done
 ~/fixcelldebsarch.sh #Only needed on x86_64
-dpkg -i *.deb
+dpkg -i*.deb
 
 cd devel
 for i in /tmp/CellSDK-Devel-Fedora/x86_64/*.rpm
   do alien --scripts $i
 done
 ~/fixcelldebsarch.sh #Only needed on x86_64
-dpkg -i *.deb
+dpkg -i*.deb
 
 cd extras
 for i in /tmp/CellSDK-Extras-Fedora/x86_64/*.rpm
   do alien --scripts $i
 done
 ~/fixcelldebsarch.sh #Only needed on x86_64
-dpkg -i *.deb
+dpkg -i*.deb
 {% endhighlight %}
 It should have been fairly obvious what was going on above. **This should have installed all the necessary packages for the Cell SD**K without breaking your system and allowing Debian/Ubuntu packages to override these versions.
 

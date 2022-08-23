@@ -1,5 +1,7 @@
 ---
 title: Some Things Good Engineers Do
+redirect_from:
+- /2019/10/21/some-things-good-engineers-do/
 ---
 
 I have not been working as an engineer long enough to feel like an industry expert but I have noticed patterns in new engineers that seem to result in them being more or less successful. I’ve had some requests to share these in a post so I hope they are useful.

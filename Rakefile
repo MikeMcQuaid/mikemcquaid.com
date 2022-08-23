@@ -70,6 +70,7 @@ task test: :jekyll do
       "https://www.tripadvisor.com",
       "https://podcasts.apple.com/sk/podcast/balancing-dads/id1483910799",
       "https://www.patreon.com/homebrew",
+      "https://www.nytimes.com/2015/02/15/magazine/how-one-stupid-tweet-ruined-justine-saccos-life.html",
     ],
     parallel: { in_processes: Etc.nprocessors },
     validation: {
