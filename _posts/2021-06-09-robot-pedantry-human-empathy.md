@@ -4,6 +4,7 @@ image: /images/a/robot-pedantry-human-empathy.png
 redirect_from:
   - /2018/04/08/robot-pedantry-human-empathy/
   - /2018/06/05/robot-pedantry-human-empathy/
+  - /2021/06/09/robot-pedantry-human-empathy/
 ---
 
 Homebrew was the first open source project I've maintained where I've had to review and merge contributions from other users. Homebrew is also one of the most active community projects on GitHub with a consistently small team of maintainers (always under thirty in total, always under ten doing work every week). As a result I've had to figure out over the last twelve years how best to manage large numbers of contributions from users in pleasantly and efficiently for both maintainers and contributors.

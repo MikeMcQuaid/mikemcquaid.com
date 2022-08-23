@@ -1,6 +1,8 @@
 ---
 title: How To (Not) Fail At Using Open Source Software In Your Organisation
 image: /images/a/how-to-not-fail-at-using-open-source-software-in-your-organisation.png
+redirect_from:
+- /2018/09/04/how-to-not-fail-at-using-open-source-software-in-your-organisation/
 ---
 
 In the technology sector in 2018 the use of open source software (OSS) is routine. Despite this many organisations find using OSS frustrating or confusing. This is not the fault of OSS but an opportunity for organisations (and the individuals within them) to learn how to use OSS more effectively.

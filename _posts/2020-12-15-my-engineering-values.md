@@ -1,3 +1,7 @@
+---
+redirect_from:
+- /2020/12/15/my-engineering-values/
+---
 I've been encouraged by [a mentor](https://nathanherald.com) to think about what my core (engineering) values are (in the context of being recently promoted to be a "staff engineer" and having my eyes on being a "principal engineer" one day). This felt like something that could be of wider interest so here we go:
 
 ### Don't fix bugs speculatively

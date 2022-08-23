@@ -20,12 +20,13 @@ social:
     - https://github.com/MikeMcQuaid
     - https://www.linkedin.com/in/mkmcqd
 
-permalink: pretty
+permalink: "/:title/"
 
 exclude:
   - bin
   - CNAME
   - Gemfile*
+  - LICENSE.txt
   - Rakefile,
   - ReadMe.md
   - vendor
@@ -46,14 +47,16 @@ feed:
     - talks
 
 sass:
-  style: :compressed
+  style: compressed
 
 defaults:
   - scope:
+      path: ""
       type: posts
     values:
       layout: post
   - scope:
+      path: ""
       type: talks
     values:
       layout: talk
@@ -65,7 +68,7 @@ defaults:
 collections:
   talks:
     output: true
-    permalink: /talks/:title/
+    permalink: "/:collection/:title/"
 
 github:
-  repository_nwo: MikeMcQuaid/mikemcquaid.github.io
+  repository_nwo: MikeMcQuaid/mikemcquaid.com

@@ -1,3 +1,7 @@
+---
+redirect_from:
+- /2018/03/19/open-source-maintainers-owe-you-nothing/
+---
 This post is heavily inspired by my experience over the [last ten years participating in the open source community]({{ '/projects/' | absolute_url }}) and eight years as a maintainer of [Homebrew](https://github.com/Homebrew/brew) (which I've maintained longer than anyone else at this point).
 
 ---

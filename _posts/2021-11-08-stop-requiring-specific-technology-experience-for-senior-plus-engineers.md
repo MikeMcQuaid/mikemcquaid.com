@@ -1,5 +1,7 @@
 ---
 title: Stop requiring specific technology experience for senior-plus engineers
+redirect_from:
+- /2021/11/08/stop-requiring-specific-technology-experience-for-senior-plus-engineers/
 ---
 
 A conversation I've had (too) many times in our industry:

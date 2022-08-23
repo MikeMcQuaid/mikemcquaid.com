@@ -1,10 +1,14 @@
 ---
 excerpt: Some people have suggested that the future of E-Commerce will be shaped by various kinds of “communities” (both online and offline); other are more sceptical about the potential.
+redirect_from:
+- /2007/06/01/community-driven-software-development/
 ---
 ### Abstract
+
 Some people have suggested that the future of E-Commerce will be shaped by various kinds of _"communities"_ (both online and offline); other are more sceptical about the potential. This report analyses the competing argument, focusing on the key actors and using Free and Open Source Software (FOSS) as a case-study to analyse the effects of online communities.
 
 ### Introduction
+
 The future of E-Commerce is shaped largely by technological and sociological developments in the field and within society. On the technological front, one of the backbones allowing Internet-based E-Commerce to be possible is Free and Open Source Software (FOSS). Many Email, CMS systems, databases and web servers are FOSS and CRM systems and the majority of other enterprise applications will be running on a FOSS operating system.
 
 As a result, the development and shaping of these technologies is crucial in the development of E-Commerce and the community-based software model has moved out of the universities and into the data-centres, with large corporations such as Sun, IBM, HP and Novell relying and heavily contributing to FOSS and steadily more companies making use of FOSS components.
@@ -12,6 +16,7 @@ As a result, the development and shaping of these technologies is crucial in the
 FOSS shows some promise but there are also possible issues that may need to be addressed before it could ever replace traditional proprietary software.
 
 ### Key Events
+
 In the late 1950s when mainframes started to appear in academic institutions the software available to perform tasks was freely shared by programmers within these institutions, similarly to how academic research is shared in other fields. As mainframes found their way into the business world in the late 1970s, the programmers and academic institutions realised the ability to obtain monetary reward for their software or wished to keep the intricacies of what they were doing secret. As time went on more software was being sold, frequently with prohibitive license agreements, preventing unauthorised duplication and/or restricting access to the source code used in creating the software.
 
 In 1983 a programmer at MIT named Richard Stallman created the GNU project with the goal of designing an operating system with an approach closer to that adopted in the 1950s-70s: the free sharing of information. In 1985 he founded the Free Software Foundation (FSF) whose goal was to promote and support his new _"free software"_ movement. The key foundation in this was the creation of the GNU General Public License (GPL), a license for the new software allowing any user of the software access to the source code and the rights to modify and redistribute any changed version. This software does not necessarily have to be provided monetarily free but frequently is \[Stallman, 2002\].
@@ -25,6 +30,7 @@ Since Linux was created companies have been open-sourcing previously proprietary
 Linux is used across computing in embedded devices, servers, supercomputers, mainframes and desktop machines. It is seeing increased use in governments such as South Korea and Germany and in schemes such as the One Laptop Per Child scheme, delivering a low-cost laptop computer to children in developing nations, using FOSS to allow sale at $100.
 
 ### Key Actors
+
 IBM announced support for Linux in 1999, providing applications, support and working with the open-source community to provide support for it's hardware. Today IBM employs more than 300 full-time staff to work on Linux. IBM also releases code under FOSS licenses, such as Eclipse (a software development tool) and Apache Derby (a high performance database). IBM is also currently engaged in a lawsuit with SCO over the intellectual property of the Linux operating system.
 
 HP supports the open-source community through employees with open-source job responsibilities and sell Linux workstations.
@@ -38,6 +44,7 @@ Microsoft was ruled by the US DOJ to hold a monopoly in the operating systems ma
 Sun Microsystems supports Linux on its systems and open-sourced major pieces of software such as StarOffice, Java and its Solaris operating system. This makes them the largest commercial contributor of FOSS, at an estimated 312 million euros worth of programmer time by the EU-commission study _"Economic impact of open source software on innovation and the competitiveness of the Information and Communication Technologies (ICT) sector in the EU_". The FSF own the copyright on most GNU software and some non-GNU FOSS. They actively campaign against DRM, software patents and user interface copyright.
 
 ### Potentials
+
 Raymond argues that the proverb _"Necessity is the mother of invention"_ is especially relevant in the software world and the that _"Every good work of software starts by scratching a developer's personal itch"_ \[Raymond, 2001\]. He claims that the reason the quality of software in the FOSS is so high is that developers tend to work on software that benefits them personally and that they enjoy working on. Another point is that _"Great \[programmers\] know what to ... reuse_", highlighting that time is frequently wasted in software development solving a common problem but, in the case of proprietary-software, existing _"encumbered"_ code is not or cannot be reused. Microsoft and Apple made use of existing BSD code in their development of their respective platform operating systems but cannot use any GPL code. However, all GPL applications can reuse this code in applications.
 
 Madanmohan and Deapos reveal some of the benefits of this reuse of FOSS, such as the open disclosure of bugs and performance details, frequent updates, documentation and the ability to modify the existing code, allowing a firm to aid their competitive position by reducing development costs and increasing development speed of new products \[Madanmohan and Deapos, 2004\]. They highlight the popularity of the BSD license over the GPL in companies, due to the ability to keep the modified source private and include only an attribution to the original source.
@@ -54,8 +61,8 @@ Gabriel and Goldman argue that the ideals and seeming effectiveness of FOSS prac
 
 "_It is as if all writers had their own private companies and only people in the Melville company could read 'Moby Dick' and only those in Hemingway's could read 'The Sun Also Rises'. And we expect people to learn to program in this exact context?_"
 
-
 ### Issues and Tensions
+
 Castells claims that the next frontier of FOSS development is _"user-orientated commercialisation_", raising the lack of interested of computer programmers in developing user-friendly software to directly try and attack Microsoft's market share \[Castells, 2001\]. Since this paper was written, there has been some advancement, with projects such Ubuntu Linux aiming to be easy to use and _"not made any more complex than absolutely necessary_". Another major project is OpenUsability, a project aiming to coordinate usability experts to analyse and improve open-source software.
 
 Nichols and Twidale further elaborate on this problem, showing that software developers are not suitable at designing user interfaces for non-technical users \[Nichols and Twidale, 2003\]. To fix this imbalance, software firms hire usability experts but open-source suffers in this area. As previously mentioned, there are some usability experts contributing to open-source software, but there are far fewer than needed working with FOSS. They also highlight that, due to the frequently self-motivated functionality improvements, technical users may be less likely to work on features for novice users. This difference in motivation is a major difference between FOSS and commercial development, with commercial developers focusing on user satisfaction as the primary goal whereas with FOSS this may be secondary to nonexistent.
@@ -71,6 +78,7 @@ Lerner and Tirole perform some further analysis of the possible dangers of _"for
 Hein shows another example of a _"fork_", this time illustrating the benefit of the ability to _"fork_". They discuss the X.org _"fork"_ from XFree86, caused by a disagreement amongst the development team over a license change \[Hein, 2006\]. X.org is now the dominant version used and the _"fork"_ has spurred more interest in development with new developers and new technologies appearing since the _"fork_", despite a slight stagnation prior. Hein also raises another important point; the open nature of the FOSS community may appear more argumentative and conflicting, but this is common inside many proprietary software companies but just not viewable to the public at large.
 
 ### Conclusion
+
 FOSS community projects have influenced many areas from food (e.g. OpenCola) to movie production (e.g. Elephants Dream) and encyclopedias (e.g. Wikipedia). Governments around the world are starting to recognise the importance in open standards, with the EU recently fining Microsoft and enforcing them to release interoperation documentation and various countries demanding the use of OpenDocument for their external documents. Clearly there is a rising demand for transparency and openness, something FOSS inherently provides.
 
 FOSS may never fully replace traditional proprietary software but it has certainly made an impact and highlighted the benefits of leveraging geographically distant communities to work together and solve problems. Community-based support and development have always been commonplace on the Internet and with the rise of Web 2.0 (the focus on a community-driven Web) more businesses are seeing online communities as a way to remain competitive in an ever-changing field.

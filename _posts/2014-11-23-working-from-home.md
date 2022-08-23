@@ -1,3 +1,7 @@
+---
+redirect_from:
+- /2014/11/23/working-from-home/
+---
 I used to have a list of "Things I Will Never Do In My Job" when I was at university. Looking back at the 7 years since I graduated I realise I've done almost all of them.
 
 ![Home office with guitar]({{ '/images/a/home_office_guitar.jpg' | absolute_url }})

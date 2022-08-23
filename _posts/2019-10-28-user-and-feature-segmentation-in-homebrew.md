@@ -1,5 +1,7 @@
 ---
 title: User and Feature Segmentation in Homebrew
+redirect_from:
+- /2019/10/28/user-and-feature-segmentation-in-homebrew/
 ---
 
 Many software projects that operate at scale want ways to be able to expose some features or test some releases of their software on a subset of their users before they are released to the majority. In Homebrew we have two ways of doing this: developer segmentation and feature flags (that I stole from GitHub).

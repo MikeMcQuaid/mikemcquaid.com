@@ -1,5 +1,7 @@
 ---
 title: Making Homebrew Financially Sustainable
+redirect_from:
+- /2019/10/14/making-homebrew-financially-sustainable/
 ---
 
 More and more open source projects are seeking to get financial support from their users. In this post I’m going to talk about the approaches we’ve taken in Homebrew and their pros and cons.

@@ -1,3 +1,7 @@
+---
+redirect_from:
+- /2020/12/22/types-of-remote-jobs/
+---
 There's a lot of discussion currently ([I wonder why](https://en.wikipedia.org/wiki/COVID-19_pandemic)) about "remote working". As someone who has been doing it for 11+ years at this point I've noticed that people mean pretty radically different things when they talk about "remote jobs".
 
 Here's the categories as I currently see them:
