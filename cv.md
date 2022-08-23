@@ -5,9 +5,9 @@ classes: stealth-lists
 ---
 ### Mike McQuaid
 
-#### Principal Engineer
+#### Principal Engineer and Project Leader
 
-I am a product-focused engineer who loves making software developers more efficient through my work on improving developer productivity through work on developer tools, open source software, developer experience and developer relations.
+Early GitHub engineer (#232) and early Homebrew maintainer (#3). 15+ years professional experience building consumer software at extreme scales. Published author with Manning and speaker at many international conferences.
 
 **I work from home in Edinburgh, Scotland and will never consider moving or commuting to another city, sorry!**
 
