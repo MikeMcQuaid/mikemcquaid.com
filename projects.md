@@ -8,7 +8,7 @@ layout: page
 
 ![GitHub]({{ '/images/a/github.png' | absolute_url }})
 
-Employee #232. Built [Codespaces for GitHub's internal usage](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/), [GitHub Sponsors](https://github.com/sponsors/), [repository archiving](https://github.blog/2017-11-08-archiving-repositories/), [Open Source Friday](https://opensourcefriday.com), [Open Source Guides](https://opensource.guide), [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})), [new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/), [GitHub Enterprise's](https://github.com/enterprise) [release process](https://github.blog/2015-10-06-runnable-documentation/) and many more changes invisible to those outside GitHub.
+Employee #232. Built [Merge Queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue), [Codespaces for GitHub's internal usage](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/), [GitHub Sponsors](https://github.com/sponsors/), [repository archiving](https://github.blog/2017-11-08-archiving-repositories/), [Open Source Friday](https://opensourcefriday.com), [Open Source Guides](https://opensource.guide), [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})), [new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/), [GitHub Enterprise's](https://github.com/enterprise) [release process](https://github.blog/2015-10-06-runnable-documentation/) and many more changes invisible to those outside GitHub.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 
@@ -71,12 +71,6 @@ Creator. Official TextMate bundle providing GitHub Flavoured Markdown extensions
 ![Git in Practice]({{ '/images/a/gitinpractice.png' | absolute_url }})
 
 Author. An opinionated, intermediate/advanced Git book.
-
-#### [GitHub Enterprise](https://github.com/enterprise)
-
-![GitHub Enterprise]({{ '/images/a/github-enterprise.png' | absolute_url }})
-
-Hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://github.blog/2015-10-06-runnable-documentation/).
 
 #### [AllTrails](https://www.alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?)
 
