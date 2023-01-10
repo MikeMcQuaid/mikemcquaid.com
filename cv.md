@@ -7,7 +7,7 @@ classes: stealth-lists
 
 #### Principal Engineer and Project Leader
 
-Early GitHub engineer (#232) and early Homebrew maintainer (#3). 15+ years professional experience building consumer software at extreme scales. Published author with Manning and speaker at many international conferences.
+Early GitHub engineer (#232) and early Homebrew maintainer (#3). 15+ years professional experience building consumer software at extreme scales. Published author with Manning ([Git in Practice]({{ '/gitinpractice/' | absolute_url }})) and [speaker at many international conferences]({{ '/talks/' | absolute_url }}).
 
 **I work from home in Edinburgh, Scotland and will never consider moving or commuting to another city, sorry!**
 
@@ -72,16 +72,6 @@ An opinionated intermediate/advanced Git book published with Manning Publication
 #### [The University of Edinburgh](http://www.ed.ac.uk/) (2003 - 2007)
 
 [BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
-
-### Skills
-
-I am a genuine full-stack engineer: I have happily worked on everything from HTML/CSS/JavaScript to Linux kernel hardware device driver development.
-
-Widespread, proven experience leading, maintaining, sustaining, growing and contributing to open source software projects and communities of all sizes.
-
-Regularly advocate for, design and implement CI/testing/automation systems and processes to make engineers dramatically more productive.
-
-Extensive experience building, maintaining and fixing large and small, green field and legacy software using Ruby, Rails, Git, Bash/shell scripts, C, MySQL and CMake. Productive with other languages and technologies in hours. Led many cross-platform development/ports of applications.
 
 ### Personal
 
