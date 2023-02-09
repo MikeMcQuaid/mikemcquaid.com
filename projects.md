@@ -28,13 +28,13 @@ Creator. A script to bootstrap a minimal macOS development system. Built for Git
 
 Maintainer. Like Ruby's bundler but for non-Ruby dependencies from Homebrew and various other sources. Brought into GitHub organisation and integrated with the rest of the Homebrew ecosystem.
 
+### Past
+
 #### [TwitterDelete](https://github.com/MikeMcQuaid/TwitterDelete)
 
 ![TwitterDelete]({{ '/images/a/twitterdelete.png' | absolute_url }})
 
 Creator. A small application to delete your old, unpopular tweets.
-
-### Past
 
 #### [Balancing Dads]({{ '/balancingdads/' | absolute_url }})
 
