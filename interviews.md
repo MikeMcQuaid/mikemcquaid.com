@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git and GitHub. Here are some examples:
 
+#### [Pop open a cask: Homebrew version 4.0.0 is here](https://www.theregister.com/2023/02/27/homebrew_version_4_is_here/)
+
+The Register, 27 February 2023
+
 #### [Mike McQuaid of Homebrew on Sustainably Working on OSS Projects](https://podcast.sustainoss.org/117)
 
 SustainOSS, 15 April 2022
