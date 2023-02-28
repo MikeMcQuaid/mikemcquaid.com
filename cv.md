@@ -13,9 +13,17 @@ Early GitHub engineer (#232) and early Homebrew maintainer (#3). 15+ years profe
 
 ### Experience
 
-#### [GitHub](http://github.com/) (2013 - Present)
+#### [Raise.dev](https://www.raise.dev) (2023 - Present)
 
-##### Principal Engineer (2022 - Present)
+CTO and Cofounder. Building something new. Stay tuned...
+
+#### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
+
+Project Leader and longest-running maintainer. Invented Homebrew binary packages (bottles) which were featured in Apple's Touch Bar MacBook Pro keynote and are used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](https://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored people in several [Google Summer of Codes](https://summerofcode.withgoogle.com) a [MLH Fellowship](https://fellowship.mlh.io) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting. Migrated Homebrew to GitHub Packages which required extensive changes and collaboration in both Homebrew and GitHub.
+
+#### [GitHub](http://github.com/) (2013 - 2023)
+
+##### Principal Engineer (2022 - 2023)
 
 Lead for the [Merge Queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue) project, migrating GitHub's monolith to using it, improving deployment throughput by ~33% to 1.7k PRs merged in 30 days which also measurably improved internal developer satisfaction. Solving engineering-wide developer productivity/experience and architecture problems. Documented heuristics on when internal teams should build in the Rails monolith vs. a microservice. Working with GitHub's OSPO to improve internal and external open source project management tooling. 20th most prolific contributor to GitHub's Rails monolith, out of 1276 people, in my 10 years working there.
 
@@ -30,10 +38,6 @@ Improved GitHub for open source (collaborating with Google, Microsoft and Facebo
 ##### Senior Engineer (2013 - 2016, 2018 - 2020)
 
  Technical lead on [GitHub Sponsors](https://github.com/sponsors/). Setup, participated in and trained others on on-call application, first responder and ops/infrastructure rotations. Improved marketing organisation productivity building new JSON, Kafka and Go micro-services. Improved database performance, process and tooling. Built [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})) reducing development downtime for all engineers. Improved API and webhooks by fixing bugs, building process and [conceiving new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/). Hired to improve the quality of [GitHub Enterprise](https://github.com/enterprise) and measurably improved it through bug fixing and [improving manual QA, CI, packaging, deployment, automation and ChatOps for the release process](https://github.blog/2015-10-06-runnable-documentation/).
-
-#### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
-
-Project Leader and longest-running maintainer. Invented Homebrew binary packages (bottles) which were featured in Apple's Touch Bar MacBook Pro keynote and are used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](https://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored people in several [Google Summer of Codes](https://summerofcode.withgoogle.com) a [MLH Fellowship](https://fellowship.mlh.io) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting. Migrated Homebrew to GitHub Packages which required extensive changes and collaboration in both Homebrew and GitHub.
 
 #### [AllTrails](https://www.alltrails.com) (2012 - 2013)
 

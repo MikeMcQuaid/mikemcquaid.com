@@ -4,11 +4,9 @@ layout: page
 ---
 ### Current
 
-#### [GitHub](https://github.com)
+#### [Raise.dev](https://www.raise.dev) (2023 - Present)
 
-![GitHub]({{ '/images/a/github.png' | absolute_url }})
-
-Employee #232. Built [Merge Queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue), [Codespaces for GitHub's internal usage](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/), [GitHub Sponsors](https://github.com/sponsors/), [repository archiving](https://github.blog/2017-11-08-archiving-repositories/), [Open Source Friday](https://opensourcefriday.com), [Open Source Guides](https://opensource.guide), [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})), [new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/), [GitHub Enterprise's](https://github.com/enterprise) [release process](https://github.blog/2015-10-06-runnable-documentation/) and many more changes invisible to those outside GitHub.
+CTO and Cofounder. Building something new. Stay tuned...
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 
@@ -29,6 +27,12 @@ Creator. A script to bootstrap a minimal macOS development system. Built for Git
 Maintainer. Like Ruby's bundler but for non-Ruby dependencies from Homebrew and various other sources. Brought into GitHub organisation and integrated with the rest of the Homebrew ecosystem.
 
 ### Past
+
+#### [GitHub](https://github.com)
+
+![GitHub]({{ '/images/a/github.png' | absolute_url }})
+
+Employee #232. Built [Merge Queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue), [Codespaces for GitHub's internal usage](https://github.blog/2021-08-11-githubs-engineering-team-moved-codespaces/), [GitHub Sponsors](https://github.com/sponsors/), [repository archiving](https://github.blog/2017-11-08-archiving-repositories/), [Open Source Friday](https://opensourcefriday.com), [Open Source Guides](https://opensource.guide), [Strap](https://github.com/MikeMcQuaid/strap) ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})), [new APIs](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api/), [GitHub Enterprise's](https://github.com/enterprise) [release process](https://github.blog/2015-10-06-runnable-documentation/) and many more changes invisible to those outside GitHub.
 
 #### [TwitterDelete](https://github.com/MikeMcQuaid/TwitterDelete)
 
