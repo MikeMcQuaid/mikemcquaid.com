@@ -5,7 +5,7 @@ classes: stealth-lists
 ---
 ### Mike McQuaid
 
-#### Principal Engineer and Project Leader
+#### Raise.dev CTO and Homebrew Project Leader
 
 Early GitHub engineer (#232) and early Homebrew maintainer (#3). 15+ years professional experience building consumer software at extreme scales. Published author with Manning ([Git in Practice]({{ '/gitinpractice/' | absolute_url }})) and [speaker at many international conferences]({{ '/talks/' | absolute_url }}).
 
