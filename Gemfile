@@ -5,8 +5,14 @@ gem "github-pages", group: :jekyll_plugins
 # needed for Ruby >=3.0
 gem "webrick"
 
+# stops message being printed every startup
+gem "faraday-retry"
+
+group :jekyll_plugins do
+  gem "jekyll-asciidoc"
+end
+
 group :development do
-  gem "asciidoctor"
   gem "rake"
 end
 
