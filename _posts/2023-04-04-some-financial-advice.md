@@ -46,7 +46,7 @@ Each list is in order of descending importance.
 
 ### Small business
 
-- Prefer recurring monthly payments over one-off payments.
+- Prefer recurring monthly payments from customers over one-off payments.
   This should be set up with standing orders, direct debits or automated credit card billing.
 - Inversely, choose one-off business expenses rather than recurring ones.
   Your cash flow can be badly harmed by too many recurring expenses.
