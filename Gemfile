@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll_plugins
+gem "jekyll"
 
 # needed for Ruby >=3.0
 gem "webrick"
@@ -10,6 +10,13 @@ gem "faraday-retry"
 
 group :jekyll_plugins do
   gem "jekyll-asciidoc"
+  gem "jekyll-feed"
+  gem "jekyll-optional-front-matter"
+  gem "jekyll-redirect-from"
+  gem "jekyll-relative-links"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-titles-from-headings"
 end
 
 group :development do

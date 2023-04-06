@@ -6,7 +6,7 @@ task default: :test
 
 task :jekyll do
   require "jekyll"
-  Jekyll::Commands::Build.process({ future: true })
+  Jekyll::Commands::Build.process({ strict_front_matter: true })
 end
 
 desc "Run html proofer to validate the HTML output."
