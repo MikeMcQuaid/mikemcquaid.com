@@ -1,5 +1,6 @@
 title: Mike McQuaid
 description: Raise.dev CTO and Homebrew Project Leader
+url: https://mikemcquaid.com
 
 author:
   name: Mike McQuaid
@@ -33,14 +34,14 @@ exclude:
   - vendor
 
 plugins:
-  - jekyll-redirect-from
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-optional-front-matter
-  - jekyll-titles-from-headings
-  - jekyll-relative-links
   - jekyll-asciidoc
+  - jekyll-feed
+  - jekyll-optional-front-matter
+  - jekyll-redirect-from
+  - jekyll-relative-links
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-titles-from-headings
 
 feed:
   path: atom.xml
