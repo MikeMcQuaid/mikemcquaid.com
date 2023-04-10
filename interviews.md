@@ -3,7 +3,11 @@ title: Interviews
 layout: page
 redirect_from: /press
 ---
-I sometimes give interviews about open source, Homebrew, Git and GitHub. Here are some examples:
+I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
+
+#### [Mike McQuaid's clean, ergonomic setup in Edinburgh, Scotland](https://hackerstations.com/setups/mike_mcquaid/)
+
+Hacker Stations, 8 April, 2023
 
 #### [Homebrew with Mike McQuaid](https://thebakery.dev/55/)
 
