@@ -6,6 +6,6 @@ speakerdeck-ratio: 1.77777777777778
 image: /images/a/open-source-economics.png
 youtube-id: Ju5r7mO6pEs
 ---
-Presented at [GitHub Universe 2021](https://githubuniverse.com/content-library/open-source-economics-is-not-what-you-think/).
+Presented at [GitHub Universe](https://githubuniverse.com/) 2021.
 
 Written up as a blog post: [Open Source Economics (is not what you think)]({% post_url 2021-10-27-open-source-economics %}).
