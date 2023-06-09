@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Reactions to Apple’s new vision](https://changelog.com/friends/3)
+
+Changelog and Friends, 9 June, 2023
+
 #### [Mike McQuaid's clean, ergonomic setup in Edinburgh, Scotland](https://hackerstations.com/setups/mike_mcquaid/)
 
 Hacker Stations, 8 April, 2023
