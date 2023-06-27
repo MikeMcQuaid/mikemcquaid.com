@@ -37,6 +37,7 @@ task test: :jekyll do
     ],
     ignore_status_codes: [0, 302, 303, 429, 521],
     ignore_urls: [
+      %r{^https://mikemcquaid.com/},
       %r{^https://web\.archive\.org/web/},
       %r{^https://www\.linkedin\.com/},
       %r{^https://docs\.github\.com/en/},
