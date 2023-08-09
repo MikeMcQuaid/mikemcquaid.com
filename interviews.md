@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [The best books for becoming a great open source software engineer](https://shepherd.com/best-books/becoming-a-great-open-source-software-engineer)
+
+Shepherd, 1 October, 2023
+
 #### [Reactions to Apple’s new vision](https://changelog.com/friends/3)
 
 Changelog and Friends, 9 June, 2023
