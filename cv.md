@@ -13,7 +13,7 @@ Early GitHub engineer (#232) and early Homebrew maintainer (#3). 15+ years profe
 
 ### Experience
 
-#### [Raise.dev](https://www.raise.dev) (2023 - Present)
+#### [Raise.dev](https://workbrew.com) (2023 - Present)
 
 CTO and Cofounder. Building something new. Stay tuned...
 
