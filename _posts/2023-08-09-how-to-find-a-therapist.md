@@ -8,7 +8,7 @@ Based on my experience finding a therapist, I've outlined how I (and several fri
 - 3) Filter by “**Types of Therapy**” if you know enough already to have an opinion.
      In my case, my free work sessions were [Cognitive Behavioral Therapy (CBT)](https://en.wikipedia.org/wiki/Cognitive_behavioral_therapy) and, through my research, I thought [psychotherapy](https://en.wikipedia.org/wiki/Psychotherapy) would be a better fit to explore some childhood issues.
 - 4) Filter by "**Gender**" if you have a preference.
-     I struggle with talking to men about some issues picked "Show Me Women".
+     I struggle with talking to men about some issues so picked "Show Me Women".
 - 5) Filter by "**Insurance**" if you have health/medical insurance that you want to use to pay for your therapist.
      I have never had health insurance so paid directly.
 - 6) After exploring their profiles, select 3-8 therapists that align with your requirements.
