@@ -1,2 +1,5 @@
 # Don't care about line length
 MD013: false
+
+# Don't need first line to be heading for jekyll-titles-from-headings
+MD041: false
