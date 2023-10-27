@@ -52,6 +52,7 @@ task test: :jekyll do
       "https://www.patreon.com/homebrew",
       "https://www.nytimes.com/2015/02/15/magazine/how-one-stupid-tweet-ruined-justine-saccos-life.html",
       "https://github.com/Homebrew/brew.sh/blob/bc5a12b3c94335a577629dbeffe225d88c000a75/_layouts/index.html#L4",
+      "https://github.com/BrewTestBot",
     ],
     parallel: { in_processes: Etc.nprocessors },
     validation: {
