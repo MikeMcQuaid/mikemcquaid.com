@@ -41,7 +41,7 @@ I could never see much of a difference between:
 It feels like there's a similar thing going on with judging people's intentions.
 Despite my best attempts, I cannot draw a meaningful distinction between:
 
-- "Bob's and Alice's are important (but don't know for sure what they are)"
+- "Bob's and Alice's intentions are important (but don't know for sure what they are)"
 - "Bob's and Alice's intentions do not matter (only their outcomes)"
 
 As a result: I no longer care about intentions.
