@@ -12,7 +12,7 @@ Since my [last post]({% post_url 2014-11-23-working-from-home %}) on working fro
 - ~1130 (three days a week): go to the gym.
 - ~1300: get back from gym, feed lunch to dog (and myself, at my desk). Deal with anything that happened while I was at the gym.
 - ~1730: stop work when my spouse gets home. Feed dinner to myself (and dog).
-- 1900 (and weekends): go see friends, play computer games, work on open-source play bass, watch TV. If I'm sitting on my computer: periodically check/triage emails and quickly reply to anything urgent or that's blocking other people.
+- 1900 (and weekends): go see friends, play computer games, work on open-source, play bass, watch TV. If I'm sitting on my computer: periodically check/triage emails and quickly reply to anything urgent or that's blocking other people.
 - 2300: go to sleep. I need 8 hours.
 
 ![Puppy sleeping in the office]({{ '/images/a/puppy_office.jpg' | absolute_url }})
