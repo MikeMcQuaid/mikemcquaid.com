@@ -5,29 +5,33 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [State of Open: The UK in 2023 Phase Three “Skills or Bust” report](https://openuk.uk/state-of-open-the-uk-in-2023-phase-three-skills-or-bust/)
+
+OpenUK, 22nd November, 2023
+
 #### [The best books for becoming a great open source software engineer](https://shepherd.com/best-books/becoming-a-great-open-source-software-engineer)
 
-Shepherd, 1 October, 2023
+Shepherd, 1st October, 2023
 
 #### [Reactions to Apple’s new vision](https://changelog.com/friends/3)
 
-Changelog and Friends, 9 June, 2023
+Changelog and Friends, 9th June, 2023
 
 #### [Mike McQuaid's clean, ergonomic setup in Edinburgh, Scotland](https://hackerstations.com/setups/mike_mcquaid/)
 
-Hacker Stations, 8 April, 2023
+Hacker Stations, 8th April, 2023
 
 #### [Homebrew with Mike McQuaid](https://thebakery.dev/55/)
 
-The Developers' Bakery, 27 March 2023
+The Developers' Bakery, 27th March 2023
 
 #### [Pop open a cask: Homebrew version 4.0.0 is here](https://www.theregister.com/2023/02/27/homebrew_version_4_is_here/)
 
-The Register, 27 February 2023
+The Register, 27th February 2023
 
 #### [Mike McQuaid of Homebrew on Sustainably Working on OSS Projects](https://podcast.sustainoss.org/117)
 
-SustainOSS, 15 April 2022
+SustainOSS, 15th April 2022
 
 #### [The Art Of Saying “No” As A Leader.](https://www.exaltitude.io/blogs/the-art-of-saying-no-as-a-leader)
 
