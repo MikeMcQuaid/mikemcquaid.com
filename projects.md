@@ -148,11 +148,11 @@ Technical lead for team that created the analysis mode and integrated Valgrind's
 
 ![Kontact]({{ '/images/a/kontact.png' | absolute_url }})
 
-Worked on KDE on Mac integration/bug fixing. Improved the [KBlog XML-RPC API](https://web.archive.org/web/20190303012538/https://api.kde.org/4.12-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals (as blog posts) from KOrganizer](http://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
+Worked on KDE on Mac integration/bug fixing. Improved the [KBlog XML-RPC API](https://web.archive.org/web/20190303012538/https://api.kde.org/4.12-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals (as blog posts) from KOrganizer](https://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
 
 #### [CMake](http://www.cmake.org/)
 
-Fixed bugs in and improved cross-platform packaging in CPack. Added Qt plugin support. Created [DeployQt4 module](http://mikemcquaid.com/2012/01/deploying-qt-applications-with-deployqt4/) for easy deployment of Qt applications. [Released in 2.8.7](https://www.kitware.com/cmake-2-8-7-now-available/).
+Fixed bugs in and improved cross-platform packaging in CPack. Added Qt plugin support. Created [DeployQt4 module](https://mikemcquaid.com/2012/01/deploying-qt-applications-with-deployqt4/) for easy deployment of Qt applications. [Released in 2.8.7](https://www.kitware.com/cmake-2-8-7-now-available/).
 
 #### [Linux kernel](http://www.kernel.org/)
 

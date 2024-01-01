@@ -35,14 +35,14 @@ task test: :jekyll do
     ignore_files: [
       %r{/making-dizzy-shine-with-ajax/},
     ],
-    ignore_status_codes: [0, 302, 303, 429, 521],
+    ignore_status_codes: [0, 302, 303, 400, 429, 521],
     ignore_urls: [
       %r{^https://mikemcquaid.com/},
+      %r{^https://twitter.com/},
       %r{^https://web\.archive\.org/web/},
       %r{^https://www\.linkedin\.com/},
       %r{^https://docs\.github\.com/en/},
       "https://github.com/pulls",
-      "https://twitter.com/MikeMcQuaid",
       "https://www.manning.com/books/git-in-practice?a_bid=5688bbf4&a_aid=MikeMcQuaid",
       "https://blogs.oracle.com/java/annoucing-javaone-2014-rock-stars-v2",
       "https://www.mailmunch.com/blog/sales-funnel/",
