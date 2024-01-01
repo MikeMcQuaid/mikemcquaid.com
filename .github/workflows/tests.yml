@@ -20,7 +20,7 @@ jobs:
         run: bundle exec rake
 
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
 
   deploy:
     needs: tests
@@ -30,7 +30,7 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: actions/deploy-pages@v2
+      - uses: actions/deploy-pages@v4
         id: deploy-pages
     outputs:
       deploy_url: ${{ steps.deploy-pages.outputs.page_url }}
