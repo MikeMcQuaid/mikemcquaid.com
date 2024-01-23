@@ -4,6 +4,7 @@ layout: base
 ---
 <ul class="index-lists">
   {% for talk in site.talks reversed %}
+  {% if site.future == false and talk.date > site.time %} {% continue %} {% endif %}
   <li>
     <a href="{{ talk.url | absolute_url }}" title="{{ talk.title }}">
       {% if talk.speakerdeck-id %}
