@@ -54,6 +54,8 @@ task test: :jekyll do
       "https://github.com/Homebrew/brew.sh/blob/bc5a12b3c94335a577629dbeffe225d88c000a75/_layouts/index.html#L4",
       "https://github.com/BrewTestBot",
       "https://www.numerama.com/tech/260469-comment-github-contribue-a-lessor-du-developpement-en-open-source.html",
+      "https://github.com/MikeMcQuaid/GitInPractice#git-in-practice",
+      "https://github.com/Homebrew/brew#donations",
     ],
     parallel: { in_processes: Etc.nprocessors },
     validation: {
