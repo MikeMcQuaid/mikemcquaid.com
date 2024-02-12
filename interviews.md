@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [External Forces At Play in our Digital Future](https://www.youtube.com/watch?v=6sRAUZd2TCQ)
+
+State of Open Con, 6th February, 2024
+
 #### [State of Open: The UK in 2023 Phase Three “Skills or Bust” report](https://openuk.uk/state-of-open-the-uk-in-2023-phase-three-skills-or-bust/)
 
 OpenUK, 22nd November, 2023
