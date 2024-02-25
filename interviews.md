@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Brewing up something for work](https://changelog.com/friends/3)
+
+Changelog and Friends, 20th February, 2024
+
 #### [External Forces At Play in our Digital Future](https://www.youtube.com/watch?v=6sRAUZd2TCQ)
 
 State of Open Con, 6th February, 2024
