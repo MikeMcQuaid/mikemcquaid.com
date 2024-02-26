@@ -80,7 +80,7 @@ An opinionated intermediate/advanced Git book published with Manning Publication
 * [{{ site.author.email }}](mailto:{{ site.author.email }})
 * [mikemcquaid.com]({{ '/' | absolute_url }}) (written articles, projects and talks)
 * [github.com/MikeMcQuaid](https://github.com/MikeMcQuaid) (my open-source projects)
-* [stackexchange.com/users/3692/mike-mcquaid](http://stackexchange.com/users/3692/mike-mcquaid) (my StackExchange answers)
+* [stackexchange.com/users/3692/mike-mcquaid](https://stackexchange.com/users/3692/mike-mcquaid) (my StackExchange answers)
 
 ### [References]({{ '/references/' | absolute_url }})
 
