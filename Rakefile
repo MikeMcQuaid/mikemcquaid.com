@@ -56,6 +56,8 @@ task test: :jekyll do
       "https://www.numerama.com/tech/260469-comment-github-contribue-a-lessor-du-developpement-en-open-source.html",
       "https://github.com/MikeMcQuaid/GitInPractice#git-in-practice",
       "https://github.com/Homebrew/brew#donations",
+      "https://stackexchange.com/users/3692/mike-mcquaid",
+      "https://stackoverflow.com/help/minimal-reproducible-example",
     ],
     parallel: { in_processes: Etc.nprocessors },
     validation: {
