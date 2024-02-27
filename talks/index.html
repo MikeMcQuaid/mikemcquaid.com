@@ -2,7 +2,7 @@
 title: Talks
 layout: base
 ---
-<ul class="index-lists">
+<ul class="index-lists talks">
   {% for talk in site.talks reversed %}
   {% if site.future == false and talk.date > site.time %} {% continue %} {% endif %}
   <li>

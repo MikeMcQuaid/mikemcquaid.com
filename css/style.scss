@@ -288,14 +288,14 @@ h5 {
   height: 181px;
   float: left;
   margin: 0 1em 1.5em 0;
-  padding-top: 0.75em;
+  padding-top: 0.6em;
 
   img {
     padding: 0 !important;
     max-height: 181px;
   }
 
-  @media only screen and (max-device-width: 480px) {
+  @media only screen and (max-device-width: 730px) {
     float: none;
   }
 }
@@ -431,6 +431,9 @@ blockquote {
 
 .index-lists h2 {
   font-size: 1.2em;
+  @media only screen and (max-device-width: 480px) {
+    padding: 0;
+  }
 }
 
 .index-lists, .stealth-lists {
@@ -439,6 +442,22 @@ blockquote {
   }
   li {
     list-style: none;
+    margin-bottom: 1.5em;
+  }
+  p {
+    margin-block-start: 0.25em;
+  }
+}
+
+.talks {
+  @media only screen and (max-device-width: 730px) {
+    h2 {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    li {
+      margin-bottom: 3.5em;
+    }
   }
 }
 
