@@ -1,13 +1,13 @@
 ---
 slug: konqueror-with-latest-adobe-flash-howto
 title: Konqueror With Latest Adobe Flash HOWTO (Outdated)
-excerpt: I agree with Lubos. <a href="http://blogs.kde.org/node/3162">Flash sucks</a>. However, most of us have or want to use it for things like YouTube or <a href="http://weebls-stuff.com/toons/badgers/">watching badgers</a>.
+excerpt: I agree with Lubos. <a href="https://web.archive.org/web/20180626073829/https://blogs.kde.org/node/3162">Flash sucks</a>. However, most of us have or want to use it for things like YouTube or <a href="http://weebls-stuff.com/toons/badgers/">watching badgers</a>.
 redirect_from:
 - /2007/12/30/konqueror-with-latest-adobe-flash-howto/
 ---
 **This page is outdated. In KDE4 Konqueror will work with the latest Adobe Flash plugin and there is now a 64-bit version of Flash available for Linux. I highly recommend you use one of these instead of the guide below but I'm leaving it here in case you need to use it for another reason.**
 
-I agree with Lubos. [Flash sucks.](http://blogs.kde.org/node/3162) However, most of us _have_ or _want_ to use it for things like YouTube or [watching badgers](http://weebls-stuff.com/toons/badgers/).
+I agree with Lubos. [Flash sucks.](https://web.archive.org/web/20180626073829/https://blogs.kde.org/node/3162) However, most of us _have_ or _want_ to use it for things like YouTube or [watching badgers](http://weebls-stuff.com/toons/badgers/).
 
 As you may be aware the latest versions of Flash depend on **XEmbed** support which Konqueror lacks without various patches to KDELibs and KDEBase which haven't been applied by my distribution and **I couldn't get working** even when I manually patched the necessary parts of KDE myself. I was using the older versions but it appears they have [outstanding](http://www.adobe.com/support/security/bulletins/apsb07-20.html) and actively exploited security holes that they have only fixed in the XEmbed-supporting versions.
 
