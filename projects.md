@@ -6,7 +6,13 @@ layout: page
 
 #### [Workbrew](https://workbrew.com) (2023 - Present)
 
-CTO and Cofounder. Building something new. Stay tuned...
+<video src="https://workbrew.com/lib_AjbltJkwxThFLdSP/zmkv89uy13jlx0ha.mp4" width="100%" autoplay muted controls></video>
+
+CTO and Cofounder, leading product and engineering.
+Providing the missing features and support for companies using Homebrew.
+Workbrew is now available in private beta. It provides MDM integration, fleet configuration and remote brew command execution.
+All our customers get hands-on bespoke support from the longest-running Homebrew maintainer (me!).
+To learn more: book a call with us <https://workbrew.com/demo>.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew)
 

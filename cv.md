@@ -15,7 +15,11 @@ Early GitHub engineer (#232) and early Homebrew maintainer (#3). 15+ years profe
 
 #### [Workbrew](https://workbrew.com) (2023 - Present)
 
-CTO and Cofounder. Building something new. Stay tuned...
+CTO and Cofounder, leading product and engineering.
+Providing the missing features and support for companies using Homebrew.
+Workbrew is now available in private beta. It provides MDM integration, fleet configuration and remote brew command execution.
+All our customers get hands-on bespoke support from the longest-running Homebrew maintainer (me!).
+To learn more: book a call with us <https://workbrew.com/demo>.
 
 #### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
 
