@@ -73,6 +73,16 @@ Wrote battery driver, improved Auxiliary ADC C++ code for Intel XScale on Window
 
 An opinionated intermediate/advanced Git book published with Manning Publications in September 2014.
 
+### Honours and Awards
+
+#### [New Years Honours Contribution to Open Source](https://openuk.uk/2024-honours-list/) (2024)
+
+OpenUK's honours list celebrates the “Social Influencers of Open Source” in the UK.
+
+#### [JavaOne Rock Star](https://blogs.oracle.com/java/post/annoucing-javaone-2014-rock-stars) (2014)
+
+The JavaOne Rock Star Program recognises speakers for their outstanding session content and speaking ability.
+
 ### Education
 
 #### [The University of Edinburgh](http://www.ed.ac.uk/) (2003 - 2007)
