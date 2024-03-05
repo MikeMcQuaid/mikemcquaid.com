@@ -21,11 +21,11 @@ Workbrew is now available in private beta. It provides MDM integration, fleet co
 All our customers get hands-on bespoke support from the longest-running Homebrew maintainer (me!).
 To learn more: book a call with us <https://workbrew.com/demo>.
 
-#### [Homebrew](https://github.com/Homebrew/homebrew/) (2009 - Present)
+#### [Homebrew](https://brew.sh) (2009 - Present)
 
 Project Leader and longest-running maintainer. Invented Homebrew binary packages (bottles) which were featured in Apple's Touch Bar MacBook Pro keynote and are used by Google, Microsoft and Facebook. Fix users issues, plan roadmap, create and manage security program, make new releases, teach new maintainers and contributors and develop features in Ruby and Bash. Started a [successful Kickstarter project](https://www.kickstarter.com/projects/homebrew/brew-test-bot) which was funded in two hours to create a Jenkins CI system for Homebrew. Installed servers into data-centre and keep them running. Ran and mentored people in several [Google Summer of Codes](https://summerofcode.withgoogle.com) a [MLH Fellowship](https://fellowship.mlh.io) and an [Outreachy](https://www.outreachy.org) for Homebrew to successfully attract new maintainers. Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.org) for 501c3 non-profit status in the USA and financial sustainability. Organised first ever Homebrew maintainer meeting. Migrated Homebrew to GitHub Packages which required extensive changes and collaboration in both Homebrew and GitHub.
 
-#### [GitHub](http://github.com/) (2013 - 2023)
+#### [GitHub](https://github.com/) (2013 - 2023)
 
 ##### Principal Engineer (2022 - 2023)
 
@@ -47,21 +47,21 @@ Improved GitHub for open source (collaborating with Google, Microsoft and Facebo
 
 Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end for [AllTrails](https://www.alltrails.com) and [AllSnow](https://web.archive.org/web/20150502025831/http://allsnow.com/?). Developed features, APIs and optimised performance. Setup Jenkins CI and automatic Chef deployment for Rails and mobile applications HockeyApp deployment. Managed and improved AWS EC2 infrastructure.
 
-#### [KDAB](http://kdab.com/) (2009 - 2012)
+#### [KDAB](https://kdab.com/) (2009 - 2012)
 
 Technical team lead providing international Qt/C++ cross-platform consultancy. Led teams who always delivered on time and in budget. Generated successful sales leads and sold a six figure contract (with no previous sales experience). Travelled internationally to train software engineers, solve hard problems and kick off projects to consistently positive customer feedback. Created a new Buildbot/CPack based CI system to improve company productivity.
 
-#### [Mendeley](https://www.mendeley.com/?interaction_required=false) (2008 - 2009)
+#### [Mendeley](https://www.mendeley.com/) (2008 - 2009)
 
 [First non-founder employee](https://blog.mendeley.com/start-up-life/mike-arthur-joins-team-mendeley/) and lead developer for Mendeley Desktop Qt/MSVC++ application, which I ported from Windows to macOS and Linux. Setup all servers. Implemented continuous delivery and deployment through Buildbot and CPack packaging for all OSs. Designed, ran interviews and personally [recruited](https://blog.mendeley.com/start-up-life/introducing-fred-amir-and-a-bond-villain/) [three](https://blog.mendeley.com/academic-life/an-excellent-euroscience-adventure-part-ii/) [engineers](https://blog.mendeley.com/research-miscellanea/a-new-knight-joins-mendeleys-round-table/). [Successfully](https://blog.mendeley.com/academic-features/mendeley-desktop-the-mvc-strikes-back/) [rewrote](https://blog.mendeley.com/2008/11/04/mendeley-desktop-the-about-dialogue-and-the-refactor/) problematic contractor code. Designed, implemented the REST protocol between Desktop and Web.
 
-#### [BT](http://www.bt.com/) (2007 - 2008)
+#### [BT](https://www.bt.com/) (2007 - 2008)
 
 Created record-breaking high-performance network analysis applications in C on the IBM Cell Processor. Taught others about and setup Subversion version control, Buildbot continuous integration and Trac issue tracker. Won a place on the graduate scheme.
 
-#### [Google Summer of Code](http://code.google.com/soc/) (2007)
+#### [Google Summer of Code](https://summerofcode.withgoogle.com) (2007)
 
-Worked on the [KDE](http://www.kde.org/) Qt/C++ project. Improved the [KBlog XML-RPC API](https://web.archive.org/web/20190303012538/https://api.kde.org/4.12-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals (as blog posts) from KOrganizer](https://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1](http://www.kde.org/announcements/4.1/).
+Worked on the [KDE](https://kde.org) Qt/C++ project. Improved the [KBlog XML-RPC API](https://web.archive.org/web/20190303012538/https://api.kde.org/4.12-api/kdepimlibs-apidocs/kblog/html/index.html) for KDE 4.0 API freeze. Added rich-text support and [posting of journals (as blog posts) from KOrganizer](https://mikemcquaid.com/2008/09/27/kde-blog-from-korganizer-howto/) which was [released in KDE 4.1.0](https://kde.org/announcements/4/4.1.0/).
 
 #### [Wolfson Microelectronics](https://en.wikipedia.org/wiki/Wolfson_Microelectronics) (2006)
 
@@ -85,9 +85,9 @@ The JavaOne Rock Star Program recognises speakers for their outstanding session 
 
 ### Education
 
-#### [The University of Edinburgh](http://www.ed.ac.uk/) (2003 - 2007)
+#### [The University of Edinburgh](https://www.ed.ac.uk) (2003 - 2007)
 
-[BSc in Computer Science and Management Science](http://www.inf.ed.ac.uk/undergraduate/csms.html) (2:1)
+[BSc in Computer Science and Management Science](https://www.ed.ac.uk/studying/undergraduate/degrees/index.php?action=view&code=GN42) (2:1)
 
 ### Personal
 
