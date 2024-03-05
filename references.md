@@ -1,17 +1,20 @@
 ---
 layout: page
 ---
-### [Homebrew](https://github.com/Homebrew/homebrew/)
+### [Homebrew](https://brew.sh)
+>
 > Homebrew is one of the most used pieces of software in the world and the project with the highest rate of contribution on GitHub. There is no handbook on how to create, cultivate and maintain something like Homebrew, but if there was one, Mike would be the one who wrote it.
 
 _Max Howell, 2013, creator of Homebrew_
 
 ### [AllTrails](https://www.alltrails.com)
+>
 > Mike is the rare actual "full stack" software engineer. He is familiar with servers and server details, databases, web services and protocols, and with front end design and implementation -- with various languages and technologies. Basically he is an exemplary all around software engineer and he solves problems and gets things done, the kind of person you want in a fast moving technical environment.
 
 _Charlie Collins, 2013, coworker at AllTrails_
 
 ### [KDAB](http://kdab.com/)
+>
 > KDAB is an internationally operating group of companies specializing in cross-platform software consultancy services. Mike has worked for KDAB as a software engineer on a variety of customer projects, as well as conducted Qt trainings on KDAB's behalf. Mike has always shown utmost professionalism and great technical expertise. Of particular value were his permanent quest for self-improvement, both in his own continued education as well as in improving our internal processes and our services to our customers. He always kept the greater goals in mind, both the customers' and KDAB's, even when deeply involved in the day-to-day detailed work.
 
 _Matthias Kalle Dalheimer, 2012, my CEO at KDAB_
@@ -33,6 +36,7 @@ _Mirko Boehm, 2011, my manager at KDAB_
 _Christian Karlsson, 2010, client at KDAB_
 
 ### [Mendeley](https://www.mendeley.com/?interaction_required=false)
+>
 > Mike is a passionate and knowledgeable software engineer. At Mendeley he helped to setup the development procedure and coding standards for the desktop team, and was always was always happy to help out with server administration tasks.
 
 _Ben Dowling, 2009, coworker at Mendeley_
@@ -42,11 +46,13 @@ _Ben Dowling, 2009, coworker at Mendeley_
 _Paul Foeckler, 2009, my manager at Mendeley_
 
 ### [BT](http://www.bt.com/)
+>
 > Mike is a highly talented software developer skilled in many disciplines and has the ability to pick up new tools and technologies very quickly. He has a proactive mindset and the dedication to consistently produce high quality work, a pleasure working with.
 
 _Stephen Lynch, 2008, my manager at BT_
 
 ### [Wolfson Microelectronics](https://en.wikipedia.org/wiki/Wolfson_Microelectronics)
+>
 > Mike worked well above the level of a student software engineer whilst at Wolfson. He worked well within the Linux team and quickly learned aspects of Linux kernel driver development to complete difficult sections of a touchscreen driver.
 
 _Liam Girdwood, 2008, my manager at Wolfson Microelectronics_

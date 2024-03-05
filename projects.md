@@ -14,7 +14,7 @@ Workbrew is now available in private beta. It provides MDM integration, fleet co
 All our customers get hands-on bespoke support from the longest-running Homebrew maintainer (me!).
 To learn more: book a call with us <https://workbrew.com/demo>.
 
-#### [Homebrew](https://github.com/Homebrew/homebrew)
+#### [Homebrew](https://brew.sh)
 
 ![Homebrew]({{ '/images/a/homebrew.png' | absolute_url }})
 
