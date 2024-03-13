@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Homebrew Unleashed: Diving into the Fast and Efficient Packaging Process](https://topenddevs.com/podcasts/ruby-rogues/episodes/homebrew-unleashed-diving-into-the-fast-and-efficient-packaging-process-ruby-628)
+
+Ruby Rogues, 13th March, 2024
+
 #### [Brewing up something for work](https://changelog.com/friends/3)
 
 Changelog and Friends, 20th February, 2024
