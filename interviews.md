@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [A coffee with Mike McQuaid, Workbrew CTO and Homebrew project leader](https://techinformed.com/a-coffee-with-mike-mcquaid-cto-workbrew-homebrew-project-leader/)
+
+Tech Informed, 15th March, 2024
+
 #### [Homebrew Unleashed: Diving into the Fast and Efficient Packaging Process](https://topenddevs.com/podcasts/ruby-rogues/episodes/homebrew-unleashed-diving-into-the-fast-and-efficient-packaging-process-ruby-628)
 
 Ruby Rogues, 13th March, 2024
