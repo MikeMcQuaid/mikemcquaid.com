@@ -89,7 +89,7 @@ The Changelog, 28th July 2017
 
 OpenSource.com, 27th June 2017
 
-#### [GitHub declares every Friday open source day](https://venturebeat.com/2017/06/27/github-says-fridays-are-for-open-source-work/)
+#### [GitHub declares every Friday open source day](https://venturebeat.com/business/github-says-fridays-are-for-open-source-work/)
 
 VentureBeat, 27th June 2017
 
