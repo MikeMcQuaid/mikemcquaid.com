@@ -85,7 +85,7 @@ The Manifest, 16th August 2017
 
 The Changelog, 28th July 2017
 
-#### [GitHub launches Open Source Friday](https://venturebeat.com/2017/06/27/github-says-fridays-are-for-open-source-work/)
+#### [GitHub launches Open Source Friday](https://opensource.com/article/17/6/open-source-friday-give-back)
 
 OpenSource.com, 27th June 2017
 
