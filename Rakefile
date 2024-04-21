@@ -59,6 +59,7 @@ task test: :jekyll do
       "https://stackexchange.com/users/3692/mike-mcquaid",
       "https://stackoverflow.com/help/minimal-reproducible-example",
       "https://www.meetup.com/openuk-glasgow-edinburgh/events/296929069/",
+      "https://venturebeat.com/business/github-says-fridays-are-for-open-source-work/",
     ],
     parallel: { in_processes: Etc.nprocessors },
     validation: {
