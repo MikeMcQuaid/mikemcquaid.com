@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Open Source Friday with Mike McQuaid and Homebrew](https://www.youtube.com/watch?v=ojJYrOG8D2Q)
+
+GitHub's Open Source Friday, 3rd May, 2024
+
 #### [Episode 356: Workbrew](https://podcast.macadmins.org/2024/03/18/episode-356-workbrew/)
 
 Mac Admins Podcast, 18th March, 2024
