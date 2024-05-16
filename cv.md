@@ -87,7 +87,7 @@ The JavaOne Rock Star Program recognises speakers for their outstanding session 
 
 #### [The University of Edinburgh](https://www.ed.ac.uk) (2003 - 2007)
 
-[BSc in Computer Science and Management Science](https://www.ed.ac.uk/studying/undergraduate/degrees/index.php?action=view&code=GN42) (2:1)
+BSc in Computer Science and Management Science (2:1)
 
 ### Personal
 
