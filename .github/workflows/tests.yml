@@ -25,7 +25,7 @@ jobs:
 
   deploy:
     needs: tests
-    if: github.ref_name == 'main'
+    if: ${{ always() && github.ref_name == 'main' }}
     runs-on: ubuntu-latest
     permissions:
       pages: write
