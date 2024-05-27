@@ -1,7 +1,7 @@
 ---
 title: Curriculum Vitae
 layout: page
-classes: stealth-lists
+redirect_from: /resume/
 ---
 ### Mike McQuaid
 
