@@ -5,6 +5,14 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Riding the Homebrew Wave](https://podcasters.spotify.com/pod/show/ossstartuppodcast/episodes/E135-Riding-the-Homebrew-Wave-e2k761f)
+
+Open Source Startup Podcast, 28th May, 2024
+
+#### [What Open Source Maintainers Should Know About Mental Health](https://www.youtube.com/watch?v=idMaINdubk8)
+
+debug:mind, 28th May, 2024
+
 #### [Homebrew Turns 15](https://www.youtube.com/watch?v=dY31NQP4JPk)
 
 "Homebrew Turns 15" stream, 21st May, 2024
