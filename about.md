@@ -9,7 +9,9 @@ Hello. My name is Mike McQuaid and I make great developer tools.
 
 I live in Edinburgh, Scotland. You should visit, it's nice here.
 
-Feel free to [send me a message on Mastodon](https://mastodon.social/@mikemcquaid) or [email me](mailto:{{ site.author.email }}) to say hello.
+Feel free to [send me a message on Mastodon](https://mastodon.social/@mikemcquaid),
+[email me about Workbrew at mike@workbrew.com](mailto:mike@workbrew.com)
+or [email my personal address](mailto:{{ site.author.email }}) to say hello.
 
 This site has my:
 
