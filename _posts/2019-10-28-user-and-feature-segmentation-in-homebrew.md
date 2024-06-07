@@ -16,4 +16,4 @@ Sometimes new features are so unstable or unpredictable that we don’t want the
 
 ---
 
-Thanks to [Issy Long](https://issyl0.co.uk) for reviewing this post.
+Thanks to [Issy Long](https://www.issylong.com) for reviewing this post.
