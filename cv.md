@@ -7,9 +7,12 @@ redirect_from: /resume/
 
 #### Workbrew CTO and Homebrew Project Leader
 
-Early GitHub engineer (#232) and early Homebrew maintainer (#3). 15+ years professional experience building consumer software at extreme scales. Published author with Manning ([Git in Practice]({{ '/gitinpractice/' | absolute_url }})) and [speaker at many international conferences]({{ '/talks/' | absolute_url }}).
+Early GitHub employee (2013, #232) and Homebrew maintainer (2009, #3).
+Wide experience building software at extreme scales (since 2007).
+Published author of [Git in Practice]({{ '/gitinpractice/' | absolute_url }}) and
+[speaker with >45 talks across international conferences, keynotes and workshops]({{ '/talks/' | absolute_url }}).
 
-**I work from home in Edinburgh, Scotland and will never consider moving or commuting to another city, sorry!**
+**I work from my home in Edinburgh, Scotland and will never consider moving or commuting to another city, sorry!**
 
 ### Experience
 
