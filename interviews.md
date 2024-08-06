@@ -125,11 +125,11 @@ ComputerWeekly, 23rd May 2017
 
 ITPro, 22nd May 2017
 
-#### [GitHub Marketplace goes live](https://www.technative.io/github-marketplace-goes-live/)
+#### [GitHub Marketplace goes live](https://web.archive.org/web/20231001200659/https://technative.io/github-marketplace-goes-live/)
 
 TechNative, 22nd May 2017
 
-#### [Homebrew MacOS package manager gets easier to use](https://www.infoworld.com/article/3194236/development-tools/homebrew-macos-package-manager-gets-easier-to-use.html)
+#### [Homebrew MacOS package manager gets easier to use](https://www.infoworld.com/article/2261736/homebrew-macos-package-manager-gets-easier-to-use.html)
 
 InfoWorld, 4th May 2017
 
