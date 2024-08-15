@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Homebrew, I'm more of a Whopper guy](https://hackaday.com/2024/08/14/floss-weekly-episode-796-homebrew-im-more-of-a-whopper-guy/)
+
+FLOSS Weekly, 14th August, 2024
+
 #### [After 15 years, the maintainer of Homebrew plans to make a living](https://thenextweb.com/news/homebrew-maintainer-make-a-living-15-weeks)
 
 The Next Web, 26th July, 2024
