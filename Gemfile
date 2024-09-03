@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby file: ".ruby-version"
+
 gem "jekyll"
 
 # needed for Ruby >=3.0
