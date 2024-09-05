@@ -19,10 +19,10 @@ Published author of [Git in Practice]({{ '/gitinpractice/' | absolute_url }}) an
 #### [Workbrew](https://workbrew.com) (2023 - Present)
 
 CTO and Cofounder, leading product and engineering.
-Providing the missing features and support for companies using Homebrew.
-Workbrew is now available in private beta. It provides MDM integration, fleet configuration and remote brew command execution.
+Workbrew is now available in public beta.
+It provides MDM integration, fleet configuration, remote `brew` command execution and much more.
 All our customers get hands-on bespoke support from the longest-running Homebrew maintainer (me!).
-To learn more: book a call with us <https://workbrew.com/demo>.
+Please [try it out](https://console.workbrew.com) or [book a demo](https://workbrew.com/demo).
 
 #### [Homebrew](https://brew.sh) (2009 - Present)
 
