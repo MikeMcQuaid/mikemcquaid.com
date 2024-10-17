@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Workbrew, turning Homebrew into a business with Mike McQuaid](https://chrischinchilla.com/podcast/workbrew-turning-homebrew-into-a-business-with-mike-mcquaid/)
+
+The Tech Lounge Podcast, 17th October, 2024
+
 #### [Homebrew, I'm more of a Whopper guy](https://hackaday.com/2024/08/14/floss-weekly-episode-796-homebrew-im-more-of-a-whopper-guy/)
 
 FLOSS Weekly, 14th August, 2024
