@@ -66,7 +66,7 @@ They are good at screaming at you so humans don't have to.
 - 🖖 [**`prosopite`**](https://github.com/charkost/prosopite): avoids N+1 queries in development and test environments.
 - 🪪 [**`licensed`**](https://github.com/github/licensed): ensures that all of your dependencies are licensed correctly.
 - 🤖 [**`actionlint`**](https://github.com/rhysd/actionlint): ensures that your GitHub Actions workflows are correct.
-- 🇪🇸 [**`eslint`**](https://eslint.org): when you inevitably have to write some JavaScript: lint that too.
+- 📇 [**`eslint`**](https://eslint.org): when you inevitably have to write some JavaScript: lint that too.
 
 I add these linters to my Gemfile with something like this:
 
@@ -131,7 +131,7 @@ In my opinion, you want as few of these as you can to maximally exercise your co
   Minitest is fine, too.
 - 🙈 [**`simplecov`**](https://github.com/colszowka/simplecov): the standard Ruby code coverage tool.
   Integrates with other tools (like CodeCov) and allows you to enforce code coverage.
-- 🕴️ [**`playwright`**](https://playwright.dev): dramatically better than Selenium for Rails system tests with JavaScript.
+- 🎭 [**`playwright`**](https://playwright.dev): dramatically better than Selenium for Rails system tests with JavaScript.
   If you haven't already read [Justin Searls' post explaining why you should use Playwright](https://justin.searls.co/posts/running-rails-system-tests-with-playwright-instead-of-selenium/): go do so now.
 - 📼 [**`vcr`**](https://github.com/vcr/vcr): record and replay HTTP requests.
   Nicer than mocking because they test actual requests.
