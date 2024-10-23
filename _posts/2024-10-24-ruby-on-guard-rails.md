@@ -1,5 +1,6 @@
 ---
 title: Ruby on (Guard)Rails
+excerpt: "I've worked on a few Ruby apps in my career at varying scales (Homebrew, AllTrails, GitHub, Workbrew) and there's been a consistent theme: Ruby is great for moving fast (and breaking things)."
 ---
 
 I've worked on a few Ruby apps in my career at varying scales:
