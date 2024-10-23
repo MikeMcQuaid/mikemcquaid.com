@@ -226,25 +226,30 @@ group :test do
 end
 ```
 
-A Rails controller using Sorbet in strict mode might look like this:
+A Rails view component using Sorbet in strict mode might look like this:
 
 ```ruby
-# typed: strict
-
-class TapsController < ApplicationController
-  sig { void }
-  def initialize
+class AvatarComponent < ViewComponent::Base
+  sig { params(user: User).void }
+  def initialize(user:)
     super
-
-    @tap_packages = T.let(nil, T.nilable(T::Hash[String, T::Array[String]]))
-    @homebrew_core_count = T.let(nil, T.nilable(Integer))
-    @homebrew_cask_count = T.let(nil, T.nilable(Integer))
-    @homebrew_cask_font_count = T.let(nil, T.nilable(Integer))
+    @user = user
   end
-end
+
+  sig { returns(User) }
+  attr_reader :user
+
+  sig { returns(String) }
+  def src
+    if user.github_id.present?
+      "https://avatars.githubusercontent.com/u/#{user.github_id}"
+    else
+      ...
+    end
+  end
 ```
 
-In this case, we're defining the types of each of the instance variables that we use later.
+In this case, we don't need to check the types or `nil` of `user` because we know from Sorbet it will always be a non-nil `User`.
 This means, at both runtime and whenever we run `bin/srb tc` (done in the VSCode extension and in GitHub Actions), we'll catch any type issues.
 These are fatal in development/test environments.
 In the production environment, they are non-fatal but reported to Sentry.
