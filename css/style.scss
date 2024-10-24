@@ -184,6 +184,10 @@ h1, h2, h3, h4, h5, img, svg, table, video, canvas {
   }
 }
 
+pre {
+  overflow-x: scroll;
+}
+
 .type-post, .type-page {
   padding-bottom: 2em;
 }
