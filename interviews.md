@@ -5,6 +5,12 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [The Homebrew maintainers who built a startup - Mike McQuaid and John Britton from Workbrew](https://podcast.scalingdevtools.com/episodes/scaling-homebrew-mike-mcquaid-and-john-britton-from-workbrew)
+
+Available as [YouTube video](https://www.youtube.com/watch?v=m6YuaZThchw) or [podcast](https://podcast.scalingdevtools.com/episodes/scaling-homebrew-mike-mcquaid-and-john-britton-from-workbrew)
+
+Scaling DevTools, 31st October, 2024
+
 #### [Workbrew, turning Homebrew into a business with Mike McQuaid](https://chrischinchilla.com/podcast/workbrew-turning-homebrew-into-a-business-with-mike-mcquaid/)
 
 The Tech Lounge Podcast, 17th October, 2024
