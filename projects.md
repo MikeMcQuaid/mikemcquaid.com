@@ -9,9 +9,8 @@ layout: page
 ![Workbrew]({{ '/images/a/workbrew.png' | absolute_url }})
 
 In 2023 I started a company, ☕️ Workbrew, to provide the missing features and support for companies using Homebrew.
-Workbrew is now available in public beta.
-It provides MDM integration, fleet configuration, remote `brew` command execution and much more.
-All our customers get hands-on bespoke support from the longest-running Homebrew maintainer (me!).
+Workbrew's 1.0 release was in November 2024.
+It provides vulnerability reporting and mitigation, MDM integration, fleet configuration, remote `brew` command execution and much more.
 Please [try it out](https://console.workbrew.com) or [book a demo](https://workbrew.com/demo).
 
 #### [Homebrew](https://brew.sh)

@@ -5,7 +5,7 @@ redirect_from: /resume/
 ---
 ### Mike McQuaid
 
-#### Workbrew CTO and Homebrew Project Leader
+#### Workbrew CTPO and Homebrew Project Leader
 
 Early GitHub employee (2013, #232) and Homebrew maintainer (2009, #3).
 Wide experience building software at extreme scales (since 2007).
@@ -18,11 +18,10 @@ Published author of [Git in Practice]({{ '/gitinpractice/' | absolute_url }}) an
 
 #### [Workbrew](https://workbrew.com) (2023 - Present)
 
-CTO and Cofounder, leading product and engineering.
-Workbrew is now available in public beta.
-It provides MDM integration, fleet configuration, remote `brew` command execution and much more.
-All our customers get hands-on bespoke support from the longest-running Homebrew maintainer (me!).
-Please [try it out](https://console.workbrew.com) or [book a demo](https://workbrew.com/demo).
+CTPO and Cofounder, leading product and engineering.
+Built initial version of Workbrew Console, Agent and Installer.
+Hired world-class product and engineering team.
+Ran and implemented SOC2 compliance process.
 
 #### [Homebrew](https://brew.sh) (2009 - Present)
 
