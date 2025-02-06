@@ -45,7 +45,7 @@ _Ben Dowling, 2009, coworker at Mendeley_
 
 _Paul Foeckler, 2009, my manager at Mendeley_
 
-### [BT](http://www.bt.com/)
+### [BT](https://www.bt.com/)
 >
 > Mike is a highly talented software developer skilled in many disciplines and has the ability to pick up new tools and technologies very quickly. He has a proactive mindset and the dedication to consistently produce high quality work, a pleasure working with.
 

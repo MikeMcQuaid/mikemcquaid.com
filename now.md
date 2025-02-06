@@ -25,7 +25,7 @@ I continue to work on Homebrew and serve as the Project Leader.
 
 I gave up judo because I kept getting injured.
 I'm getting back into [powerlifting](https://www.openpowerlifting.org/u/mikemcquaid).
-I do [spin classes](https://tribe.yoga/tribecycle/) because some cardio is sadly necessary.
+I do [spin classes](https://tribe.yoga/tribe-cycle/) because some cardio is sadly necessary.
 
 #### Reading
 
