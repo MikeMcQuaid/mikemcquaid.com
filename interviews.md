@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Episode 397: Software Bill of Materials with Workbrew](https://podcast.macadmins.org/2025/01/29/episode-397-software-bill-of-materials-with-workbrew/)
+
+Mac Admins Podcast, 29th January, 2025
+
 #### [Workbrew makes open source package manager Homebrew enterprise-friendly](https://techcrunch.com/2024/11/19/workbrew-makes-open-source-package-manager-homebrew-enterprise-friendly/)
 
 TechCrunch, 19th November, 2024
