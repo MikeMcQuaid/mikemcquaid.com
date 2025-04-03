@@ -31,7 +31,7 @@ Project Leader and longest-running maintainer. Invented Homebrew binary packages
 
 ##### Principal Engineer (2022 - 2023)
 
-Lead for the [Merge Queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue) project, migrating GitHub's monolith to using it, improving deployment throughput by ~33% to 1.7k PRs merged in 30 days which also measurably improved internal developer satisfaction. Solving engineering-wide developer productivity/experience and architecture problems. Documented heuristics on when internal teams should build in the Rails monolith vs. a microservice. Working with GitHub's OSPO to improve internal and external open source project management tooling. 20th most prolific contributor to GitHub's Rails monolith, out of 1276 people, in my 10 years working there.
+Lead for the [Merge Queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue) project, migrating GitHub's monolith to using it, improving deployment throughput by ~33% to 1.7k PRs merged in 30 days which also measurably improved internal developer satisfaction. Solving engineering-wide developer productivity/experience and architecture problems. Documented heuristics on when internal teams should build in the Rails monolith vs. a microservice. Working with GitHub's OSPO to improve internal and external open source project management tooling. 20th most prolific contributor to GitHub's Rails monolith, out of 1276 people, in my 10 years working there. Provided a regular 1:1 engineering advisory capacity to the CTO and CSO.
 
 ##### Staff Engineer (2020 - 2022)
 
