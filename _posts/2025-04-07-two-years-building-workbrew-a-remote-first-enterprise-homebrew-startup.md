@@ -2,7 +2,7 @@
 title: Two Years Building Workbrew, a Remote-First Enterprise Homebrew Startup
 ---
 
-TL;DR: I left GitHub after 10 years to cofound Raise.dev.
+I left GitHub after 10 years to cofound Raise.dev.
 After an early failed experiment building IoT developer tools, we pivoted and built
 [Workbrew](https://workbrew.com): an enterprise-friendly layer over
 [Homebrew](https://brew.sh), a project I've maintained since 2009 and led since 2019.
@@ -124,7 +124,9 @@ I left GitHub as a ["Principal Engineer"](https://mikemcquaid.com/what-is-a-staf
 
 ![Workbrew Engineers]({{ '/images/a/workbrew_engineers.jpg' | absolute_url }})
 
-A longer post will follow later on exactly what my interview process was but, suffice to say, it worked out pretty well.
+I've written
+[a longer post on exactly what my interview process was](https://mikemcquaid.com/how-and-why-i-interview-engineers-for-workbrew/)
+but, suffice to say, it worked out pretty well.
 We've got an incredible, world-class remote-first team with strong cultural alignment.
 Today, ~63% of us are ex-GitHub employees.
 Only the cofounders came directly from there.
