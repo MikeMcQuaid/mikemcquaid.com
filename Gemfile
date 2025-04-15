@@ -7,6 +7,10 @@ gem "jekyll"
 # needed for Ruby >=3.0
 gem "webrick"
 
+# needed for Ruby >=3.4
+gem "base64"
+gem "csv"
+
 # stops message being printed every startup
 gem "faraday-retry"
 
