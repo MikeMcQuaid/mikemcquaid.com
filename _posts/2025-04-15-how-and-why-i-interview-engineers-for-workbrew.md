@@ -63,6 +63,9 @@ We split the interview process into a few stages.
 If you passed one: you moved onto the next one as soon as possible (usually within a few days).
 If you failed one: I let you know as soon as possible (ideally the same day).
 
+For each stage when we're evaluating the candidate, we have a numeric rubric for each question or criteria.
+This helps avoid biases where you "love" a candidate but, objectively, they scored lower than another.
+
 Here's the breakdown of our hiring stages:
 
 1. ✍️ **Writing the job posting.**
@@ -114,11 +117,11 @@ Here's the breakdown of our hiring stages:
    There might be further discussion and salary/equity/etc.
    We make clear that the higher the compensation: the higher the expectations.
    Ultimately, what value you bring is evaluated against how much you cost the company.
-   If maximizing salary is your primary goal, you’re very early career and/or in a particularly expensive city: it's a mutually poor fit for our current state.
+   If maximising salary is your primary goal, you’re very early career and/or in a particularly expensive city: it's a mutually poor fit for our current state.
 
 7. 🛬 **Onboarding.**
    Despite working remotely for 16 years, I still find face-to-face working tremendously valuable.
-   As a result, in the first week, we fly the new employee over to cowork with me in Edinburgh, Scotland.
+   As a result, in the first week, we fly the new employee over to co-work with me in Edinburgh, Scotland.
    This helps with engineering and product onboarding and setting 7/30/90 day expectations.
    Most importantly, though, it helps us both get to know each other a bit better.
    It means when we read some text in Slack, we hear the human side.
