@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Maintainers: Mike McQuaid](https://opensource.org/maintainers/mikemcquaid)
+
+Open Source Initiative, 20th May, 2025
+
 #### [Episode 397: Software Bill of Materials with Workbrew](https://podcast.macadmins.org/2025/01/29/episode-397-software-bill-of-materials-with-workbrew/)
 
 Mac Admins Podcast, 29th January, 2025
