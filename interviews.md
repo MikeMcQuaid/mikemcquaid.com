@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [AI-first hiring is everywhere and it’s not slowing down](https://leaddev.com/hiring/ai-first-hiring-everywhere-not-slowing-down)
+
+Sage Lazzaro on LeadDev, 22nd May, 2025
+
 #### [Ep. #14, The Workbrew Story with Mike McQuaid and John Britton](https://www.heavybit.com/library/podcasts/open-source-ready/ep-14-the-workbrew-story-with-mike-mcquaid-and-john-britton)
 
 Open Source Ready Podcast, 22nd May, 2025
