@@ -1,6 +1,6 @@
 # mikemcquaid.com
 
-[mikemcquaid.com](https://mikemcquaid.com) is the home page for a software engineer named Mike McQuaid.
+[mikemcquaid.com](https://mikemcquaid.com) is the home page for Mike McQuaid.
 
 This site uses [Jekyll](https://github.com/jekyll/jekyll) for HTML generation and [SASS](http://sass-lang.com) for CSS generation.
 

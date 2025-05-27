@@ -11,7 +11,7 @@ Updated May 27th, 2024, from my home in Edinburgh, Scotland.
 
 I left GitHub after 10 years in 2023 to [start a company](https://workbrew.com) with two of my former GitHub coworkers.
 We're building "the missing features and support for companies using Homebrew".
-Right now this looks like better support for MDM systems and running Homebrew as a non-admin.
+It provides vulnerability reporting and mitigation, MDM integration, fleet configuration, remote `brew` command execution and much more.
 
 I'm having a great time.
 It's definitely not always easy but it's super rewarding to do a bunch of things I've never done before e.g. leading product, being a manager.

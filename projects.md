@@ -11,6 +11,7 @@ layout: page
 In 2023 I started a company, ☕️ Workbrew, to provide the missing features and support for companies using Homebrew.
 Workbrew's 1.0 release was in November 2024.
 It provides vulnerability reporting and mitigation, MDM integration, fleet configuration, remote `brew` command execution and much more.
+We're managing 1725 devices as-of May 2025.
 Please [try it out](https://console.workbrew.com) or [book a demo](https://workbrew.com/demo).
 
 #### [Homebrew](https://brew.sh)
