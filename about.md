@@ -14,8 +14,8 @@ or [email my personal address](mailto:{{ site.author.email }}) to talk about any
 
 This site has my:
 
-- [articles]({{ '/articles/' | absolute_url }}): various blog posts (or links to blog posts) I've written
-- [projects]({{ '/project/' | absolute_url }}): the various things I've worked on
+- [articles]({{ '/' | absolute_url }}): various blog posts (or links to blog posts) I've written
+- [projects]({{ '/projects/' | absolute_url }}): the various things I've worked on
 - [talks]({{ '/talks/' | absolute_url }}): links to slides (and sometimes videos) of talks I've given
 - [interviews]({{ '/interviews/' | absolute_url }}): links to various video/audio/text interviews I've done
 - [curriculum vitae/resume]({{ '/cv/' | absolute_url }}): my professional experience

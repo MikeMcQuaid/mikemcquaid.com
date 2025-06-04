@@ -34,7 +34,7 @@ I [mostly read](https://www.goodreads.com/review/list/37799508-mike-mcquaid?shel
 
 #### Music
 
-I sadly pretty much never [play or write music]({{ '/articles/' | absolute_url }}) any more, I just don't have the time.
+I sadly pretty much never [play or write music]({{ '/music/' | absolute_url }}) any more, I just don't have the time.
 I still listen to a lot of music, mostly power metal, and have attended a few more gigs than I used to.
 I will now go in the mosh pit.
 
