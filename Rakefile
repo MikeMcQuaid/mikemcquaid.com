@@ -42,6 +42,8 @@ task test: :jekyll do
       %r{^https://www\.linkedin\.com/},
       %r{^https://docs\.github\.com/en/},
       %r{^https://stackoverflow\.com/},
+      %r{^https://mikemcquaid\.com/.+[\-].+[\-].+},
+      "https://chatgpt.com",
       'https://www.scotlandis.com/scotsoft-2022/developer-conference/',
       'https://fellowship.mlh.io',
       'https://shepherd.com/best-books/becoming-a-great-open-source-software-engineer',
