@@ -22,7 +22,7 @@ Workbrew brings the power of Homebrew to enterprise macOS fleets. As CTPO I set 
 * Singlehandedly shipped first versions of Workbrew Console, Agent and Installer
 * Recruited and led an async, six-person team across five countries and three continents
 * Introduced Shape Up, achieving predictable feature delivery while maintaining agility
-* Led effort which achieved SOC 2 Type 1 compliance in 2024 (and on track for Type 2 in 2025)
+* Achieved SOC 2 Type 1 compliance in 2024 and Type 2 in 2025.
 * Implemented DORA metrics and LLM-assisted code reviews which resulted in PR open-to-merge time of 0.5 days and > 35 PRs per engineer/month
 * Scaled platform to 1,725 managed devices (May 2025) and enterprise launch [featured in TechCrunch](https://techcrunch.com/2024/11/19/workbrew-makes-open-source-package-manager-homebrew-enterprise-friendly/)
 * Embedded AI tools (ChatGPT, Cursor, Copilot) across the org; designed an [LLM-native hiring process](https://mikemcquaid.com/how-and-why-i-interview-engineers-for-workbrew/)
