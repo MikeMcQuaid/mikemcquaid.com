@@ -5,55 +5,49 @@ layout: page
 
 (This is [a now page](https://nownownow.com/about), and if you have your own site, [you should make one, too](https://sivers.org/now2)).
 
-Updated May 27th, 2024, from my home in Edinburgh, Scotland.
+Updated July 7th, 2025, from my home in Edinburgh, Scotland.
 
-#### [Workbrew](https://workbrew.com)
+#### Work
 
-I left GitHub after 10 years in 2023 to [start a company](https://workbrew.com) with two of my former GitHub coworkers.
-We're building "the missing features and support for companies using Homebrew".
-It provides vulnerability reporting and mitigation, MDM integration, fleet configuration, remote `brew` command execution and much more.
+I’m currently focused on my fractional CTO/CTPO and Principal Engineer consulting work.
 
-I'm having a great time.
-It's definitely not always easy but it's super rewarding to do a bunch of things I've never done before e.g. leading product, being a manager.
+I left my full-time role as CTPO at Workbrew but continue in a fractional role as Homebrew Fellow and Advisor.
 
 #### [Homebrew](https://brew.sh)
 
-I continue to work on Homebrew and serve as the Project Leader.
-[Homebrew turned 15 years old](https://www.youtube.com/watch?v=dY31NQP4JPk) in May 2024 and I'll have been maintaining it for 15 years in September 2024.
+I continue to lead and contribute to Homebrew, which I will have maintained for 16 years as of September 2025.
 
 #### Exercise
 
-I gave up judo because I kept getting injured.
-I'm getting back into [powerlifting](https://www.openpowerlifting.org/u/mikemcquaid).
-I do [spin classes](https://tribe.yoga/tribe-cycle/) because some cardio is sadly necessary.
+I'm enjoying [powerlifting](https://www.openpowerlifting.org/u/mikemcquaid) again, especially as a Masters 1 lifter.
 
 #### Reading
 
-I've continued to try to avoid reading the [news and social media]({{ '/how-i-procrastinate-less/' | absolute_url }}) and instead try to read books.
-I [mostly read](https://www.goodreads.com/review/list/37799508-mike-mcquaid?shelf=read&sort=date_read) hard science fiction, space opera and the occasional bit of non-fiction.
+I continue to avoid reading the [news and social media]({{ '/how-i-procrastinate-less/' | absolute_url }}) focusing instead on books.
+I [mostly read](https://www.goodreads.com/review/list/37799508-mike-mcquaid?shelf=read&sort=date_read) hard science fiction, space opera, fantasy and the occasional bit of non-fiction.
 
 #### Music
 
-I sadly pretty much never [play or write music]({{ '/music/' | absolute_url }}) any more, I just don't have the time.
+I sadly no longer [play or write music]({{ '/music/' | absolute_url }}), I just don’t have the time.
 I still listen to a lot of music, mostly power metal, and have attended a few more gigs than I used to.
-I will now go in the mosh pit.
+I now heartedly enjoy the mosh pit.
 
 #### Games
 
-This is a method of relaxation that works very well with parenting because I can do it all at home.
+Gaming is a form of relaxation that works well with parenting as I can do it all at home.
 I'm [mostly enjoying](https://steamcommunity.com/id/mikemcquaid/) open world RPGs, Total Warhammer games and being an achievement completionist.
 
 #### Health
 
 I'm healthy and happy.
-[Finding a therapist]({{ '/how-to-find-a-therapist/' | absolute_url }}) has helped and continues to help.
+[Finding a therapist]({{ '/how-to-find-a-therapist/' | absolute_url }}) has helped, and continues to help, with that.
 
 #### Family
 
-My wife and children continue to be wonderful and important to me.
+My wife and children remain wonderful and central to my life.
 I try to keep details about them off the internet but: ask me about them privately if you want to know more.
 
 #### Pets
 
-I have a cocker spaniel and recently got guinea pigs.
+I have a cocker spaniel and recently adopted guinea pigs.
 It makes me happy and relaxed to stroke them.

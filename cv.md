@@ -5,28 +5,24 @@ redirect_from: /resume/
 ---
 ### Mike McQuaid
 
-#### Workbrew CTPO and Homebrew Project Leader
+#### Fractional CTPO/Principal Engineer and Homebrew Project Leader
 
-Edinburgh-based product and engineering leader, ex-GitHub Principal Engineer (#232, 2013), with 18 years of experience reducing developer friction and scaling open-source to tens of millions of users.
-Delivered 50+ conference talks, published author and writer on engineering, open-source, automation, remote work and Git.
-Lead product and engineering at Workbrew and Homebrew, with product engineering experience at GitHub (before they had product managers).
-Early GitHub Copilot reviewer with hands-on experience introducing AI-driven code assistants, reviews and chat tools to improve team velocity.
-Working on async remote-first international teams since 2009.
+Edinburgh-based product and engineering leader, ex-GitHub Principal Engineer (#232, 2013), with 18 years' experience reducing developer friction and scaling open-source software used by tens of millions.
+Published author, writer and experienced conference speaker (50+ talks) on engineering, open-source, automation, remote work and Git.
+Leading product and engineering at Homebrew and led at Workbrew, with product engineering experience at GitHub (before they had product managers).
+Early GitHub Copilot reviewer with hands-on experience integrating AI-driven coding assistants and review tools to boost developer velocity.
+Extensive experience with async, remote-first international teams since 2009.
 
 ### Experience
 
-#### [Workbrew](https://workbrew.com) — CTPO and Cofounder (2023 – Present)
+#### Mike McQuaid Consulting (2009 – Present)
 
-Workbrew brings the power of Homebrew to enterprise macOS fleets. As CTPO I set product direction, own engineering execution and establish company-wide processes.
+Offer fractional CTO/CTPO and Principal Engineer services through remote or in-person engagements for growth-oriented tech companies.
 
-* Singlehandedly shipped first versions of Workbrew Console, Agent and Installer
-* Recruited and led an async, six-person team across five countries and three continents
-* Introduced Shape Up, achieving predictable feature delivery while maintaining agility
-* Achieved SOC 2 Type 1 compliance in 2024 and Type 2 in 2025.
-* Implemented DORA metrics and LLM-assisted code reviews which resulted in PR open-to-merge time of 0.5 days and > 35 PRs per engineer/month
-* Scaled platform to 1,725 managed devices (May 2025) and enterprise launch [featured in TechCrunch](https://techcrunch.com/2024/11/19/workbrew-makes-open-source-package-manager-homebrew-enterprise-friendly/)
-* Embedded AI tools (ChatGPT, Cursor, Copilot) across the org; designed an [LLM-native hiring process](https://mikemcquaid.com/how-and-why-i-interview-engineers-for-workbrew/)
-  referenced on [LeadDev](https://leaddev.com/hiring/ai-first-hiring-everywhere-not-slowing-down)
+* Developer Velocity: define productivity metrics, streamline CI/CD pipelines and reduce developer workflow friction.
+* AI Coding Assistants: develop and implement adoption strategies and rollout playbooks for e.g. Cursor, Copilot, ChatGPT and other LLMs.
+* Open-Source Strategy: advise on sustainable governance, community growth and commercial licensing models.
+* Staff+ Mentorship: define clear career paths and mentor senior and staff+ engineers to maximise their impact.
 
 #### [Homebrew](https://brew.sh) — Project Leader (2009 – Present)
 
@@ -38,13 +34,31 @@ Homebrew is the de-facto macOS package manager with tens of millions of users wo
 * Mentored new maintainers and contributors via [Google Summer of Code](https://summerofcode.withgoogle.com), [MLH Fellowship](https://fellowship.mlh.io) and [Outreachy](https://www.outreachy.org) programmes
 * Migrated Homebrew to GitHub Packages, partnering with GitHub’s internal teams
 
-#### Mike McQuaid Consulting (2009 – Present)
+#### [Workbrew](https://workbrew.com)
 
-I provide part-time remote and in-person targeted engagements for startups and large engineering organisations.
+#### Homebrew Fellow and Advisor (2025 – Present)
 
-* Developer velocity – implement metrics, CI/CD pipelines and low-friction workflows
-* AI coding assistants – roll-out playbooks for Copilot, ChatGPT and internal LLMs
-* Open-source strategy – governance models, community health, commercial licensing
+Deliver fractional advisory and technical leadership to Workbrew, focused on seamless integration with Homebrew’s open-source ecosystem and solving complex engineering challenges.
+
+* Homebrew Fellow: funded to support my role as Homebrew Project Leader, primary liaison between Homebrew maintainers and Workbrew organisation.
+* Technical Advisor: provide strategic guidance and expert support on critical engineering and product decisions.
+
+#### CTPO and Cofounder (2023 – 2025)
+
+Workbrew brings the power of Homebrew to enterprise macOS fleets.
+As CTPO, set product direction, owned engineering execution and established company-wide processes.
+
+* Singlehandedly shipped first versions of Workbrew Console, Agent and Installer and secured first reference customer which resulted in raising $3.2m VC seed round with Heavybit in 2023.
+* Recruited and led an async, six-person product engineering team across five countries and three continents
+* Introduced Shape Up, achieving predictable product feature delivery while maintaining agility
+* Primarily responsible for achieving SOC 2 Type 1 compliance in 2024 and Type 2 in 2025.
+* Implemented DORA metrics and LLM-assisted code reviews which resulted in PR open-to-merge time of 0.5 days and > 35 PRs per engineer/month
+* Scaled platform to 1,725 managed devices (May 2025) and enterprise launch
+  [featured in TechCrunch](https://techcrunch.com/2024/11/19/workbrew-makes-open-source-package-manager-homebrew-enterprise-friendly/)
+* Embedded AI tools (ChatGPT, Cursor, Copilot) across the org; designed an
+  [LLM-native hiring process](https://mikemcquaid.com/how-and-why-i-interview-engineers-for-workbrew/)
+  referenced on
+  [LeadDev](https://leaddev.com/hiring/ai-first-hiring-everywhere-not-slowing-down)
 
 #### GitHub (2013 – 2023)
 
@@ -55,7 +69,7 @@ Guided company-wide productivity initiatives.
 * Increased deployment throughput by 33% (> 1,700 PRs/30 days) by leading the
   [Merge Queue](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue)
   project and internal rollout
-* 1:1 engineering advisor for CTO/CSO; defined monolith-vs-microservice heuristics
+* 1:1 engineering advisor to CTO/CSO; defined monolith-vs-microservice heuristics
 * One of first Copilot internal testers; shaped product metrics and competitive analysis
 
 ##### Staff Engineer (2020 – 2022)

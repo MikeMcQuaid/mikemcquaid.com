@@ -5,18 +5,21 @@ redirect_from:
 - /blog/about/
 - /contact/
 ---
-Hello. My name is Mike McQuaid and I make great developer tools.
+Hi, I’m Mike McQuaid.
+I build great developer tools.
 
-I live in Edinburgh, Scotland. You should visit, it's nice here.
+I live in Edinburgh, Scotland: you should visit, it’s lovely here
 
-Feel free to [email me about Homebrew at mike@brew.sh](mailto:mike@brew.sh)
-or [email my personal address](mailto:{{ site.author.email }}) to talk about anything else.
+You can email me about:
 
-This site has my:
+- Homebrew at [mike@brew.sh](mailto:mike@brew.sh)
+- anything else at [{{ site.author.email }}](mailto:{{ site.author.email }})
 
-- [articles]({{ '/' | absolute_url }}): various blog posts (or links to blog posts) I've written
-- [projects]({{ '/projects/' | absolute_url }}): the various things I've worked on
-- [talks]({{ '/talks/' | absolute_url }}): links to slides (and sometimes videos) of talks I've given
-- [interviews]({{ '/interviews/' | absolute_url }}): links to various video/audio/text interviews I've done
-- [curriculum vitae/resume]({{ '/cv/' | absolute_url }}): my professional experience
-- [now]({{ '/now/' | absolute_url }}): what I've been up to in the last year.
+On this site, you’ll find:
+
+- [Articles]({{ '/' | absolute_url }}): blog posts I’ve written
+- [Projects]({{ '/projects/' | absolute_url }}): things I’ve built or contributed to
+- [Talks]({{ '/talks/' | absolute_url }}): slides and recordings of talks I’ve given
+- [Interviews]({{ '/interviews/' | absolute_url }}): conversations and appearances in text, audio, and video
+- [Curriculum Vitae/Resume]({{ '/cv/' | absolute_url }}): my professional background
+- [Now]({{ '/now/' | absolute_url }}): what I’m doing currently
