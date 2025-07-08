@@ -24,7 +24,7 @@ I'm enjoying [powerlifting](https://www.openpowerlifting.org/u/mikemcquaid) agai
 #### Reading
 
 I continue to avoid reading the [news and social media]({{ '/how-i-procrastinate-less/' | absolute_url }}) focusing instead on books.
-I [mostly read](https://www.goodreads.com/review/list/37799508-mike-mcquaid?shelf=read&sort=date_read) hard science fiction, space opera, fantasy and the occasional bit of non-fiction.
+I [mostly read](https://app.thestorygraph.com/profile/mikemcquaid) hard science fiction, space opera, fantasy and the occasional bit of non-fiction.
 
 #### Music
 
