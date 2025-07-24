@@ -17,10 +17,10 @@ Extensive experience with async, remote-first international teams since 2009.
 
 #### Mike McQuaid Consulting (2009 – Present)
 
-Offer fractional CTO/CTPO and Principal Engineer services through remote or in-person engagements for growth-oriented tech companies.
+Offer fractional CTO/CTPO and Principal Engineer services through remote or in-person engagements for growth-oriented tech companies CEOs, investors and leadership.
 
-* Developer Velocity: define productivity metrics, streamline CI/CD pipelines and reduce developer workflow friction.
-* AI Coding Assistants: develop and implement adoption strategies and rollout playbooks for e.g. Cursor, Copilot, ChatGPT and other LLMs.
+* Developer Velocity: multi‑week developer velocity deep dives, defining productivity metrics, optimizing CI/CD pipelines and eliminating workflow friction.
+* AI Coding Assistants: deliver focused deep‑dive evaluation and implementation playbooks for e.g. Cursor, Copilot, ChatGPT and other LLMs.
 * Open-Source Strategy: advise on sustainable governance, community growth and commercial licensing models.
 * Staff+ Mentorship: define clear career paths and mentor senior and staff+ engineers to maximise their impact.
 
