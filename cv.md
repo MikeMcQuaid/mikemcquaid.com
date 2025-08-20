@@ -19,7 +19,7 @@ Extensive experience with async, remote-first international teams since 2009.
 
 Offer fractional CTO/CTPO and Principal Engineer services through remote or in-person engagements for growth-oriented tech companies CEOs, investors and leadership.
 
-* Developer Velocity: multi‑week developer velocity deep dives, defining productivity metrics, optimizing CI/CD pipelines and eliminating workflow friction.
+* Developer Velocity: multi‑week developer velocity deep dives, defining productivity metrics, optimizing CI/CD pipelines and eliminating workflow friction. TL;DR: makes your most expensive resource (your engineers) get more done in less time.
 * AI Coding Assistants: deliver focused deep‑dive evaluation and implementation playbooks for e.g. Cursor, Copilot, ChatGPT and other LLMs.
 * Open-Source Strategy: advise on sustainable governance, community growth and commercial licensing models.
 * Staff+ Mentorship: define clear career paths and mentor senior and staff+ engineers to maximise their impact.
@@ -48,6 +48,7 @@ Deliver fractional advisory and technical leadership to Workbrew, focused on sea
 Workbrew brings the power of Homebrew to enterprise macOS fleets.
 As CTPO, set product direction, owned engineering execution and established company-wide processes.
 
+* I was described by one of our investors as "one of the best zero-to-one engineering leaders in the industry".
 * Singlehandedly shipped first versions of Workbrew Console, Agent and Installer and secured first reference customer which resulted in raising $3.2m VC seed round with Heavybit in 2023.
 * Recruited and led an async, six-person product engineering team across five countries and three continents
 * Introduced Shape Up, achieving predictable product feature delivery while maintaining agility
