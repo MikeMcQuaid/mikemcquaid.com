@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Maintainer burnout at critical Kubernetes project puts OSS contributions back in the spotlight](https://www.thestack.technology/open-source-devs-burn-out-crucial-projects-in-jeopardy)
+
+Noah Bovenizer on The Stack, 20th Aug, 2025
+
 #### [AI-first hiring is everywhere and it’s not slowing down](https://leaddev.com/hiring/ai-first-hiring-everywhere-not-slowing-down)
 
 Sage Lazzaro on LeadDev, 22nd May, 2025
