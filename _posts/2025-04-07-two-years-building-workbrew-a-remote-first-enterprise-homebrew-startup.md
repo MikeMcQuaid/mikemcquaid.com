@@ -188,5 +188,3 @@ I feel like I have almost zero actual advice to give other founders but I feel o
   Zero management is not.
 
 Thanks for reading!
-
-Go get a [Workbrew demo](https://workbrew.com/demo) and see what the team and our customers love about it.
