@@ -24,6 +24,10 @@ Offer fractional CTO/CTPO and Principal Engineer services through remote or in-p
 * Open-Source Strategy: advise on sustainable governance, community growth and commercial licensing models.
 * Staff+ Mentorship: define clear career paths and mentor senior and staff+ engineers to maximise their impact.
 
+##### [Administrate](https://www.getadministrate.com) - Fractional CTO (2025 - Present)
+
+Improving the world's best training management system's engineering velocity, productivity and culture through technical leadership, writing and code.
+
 #### [Homebrew](https://brew.sh) — Project Leader (2009 – Present)
 
 Homebrew is the de-facto macOS package manager with tens of millions of users worldwide.
@@ -36,14 +40,14 @@ Homebrew is the de-facto macOS package manager with tens of millions of users wo
 
 #### [Workbrew](https://workbrew.com)
 
-#### Homebrew Fellow and Advisor (2025 – Present)
+##### Homebrew Fellow and Advisor (2025 – Present)
 
 Deliver fractional advisory and technical leadership to Workbrew, focused on seamless integration with Homebrew’s open-source ecosystem and solving complex engineering challenges.
 
 * Homebrew Fellow: funded to support my role as Homebrew Project Leader, primary liaison between Homebrew maintainers and Workbrew organisation.
 * Technical Advisor: provide strategic guidance and expert support on critical engineering and product decisions.
 
-#### CTPO and Cofounder (2023 – 2025)
+##### CTPO and Cofounder (2023 – 2025)
 
 Workbrew brings the power of Homebrew to enterprise macOS fleets.
 As CTPO, set product direction, owned engineering execution and established company-wide processes.
