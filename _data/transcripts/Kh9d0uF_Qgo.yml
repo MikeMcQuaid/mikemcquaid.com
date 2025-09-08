@@ -1,0 +1,654 @@
+---
+0: Hello everyone. I don't know how well this mic is working or not so if anyone at
+  the
+15: back, can anyone at the back hear me vaguely? No, some people can, some people
+  can't. Some
+21: people are giving me thumbs down already. It's not going well. I'll try and just
+  shout
+25: out, but I've got a bit of a cold so I may end up barking into the microphone
+  and then
+30: you will get deaf. So as a nice starting point, I realize this is FOSDEM so I
+  automatically
+37: apologize for my Mac, for working for a company that's not open source and for
+  helping other
+45: people to use Macs and install a bit of open source but not enough. So I apologize
+  in advance.
+53: I'm not really sure on the makeup of people here. So first thing I'd like to ask
+  is just
+59: a show of hands, how many people have heard of Homebrew, the Mac package manager?
+  Oh good,
+64: that's a reasonable number. How many people like kind of day to day are using
+  Macs as their
+69: kind of primary computer things? Good, also quite a lot. How many people work
+  on some sort
+77: of Linux package manager? Okay, I'm sure there's too much crossover there for
+  that to be true,
+83: true, but I'm not going to argue with you. Right, so I'll try and talk in this
+  talk,
+89: like in the past, talks I've done on Homebrew have been sort of a bit, here's
+  the basics of
+95: what Homebrew does. But because it's kind of the distributions room here, I thought
+  people who kind
+100: of know and care about things like Linux distributions might have some interesting
+  things for me to learn,
+105: and I might maybe even have some interesting things for you to learn as well.
+  So I'm going on the good,
+110: bad and the ugly and that's basically what I see as the things Homebrew does
+  well, maybe better than
+117: some other package managers, I don't really know. The stuff which we kind of
+  struggle with and the ugly
+123: is, well partly because that's, you've got to name the talk that right, but also
+  like that's the stuff I
+129: personally find is kind of hardest in actually keeping the project running. So
+  my name's Mike McQuaid.
+135: I work at GitHub as an engineer. I've been working on Homebrew for about six
+  years now. Homebrew and
+144: GitHub are fairly tightly coupled together, as you may have noticed. So yeah,
+  me working at GitHub is
+150: probably a result of me being a fanboy of GitHub for quite a while through using
+  Homebrew. You can see
+157: like my stuff and things on GitHub down there and if you Google my name you can
+  find Twitter and all
+164: that type of nonsense as well. Feel free if you have any questions during or
+  after the talk that you're
+169: not happy to like raise in front of everyone else, feel free to just send me
+  an email. And then equally
+175: if there's anything that you feel is worth interrupting the talk, please feel
+  free to do so during it as
+182: well in case I make some glaring omission or whatever. Right, so things I think
+  Homebrew does
+189: quite well. Actually another show of hands, how many people in this room have
+  ever submitted a pull
+195: request on GitHub? How many people in this room have ever submitted a pull request
+  on GitHub to Homebrew?
+201: I love all you people. You're all wonderful. So, one of the nice things with
+  Homebrew, which we've just
+210: got from the virtue of GitHub rather than any sort of merit of our own, is that
+  it's very, very easy to
+217: contribute to Homebrew relatively. So you just make a pull request to the project,
+  you edit a file,
+222: we run CI, and then if it's green and it looks good, then someone will merge
+  it. So as a result
+229: we have, which is not bad for a project that's kind of seven years old, I think,
+  we've got, you know,
+234: over 4,000 unique contributors. And that number is just going up and up. People
+  are, almost on a daily
+241: basis, we're getting new people who kind of, their first foray into open source
+  development is, I want
+246: to use this particular piece of software, I want a slightly newer version that's
+  what's provided in
+250: Homebrew at the moment. So they can just basically get the software, find the
+  URL, bump the version
+257: of the URL, download it, update the SHA-1, create a pull request to Homebrew,
+  and then that will
+263: probably be merged, hopefully, if it's non-contentious in 24 hours or less. So
+  we like to think of ourselves
+270: as hopefully giving a reasonably nice, very, very easy way of contributing to
+  open source for people.
+277: And then if you start to see the same names kind of pop up again and again, then
+  I'd start to try and push
+283: people a little bit harder, maybe say, oh, well, while you're in there and changing
+  the version, maybe you
+288: could do some cleanup, maybe you could write a test. Maybe if you've kind of
+  run across some problem, then
+293: you could kind of submit a pull request for that, and just generally try and
+  nudge people generally in the right
+297: direction. So Homebrew itself is run day to day pretty much only by six people.
+  There's only six people who have
+305: commit access to, well, and actually use it to the Homebrew repository. There's
+  two or three others who aren't
+311: listed there who are kind of currently on leaves of absence. But we have no formal
+  hierarchy. We don't
+318: have any one person who decides whether stuff gets included or not. It just ends
+  up being a combination of
+325: discussion and also the kind of relatively nice open source principle of if you're
+  the one willing to
+332: invest lots of time and energy into doing the work, your opinion counts a bit
+  more than someone who just
+337: comes along and says, you should do it this way. Bye. Right, so you're definitely
+  not going to be able
+344: to read this, but basically our contribution model is around, as I said, these
+  six people are the only
+351: people who have actual commit access to the repository. So basically everyone
+  else goes and forks the
+356: repository on GitHub, makes their changes there, creates a branch, hopefully,
+  and then creates a pull
+361: request, and then we can then pull those changes in, one of our six, into the
+  main repository.
+367: So an average pull request might look something like this. We've got, like, I've
+  submitted this pull
+373: request myself, even though I have direct commit access, just because it makes
+  it easier with some
+378: other things that we do, which I'll come up on later. So it's the cute cryptographic
+  architecture,
+386: I think. I can't remember what the last bit stands for. Just a new version bump,
+  closing some issues
+391: where people have requested this already. You can see my commit there, and then
+  the commit
+397: pull request is referencing itself, and then I close the pull request from the
+  commit. We don't use the
+402: home, sorry, the GitHub, like, clicky merge pull request button, because we like
+  to have our
+408: history nicely, just cherry-picked git commits, rather than lots of squiggly
+  merging lines. I wrote a book
+414: on git, so I have, like, feelings about weird things like merging. So this is
+  kind of a relatively typical
+422: pull request. Like, often there will be no communication at all. I'm trying to
+  get a little bit
+427: better about thanking people, particularly first time people, so it's not just
+  like, oh, like,
+431: you just merged my thing and didn't talk to me in any way. That's a bit weird.
+  But yeah, so when
+437: things go a bit wrong, that's something we've kind of built upon in the last
+  year. In the last, I think it
+442: was about a year and a half ago, maybe two years ago, our current kind of situation,
+  it was the same
+449: with pull request, but the problem was, effectively, we would have to just, if
+  we wanted to test a pull
+455: request, I would need to download that package onto my machine, the changes that
+  they'd made, and then I
+460: would need to manually run the compilation of that. So in the case of some packages,
+  you know, if you're
+464: building, I don't know, something like Qt, even on a fairly fast machine, that's
+  going to take 45 minutes. So
+471: that became a bit of a barrier in the kind of contribution process, because it
+  would rely on the
+475: developer having enough time for their machines' fans to worry away for 45 minutes
+  before they could
+480: kind of check these things were working the way they wanted them to. So we did
+  a Kickstarter, we raised
+485: a bit of money, and we bought some, like, physical hardware, which is sitting
+  in a data center, kindly
+491: donated to us by positive internet, and not the entire data center, but that
+  would have been very
+497: generous. So now what we have is, when you submit a pull request to Homebrew,
+  we will notice that our
+504: bot, we'll notice that pull request using kind of Jenkins in the back end, and
+  we'll then download
+509: that, test it on the three versions of OSX we support, which are the current
+  version, OSX 10.10
+515: Yosemite, and the previous two, Mountain Lion and Mavericks. Download it, run.
+  Initially, we'd basically
+522: just run compilation. Now we kind of run a few more things. We run compilation,
+  we run tests, and we
+527: install all the reverse dependencies to make sure that you've not accidentally
+  broken something with one of
+531: them as well. So the nice thing about this process now is it integrates nicely
+  with GitHub's kind of
+538: continuous integration stuff, and you get a nice green or a nice red at the bottom
+  of the build,
+544: basically saying what went wrong. So if there was a build that failed, and you
+  click through,
+550: and it was red, you might get something that looked a bit like this. Basically,
+  this is saying
+554: this package Y3, we ran brew install on Y3, and it failed on all platforms, Mountain
+  Lion, Yosemite,
+564: Mavericks. You can click through and see the logs and stuff like that if you
+  want to. And the nice
+569: thing we found with kind of the contribution process being so relatively simple,
+  once you add CI into the
+575: mix, and decent CI where people get feedback, it's nice because we might have
+  a situation where all the
+580: maintainers are sleeping, and you wake up and you find that someone has made
+  a commit, made a pull request,
+586: pushed it, noticed that it failed, iterated on that, noticed it failed again,
+  iterated on that, and then you
+592: wake up to a green build, which I can pretty much, because I believe in the principle
+  of false negatives
+599: rather than false positives, if it's a green build and the diff looks good, I
+  can just pull that straight away
+603: without any testing, which is great. So another thing that we're blessed with
+  in Homebrew land
+611: compared to what I like to think of as real packages in Linux land is we have
+  minimal influence
+619: on actually breaking the system. With Homebrew, you're installing a version of
+  wget or a newer version
+625: of curl or some little developer utility. We're not installing the system C library.
+  So as a result, we don't need to worry as much about
+633: accidentally breaking the user system because, you know, we installed a C library,
+  but didn't revision this package
+639: correctly or whatever. Because Apple supplies a reasonable number of increasingly
+  outdated open source libraries.
+649: But one of the nice things of that, on the flip side, is kind of Homebrew's ethos
+  there. Now, you can kind of debate the virtues of
+658: kind of Homebrew versus Mac ports, but an example would be like the Mac ports.
+  This is probably really old, but a package descriptor.
+665: So these are some of the dependencies that the Mac ports Git has. So you need
+  to have all this stuff installed if you're installing Git.
+672: Whereas the Homebrew version, there aren't actually any dependencies because
+  everything that Git needs is shipped by OSX.
+680: So instead of saying we're going to mandate that you install our special version
+  of rsync or whatever, then we just say,
+689: well, if the stuff's provided by the system, then we can use that instead.
+692: And generally, the kind of slightly nicer thing we get from that, as I mentioned
+  before, we don't need to worry about borking system stuff
+698: because we're not actually installing it. But also, generally, we get slightly
+  faster install times.
+703: We get kind of more integration with the system and generally a kind of more,
+  I would consider, more Mac-y way of doing things
+711: because we try and hook in as much as possible to what Apple has provided us
+  with rather than doing all our own stuff.
+717: So we still will ship an OpenSSL that's ourselves. OpenSSL is an unusual example
+  in case.
+724: And that's a situation in which we are always trying to push people towards using
+  our one rather than the system one
+729: because the system one has been deprecated and there's an old, insecure version.
+733: But most other things, we might provide duplicates of that system package, but
+  we try not to mandate them on users
+741: because it just makes things a little bit slower.
+745: So another thing, like a personal peeve of mine and something I've been trying
+  to push for quite heavily in Homebrew is minimizing patching.
+752: Now, package managers in general, I think, sometimes get a fairly mixed rap from,
+  like, upstream developers
+762: because when stuff breaks, we have much to the unknownness for upstream developers.
+770: When stuff breaks, a lot of the time people will not go to the upstream developer
+  and say, this is broken.
+776: They will come to Homebrew and say, this is broken, even when a lot of the time
+  those bugs might be relating to just a bug in the upstream package
+783: and it has nothing to do with the way it's been distributed by us.
+787: So generally, the reasoning a lot of the time around package managers has been,
+  well, if we have these issues, we'll patch them
+793: and then, you know, we can continue to do this.
+796: The problem with that approach, I found long-term, is you end up with patches
+  which you don't really know why they're there anymore.
+804: They're not really needed and, you know, they maybe were needed for some older
+  compiler version or library version or whatever,
+813: but because there's not the same incentive to remove patches as there is to add
+  them, i.e. the build breaking,
+817: they just stay there forever.
+819: So what I try, I'm trying to do in Homebrew and I've been trying to do for a
+  while.
+824: Cool.
+825: My microphone is too close to my mouth.
+830: Oh, close to my mouth.
+832: Okay.
+833: I will just speak into it like this.
+835: Right.
+836: So this is a, I'm sad to say, boilerplate message.
+841: I've got quite good at writing boilerplate messages just using like a little
+  tool called Text Wrangler with Homebrew.
+846: So I apologize if you have an interaction with me on a pull request.
+850: Like, there's probably a 95% chance now it's just like an auto-generated response
+  that I have typed three characters into my keyboard
+857: and it's spat out this expanded text.
+860: The good version of that is that it makes me significantly more polite because
+  when I'm answering a pull request at like three o'clock in the morning
+866: and I can't sleep, I'm not like, oh, why didn't you read the manual?
+869: I'm like, oh, I've noticed that you've not quite read this.
+872: Oh, thank you so much.
+873: So auto-generated me is far more polite than real me.
+878: But so this is some common blurb I try and say on Homebrew now whenever anyone
+  submits any patch.
+885: So please submit to the upstream developers.
+888: Again, you would think that that would be relatively obvious.
+892: But sadly, again, particularly on like platforms like OSX, which aren't as widely
+  used, they have, I think Dbus was an example.
+901: And I don't think there's anyone particularly to blame for this, but Dbus on
+  OSX for about four years,
+906: there was just this massive like thousand line long-running patch set, which
+  you needed to be able to run Dbus.
+912: And it had been submitted to the upstream developers, but never merged because
+  no one had kind of got involved with the back and forth process
+919: in trying to actually get that merged.
+922: So the first thing we try and do is push people to actually submit patches upstream
+  because then at least we know they're like they're documented somewhere other than
+  in our source code.
+931: And then we try and add a link to the upstream patch submission so we can actually
+  keep track of that.
+936: And hopefully if upstream either say this patch isn't needed anymore or this
+  patch breaks stuff or whatever, then we can then pull things and update it and an
+  explanation of why the patch is needed.
+948: Again, you would be surprised how many conversations this solves where someone
+  says, my particularly esoteric use case, I need to apply this weird patch.
+955: And you say, actually, like you're calling it with the wrong arguments or whatever.
+960: Like generally, I have relatively strong opinions about as package managers,
+  we should be trying as much as we can to distribute the software that upstream give
+  us.
+972: And if upstream give us crap software, we should not just try and patch it constantly
+  to try and make it good.
+978: That's not really our problem at that point, which brings us nicely on to the
+  bad.
+984: So the most common annoying thing we get sometimes is upstreams who would not
+  have been accepting of my apologies for my Mac.
+995: And they would have probably hurled rotten fruit at me.
+998: And you get some people who work on open source software who really, really don't
+  like Macs.
+1003: They don't like Mac people.
+1005: They don't like Clang.
+1006: They don't even like apples anymore.
+1010: So it's quite hard working out how, as an OSX packager, you deal with that situation
+  where this piece of software does not really work properly anymore.
+1020: We need to patch it.
+1022: And then upstream says, I don't want your filthy patches.
+1025: So what we've been generally trying to do on this depends on the popularity
+  of the package.
+1031: If it's something really, really popular, if tomorrow the GNU maintainers of
+  WGET decided they didn't want to maintain OSX patches anymore,
+1040: well, probably there's enough people using it that the patch is going to be
+  well used and well tested
+1047: and enough people want WGET that we just need to suck it up.
+1051: Whereas if it's some really obscure little program, my temptation is nowadays,
+  if upstreams say we don't want to support OSX,
+1058: then we just kill the package and we don't ship it anymore.
+1061: Because, again, as I say, I'm not really in the interests of homebrew effectively
+  forking half the packages in this situation in order to provide OSX support,
+1073: because then we end up with horrible long patches and everyone cries.
+1078: So the other relatively common problem is that upstream is inactive.
+1083: So I go and post my nice little auto-generated thing in the previous one.
+1087: And someone says, well, I have submitted to upstream, but their Git repository
+  is not, in fact, a Git repository.
+1093: It's a CVS repository and it hasn't been updated in 35 years.
+1096: And at this point, you have a bit of a dilemma, because it's like, well, this
+  patch, we have notionally submitted this upstream,
+1104: but realistically, this is never going to end up in a released piece of software.
+1108: And, again, I try and apply the same principles, where if software is no longer
+  maintained,
+1112: if it requires increasing number of patches to be even functional,
+1117: at some point we need to say, let's not package this software, let's try and
+  shunt people onto something else or just let them cry.
+1126: So if anyone has solutions, I meant to say this before the bad point,
+1131: please, in the question time, if anyone has any really obvious solutions to
+  these problems I'm bringing up,
+1137: please let me know, because I'm sure there are some, but I'm missing them.
+1140: Right.
+1142: The other one is niche projects.
+1144: So as a downside of our relatively easy contribution model,
+1150: we, I don't imagine massive distributions like Debian get this problem as much,
+1157: but we literally sometimes have people saying,
+1161: hey, here's this project I've made on GitHub in the last two hours.
+1166: Like, the commit history is two hours old.
+1169: No one else has ever used this software.
+1171: It has no readme.
+1172: It has no homepage.
+1173: It has no documentation.
+1174: It has no help flag.
+1175: But I think you should add it in homebrew.
+1177: And we have, like, a thing in our documentation about saying, you know,
+1184: please use your discretion when submitting things.
+1186: We may not accept everything that you submit.
+1188: And invariably, these things turn into, like, massive discussions about why
+  I'm basically Hitler,
+1195: because I won't include this person's package that they wrote two hours ago,
+1199: and who am I to say that there might be bugs?
+1202: There almost certainly isn't any bugs, et cetera, et cetera.
+1204: So we have to kind of work out a balance on this stuff.
+1209: And bizarrely, it ends up happening with some fairly major packages as well.
+1214: Like, a recent kerfuffle was about there's a fork of Node.js called IO.js now.
+1221: And people got very, very upset because it was a week before this pull request
+  got merged.
+1228: And although this project isn't niche, it's not being widely used,
+1232: certainly not widely used in production yet.
+1234: So I think the flip side of a contribution process where we're kind of quite
+  quick to turn things around
+1240: is that sometimes you end up having unreasonable expectations on you
+1243: where you're literally on holiday and getting abusive emails about,
+1247: why haven't you merged this yet?
+1249: It's like, well, I don't even have internet.
+1250: Like, I'm receiving this on a cafe on my phone.
+1254: So, again, I'm not sure of an obvious way of solving this problem
+1261: other than just having to tell people to go away sometimes.
+1266: And the last one, I guess, is money.
+1268: So Homebrew, there's been some kind of really great talks today I've heard about
+  setting up proper kind of charitable organizations
+1275: and stuff like that for open source projects and getting kind of donations and
+  sponsorship and things like that.
+1281: And I think we need to do a bit more of that.
+1282: Previously, our money situation has just been we ran that Kickstarter, we bought
+  that hardware,
+1288: and we have some money in a bank account in the UK, which is kind of under Homebrew's
+  name, thankfully, rather than mine.
+1295: But unfortunately, because there's just a big pot of money and we don't have
+  any regular money coming in,
+1302: stuff like our binary package hosting, which is provided freely by SourceForge
+  at the moment,
+1306: that's been a little bit unreliable.
+1309: So we look at alternatives and all of those cost money and all of them cost
+  regular monthly outgoings.
+1315: And I'm nervous about signing us up for something where we have like a, you
+  know, 12-month, 18-month runway
+1323: before all of our binary packages will just break because we don't have any
+  money anymore.
+1328: So it's kind of tricky when all of us as maintainers do not want to kind of
+  pour our own money into the project,
+1336: but yet we have a reasonable number of people using it.
+1340: And again, I'm sure if we set up a sensible way for people to be able to donate,
+1344: then people probably would and this would be a solved problem.
+1347: But generally dealing with money is far more scary than dealing with software.
+1352: So I just try and mooch off free stuff whenever possible.
+1358: And onto the ugly.
+1361: And actually there's only really one thing in the ugly section in terms of stuff
+  that we kind of struggle with on the project,
+1369: which is kind of abuse.
+1371: It's kind of bizarre.
+1372: I'm sure I'm far from the only person to have discovered this.
+1376: But when you run an open source project, you attract all sorts of interesting
+  people,
+1380: some very lovely people and some strange people.
+1384: Some of the strange people, one of the previous mentioned ones where I didn't
+  include someone's project
+1388: because it was like two hours old.
+1389: Someone followed me on Twitter for an entire year because I went back and looked
+  through my email logs
+1394: to see when the following things happened.
+1396: Followed me on Twitter for an entire year just to wait for me to have a bad
+  day
+1400: and then go and tweet about like, oh, I'm having a bad day today.
+1404: And I'm going, ha, ha, ha.
+1405: You deserve it.
+1406: You're a dick.
+1407: And it took me a while to work out who is this person?
+1412: Why are they saying?
+1413: I mean, obviously it's the internet.
+1414: So people say this type of stuff all the time.
+1416: And also my friends say this type of stuff to me all the time.
+1419: So it was like, well, I don't know you.
+1422: Where does your name come from?
+1424: So I went and did this little detective journey and found out that it's just
+  someone whose pull request I closed.
+1430: And then he followed me on Twitter for a year just to try and stick the boot
+  in when I'm having a bad day.
+1438: Thankfully, I'm a lucky enough person that actually made it a really good day
+  for me
+1442: because I was like, this is kind of funny, the length to which people will go
+  to try and annoy you.
+1448: But yet, like, this general, like, Twitter is one of these weird, like, I love
+  it in many ways,
+1456: but then I've disengaged with almost all attempted open source discussion on
+  Twitter
+1461: because it ends up resolving into just people throwing names around and getting
+  upset.
+1466: And that's just me.
+1468: But it's, my attitude has kind of been, if stuff's important enough, it will
+  end up on the issue tracker
+1475: or it will end up on our mailing list.
+1476: And trying to sort of stick out of the bike-sheddy, this is why homebrew and
+  everyone who works on it is really terrible.
+1483: Because, again, I'm open to solutions on this, but it's surprising, I think,
+1489: how much you can have lots of lovely comments from people and then someone making
+  horrible comments to you,
+1496: just for, like, you know, a few hours or whatever, can really, really sap your
+  motivation.
+1500: And what I've tried to do with homebrew is trying to protect our maintainers
+  from that.
+1507: We have a code of conduct that we try and enforce relatively strictly because
+  my attitude is,
+1512: ultimately, your pull request may be important and it may be good, but if it
+  stops one of the maintainers
+1517: who spend a lot more time working on homebrew from working on it because you've
+  been really demotivating to them,
+1523: then that's probably not worth the kind of loss to the project of you winning
+  this particular fight.
+1533: And, again, we end up having some bizarre situations sometimes where, again,
+1538: I'm sure this is a relatively common package manager problem, where people say,
+  you know,
+1542: in the backdrop of Heartbleed, the SSLv3 vulnerability, where people come and
+  just submit a pull request
+1549: that disables SSLv3 on OpenSSL.
+1553: And that's all very well and good, but it then breaks Python.
+1556: And you say, well, it breaks Python.
+1558: You know, what should we do about this?
+1559: And they say, well, that's not my problem.
+1560: You need to fix this.
+1562: You know, SSLv3 is broken now and whatever.
+1565: So kind of this balancing act of trying to do the right thing whilst having
+  a life outside of just working on homebrew
+1575: is something I've personally struggled with.
+1578: And, yeah, so hopefully this has given you some sort of vague rambling overview
+  of what I think homebrew does well,
+1586: what I think I don't do well, and what I think could kind of be learned from
+  homebrew.
+1594: Homebrew could learn from a lot of other distributions, I think.
+1596: So I'd like to kind of open up.
+1598: If anyone has any questions or thoughts or comments, then that would be lovely.
+1602: Yeah, I guess it's a bit like a RPM.
+1607: So just because I built an RPM, it isn't necessarily the center office is going
+  to, you know,
+1612: or any other distribution is going to take it.
+1613: But there's no reason I can't make my own RPM repo and use the RPM demand to
+  install it.
+1617: So you say to these people, fair enough, I'm not going to make, I'm not going
+  to take your project into our central repository
+1623: because I can't maintain it or I don't want to maintain it.
+1625: But you can still use the homebrew demand if you want to to install it and manage
+  it.
+1629: You know, but you can just tell people on your website, you can say,
+1632: put your homebrew installation in mind, get up your rail, and it'll just work.
+1636: Yeah, and we do try and do that.
+1638: But the sad reality is that people, yeah, it's kudos and it's, they're like
+  a second-class citizen now.
+1645: There's an extra step involved or slight more characters in the command
+1649: or it doesn't show up in search or whatever.
+1651: Like, so, yeah.
+1656: This is a bit of a silly question, I suppose, but what percentage of the entire
+  homebrew package system
+1664: do you think can be installed at the same time on a single machine?
+1666: What was that, sorry?
+1667: Like, if you try to install everything in homebrew right now on a single machine,
+1671: there's some obvious conflicts where there's possibly some version that will
+  not literally work the other one.
+1676: Do you think they'll all work on the same box?
+1679: Yes, so that is an interesting segue, I guess, in the way that homebrew installs
+  packages.
+1686: We install everything into a, rather than installing everything into, like,
+  the user prefix or whatever,
+1693: we install everything into user local, and then within that, every package has
+  its own prefix,
+1698: and then we symlink things back.
+1700: So, if you install wget, say, version 1.00, it would be user local, seller,
+  wget, 1.00,
+1709: and then those links would then get kind of symlinked back.
+1713: So, if you try to install everything, it would all install nicely into their
+  little prefixes, I'm sure,
+1719: and then some things might, if we don't have conflicts declared that should
+  be there,
+1723: then some things might break in that way.
+1725: But, yeah, I haven't tried, because my hard drive cries when I think about it.
+1729: Sorry, yeah?
+1732: That was sort of a leading question, because I knew the answer.
+1734: Would you have an idea of, like, you know, screwing sort of package management
+  all together,
+1738: just having, like, a file system that has everything installed already?
+1742: Yeah, that would be a nice idea, I think.
+1745: And, in some ways, I want us to go more towards that, like, something I would
+  like to try.
+1751: So, the way, like, your kind of GUI applications on OSX, like .app bundles,
+1757: the way they work is, if they have library dependencies,
+1761: they all ship all of their library dependencies inside everything.
+1764: So, you may have, you know, 20, 30 versions of the same library in your system,
+1768: but you can still get any app bundle and delete it,
+1772: and it just doesn't care that you have all those duplicates.
+1775: So, in some ways, I would like to see us move a little bit more to that model,
+1779: where package management becomes a bit more about the individual things you
+  want to install
+1783: and not managing the complex dependency trees and things like that,
+1786: because that's, A, the hard bit, and B, the bit where it all goes wrong.
+1791: So, yeah, in some ways, I would like to see a move for us more towards
+1796: being able to just install potentially everything if you wanted to.
+1800: Yeah.
+1802: Yeah, we have, actually.
+1821: That's a really good question.
+1822: So, the issue I've had with mirrors is trying to find a primary mirror.
+1829: So, I've got loads of people who, loads of organizations who've signed up
+1832: to become secondary mirrors in which they would R-sync stuff off the primary
+  mirror.
+1835: But the problem is finding a primary mirror which someone will provide to us
+  hopefully for free
+1843: with the bandwidth constraints that we have
+1845: and being prepared to be the primary mirror in a rotation and stuff like that,
+1850: that that kind of then gets a little bit harder.
+1852: and then also the way that we annoyingly distribute all our package descriptors
+1857: are on GitHub rather than on the binary package mirror, partly for security
+  reasons.
+1861: So, then that becomes a nightmare to try and do geolocation and things like
+  that.
+1865: So, yeah, basically, we've considered that and we're trying to work something
+  out there,
+1869: but it's not quite there yet.
+1879: Yeah, that would be great, actually.
+1895: Let's talk afterwards.
+1896: Any other questions?
+1900: Oh, yep.
+1901: Yeah, you've talked just before about dependency trees and where they're all
+  going wrong.
+1907: Do you know if there's any work that you've done on an installing part?
+1911: Insulation work is great, fantastic.
+1913: When you start an installing stuff that takes us based on your SSDs and what's
+  going wrong.
+1918: Yeah, you end up with stuff being...
+1919: What do you use?
+1920: Which version?
+1921: Which version?
+1922: So, our dependency system in Homebrew is, like, not very nice,
+1928: and that's a bit of an understatement.
+1930: Homebrew is a great project,
+1931: but it's one in which the initial implementation left quite a bit to be desired
+1937: and in the desire to not break things for users,
+1941: we are very, very slowly trying to refactor the dependency system towards something
+  sane.
+1945: So, when that is finished,
+1947: which it will be at some point in the next 100 to 300 years,
+1951: everything will be magic and rainbows will shoot out your computer.
+1956: But until then, yes, like, the uninstallation
+1959: and it's not as nice as the...
+1960: So, there's one command called brew leaves,
+1962: which tells you effectively the end of each branch.
+1966: So, if you install one package and it installs 10 dependencies,
+1968: it will tell you what the packages are that have pulled in the dependence.
+1973: So, that can help with uninstalling stuff.
+1976: If there's something in there that you didn't install yourself,
+1979: then you can probably remove it.
+1981: But it's not a nice solution, I realize.
+1983: No, go for it.
+1987: In the spirit of eating your own dog food,
+1988: what's your top five brewing stalls?
+1991: My top five brewing stalls?
+1993: That could be a BuzzFeed article.
+1996: I like Ack, which is like a kind of grep on steroids thing
+2001: for searching all over the place.
+2003: What else do I like?
+2005: I don't even know.
+2007: I like color diff and color grep.
+2009: Sorry, color diff, which shows me my diffs, but with color.
+2012: I also like, I don't know, another three things.
+2019: more software, but Ack is the main one that really,
+2022: I love Git, obviously, so I like to have the newest version.
+2025: How do you determine what we host as binary packages
+2030: versus what we distribute as group build portals?
+2035: So, how do we determine what we host as binary packages?
+2039: You don't have the entire tree, your entire...
+2042: No, basically, it's done on kind of a case-by-case basis.
+2046: We're slowly trying to build up the number of stuff,
+2049: the number of things we have as binary packages.
+2051: We don't have a sort of auto-magic binary...
+2055: Well, we've got binary building stuff,
+2058: which is all quite magical,
+2059: but we don't have the facility to just say,
+2062: you know, build binary packages for everything.
+2065: So, at the moment, it's basically just on case-by-case basis,
+2069: pretty much, but we are trying to, again,
+2071: my goal is to have binary packages for everything.
+2073: But, yes, well, I think that's us.
+2076: I have had my final sign put up.
+2078: So, thank you very much, everyone, for coming,
+2079: and thank you for the questions, and thanks.
+2081: Thank you.

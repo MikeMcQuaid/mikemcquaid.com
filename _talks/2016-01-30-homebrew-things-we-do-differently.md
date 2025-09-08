@@ -4,5 +4,6 @@ description: Some of the things that Homebrew does well, badly and the special c
 speakerdeck-id: 0d4ce07dabf04dad8acf39d267874e68
 speakerdeck-ratio: 1.33333333333333
 youtube-id: dIGQPqvBub4
+transcript: true
 ---
 Presented at [FOSDEM](https://fosdem.org) in 2016.

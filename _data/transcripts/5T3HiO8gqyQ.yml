@@ -1,0 +1,43 @@
+---
+0: Hi, my name is Mike McQuaid and I'm one of the developers on the Homebrew project.
+6: Homebrew is a package manager for OSX. That basically means you can use it to install
+  software
+11: typically servers or other stuff you run from the terminal on Macs.
+15: We're asking for money to help make Homebrew better for you by making it easier
+  for us to do development
+20: and let computers do the boring stuff that we can automate.
+23: Homebrew relies heavily on her volunteer contributions.
+26: Our thousands of packages known as formulae are kept working up to date by thousands
+  of volunteers
+31: and are added to the repository by one of the six people with commit access, of
+  which I'm one.
+35: I'll run you through the process we use to test and accept community contributions.
+39: Here you can see a pull request on GitHub, albeit one I've already closed.
+46: This means someone has requested we change a part of Homebrew, usually a formula.
+50: I'll have a quick look through the changes to make sure they aren't doing anything
+  crazy
+54: and then copy and paste this URL into the terminal and run brew pull, a command
+  that I developed previously, to test changes.
+61: Pull request changes were downloaded to my local machine and it's now building
+  any formula that we changed.
+71: This is successful, then I'll push the change to the repository.
+75: We provide binary packages for some formulae, which are known as bottles.
+82: To build them, I need to do what I just did, but of course a virtual machine for
+  each platform we support.
+86: Currently, Mountain Lion, Lion and Snow Leopard, and upload these packages.
+90: All changes requested to Homebrew require testing and checking by the commands
+  we've built for that purpose, such as brew audit, which checks the formula file
+  for style violations, and brew pull, which I showed you earlier.
+102: Wouldn't it be great if this could be done automatically, so we only need to
+  spend time on the changes that weren't working.
+117: This is why Homebrew needs your money.
+120: With your help, you can buy a Mac mini, or perhaps multiple, which we'll always
+  be running to check community contributions, build binary packages, and test Homebrew.
+130: I've already developed a command called brew test bot, which automates most of
+  this process, and set up a Jenkins installation to run this on a shared machine.
+138: This isn't publicly accessible, and as we share the hardware, we can't make use
+  of it for its full potential.
+145: I'm excited about the potential for improvement to Homebrew for its users, and
+  I hope you can help us make Homebrew even better by funding Homebrew's brew test
+  bot.
+153: Thanks for watching.

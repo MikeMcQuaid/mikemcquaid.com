@@ -1,0 +1,538 @@
+---
+0: Well, yeah, thanks, everyone. Thanks for having me today. I appreciate being asked
+  to kind of nerd out on package management because it's something that I've cared
+  about for a fair wee while. So there's three talks, I think, from homebrew maintainers
+  happening in this conference. And I'm going to kind of do like a deep dive into
+  homebrew and some of the stuff I kind of have seen with homebrew that's kind of
+  worked well, not working well, a little bit of history and stuff like that. So let's
+  have a wee walkthrough for you.
+30: So my name is Mike McQuaid. Nice to meet you. I know some of the folks who are
+  watching this, I'm sure I've met a bunch of you already, and I hope to meet many
+  more. And you can get in contact with me if you have any kind of thoughts or questions
+  about either this talk or homebrew in general, then get in touch on Twitter or through
+  my email, which is on my GitHub or whatever.
+51: So I've been working on homebrew for about 12 years now. And I've been the project
+  leader, I guess, for three or so. And yeah, it's a really pretty interesting project
+  to work on. And it's a pretty interesting package manager. So let's have a wee walkthrough
+  these things.
+66: So as I mentioned before, what I'm going to talk through today is the history
+  of homebrew and how that sort of has informed where homebrew is today and some of
+  the kind of original design decisions and stuff like that, things that homebrew
+  does well, from my perspective, at least compared to other package managers, things
+  that it does badly.
+84: And then moving on from these, the things that homebrew can't really change, that
+  it does not very well, and some stuff that we have planned for future, which will
+  hopefully be some good changes.
+95: So let's start off with the history. So I'm going to actually walk through, interestingly,
+  with homebrew, it's one of these ones where the whole development from day one,
+  pretty much, is in the open, and you can kind of review all that stuff.
+109: So you can actually go all the way back in the Git logs. We've moved repositories
+  over the years on GitHub, but we have been diligent in kind of maintaining a lot
+  of Git history.
+120: So in the homebrew repository, you can see the original commit for homebrew that
+  was made by Max Howell, the original creator, on 21st of May, 2009.
+130: So like this kind of readme sort of describes how the project works at this stage.
+137: I mean, it's fairly different, even within a few months of this.
+140: So I think I was involved, I don't know, like three, four months after he sort
+  of did this original commit.
+146: I sort of knew Max, he was a friend of a friend, and we both, I think we were
+  working in London at the time.
+151: But it's interesting to see how many of these kind of concepts are still integral
+  to homebrew 12 years on.
+159: So I'm not going to read through everything here.
+161: And if you can't read all the text here, then A, you can go and check out this
+  link and see the text there if you want to.
+168: But B, also like, I'm just going to gloss over stuff and you can go back and
+  get back to it later if you're interested.
+174: So the first thing here that's sort of notable is this kind of idea that, like,
+  say, if you're still in WGET, WGET's embedded within a version directory.
+182: So you've got WGET slash 1.14 bin WGET.
+186: I think that was inspired originally by Gobu Linux, which does something similar.
+190: It might have been something that did that before Gobu Linux.
+192: But this idea that every software and every version of the software is in an
+  individually versioned prefix, which are then symlinked back so that you can kind
+  of, you know, use a, you know, user local bin WGET, but that actually points to
+  user local seller WGET 1.14 bin WGET, for example.
+209: So this is still remains the same and as Max says, you kind of use the file system
+  of the package database, which is kind of nice because it's less preserved state
+  and we don't need to implement like a database package store or whatever.
+220: So the next thing, again, the stuff that remains the same today that's sort of
+  interesting with the original approaches with Homebrew are we kind of still try
+  and use sort of dependencies from a macOS system when they're available for us.
+231: We also still don't run as root.
+234: And there's a few exceptions where a little bit more liberal on than we used
+  to with stuff like running in Docker containers on Linux.
+239: And we can still be installed anywhere.
+241: But I guess as I'll talk about in this talk, basically almost anything you could
+  do with Homebrew back then, you still can do with Homebrew now.
+250: But the difference being there's paths that we support now compared to before
+  where it was, you know, arguably everything was supported and nothing was supported.
+259: So moving forward, like Homebrew doesn't really work quite the same way as this,
+  you know, the really first versions were literally you were just calling a Ruby
+  script and you're executing with Ruby, whereas now we have this kind of brood command.
+270: But again, still you can see most of these operations kind of seeing the installed
+  size of a package on disk by using typical Unix file system utilities and stuff
+  like that.
+280: So there's even a little touch on here where Mac sort of debates whether or not
+  we should add a brute command, but says that, you know, if you don't add it, then
+  you'll understand that the system is better.
+289: And obviously we did have a brute command eventually.
+293: And I think there's still a certain amount of understanding, but I think it shows
+  kind of the real technical focus for the original Homebrew users were expected to
+  kind of, you know, know the way around the Unix command line very well and not just
+  use it as a tool for installing stuff, which might be the first Unix command line
+  tool that they use.
+310: I still think there's that middle paragraph where it talks about with AppGate,
+  you don't really know what's happening with Homebrew you do.
+316: Obviously, despite the fact we have like a brew and still come on now, our kind
+  of formula, which is what we call our package descriptions in Homebrew are still
+  fairly readable.
+324: If you look through, it's fairly, there's not, there's a little bit more magic
+  than there used to be, but it's still fairly obvious like what commands have been
+  run under the hood to actually make it work.
+333: So there's some kind of opinions here about like Mac ports, which at the time
+  was the kind of main competitor, I guess, that Homebrew was kind of seeking to replace.
+342: And, you know, we've both found their own little individual niches that kind
+  of make sense for Mac ports and Homebrew.
+348: And this sort of, you know, Mac ports is installing its own LibZ, OpenSSL, et
+  cetera, stuff like that.
+353: Like Homebrew still tries to take this methodology where we can.
+357: Unfortunately, with stuff like OpenSSL, we've got to the point where compared
+  to back in the Leopard days, the system OpenSSL was so outdated at this point.
+365: Well, it's Libra SSL firstly, but it's, you know, it doesn't work for a lot of
+  things that we need it to.
+369: So unfortunately, we have to rely there.
+372: But we still, you know, we still try and use what we can from the Mac OS system
+  when we can.
+376: And also the stuff that Homebrew will never build.
+378: So, I mean, all of these have been broken in some form.
+380: So, Katie, you know, yeah, we don't package that stuff in Homebrew proper, but
+  something else does.
+384: There's various taps that kind of you can use, taps being the third party Homebrew
+  repositories that use these type of things.
+392: Anything that can be distributed in an app bundle, again, sort of.
+395: So Homebrew can install those, but that's kind of separate to formula.
+399: That's Homebrew Cask, which was then merged into Homebrew itself.
+402: So you can brew install Google Chrome, but that's kind of using a completely
+  different way of doing that.
+406: Anything that you just saw outside the Homebrew tree, same deal.
+410: Stuff in the Homebrew tree is done by formula.
+413: Stuff that needs to go outside the Homebrew tree is done by casks.
+415: And stuff, OS X, now Mac OS, already does.
+418: RubyGems, duplication sucks.
+420: So, like, we do a little bit more duplication.
+422: We will now package some stuff in RubyGems, NPM, whatever, but generally only
+  applications
+427: if you don't care about the fact that they're written in JavaScript to Ruby or
+  whatever it may be.
+432: But we don't go and take the, say, Debian approach, or at least Debian approach,
+  over a few years ago
+437: and go and try and package, you know, every library that we use for an NPM application
+  or whatever it may be.
+442: So, compiling from source is an interesting thing.
+446: So Homebrew is essentially still under the hood, a from source package manager,
+449: but we built binaries, which we call bottles, on top instead.
+454: So now we actually only support building binary packages and users consuming
+  those binary packages.
+460: We have a build from source fallback, which is what we are using in CI to build
+  those binary packages,
+465: but that we don't really support that.
+466: It's, you know, over the years, we just found it was far too error prone to support,
+  like, from source package installation.
+474: And, again, like with Homebrew being originally a macOS package manager,
+477: we wanted to kind of keep the focus on stuff that works out of the box.
+482: We look kind of like Apple does.
+483: We would rather offer less knobs to twiddle, but a system which works better
+  most of the time.
+490: So, I guess, of course, that's very debatable whether Apple works better, but
+  it's my talk,
+495: so I guess I can say what I want.
+496: How do we advertise to someone who's packaged out as eight?
+499: Again, this points to the fact that Homebrew from the outset was using GitHub
+  very heavily.
+502: And this is, again, something we still do to this day,
+505: and the kind of contribution focus in Homebrew is still very, very strong.
+509: And then, finally, the thing people always ask,
+511: Homebrew obviously has this beer theme that started from the outset.
+514: And, yes, Homebrew was originally advised under the influence of alcohol.
+519: So, these themes, which I think still apply with Homebrew today,
+522: about avoiding duplication, a fairly focused scope,
+525: not doing things necessarily other package managers might for you,
+528: community ownership of the package manager rather than it being entirely done
+  by Macs
+532: or the maintainers, and making contribution very easy.
+534: I think those stand on and set the kind of foundation for where the package manager
+  is today.
+539: So, this segues nicely into the things I think Homebrew does well.
+543: So, going back to that, contributions.
+546: So, we've had over, I guess, between the two repositories,
+549: probably over 10,000 contributors to Homebrew at this point over a 10-year period.
+553: People have asked in the past, like, how have we done that?
+557: How have we got so many contributors?
+558: And I think part of that is making it very easy.
+562: So, we have a community that's very welcoming to people.
+566: There's sometimes an expression that I've heard people say where they talk about,
+  you know,
+572: the drive-by contributors and pull requests that people just submit one,
+577: and then they forget, and they never come back to the project.
+578: In my mind, like, if that is not useful to your project,
+582: then that's a sign that you set expectations maybe a little bit badly
+584: of what your project wants and what they don't.
+587: We have a lot of people who have only contributed once,
+588: but it's been really useful.
+590: And we have created dedicated tooling to make it much easier to do this.
+593: So, in our documentation, how to open a pull request,
+596: the most common thing people were doing, we would find,
+598: would be submitting a pull request to change a version.
+602: We call it bumping a version.
+603: So, increasing the version of a package to the newest version that's come out.
+607: So, we have a dedicated tool, BrewBumpFormulaPR,
+610: which you can specify a package name and the new version and stuff like that,
+614: and it will actually not only make the changes for you locally,
+616: commit them to Git, but it opens the pull request for you.
+619: And it's pretty cool to be able to see people being able to create pull requests
+622: without really any understanding of Git,
+623: without really any understanding of what Hover Brew is doing underneath the hood,
+626: but just following steps and documentation,
+628: and that's their way of getting involved with the community.
+630: And it's actually useful for us as well,
+632: because that saves us kind of from having to check this stuff manually.
+636: Stepping onwards from different stuff that Homebrew does.
+638: So, another thing I think we do fairly well is doing things for the user.
+642: So, in this screenshot, you can see I'm upgrading a package here,
+647: so upgrading shell check,
+648: but this is actually doing a couple of things,
+650: which had to be done somewhat manually.
+652: So, it's updating Homebrew itself,
+655: effectively running a brew update command for you before it does anything.
+658: So, this was a change that we made a few years ago
+661: to basically reduce the amount of support requests we were getting,
+663: because we were getting tons of support requests,
+665: which were 90%, probably 95%, maybe 99% were resolved by run brew update and
+  try again.
+671: So, this basically means that we will talk about by default, people are always
+  getting the latest version of Homebrew and the latest version of the packages.
+679: And this makes more sense from our perspective, but I'll come more onto that
+  later.
+684: So, this is updating Homebrew.
+685: It's upgrading the package for you, downloading it, etc.
+689: and then it's running brew cleanup afterwards to kind of clean up the old versions
+  of the package and the kind of old cache files and stuff like that.
+697: Again, we didn't use this by default automatically for people, but Homebrew ended
+  up taking up more and more space and your average user didn't understand why.
+704: So, another thing Homebrew I think does really well, I'm biased, of course, because
+  I am a homebrew maintainer,
+709: but we really prioritize the kind of health and mental health of our maintainers.
+714: We try and we've got documents on how to avoid burnout and we try and set the
+  expectation in general that in the project,
+720: that if you have to choose between a maintainer suffering and a contributor suffering
+  or a maintainer suffering and a user suffering,
+726: and those levels of suffering are roughly equal, then we are always going to
+  prioritize the maintainer.
+732: Because ultimately, at the end of the day, the project without any maintainers
+  ceases to exist, all activity stops,
+737: and we don't have an open source project anymore.
+739: And assuming that every maintainer, as the maintainer guide to avoiding burnout
+  says, is using Homebrew,
+746: then we can't have no users, because so long as we have one maintainer, we have
+  one user.
+750: Whereas, if we only have users who aren't contributing and who aren't maintaining
+  the package manager,
+755: then we don't have a package manager anymore, effectively.
+758: So, yeah, so this is something I would advise you to do.
+761: I personally have taken some quite strong leads on this in the past.
+764: You can check out this blog post that I recommend if you're a package manager
+  maintainer,
+769: I recommend you read this and really internalize this,
+771: because it's really hard to get your head around the idea that you don't actually
+  owe anyone anything.
+776: When it comes to open source, everything you do is from the principle of charity,
+779: and that's great, and you can do that, and it's very nice to do things,
+784: and there are things which I feel obligated to do, and I do do them,
+787: because I want to try and be nice, but you don't have to do them.
+790: And particularly when people are being entitled jerks, you do not have to do
+  them,
+793: and you do not have to fix legitimate bugs from entitled jerks.
+797: So that's me on my soapbox briefly.
+799: But I do think this focus on, for a relatively long period, on kind of maintainers,
+804: some people don't like it, but the maintainers in the project seem to like it,
+808: and it seems to keep people around for a reasonable amount of time
+810: and allow them to have a good time on homebrew,
+812: which means they spend more time on homebrew.
+814: So I guess my summary of stuff we do well, community ownership of the project,
+820: it's not just owned by the maintainers.
+822: We expect our users to get involved, but we make it easy to contribute.
+826: We have fairly sensible defaults, so we don't expect you to kind of just know
+829: to run a command after you run some other command.
+831: We either tell you to do it, or we do it for you,
+834: and then we prioritize maintainers.
+836: Things we do badly.
+837: So, wait a second, this is the same.
+840: Oh, no, aha, this is me being very clever here,
+843: because like in most software development, there are trade-offs.
+846: So these are the things that we prioritize in homebrew,
+850: but you could equally, and some people do if you read comments
+853: and places that hack and use, flip this around to the other way around.
+855: So instead of community ownership, you could say,
+857: well, our maintainers don't take sufficient ownership.
+860: Instead of user contribution being a good thing,
+863: we could say, well, we punt things off to our users
+865: rather than doing them ourselves.
+866: Instead of good defaults, we could say, well, for power users,
+869: the defaults are bad, and also the defaults keep changing over the years.
+872: And instead of saying we're prioritizing maintainers,
+875: they're saying, well, homebrew is just trying to do all they can
+877: to kind of close issues and use stale bots and lock bots and whatever.
+880: So I think these are valid criticisms of the project.
+884: These are valid trade-offs that I think we're making,
+887: but it's worth pointing out what these trade-offs look like.
+890: So this is an example of a fairly normal issue that's created
+893: to where someone said, okay, I instilled this package using homebrew.
+896: But in homebrew, in our case, we don't have,
+900: we don't maintain issues, and we don't try and fix packages
+903: that we have which are like broken,
+906: which are basically outweighed of our responsibility.
+908: So we've got two maintainers here,
+909: Bo98 and S MillerDev, who are saying, yeah, upstream to fix this,
+913: and we're going to close this
+915: because homebrew is not going to keep track of this indefinitely.
+917: Similarly, on a pull request where someone says,
+921: oh, this thing fails,
+922: Sean Miller is saying here, yeah,
+926: could you make a pull request to update this?
+928: Because the person there seems to be the one affected,
+930: and they seem to be the one who knows what needs to be changed.
+932: So it makes sense to Sean and to me
+934: that that person would submit a pull request to make those fixes.
+937: So on to default.
+939: So everything on this slide,
+941: so analytics, auto-update,
+943: boot snap,
+944: checking dependence,
+946: cleaning up formula after installation,
+948: and this slide,
+949: not using the GitHub API,
+951: no insecure redirects,
+953: not doing cleanup after install,
+956: and not automatically upgrading install outdated formula.
+960: Like various people over the years have argued that,
+963: well, sorry,
+965: in homebrew,
+966: none of these used to be the case.
+968: I think with a couple of exceptions,
+970: these used to almost all be the default behavior.
+973: And everyone has argued,
+975: sorry,
+976: someone has argued for every single one of these over the years
+979: that they should be the default.
+980: But we decide the defaults that we do
+983: based on prioritizing the 99% case,
+986: the people who use homebrew most often.
+988: we want homebrew to install things,
+991: fix things up.
+993: If we think that we may have broken something,
+995: we would rather do an upgrade that was unnecessary,
+997: or reinstall that was like detected,
+1000: if broken linkage was detected or whatever,
+1003: and make an installation take a little bit longer
+1005: than you might have expected,
+1006: but produce a result that's correct at the end.
+1009: And some people don't like that behavior,
+1010: but we think that's the best for users overall.
+1013: Similarly,
+1014: we have a homebrew developer command
+1015: that you can get auto opted into
+1017: by running certain commands,
+1018: which puts you on a beta channel of homebrew.
+1020: this is very useful for our user testing,
+1022: but some people don't like this.
+1024: But like if we had an opt-in testing there,
+1026: we would have much fewer people in it.
+1028: So we would rather prioritize what's easier for us.
+1030: Similarly,
+1033: on our issues,
+1034: we now have these kind of required issue templates
+1036: with required fields you have to fill in.
+1038: No doubt,
+1039: this is a little bit harder for people to fill in.
+1041: Maybe it takes a little bit more time
+1042: and requires more information from them.
+1043: But this allows maintainers time to be prioritized
+1047: so that we can jump in
+1048: and have the information we need
+1050: when someone submits an issue
+1051: rather than having back and forth.
+1052: So this leads us on to things about homebrew
+1055: which are a bit broken that we can't change.
+1057: So one is our version support.
+1060: Our version support isn't really great.
+1061: You can go and read our documentation,
+1063: but effectively,
+1064: you're just creating multiple formula
+1065: because homebrew doesn't have the concept internally
+1068: of depending on a particular version.
+1069: So we just have a version being outdated
+1072: or it's not outdated.
+1073: And if it's outdated,
+1074: And if something depends on something that's outdated,
+1076: it gets upgraded as part of the installation.
+1078: So similarly,
+1081: installing old versions of formula,
+1082: like people are like,
+1083: oh, well,
+1084: can't you just install the old version
+1085: from the Git history?
+1086: No, sadly not,
+1087: because that stuff breaks all the time
+1089: because we have to make changes
+1091: as macOS changes and the like.
+1094: Our installation process,
+1095: people would love it
+1096: if we supported
+1097: the non-default installation parts.
+1099: But if you use the non-default ones,
+1101: you don't get binary packages.
+1102: And if you don't get binary packages,
+1103: we're not testing what you're doing in CI
+1105: and things may be broken.
+1107: So we don't support those
+1108: because we don't have
+1109: the volunteer time
+1110: to be able to do so.
+1111: I'm almost at the end,
+1114: so I'm just going to fire through quickly.
+1115: Our terminology,
+1116: similarly,
+1117: we can't really change this at this point
+1119: without confusing existing users.
+1121: We're written in Ruby.
+1122: There's upsides and downsides of that,
+1123: but it slows things down a little bit.
+1125: So we can't really rewrite Homebrew
+1127: not in Ruby.
+1128: And particularly our DSL
+1129: is very heavily reliant on Ruby.
+1131: But stuff we are planning on changing
+1133: in the nearest future.
+1134: So we plan on allowing formula
+1137: to be installed
+1138: without having to have Homebrew core
+1140: or Homebrew cask
+1141: checked out on disk.
+1142: So they take up a lot of space
+1143: and they take a long time
+1144: to fetch and clone
+1146: and update.
+1147: So that will be a big win
+1149: when we're able to ship this by default.
+1150: But you can try this out now
+1151: with this Homebrew install from API flag.
+1153: We hope to have more
+1155: binary packages be relocatable,
+1156: which means you can install
+1158: and they will be used.
+1159: But if we ever get to a point
+1161: where 100% of our binary packages
+1163: are like this,
+1164: to install Homebrew anywhere,
+1165: which would be great.
+1167: But you can check out
+1168: what stuff we have planned
+1169: from our help wanted labels
+1171: on our repository.
+1172: So things that Homebrew does
+1174: like that's coming in future.
+1176: You can expect some faster updates,
+1178: hopefully some more relocated bottles
+1179: and relocatable bottles
+1181: and maybe other stuff.
+1183: Who knows what the future will hold?
+1186: So yeah, sorry,
+1187: I've run a little bit late with this.
+1188: I don't know if we have any time
+1189: for questions or not.
+1190: But thank you everyone
+1192: for coming and listening
+1193: and thank you for everyone
+1194: who has contributed to
+1195: or maintained Homebrew
+1196: over the years.
+1197: We couldn't have done it without you.
+1199: So I'm seeing some questions
+1213: I'm going to read off the screen
+1214: and answer the questions
+1215: Given that you have to package up
+1217: do you find it valuable to say
+1218: try not to package
+1219: When you move to a model
+1220: where you did that
+1221: or would it be worse?
+1222: So in my opinion,
+1224: I think it's still valuable
+1225: to use things from the URL.
+1226: the OS where they're provided.
+1227: So like Zedlib, OpenSSL,
+1228: whatever,
+1229: because it just saves time
+1230: and it means that you can defer
+1232: more of those security
+1233: things to the OS provider.
+1236: OpenSSL is an example
+1237: where we don't do that anymore.
+1238: But there's still cases
+1241: and I still think
+1242: rather than being
+1243: consistent with everything
+1244: and packaging everything ourselves.
+1251: I guess it doesn't let me say things
+1253: if I'm not on screen.
+1255: Here's the second question for you.
+1258: Oh, yeah.
+1260: And that question.
+1261: So if all the versions
+1262: are removed automatically,
+1263: to prefix the installation
+1264: by version?
+1265: Maybe not anymore,
+1267: but I think it still does
+1269: because of the existing
+1271: like foundation
+1272: of the old way things worked,
+1273: you can turn off that behavior
+1275: and then you can get
+1276: like keep versions around
+1278: and have that different behavior.
+1279: But also I still think
+1281: to be able to segment things
+1283: because that means
+1284: that if you're upgrading a package,
+1285: you know reliably
+1286: that you can destroy
+1288: everything within
+1289: the old version's prefix.
+1290: Whereas if you prefix
+1292: the installation by name
+1293: then you would have to do
+1295: some sort of swapping
+1296: back and forth.
+1297: Whereas this way,
+1298: the swapping is only done
+1299: to the version,
+1300: which can be cleaned up afterwards.
+1305: All right.
+1309: That is all.
+1310: Thanks for the talk, Mike.
+1312: And well,
+1313: if folks have more questions,
+1315: you can ask them
+1316: on the element room
+1318: that we have
+1319: or on gather.town.
+1320: Yeah, I'm going to head over
+1322: to the element room now
+1323: any other questions people have.
+1324: But thanks so much everyone
+1326: and thanks Padian
+1327: for organizing.
+1328: Thanks.
+1329: See you over there.

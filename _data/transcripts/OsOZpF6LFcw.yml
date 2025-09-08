@@ -1,0 +1,408 @@
+---
+0: 'SPEAKER 1:'
+7: Right.
+8: Thank you, everyone, for coming.
+9: And I'm going to walk a little bit through today
+12: some stuff that I've learned through maintaining Homebrew.
+15: And hopefully it's useful to all of you.
+17: But if it's not, just shout at me on Twitter,
+19: because I'm not on the Wi-Fi anyway,
+21: so I won't know until afterwards.
+24: Right.
+25: I have-- this is not the one that is mine.
+29: Right, sorry, there we go.
+31: So I'm wearing kind of two hats whenever
+34: I am involved with GitHub stuff.
+36: My first hat, which is my older hat, which
+38: is me being a maintainer of Homebrew.
+40: I started working on Homebrew in about 2009.
+43: I'm still working on it today.
+45: So I think I'm the oldest running maintainer still on the project.
+49: How many people in here have heard of Homebrew?
+52: OK, most people.
+54: How many people use it?
+56: OK, a reasonable number of people.
+57: How many people have submitted a pull request to Homebrew?
+60: How many people of them did I actually accept your pull request?
+63: Rather than-- I mean, OK.
+67: People who I didn't accept your pull request,
+69: please don't talk to me afterwards.
+71: Because I won't make eye contact, because that's always awkward.
+74: Right.
+76: So I'm also working GitHub.
+77: And how many people have heard of GitHub here?
+80: And not everyone here who works at GitHub had their hand up there.
+83: So that's a little bit worrying.
+86: But hopefully you can help them learn what they're
+88: meant to be working on during this conference.
+91: So what I'm going to talk to you about today
+94: is a thing that I kind of came up with that's called, like,
+97: the contributor funnel.
+98: I kind of mentioned it as an offhand remark at a previous conference.
+104: And people seemed to think it was interesting.
+106: So then I made, like, a talk out of it.
+109: So it's basically these kind of four main things that I'm going to kind
+114: of walk through in this talk.
+115: So the first is about kind of grouping your users
+119: into kind of categories so you can kind of think about them
+122: in different ways because not everyone
+125: who uses your project and not everyone
+126: you interact with in your project is going to be the same
+129: and have the same desires and needs and whatever.
+132: The next is, like, the funnel, the contributor funnel thing,
+135: in which all the kind of salespeople will, like, cringe
+138: as I, like, horribly butcher sales metaphors.
+141: Then, like, upselling, which, again, is also a sales metaphor
+144: that I don't really understand but I'm going to use anyway.
+147: And then finally, like, retaining people because I
+150: I think something that doesn't always get talked about
+152: with open source community things is how
+155: to make sure your project doesn't die.
+157: It's, like, surprisingly easy to have successful projects
+161: and do one or two relatively simple things which
+164: can cause big problems.
+166: So hopefully we'll kind of work through this together.
+168: So the first one, grouping your users together.
+172: So I'm going to split people into three camps.
+175: Obviously, these are overly broad, but for the sake
+179: of me being on the stage, let's assume they're correct.
+183: The first one is kind of users.
+184: So this kind of--
+186: by this, I'm assuming we're talking about people
+189: who are just users and not people who are users and maintainers
+194: like me as well, for example.
+196: These people are people who maybe, like, if you're lucky,
+200: kind of file issues on your project, maybe talk
+203: on your mailing list, whatever.
+204: But the vast majority of them are going to be people
+206: who have no interaction with you.
+208: They do not have a GitHub account.
+209: They do not have, you know, maybe even a comprehension of who
+213: makes this project and why and whatever.
+216: The next group of people are contributors.
+219: So these are people who have, at some point,
+222: interacted with your project.
+223: Some people would say people who file issues are kind of
+226: I would personally say people who file, like, really good,
+230: detailed issues are kind of contributors.
+231: Someone who just says, like, everything's broken.
+233: I don't know what to do.
+234: It's more in the kind of user camp than the contributor camp.
+238: And these are, like, to use, I guess, on GitHub.
+241: Like, these are people who may submit pull requests to your
+243: project, but they don't actually have committed access to your
+246: project.
+247: And then finally, on Homebrew, what we call, at least,
+249: maintainers.
+250: So these are the people who do have committed access to your
+252: They're the people who interact with your community, who
+255: review and merge external contributors' work, and
+259: generally are kind of both the gatekeepers and the people who
+262: are probably setting the direction of the process-- of
+265: their project more than anyone else.
+267: Even that may be because they decide on what goes into a
+271: roadmap, or it may just be that they're the people doing the
+273: bulk of the work, and what they work on gets implemented in
+277: the stuff that they don't work on doesn't.
+279: So the next thing is the funnel.
+282: So there's my understanding of sales, which is very limited.
+288: I once-- my only real sales experience is I once had to do a
+292: sales visit when the person in sales at a previous company was
+296: ill, and it was in Germany, and all the paperwork was in
+299: German, and I don't speak any German.
+301: So that was not a good start to my sales experience.
+305: This is probably not a good analogy either.
+308: But my understanding of what a sales funnel is, is that you
+312: have-- you, again, group people into kind of categories by how
+318: far they are through the process.
+319: So at the top, you have kind of leads.
+322: And this is people who you think they could be kind of
+326: interested in buying your product.
+328: But you've maybe not had any interaction with them yet.
+331: You've maybe not, like, actually solicited any opinions from
+333: them or whatever.
+334: The next are kind of prospects.
+335: Again, I may not understand this properly, but my understanding is
+339: that these are people who you've had some sort of interaction, and
+342: they've expressed some sort of interest, but they haven't given
+344: you their credit card yet.
+345: And then at the bottom, you have sales, which is when things have
+349: actually gone through, and they're people who have given you some
+352: money, and the transaction is completed in some way.
+355: So I kind of think about this in the same way with these three
+358: groups we had before.
+359: So in any project, you're going to have a lot more users than you're
+365: going to have contributors, and you're going to have a lot more
+366: contributors, probably, than you have maintainers.
+369: When you start a project yourself, you may have one of these three
+373: groups, and that one person may be you, or at least, you know,
+376: someone who's a user and a maintainer.
+378: Hopefully, as projects grow, you're going to have more and more users
+381: that come along.
+382: And what I see projects struggling with sometimes is how to kind of,
+387: as your number of users grows, and maybe your number of contributors
+390: grows, and maybe your number of maintainers grows, how do you keep
+393: kind of feeding into that pipeline?
+395: What are the things that successful projects do to get people from one
+399: stage to the other?
+400: So some kind of homebrew numbers on these.
+403: So homebrew has, according to Google Analytics, about a million people.
+407: I'm going to say about 500,000 users that we think are kind of somewhat
+412: active in a given month.
+413: In homebrew's history, we have about 5,000 contributors.
+420: We have probably 5,500, 6,000, but I'm going to assume that a certain
+424: number of them are, you know, duplicate emails or whatever.
+427: And we have, at the moment, about 10 active homebrew maintainers,
+431: and like 20 people who have been maintainers in the total,
+433: so in the kind of lifetime of the project.
+436: So that puts the number of contributors at like 1% of the users,
+441: the maintainers at 0.002%, if my math is correct, which is probably not, of the
+  total
+448: number of users on the project.
+449: So that's like a really dramatic funnel.
+452: I think if you were in sales and you were dealing with something like those type
+  of
+456: numbers, you would probably be not doing a very good job.
+459: But I think we are, we consider ourselves at least like relatively successful
+  with this.
+465: And one of the things that I think kind of contributes to us having such a decent
+  number of at least
+470: contributors is what we do to try and like upsell people.
+475: So again, another sales term I don't really understand, but this is what I'm
+  going to call when we kind of
+482: push someone who maybe doesn't want to between one of these levels here.
+486: So our first kind of upselling thing that we try and do is if we get like a random
+  Twitter mention,
+493: then trying to kind of, because people don't necessarily have a GitHub account,
+  people don't
+497: necessarily aren't familiar with, you know, the kind of open source software
+  way of like soliciting
+503: issue reports.
+504: So you might just get a random person who kind of complains on Twitter or asks
+  a question.
+508: And then we try and kind of push them to like a little guide to say like, okay,
+  here's how
+513: you can open an issue that is going to be useful to us.
+517: Another one is trying to like upsell like bad issues into good ones.
+521: Like I have a bunch of text expander macros that I use that kind of expand the
+  text out for
+525: me.
+526: So I can kind of quickly say things like this that I say again and again to try
+  and tell
+530: people, for example, you know, it's common to have an issue where someone will
+  say everything
+536: is broken and they don't really provide much in the way more detail than that.
+541: So what I try and do is this is like my little step-by-step guide that I very
+  occasionally use
+547: on coworkers if I'm feeling particularly rude to try and like tease like a good
+  issue report
+554: out of people and just try and like this is the information that probably anyone
+  needs to
+558: actually be able to solve an issue or at least be able to kind of triage in a
+  sensible way.
+564: So after that, if you have someone who's filed like a relatively good issue report
+  and you
+569: know, they seem like they're kind of relatively savvy and or just very motivated
+  or it's a
+575: problem that's very, very niche and just affects them, they obviously care about
+  it a lot but
+579: like no one else really does, then we try and like push them towards making a
+  pull request.
+584: Again, that's another little text expander macro I use when I see these type
+  of issues that come
+590: into the repository or I see kind of people commenting in a certain way or whatever.
+594: And we've got this nice little document.
+596: This is kind of a subset of it that kind of tries to walk people through step-by-step
+  of
+601: how to submit a pull request to Homebrew that's actually going to get merged.
+605: So I would say a certain amount of this, like GitHub, it should be making it
+  easier to do
+610: these things ourselves and we do recognize that but I think it's definitely worth
+  documenting
+614: your project and not assuming necessarily that people know how to use GitHub,
+  not assuming they
+619: know how to use Git, not assuming really anything or kind of programming knowledge
+  or whatever and
+624: just trying to make it as easy to have a step-by-step guide for people as you
+  can.
+630: Because ultimately, if someone knows all these things already, they either won't
+  read the
+633: document or they can kind of skim through it really, really quickly.
+636: Whereas if someone does have no experience with this stuff, then having a document
+  like
+640: this can help, you know, get in their first pull request.
+644: And we tend to see reasonable amount of uptake for this.
+648: You know, at least, I would say, maybe 50% of the time we kind of post something
+  like this
+652: and ask people to try.
+654: People will at least kind of try or at least sort of attempt to kind of get there
+  to a pull request.
+658: And then the beauty of pull requests is that if they have like anything that
+  they can open
+662: a pull request for, then we can have that iteration such that we can get it to
+  a point where it's
+666: really good.
+667: And hopefully they can learn something and we can kind of help them in doing
+  so.
+671: So another one we do as well, which is kind of hard to upsell, is trying to upsell
+  our contributors
+677: into maintainers.
+678: So again, on this we have a nice little-- we try to open source all our kind
+  of docs for this
+683: stuff.
+684: And we have our nice little checklist of how we go about doing that process.
+688: If we see someone who's kind of contributing regularly, kind of high-quality
+  contributions
+692: and more than one person notices, then we kind of chat amongst ourselves as maintainers.
+696: We have like a private Slack room for this type of thing.
+699: And then we go and kind of send them an email and walk through like the kind
+  of checklist with
+704: them of everything they should do when they join the project.
+706: And it's kind of nice because I'm a big fan of these type of documents and making
+  them
+710: open because it means that when I forget to add them to a particular system,
+  then they can
+716: then go and open a PR themselves to go and make sure that the next person who
+  gets added to the
+720: project gets added to the right systems and whatever.
+724: And I guess the last point which bears sort of dwelling on a little bit is that
+  I think it's really
+732: important to think about the ways these different groups of people are positively
+  or negatively
+739: impacted by changes on the project.
+742: So like always be thinking about these changes you're making and the kind of
+  organizational structure
+748: you have as a project as how it's going to repel or attract people who are either
+  maintainers,
+754: people who are contributors, or people who are users.
+756: So starting off with the users, the thing I think is the most important thing
+  for any software
+763: project really is users care about the project working.
+768: It sounds like a fairly stupid thing to say, but it's surprising how many projects
+  will do
+773: some big architectural rewrite or some big thing that they feel is really useful
+  for them
+778: from a technical perspective perhaps or an organizational perspective, but actually
+  demonstrably makes
+782: the software worse for the people who actually use it.
+785: And this is problematic because for obvious reasons those organizational changes,
+  those
+792: developmental changes aren't actually in themselves making anything better for
+  the users.
+797: They may in the longer term make it easier for you to ship features or whatever,
+  but if
+800: you're like breaking their stuff and they just want to be able to use the software,
+  then all
+805: of a sudden your users go and find some other piece of software to use.
+808: Or if they're more technical, go and start a replacement to your software that
+  actually is high quality.
+814: The second point here -- I've wrote a pull request about this -- sorry, I wrote
+  a blog post about this,
+819: I haven't got a blog before, and it's trying to make the point that something
+  I struggled with particularly
+825: in the early days of Home Room is that the side effect of trying to upsell people
+  and getting people
+830: who maybe don't have a super technical background to try and create pull requests
+  is that sometimes you're going to work and work and work and work and get to a point
+  where you realize there's actually no way with this person we're going to get a
+  pull request that's hired on.
+835: And in the early days for some of the stuff I would go and end up merging some
+  of the stuff anyway because I felt so bad after having this person put in so much
+  time, having me put in so much time, so bad to not have anything to show for it
+  in the project itself.
+848: So I would merge this stuff and then like in the long term it produces all these
+  type of issues.
+853: So I think it's really important to never be kind of nudged into merging things
+  out of guilt and sometimes as well, like people can get mouthy on pull requests
+  and people can, you know, say it's like outrageous that this didn't get merged or
+  whatever.
+866: And like you need to kind of be able to hopefully tell people that that's not
+  acceptable to kind of shout at you like that, but also like trying to deal with
+  that in a way that you can think about the wider user base and not just the individual
+  who is currently upset that they're working on.
+883: And the first one that's the final one, sorry, that's maybe a little bit contentious
+  is in Homebrew at least we've taken this ethos of no 2.0 we had a document.
+904: I'm sure a lot of projects have this and we have a lot of documents like that
+  inside GitHub as well, these kind of dream documents that, you know, when we get
+  to go and do it all again and rewrite this all from scratch, here's all the perfect,
+  amazing things we're going to do that will make everything magically better.
+924: And this kind of tracks back to the first point again, if you do like a 2.0,
+  you know, rewrite everything from scratch type approach to a project, chances are
+  you're just going to introduce like a huge number of bugs, a huge number of regressions
+  and drop a bunch of features that people care about.
+941: And at the end of the day, people are going to look at your clean, wonderful
+  code that does 10% of what it did before and they're going to think that it's crap.
+948: So I would encourage you to really think before you kind of throw everything
+  away and start again, because at that point you're creating a new project, you're
+  barely the same project anymore.
+958: And skipping onto contributors, I think the thing that help contributors want
+  to stay around and help keep a healthy community are not having too much bike shedding.
+970: I assume most people are familiar with the term bike shedding, but basically
+  it's this idea that if you want to, you know, ask people really technical questions
+  and really complex, like architectural issues, then you won't get a lot of responses.
+983: If you ask someone what color the bike shed should be, like everyone can chip
+  in because the barrier to entry on that discussion is so low.
+989: So like trying to keep kind of conversations fairly focused and trying to not
+  solicit 8 million opinions on anything where people can chip in, I think is it helps
+  your project become a bit more focused and helps contributors stay motivated.
+1006: And similarly, having somewhere that people can have these conversations as
+  viable, like often that's a mailing list or IRC channel where people can kind of
+  have discussions about maybe more abstract, higher level things that don't involve
+  code or a specific issue.
+1018: And something we do in Homebrew, which is, again, a little bit contentious,
+  is we don't really accept feature requests.
+1025: The reason for this being, as I mentioned before, you have maintainers who are
+  the people who end up doing the bulk of the work.
+1031: And unless a maintainer is actively working on your feature and none of the
+  Homebrew maintainers are paid to work on Homebrew, unless one of them is passionate
+  enough to build it or an external contributor is passionate enough to build it,
+  chances are this isn't going to get built.
+1043: So there's no point having some issue that sits open for three or four years
+  as a feature request that never actually gets built.
+1050: You're better to close out. And often that can be something that motivates people
+  to go and then build it themselves and introduce that into the product.
+1056: And the final group of people, maintainers, as been mentioned already in talks,
+  so I won't go over it in too much detail.
+1062: I think code of conduct is super important. I think it holds maintainers accountable
+  within themselves and also the wider community accountable to just be polite in
+  their way that they interact with each other and trying to be kind and friendly.
+1076: And in my experience, 95% of the time, if you call someone out and say, "Hey,
+  this is not appropriate according to our code of conduct," they'll just apologize
+  immediately.
+1086: And the other percent of the time, they might quibble a little bit and 0.1%
+  of the time, they get very overexcited and start shouting at you on Twitter or whatever.
+1094: In which case, it's, you know, I feel like those people were time bombs anyway,
+  so it's better to just get them out of your project.
+1101: Another one we found really useful is private chat for discussing if we're going
+  to have new maintainers, discussing kind of organizational things in the project.
+1109: And you don't have that sense that like 5,000 people are watching every word
+  that you're saying, so that kind of closeness is a little bit more helpful.
+1116: And it's nice as well, if you're kind of resolving interpersonal conflicts between
+  maintainers, to have that privacy to be able to do that.
+1122: And the last thing, which I guess is the whole thing that this whole talk is
+  about, is trying to have your project be always growing.
+1129: That the thing that really gets maintainers down and helps burn people out more
+  than anything else, I think, is the sense that they can't go on vacation, they can't
+  leave the project for six months or whatever, because if they do, the project will
+  die.
+1141: And always trying to make sure, no matter what stage your project's at, that
+  you're getting more and more people contributing, more and more people maintaining,
+  and just trying to like build that up, is I think the safest thing long term for
+  your project success, to ensure that your project will not die if one person decides
+  they need a break right now.
+1160: And giving people space to have breaks is a good thing to do.
+1164: So, I walked through these kind of four things briefly, like, remember, you
+  want to group your users into the categories, maybe my categories are not the ones
+  you want to do, but it's still a good way to segment people to think about things.
+1177: Think about how you can funnel people from the top to the bottom by kind of
+  upselling them, maybe with little kind of templates to kind of push them in the
+  right way, and lots of docs and stuff like that.
+1185: And then finally, think about when you have people who have moved from being
+  a user to a contributor, or a contributor to being a maintainer, how you can keep
+  them where they're meant to be, and like, helpfully contributing to your project
+  nicely, and enjoying working with you, and you enjoying working with them.
+1201: So, that's the gist of what I wanted to tell you, and we're not doing questions
+  right now, but you can, if you want to talk about managing a healthy GitHub community,
+  or this contributor funnel stuff, or anything related to Homebrew, then find me
+  afterwards, I'll be around, or on Twitter, or send me an email, or whatever.
+1219: So, thanks very much.

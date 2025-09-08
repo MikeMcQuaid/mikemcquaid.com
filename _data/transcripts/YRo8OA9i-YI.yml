@@ -1,0 +1,288 @@
+---
+0: thanks for coming to my talk today i'm going to talk a wee bit about what i like
+  to call robot
+4: pedantry and human empathy so who am i first of all so i'm the homebrew project
+  leader i guess
+10: that just means i'm a maintainer who's been around for a wee while and the other
+  maintainers have
+14: voted for me to sort of do some figureheady stuff and make some decisions and
+  stuff like that
+19: but i also have a wee github hat i wear on occasion i'm a staff engineer on the
+  communities
+24: team at github which is nice to be able to see open source through both ends of
+  the telescope
+30: and so what am i talking about today well the homebrew package manager for those
+  of you who
+35: haven't heard of it or used it it's we call it the missing package manager from
+  mac os or linux
+41: and the linux is in parentheses because there's a lot more linux package managers
+  real package
+46: managers i like to call them whereas mac os doesn't ship with a package manager
+  itself so we are a
+52: decent package manager if you're using mac os think of it like the app store for
+  your terminal so homebrew
+57: for me has been the first open source project that i've ever really meaningfully
+  maintained
+61: and the first one where i've had to review and merge contributions that have come
+  in from other people
+67: rather than just working on stuff by myself or fiddling around with my friends
+  so a little bit of
+73: the kind of numbers behind homebrew so it's one of the more active community projects
+  on github but
+79: back in the days when github used to release their kind of yearly stats of the
+  most active ones we would
+84: sort of get you know most forks or watchers or whatever every so often but those
+  days are now
+89: long gone with the mighty vs code and things like that much higher up in the list
+  than we are but
+94: we've been going for about 12 years we've still got under 30 maintainers and we've
+  never had really more
+100: than that when i originally kind of wrote the blog post behind this talk i've
+  said we've always had under
+105: 20 so it's nice that we've had a little bit of growth we've had over 9 000 contributors
+  figuring out the
+111: exact numbers is kind of tricky because of all the interlays between the different
+  repos we've got
+115: and similarly we've got over a million users again the exact number is tricky
+  but we've got some
+119: analytics that sort of give us some vague insights over that so over those 12
+  years i've had to figure
+125: out how to manage the huge numbers of contributions we get from lots of new contributors
+  and ensure that
+132: we deliver a good experience to users in a way that's pleasant and efficient
+  for our maintainers
+138: for our contributors and for all our users so i'm going to split this process
+  down into three ways that
+143: i like to think about it so walking through the kind of history of homebrew and
+  how we've done things
+148: there's a certain amount of manual process that we started with then we have
+  a thing that we're going
+152: to call brew test spot that came in and made things a little bit better but then
+  at the end i'm going to
+156: talk a little bit about the things you need to make sure that you don't lose
+  through this process
+161: so first manual process i mean this is how all open source projects are going
+  to really start
+167: and back in the day when homebrew started we were pretty i think we were uh less
+  than two years after
+173: github went public the project was created and it was created as a very sort
+  of github centric open source
+178: project from the outset so like our original process for managing contributions
+  back in the in the really
+186: old days when we started um homebrew well i i didn't start it but i got involved
+  in the first i think
+191: six months or something of the project so back then you didn't even have pull
+  requests people would create
+196: issues and link commits on their forks in the issue so then you would add your
+  git remote you would
+202: cherry pick the commits across and then you would test if their stuff worked
+  and then if it did push it to
+208: the master branch with no ci support or anything like that and some very firm
+  words from max the
+214: how the creator of homebrew to make sure that you didn't push the wrong thing
+  to the master branch and
+219: make sure you didn't push merge commits and all this type of thing so as you
+  can see this is all very
+224: manual it relies on me running a lot of stuff on my own machine and it relies
+  on an individual maintainer
+230: or the creator originally just max like verifying all this stuff and getting
+  it working so you know this
+236: gradually improved over time github added support for pull requests we were able
+  to like pull patches
+241: from the pull requests rather than the fork stuff like that and then the first
+  maintainer a guy adam
+246: vandenberg who joined the project who wasn't the creator uh he started building
+  up some tooling called
+253: brew audit which was to try and basically locally provide a little bit of kind
+  of guard rails to people
+259: to be able to figure out like well what have i done we call our package descriptions
+  formula so like what
+265: have i done right what have i done wrong with the formula is there anything that's
+  going to get shouted
+269: out in review that i can check locally before so almost a little bit like a kind
+  of ci check before
+273: we had ci checks um and then so the maintainer would do this and we would you
+  know run this locally
+279: as well to make sure there's nothing that another maintainer is kind of added
+  as a check that we've
+284: forgotten about or whatever then we would install and push but i'm one of these
+  people i find uh
+289: processes like this i want to make them as small as possible so actually my first
+  contribution to homebrew
+294: the package manager as opposed to just one of the packages was to add this command
+  brew pull which would
+299: go and pull stuff with github and automatically install it for you and audit
+  things and stuff like
+303: that so then at the end you can just type git push and submit your changes so
+  over time you know we use
+311: this and then we introduced our kind of binary packaging process which we call
+  bottles as a way to
+317: kind of basically simplify the process speed things up for users make it easier
+  for us so less things can
+323: go wrong but the problem with that is originally that was all built just by me
+  manually on my machine
+331: which then slightly graduated to kind of vms on my machine but you know the workflow
+  wasn't ideal and
+335: it wasn't great to be reliant on one person aside from even the security practices
+  and stuff like that
+341: so this was back in the heady days where if you wanted to get some money from
+  strangers on the internet
+347: kickstart was your best bet so we kind of thought of this idea called brew test
+  bot so i decided to kind of
+355: write some code as sort of a proof of concept of what this could be doing and
+  then ran a kickstarter
+360: project to get some physical hardware and again because this is max and because
+  this was i forget
+366: what year 2010 or 11 or 12 or something um this was to buy physical hardware
+  that i was going to
+373: physically put in a in a data center run by a company called positive internet
+  run by a friend of mine
+379: um and yeah we managed to get funded and managed to get the hosting for these
+  servers and then we were
+386: able to kind of have a nice jack-ins instance that was able to run stuff automatically
+  for us so
+390: now when you submitted a pull request on github it would run the commands we've
+  seen before and we're
+396: auditing stuff we're installing stuff do some tests basically make sure the package
+  is actually working
+401: or more importantly that the updates you might have just made to the package
+  are still working
+405: and then brew bottle which is that thing that we're using to build the binary
+  patches so now we're able to
+409: get the binary package builds off of my machine and off of being basically limited
+  by one developer and
+416: onto kind of a consistent unified place where users can see feedback and stuff
+  like that
+420: but some interesting things started to happen when we did this because we noticed
+  that you know we would
+426: run brew audit before and we would maybe go and ask users oh well can you please
+  do this can you please
+432: do that and quite often these things would turn into um like either sometimes
+  arguments sometimes a little
+439: bit heated sometimes just disagreements and people didn't want to do things but
+  the interesting thing was
+443: when instead of us running a command and interpreting it telling the users what
+  to do or even them running
+448: the command locally for themselves when this became like a ci job that just went
+  green when things worked
+454: or red when things failed instead we weren't being accused of as maintainers
+  of being pedantic anymore
+460: people were just fixing these problems and sometimes when all the maintainers
+  would be asleep you would
+465: see the commits that they would push a commit and then see that there was a problem
+  and then they
+468: would fix things and then you'd wake up and they've gone through and sorted these
+  things out
+472: of course those of you who have like decent ci tool chains this is not surprising
+  but to us back then
+477: this was a little bit of a revelation of how useful this could be um in the worlds
+  of open source
+483: software for us so this then allowed us to sort of simplify our workflows even
+  further so we could
+490: have just like a single command which is what the ci machines were running which
+  then we tried to pull
+495: as much configuration out of the ci machines themselves and into this command
+  brew test bot that
+500: still lives to this day it's the first real sort of ruby program i've written
+  from scratch and back in
+505: the day it was an absolute hideous piece of mess it's still not very nice nowadays
+  but you know it
+512: does its job it has built and uh pushed a lot of changes over the years but um
+  we're able to adapt
+519: that to do more and more we're able to allow that to handle third-party repositories
+  which we call taps
+524: and stuff like that so it's able to kind of provide that functionality and continuous
+  integration to
+529: other users building other parts of homebrew as well so what we've been trying
+  to do over the years is
+534: turn as many of these kind of repeated review comments if you see yourself making
+  the same review
+540: comment on multiple pr's or opening and closing the same pr multiple times where
+  someone's spending a
+546: change you want that you don't want then we try and turn this into automated
+  checks that people can
+551: kind of have locally running or at least provided on ci so that they can get
+  this feedback without
+557: humans having to do it for you and also we've started moving towards using stuff
+  like rubocop
+563: as well for getting unified code style for everything so again that removes another
+  source of arguments
+569: that instead of people being pedantic and saying use single quotes here or double
+  quotes here whatever
+573: it may be we can just have a rule that does that it's all auto formatted for
+  you and if you want to
+577: submit a pull request you can submit pull request to change the the rubocop rules
+  and we can have a
+582: discussion of that and then that's built in by default into a few editors now
+  as well so
+587: so you can nicely get particularly if you enable auto formatting you can get
+  homebrew code just
+592: automatically formatted in the right way so that you're not going to get any
+  of these complaints
+595: we've extended homebrew to have a few more of these commands while we've moved
+  from jenkins to kind of
+600: github actions we've tried to pull again more of our logic out of the ci provider
+  and into homebrew itself
+606: so we're trying to run these commands and then that in our ci toolchain and then
+  that makes it easier for you to go and
+612: reproduce and figure out what's going on um outside of there as well so this
+  again avoids some of these
+619: penetry arguments and gets all our tooling nice and open source and while we've
+  moved into github
+624: actions what land as well there's nice other little ways you can pull in tools
+  that are written by other
+629: people two of my favorites here are the action stale and descent lock threads
+  actions which you can use to
+636: lock stale threads and close stale issues which is really handy so last final
+  bit so you need to
+644: be careful not to automate too much because what robots can't do is build human
+  communities for you
+649: so a project like homebrew that receives large numbers of contributions from
+  large numbers of people
+653: it's easy to think right we should automate all of that and automate the thank
+  yous and have the
+656: robot say thank you for you but people don't really seem to respond that well
+  to that um and
+662: what starts off as a longer heartfelt message on a less busy project turns into
+  just thanks on a
+668: busier one so my starting point for this was i made a little text expander shortcut
+  which would expand to
+673: this text here just so i could you know i still mean that but it just makes it
+  a little bit quicker for
+678: for me to type it and leave that feedback onto multiple people's uh prs and i
+  want it to be as
+685: frictionless as possible for me to express my gratitude to people but then you
+  know i would
+690: continue to kind of want to iterate my workflow and i'm lucky enough to work
+  at github so i was able to
+695: improve the existing sort of save replies features so you can use keyboard shortcuts
+  for that so i now
+699: just need to do control dot control 2 in a reply and that goes and populates
+  that for me and it's funny
+706: because i i initially thought people might not like this very much but when i've
+  met people online
+710: or in conferences or whatever and they've told me it was really nice to receive
+  that message most of
+715: them when i tell them that it was kind of done by a shortcut it doesn't lessen
+  the impact for them
+719: because they understand that i still mean it even if i've developed ways to type
+  it a little bit quicker
+725: so tldr from this talk if you can take anything away if you want to pull out
+  your cameras and
+730: take a screenshot or whatever of the the three bullet points that i would sum
+  this talk into so the first
+736: is you want to automate almost everything you can in your project but almost
+  everything not actually
+740: everything get your documentation and your lists of long processes and stuff
+  like that and try and
+745: turn that into code and ci checks and stuff like that rather than having people
+  run through checklists
+750: but don't lose the human touch while you're doing this because it's still necessary
+  to kind of build
+754: those relationships and praise and be kind to your contributors and your maintainers
+  in your project
+758: so thanks very much for having me today um and if you're interested in sharing
+  this talk with someone
+764: else as well there's a little link down there to the blog post where there's
+  a sort of longer version
+770: of this talk thanks for listening

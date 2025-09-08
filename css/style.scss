@@ -504,3 +504,15 @@ blockquote {
     display: inherit;
   }
 }
+
+details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+  margin: 1em 0;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}

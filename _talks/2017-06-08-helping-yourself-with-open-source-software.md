@@ -4,5 +4,6 @@ description: Learn what open source software is, why you should contribute and w
 speakerdeck-id: 4887a110521047808c75f569f673f28c
 speakerdeck-ratio: 1.77777777777778
 youtube-id: u1jx48ztzgk
+transcript: true
 ---
 Presented at [RubyConf Kenya](http://rubyconf.nairuby.org/) in 2017.

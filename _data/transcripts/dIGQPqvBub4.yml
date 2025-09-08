@@ -1,0 +1,410 @@
+---
+0: I'm going over to make a way to talk about homebrew.
+13: Thanks for coming everyone.
+15: Let's start with a couple of questions, if that's alright.
+18: So, can you raise your hand if you already have some idea what homebrew is?
+25: Raise your hand if you use homebrew on a daily or weekly basis.
+29: Again, a decent number of people.
+31: You realise that no one in Fostep trusts us, right?
+34: Dirty Mac.
+36: And if you've ever submitted a pull request to Homebrew, bring your hand up.
+41: Awesome, thank you very much.
+43: And hopefully I actually merged some of that as well.
+46: So, Homebrew, as you all know already seemingly, is a relatively popular package
+  manager from Mac.
+53: It's, as you've probably noticed already, pretty different to what various package
+  managers do.
+58: In some ways, some of which are good, some of which are bad, some of which we
+  may change in the future.
+64: Others of which we wish we could change.
+66: So, I'm going to talk about some of the stuff that I think we've learned through
+  building Homebrew.
+71: Some of the different things we do.
+73: And then, we'll open it up to questions at the end.
+76: So, again, if you have any thoughts or questions, then have a lot to do.
+79: Right, so, my name's Mike Quaid.
+82: I'm employed by GitHub for the last, like, two and a half years or so.
+86: GitHub doesn't pay me to work on Homebrew unless I, like, you're using Homebrew
+  for something and it always explodes and I'm getting very upset.
+93: then I will justify spending my work time on Homebrew.
+96: Other than that, it's just like a spare time project for me mostly.
+99: I've been working on Homebrew for seven years or so.
+102: About, started working on it about a year after the project started.
+106: So, I think I'm the longest running main trainer who's actually still working
+  on it.
+112: I don't know whether that's a good thing or whether that's just I have, like,
+  I'm not able to give up on things.
+119: Anyway, so, the first thing that Homebrew does a bit differently to our package
+  managers is we use, like, GitHub forks and pull requests for most of our contributions.
+130: So, on most package managers, the way things tend to work is you have a person
+  or a number of people who maintain a particular package.
+139: And when that package needs updates, when that package is broken, when users
+  have issues with that package, those are generally the people who dig in.
+145: Now, Homebrew has, as I'll show you in a minute, 10 maintainers, essentially,
+  and about 4,000 packages in our main repository, roughly, or are officially supported
+  repositories.
+158: So, it doesn't really scale to have each person maintaining and actively, like,
+  checking the changelogs and stuff in 400 sites and 400 pieces of software.
+167: So, what we do is we rely on the community to do that for us.
+170: Although we only have 10 maintainers, we've had 5,472 people as of when I made
+  these slides.
+176: So, it's probably a couple more in the last few days.
+179: In the last seven years, the Homebrew.
+181: And that's really great.
+182: And what that means is that our maintainers have more of a job of, effectively,
+  shepherding community contributions, checking things, trying to sort of help people
+  get pull requests in and get changes in.
+194: So, as a result, that means that kind of frees us up to kind of do other things
+  and try and make things easier for the community to run things.
+203: So, on the downside for that, that does mean there's a lot of pull requests we
+  have to manage.
+208: It's that many to seven years.
+209: Like, I guess, for probably, like, 200 emails a day just from the main repository.
+215: If I subscribe to, like, everything, I would probably get more.
+218: So, like, managing that with each 10 people is kind of difficult.
+222: But I think that's, for us at least, it feels like that's a model that's actually
+  worked relatively well.
+228: What we've probably done, like, if you're back in time, is have more maintainers
+  added, like, earlier in the project.
+236: For quite a while, there was only, like, one, two, three of us, four, five.
+240: And then we've had, I think, we've doubled the number of maintainers for the
+  last, kind of, two years or so.
+244: Which is great, because I think previously we looked for people who, like, already
+  knew exactly what they were doing.
+251: Whereas now, I'm trying to look a bit more for people who are enthusiastic and
+  willing to learn and embrace, kind of, feedback.
+257: And then those people can quite often be, kind of, built up and maintained.
+261: So, one of the maintainers in the room today, I've not met them before.
+265: So, I have seen a picture of them, but I'm going to try and find them afterwards.
+269: So, and I'll give you a clue, it's one of the people whose face does not resemble
+  the human face up there.
+275: Anyway.
+276: So, another thing that we did, which was, I guess, put in a bucket of, like,
+  hipster programmers, was, it was written in Ruby.
+285: And, I guess, Ruby and GitHub sort of had a rise about the same sort of time.
+290: How much of one is due to the other, who knows?
+293: But, basically, that meant that, combined with the sort of GitHub model, like,
+  being in this kind of hipster sphere,
+300: apart from being mocked a little bit, it did mean that we were able to attract,
+  sort of, interests and contributions from a particular community.
+307: And that community embraced us pretty strongly early on.
+309: And then, I think, that community has grown as Chromebrew has grown.
+313: And that's something that can be good for everyone.
+315: And, I think the nice thing with that, this text is going to be way too small,
+  probably, for people to read,
+320: unless you pass through your site test recently.
+322: But, like, we have in Hopebrew a nice, kind of, Ruby-based DSL.
+326: That's a domain-specific language.
+328: To try and .
+331: Basically, it should be, like, even if you've not done huge amounts of programming
+  in Ruby,
+336: it's, like, relatively easy to, like, work out what's going on.
+339: And I think that's a nice thing with Ruby, is that it means that you can be very
+  expressive,
+344: and you can make these domain-specific languages quite easily in such a way that
+  people can write stuff
+349: that means it's quite readable, even to people who don't necessarily know Ruby.
+353: So, again, I think if we could do it again, we would use Ruby again.
+357: But, we would maybe do a couple of things differently.
+360: We're currently moving some of our code to Bash, bizarrely.
+364: And one of the reasons for that is partly performance.
+367: Like, if you want something to respond, like, instantly, like, under 0.5 seconds,
+372: like, spinning up the Ruby interpreter and, like, loading a bunch of Ruby codes
+  is relatively slow.
+376: So, it's not as great for performance for certain things.
+380: And the other thing that's kind of nasty is the way you require files in Ruby
+  with our update system.
+385: It has a Ruby process, which then uses Git, changes a bunch of code, and then
+  loads new code,
+391: which, obviously, may or may not have required existing code.
+394: And, yeah, that stuff gets very complicated.
+396: So, we're in the process of rewriting all our update stuff in Bash.
+400: So, we can just say, okay, that's fine.
+402: Like, we'll do all the updates before we load any Ruby code, which should help.
+406: Right.
+407: So, another thing we do is we don't use the root user.
+411: We may need to use the root user to initially set up a root, like, running sudo
+  to, kind of, change the permissions or whatever.
+419: But, you can do everything from root without admin rights, without the root user,
+  without sudo or whatever on your system if you choose to do so.
+427: If you want to install it, you can use the right to read it or whatever.
+429: And, I guess, this is a bit of a difference from, like, Linux Package Managers,
+  which typically, like, are managing the entire system.
+436: So, it's, I guess, different from other, like, some of the other OSX Package
+  Managers as well.
+442: We use root for various things.
+444: So, the thing I like about this, and the thing why this makes it a lot easier,
+  it's obviously, like, it's, you can still do quite a lot of damage as a non-root
+  user.
+452: But, it's nice to be able to say, okay, well, at least the damage is constrained
+  to the particular user you're running root as.
+458: So, if you want to separate that user to another thing, and use that for some
+  sort of privilege separation, you can do that.
+465: And, you understand the effects that will have.
+469: It's also more similar to how most software installation works on OSX.
+473: The original, kind of, intent was, it would behave kind of like other stuff on
+  OSX.
+478: You know, if you download a .app bundle for Chrome or whatever, you tend to just
+  download that as your normal user,
+484: drag and drop that to applications, and that's that.
+487: So, this, obviously, will pre-date to the App Store.
+489: So, that permission to model is something which felt right and familiar to us.
+493: And, it's not really caused us any problems.
+496: And, it's been nice to see, like, obviously there's bugs.
+499: And, when formulae, like, run kind of arbitrary code on Google systems, and download
+  and run arbitrary code on Google systems.
+506: Like, it's nice to have some degree of not allowing that to clone the entire
+  system.
+512: Right.
+513: Another thing we do, is we make use of system libraries when they're available.
+517: So, like, I used to make fun of Macports a bit, but me and a Macports maintainer
+  had become friends, so now I don't do that anymore.
+525: But, this was the, I'm going to show the typical thing I would use.
+529: So, there's a difference between the two, rather than necessarily, I was being
+  better.
+532: But, anyway, so this is, if you look at, or it was a while ago when I prepared
+  this slide, at least.
+538: And, the dependencies on Macports for if you're interested in Git.
+541: So, there's some runtime dependencies, which are R-Sync, and some curl libraries,
+  and then there's some libraries, like, curls that look over the next cell.
+550: So, the same list on Homebrew's version of Git, is this, effectively.
+556: So, we don't actually need anything from the system, if you're installing Git.
+561: We don't have any dependencies, sorry, we don't have to install any dependencies
+  through Homebrew, because we use the stuff in the system.
+569: So, this provides various crypto libraries, they provide their own version of
+  curl, and stuff like that.
+575: And, what this means for the end user is, on the downside, you don't get all
+  the cool, new, shiny things,
+582: and maybe a new version of curl supports some new thing, like speedy, or whatever.
+587: And then, if we compile Git against that, then we don't support that.
+590: But then, on the other side, it does mean your compilation is faster, and that
+  we are able to, effectively,
+596: lean on Apple to do some of our OS updates, and library updates, and stuff like
+  that, and all that.
+602: Obviously, there's a bit of contention about this, people disagree with the process,
+  and whether it was a good idea.
+608: But I feel like, on the whole, we would probably do this again.
+611: It hasn't caused us much grief, and it ends up speeding up things quite a bit
+  for end users.
+615: So, our updater, as I mentioned before, pulls files down to Git.
+621: So, like the Homebrew repository, it contains all of the code that makes Homebrew
+  run and do itself,
+630: the stuff it does, and all of the formula, which are effectively the package
+  description files as well.
+635: And these are in one repository, so that I'll come up to later, but that is perhaps
+  a little bit of a mistake.
+641: But then, what we do with Homebrew is we download all these files on first run,
+  and then we update them incrementally using Git.
+651: So, that basically means that some of the normal things around some sort of update
+  system are effectively solved for us using Git.
+659: But then, that comes across with a whole new bunch of pain as well, like if someone
+  can modify files, and there's a merge conflict, or whatever.
+666: And particularly, people are developers, and they know what they're doing with
+  Git, and that's relatively easy to solve.
+671: But then, if people aren't, then Git starts solving that merge complex, and people
+  get very scared.
+676: So, I think with hindsight, that was probably not a wise decision that we've
+  made.
+682: I think it would have been easier for us to have just, well, it wouldn't have
+  been easier,
+686: but it would be better for us to have rolled our own updater, I think.
+689: And downloaded the stuff ourselves, because it would have avoided all the Git
+  pain,
+694: because now we're, again, in this process of Ruby towards the Bash updater,
+697: we're being a bit more stringent in terms of, we will just kind of blow away
+  files that you've changed and stuff like that,
+703: unless you've committed them and made a branch and all this type of stuff.
+707: So, we basically have to choose, unfortunately, with this stuff,
+711: because we have a bunch of people who rely on previous behaviour,
+714: do you try and help the previous power users to know what they're doing,
+720: to interact with Git nicely in the way they want to,
+723: or do you lean more towards novice users and say,
+726: we're effectively just going to take over if you get here,
+729: and we're going to go and check stuff out, stash stuff,
+732: reset stuff for you, without you asking us to.
+735: And I think we're leaning more towards the latter,
+737: and optimizing for novice users, because that's the way of getting less tickets.
+744: Right, so another thing we do is we install packages in prefixes based on their
+  package and voting.
+753: So, for example, we have, if you're installing rooms in user local,
+757: which I would recommend, because everything works better there.
+761: And you have a look in user local seller.
+765: That's basically where, the kind of route of where we install all of our packages
+  in there.
+771: So, we have a look at the wget directory.
+773: We'll see the kind of basic structure is, like, we have a directory called wget,
+777: we have a sub directory with a version.
+779: In this case, it's an old version, 1.13.4.
+782: And then we have a list of files in there.
+784: And you have, in there, a bin directory, a shared directory, etc.
+788: And then these are then symlinked back into user local,
+791: which is, so they're in a nice, easy place in your path,
+794: so you're not having to add a new part entry, for example,
+796: or a library lookup entry for, like, every single thing you install on your machine.
+801: So, this was kind of a neat thing, particularly in the early days of Homebrew.
+805: It meant, in theory, at least you could have a bunch of different versions of
+  things,
+809: like sitting side by side and stuff like that.
+811: But, in reality, I'm not convinced it was necessarily worth the effort.
+815: We're probably not going to change now, because things are so reliant on the
+  way we've done things.
+819: But, given that we didn't support, like, installing older versions of software
+  very well,
+825: and we don't support kind of switching between versions of software very well,
+828: compared to, for example, you know, if you install stuff with AppGet on Debian,
+833: then you can maybe just pick between three or four different versions of Boost.
+837: All those libraries and everything are configured such that they can be installed
+  side by side nicely,
+841: and then you can just pick at compile time, like, which version you want to use.
+846: With Homebrew, because of this system, I think, partly, we have relied on that
+  not really being possible,
+853: and we've relied on having, like, a single canonical version, which is the latest
+  version,
+858: which we try and push everyone to have to install.
+861: So, again, if we were to do it again, I would probably ditch this Pickwick system,
+865: and I would just install locally into user learning.
+869: So, another thing we do is we try and avoid patching when we can.
+873: So, if you've submitted a patch to Homebrew, like, for one of our formulae,
+881: i.e., you are submitting a patch to an upstream project that you want us to build
+  against it,
+885: you may see me posting a little message like this.
+887: So, basically, what, like, I kind of more or less took a little stand back in
+  the day,
+897: because I used to get very annoyed with when I used Linux distributions,
+901: and I would install whatever, KE, which I used to kind of do out of all,
+905: and then, yep, shout out to KE.
+908: But, like, I would get annoyed that I would install it,
+911: and then I would use some piece of software which I was kind of intimately involved
+  with,
+914: and I would realize that, oh, it behaves slightly differently to what I expected.
+918: And that's because the distributions, understandably, in many cases,
+922: apply a bunch of patches on top of things because things are broken
+925: or not done the way they wanted to, or whatever.
+927: And I always was a little bit uncomfortable with this,
+929: because my idea is if you're installing KDE, you want to install KDE.
+933: You don't want to install Google's fork with KDE, or Deviant's fork with KDE,
+  or whatever.
+938: And that's effectively what you're installing when you have a bunch of patches.
+942: And, obviously, the kind of really nasty example is when you look at what happened
+  with Debian
+946: and the OpenSSL situation a few years ago where there was a patch which was made,
+951: which was submitted to Upstream, but Upstream never really kind of responded.
+954: I don't want to place any blame.
+956: I'm sure I would have done the same thing if I was in almost any situation there.
+960: But you ended up with a long-running patch which ended up, like, ruining crypto
+964: on a bunch of people's machines.
+966: And this stuff scares me a lot.
+968: And, basically, as a result, I don't think package maintainers are in a good
+  position
+973: to be making patches to Upstream software which are maintained for a long time.
+978: So, what we try in my day at Hobro now is if we're going to accept a patch,
+984: it's going to be at the very least submitted Upstream.
+986: And we hope, at least, that Upstream will show some movement on it.
+990: And then if Upstream rejects the patch, then we will remove the patch from the
+  software.
+994: even unless it will, like, actively break the software.
+999: And then if Upstream, for example, is unwilling to submit, unwilling to accept
+  patches to fix compilation on OSX,
+1005: well, that's when we say, okay, maybe it's time to just remove this package.
+1009: Because it's, you know, the amount of time and effort it takes to try and effectively
+  port and maintain forks of all this software
+1019: where it isn't ported to OSX, to keep it running on OSX is not really worth
+  the effort if the Upstream maintainers don't want to do so.
+1028: Cheers.
+1029: So, another thing we did relatively early on, there's been a lot of, like, shouting
+  and gnashing of teeth lately about code of conducts
+1036: and whether they're a good thing or a bad thing, whatever.
+1038: We managed to kind of jump in there before there was any sort of, like, fallout
+  on either side about this stuff.
+1045: And just adopted the Python code of conduct for, like, a similar version of
+  what they do.
+1050: There was, it's kind of interesting, we were, I guess, one of the first, we
+  were the first projects, I guess, like us to kind of adopt stuff like that.
+1059: And it's actually been a super pleasant thing, I think, for everyone involved.
+1062: I think as a big player, it's good because it keeps your community able to kind
+  of call you out and stuff if you're not behaving appropriately.
+1069: And it also means that the community can often just be pointed to the code of
+  conduct.
+1073: And 99% of the time, I find when you point into the code of conduct and just
+  say, "Hey, that's not cool."
+1078: Then people will apologize, read it, move on, and have much more pleasant interactions
+  in the future.
+1083: So, yeah, if you're running an open source project, I would highly recommend
+  considering having one.
+1088: And the final thing that we do, which is, I guess, a bit of apologizing, but
+  something which we are different from other projects on, maybe, is we accept, like,
+  super new and super niche projects.
+1101: So people can and often do sometimes make a project in, like, a couple of hours
+  and then immediately submit it to a group.
+1109: And in cases like that, we want to wait and see that projects actually works
+  and that, you know, someone is interested in using this beyond the person who's
+  just written it.
+1118: But in some cases, you know, there are stuff that, you know, blew up on Hacker
+  News or whatever.
+1123: And a bunch of people are interested in sewing it, but it's certainly maybe
+  a week or whatever.
+1127: So in that case, we can add a different group pretty quickly.
+1130: And you can have stuff which is in-home-brew and usable by people within kind
+  of a week or so.
+1135: So from that perspective, I think it's been kind of an interesting experiment
+  kind of adding these things because they tend not to break, really, these kind of
+  simple little tools that are built in a short period of time.
+1146: And it's kind of nice for us because we are able to expand and maybe attract
+  different contributors who might not have been attracted to a group otherwise.
+1155: So, again, with that, if I could do that again, I would probably be less strict
+  on accepting kind of niche projects in the early days and just basically be more
+  willing to remove stuff as broken as them.
+1168: So, I think that's a kind of brief whistle-stop tour of like some of the stuff
+  we've done in Co-brew and like why.
+1176: So, I'd be interested if anyone has any questions to kind of answer them or
+  do your things.
+1182: Yeah.
+1183: Multiple versions of the same package.
+1186: So, for my production service, I need to log versions and it's really explicitly
+  the same version of the software.
+1195: Every time.
+1196: Yeah.
+1197: So, for no, at least just the latest version.
+1200: Yeah.
+1201: So, by default we do that.
+1202: But then, what we recommend is if you need to log things down, then you can
+  create your own path, which is like a third party repository essentially.
+1209: And just maintain effectively your lockdown versions.
+1212: While I've got a platform somewhat unrelated to the group, a minor rant that
+  I hope you're pinning based on major minor versions and not patch versions.
+1221: Because my concern is I see a lot of places who pin things based on patch versions
+  and then don't keep up with the security updates.
+1229: So, that's my little soapbox thing.
+1232: Upgrade your patch versions and keep up with the security updates.
+1235: Anyone else?
+1236: Yeah.
+1237: Yeah.
+1238: With Fennig last week and GitHub being down, what's your bigger movement on
+  relying on GitHub?
+1246: So, as a GitHub employee...
+1251: My opinions are mixed.
+1254: So, I mean, I think obviously for Homebrew, speaking of knowledge as a GitHub
+  employee, we might be Tanner Hallam.
+1263: Yeah.
+1264: We have a single point of failure which is not great.
+1267: I mean, people can still install software and things like that without that
+  and our binary packages are not posted on GitHub.
+1273: So, that means if GitHub goes down, basically it affects our update mechanism
+  and ability to file issues and full requests rather than your ability to install
+  software.
+1283: So, yeah, in some ways that's regrettable.
+1286: But then again, what GitHub gives us, I'm glad we're going to have to maintain
+  that.
+1290: I want to try and move more and more stuff like our CI, for example, that I
+  don't want to maintain.
+1296: I would rather other companies do that and have a 99% uptime than me doing it
+  and maybe having a slightly higher uptime but having a higher stress one as well.
+1307: So, yeah.
+1308: Well, that's great.
+1310: Thank you very much, everyone.
+1311: Well, one last thing.
+1319: Anyone has any thoughts on your features and who we really love or hate and
+  would like to see change?
+1325: Find me and sometimes make all the post them and tell me what's in the app.
+1329: Thank you.
+1330: Thank you.

@@ -1,0 +1,476 @@
+---
+0: that's very nice a very nice soothing start to the talk of just people saying
+12: shh as some of you may know I really like to start talks with raising hands so
+  put
+19: your hand in the air if you use homebrew lots of people cool put your hand in
+  the
+24: air if you've contributed to homebrew well this clump over here will make sense
+30: with the next question put your hand in the air if you maintain homebrew put your
+38: hand in the air if you're concerned about what happens if there's a CV during
+  this
+41: talk and no one is able to merge a critical PR to fix open SSL because all
+46: the maintainers are here yes good thank you and yeah so a little bit of
+51: background for you folks see this this is working there we go sir oh sorry no
+59: this is a home where we're Mac people here okay there we go so I forgot homebrew
+65: doesn't actually support this version anymore no back to that one oh there we
+69: go okay that's fine homebrew supports this one and sorry the jokes only any better
+73: from here they're only worse hi I'm Mike McQuaid this is my almost becoming yearly
+80: tradition at this point sort of state of homebrew talk at Fosdem the distributions
+85: room kindly lets me come and do this here even though homebrew isn't really a
+  distribution
+89: but it's some it feels like the the least square round peg hole situation at the
+  conference
+95: here and you can find me at various places on the internet if you want to kind
+  of talk or
+100: ask me things during or after or whatever I'm currently CTO of a startup called
+  workbrew which
+107: is kind of trying to do some interesting stuff around homebrew I'll talk incredibly
+  briefly about
+112: the end with two former github people I spent 10 years at github which I left
+  as a principal
+117: engineer last year and I'm homebrew's project leader which is something I have
+  to get elected
+121: to do every year no one has ever run against me so please someone do that and
+  set me free from my
+128: life of enslavement to an open source project that I suffer for and I've maintained
+  homebrew for
+133: apparently 15 years this year which is a little bit worrying and so I'm going
+  to talk through some
+140: stuff we've done in the last kind of year or so some of it may be used to some
+  will not be none of
+146: it will be used to any of the maintainers I don't know why they're here but hopefully
+  they will just
+149: laugh my jokes and stuff like that anyway and the first major thing I don't know
+  if any of you noticed
+156: how many of you run brew update or noticed like updating homebrew lots of people
+  complain at me
+161: about how homebrew does this automatically without being prompted you can opt
+  out but please don't
+165: this should have got for most people most of the time a lot faster than the last
+  year
+170: and the main reason is that we have stopped using kind of homebrew's github repositories
+177: as the main kind of data source for homebrew so when homebrew was first created
+  in 2009 one
+183: of the relatively innovative things it did was to use git and put essentially
+  all the data on
+190: a github repo and then instead of building like some complex update information
+  system which is like
+196: going to pull from some server somewhere that someone would have to host it's
+  like no we'll just do
+200: essentially just run git fetch in the background and homebrew has kind of had
+  a long-going battle with
+209: like a little bit of a battle with github and more of a battle with the performance
+  characteristics of
+214: this so homebrew core the main kind of homebrew uh repository for all our formula
+  for all our packages
+220: has kind of grown and grown over the years like we've had over i think 11 000
+  contributors like millions
+228: of commits hundreds of thousands of pull requests at this point um and as a result
+  it is very very very very
+234: very very very very very very slow to do almost anything related to git and particularly
+  with git
+240: fetch like a no up git fetch was probably at its worst taking about 30 seconds
+  just to be like no
+247: actually you don't have any updates or anything required at all so when i was
+  lucky enough to be in
+252: simultaneously working on homebrew and github i added like a call to the to the
+  github api that was there
+258: specifically to try and make brew update a bit faster so you could go to the
+  github api and it
+263: could quickly respond like hey don't run git fetch you don't need to it's going
+  to be really slow and
+267: this you don't have any changes anyway a few other package managers use that
+  now as well which is makes
+272: me happy but over the years lots of people at github have kind of grumbled about
+  using a git repo as a
+277: cdn um that's kind of nicely globally distributed and i believe at our peak we
+  had like a couple
+284: of github servers that were essentially dedicated purely to people fetching from
+  homebrew core
+289: so eventually after leaving the company it's kind of weird that it took me to
+  leave the company to
+294: actually make my co-workers happy um we like with a bunch of work from other
+  maintainers we kind of
+300: moved over to essentially just calling a json file off the internet now so instead
+  we have like a
+305: uh 15 meg ish i think compressed file for homebrew core for homebrew cask when
+  there's an update we
+312: don't have any sort of clever binary differing or anything unfortunately so we
+  just download the whole
+316: thing again but that seems to be a lot faster for most of people most of the
+  time and we still are
+321: optimistically we'll be able to make it faster in future so in case you didn't
+  know homebrew has like
+326: a json ipi this is basically the kind of the basis of what we're using we've
+  had to kind of add some bits
+333: pieces and modify and move things around and one of our maintainers here added
+  like nice signing to
+338: this and stuff like that so that we could meet the kind of security requirements
+  the performance
+342: requirements we wanted for this new api way of downloading it's actually our
+  api is really really
+348: fast because it's hosted on github pages and so if you've had an idea of like
+  statically building your api
+356: it's incredibly painful in some respects but also kind of fun in other ways but
+  yeah don't dig too
+362: deep on how that's implemented because it's pretty disgusting um another thing
+  somewhat relatedly if
+369: you have set any of these variables in the past like that commonly people will
+  set these things because
+375: homebrew was too updating too often and it was too slow and annoyed them or shortly
+  after we rolled out
+382: the api stuff a bunch of people opted out because it was a little bit buggy and
+  stuff like that or
+387: you know it also updates too often considering unsetting them for a little bit
+  um and then if
+393: things are still annoying for you feel free to set them again but you might have
+  a better time without
+397: these than you used to similarly if you still have these records on your disk
+  you can now untap them and
+403: then you will get much more space back and just generally your updating could
+  be potentially
+409: a little bit faster and happier and all this type of stuff yeah the relatively
+  big thing we did in the
+415: last year it's not super exciting for everyone but our analytics were hosted
+  by google for a very long
+421: time and we had a lot of people who didn't like us having analytics at all and
+  i chose to ignore those
+427: people because we need them to be able to do our job unfortunately but i guess
+  a concern we did hear
+433: again and again from people was like hey we don't mind you having analytics but
+  we're a bit concerned
+437: with all this data going to google and like if you look at the analytics docs
+  you can like opt out of
+443: certain data collection but that's kind of relying on trusting google to do what
+  they say which i kind
+448: of do but i understand not everyone does so we've kind of now moved to kind of
+  a like nice cloud hosted
+455: like eu instance of um influx db which means that we're gathering essentially
+  the same data we had
+462: before but we're not kind of tying it to individual users we don't have the ability
+  to kind of do stuff
+467: like capture ip addresses even if we wanted to and that makes everything a little
+  bit nicer and so we've
+472: now destroyed all of our existing google analytics data and and this means that
+  if you want to know
+479: what humble was doing or what user counts were like two years ago tough luck
+  um but we do have this new
+486: analytics system automatically kind of deletes data after 365 days so this should
+  get us a nicer slightly
+493: more privacy focused approach in future and the other thing that has been a kind
+  of principle with
+498: our analytics is trying to have it so if people may not trust us with gather
+  analytics i understand
+504: that like it's a touchy point in the tech industry with privacy and all this
+  stuff nowadays but we do
+509: try and make all the information we gather public so we've got these pages like
+  under formula brew.sh
+514: slash analytics various pages of the analytics we gather we've got a few more
+  things there than we
+519: used to be able to have and you can kind of see the download counts percentage
+  counts all this type of
+524: stuff and basically maintainers don't have access really to any more information
+  than you do like
+529: we have a couple a handful of people can access our influx db console directly
+  but like the data in
+535: there is in such a kind of messy horrible format that no one is clearing that
+  directly they're all just
+540: using the same web pages as you and i might use um which feels like again from
+  a privacy perspective
+546: we're all kind of on the same page whether you're a user of homebrew or uh people
+  maintaining it so
+550: um also again another thing to stick your hand in the air for who considers homebrew
+  to be slow
+558: yeah a few people do and put your hand in the air if you feel like it got faster
+  in the last year
+568: mostly just maintainers who made it faster so it's all right you still count
+  i value um so this is a
+576: relatively common critique we hear about homebrew is uh it's slow or why does
+  it upgrade all my things
+583: all the times and things like that so we are working on this this is kind of
+  a like background medium priority
+590: thing um for us that we've kind of considered for quite a while so in the last
+  year hopefully
+595: brew update that's mainly got faster from the uh api stuff we mentioned before
+  hopefully brew upgrades
+603: we've now made it a lot in certain cases at least we can now upgrade fewer of
+  your dependencies than we
+610: used to this is a little bit of a hack but i'm going to talk later on about how
+  we might be able to
+614: make this better going forward and then similarly around brew fetch some of our
+  maintainers noticed that
+619: there was a bunch of work happening there that didn't need to happen so i guess
+  if you do find
+624: homebrew to be a little bit too slow then be relatively confident that we we
+  do feel your
+630: pain and we are trying to make things faster most of the time a really weird
+  performance optimization
+635: we decided to do uh considering everything i've said before is i don't know if
+  anyone who's not a
+643: maintainer ever went and clicked around on the like the repo pages on github
+  but due to the gauge
+649: the git issues i mentioned earlier like a lot of these pages would time out and
+  stuff like that
+653: and another thing that kind of git and github people who knew a lot about git
+  have kind of said to us for
+659: a while is like due to some complicated get internal stuff that i don't really
+  understand uh you have
+664: structured the homebrew repo in pretty much the worst possible way for git performance
+  um git apparently
+670: really does not like having like directories with like thousands of files in
+  them and we had i think a
+676: directory with 8 000 files in it or something like that which means you could
+  see it on the github
+682: interface because like all these operations listing the directory if you did
+  a git blame or git log on
+687: those directories like all of those were time out which meant increasing amounts
+  of the github user
+691: interface was just not useful for when you were using homebrew and that also
+  contributed to why git fetch was
+697: so slow git gc was so slow like doing opening prs like the pushes and the pulls
+  and all this stuff involved
+703: was just like getting really slow and getting slower and slower and slower we
+  were also seeing more
+709: incidents with github that github didn't seem to think were related to this but
+  i kind of did uh so
+715: we've now like sharded our repos so essentially like everything is split into
+  directories based on
+721: name and because uh because we have quite a lot of libraries lib gets its own
+  special directory uh it
+728: doesn't get bunded in under l we've done the same thing for humbrew cask as well
+  like again as i say
+733: github have been wanting us to do this for ages but we've finally actually done
+  this now and that now
+738: means that on these pages you can actually finally now see the commit information
+  and time stamps and
+743: all this type of stuff and it makes it a bit more useful for people when it wasn't
+  before so a more
+748: exciting thing for us is we moved to like using ruby 3.1 homebrew who knew that
+  homebrew was written
+755: in ruby it's this widely known thing yeah cool and so homebrew originally i think
+  was uh on mac os 10.5
+765: i think the first version and back then apple provided like loads of stuff with
+  the us including ruby 1.8 or
+772: whatever i think it was at the time and homebrew kind of particularly in the
+  early days tried to use as
+776: much stuff from the system as possible and not pulling its own kind of libraries
+  we still try
+782: and do that where we can but ruby was an example where apple said um a few years
+  ago that like okay
+790: we're kind of deprecating the system version of ruby and python and i think pearl
+  and stuff like that
+795: and for apple kind of deprecating this stuff uh we've sort of been playing chicken
+  and being like well
+801: you say it's deprecated but you keep upgrading it for us so we're going to just
+  keep using your version
+806: as long as we can and like eventually kind of went to some apple people for the
+  last release and
+811: they're like hey the ruby you supply is 2.6 that's really old when are we going
+  to get a new one and
+815: they were like did you not read when we sold you it was deprecated and we were
+  like yeah but yeah but
+820: please and they said no this time we mean it so like finally we've kind of we've
+  always had our own
+827: kind of thing we call portable ruby which allowed us a way to distribute a kind
+  of a ruby that you could
+834: install anywhere in your system so work regardless of where your homebrew is
+  and it would work on a
+839: variety of mac os versions and stuff like that and that was now moved to ruby
+  3.1 so now we have a
+846: system where essentially everyone on mac os at least on linux there's some configurations
+  where you don't
+851: need this but everyone has portable ruby now and supplies kind of a nice relatively
+  new version of ruby
+858: so this is nice for us it probably has some it's had some mild performance increases
+  um
+863: and it lets us use like newer language features makes homebrew easier to kind
+  of maintain makes it
+868: easier for homebrew like ruby users to kind of not be used to this kind of ancient
+  version of ruby and
+873: then there's stuff like survey and rubocop and all these other libraries we kind
+  of depend on
+880: that we're kind of creeping towards deprecating ruby 2.6 or had already done
+  so so let's just kind of keep
+891: more up to date and stuff like that as well which is very nice uh we've also
+  released a official like
+898: homebrew mac os package this is another thing that's been kind of requested for
+  a long time people
+904: have a love-hate relationship i think homebrew was one of the first
+906: projects to do the whole call this bash script into your terminal and then we'll
+  install it that way
+915: who has concerns security concerns about that approach almost everyone good we're
+  going to keep doing it so
+921: but if you don't if you don't like that then you can use now this instead
+930: so this is kind of the more standard installation process you would expect
+933: where you know you get a nice installer and you kind of click through these things
+  and stuff like that
+938: and you should end up at the end with essentially the same stuff and it prints
+  the same messages for
+944: you and all this type of stuff as the bash installer but you can do this through
+  like mdm tools and things
+952: like that but as i mentioned earlier i've actually been working on a few little
+  bits which are kind of not
+957: strictly homebrew related so i've been working on work brew which is this thing
+  where we're building
+963: kind of some closed source stuff on top of work on top of homebrew to try and
+  kind of find this balance
+970: where there's been a bunch of things where like the package is an example of
+  one where people have asked
+975: for over the years some people wanted to get involved and build that and that's
+  all fine whereas
+979: a workbrew there's been a bunch of stuff that people have asked for over the
+  years and
+983: i've asked various homebrew volunteers and they don't want to do it say okay
+  well fine we can do
+988: some of this stuff for you for money so we have our own packager now which does
+  a few more things than
+993: the homebrew one does and stuff like that not going to go on about work too much
+  but if you are interested
+998: go and have a look at our website and there's a little demo of like what we're
+  doing and we're kind
+1001: of recruiting people who we want to work with on this stuff so get in touch
+  but on homebrew stuff i guess
+1009: looking forward to the next year so we meet together as kind of a homebrew group
+  each year
+1015: so i'm not entirely sure what our roadmap is we're going to kind of try and
+  decide some things tomorrow
+1019: maybe as a group kind of figure out like what we see as the most important things
+  but some ideas
+1024: kind of i've seen flipping around and things that i have and kind of have currently
+  open issues for them
+1031: are stuff around like handling conflicts better so uh there's this kind of ability
+  for packages
+1038: and homebrew to conflict with each other that means you can't have either of
+  them installed
+1041: sorry you can't have both of them installed at the same time that's kind of
+  a pain in the ass
+1045: it doesn't really work very nicely so we're hoping to improve some of that there's
+  also
+1048: in kind of inherent conflicts between um casks and formula who who feels like
+  they understand
+1054: the difference between casks and formula okay only the homebrew maintainers
+  great um so homebrew had
+1062: this kind of somewhat alternate um approach like the kind of integrated with
+  homebrew but was kind of
+1070: its own separate ecosystem a few years ago that kind of merged into homebrew
+  proper a few years ago
+1074: called homebrew cask so homebrew at least in the official kind of repo is all
+  about taking open source
+1081: software we build it from source we give you binary packages and then we ship
+  that to you
+1085: homebrew cask is a little bit different that's for distributing proprietary
+  software where the upstream
+1090: packager while the upstream like supplier of the software provides the binaries
+  for you and then we
+1096: download that and install it for you so for example wget might be a formula
+  because we can download the
+1102: sources and put that from scratch or something like google chrome or zoom or
+  whatever would be a cask
+1109: um so there's some cases in which there are costs and formula for the same thing
+  like docker for example
+1114: is both an open source project that kind of you get some nice binaries you can
+  build from source
+1119: but also there's like all the gooey stuff and whatever and if you do if you
+  install the docker
+1123: formula and the docker cask at the same time uh things get angry and start shouting
+  at you and
+1130: it doesn't work very nicely so that's something that we're probably going to
+  try and make better this
+1134: here another thing is we're continuing to work on our api stuff we're trying
+  to make it smaller and
+1139: faster and consider ways that we can do that to again make that updating experience
+  more pleasant for
+1145: people to use the other also the api as someone who's kind of been consuming
+  the homer api a lot
+1151: recently it's pretty crap it's uh it was originally kind of created in the relatively
+  early days of like
+1159: i don't know 2013 or something like that and we've just kind of bolted on bits
+  at this point where
+1164: it's got like six arms and three legs and they're all the wrong shape and it's
+  yeah yuck uh so hopefully
+1170: we can have something that's a little bit nicer for people who are kind of trying
+  to integrate with homebrew
+1174: to use release this year as well and the stuff i mentioned earlier about upgrades
+  so part of the
+1180: reason homebrew is often upgrading everything all the time and people get grumpy
+  because that's really
+1185: slow is because we don't have a good way of figuring out what upgrades are needed
+  and when so historically
+1193: we had the kind of conservative approach of well if there's anything else that's
+  new that's in your
+1199: kind of dependency tree we will always try and upgrade everything every time
+  just to be safe
+1203: but then we realized like well you upgrade a ton of stuff all the time and then
+  that makes people sad
+1209: and angry on the internet and all this type of stuff so then what i mentioned
+  we did last year was we
+1214: basically said well we can kind of infer a little bit from the way the binary
+  packages were built the
+1219: binary package was built with open ssl 1.1.1 and now we have open ssl 1.1.2
+  we know that this package
+1226: doesn't need 1.1.2 so we don't have to upgrade it yada yada but hopefully we
+  actually have like
+1231: there's a lot of the kind of bigger proper package managers and distributions
+  have like actual like
+1238: abi which stands for like application binary interface essentially like what
+  libraries you can
+1243: link again and change the versions without breaking things they have a lot of
+  tooling around that stuff
+1248: that we could kind of adopt and similarly like we can have a way even with our
+  existing tooling to kind
+1252: of make this stuff a little bit more explicit which would mean that we don't
+  need to upgrade as much
+1256: stuff as much of the time but because we're an open source project maybe what
+  we do in the last year
+1262: will be something that we haven't thought of yet that we think of because someone
+  in this room has
+1267: a good idea in a pull request or you file a bug report and then that makes us
+  think of something
+1272: that's smart and then we go and do something in a clever way or you file a really
+  well written feature
+1277: request that then inspires us to do something cool so i really encourage you
+  even if you've never been
+1282: involved in an open source project before we're generally myself excluded a
+  fairly friendly bunch
+1287: and we will all try and help you get involved with homebrew and help you along
+  the way particularly with
+1294: something like a pull request like if you have an idea and you think you can
+  kind of make it happen
+1299: and you can write some code in some sort of form even if it's only like 10 of
+  the way to working feel
+1305: free to open a pull request and then just say hey like this is what i tried
+  this is what i need help with
+1310: and then we can kind of help you along the way it's often much easier to talk
+  about the code
+1314: than it is to talk about the ideas about the code beforehand we're not the type
+  of project where
+1319: every pull request needs an issue opened beforehand like we believe in discussing
+  the code whenever you
+1325: can rather than kind of discussing some abstract conception of what the code
+  might look like when
+1330: someone decides to write it so i think we've got a little bit of time for questions
+  now and also if
+1335: you don't feel comfortable asking any questions uh in this format then feel
+  free to ask me anything
+1339: privately i'm on mastodon and twitter and you can email me and stuff as well
+  and yeah thank you very much for
+1344: having me
+1352: are there any questions oh all right
+1367: it's going to ask where's the the oh the beer the beer costume okay so this
+  anyone who was here last
+1374: year i was wearing a i had to throw beer costume because uh i love my herbal
+  maintainer friends but
+1381: they're not always the most organized bunch um and someone posted a picture
+  before for them last year
+1387: saying uh like here's a beer costume wouldn't it be funny we can make mike wear
+  this lol and i was like
+1393: like yeah basically like challenge accepted you're not organized enough to make
+  that happen and
+1398: unfortunately they were and i had to wear a beer costume there are pictures
+  on the internet don't
+1403: look for them uh thankfully they were not organized enough to bring it this
+  year so that is why
+1408: i'm not wearing the beer costume and shame on you sir for reminding people that
+  it exists
+1413: any more questions
+1420: awesome thank you mike

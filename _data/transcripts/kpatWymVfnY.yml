@@ -1,0 +1,461 @@
+---
+0: So anyone who's been to one of my homebrew talks before will know there's a lot
+  of hand
+9: raising that has to go on. So I'm sorry. So who's heard of homebrew before now?
+  Very good.
+15: Who uses homebrew? Hopefully you have heard of it if you use it. Who's submitted
+  a PR
+21: to homebrew? Anyone submitted a PR to homebrew which was closed and rejected by
+  me?
+29: Note, the majority of the people with their hands up are homebrew maintainers.
+  So that's
+32: fine. Great. Who likes putting their hand up?
+35: Way, very long. Right. So my beeper, there we go. If you want to talk to me about
+  anything in this
+45: talk, easiest way is either Twitter or my personal email which is on GitHub and
+  my website and stuff
+50: like that. I come here with two hats on generally. I'm not going to talk too much
+  about anything
+56: GitHub related today but that's my day job. They pay my bills. They pay for me
+  to be here.
+60: Thank you very much GitHub. I've been there about six years and I'm working on
+  GitHub sponsors now.
+65: If you find any of that stuff interesting then feel free to like just grab me,
+  hopefully not physically,
+71: during FOSDEM and talk to me about it and we can have interesting conversations.
+75: And similarly about homebrew if you want to talk about stuff like that.
+79: Right. So this talk, I'm going to talk about features and funding in homebrew.
+84: These two things are completely related. They're definitely not just two blog
+  posts I wrote that are jammed together to make a normal size talk.
+90: So who likes features in software?
+93: If you haven't put your hand up, I'm a little bit concerned.
+97: Particularly new features are generally nice. I like it when I get to work on
+  new features and I like it when I release new features that other people like.
+105: Which is very exciting. But a lot of the time new features are not very good
+  when I first release them because I suck at coding.
+114: So the problem with homebrew pre-1.0 is homebrew, there's a lot of design decisions
+  that are made that might look smart but are generally made just because me or one
+  of my predecessors are extremely lazy because that's how it is.
+131: One of the nice things about being a software engineer for a living and doing
+  open source, I'm sure a lot of you can relate to this,
+136: is the pain of knowing what you would actually do if you had time to do things
+  the right way, which I don't have time to do because I have now two small children
+  and they don't tend to allow me as much time as my paid overlords at GitHub do to
+  do things like write as many tests as I would like, et cetera, et cetera.
+155: So one of the things you probably may or may not know with homebrew is it uses
+  Git and GitHub pretty heavily.
+162: So when you are doing updates of the package repository or updates of the package
+  manager itself, that's just doing a git pull from GitHub, essentially.
+171: So before homebrew 1.0, when you ran brew update or eventually when that became
+  automated for you, then effectively that's just doing a git fetch, checking what
+  the latest version is on GitHub and pulling that down for the package manager itself
+  and for all the packages.
+190: Now, this is quite good when you want to just have everyone running the same
+  thing all the time, but it is not good if you like new features that are not broken
+  because it makes it quite hard to have subsets of users that you roll features out
+  to when they are not quite ready yet.
+206: So now, as of we're now at homebrew 2.0, whatever, most people will now end up,
+  when they run brew update, on a stable tag instead.
+219: So we now tag things in the repository.
+221: So when you run brew update, the main package manager itself, not the packages,
+  we don't have any plans to do that, but the package manager itself, you will kind
+  of jump between tags if you are most people.
+230: But if you are some special people, then you will get effectively the same workflow
+  as before.
+235: You will be on whatever the tip is of the master branch and whatever the latest
+  commits are.
+240: So that means if I push some PR or new commits or whatever it may be, then you
+  will get them almost immediately.
+246: Now, you may wonder, am I some people or am I most people?
+253: Right, I'll tell you later, but ponder that question for now.
+256: The way most software generally works for doing betas and handling kind of features
+  that maybe aren't quite ready yet, or just big refactors that maybe aren't quite
+  ready yet, is they might pop up some little box asking people if you want to use
+  the beta or not.
+274: Or, in shorthand, do you like bugs?
+277: Or, if you want to be a little bit more philosophical, do you hate yourself?
+281: Personally, I find almost any software I use on a day-to-day basis that asks
+  me if I want to use the beta channel, I never do.
+287: Because, like, the general fact is, because I'm using software, I generally want
+  it to work.
+292: And when it doesn't work, I generally get very annoyed.
+296: Another problem I found is, because I've been working from home for 10 years,
+  I'm not really used to, like, working in an office environment.
+303: So, now, when software doesn't work the way I want it to work, my reactions are
+  increasingly ridiculous, loud, and violent towards my computer.
+312: So, I don't really know that beta software is good for me or the structural integrity
+  of my house at this point.
+319: On homebrew, we do things a little bit differently.
+323: Basically, the fundamental question with homebrew, instead of asking yourself,
+  you know, do I hate myself enough to try this new software?
+330: It's really about, do I hate you?
+332: And the answer is, no, of course I don't.
+336: Well, obviously, I do still hate some people around homebrew a little bit.
+341: Probably no one in this room.
+342: There's enough people blocked on the homebrew GitHub organization that, you know,
+  that probably indicates a little bit.
+348: But, I mean, to be serious, though, why do I hate you enough to make you some
+  people?
+355: Why do I hate you enough to make you sit on the master branch when you could
+  be on a lovely, nice, stable tag that's a lot more tested?
+362: Well, so, if you end up grouped in that little group, I happen to think you're
+  a little bit special.
+371: I happen to think you're curious.
+373: There's something about you that makes you a little bit different from the average
+  person in the world.
+378: And I think you're probably a bit more likely to be helpful.
+382: And that's a weird thing for me to have maybe attributed about you without knowing
+  anything else about you.
+388: So, how do I identify these things?
+392: Well, in homebrew we have the concept, if you look in the man page, we group
+  our commands by, we have commands and we have developer commands.
+401: So, a homebrew command might be the normal way that you would use homebrew with
+  something like brew install wget.
+409: Most people are using these when they invoke homebrew, when they work with it.
+413: This is how most people's entry point to homebrew is through these.
+416: But then we also have things called developer commands, which are what you use
+  if you want to contribute to homebrew,
+421: if you want to be a homebrew maintainer, if you want to submit a pull request,
+  if you want to make some changes,
+426: even just locally for yourself, then you're going to run one of these developer
+  commands.
+431: So, the fun fact is, we track, not externally, but we track on your local machine,
+  whether you've ever run a developer command or not.
+440: And 99.9% of people never have.
+444: And 0.1% of people have.
+446: So, 99.9% of people get the stable branch.
+451: I realize now, I've flipped these the wrong way around, but oh well.
+454: 99.9% of people get the stable branch, and 0.1% of people get the master branch.
+460: So, again, why would we do this?
+462: This is maybe a little bit weird.
+463: So, this was based on experience over the years of kind of observing how these
+  different groups of users tend to file issues.
+471: So, people who have never run developer commands, you tend to get issues that
+  look a little bit more like this.
+478: Those of you who are maintainers of any software would know the dreaded phrase,
+483: it doesn't work.
+485: It's generally not super helpful in figuring out exactly what the problem is
+  and what the changes are that need to be made to do things.
+492: To be fair, though, I'm not blaming these people.
+495: Because, again, with tools like Homebrew, despite being, I guess, ostensibly
+  a developer tool,
+500: it's now increasingly used by a lot of people who may not be developers at all,
+  may be following some guide online, whatever it may be,
+509: and they're not familiar with the kind of open source, free software, bug reporting
+  way of doing things.
+516: They don't know that you need reproducible instructions, etc., etc.
+520: But, as a result, since we kind of made this move, people who only have run developer
+  commands tend to make bug reports that look a little bit more like this.
+528: Or, quite a lot of the time, I would say 50% of the time when it's a bug that's
+  affected them directly and is a relatively simple fix,
+536: instead you get something like this, which is very nice.
+541: Generally, when this is explained, I find 80-90% of people go, oh, that's interesting,
+  whatever.
+547: And 10% of people get very upset and don't like this idea that we are deciding
+  for them, effectively, whether they get the unstable stuff or not.
+556: If you are one of those people, then you can set this in your environment, Homebrew
+  update to tag.
+561: That basically says, even if you run a developer command or anything like that,
+  you always want to be on the stable branch.
+567: So, don't trick you into ending up on the master branch inadvertently.
+572: If you're the opposite, and you're just excited to get out there and find some
+  bugs, then you can set Homebrew developer equals one.
+580: That will go, and that does a few more things that will partly make sure you're
+  always on the master branch,
+585: but then there's a few things that are warnings or don't print warnings that
+  will then turn into errors and stuff like that,
+593: which would be useful for you to help us fix.
+596: Generally, if you want to set this, though, I would say the high level for a
+  flag like this is,
+603: I'm prepared to submit pull requests to fix things that I encounter.
+606: If that does not feel like you, then feel free to not set that.
+613: Sometimes we get situations where we are working on new features where that split
+  between master and stable tags is not quite enough.
+624: So, again, a lot of stuff we do, we will go and make a new change, whatever it
+  may be,
+630: and then we do a new release of the package manager itself maybe once a week
+  or so.
+635: And then once things kind of get into that stable tag, then they'll get rolled
+  out to everyone.
+640: And normally kind of, you know, if we roll out something a bit more dramatic,
+644: then we'll give it a couple of days before we do a release to make sure that
+  kind of any of those beta testers
+649: have been able to kind of potentially pick up on that, file an issue, file a
+  PR, whatever it may be,
+654: and also like the homebrew maintainers themselves, because, again, we are all
+  on the beta channel effectively.
+658: But sometimes that's not enough.
+660: Sometimes you need something which is going to last a bit longer that may need
+  toggled on and off for individual machines
+667: or individual people or whatever it may be.
+668: So for that, we use feature flags.
+670: Who's familiar with the concept of kind of feature flagging?
+673: Okay.
+674: Like some people, not everyone.
+675: So, again, back to the feature problem of, you know, we might want people to
+  try new features,
+683: but often they are completely broken when we first make them.
+687: Particularly with stuff like homebrew, there's some stuff where if we want to
+  change the way the compilation process works,
+692: for example, it's not feasible for me to test 4,000 packages on my machine before
+  I roll that out to everyone.
+699: But at the same time, I don't want to just roll that out to everyone and break
+  their stuff.
+702: So, again, do I hate you?
+705: Not yet, because I want to try and make sure this stuff is a little bit more
+  refined before it ends up being with you.
+714: So, generally, the way we do that is similar, I guess, before.
+718: The way, basically, everything is controlled in homebrew is through environment
+  variables
+721: because we don't have a configuration file.
+723: We just decided this is the way we like to do things.
+725: So, we let users set environment variables for these particular cases.
+730: So, generally, in the first case, if I'm rolling out something that I suspect
+  is really broken,
+734: then the first person to set that will be me.
+737: I will set that on my personal machine because I'm using homebrew for work stuff.
+740: And I'll basically wait to see what breaks.
+742: Internally in the code, obviously, we're checking for the presence of that variable.
+746: And then we can do slightly different logic internally, whether you have that
+  flag set or not.
+751: Then, if we want to go a little bit more advanced than that, we can check if
+  homebrew developer is set.
+756: So, that's going to basically group in all of the homebrew maintainers and anyone
+  who manually sets that flag,
+761: for which I don't think there are a whole number of people.
+763: But, again, that's sort of the group who have opted in to receive more warnings
+  and problems and stuff like that.
+770: Then, if we want to not just put something in the master branch or a stable tag,
+  we can check.
+776: That's the equivalent variable that's set for us for people who have run a developer
+  command at some point.
+781: And then, at that point, then it generally ends up in the stable branch.
+785: So, the flow through these things is generally the first person testing a new
+  feature that I makes, at least, is going to be me.
+794: Then, it's going to be our CI system.
+796: We might enable that globally, so we can see that across all the packages.
+799: Then, various maintainers will enable it.
+801: Then, the people in the beta channel.
+802: And then, everyone else.
+804: So, hopefully, then, we end up with new features that are not completely broken.
+809: So, a brief side tangent for an employer plug.
+813: So, that's one of the things about GitHub that I kind of stole this idea from
+  them.
+818: Obviously, people have been doing feature flagging before GitHub.
+820: But, they do this stuff generally very heavily internally as well.
+824: So, almost anything I work on at GitHub is going to be used by feature flagged,
+  at least if it's some new feature or some big change in behavior.
+833: It's going to be feature flagged to just me first, then my team, then the employees
+  at GitHub.
+837: And then, sometimes we have stuff, if it's very relevant to open source maintainers,
+  we'll flag in people in a kind of subset maintainers community we have.
+847: And then, we've started doing more, like, beta opt-ins and things like that.
+850: And then, we roll it out to everyone.
+857: So, the next part of this talk, there's not really a great segue, but I'll try
+  and make one up anyway.
+861: So, talking about funding.
+863: So, again, there's a lot of talk about feature development and open source kind
+  of getting better and better and stuff like that.
+873: And there's been, in the last few years, I don't know how many of you have picked
+  up on this a lot, talk about, like, oh, no, is open source broken?
+879: Because, you're starting to see big companies who make things, you know, like,
+  maybe you make some sort of thing that's maybe a bit like a database, but even better.
+890: And you want to write a bunch of code over the years to make this amazing, not
+  quite a database, but almost like a database, really, really good.
+898: And you want to release it under an open source license and have lots and lots
+  of people use it.
+901: But the problem is, you can't get anyone to give you any money.
+905: So, you basically go and maybe see if you can convince people to pay you for
+  the open source project, and no one really does and stuff like that.
+914: So, you're asking yourself, well, how can I make new feature development?
+917: Okay, I'll make a company around my open source product.
+919: And then, because you're making open source, no one's going to pay you directly
+  for your thing.
+925: But maybe if you go to some people who can help people with stuff like this,
+  then they can generally, you know, throw some money at you.
+933: And then, that might help your company to grow over the years and things like
+  that.
+936: But the problem is, eventually, you get to a point where your company's making
+  some money, but they're still not profitable and whatever it may be.
+943: And then, you hit a bit of a wall where you realize, like, oh, there's all these
+  big kind of cloud providers who are not, in our opinion, giving us the fair share
+  that we're due.
+953: And then, as a result, you go and re-license all your stuff to non-open source
+  licenses.
+958: You then say that that is open source software still, and try and make package
+  managers package your stuff anyway, and just keep telling everyone that it's open
+  source, even though it's not anymore.
+966: And then, go around telling people, oh, open source funding is broken.
+970: So, is open source funding broken?
+973: No, in my opinion, open source companies are broken.
+975: It doesn't really work to have VCs fund massive organizations who are going to
+  go and then just change their licenses five years later.
+982: But, in short, I don't really care about this problem, and neither should you.
+986: Because, I think, the problems that bigger organizations who might make open
+  source databases and then change their licenses a few years later to other things,
+  not that I would name any names, the types of problems these types of organizations
+  have, I think, are completely irrelevant to the open source ecosystem as a whole.
+1002: Because, actually, at the end of the day, what does your project need money
+  for?
+1005: Probably, it does not need money for a shiny office.
+1008: It does not need money for a Tesla in your drive.
+1011: It does not need money for a whatever other things venture capitalist money
+  injections to your organization give you.
+1018: So, if you want your Tesla, you're going to have to figure out another way of
+  doing it.
+1023: But, if the problems you are having, which mean that your project needs money,
+  are things like you need places to host your binaries, and that actually needs to
+  be paid for,
+1031: or you need some sort of cloudy thing to run some services in, and that has
+  bills that need to be paid,
+1037: or, in our case, you need a CI system that actually tests all your packages,
+1041: but none of the kind of cloud-coasted CI systems is anywhere near the scale
+  or provide the infrastructure that you need,
+1048: then you're going to need to get some money somehow from somewhere.
+1051: So, Homebrew found ourselves in this situation in 2013.
+1055: We didn't have any CI.
+1058: Back then, it wasn't as much of a thing.
+1061: Certainly, back then, Travis CI wasn't supporting Mac builds and stuff like
+  that,
+1066: so there was basically nothing that looked like it was going to be an option
+  for us, really, to do.
+1070: So, we wanted to get some money, and the way you got money off random people
+  on the internet you didn't know in 2013 was Kickstarter.
+1077: So, we launched Kickstarter, we got enough money to buy ourselves some computer
+  hardware,
+1084: and then we installed that and kind of ran that for a good few years, and that
+  was fine.
+1089: Unfortunately, we had a few problems with this, right?
+1092: So, partly, having physical hardware means that some sort of humans are going
+  to have to manually deal with that.
+1099: Normally, the humans who are physically closest to the hardware, which was me,
+1102: and that sucks when that person is you all the time.
+1107: Secondly, we had leftover money from the Kickstarter that we wanted to do stuff
+  with at some point,
+1112: and we feel kind of we are obligated to do something with at that point,
+1116: but that was, again, in a bank account in the UK, in pounds, and I was the only
+  maintainer in the UK,
+1122: so, again, that was non-ideal as well.
+1124: And this stuff is all sounding very bus factory of one, so I was trying to go
+  and shopping for other solutions.
+1132: So, in 2016, we kind of started talking with the Software Freedom Conservancy,
+1137: after looking at various other kind of software foundations,
+1139: and thinking that was the route Homebu was going to kind of start to go down
+1143: in order to kind of have some, basically, more bus factor around our finances
+  and stuff like that.
+1148: So, that provided us with a legal entity,
+1150: so that entity could be the thing that owns things like physical hardware rather
+  than any individual.
+1155: It provides us with a 501c3, which is, in the US,
+1160: the shorthand for an organization that can receive donations,
+1164: and then people can claim that back on their tax return,
+1166: and, like, companies like stuff like that for donations as well,
+1170: because it makes it, basically, more valuable for them to give you money.
+1173: And, again, with it being 2016, we had, like, a PayPal account that we could
+  get money sent to us relatively easy for,
+1181: and donations, and a bank account if people want to go, like, and physically
+  wire transfer stuff.
+1185: So, companies generally prefer this route, though, so this was a little bit
+  more handy.
+1190: But the problem with this model of having, like, just soliciting donations and
+  getting them is it's not very stable.
+1199: You know, you might get a nice, and we've got some big, like, one-off, anonymous
+  $10,000 donations from big organizations or whatever it may be,
+1206: and that's really cool and really helpful, but that doesn't, particularly with
+  the stuff I mentioned before,
+1210: if you're paying a monthly fee for something, you don't want big, lump payments.
+1214: You want, you would happily take lower payments, which are rolling on month
+  over month over month.
+1220: So, in 2017, we moved to that way of asking people for money on the internet,
+  which is Patreon.
+1229: And that worked for us relatively well.
+1234: We started to get a little bit of kind of monthly income and things like that.
+1236: But, again, you still have that problem of how do you actually solicit for people
+  to give you a bit more money.
+1242: So, we started off by just putting it in our readme and saying, yo, we could
+  do with some money for X, Y, and Z.
+1248: Please give it to us.
+1249: That didn't really work very well.
+1251: Like, again, we got dribs and drabs, but most people are not checking that section
+  of the readme to see stuff like that.
+1257: Then, 2018, we have, like, I think, 10,000 followers on Twitter or whatever
+  at this point.
+1262: So, we pushed on Twitter kind of asking, and then we saw a little bit of an
+  uptick there.
+1265: But the really impactful thing to our funding in 2019 was we added a little
+  message to the application itself,
+1272: and to the installer.
+1273: So, when you first install Homebrew, or when we roll out really things which
+  we think are important to users,
+1282: such as stuff like analytics, we display a little one-time message.
+1286: We check that you have a TTY, which is basically our way of more or less seeing,
+1291: wow, you're not running this within some other script, and you're probably going
+  to actually see this message.
+1295: And we do, like, a console beep and stuff like that.
+1298: So, we've done that previously for kind of analytics to let people know that
+  this is a thing we're doing.
+1302: and how to opt out.
+1303: So, we thought, hey, we could do this as a one-time message.
+1306: People will only see this once per machine, or when they install any new machine,
+1311: to solicit some donations.
+1313: More or less just saying, okay, would you like to donate to the project?
+1317: And then, that's what happened here-ish.
+1321: So, that made a really...
+1324: So, this was when we sort of started, I guess, just before 2017,
+1327: and had just the donation stuff in the readme.
+1330: Again, picking up slowly over time.
+1332: Big jump there when we started asking on Twitter.
+1335: And then, the jump when we added the little nag message was fairly ridiculous.
+1340: So, and since then, we've been sitting fairly sort of statically on between
+  $2,500 and $3,000 a month,
+1346: which is pretty great.
+1347: And then, as of 2019, we've added GitHub sponsors, which is like, plug, plug,
+  that's something I work on at work.
+1354: So, that's a nice other way for us to kind of get funds.
+1357: Organizations are still in beta for that.
+1359: So, we were kind of one of the early organizations to get into that.
+1362: But, again, within the next few months, that should be open to all organizations.
+1365: But, again, that's a way that we've been able to get monthly income through
+  the GitHub platform.
+1371: And that's like a few hundred dollars a month at the moment as well.
+1373: So, with that combined, we have kind of $2,500 to $3,000 a month,
+1377: which actually now gives us enough money to partly have maintainers fly here.
+1382: And we have our annual general meeting for the second time on Monday.
+1385: And partly to start actually paying for hardware and things like that,
+1389: that we need to run the project effectively.
+1391: And we've done this without selling user data, which is, again, things which
+  we've been accused of doing in the past.
+1396: People worry about stuff like that with analytics, but it's something that we
+  wouldn't ever consider.
+1399: We've done it without asking people to donate again and again and again.
+1403: Like, again, I kind of, I don't mind when programs I use do that because I feel
+  like that's within their right.
+1410: But you do have to wonder, like, if someone has said, no thanks, I don't want
+  to donate, like, three or four times,
+1415: how likely they are in the fifth, sixth, or seventh time to decide to donate
+  and not just get really annoyed.
+1420: We've done that without having a sort of, like, homebrew pro edition, some special
+  version of homebrew with features limited,
+1427: which are not open source, so people need to pay for or whatever.
+1429: And surprisingly, we've done it without anyone really accusing us of selling
+  out.
+1434: And we've not had any backlash, as far as I can tell, to our donations and our
+  funding stuff.
+1440: This may well be partly because we, my advice maybe to other projects would
+  be we effectively don't really make any promises on what you will get for donating
+  to homebrew
+1450: and what the money will be spent on, except the fact that, you know, we're part
+  of a software foundation and this isn't going to be, like,
+1456: none of the money has gone in any maintainer's pockets individually or directly
+  or anything like that.
+1461: And before that would happen, there would be a very formal process of contracting
+  and stuff like that.
+1466: So basically, although we can't promise you what your money would be spent on
+  if you donate it to homebrew,
+1471: we can say that it will be used to kind of, for the project's mission and not
+  just to buy me a Tesla.
+1476: So with that, I think we can say that homebrew is still quite good
+1481: and things seem to be going better for the project as a result of doing these
+  funding changes.
+1487: So, thank you very much and do we have time for questions?
+1491: No.

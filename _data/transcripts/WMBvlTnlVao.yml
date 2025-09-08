@@ -1,0 +1,1069 @@
+---
+0: Thank you.
+30: Thank you.
+60: Thank you.
+90: Thank you.
+120: Thank you.
+150: Thank you.
+180: Thank you.
+210: Thank you.
+240: Thank you.
+270: Thank you.
+300: Thank you.
+330: Thank you.
+360: Thank you.
+390: Thank you.
+420: Thank you.
+450: Thank you.
+480: Thank you.
+510: Thank you.
+540: Thank you.
+570: Thank you.
+600: Thank you.
+630: Thank you.
+660: Thank you.
+690: Thank you.
+720: Thank you.
+750: Thank you.
+780: Thank you.
+810: Thank you.
+840: Thank you.
+870: Thank you.
+900: Thank you.
+930: Thank you.
+960: Thank you.
+990: Thank you.
+1020: Thank you.
+1050: Thank you.
+1079: Thank you.
+1109: Thank you.
+1139: Thank you.
+1169: Thank you.
+1199: Thank you.
+1229: Thank you.
+1259: Thank you.
+1289: Thank you.
+1319: Thank you.
+1349: Thank you.
+1379: Thank you.
+1409: Thank you.
+1439: Thank you.
+1469: Thank you.
+1499: Thank you.
+1529: your finance team to pay for software that you need to get your job done it
+  often makes sense
+1534: to optimize for your developer time and not optimize for spending as much time
+  as possible
+1540: just because something is free so in my opinion this is a fairly bad reason
+  by itself to use open
+1546: source software the next reason you might hear people say is that the community
+  will help you
+1551: fix all your problems for you and then again for free because with a proprietary
+  software product
+1557: you might go and buy it and then you would say hey i found this problem and
+  then they will say to you
+1562: oh well okay well maybe in some future release we might sort this out or if
+  it's a really big
+1567: proprietary software company and it's a you know say a smaller organization
+  that's using that software
+1574: they may well say well you know take it or leave it you can pay us you can not
+  pay us we don't have
+1579: any plans to add this feature or fix this in future whereas with open source
+  i can go and just open a
+1584: random issue on the internet and i can tell a stranger why it's very important
+  that they fix
+1589: my problem right now because i have a deadline on friday and they need to make
+  sure that all this stuff
+1594: gets sorted because i'm using this software and they should be very glad about
+  that as you can perhaps
+1599: tell from the laughter and or my tone that's maybe not the best way of thinking
+  about open source software
+1605: so you definitely can't read that but the most important bit of this this is
+  the ruby on rails contribution
+1612: guide i'm going to read out in full then don't get your hopes up unless you
+  have a code red mission
+1616: critical the world is coming to an end kind of bug you're creating this issue
+  report in the hope that
+1620: others with the same problem will be able to collaborate with you on solving
+  it do not expect
+1624: that the issue report will automatically see any activity or that others will
+  jump to fix it creating
+1629: an issue like this is mostly to help yourself start on the path of fixing the
+  problem and for others
+1633: to confirm it with a i'm having this problem too comment so in short on ruby
+  and rails they're really
+1638: setting the expectation that if you have a bug like don't expect that it's going
+  to get fixed by anyone
+1643: except you or anyone except a group of people who you could find on the ruby
+  on the rails bug tracker
+1650: to collaborate with on fixing this bug i actually think this is a really good
+  thing i'll come back to
+1655: this later on this sort of hints towards a reason why open source is good for
+  software development in my
+1661: opinion and good to use for your tooling but the original reason about the community
+  is going to just fix all
+1666: all your problems for you that gets it's not quite untrue but it certainly gets
+  a raised eyebrow
+1672: and obviously as well if you're an organization where you have lots and lots
+  of resources but and
+1678: you're relying on volunteers in their evenings and weekends spending their time
+  to fix your problems so
+1684: you can continue to make more money which you're not interested in giving back
+  to that community
+1688: then you are not great there's various other words that i would use but it's
+  a family friendly environment
+1696: another reason you may have heard people say is just well open source is kind
+  of cool now everyone's
+1703: using it for everything like you see it all over the place everyone's has github
+  repos what they're
+1709: sharing when they have libraries they're using or whatever it may be if you
+  npm install stuff then that's all
+1714: going to come off open source packages and things like that so i guess let's
+  explore this a little bit
+1721: deeper so i guess that again i'm going to very broadly generalize here but the
+  the evolution of
+1726: people who use open source you had a lot of people who started using it in the
+  outset and then it's grown
+1732: more and more to kind of become a more and more popular way of doing software
+  development and more and
+1737: more popular to use so let's kind of walk through these kind of groups in my
+  opinion of how they've sort of
+1742: started so as much as i made the little joke at their expense earlier the kind
+  of the people who
+1746: run linux on their desktops and stuff like that people who want are really really
+  into open source
+1752: software or free software as people sometimes refer to as um will you know those
+  are the type of people
+1759: who really kind of got it all started they got open source and free software
+  kind of started off the
+1764: ground and they're the people who still are a big part of the community that
+  kind of builds the things
+1770: that everything else builds on top of then you have the linux on the server
+  people again this has been
+1774: as much as linux on the desktop aren't widely used perhaps as much linux on
+  the server if you're deploying
+1781: some new application or writing some new application has been kind of the default
+  for a lot of
+1786: organizations particularly smaller startups say for i would say 10 plus years
+  at this point
+1790: obviously if you're on a microsoft stack then you may well not do that but then
+  in general i'm talking this
+1797: is a an area which has seen a lot of growth then you start seeing as i mentioned
+  startups are starting
+1803: to use open source more and more kind of by default again partly perhaps because
+  they're free but partly
+1808: as well because it allows you to build on top of stuff from other people without
+  having to invest as much
+1814: time into both commercial relationships and the money side bigger companies
+  get more and more into open source
+1821: you're kind of ibm's everyone like that again are five or ten years down the
+  line from using open source
+1827: for almost everything and then microsoft who again some of those who have been
+  in the open source space
+1833: for a while will remember used to do things like call open source cancer and
+  say how terrible it all is
+1839: and that it's a virus that's going to infect people and communism and like these
+  are all actual words
+1844: that used to get used you know now microsoft are one of the biggest contributors
+  to the linux kernel
+1849: they're one of the biggest open source contributors on github and they bought
+  github last year as well
+1854: you know they are are and to clarify i'm not a microsoft employee that we are
+  still we are still
+1860: technically a separate company so this isn't me trying to suck up to anyone
+  but it it's a sign for me of
+1866: how far things have come and how much things have changed from you know coming
+  up to 15 years ago
+1872: when i was at university when microsoft were the main people who are trying
+  to stop open source
+1877: who have gone completely 180 now and seem to be one of the big people who are
+  trying to promote it
+1881: and then now pretty much everyone is using open source you're seeing all the
+  companies who kind of used to
+1887: be traditionally hostile to open source not just microsoft but other places
+  as well are kind of starting
+1892: to open up or starting to at least use it more if not releasing more of it themselves
+  so again you can
+1899: kind of see as you step through this as well you probably get a sense of like
+  what types of open
+1904: source is being used for things as well so i guess i mentioned people using
+  open source and linux and all
+1911: their servers so i guess that was the main starting point kind of thin into
+  the wedge for a lot of things
+1915: where people were using you know you could spin up a linux server with apache
+  which was a kind of web server
+1920: on it and use that very very cheaply even kind of you know 20 years ago to kind
+  of run services on the
+1928: internet to a commercial standard but without having to buy any software and
+  you could do that on on any
+1934: average pc you would just buy in a shop then after that you start seeing more
+  and more like server
+1941: applications which are being used in that way wordpress again was one of the
+  big ones that again people
+1945: found you could download this thing you can install it on again your very average
+  or cheap linux server
+1952: that you've set up yourself and then all of a sudden you now have a really pretty
+  easy to use website which
+1957: is editable by non-technical people then more and more again the chronology
+  here isn't so much when these
+1964: tools were created but how they've grown in use you start to see things like
+  sqlite which is a single file
+1971: database which is a cool little c library incredibly robust that is used all
+  over the place loads and
+1977: loads of mobile apps use there's basically loads and loads of applications that
+  you would
+1980: have no idea even have a need for a database a lot of them end up using sqlite
+  underneath the hood
+1985: developer tools like git again obviously the growth of github means that more
+  and more people are using
+1992: things like this there were various other proprietary kind of version control
+  systems there still are a few that
+1997: exist but nowadays again everyone is kind of moving towards like expecting all
+  the development tools are
+2003: going to be cross-platform and going to be open source and then you're starting
+  to see microsoft doing
+2009: things like open sourcing dot net which again is not mentioned because it's
+  so great but mentioned because
+2016: it's again so kind of hard to get your head around if you've been kind of following
+  this space for a while
+2021: that this was the company's almost like golden goose of the company who was
+  the most anti-open source
+2025: company in some cases in the world who are now open sourcing the most arguably
+  core and competitive
+2032: parts of some of their products and are building a new text editor which i kind
+  of happen to like and use
+2038: which is again completely open source and arguably stealing kind of mind share
+  and product share away
+2044: from other things which you could be using to pay the money so the statement
+  everyone else uses open
+2050: source software now i would say that statement is both correct and i actually
+  think it's also a good
+2054: reason to use open source software in general i think when you get to a point
+  where the industry you work in
+2061: is generally all moving in a particular direction yeah sure they could be wrong
+  but chances are like
+2067: that's probably something that you need to learn about and get involved in but
+  thankfully you're all here at
+2071: this talk so you're going to be experts by the end of the evening right so let's
+  now we've talked a
+2076: little bit about some of the history of this stuff and what i think are kind
+  of good reasons to use it
+2080: let's talk about how to really have a horrible experience when you're using
+  open source software
+2085: to insist that you can just have a bad time so the first thing is this statement
+  let's just fork this
+2093: and edit this for now who's familiar with what i mean by forking in the context
+  of open source cool so some
+2098: people not everyone so forking is a thing on i guess github will be the primary
+  place people might
+2105: refer to it as that or gitlab or bitbucket or whatever it may be it's basically
+  when you take
+2111: someone else's code for an open source project and then you make your own version
+  and then maybe slightly
+2117: modify it so it meets your needs now what i'm using in this example is i'm not
+  it might be confusing that
+2123: i'm saying this is a bad thing because was i not saying one of the great things
+  about open
+2127: sources that you can modify software well so the thing about this is that what
+  ends up happening is
+2134: you plan on maybe just making a fork and making some changes but then you say
+  to yourself okay well
+2139: we'll just do this little hack for now and then later on we'll kind of figure
+  out what the problem
+2144: is or adjust our configuration or whatever it may be but in reality you end
+  up having this modified
+2149: version which you just sit on using forever so it's a it might be an npm module
+  it might be a web server
+2156: it might be a wordpress plugin whatever it may be if you've made your own little
+  in-house modifications
+2162: of you for this open source software it will be very hard for you to then keep
+  up to date because what
+2168: happens is when the new versions are released you're going to have to apply
+  your changes on top of that
+2172: every single time for every new release and that's going to be a pain so you
+  probably aren't going to
+2176: do that so what ends up happening with that is you can justify to yourself that
+  oh well you know as it
+2184: tends to happen sometimes with software now that well we don't want to update
+  to new versions anyway
+2189: because there might be some bugs in the new versions that we update so better
+  safe than sorry we'll just
+2194: stay on the same version of everything and only update when we have a problem
+  but the problem with that
+2198: is that a lot of updates you're going to get in a lot of software are related
+  to security issues as
+2204: well when they find a security issue they are going to release a patch which
+  fixes that security issue
+2208: for you and the problem is usually as well at the same time as a security issue
+  being released and the
+2213: patch being released or before or certainly after you're going to have a situation
+  where now the internet
+2219: knows how to hack that particular version of that particular software so if
+  you have something like
+2224: wordpress i mentioned earlier if you are running a old version of wordpress
+  on your server because you
+2229: decided to fork and slightly modify it and then wordpress release an update
+  saying oh we found this bad
+2234: hack that if you do blah blah blah then you can get access without using a password
+  to the admin panel or
+2239: whatever it may be the problem is now the internet knows how to do that and
+  if they can detect that you
+2244: are in an old version of wordpress then it's trouble for you so it's not just
+  the security updates might cause bugs
+2251: but you need to ask yourself if you get hacked is that going to cause bugs is
+  that going to cause any
+2256: issues for your customers are they going to be very happy with you if you get
+  hacked and they steal
+2261: all of your customers private information they are probably not going to be
+  very happy with you and
+2266: you may well be in big trouble thankfully we're in a situation right now well
+  perhaps thankfully perhaps
+2271: not where as an engineer you are not generally held personally legally accountable
+  for the loss of
+2277: information in your firm but i think it's something that we should consider
+  as an industry if you're
+2283: whether you've been in it for a while or whether you're kind of just starting
+  out that you know
+2286: think of yourself like an engineer on a bridge or something similar like that
+  that if you are legally
+2291: not liable for if that bridge falls down and causes negative impacts on other
+  people then one would
+2298: hope that you would try and do the right thing and make sure that you build
+  bridges that do not fall down
+2303: even if you are not legally liable for that because it is the right thing to
+  do and i would argue that
+2308: similarly with security stuff and with keeping up to date on things it is the
+  right thing to do and
+2312: you may need to sometimes get in grumpy fights with your bosses and management
+  who do not want to hear
+2319: the justification of why you need to delay the sprint or whatever it may be
+  in order to make apply a security
+2325: update but it is the right thing to do and therefore we should argue with people
+  and do it anyway
+2330: or if you can't accurately convince them then sometimes the right thing to do
+  is to silently do
+2336: it and not tell them that you're doing it because it is the right thing to do
+2340: so a question with this as well is that is worth asking yourself so how many
+  people work for an
+2347: organization or have any open source projects who use any libraries that they
+  are aware of that are open
+2353: source quite a lot how many of you have any way of telling i if i gave you 10
+  minutes and i said i want
+2364: you to tell me which of your libraries have vulnerabilities in them how many
+  of you would be able to tell me
+2371: the answer to that question not zero which is good um so to be fair a lot of
+  people in a lot of very
+2379: big organizations find this stuff hard and it is hard and i've definitely been
+  at github at times where
+2387: i could not have answered this question for the projects i've been working on
+  so this is not a public
+2391: shaming thing or anything like that do not worry but this is a thing which is
+  worth you thinking about
+2398: particularly when if you are sitting on old versions or if you are running forked
+  versions of things
+2402: this is the reason why generally staying on the newer versions is a good idea
+  but also this is
+2408: a reason why it's worth checking out like tooling that does stuff like this
+  i'm in no way affiliated
+2413: with them other than the fact that i think it's really really great software
+  but if you are doing
+2417: this for um projects on github there's a great little tool called dependabot
+  which basically will go and
+2423: check all your say gem files or npm module files and the i forgot what the python
+  equivalent one is
+2428: called um and will basically submit pull requests for updates to those libraries
+  if it detects outdated
+2435: versions and it will go and put a little thing with the release notes and stuff
+  like that so that's a
+2439: really really awesome tool it's free for open source you pay for closed source
+  projects but it's well worth
+2445: it i would say and as i say i have no affiliation with them other than i think
+  it is really really good and
+2450: it's saved me a bunch of time so another thing that may cause you issues that
+  i alluded to earlier with
+2457: open source software is if you end up in a situation where you're like ah this
+  is bug or this missing
+2463: feature or whatever it is with this open source project i'm using and i have
+  this deadline on friday
+2470: and you know i i just need to tell them how important this is this issue that
+  it gets fixed
+2477: so hopefully they'll understand and they'll fix the issue uh that often doesn't
+  work very well
+2483: particularly and this is not something again you would be surprised perhaps
+  to hear that this
+2489: is not something that is kind of a very junior engineer or a very kind of only
+  bad companies or bad
+2494: companies or bad uh badly educated people make this sort of mistake but you
+  get people from google and
+2502: facebook who will still post on your open source project about how important
+  it is that you drop
+2506: everything you're doing and work on this right now and i i guess i'll let you
+  read that for yourself but
+2513: in my opinion with open source you aren't really entitled to very much from
+  the developers
+2520: who make it at all uh i wrote a blog post about this with a slightly flame baby
+  title but if you read
+2525: any open source license it it basically says that like it actually literally
+  says if the open source
+2531: software you're using causes any damage to you then you have disclaimed all
+  effectively if if the open
+2540: source software burns down your house in using it you have said that's fine
+  like that's not that's my
+2546: responsibility it's on me it's not on you who made the open source software
+  so it's worth bearing that in
+2553: mind again not because it is likely to burn down your house at least not the
+  software i write at least
+2558: not intentionally um but it's worth considering again that it is a thing which
+  those people who create it do
+2566: not have any obligation to you and they do not respond well to the sense that
+  they do have an obligation to
+2573: you if anything it's the other way around so i'll come back to this a little
+  bit later on
+2579: but then another reason and this is a slightly tangential one that you hear
+  some organizations
+2584: saying now oh sorry we have a question yep all right clarification
+2599: yeah well that that's a really good point uh for anyone who couldn't hear it
+  was making the comment
+2603: that if you have a similar relationship with microsoft and you're paying them
+  lots of money
+2608: then equally they're not going to turn around and fix your bug for you straight
+  away either
+2611: so that's not a thing you can expect with closed source software either um and
+  also it's worth noting
+2617: again similarly uh which i thought you were maybe going to say but the the license
+  agreements you end up
+2622: signing for most open source software and i mean really anything in your life
+  you know if you go paint
+2626: bowling then you tend to sign a disclaimer saying if someone accidentally puts
+  a bullet in here and
+2631: i die then it's not my fault and blah blah and you know it's some a lot of these
+  legal disclaimers have
+2636: dubious legal basis but yet most organizations will ask you to sign them anyway
+  and i see open source as
+2644: being a similar thing except in some cases with open source at least these licenses
+  have been tested in
+2649: courts and found that like well you actually did agree to this so you can't
+  claim damages on these
+2654: people which is good uh so slight tangent thanks for the question um i think
+  you see more and more
+2662: organizations doing now is wanting to open source their own stuff um they have
+  sometimes some interesting
+2669: motivations for this so no one tends to be quite as blunt as this but sometimes
+  that's the motivation is
+2676: that well we've got this little library internally that we use and no one really
+  you know has much
+2681: time to work on it internally but if we open source then maybe some more people
+  come along and just say
+2686: hey yeah i'll just work on your library that you use at your company that's
+  kind of irrelevant to the
+2691: world at large and i'll just work in my free time and evenings and weekends
+  to make it better free
+2695: and yet sometimes that does happen if you are facebook or whoever but in reality
+  this is a more realistic
+2703: expectation so if you have to have made something that's you're going to open
+  source if you want
+2708: people to get involved it needs to be already pretty good and pretty useful
+  it needs to be something where
+2714: people who aren't at your organization find interesting and find exciting and
+  find will solve their problems
+2719: for them and like the thing i mentioned earlier with ruby on rails and fixing
+  issues there it's the same kind
+2726: of deal really where you may well find this is a good place for people to come
+  together to collaborate on
+2731: similar problems but chances are they're going to do that they may well not
+  want to solve the exact
+2736: problems that you want them to solve and a big thing which we found with homeroo
+  for example this is a
+2743: little thing i came up with called the contributor funnel which is kind of a
+  horrible hacked version
+2748: of sales funnel but with open source instead because i don't know um but effectively
+  the way you want to
+2755: think about any sort of project any sort of open source project i guess like
+  any sort of thing where
+2760: you're trying to get people into some sort of system into some sort of sales
+  funnel or whatever it may be
+2766: is that as you go through the flow you're going to have fewer and fewer people
+  getting involved
+2771: so the more users that you have of your software project you may well get some
+  of those users who
+2778: are interested in contributing some fixes or some documentation changes or whatever
+  it may be
+2782: and then some subset of the people who are interested in doing that may well
+  be interested in coming and
+2788: being maintainers and helping review the work that contributors do and submit
+  to your project for
+2793: example but in homebrews case for example the drop off on these numbers is fairly
+  ridiculous so we have
+2801: from our analytics like over a million users i reckon and it's kind of hard
+  to tell exactly but i reckon
+2807: that's about right we have 7 000 plus contributors which for an open source
+  project is pretty respectable
+2812: like you know you get some that are beating us now on these types of numbers
+  but again i guess five years
+2818: ago on github we were kind of regularly kind of one of the most contributed
+  to projects um but then we
+2824: have like 10 tens of maintainers basically we've never had more than i think
+  we've definitely never
+2831: had as many as 30 on board at once and we've had as few as kind of two or three
+  on board at once
+2836: and again of those maintainers the people who are you can rely on to respond
+  within 24-hour period say
+2843: like five days say during the working week you're probably down to kind of five
+  or six people
+2848: so you basically have a very small number of people who are managing the work
+  of a larger but still
+2855: relatively small number of people who are supporting lots and lots and lots
+  of people
+2859: and that's cool because software is allows you to kind of scale like this but
+  i i mentioned this for
+2866: if you have some open source project whether it's an organization or whether
+  it's your personal one that
+2871: you've made perhaps and you have a hundred users and you're asking why you don't
+  have 20 maintainers
+2877: this then perhaps think about the potential drop-off you're going to have to
+  have there
+2882: and also potentially think about like you're going to have to get a lot of people
+  wanting to contribute
+2887: before you're going to have people who are going to want to stick around and
+  help marshal those
+2890: contributions from other people i've done a talk about this and a blog post
+  about like the contribution
+2896: funnel if you're interested in this kind of topic then there's more detail on
+  that in that
+2900: so how to do things right instead so the first thing i would say i guess going
+  back to all the
+2909: stuff i've been saying about forks is everything should be upstream now what
+  do i mean by upstream
+2914: here so the upstream project is the project if you make a fork is the original
+  project that you forked from
+2923: so say on github for example there might be a project called homebrew slash
+  brew my fork of that
+2930: might be called mike mcquade slash brew so the upstream is homebrew slash brew
+  and the fork is mike mcquade
+2937: slash brew so what do i mean by everything should be upstream well i mean when
+  you modify the code in
+2944: your own fork the goal should be to always try and get that code in some form
+  back into the original
+2950: project and the reason for this is because you don't want stuff to be your problem
+  like i i was
+2957: speaking to someone the other day and i about what was it they were asking what
+  they think the most
+2961: valuable attributes are in engineers and for me it's being fearful and being
+  lazy so being fearful of
+2969: all the problems that happen with computers and therefore wanting to be involved
+  with these type of
+2973: problems as little as you possibly can to solve the problem and also being lazy
+  and that you want to
+2978: write as little code as possible and you don't want to have to maintain as much
+  code as you can so you
+2983: want to try and if you can get other people to maintain your code for you then
+  that's way better than
+2988: doing it all yourself so how can you do this well i'll kind of walk you through
+  this step-by-step approach
+2995: so we talked earlier about when you fork the other project you're going to fork
+  it you're going to make your
+3000: changes and things like that there's going to be some degree after that of testing
+  if nothing else
+3005: you're going to if you're making changes that say are just to be rolled out
+  on your servers or on your
+3010: computers or whatever it may be then you're going to have some degree of local
+  testing to make sure that
+3016: that actually works the way it's meant to work it might be just you manually
+  running commands or clicking
+3020: around or whatever but then it's always nice if you can to write some sort of
+  little manual automated test
+3027: that you can get there particularly if the original source project has a nice
+  collection of tests
+3032: then perhaps you can add a test in there to verify the thing that you're trying
+  to do well next after
+3038: that you if you've actually written it in a clean fashion and you've written
+  a nice little test for it
+3043: then you're probably in a pretty good situation to submit a pull request back
+  to be clear there are some
+3047: projects that don't require tests for all the changes including like most of
+  the ones that i work on so
+3052: don't if you can't write an automated test or you haven't then don't feel that
+  that means that you
+3057: can't submit it back and then you'll probably get on your pull request when
+  you submit it some comments
+3064: from the people who are running the project it may be that they have a particular
+  coding style it may be
+3070: that your test works on your particular service configuration but might break
+  on another configuration
+3076: and they need you to make some changes so you address those changes and then
+  your project will
+3082: eventually get merged which means that your sorry your pull request will get
+  merged which means that
+3087: the changes that you made in your fork get included into the main project and
+  then that means in future
+3093: when you can update to the latest versions you can delete your fork and then
+  all the changes that
+3098: you made will be in the main project and this in effectively one slide is why
+  open source is great
+3104: and why it works so well because ultimately you can help others to help you
+  by helping yourself when you
+3112: solve a problem it doesn't mean that thousands of people also need to independently
+  solve that problem
+3118: in their own way if you can submit it back to the project you can have one person
+  who can solve the
+3122: problem and then everyone else can benefit from that solution the other thing
+  that's worth mentioning with
+3126: this is you might be a little bit intimidated by this and think well i don't
+  know if i can do all
+3131: this stuff by myself well if you can't you find a lot of projects if you're
+  willing to even try and go
+3138: some of the way there people will want to help you the opposite with open source
+  i've mentioned before
+3143: about how irritating it is um when you have someone you know particularly someone
+  from an organization
+3150: like google or facebook who should really know better who is making demands
+  on your time and insistent
+3155: you fix the problem the the opposite end of the spectrum and the thing that
+  really really sucks
+3160: pretty much anyone who's excited about open source and maintaining open source
+  into helping people
+3165: is when you have the opposite end where you have someone who maybe isn't super
+  experienced but they
+3169: really want to just try and do the right thing and they want you to help them
+  like figure out what
+3175: the right thing is to do and how to do it if you do that then on the vast majority
+  of open source
+3180: projects you will be met with a good response and you will be met with people
+  who want to help you learn
+3185: so how can we do this stuff how can you help yourself as well that's another
+  thing worth asking here so
+3194: the reason why i mentioned that as well is because with open source projects
+  particularly the slide we saw
+3200: before where you have like 10 or so people who are effectively supporting indirectly
+  or directly millions
+3206: of people who use the software it doesn't scale for those 10 people to answer
+  very basic questions
+3212: again and again and again so what they want you to do is they want when you're
+  coming to ask them
+3217: questions to feel like that is the end of a road the of your own personal investigation
+  rather than the
+3222: beginning of the road so you can help yourself firstly by reading the documentation
+  for the project the project
+3228: may not have very much but if it has some then before you submit an issue or
+  before you
+3234: ask other people to help you then try and read through that stuff first
+3238: you want to when you do submit an issue what you want them to be minimally reproducible
+3243: and by that what i mean is it should take the person who runs the project as
+  little time as possible
+3251: for them to be able to see your issue so for example with a tool like homebrew
+  homebrew you run it
+3257: through the terminal and you run various commands like you might type brew install
+  wget or whatever
+3262: it may be so if someone can give me a single command that i can type that on
+  my machine will also break
+3269: as it has done on their machine then that means that it's very quick for me
+  to be able to then jump
+3274: in and start fixing the problem if they write paragraphs and paragraphs of text
+  about how you know
+3280: they tried running some stuff last week and it worked a bit weird and then that
+  you know if they
+3285: don't effectively get to the point and tell me what i need to do to find the
+  problem myself then it makes
+3290: me very hard for me to actually help them in general this is not a bad practice
+  to have inside your company
+3297: as well if you're asking another team to help you or a co-worker to help you
+  or whatever if you can
+3302: whittle problems down to their smallest like individual thing to try and demonstrate
+  what a
+3309: problem is then that is the easiest way to get someone else to help so the next
+  thing you can
+3314: do is when you have whittled it down to the smallest minimal thing then if you
+  have any experience with
+3319: that code or if you have enough experience with the application to kind of have
+  a mental model of how it
+3323: works then you could maybe look at the code and see if you can figure out like
+  well what part of the code or what
+3329: file do i think maybe this problem is starting to happen in and you can maybe
+  have a little look
+3334: around in there and if it might happen that you it appears obvious to you what
+  the problem is is that
+3341: you know maybe there's some assumption that's been made there or maybe your
+  machine is a little bit
+3345: different and this code doesn't seem to account for your machine being different
+  or whatever it may be
+3350: and then you can maybe try and fork it and modify it yourself and then perhaps
+  if you manage to fix your own
+3356: problem you can submit a fix as a pull request and i just tricked you from reading
+  the documentation now
+3361: to going and submitting a pull request and fixing your own problem and to be
+  clear again i'm not saying
+3366: everyone should be able to do all these steps or everyone will do these steps
+  every time but again
+3371: you may find if there are projects you use a lot every day and if you're familiar
+  with them and if you
+3376: have the time to step through this because to be clear i'm not saying that this
+  is always something
+3381: you're going to have time to do every single step of you may well find that
+  you're able to solve your
+3385: own problems in a more effective way and again to step back with what we were
+  saying with open source
+3390: this is the wonderful thing about open source because with proprietary software
+  or software you're paying
+3396: other people for or the apps you have on your phone this stops here the best
+  you can do is submit a
+3402: really really good bug report and hope that that is so well written and so easy
+  to fix that they will fix
+3409: it for you in a timely fashion but as we all know that doesn't always happen
+  so you're stuck whereas the
+3416: beauty of open source is you are in control of their own stuff you're doing
+  and you as an organization
+3422: can in theory at least when you're afflicted with horrible bugs that are affecting
+  you as an organization
+3428: much worse than other people you have it in your power to fix those things for
+  yourself
+3432: so we talked earlier as well about how you get negative reactions perhaps from
+  open source maintainers
+3441: if you come along and behave in an entitled fashion for example but how can
+  you get a nice reaction from
+3446: them instead so firstly you want to have reasonable expectations of what you're
+  going to get back from
+3452: people so for example don't expect that there if it's a problem that affects
+  just your machine
+3459: and none of your co-workers machines for example but you will have the same
+  machines set up or whatever
+3465: that's probably not something that they're going to be able to find a lot of
+  time and energy to fix
+3469: if it's not something that even your kind of peers can find as well
+3474: you need to prioritize their time as i mentioned before a lot of open source
+  is done on people's
+3478: evenings weekends lunch breaks unauthorized time at work some people have full-time
+  jobs where they are
+3484: spending all their time working on open source and that's great and there's
+  a lot of them source
+3488: projects now where people are working on it as their full-time main job but
+  that's not the case
+3494: everywhere so you need to make sure you prioritize the time of the people who
+  are maintaining that software
+3499: as i said before ways of doing that include making sure you read the docs and
+  done a bit of research
+3504: before you ask other people similarly kind of defer to them i'm not saying every
+  maintainer or every
+3510: open source project is a lovely person or knows everything or whatever it may
+  be but ultimately if
+3516: they're the person who is up to them whether your pull request gets merged or
+  not there's not really a
+3522: lot of point in arguing with them about code style or whatever you should just
+  do what they say
+3526: and move on with your life and make your own project where you use single quotes
+  for strings instead of
+3531: double quotes or whatever it may be and then finally help others where you can
+  again every single
+3537: person in this room whether you're technical non-technical an engineer in product
+  in design whatever it may
+3543: be you will know some stuff about some software that other people do not know
+  and again in open source
+3549: the way to get open source people to like you and the way for open source to
+  all work well is when
+3554: you know something that someone else doesn't try to help them if you are opening
+  an issue for
+3559: example and asking for help a really nice thing you can do is perhaps then click
+  to the issues list
+3564: after you've submitted your issue and see if there's anything there that jumps
+  out to you that you
+3568: might be able to offer your help with and your help can even be in some cases
+  saying hey i'm also having the
+3574: same problem and i'm on linux instead of mac or whatever it may be and that's
+  the type of thing which
+3580: everyone has the power to do it takes a little bit of time but again if you
+  can spend that little bit
+3586: of time you will have a good reaction and you will also have the nice fuzzy
+  feeling of knowing that
+3590: you've helped other people if you want to know more about kind of getting involved
+  with open source
+3595: maintaining open source software and contributing and stuff like that there's
+  the open source guides
+3600: these were built by some co-workers at github i was a little bit involved with
+  that as well
+3604: um it's https opensource.guide they're not github centric and they are we worked
+  with loads and loads
+3611: of kind of seasoned open source maintainers to kind of build these and i still
+  think that they're although
+3616: i am slightly biased they're the best resource on the internet for kind of learning
+  how to get started
+3620: with open source so in brief summary so why use open source don't use it because
+  it doesn't cost money
+3627: or because other people will help you for free but use it because everyone else
+  does now
+3631: you can fail at open source by forking things and sticking on old versions of
+  libraries which get hacked
+3638: by being whiny and entitled towards open source maintainers and demanding that
+  they fix your problem
+3644: right now and for free and you can win by upstreaming all your changes from
+  your forks into the main project
+3651: so you can be lazy and not have to maintain it anymore by trying to help yourself
+  before you ask
+3655: other people to help them and by trying to be a nice person in life in general
+  so if you have any
+3662: co-workers or anyone who might be interested in this talk as well i have like
+  written this up as a bit of a
+3667: blog post too it's that tinyurl.com slash not fail open source software uh also
+  if you have any questions we'll
+3675: do q a in a sec if you have any questions you don't want to say now or you don't
+  catch me or whatever it
+3681: may be feel free to email me i do actually read all my emails and reply to almost
+  all of them i used to
+3687: reply to literally all of them and then a co-worker reminded me that sometimes
+  it's nicer to not reply
+3691: than to reply not saying a nice thing and then finally i'm on twitter and i
+  talk pretty much
+3698: exclusively about open source there as well so thank you very much for having
+  me and we'll do some q a in a
+3703: a sec if uh anyone has any questions
+3713: um i was gonna ask like it seems like everything's trending to like be open
+  source like businesses using
+3728: open source like do you think that's gonna be a thing in the future that they
+  exclusively pretty
+3732: much use open source i mean why why pay for anything well i think everyone else
+  is not paying yeah no
+3738: that's a good question so um to repeat because anyone didn't hear uh it was
+  the question was while
+3744: businesses look like they're kind of all trending towards using open source
+  will it just kind of become
+3748: the thing and sort of take over everything um i think the answer is almost yes
+  so my uh one of the
+3758: previous founders of github wrote a blog post about this a while ago that i
+  thought summed up well which
+3762: is the title was open source almost everything so the argument basically he
+  was making is if you're
+3770: a an organization who if you're an organization who say i guess like github
+  right where you're a git
+3779: hosting platform and there are other get hosting platforms out there and there
+  is stuff that you do
+3784: better your competitors if you open source that then your competitors immediately
+  get to take
+3788: your code and become effectively just as good but there are parts of your code
+  that like realistically
+3794: people do not use github because for example our markdown editor is better than
+  the competitors so
+3800: so the argument might be well open source the stuff that doesn't really matter
+  that basically the
+3806: stuff that kind of your business is built upon and then the really competitive
+  kind of special source
+3811: that you have that no one else has that's the stuff you can not open source
+  now there will be some
+3816: people would say you need to open source everything like ethically or whatever
+  it may be or that that's
+3821: the best thing to do um and in some ways i don't even disagree with them that
+  it's maybe the nice and
+3827: best thing for humanity to do the problem is it it we don't have a good solution
+  right now at least for
+3834: being paid full time to just release all your stuff as open source if you make
+  a startup and the
+3841: interesting thing in the last year or so is you have had a few big startups
+  like elastic and mongodb and
+3847: places like that where that was more or less their business model is that we
+  will make everything with
+3852: the open source and then we will get people to pay us for other stuff the problem
+  has been that that
+3858: strategy has not really worked out for them because companies like amazon for
+  example and i'm not making
+3863: a value judgment on this at all can go and say well we're going to use your
+  software and we're going to
+3867: distribute it at scale and everyone can pay us the money instead of paying you
+  any money so then we get
+3872: to take effectively the open source software you built and sell it to other
+  people for money and and
+3879: technically amazon hasn't done anything legally wrong with any of that and and
+  similarly the other
+3884: company hasn't done anything legally wrong but it ends up in a situation where
+  it doesn't look like
+3890: it's commercially viable to sell exclusively open source software from my perspective
+  at least so that's my
+3896: long answer maybe
+3899: uh potentially sort of controversial question but just try to stimulate debate
+  and what do you what do you
+3909: suggest you do about um uh opinionated uh open source maintainers so like for
+  example uh find uh an issue and
+3919: create react recently um went to dig through the source and find out what the
+  problem was um discovered
+3926: that it had been added deliberately by a maintainer and a pull request with
+  a comment that explains why
+3931: you did it so um how does that kind of fit in with the sort of contribute upstream
+  i'm not talking about
+3938: anything exotic here like what i was trying to achieve it was just um you know
+  the the goals of what i was
+3943: trying to do was weren't quite aligned with yeah the project no that's a good
+  question and i think
+3948: that is a situation in which maybe you do need to consider just forking the
+  project and
+3953: it's a tricky thing because ultimately if they are doing more stuff that you
+  want rather that but you
+3962: maybe don't agree with the the ethos underneath it then my attitude in general
+  is with with software
+3970: projects i use at least my attitude is i either um i either suck it up and i
+  basically just accept what the
+3977: project does and if there's decisions they don't they do that i don't like then
+  rather than modifying the
+3983: code i might maybe write a wrapper around it like that goes and you know modifies
+  the responses from
+3990: particular methods or whatever so i can change the behavior so i don't need
+  to rely on having forked it
+3997: or i try and find an alternative or the one that i don't personally do very
+  often but i know is advocating the
+4004: situations is just write your own alternative inside your application of the
+  subset the functionality you
+4009: actually need but i think it the tough thing is i think in general if the open
+  source maintainer has
+4015: decided something even if in some cases and i've personally done this in some
+  cases they've done it
+4020: because they almost just don't like the way people are doing stuff and they
+  want to force things to be
+4025: done in a particular way because they feel opinionated about that you kind of
+  just need to suck it up
+4030: basically it's kind of hard uh to say that but that's the almost like the definition
+  of the open
+4036: source license stuff means that you're kind of just you rely in some ways open
+  source is
+4041: charity but not in the way that people necessarily think in that it's charity
+  from the maintainer to
+4047: the community and you kind of you know in the same way that if someone decides
+  to kind of charitably give
+4053: a hundred pounds to you and you say i'd actually rather have you know i'd rather
+  have 50 quid and
+4058: some ice cream like that generally doesn't go down well to have a kind of negotiation
+  in those sorts of
+4062: interactions i don't know if you're referring obliquely there to uh joining
+  your user directory but let's not
+4067: go into that oh no no there was a homebrew reference to a particular design
+  decision but no i wasn't referring to
+4074: that i haven't been completely up to date with this scene but what was the tipping
+  point for microsoft
+4084: to shift so heavily towards open source and how do we convince other big companies
+  and medium-sized
+4090: companies to do the same yeah that's a great question um i mean i to be clear
+  i'm a a senior engineer
+4098: which means that i don't have anyone underneath me and i have no experience
+  of running any sort of
+4103: company of any sort of size let alone one of the biggest companies in the world
+  so this is my very
+4108: much amateur attempt at inferring of why they've done what they've done and
+  believing the ceo of microsoft
+4115: about what he said from what i've read um so sufficiently caveated i don't know
+  what i'm talking about
+4122: let's let's say anyway uh so my take is that microsoft realized that they effectively
+  they used to
+4128: be kind of a box software company where they would sell software to either either
+  computer manufacturing
+4136: companies they would sell them windows in bulk or they will sell stuff like
+  office to enterprises to
+4142: consumers whatever and that's how they made their money and then as time has
+  gone on they've realized
+4146: that services is the way forward i.e if you can stuff like office 365 if you
+  can convince people
+4153: to pay you a certain amount of money a month then that is a much better way
+  of doing business than it
+4158: is relying on them to have to you know pay you a couple hundred pounds every
+  couple of years or whatever
+4163: it may be and i guess that they saw the direction of travel and that historically
+  they relied on almost
+4169: like they're kind of somewhat overlapping monopolies so office meant that everyone
+  stayed on windows and
+4174: windows meant that everyone stayed on office and then they could go and kind
+  of use that to make
+4178: sure you know do things with internet explorer do things with xbox do things
+  with with direct x to
+4183: kind of reinforce those but then nowadays it seems it's more they've realized
+  that effectively they
+4189: missed the boat with mobile and they don't want to miss the same boat with services
+  with the way amazon for
+4196: example like aws is a massive business by itself google cloud is a massive business
+  by itself and as your like
+4203: microsoft's kind of equivalent or similarly like massively ramping up and the
+  money the places
+4209: where in microsoft the money seems to be growing again i have no internal knowledge
+  of this it's just
+4214: external the places where money seems to be being spent by individuals on microsoft
+  products
+4220: with the most growth are things around services and cloud computing and things
+  like that and that stuff
+4227: actually open source on that stuff is a competitive advantage rather than a
+  disadvantage because if you
+4232: don't if you try and say hey we're the world's best cloud computing provider
+  but you can't run linux and
+4237: you can't run wordpress or whatever it may be then that's not a smart move and
+  so that's that's my take
+4244: at least but i have no idea whether i'm right or not any other questions
+4249: um so the company i work for is owned by a parent company and for quite a long
+  time we were not allowed
+4257: to use open source on the basis that we wouldn't be indemnified if somebody
+  tried to sue us about a patent
+4263: that was covered by the open source because they were big on trying to do deals
+  with their competitors in
+4268: terms of patents and the only reason that changed was they acquired some other
+  companies who went well
+4272: all our stuff's built on open source and they went oh okay then it's fine but
+  have you ever heard any
+4278: like good arguments or ways to get around that are there companies you can buy
+  indemnity insurance or how
+4284: does that work i i'm not a lawyer so i have no idea but i guess it's as you
+  say the the way i've personally
+4292: found to get around stuff like that is if you're in a small organization and
+  they say we can't possibly do x
+4298: if you can point to much bigger more successful organizations or even better
+  competitors in the
+4303: same space who are doing x and seem to have no problem with it then that can
+  sometimes be a more
+4310: like almost like tackling the issues side on rather than directly but i feel
+  like with open source
+4315: particularly you know nowadays i can't imagine there being really any organizations
+  where they would say
+4322: prohibit the use of open source software entirely because it's just it's not
+  feasible now you can't
+4328: you actually i i would go as far as to say you you literally can't because almost
+  all the
+4333: proprietary software you use is built on top of open source software as well
+  so it's it's nigh on
+4337: impossible to completely avoid it unless you build your computer from scratch
+  in a cave or something i don't
+4342: know yeah thanks for the question i guess i'll hang around for a little bit
+  and i can go and like if you
+4350: have a question you want to ask me individually then we can do that that way
+  but thank you very much for
+4354: having me and thanks mike
+4356: all right uh thank you thank you everyone for coming to tech meetup what we're
+  going to do is
+4367: maybe stick around for 10 more minutes if you want to chat amongst yourselves
+  otherwise
+4370: uh we're going to go to i forgot blue blazer uh which is at the end of the road
+  on the left so if you
+4378: want to come to the pub i don't know if mike's hanging around for a little bit
+  yeah yeah if you want to
+4384: ask mike any questions that you didn't want live streamed you can do it there
+  uh so yeah thank you very
+4389: much uh and hopefully see other see you next month thank you
+4408: um you
+4438: um
+4468: um
+4498: um
+4528: um
+4558: um
+4560: um
+4562: um
+4564: um
+4566: um
+4568: um
+4588: um
+4600: um
+4602: um
+4604: um
+4606: um
+4608: um
+4610: um
+4612: um
+4614: um
+4628: um
+4640: um
+4644: um
+4646: um
+4674: Thank you.
+4704: Thank you.
+4734: Thank you.
+4764: Thank you.
+4794: Thank you.
+4824: Thank you.
+4854: Thank you.

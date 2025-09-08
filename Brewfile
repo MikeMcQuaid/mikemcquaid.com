@@ -1,2 +1,5 @@
 brew "ruby", version_file: ".ruby-version"
 brew "xz"
+brew "ffmpeg"
+brew "yt-dlp"
+brew "whisper-cpp"

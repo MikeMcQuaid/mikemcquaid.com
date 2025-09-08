@@ -1,0 +1,550 @@
+---
+0: Hi everyone. Sorry, I've got a few bits of paraphernalia. I'm used to having a
+  lectern in
+13: front of me that I can use to hide everything on. Two beepers, so hopefully I
+  beep these
+19: relatively in sync. Right, so I'm going to talk to you a little bit today about
+  remote working,
+23: 'and broadly three sections: what remote working is, why you should do it, and
+  why you should care'
+32: about it, and how to do it effectively. So to start with, how many of you in the
+  room just now work
+39: remotely? You work from home either somewhere or any other time? Cool. How many
+  of you who either you
+46: do work remotely or you work for a company that allows you to do so, but you choose
+  not to do so?
+52: And how many of you are capable of putting your hand in the air? Almost everyone.
+  That's good to
+60: know. Right, so I'll actually start with who I am. So my name is Mike McQuaid,
+  and I've been working
+68: remotely for about seven years now from my home in Edinburgh and formerly Dundee
+  as well. This is me
+76: with my co-worker at home. Oh, I realized that I didn't click through any of these.
+  There we go. Sorry,
+84: I'll try and do these in sync now. This is me with my co-worker who was brutally
+  cut off the website. If
+90: you look at the website, my picture has just that because apparently I need to
+  get some sort of more
+94: professional looking profile shot done at some point. So my experience with working
+  remotely has
+102: been a little bit different to some people because I've worked across a few different
+  companies and I've
+108: never actually worked remotely for a company that I could have ever attended
+  the office. So my three
+115: employers, while I've been working remotely, have been a company called KDAB,
+  a company called Oldtrails,
+119: and a company called GitHub. All of them have been software companies because
+  I work as a software
+123: engineer. And all of them have been headquartered in the country other than the
+  one I live in currently. So, this is
+130: where they were kind of based. So, Hagfors is out in rural Sweden somewhere,
+  in case you're not as hot on flags. And
+137: San Francisco is in California, kind of Silicon Valley, with those being software
+  companies. So, that will come on to
+145: some stuff later on with that. But the interesting thing with that is, obviously,
+  none of them are in the same time
+149: zone. None of them have the same necessarily culture, and none of them are easily
+  transportable without a plane. So,
+160: what is remote working? So, you may have heard any of these terms used before.
+  I'm going to broadly say that
+169: they're all kind of encompassed with the stuff I'm talking about in the talk.
+  Digital nomad is something
+174: that's floating around a little bit more recently. Stick your hand up if you've
+  heard that expression ever get used.
+178: Okay. So, a few people. So, that's broadly, I think the same principles apply,
+  but that's generally when, instead of
+185: working from a home office or something, you work from wherever you happen to
+  be in the world, and you can travel
+190: around, and your employer doesn't care whereabouts you are at all. And I'm not
+  considering working from home being, you know,
+197: last thing at night or at first thing in the morning answering your work emails
+  on your iPhone, because, A,
+204: like, it's not -- it doesn't really have the same problems that remote working
+  does, and, B, it's just like a bad idea. So, please, stop doing that.
+211: I am going to define it as your main place of work. So, not the place you are,
+  like, one or two days a week,
+218: but the place you are three, four, five days a week is in a building that's not
+  provided by your employer. So, for me,
+226: this looks a bit like this. If the beeper works. There we go. So, I have there
+  all the stuff I need to do to do my job. I've got a
+237: nice monitor. I've got my keyboard, my mouse, my computer, etc. And I also have
+  some things I don't need to do my work,
+243: like my guitar and some nice speakers and things like that. And already, we can
+  start to see, like, this segues kind
+250: of nicely into why remote working is good. Well, other than anything else, my
+  office looks different to anyone
+256: else's office. I have things in there which not everyone else will have. I have
+  made choices in there which not
+262: everyone else will make. And I can tailor my environment such that it's the most
+  productive for me. But let's try
+269: and be a bit more specific about why this is a good idea. So, the first one,
+  to start nice and small, is that we
+277: can kind of save the planet through more people remote working. So, in 1996,
+  the U.S. passed -- which is kind of crazy to me
+284: when I was kind of doing a bit of research for this, because it seems like such
+  a long time ago -- the U.S. passed the
+291: Clean Air Act. And what that said is any company with more than 100 employees
+  needs to encourage its employees
+297: to share car journeys, carpooling, as the U.S. would say, make better use of
+  public transport, shorten their work weeks,
+304: at least optionally. And the big one, relevant to us, is remote working. They
+  need to try and provide facilities for
+311: and encourage their employees to do more remote working. So, in the U.K., there's
+  been a study relatively
+317: recently as well, which estimated that remote working could increase -- sorry,
+  it could save costs to the U.K. employees
+327: and employers of three billion pounds a year. And that's mostly going to come
+  through people not having to
+333: commute to work, offices not having to spend as much on having a massive building,
+  and just generally that -- now
+339: that we're doing more work from laptops, more work from phones and stuff like
+  that, not having that duplication
+344: of resources where you have to have something which you can work on on the road,
+  and you also have to have
+349: identically the same thing at a desk, which you're kind of used to working on
+  as well. It's also got a big benefit in
+356: terms of the world for your health as well. So, Emma Lloyd from the Royal Society
+  of Public Health wrote a
+363: fairly long report about this, but a quote that jumped out is, "There is a noticeable
+  decline in health and
+368: well-being if you have a longer commute." There's been various other studies
+  that have shown this, that your
+373: commute length is at least correlated, if not causing, a decline in people's
+  overall health. It's -- if you have to spend an
+383: hour in a car or even a bus or a train to work and back every day, that's not
+  great. And I think the
+389: nice thing about remote working expanding a bit is that we can see more people
+  able to -- even if they're not
+395: able to do this all the time, if they're not able to do this every day, if you
+  can do this one, two, three days a
+399: week, then it reduces the amount of time you have to spend traveling to and from
+  work, and then that
+404: frees up more time for you. And that segues on nicely to happier people. So,
+  studies also show that remote
+412: workers are found to have higher satisfaction in their jobs than the same people
+  who are working in an office.
+418: It's also been found that providing more flexibility to people who -- around
+  their working environment,
+424: such as, for example, remote working, but also in terms of their hours, also
+  increases worker satisfaction
+430: and reduces, like, stress and conflict with their family. I mean, this should
+  be relatively obvious. A few
+436: anecdotes with that, like, I found every company I've been at, when there's been
+  people at the company who have kids, quite often the person who has, you know, the
+  nine to five remote working job will -- if the company is a bit more
+446: flexible, they'll be the one who goes and does the school run. They'll pick up
+  their kids, they'll maybe come home, stop work at, you know, earlier in the afternoon,
+  and then maybe do a couple of hours work in the evening.
+457: And that flexibility in allowing them to do that does make a big difference to
+  their family life and their happiness. And also, perhaps related to that, turnover
+  seems to be in studies lower for remote workers as well. So that's another benefit.
+471: So, the other thing which I've always been a big advocate of myself, and I've
+  seen in myself, is that it results in more productive people.
+480: There's the obvious things that people save a bit of time every day through commuting,
+  and that's time that could be spent additionally working, although I'm not necessarily
+  advocating for that.
+489: But it certainly saves time every day doing things that you would have to do
+  to otherwise to get to an office. But also, people can be more in control of their
+  environment.
+498: You saw the little picture of my office before, and that's tuned to my environment.
+  It means that when I'm working on stuff that I kind of want to be able to, you know,
+  just block out the world and just, you know, churn out code, documentation, whatever,
+  then I can put on some music that allows me to do that.
+513: If I'm having something that I need absolute silence to really think, I can just
+  press a button and cut off all the background noise in my house.
+520: If you work in an open plan office environment, that's not really possible. You
+  can't just immediately cut off all the noise around you.
+528: And the other thing you can't do, which, again, I'll touch on more later, is
+  you certainly can't stop anyone in your office from coming up and just quickly asking
+  you a little two minute question, which by the end of that, you've forgotten what
+  your train of thought was, and you need to start what you're doing again.
+543: So a little quote on that. This guy called Jason Fried, who works for a company
+  called Basecamp. They've been big proponents of remote working for a pretty long
+  time. And he says, offices have become interruption factories. A busy office is
+  like a food processor. It chops your day into tiny little bits.
+562: So I would argue personally that the modern office is not designed for individual
+  productivity unless you have everyone segmented off into individual offices with
+  doors that close, but instead it's being optimized mostly for efficient use of space
+  and for kind of, you know, people like to be in a big room together and they like
+  to kind of have a bit of a chat and interaction and stuff like that.
+584: And there's nothing wrong with that. That's positive and that's healthy. But
+  if you're focusing purely on productivity and particularly on individual productivity,
+  accomplishing tasks, which particularly in software are collaborative, but require
+  large amounts of work that I do individually by myself, then I think you can see
+  real benefits from remote work.
+605: So obviously, like every cloud has, I was going to say a silver lining, but that's
+  the other way around. Every silver lining has a cloud, I guess. That doesn't really
+  work. Right.
+617: So it wouldn't be fair to not mention any of the negatives as well. And some
+  of these are, you know, cold hard facts and some of them are just stereotypes that
+  come up, but they are common critiques that you hear about remote working.
+631: So one major one is you hear people who are like, how do you not just spend all
+  day and all night working? Is it not really hard to kind of get that work life balance
+  boundary?
+642: And I think for some people that can be a bit of a struggle and it's something
+  you definitely learn more while you're doing more remote working.
+650: But I think what it comes down to is with both working a lot and as we'll talk
+  about in a minute, working a little, you're still doing the same job. You still
+  have the same kind of goals and deadlines and things like that.
+663: So at the end of the day, if you feel most productive, and as I believe I am
+  on a roughly 40 hour a week, it's a software engineering book called PeopleWare
+  that kind of talks about that, that people are most productive when they work 40
+  hours a week.
+676: If you work a small amount of overtime, you can get a bit more productive. But
+  if you do that consistently, then you will become less productive. And I think that
+  applies to most kind of knowledge working jobs as well.
+686: But if you subscribe to that viewpoint, it's easier to kind of stop yourself
+  from working all the time. It's also helpful. People find often to have a separate
+  office. Some people like to go and work from cafes or some private office in a co-working
+  space or somewhere like that, which means that they have that kind of separation
+  between work and home.
+707: But for me, I find that's relatively straightforward. The next one is time zones,
+  particularly for if you work at a company where their headquarters are a long distance
+  away, this can be a problem.
+721: So when I worked for the company based in Sweden, the biggest office was in Berlin,
+  the head office was in Sweden. So it was never more than an hour time difference
+  away from me.
+732: Whereas working for a company based in San Francisco, I have an eight-hour time
+  offset. And because I get up and finish relatively early and some of my coworkers
+  get up late and finish relatively late, that means we have no overlap between the
+  two of us.
+747: And this means that if we want to have, say, a video call in which we can kind
+  of chat about something, like one of us has to kind of make a sacrifice. Either
+  I need to stay late or someone else needs to get up early.
+757: So another common critique is that, well, how do you know people are not just
+  being lazy? How do you know people are actually doing their work and they're not
+  sitting watching Jeremy Kyle all day or whatever?
+770: And this goes both ways, I guess. I'll talk about the manager side in a minute.
+  But from an individual point of view, how do you keep that motivation to keep working?
+  And actually, I think this is a lot easier than people think, because most of us
+  work in offices.
+784: Most of us have a computer in front of us in the office, which has the internet
+  on most computers, and the internet has a wide variety of things you can do which
+  will happily occupy instead of work. And as long as you have that, then it's pretty
+  easy to procrastinate if you want to procrastinate. It's pretty easy to not do your
+  work. And I think the thing is when you work from home, you have the same thing,
+  but you also have the same requirements. You have the same boss who's expecting
+  you to get stuff done by the same dates and things like that.
+813: So you could go and sit and watch Jeremy Kyle, but then you know that at the
+  end of the day, you're going to have to get this work done.
+821: But what I would say is that the flip side of this is that I think it's much
+  easier to look like you're working when you're actually doing nothing in an office
+  than it is to do so at home.
+830: If I do, you know, sit on Facebook all day, I could have just, you know, sat,
+  gone to the cinema or sat in my garden or played with my dog and it will have the
+  same, if I'm being judged based on the outcome of my work and not just based on
+  sitting in a chair, then the effects are the same.
+847: So one of the nice things about that is that it actually goes the other way where
+  if you're not being productive right now, then it means that you're able to say,
+  well, I don't need to sit and pretend for the next 15 minutes while I wait on a
+  coworker to get back to me that I'm somehow doing work.
+861: I can go and do whatever. And then I'm being charged on my work output and not
+  just on where I sit.
+867: So the other one that's related is how do you manage people and how do you ensure
+  that people are going to work in the way that they do?
+877: And is it not impossible to manage someone when you can't kind of keep an eye
+  on their day to day?
+882: And well, of course, it's not. You need to judge people based on, as I said before,
+  the output of their work and not based on the time they spend doing it.
+890: Particularly when you have mixed time zones thrown in and you allow people more
+  flexibility with their working hours.
+896: It does become a lot more, I guess, opaque as to when people are working and
+  not working.
+904: And I think most people here are probably in some sort of salary job and most
+  salary jobs, you're not being paid for the hours you work, right?
+912: You're being paid. Most contracts I've seen at least will say that you're being
+  paid to accomplish your job.
+918: Maybe it has some statement of recommended hours that you might work in there,
+  but it doesn't state a fixed hour period.
+925: And as a result, I think when you're managing, you need to just change your expectations
+  that someone is going to be working a fixed number of hours to being this is what
+  you expect from this person.
+935: And you mutually agree on outcomes and deadlines and these type of things.
+938: And then you're judging that person by their ability to meet those things or
+  not.
+944: But let's see, what are some of the tools that we need to make sure that we use
+  to work effectively remotely?
+950: I've kind of talked a little bit about why it's a good thing, about some of the
+  problems that you can have.
+956: I talked a little bit about how you can address some of those problems, but let's
+  be more specific and more proactive.
+961: If you were a company who said, okay, well, I'm on board with this. I want to
+  allow more people to work remotely.
+966: How do you do that? And how do you set yourself up for success?
+969: Well, the first one is ensuring that you have some sort of community.
+974: And that's something that happens more naturally in an office anyway.
+979: When you come in first thing in the morning, you sit down at your desk and you
+  wait for your computer to boot or whatever.
+983: You know, you're going to chat with the person that sat at the next desk about
+  maybe how their day was or their weekend or, you know, if they see whatever was
+  on TV last night.
+992: Whereas when you're working remotely, it's a lot easier to kind of fall out of
+  those habits and being talking to your coworkers exclusively about work and nothing
+  else.
+1000: So I think it's important to improve people's interaction, their trust, and
+  their motivation through encouraging a sense of community.
+1008: A big thing that every company I've been at has tried to do is trying to get
+  everyone in a team together at least kind of twice a year, physically in the same
+  place.
+1017: Partly for kind of work-related conversations in which the kind of bandwidth
+  is higher, being able to have those face-to-face chats.
+1023: But also partly just to have fun, to go out and get to know each other a bit
+  better and to understand people.
+1029: So when someone, you know, blows up in a conversation, you can be like, okay,
+  well, I have a bit more of an understanding of that person.
+1035: I can understand where they're coming from.
+1037: I can understand why that happened than if they're purely text on the other
+  side of a screen and a video call once a week.
+1044: The other thing is I believe that teams that work better together are those
+  that trust each other, those that kind of care about the other people in that team.
+1053: And as a result, you need to work a bit harder to get that for teams, particularly
+  teams where you have some people who are remote and some people who aren't.
+1060: Because it's very easy for a little clique to maybe form with the people who
+  are in the office and the person who's remote to be excluded from that.
+1067: So having these regular interactions, encouraging people to kind of talk about
+  their day and things like that on the same mediums you're using to talk about work
+  is helpful.
+1077: So the next big thing is trust.
+1086: I've mentioned that word a few times already, but I think it's essential to
+  make a remote worker work effectively.
+1092: On my first week of my first remote job, my manager said to me that remote working
+  is all about trust.
+1099: And I assumed what he meant is, you know, it's all about you trusting me or
+  something like that.
+1104: But what he said is that it's about a kind of a carefully entwined mutual trust,
+  because I need to trust that my manager trusts in me.
+1113: Because, and what he meant by that is if I have a day, which I'm sure we all
+  do, where I spend eight hours churning away on something, I realize towards the
+  end of the day, oh, well, I went down a dead end and I have nothing to show for
+  the day.
+1125: That's when you need to have that trust.
+1128: And that's where the trust stops the overworking, because the temptation might
+  be, well, I need to just keep working until I have something to show for my day,
+  because otherwise, they'll think I'm not doing anything.
+1136: Whereas if you are in an office environment, then you may well be sitting down
+  and be like, well, you know, they all saw me come in, they saw me kind of, you know,
+  angsting over the problem.
+1146: So they kind of know that I've, I've done my job today.
+1149: So I need to trust that my manager has that trust in me, that we both believe
+  that neither person is trying to kind of, you know, rip off the other.
+1158: And a big part, I think, particularly when you have those different time zones,
+  is trying to do as much stuff asynchronously as possible.
+1168: As I mentioned before, it's very easy in an office, if I have a question, to
+  go over and tap someone on the shoulder.
+1174: It's not easy for me to do that with my remote coworker, who maybe is not paying
+  attention to their email client or their chat window or whatever right now.
+1181: And it's now impossible for me to do that with my remote coworker who's in Australia,
+  who has zero working overlap with me.
+1188: So as a result, you need to think a bit more about the stuff you're doing, about
+  the messages you're sending.
+1192: And if there's anything you take away from this talk, even if you don't want
+  to do remote working, you don't want to encourage this, that's fine.
+1199: This would be the biggest thing I think can boost productivity in almost every
+  company, is thinking about your communication style.
+1205: When you ask someone a question, does that need to be answered in the next minute,
+  the next hour, the next day, the next week, month?
+1211: And using a suitable communication tool to do that, and trying to set expectations.
+1217: Because what kills productivity more than anything else in my experience across
+  all sorts of companies, is people asking questions that don't need to be answered
+  for maybe a week, and asking them in a way that needs to be replied to within a
+  minute.
+1230: Because that means that it's very hard to focus on the longer term picture,
+  because everyone is constantly interrupting each other, and no one is able to kind
+  of get that time to focus.
+1238: And a big part of that, I think, particularly with me being in technology, is
+  having the right technology to help you with that.
+1246: So, a few things which are fairly obvious and fairly essential tools that I
+  think you need to have to effectively work remotely, is some sort of tool for video
+  and audio calls amongst your team.
+1259: Ideally, something which is easy to set up and doesn't require, you know, pre-configuration
+  or whatever.
+1265: Google Hangouts or FaceTime, they're both free and they're good solutions for
+  doing that.
+1270: Some sort of group instant messenger, this is not as widely deployed, but I'd
+  really recommend something like Slack, that's kind of becoming more popular.
+1278: A way that people can kind of talk in groups, they can have things segmented
+  off into kind of work and, you know, hobby-based kind of rooms where they can chat
+  about these things.
+1287: And also where people can have one-to-one conversations about things in private
+  that they might not feel comfortable sharing in a group setting.
+1293: And finally, and I'm a little bit biased about this because I work for a company
+  that produces one of these tools, having a product management tool, a project management
+  tool, sorry, something like GitHub or Basecamp or a similar tool that allows people
+  to collaborate, work together, plan projects, and discuss how they're going somewhere
+  that's not just a massive email chain, that's not a daily meeting, that's somewhere
+  online where that information can be tracked, stored, and accessed at different
+  times.
+1319: Because that allows people, again, to work more independently and more flexibly,
+  and as a result, I think more productively.
+1326: But you may also find it useful to recommend a couple of other little tools.
+1330: One thing is Screen Hero, that's a nice little tool for doing screen sharing.
+1335: You can have two people looking at the same screen, either person can click
+  and control the mouse or the keyboard, you have two separate mouse curses, and you
+  can also talk while you're kind of viewing that as well.
+1344: That's useful if you want to collaborate on a document or something like that.
+1348: And finally, a little thing which, again, you can see if you go to my website,
+  there's a more specific example of that.
+1354: It's just everyone could do with getting better at managing their email, using
+  email filters to try and figure out, like, if an email was sent to your entire company,
+  you probably don't need to read that right now.
+1363: If an email was sent just to you with the subject title, urgent, urgent, whatever,
+  you probably want to read that right now, and that could be prioritized and put
+  into the right bucket, whatever.
+1373: Right, so that's more or less the kind of outline of the talk.
+1378: So we talked a little bit about what remote working is.
+1380: I was saying anywhere where you're kind of working primarily from a place where
+  it's an office not provided by your employer.
+1387: Maybe it's your own home, maybe a co-working space, wherever.
+1390: Why is remote working good?
+1392: Well, saving the planet, helping you be healthier, more productive, and helping
+  your employer to save a bit of money as well.
+1398: And you can work effectively when you're working remotely through communicating
+  well, through trusting each other, and through using the appropriate tools to enable
+  you to have asynchronous communication whenever possible.
+1411: Right.
+1412: So that's me.
+1413: And if anyone has any questions, you stick up your hand.
+1416: Thank you.
+1417: Yep.
+1418: Question, please.
+1424: Are you on an annual leave today?
+1426: Am I on what, sorry?
+1427: Annual leave?
+1428: Annual leave today.
+1429: Yeah.
+1430: That's still to be decided.
+1433: Yeah.
+1434: Because I did a bit of work this morning, so maybe, maybe not.
+1437: I work for a company, technically we have no vacation allowance anyway, so it
+  doesn't make a difference.
+1441: I have a minimum amount I need to take rather than a maximum, but.
+1444: Okay, so you have leaves, like you can take leaves, annual leaves and everything.
+1448: Yeah, yeah.
+1449: So, yeah, we take time off and just like anyone else.
+1452: Okay, thank you.
+1453: I'm getting the steps in today.
+1454: Hi there.
+1455: I have a role that's client-based, so I have a lot of clients, and clients contact
+  me via phone, email, meetings, et cetera, et cetera.
+1470: That, to me, is very hard for me to work remotely.
+1474: So have you ever had a thinking about, so software engineer, you can sit at
+  a computer and you can have a piece of work.
+1480: It's very different for me in having to be reactive, et cetera, et cetera, so.
+1484: Yeah.
+1485: Yeah, I can see that.
+1486: We have a big sales team at GitHub, and they work, I guess, probably more in
+  the way that you do as well.
+1493: But a lot of them, when I say work remotely, I don't necessarily mean, you know,
+  instead of going to a customer's office, they will sit in their house and refuse
+  to leave.
+1502: I more mean when they're not doing that work, where is their place that, you
+  know, you're typing up notes after a customer meeting.
+1509: And for that, for them, most of the time, that's often their home rather than,
+  like, an office where they have to be.
+1515: But yeah, as you said, that's a very good point.
+1517: There are certain jobs and certain roles where you're going to be required to
+  have more face-to-face communication like that.
+1523: But again, even with that, I guess, like, obviously, in a sales environment,
+  you're wanting to kind of pander to your customer more than demand they do things
+  your way.
+1532: But even in those environments, I wonder whether we can all do a little bit
+  more kind of video call, a little bit more maybe by email and stuff,
+1540: and a little bit less requiring face-to-face meetings.
+1543: But that's just my two cents. But thanks. Great question.
+1548: Anybody else?
+1551: Just one there.
+1555: So you mentioned that to keep the kind of social angle working that you meet
+  up as a company twice a year.
+1562: Have you got any other tips for keeping that sort of social side live while
+  you're remote working?
+1567: Because obviously there's a lot of benefits from face-to-face connections.
+1571: Yeah, as I say, I think the big thing is trying to just force yourselves to
+  have those, like, more almost real human interactions and trying to think about
+  the people you work remotely and closely with as being like your coworkers that
+  you sit in the same room with.
+1589: And I personally try and, for example, this sounds a little bit weird, but almost
+  slightly overshare on personal information because, like, if I'm having a hard time
+  or something like that, like, telling the people in my team, I could quite easily
+  hide that in a way that I maybe couldn't in an office.
+1605: But trying to force myself to be like this. But trying to force myself to be
+  like, well, it's only fair to them to know when they're working so closely with
+  me if something is affecting me right now.
+1612: So I should probably be explicit about telling them that.
+1615: So I think that's something that helps. And again, as I say, just when you have
+  those meetups and those interactions, when we have our whole company get together
+  once a year, I've seen across the companies that changing over time and being initially
+  quite a lot of meetings and work planning.
+1629: And now it being more or less a kind of an entirely social event because that's
+  what we've realized is what is missing. People can do, you know, you can plan roadmaps
+  and stuff like that when you're not sitting in a room face to face.
+1642: That's possible, but it's not possible to kind of recreate the sitting in a
+  pub like or a cafe, like chatting about life and the bigger questions or whatever,
+  like those sort of weird, spontaneous interactions that you have when you're together.
+1658: Like it's harder to do them online. Thanks for the question.
+1665: Do you ever have situations where maybe something's been shared in the office
+  in an informal way, which is not important at the time, so it's not communicated,
+  but then later down the line it becomes more important and maybe people don't think
+  to share it with you.
+1685: Do you have any advice for things like that?
+1687: Yeah, I mean, stuff like that definitely. That's something on a very personal
+  basis. That's a reason why I would only consider working for another company in
+  the future that had at least some remote presence already.
+1699: Like I wouldn't want to be the sole person because then you do end up missing
+  a lot of that information.
+1704: But yeah, I mean, the way we, in GitHub at least, previously we had a little
+  saying which is if it doesn't have like a URL, if it's not on some web page or written
+  down somewhere, it doesn't happen.
+1718: So basically the reasoning for that would be if someone would cite a decision
+  that like, oh, well, we, me and so-and-so discussed over coffee and we agreed this
+  two weeks ago, unless you can point to some sort of write-up for that, you almost
+  don't get to use that.
+1732: Like someone is entitled to turn around and say, well, I don't see any evidence
+  for that. And it maybe sounds a little bit aggressive, but that I think those type
+  of approaches and just enabling people who work remotely to be able to call stuff
+  like that out is the only way you can kind of build a culture like that.
+1749: And I guess as well on the flip side, having the leadership being aware of that
+  and trying very hard to try and encourage people to kind of communicate in a way
+  that is accessible to everyone and not just accessible to the people who happen
+  to be sat at the table at the same time.
+1763: Any final questions?
+1769: Hope we've got time.
+1777: "- Specifically in the software development context, is there certain structures,
+  certain processes a development team might be using that would prohibit their ability
+  to work remotely?"
+1789: For example, pair programming, where two developers are working on the same
+  machine, or something like scrum, where you have a daily stand up and you've got
+  your time zones, that sort of issue?
+1800: "- Yeah, that's a great question. I mean, there's definitely been teams in GitHub
+  where that has been the case, and they've been quite open about that."
+1807: where people have said, "Oh, why don't we do, you know, pair programming all
+  the time, or we do scrum?"
+1811: And if you have a person in, for example, the UK and Australia, in Sydney, like
+  East Coast Australia, you have no working overlap.
+1819: So either someone has to work very antisocial hours, or someone, you know, it
+  basically, it becomes a bit of a mess.
+1828: So then you need to decide to yourself, like, what are these processes doing
+  for us?
+1832: Is there any way, either we can replicate them in an async way, I've seen the
+  stand up thing done as being, I worked at the Swedish company I was at, we had effectively
+  a daily stand up, and the meeting was run by like, a bot.
+1846: And what you would do is, you would just tell the bot in advance, if you couldn't
+  make the meeting, what to say as you, and then it would go through and we'd almost
+  have the stand up.
+1854: And, you know, obviously, it requires a slight deviation in process, but you
+  can still end up with effectively the same result as doing a stand up.
+1861: But you're just not all necessarily there right at the same time.
+1865: And in terms of pair programming and stuff, yeah, I mean, that's, in my team
+  I'm at, at the moment, we do see some more of that, because there's been people
+  I've kind of wanted to pair with who are not in a friendly time zone.
+1875: And if I really, if one of us really, really wants to do that, then yeah, we'll
+  take the sacrifice and maybe work a little bit later.
+1880: But yeah, it does prohibit certain ways of working like that.
+1883: And I think what you can maybe do with that is try and, if that's really, really
+  important to your workflow, structuring your team such that people are more,
+1890: time zone friendly, for example, and so teams maybe clump together based on
+  time zones.
+1897: I guess that I would see that as a potential solution.
+1899: But yeah, thanks for the question.
+1901: I think that's us for questions.
+1903: But yeah, thanks very much, everyone, for coming.
+1905: And thanks for the great questions.

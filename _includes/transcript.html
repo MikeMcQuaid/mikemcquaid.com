@@ -1,0 +1,30 @@
+{% assign transcript_data = site.data.transcripts[include.id] %}
+{% if transcript_data and transcript_data.size > 0 %}
+<details>
+  <summary>Show transcript</summary>
+  <ul>
+    {% for item in transcript_data %}
+    {% comment %}
+    Format HH:MM:SS from seconds with Liquid only
+    {% endcomment %}
+    {% assign s = item[0] | plus: 0 %}
+    {% assign text = item[1] %}
+    {% assign h = s | divided_by: 3600 %}
+    {% assign m = s | modulo: 3600 | divided_by: 60 %}
+    {% assign sec = s | modulo: 60 %}
+    {% if h > 0 %}
+    {% assign mm = m | prepend: "0" | slice: -2, 2 %}
+    {% else %}
+    {% assign mm = m %}
+    {% endif %}
+    {% assign ss = sec | prepend: "0" | slice: -2, 2 %}
+
+    <li>
+      <a href="https://www.youtube.com/watch?v={{ include.video_id }}&t={{ s }}s" class="transcript-timestamp"
+        data-timestamp="{{ s }}">{% if h > 0 %}{{ h }}:{% endif %}{{ mm }}:{{ ss }}</a>
+      <span>{{ text }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</details>
+{% endif %}

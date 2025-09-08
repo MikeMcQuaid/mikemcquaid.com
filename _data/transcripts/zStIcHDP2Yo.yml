@@ -1,0 +1,625 @@
+---
+0: I'd like to start the talk by figuring out who some of you are because I don't
+  always know like
+10: what the makeup of the people in the room are so we're just going to go one by
+  one and everyone's
+14: going to introduce me so can you stick your hands in the air do you identify primarily
+  as a dev rel
+19: person okay an engineer and then another assorted business person of oh wow lots
+  lots of business in
+31: the house that's good that's good and anyone else want to just randomly shout
+  out a thing that you
+36: consider yourself I've not put in one of the buckets already infrastructure great
+  thank you for
+43: infrastructuring us all yeah so I'm trying to make this talk like a wee bit of
+  a kind of whistle
+51: stop tour of just some stuff that I feel like I found useful over the years with
+  my forays into
+59: open source land and I'm going to try and do a little bit of hand raising on occasion
+  to see what
+65: you're thinking and if you ever just want to stick up your hand just for no apparent
+  reason then do
+68: that as well I've also got well done someone's listening great one person at least
+  and so at the
+76: bottom of the slides as well I have like a little link shortener situation going
+  on and I've got I
+80: try to like link to as much stuff as possible if anything I say is interesting
+  and you actually want
+85: to read more about that but if you don't please don't saves bandwidth for everyone
+  so right me I'm
+91: Mike McQuaid I'm I still kind of identify as an engineer technically I guess I'm
+  like a co-founder
+98: of a business situation right now talking about that later I'm based in Edinburgh
+  in Scotland my open
+104: source main kind of thing for the last while has been homebrew I've been maintaining
+  that thank you I've
+110: been maintaining that since 2009 and I'm now the like project leader which means
+  I stand for election
+116: every year no one else has ever run please someone in this room run and set me
+  free so we've worked with
+125: maintenance contributors all over the world over this kind of 15-year period
+  mostly over text sometimes
+129: occasional video calls and occasionally in person we've started meeting at FOSDA
+  in the last few
+134: years as well as a group which is quite nice I was also principal engineer at
+  Gearhub for 10 years
+139: well wasn't principal engineer for that time but hey resume padding is okay I
+  worked for my home in
+145: Edinburgh mostly working for teams on the west coast of the US which taught me
+  lots about that you don't
+150: tend to learn in the UK such as talking about your feelings and avoiding conflict
+  I'm now the CTR of a
+157: startup called work brew which as you might guess from the slightly convoluted
+  name is somewhat adjacent to
+163: homebrew we're trying to do stuff around like big companies who want things from
+  homebrew that
+169: homebrew volunteers don't want to do we're going to try and commercialize some
+  stuff around that I'll
+173: talk more about that a little bit later with two xgithub people who are on the
+  east coast of the US
+177: so my talk is going to be based on three B's the first B I'm going to talk about
+  is boundaries so is
+186: anyone able to spot what this lovely bit of text is from you don't want to raise
+  their hand and shout out if
+191: you're that much of a license geek no shame here so good this is the yes MIT
+  license
+198: congratulations you win nothing I'm not a lawyer but my summary of what this
+  part of
+206: the license at least says is and don't worry about reading all my license summary
+210: essentially the software you get is the software you get if it's buggy that's
+  your problem tough luck the maintainers
+219: don't promise you that the software has ever does or will ever work for any user
+225: use case even the ones that we say they do maintainers are never responsible
+  for any problems that anyone
+231: experiences even if they cause them deliberately by themselves because they think
+  it would be funny and if you disagree with any of this you're not allowed to use
+  the software
+240: so I wrote a little post about this a while ago called open source maintainers
+  are you nothing
+247: a lot of people who are maintainers or open source adjacent really like the title
+  and everyone else hated the title and
+253: and I you can see some good discussion of that if and I'm not actually joking
+  here if you Google for Mike McQuade asshole
+259: there's a variety of people who think that this is not the correct way to approach
+  open source
+266: um but to me like this is I mentioned boundaries before like there's a lot of
+  talk about kind of burnout
+272: I'll kind of mention that later but like a lot of people ask me like how have
+  you been able to do this for 15 years without uh going
+279: any more mad than I already am and for me it's it's boundaries right like I don't
+  do things I don't want to do and I think it's a really important thing for anyone
+  in open source to internalize that unless you're getting paid to do it and then
+  even then that doesn't necessarily always apply
+294: that doesn't necessarily always apply if someone is rude if someone is mean you
+  don't have to do what they say
+299: I will close issues that are legitimate problems because the person who has opened
+  them is just being nasty
+305: and people don't like this but that's how me and other people in Humber were
+  able to actually stay involved for a decent amount of time
+313: does anyone know who this lovely lady is Brené Brown yes some enthusiasm in the
+  room good good if anyone who hasn't discovered her she's social worker researcher
+  author podcaster
+323: talks a lot about like just generally how to be a better human and one of her
+  like courses she does
+330: um she talks about this kind of braving acronym for like the seven elements of
+  trust
+335: so the ones that jumped out to me were when I kind of were listening to this
+  and kind of thinking about
+340: how this might apply to my job and open source and stuff like that or like boundaries
+  reliability and integrity
+347: because if you want to trust people you cannot be someone who is untrustworthy
+  and if you want to be
+354: trusted you need to be trusted by others as well so for me it's the way I kind
+  of think about this because
+361: I'm primarily an engineer is by turning all human problems into computer programs
+  so I think about
+366: like instead of you know how I might deal with computers and how I might deal
+  with humans being
+372: separate like let's try and conflate the two a little bit so bad apis are apis
+  with inconsistent and
+378: unpredictable behavior so if you go and repeatedly ask for the same stuff and
+  you get radically different
+383: results back that generally sucks if you are documented that you do one thing
+  and you do something
+389: completely different that generally sucks and an api that every time you call
+  it it will try and do some
+395: overly complex query and then time out generally sucks as well and a lot of this
+  applies in my
+401: experience to human relationships as well so humans who are more consistent and
+  predictable in their
+406: responses are more pleasant to deal with if you are someone who at work when
+  your co-workers ask you to do
+412: something if it's your big big big boss you say it will be done in a day and
+  if it's the person
+416: on your team you don't really like you say it will take a month that's not a
+  great api
+420: if you say to your co-workers or people on your open source project that i am
+  on holiday i am not
+426: to be disturbed for the next week and then you are on slack or email every five
+  minutes answering
+431: questions because you feel like you're too important to actually go on holiday
+  and let other
+434: people do their job that's not a great api so to me your boundaries are what
+  your api
+441: are and that helps you figure out how you should be treating others and how others
+  should be treating
+446: you and that consistency makes it easier for people to understand you and generally
+  probably makes it
+450: easier for your life as well a nice experience i had in the past at github is
+  i had a manager who
+455: rather worryingly for me at least start my performance review with mike is very
+  strict with
+460: his boundaries and i thought oh no i'm going to get criticized for the fact that
+  like i insist on
+464: having dinner with my kids like most nights of the week but he went on to say
+  that this made it easier to
+469: to work with me because he knew when he could ask me to do things and when he
+  couldn't and it modeled
+473: that behavior for kind of new parents in the team that it's okay to do these
+  things so i would encourage
+477: you as well those of you who might kind of feel that it's overly indulgent to
+  exercise your boundaries
+482: around these things that you're not just doing it for yourself but you're also
+  doing it to help kind
+486: of model those around you particularly if you're in a position of more experience
+  or authority or power
+491: whatever you can enable it for other people to do those things so i think like
+  i don't want to get
+499: too deep on this but i think one of the key things with setting boundaries is
+  how comfortable you are
+505: about saying no to things like i talk about um front-loading disappointment quite
+  often which is a
+511: lot of the times if you're someone who is very willing and able to say no to
+  things sooner rather than
+515: later you're making that person may be disappointed straight away instead of
+  being disappointed in three
+521: months when you're not able to deliver or do whatever they thought you were going
+  to do so
+525: if you want to read more about that it's a little link down there and more specifically
+  to open source
+530: there was a big movement a few years ago about trying to make things really really
+  easy for first
+535: time contributors to projects and i think that's really valuable from the perspective
+  of like
+539: documentation and teaching resources and smoothing like onboarding flows and
+  stuff like that
+544: what i don't think scales very well is like hand-holding first-time contributors
+  through
+549: how they get involved with the project and because if someone doesn't know how
+  to use git for example
+555: and you're having to teach them every command and your project has like tens
+  of thousands of
+558: contributors you're probably not going to do that for tens of thousands of people
+  but when people kind
+562: of express interest and they kind of come back again and again then that's often
+  like a nice time to maybe
+567: get a little bit more involved and help them out so the next b is burnout so
+  as i mentioned before
+576: i'm someone who's been lucky enough to not really have ever felt burned out with
+  open source i've
+581: definitely had periods of uh temporary large amounts of irritation and as i'm
+  sure many people who work
+587: with me have as well but i've managed to sort of stay involved and for me what
+  that's looked like
+592: is over the years kind of prioritizing my own kind of mental and physical health
+  and like as i mentioned
+598: before boundaries and stuff like that something i found very helpful personally
+  um is seeing a therapist
+605: like i started seeing one during covid and it has really helped me to uh figure
+  out kind of how to
+610: manage this stuff we probably have a lot more sessions than my therapist expected
+  talking about like a
+615: like a particular pull request on homebrew and someone who is trying really hard
+  to be nice and
+621: helpful but are not doing that and actually being deeply unpleasant to a lot
+  of people and how i handle
+626: this and all these types of things so if it's something that you've considered
+  and not tried i would
+631: encourage you to i've written a little kind of step-by-step guide if you're like
+  how do i even go about
+635: finding one that might be useful to you another thing i found really helpful
+  with kind of avoiding
+641: preventing burnout in myself and others is kind of having like decent relationships
+  like inside
+648: outside work but in work or in open source land i try and have something that
+  looks a little bit like
+653: this i guess i call it like the mentorship diamond so it's this idea that um
+  i used to be religious i kind
+659: of stole it from religion originally like i come to what it was something like
+  i can't remember any
+664: the words anymore but anyway i stole this idea it's not mine but this idea that
+  essentially for anyone
+670: it's a good thing to have people above you people beside you and people kind
+  of below you who you can
+674: speak to so if you're in an employment situation like your mentor might look
+  like someone who has the
+681: job that you would like to have in five or ten years and your peers would be
+  someone who has like
+686: maybe a similar job or someone in your team or whatever and your mentee could
+  be anyone the nice thing
+690: about this is i do say like unless you're literally the most experienced person
+  at literally everything
+694: in our entire industry then you can always find a mentor and similarly like unless
+  you are literally
+702: if unless you were born during this talk you can probably find a mentee who you
+  have more experience
+709: than them and you can help them with some stuff and i just i also think the other
+  thing those of us who
+714: have kind of jobs in more kind of formal corporate environments often like an
+  org chart looks quite a
+719: lot like it's structured like this so you might think oh this comes from me automatically
+  but i think
+723: this is something that's really worth like putting a little bit of effort into
+  to actually like find
+726: these people yourself and not essentially rely on like wow my manager can be
+  my mentor and my mentees
+732: can be the people who report to me or whatever because it just makes it a little
+  bit more fluid and
+737: you can help find things a little bit more easily that way another thing i guess
+  i've thought about
+743: with kind of avoiding burnout with open source is trying to find people who will
+  replace me and who's
+748: i don't know any people have done any sales stuff have people familiar with sales
+  funnels
+752: yeah like a few people so i guess the idea is basically that you generally get
+  lots of people
+758: at the top of the sales funnel uh like potential leads who have no interest in
+  you or what you're
+763: doing but you haven't figured that out yet and so you send them all about a million
+  emails and then
+768: some tiny proportion of them reply with something other than go away leave me
+  alone and those might
+773: call prospects because they've shown like some sort of interest and then some
+  tiny proportion of them
+777: may actually end up be paying you money one day and those people are sales so
+  in open source i think
+781: we have somewhat a similar thing um that i call like the contributor funnel which
+  is like generally most
+787: projects will have lots more users than they have contributors and lots more
+  contributors than they have
+791: maintainers last time i crunched the numbers on this for homebrew and the numbers
+  are roughly like we
+797: have roughly 30 million homebrew users we reckon from my analytics data got like
+  12 000 contributors
+803: total in the last 15 years and we've got about 30 current homebrew maintainers
+  and about 50 lifetime
+809: which is apparently 0.0015 percent so when you're being yourself up your project
+  that kind of is used by
+816: a few hundred or a thousand people doesn't have like most of those people wanting
+  to help you contribute
+821: or maintain or whatever like cut yourself a little bit more slack but at the
+  same time do bear in mind
+826: that like you know if you could the more you can grow this funnel and the more
+  easy you can make it for
+831: a user to contribute or contribute or to kind of come and join user maintainer
+  that may well end up taking
+836: some load off you as well right so the last thing i'm going to talk about is
+  business and don't worry
+844: as despite the emoji like i'm not a very suit and tie businessy businessy person
+  but i guess like it was
+850: a third b and money in open source feels like a kind of relevant thing for us
+  to be kind of talking about
+854: nowadays so homebrews kind of had an interesting like money journey basically
+  so when i joined
+862: it was very much like humber didn't have any money it didn't need any money it
+  was just a
+866: random project on github people submitted prs this is in the days before ubiquitous
+  ci when we start
+872: with homebrew it didn't have any ci at all it was all just verified on someone's
+  machine
+876: um and the first thing we kind of did when we sort of realized like hey we maybe
+  need some money here
+883: uh we figured we kind of could benefit from having some macs which would like
+  automatically kind of run
+887: some ci on pull requests on github so because it was 2013 the way you went and
+  asked for money on the
+892: internet was a kickstarter it raised the fourteen thousand eight hundred and
+  fifty nine pounds um and
+898: that was then used to kind of buy some hardware which was like physically taken
+  on a train by me and
+903: installed in a data center and like good stuff 2016 we joined the software free
+  maternity which
+909: provides like fiscal hosting for us does anyone anyone familiar with what fiscal
+  hosting means
+913: yeah so essentially it's like providing a bank account and like legal services
+  and someone who can
+921: like hold trademarks or anything like that for european source projects so that
+  made us well it made
+926: us a part of a 501c3 like a u.s non-profit essentially so we could go and like
+  receive tax
+932: deductible donations in the u.s and all that stuff and give us a bank account
+  so then after that we
+937: kind of had somewhere to put our money we had somewhere to receive new donations
+  and somewhere
+941: like a process for like paying out stuff like that 2017 we started using a patreon
+  to kind of try and get
+947: some more monthly donations and stuck that in our readme 2018 uh we started asking
+  for donations on
+952: twitter but 2019 was the the big kind of exciting time when we made um homebrew
+  itself like when you first
+959: installed it or if you had had it already installed you would see a one-time
+  nag message that says
+964: essentially homebrew is run entirely by volunteers mostly in their spare time
+  please consider donating
+970: and then 2021 we had open the collective uh see if you can spot when we added
+  the the message to our
+975: yeah so almost immediately our kind of incoming money went up by a lot and so
+  and no one has really
+985: complained about the message you get some people kind of kind of a little bit
+  suspicious or paranoid
+990: about asking for money as an open source project but i would strongly encourage
+  you if you're in a
+994: resource project and you need money then do consider like having a one-time nag
+  or whatever and i also
+1000: think i've found that people are a lot more responsive to that often than kind
+  of like advertising and
+1005: things like that another thing to think about with open source is like again
+  i've heard a lot of people
+1011: talking about open source economics in the last few years so i kind of wrote
+  a blog post about this and
+1018: sort of spoke to my father-in-law who's a professor of economics um who just
+  because he's a very clever
+1022: man just says it depends a lot um about like okay help me understand like what
+  is economics how does it
+1028: define it blah blah blah blah so like he he sort of said like well you know
+  we're mainly capitalist economies
+1035: here so it's the allocation of capital and how that throws through businesses
+  and stuff like that
+1039: um and then and then i kind of thought well whenever i see people talking about
+  open source economics
+1045: they're all talking about money and like how open source projects get money
+  and spend money and stuff like
+1049: that so is that what it's about um well like if ever if you make everything
+  about money um and i guess you
+1058: you know no shade on our lovely american friends in the room but i often find
+  when i talk to kind of
+1064: american folks about open source and european folks about open source often
+  i find like that sometimes on
+1069: the american side there can be more of a focus on like we need to get money
+  money will solve all the
+1073: problems the lack of money is all the problems more than i do over here um but
+  like the idea that kind of
+1081: money fixes all the problems it's like homebrew is kind of in an interesting
+  phase right now because
+1085: we have quite a lot of money in the bank and you can go in our open collective
+  and see that we have
+1089: you know six figures of funding which is like both far too much money to spend
+  on stickers and also
+1095: unless you get really good stickers like if anyone knows the best stickers then
+  let me know um but also
+1103: like not enough to like sustainably actually pay like people to work full-time
+  on homebrew
+1109: so in our case we have quite a lot of money and that doesn't fix all our problems
+1113: and that's when i guess like talking to my father-in-law kind of helped where
+  it's like well actually
+1117: economic problems are generally like we generally consider them to be like allocation
+  limited resources
+1124: which is normally money particularly in like capitalist economies etc but arguably
+  the open source economic
+1130: problem is allocation of like limited maintainers or like people right if you
+  you want to have stuff done
+1135: there are a relatively small number of people who can do those things and you
+  don't necessarily have
+1139: enough resources to get those people to do those things and if you have more
+  money does that somehow
+1145: automatically add more of that well i guess not really because for some people
+  they have a full-time
+1152: job and the amount of money they would need to have to quit their full-time
+  job and then do the open
+1155: source thing full-time is a lot more than your project can have or guarantee
+  or whatever
+1161: so it's tricky but then for me i think like again it feels like a weird thing
+  to kind of frame in
+1167: terms of economics but i think the best economic thing you can do for your project
+  to kind of maintain
+1172: the amount of maintainer time you have and increase it is to make it actually
+  an enjoyable place if open
+1177: source is a place where people want to go if we come to events like this we
+  see each other we make
+1182: friends we make friends on our project then we want to work more with those
+  people we want to help those
+1186: people out and we're having a good time if open source is like a horrible drudgery
+  place where people on
+1190: the internet just shout at you all day which it also could be and then you're
+  probably going to want
+1195: to spend less of your time doing that and if you're like me then uh you will
+  probably be shocked when
+1202: on a saturday night you're spending like your time smashing out some code from
+  the open source project
+1207: look completely miserable and your wife's like why why do you do this again
+  like are you sure you want to
+1213: do this so yeah so try and enjoy it try and make it an enjoyable space for other
+  people
+1218: again final note like i've seen kind of concerning stuff around ai where i guess
+  including some of the
+1227: existing talk where there's a worry right now that we're moving to a world where
+  um everything is kind of
+1233: open source underneath the hood but then everything is very proprietary in the
+  front and maybe have open
+1240: source data models or whatever but you don't have any of the training data and
+  is this going to mean
+1243: sort of the death of open source but to me the only thing i've seen that looks
+  close to failing in the
+1249: last few years is open source is like a business model where there's a bunch
+  of projects who have i'm
+1256: not going to name any names but you know who they are uh who had this sort of
+  approach either they
+1263: fell into this trap or this was forced upon them by their maintainers or investors
+  or whatever but i
+1269: would argue and this is the model i'm trying to take and we'll see whether it
+  works or not
+1273: is that like this is a better model for open source business which is instead
+  of trying to have like the
+1280: open source side and the financial side in direct competition with each other
+  you have something
+1285: where the business side and the open source side kind of contribute nicely to
+  the same kind of ecosystem
+1291: i remember i had a job and i will name them because they were a lovely bunch
+  of people at a company called
+1294: kdub a few years ago it's my first job kind of working primarily on open source
+  stuff um i was very
+1300: excited that i was like great i work on kde now i work at this company who hires
+  lots of kde maintainers
+1306: i can get paid to work on ke stuff but i found quite quickly that the problems
+  that uh often open
+1310: source consultancy companies are paid to work on are actually in fact not the
+  most interesting problems
+1315: but at the most boring problems because people who will do them for fun don't
+  want to solve those
+1319: problems so you have to pay people to do them and to me like this is the i mean
+  it's not a very inspiring
+1324: pitch to kind of come and work with me i guess at the company but um but i do
+  think there's a class of
+1330: problems where you can't expect volunteers to solve them and you do want big
+  companies to be involved with them
+1335: the big companies sorry expect this stuff to be solved but the volunteers don't
+  want to do it
+1339: i know that's where to me it feels like a good kind of fit and if you're interested
+  in what i'm
+1343: doing with this stuff then we've got a little website workgroup.com and a demo
+  and all this type of
+1347: stuff so in short quick summary uh boundaries remember open source maintainers
+  and volunteers
+1355: owe you nothing remember you can say no to things and you don't need to mentor
+  first-time contributors
+1360: for burnout consider finding a therapist if you don't have one already or changing
+  one if you hate your
+1365: current one which is also a thing it seems um consider the kind of mentorship
+  diamond of
+1371: mentoring above below side by side and that if you can get more users and make
+  it used to become
+1376: contributors make it become maintainers then that might make your life easier
+  and i talked a bit
+1382: about making homebrew financials sustainable and how that's about often making
+  maintainers happy and
+1388: avoiding them burning out as much as it is about money and what i thought about
+  open source business so
+1393: feel free to answer any questions now but if you don't want to ask in front
+  of the room then here
+1397: are my contact deeds and stuff like that and thank you very much for having
+  me
+1408: thank you for the talk uh i'm over here um i really liked your analogy with
+  the api uh in terms of
+1417: humans and machines uh and i'm curious if you like good apis are well publicly
+  documented i guess and so i
+1423: wonder if you have taken that analogy to that point of like having sort of a
+  document i used to have a
+1429: colleague who would have like a google doc that would be like how to work with
+  me yeah i actually do i was
+1436: polishing it like hopefully my uh company will have our first employee in the
+  kind of coming month so
+1441: i've been taking my old one from github and i'm repolishing it for the current
+  day yeah for anyone
+1446: who hasn't done this before it's a really nice resource in uh companies and
+  i guess i could work
+1450: in open source as well it's the way i saw it framed as like a human user guide
+  where it's like things you
+1456: might not know about me things that i really like uh things that when my co-workers
+  do this it makes me happy
+1461: things when my co-workers do this it makes me sad like those types of things
+  um yeah so i agree with
+1468: you like i think yeah trying to publicly document that or at least internally
+  document that but there's
+1473: enough in my one that i wouldn't probably want to put on the public internet
+  just yet but yeah i mean
+1478: you've inspired me i might even make a a public version of this so we can a
+  follow-up question to
+1483: that so if you write such a document how do you find the boundary between like
+  kind of being honest
+1490: and setting actually setting the boundaries and not coming across as rude as
+  in in setting those
+1495: boundaries uh well so the best way i found to avoid coming across as rude when
+  i worked with californians
+1501: is uh who who had not worked with scottish people before is just to say oh all
+  scottish people are
+1507: like this and but yeah i mean as pretty much all of my friends and family and
+  co-workers of all time
+1517: would tell you i am not the person to ask uh on how to avoid coming across as
+  rude
+1524: but i guess i would say like as a middle ground i guess maybe not quite rudeness
+  but something i've
+1532: been uh dealing with like at work with like a small startup with kind of you
+  know impassioned people is
+1539: you quite often end up in situations where someone maybe needs to hear something
+1544: and you know it's going to hurt their feelings and to me like the two failure
+  states for that are either
+1550: you don't tell them what they need to hear because you're worried it's going
+  to hurt their feelings
+1555: or you say well it's going to hurt their feelings anyway so yellow like
+1558: and yeah and i guess my take is as long as you're willing to kind of try your
+  hardest to be as nice
+1565: as you can and hurt their feelings as little as you can and be willing to admit
+  you're wrong and apologize
+1571: and these types of things then you can get away with being rude i guess um yeah
+  don't have the answer
+1578: that one thank you thank you over here hey thank you so much for your talk i'm
+  canadian so i fall
+1586: somewhere between american and european philosophies um i think you alluded
+  to this but the biggest
+1591: economic problem for open source projects is actually the free rider problem
+  where so many people can use
+1596: software that they don't end up contributing to or paying for and i'm wondering
+  if you have any examples of
+1603: open source projects that have achieved kind of a hybrid model of being able
+  to keep things open source
+1609: and free for people who can't pay but for those who can and we know there are
+  so many large companies that
+1615: do have incredible ability to pay for stuff that don't how do we incentivize
+  them yeah that's a great
+1621: question thank you um so on the free rider problem i have maybe a slightly contentious
+  take um which is
+1627: that i think if you completely eliminated the free rider problem you kill open
+  source because open
+1633: sources i mean i guess we've seen this in the last few years with the kind of
+  the varying uh licenses and
+1638: i'm maybe a bit more of a purist in terms of i think if you say well um mike
+  can use this because he
+1646: doesn't have lots of money but amazon can't because they've got lots of money
+  you kind of kill what makes
+1650: open source what it is so for me it's about kind of thinking about creative
+  ways of of solving that
+1657: so some of it i think is like you're going to have a certain amount of free
+  riders and you're going to
+1660: have and also i think what makes open source interesting is you know and i include
+  my own
+1667: projects and work in this as well is that i think if we end up with a culture
+  where everyone is expected
+1673: to pay their way to kind of be involved with open source i'm not saying that
+  you're saying this but
+1677: i have seen some people who have then we why would a company almost like want
+  to use open source right
+1683: they can just build everything internally as they were doing 20 25 years ago
+  so i i don't see like
+1689: a an easy solution to that i wish i did but i guess the solution as i said i'm
+  trying to do right now is
+1695: the idea of you maybe just don't provide support for free for the things that
+  are massively important to
+1701: big companies like um i don't know how many of you have the misfortune of reading
+  hacker news comments
+1706: on occasion but every so often there's like a manifesto there of like it's very
+  important that
+1712: we as an industry start doing this thing and i really like those because 50
+  of them convinced me
+1715: to do the exact opposite of what the person is trying to convince me to do and
+  there was this website
+1719: called sso.tax that essentially talked about how um look at all these companies
+  who are outrageously
+1725: gouging people who want to use like single sign-on and stuff like that and i
+  saw that and i thought
+1731: that's a really good idea because that's a way to essentially be like well if
+  you're a big organization
+1735: who has the requirement for this for some iso certification or like whatever
+  it may be then you
+1742: say well we're going to charge you a lot more and if you're like an individual
+  user we're going to charge
+1746: you a lot less or or nothing and i wonder if that could work with some open
+  source models as well
+1750: that if you have features in your project that you know are only going to be
+  used by the biggest of the
+1756: biggest corporations then you say well that stuff you have to pay us for or
+  it's under a license we
+1761: know you don't want to use but you can pay us to have it under a more liberal
+  license or i don't know
+1765: lots of ideas no solutions thank you anyway we're at time thanks folks thanks
+  mike
+1776: Thank you.

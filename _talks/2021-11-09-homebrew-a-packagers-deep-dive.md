@@ -4,6 +4,7 @@ description: A deep-dive on the interesting (both good and bad) aspects of the H
 speakerdeck-id: ac84b36626f946aa972d0737ebbd9539
 speakerdeck-ratio: 1.77777777777778
 youtube-id: frF0bnG4XCY
+transcript: true
 ---
 Based on my experience as a user (and very sporadic packager) of other OS system and language package managers I detail the things I feel that Homebrew does well, badly and what we plan on changing and what we cannot.
 

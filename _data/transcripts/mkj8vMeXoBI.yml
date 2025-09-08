@@ -1,0 +1,785 @@
+---
+0: So the screen's a little bit smaller than I thought it was, so you probably can't
+  read anything on any of the slides, but that's going to be good.
+7: So we're going to do something a little bit different to you Joel, in that because
+  I'm going to kind of cover quite a lot of stuff, like a surface level,
+16: let's try and see what happens if you have questions about stuff, ask them throughout.
+24: And I might tell me this idea like, oh, we're going to do it, but let's try this
+  and see how it goes.
+31: Right, so this is me, it's even the same t-shirt, conclusionally, yes.
+38: Where do I get that t-shirt?
+40: The internet, I think we can't get this one, but we do have a new one, we've got,
+  because it's Pride Month this month, I think, or in America or something.
+49: So yeah, we have a Pride t-shirt and we have a TransoCat t-shirt as well, so you'll
+  be able to buy them shortly, I'm not meant to talk about that yet.
+56: What's your dog called?
+57: A dog is called Lucy, and she is a senior engineer at the art, that's how you
+  can contact her.
+65: Is she in the room?
+67: She is a congressman.
+68: Well, let's, let's, the question thing has already started going slightly, so
+  I may or may not choose to accept your question.
+80: Moving on.
+81: So, I'm going to give you this lovely overview, which you can't read, of how you
+  can build software.
+87: What I'm going to talk to you about is, because I figured it's kind of interesting,
+  I think, not just the way we kind of deploy software, write software, whatever,
+  quite often, like, we end up doing talks about one of these individual things.
+99: So, I figured it'd be interesting to do a talk based on, okay, you're an engineer
+  at GitHub, and you get given a laptop, and you haven't done anything to that laptop.
+107: Like, let's talk about, like, what it looks like to go from, you have a new laptop,
+  to you push your code to production.
+114: So, first thing we do is this little project thing that I built, called Strap.
+120: So, before there was Strap, there was something called Boxing.
+123: Boxing was like a previous get-up project that used Puppet to, like, manage people's
+  development machines, and basically that was a fine idea.
+130: I'm not going to get into much details, but effectively, my high-level thinking,
+  having used Puppet Chef in situations more or less universally where they're a bad
+  idea, is that they work well for what they're designed for.
+143: They don't work well when people monkey around with a computer underneath, and
+  then Puppet goes, "Hey, I'm going to do some stuff."
+148: '"Oh, you''ve changed everything, ah!" and then dies.'
+151: And so, I, in, as I alluded to earlier on, I replaced a, like, you know, multi-thousand
+  lines of Puppet and stuff, with a 100-line bash script instead.
+164: So, this is what Strap does, is you can go to this strat.githubapp.com, or it's
+  like, you can basically, with one click, like, spin it up on Heroku.
+173: It's, not that one, I'll show you another thing in a second.
+177: Basically, what it does, is installs, like, a minimal set of stuff that is probably
+  used for developers.
+184: Now, by minimal set, I mean, like, really minimal, because I hate having, like,
+  cruft on my machine.
+189: So, pretty much all it does, is stuff like, turn on Firebolt, set up your GitHub,
+  like, credentials, so you can clone repositories and stuff like that.
+197: And installs Homebrew, but doesn't actually install anything in Homebrew, and
+  stuff like that.
+202: And installs Homebrew, because I'm a Homebrew maintainer as well, so I'm biased.
+206: So, basically, the way it works is, you get your new laptop, you then go to this
+  site, it will then ask you to log in, using your GitHub details, you log in doing
+  that.
+216: And then, you have a little script that you download.
+219: Note, I'm not doing the whole pipe to the bash script into the terminal thing,
+  because I would actually have done that, but it was going to be harder, so I didn't.
+226: Yes.
+227: Sorry.
+228: No, someone was leaving, or something like that.
+230: Who knows?
+231: Right.
+232: So, I download the script onto my machine, I then run it with bash, like this.
+236: It's then asking for my password, and so it can go and do stuff like turn on
+  Firebolt, and other things that require root, unfortunately.
+243: So, it then goes and does a bunch of stuff, and then at the end, you might see
+  something that looks a bit like this.
+249: Your system is now strapped.
+250: It doesn't take very long, it takes like maybe five or ten minutes the first
+  time.
+254: It's designed to rerun multiple times, but you shouldn't have to rerun multiple
+  times.
+259: So, it's basically just like a one-off, buy and forget thing, and then your machine
+  is set up.
+263: So, what's happened here is a cool local integration ad as well, the thing I
+  kind of helped work on called Homebrew bundle.
+270: And what Homebrew bundle does is it uses like a brew file, which is kind of like
+  a gem file.
+275: you guys familiar with like gem files or similar type things.
+278: Basically, it works specifying all your project dependencies.
+281: It's like that, but for stuff in Homebrew, and specifying system dependencies.
+285: So, I basically have that so I can have a bunch of stuff that I say when I set
+  up a new machine,
+290: like in my .files repository, it knows to automatically go and download like
+  this brew file,
+297: and it's not there already, and install everything there.
+300: So, it can install stuff from Homebrew, Homebrew Cast, and now the Mac App Store
+  as well.
+304: So, it's installed for me like Xcode and they go into all these other things.
+308: Right.
+309: So, this is open source to Strap, and you can go on like microcrate/strap on
+  GitHub,
+315: and like access the code, and it's got a one-click, put it on Roku thing as well.
+320: Any question?
+321: So, from the previous slide?
+323: Yeah.
+324: Can you ask how iMV is useful for development?
+327: It's not really.
+329: It's useful for doing not development, because I try to do as much not development.
+333: Yeah?
+334: How is transmission useful?
+335: For downloading Ubuntu items.
+336: That's the last time I used that screenshot again.
+338: So, yeah.
+339: This is my little brew file thing.
+341: It's also in my profile, I'm supposed to really be interested in critiquing my
+  social choices.
+344: which obviously people are.
+345: So, it's kind of a good way and you can kind of duff and restore things from
+  that.
+350: So, it's kind of a nice way of being like, I want to be able to restore everything
+  in my system in a way that's not like, kind of keenest or whatever.
+357: What is the GitHub app called?
+358: GitHub app, that is the GitHub desktop app.
+359: GitHub for Mac.
+360: It's designed to be kind of like a novice UI for using Git.
+363: But I find it useful for doing like one thing that I really like UIs for with
+  GitHub, which is like individual like, like staging individuals.
+379: individual lines to the index.
+380: Anyway, moving on.
+381: So, pro-bundle.
+382: This is the other thing you can do.
+383: It's part of a rule.
+384: You run like pro-bundle and it will set itself up to move all.
+386: So, it's very exciting.
+387: Right.
+388: So, you've now got Strap on your machine.
+389: This is very good.
+390: So, now I'm going to do this.
+391: I'm going to do it.
+392: I'm going to do this.
+393: I'm going to do it.
+394: I'm going to do this.
+395: I'm going to do this.
+396: I'm going to do this.
+397: I'm going to do this.
+398: I'm going to do this.
+399: I'm going to do this.
+400: I'm going to do this.
+401: I'm going to do it.
+402: I'm going to do this.
+403: Right.
+404: So, you've now got Strap on your machine.
+407: This is very good.
+408: So, now you want to get GitHub on your machine.
+411: So, you can actually do some work.
+413: So, we go make ourselves a little GitHub directory.
+417: That's just a little convention.
+418: We go internally.
+419: And then we cd do it.
+420: And then we client.
+421: And then, obviously, that is going to go download.
+424: GitHub, GitHub.
+425: That's where the bulk of the site is.
+428: GitHub is mainly, not entirely, but mainly a one of the Rails app.
+432: See, you can make Rails still.
+434: So, this is it.
+435: Kind of download it to the machine.
+436: And then, when that's all done at the end.
+437: Then, the next thing we have is, we've got a nice thought principle on GitHub
+  projects.
+446: We try and keep the setup for any given project.
+451: And similarly, what CI looks like, what Tesla looks like, whatever.
+454: Effectively consistent between every project.
+456: So, what we have is, we have the script subdirectory.
+458: And in the scripts subdirectory, you have, in pretty much every project, a thing
+  called
+463: bootstrap.
+464: So, what that does is basically says, okay, I have a machine which assumes nothing
+  except
+469: you have a strap installed.
+470: So, at this point, I do not have my SQL installed.
+473: I do not have any Ruby's installed.
+474: I do not have Git installed.
+475: I do not have any of these type of things.
+477: So, this is at this point, sorry, I do have Git installed.
+480: That's a lie.
+481: I couldn't say it comes with a risk.
+483: But, you basically don't have what you would consider system dependencies already
+  installed.
+488: And this bootstrap strip will then go through the brew file and actually install
+  that stuff
+493: for you.
+494: I think that's kind of cool because I always find when I go and use a new project,
+  like I
+498: hate having some wiki page or whatever.
+500: It's like you need to manually install these hundred things, then run these hundred
+  scripts.
+503: Then you tell us Bob what to do next.
+505: But Bob left the company two years ago.
+507: And yeah, you probably just got to go to work for a week.
+510: So.
+511: Just say compiling everything.
+512: Alright, yeah.
+513: So, this bootstrap, it may compile things.
+516: Like basically, it's a really like high lab abstraction.
+519: So, it can do more or less whatever it needs to do.
+523: So, sometimes it will put binaries off the internet.
+525: Sometimes it will compile things.
+527: Sometimes it will do other things.
+529: Like, it basically, it's job is at the end, you should be able to run another
+  script,
+534: which I'm not actually going to show you today.
+535: But like, you should be able to run, if it's like a web app, like script server
+  afterwards.
+539: And script server will just work.
+541: And will like spin up a web server on the machine so you can like run it up there.
+546: Right, so what it's going through, it's doing stuff like this.
+549: It's installed some gems.
+550: It's put some files in some places.
+553: It's downloaded GitHub's own internal fork of Git, because we do things with
+  Git.
+558: And then, as you said, it's compiled it.
+560: You've got all these things.
+561: It's going away, doing NPM and all this type of thing.
+563: And then in the end, eventually it's done.
+565: It's also nicely set up our kind of local database and stuff like that for us
+  as well.
+570: And then we're all good to go.
+572: We're done.
+573: We have our like special GitHub Ruby and the bootstrap is finished.
+577: So, now we can actually start doing some work.
+580: So, if you're interested in the way this stuff is done, we have like a repository
+  for this called scripts to rule them all at GitHub.
+587: Which is sort of example like template scripts.
+589: These actual template scripts look almost identical to what they look like in
+  some of our kind of more simple projects.
+596: The GitHub GitHub template script has to do like loads of stuff because it's
+  setting up a few.
+602: Like I said, it's like mostly up more with the Grails app.
+604: It also sets up a few of the other projects that it needs.
+607: But like for some of our smaller projects, some of the kind of microservices
+  we run, like these bootstrap scripts are like 10 lines of bash.
+613: And so, they can be really, really nice and simple.
+618: And you can go to see like bootstrap script there.
+622: You can see it's kind of referring to blue files from Darwin, which is the current
+  theme on OSX.
+627: And so then, after that, it's time for me to write code.
+630: And because I am relatively old, I still use TextMate.
+634: I think I'm the only person still using TextMate.
+636: All the cool kids know you use Supply and Atom and things like that.
+639: And please don't tell me to my co-workers, I'm not using Atom because I'll get
+  in trouble.
+642: But yeah, so I pull off my editor.
+647: And then I don't show you any code because I decided to be boring.
+650: And then I do some stuff.
+652: And then after I've done some stuff, I run GitDick.
+654: And it says, in fact, I have done stuff.
+657: I have changed four lines in this portal.
+659: So the fun thing with this thing today is partly due to my lack of preparation
+  and partly due to like trying to make this a new example.
+667: Like this is actually, from now on, this is actually code that I ran and deployed
+  to production today.
+671: And the stuff you're seeing actually happened.
+675: I should have some disclaimer or something like that.
+678: Anyway, so next thing obviously, we're dealing with Git.
+682: So we go and create ourselves a nice little branch.
+685: Git's telling us, hey, this file's still not modified.
+688: It's still not committed.
+689: So you might want to do something about that.
+691: So I did do something about that.
+693: I commit it.
+694: Write a nice commit message.
+696: Basically, this is what I was doing this morning.
+698: The boring little story is we have, we're using things called serialized attributes.
+705: This is what I was doing today, which is like a way of putting a JSON blog in
+  a database column.
+709: So like you don't have to do migrations.
+711: Turns out that's a bad idea in the long term.
+714: So we've been killing these.
+716: And one of the things you have to do when you're removing columns, sometimes
+  in Rails, is we have this little thing called attribute ignore, which stops Rails
+  sort of exploding when you want to remove columns underneath it that things should
+  exist and stuff like that.
+727: So this is what this does and this is what I'm talking about here.
+731: So I wrote my commit message.
+733: I then commit.
+734: I now have a commit on my machine.
+736: Very exciting.
+737: And my branch and stuff.
+738: So now I'm going to go push this onto GitHub, create a new branch, go on to GitHub
+  itself.
+746: And then if you use GitHub or not, I don't know, you get this nice little thing
+  in the bottom that says, hey, I'm going to create pull process there from this new
+  branch you've got there, buddy.
+755: So I'm going to now open a pull request.
+758: And this is going to get interesting again soon.
+761: I realize there's a point in the middle where we're doing because everyone's
+  used to GitHub at this point where it's like, yes, we all know this, we all do this
+  a hundred times every day.
+769: Why are you showing us the following bit?
+770: But it's going to get good.
+772: Don't worry.
+773: Right.
+774: So this is another one convention we tend to do.
+777: Like we make use of kind of teams and stuff on GitHub and individuals.
+780: So I'm basically going and seeing a few of my coworkers to ask them for some
+  review.
+785: We generally try, unless something's like everything is on fire and it's falling
+  down, we try to get at least one person to review every single change we make to
+  like any project at the company.
+795: Because humans are terrible and it's a good idea to verify that they're being
+  terrible with two people on one.
+803: So we also like to use gratuitous use of emoji instead of words because pictures
+  are better or something.
+810: So in this case I've got CC, the person who was working on this thing before
+  I was and my team that I work on so they can kind of check that I'm actually still
+  occasionally thinking.
+822: Right.
+823: So we then have, after we push up this branch, we have like a lot of CR jobs
+  that run.
+828: As you can see, this project has relatively few in that we only have 15 separate
+  CR jobs.
+832: There's some that have like 30.
+834: We actually have fun fact, I don't know if this is still case today, but last
+  time I checked GitHub had more CI machines than any other type of machines in the
+  company.
+843: Because like waiting for builds is really boring.
+847: So you want to be able to go and push stuff up and have all your builds run in
+  a very short period of time.
+852: And when you have huge test suites, it's also nice to not be able to, not have
+  to do that on your local machine.
+858: You can still want to test on your local machine, but it takes forever and that's
+  just for a multi-pod worker instead.
+863: So, we have all these different things.
+866: We have this GitHub enterprise code that I used to work on.
+868: So it's like checking that we've not broken that and GitHub and then GitHub with
+  like various flags enabled and disabled and whatever.
+875: I'm running through a test suite in various different ways.
+877: So then after that, this is when it starts to get a little more interesting.
+881: So now I've decided that my code is like, yeah, it's good enough that I can go
+  and like start planning at least to pretty production.
+890: So we have, this is in Slack.
+893: We have this like Slack bot that was previously a campfire bot called Qbot.
+898: And you ask Qbot to do things and he does things for you and that's cool.
+902: So here what I'm doing, on a lot of projects what I can do is just say like deploy
+  shape production.
+908: But because I'm working on the main GitHub app, like it turns out that's actually
+  like pretty busy and pretty congested.
+914: Like even thankfully I'm in UK hours, so like it's not that congested for me.
+920: But when I went to deploy this morning, there were like three other people already
+  either waiting to or currently kind of deploying.
+926: So basically do this to be polite and kind of get in the queue.
+930: So it says there's one other person ahead of me right now.
+933: So Q for GitHub, there's currently one guy out there who's testing in production.
+938: I.e. his code is what's on the website right now.
+941: And then there's Miguel and me who are currently kind of waiting to deploy our
+  code.
+945: So Miguel shows up in my PR because he's on my team.
+950: And says like, looks good to me.
+953: Love a PR when it contains deleted code.
+955: I also agree with that sentiment.
+957: So at this stage as well, all the CI jobs have passed.
+961: But it's whining at the bottom about it's out of date with the base branch.
+967: So basically what we'll talk about that more a little bit in a second.
+971: But that's like a thing you can enable now to basically just say like, hey,
+975: you might want to merge master into your branch.
+977: Well, I'm not going to do that right this second because like master is changing
+  all the time.
+980: If there's two people ahead of me, I'll talk about this in a second.
+984: But with the deploy, way we do deploy so there's two people ahead of me.
+987: That's master going to change probably once or twice more before I come to do
+  my deploy.
+992: So that's push on with this, right.
+995: So like I said, that's good to go.
+998: So nice timing here is that it's now time for me to deploy.
+1002: I'll just note as well on the previous one.
+1004: I had merge mastering once before just to make sure that things aren't too weird.
+1009: And I made another change in that like PR before Miguel came along and said
+  that.
+1014: So Cubot is now, I got to the front of the deployment queue.
+1018: So it's now time for me to deploy.
+1020: So what I do now is this is how you deploy, I get home.
+1025: And this is one of the things I think is the best of the company.
+1029: And it's one of the things that kind of terrifies people in that you don't need
+  to speak to anyone.
+1033: You don't need to ask anyone permission, whatever.
+1035: Like in your first week, you will be encouraged to do this and deploy actual
+  code to production.
+1041: Every engineer in the company, regardless of whether they work on this app or
+  that or whatever,
+1045: they can deploy code to any app at any time, more or less.
+1050: And there's times obviously we're getting attacked or whatever that people say,
+1054: okay, let's lock this down to kind of gently discourage people from doing this
+  right now.
+1058: But even then that's kind of more social contract than like an actual one.
+1062: So our way of doing deployment is generally like we put a lot of trust on people.
+1068: So anyone can deploy.
+1070: But if you did deploy and you break everything, we're probably going to notice.
+1074: And we're going to notice that like it was you.
+1076: And we're going to probably ask questions as to like what happened and why that
+  happened or whatever.
+1081: So, in this case, I'm saying deploy GitHub, which is the app I'm working on
+  right now.
+1087: My branch name, which is what I pushed off and I used to create PR.
+1090: Again, our deployments always tend to be around like deploying pull requests.
+1094: We don't kind of put everything to master and then deploy them.
+1098: We deploy our branches to production.
+1101: So, I'm saying to production slash canary.
+1104: This is saying a subset of our production hosts, the canary in the coal mine.
+1108: So, if things start exploding, then that's a few hosts are exploding and not
+  all of those.
+1114: So, then Hubot has just nicely merged master into my branch here and then like
+  push that to the branch.
+1121: And then when the CI finishes, Hubot will then deploy.
+1124: Now the reason why people are merged to mastering is because you want to make
+  sure that whatever the last person did on their branch,
+1130: particularly like they could have done something which was pushing some really,
+  really important fix.
+1135: They commit that to master.
+1136: I haven't been paying attention.
+1137: I haven't noticed that they've done that.
+1139: If I deployed there, if master wasn't merged into my branch, then I would just
+  undo their fix when I deployed my branch to production.
+1146: And that would be bad.
+1148: So, at this point, I then go and it says we're deploying to all these machines,
+  which is the subset where canary is dealing with.
+1157: And then it has some nice little gentle things at the bottom saying like check
+  out this stuff to make sure you've broken anything.
+1164: The other nice thing with, you know, a convention example, which I'm not going
+  to show you today.
+1168: If you skip the canary deployment, Hubot is just really passive aggressive.
+1172: So, instead of blocking you, it just says, Hubot says, skipping the canary deployment,
+  eh?
+1179: A bold strategy.
+1180: Unless you do it anyway.
+1182: So, yeah, so then it has deployed.
+1186: It takes like, in this case, like it took 34 seconds to deploy that to the subset
+  of machines.
+1191: And then, it's now on me to make sure that like deployment has not broken stuff.
+1197: So, I mentioned this deployment confidence dashboard at Haystack.
+1201: Haystack is like our internal new reality thing.
+1204: We're not going to show you that because it's boring.
+1207: But I will show you the deployment dashboard because it's exciting.
+1209: Guess which of the two I built.
+1211: So, this is this dashboard here.
+1215: There's a bunch of graphs that unfortunately, if I tried to put them all on
+  the screen, it would be incomprensible.
+1220: So, instead of one graph, it's incomprensible instead.
+1225: Over here, these blue lines correspond to like when people have deployed stuff.
+1229: So, that last one at the end, that's me having deployed something there.
+1233: And then, these different like colors of lines at the bottom refer to like different
+  types of exceptions, basically.
+1240: Get up, we're being constantly attacked.
+1243: We're being constantly like having people like abusing our API and all sorts
+  of things.
+1247: So, we do have like weird exception spikes and things like that.
+1250: But what I'm looking for here when I go to the deployment confidence dashboard
+  is basically the number of exceptions hasn't gone like that when I deploy.
+1259: If it's, as you have here, like we've got slow queries, like if they are kind
+  of a bit spiky and stuff like that before, then that's okay.
+1266: I know that if that happens during my deployment, I'm okay because this isn't
+  something weird that's happened.
+1272: Due to me, this is just kind of background.
+1275: So, I can't quite see you man.
+1278: What's the timing axis like right now?
+1281: So, we have timing here.
+1283: You can actually adjust it at the top of the page.
+1285: We've got that cropped off.
+1286: But this has gone from 1:48 in the morning San Francisco time until 2:16 at
+  the end.
+1293: But we, at the top of the page, as I say that cropped off, you can adjust that
+  to be, time axis to be anywhere from like 15 minutes to 30 days to kind of like
+  look at patterns.
+1302: Obviously, when you're kind of interested in how much is like B and my background
+  noise versus the kind of general noise.
+1308: And obviously, like the way our traffic behaves like varies from day to day
+  during the week and stuff as well.
+1314: So, it's sometimes useful to like look at a seven day axis and whatever.
+1318: And then here on the left hand side, we have like the number of exceptions that
+  are going on per minute.
+1324: So, after my deploy has been in Canary for long enough and I've not been paged
+  and none of my coworkers have been paged by me being bad.
+1335: And then, he goes and says, okay, you've been in production long enough for
+  the Canary at least.
+1341: Probably alright to deploy production problems.
+1344: So, and now then, well this command below and then that's going to go and deploy
+  that to every production machine that we have.
+1351: How is the bot determining an adequate time in production to fuel canary?
+1356: So, it's doing it based on basically just the amount of time.
+1359: Since the deployment finished, it's basically after that about some time in
+  the background.
+1364: We're just going and then booking.
+1365: And if there's not, I think it's also triggered such that if no one has been
+  paged due to like an incident happening,
+1373: then that's like decided that that is an okay metric.
+1377: You've not broken anything badly enough for people to be working with you in
+  one night.
+1381: Therefore, you're probably safe to go through.
+1383: But at this point anyway, you generally will still be like checking stuff and
+  making sure that you definitely haven't broken stuff.
+1390: So, after that, it's going to deploy through.
+1395: Again, it takes 148 seconds to deploy to all our production machines.
+1398: And then I get this again, just a little reminder to go and check that I haven't
+  broken things.
+1402: Because, yeah, we do this sometimes.
+1404: Fun fact, in very early GitHub days, some of you may remember this.
+1409: This stuff used to also include checking Twitter to make sure and see if anyone
+  is currently complaining about GitHub isn't broken.
+1416: So, yeah, so then I'm going to go back to the Deployment Confidence dashboard.
+1423: I now have my little blue line from 2.14 back there and my other little blue
+  line from my new deployment back there.
+1428: It's starting to kind of creak up a little bit.
+1430: So that's a little bit concerning, but I'm not going to be too concerned about
+  that.
+1434: And then in the PR itself, and again, you can all do this through the API.
+1439: This is all like fully supported stuff.
+1441: It nicely tells me, okay, I've done these deployments here.
+1444: Support to Canary and then I deployed to production.
+1446: So now in the pull request itself, it's now showing people where they come along
+  with this pull request.
+1452: Like that I have been a good boy.
+1454: I went to Canary first.
+1456: I've not just merged as the master without testing it.
+1459: That would also be bad.
+1460: So then after this, I'm relatively confident this code is working.
+1464: It's fine.
+1465: I then merged this pull request then.
+1467: So then what that's going to do after that is that it says the next person in
+  deployment queue can then go off and deploy stuff themselves.
+1473: It's worth maybe mentioning a little bit because I've heard a lot of different
+  ways that people do deployment.
+1478: And I've kind of worked at a few companies to do deployment in different ways.
+1482: And I'm with the humble opinion that this is the best and possibly the only
+  decent way of deploying to web app service at scale.
+1491: And the reason why is because the thing that quite a lot of companies do is
+  kind of this idea of maybe deploy whatever,
+1499: four times a day, ten times a day, whatever, or in big organizations, four times
+  a month, four times a decade, whatever.
+1507: The problem with that is if you have a bunch of people working on stuff and
+  one of them breaks something in that time period,
+1514: how do you determine who broke what and when?
+1518: How do you know who broke it?
+1519: How do you know what they were doing and whether that breakage is maybe like
+  whether there's stuff in that production deployed that's more important than the
+  breakage or whatever.
+1533: And I think the nice thing I really like about this model at least, is it's
+  a way of basically, a program of responsibility that has to the developer, is that
+  we have an infrastructure team and they kind of keep an eye on this and make sure
+  our systems are running properly.
+1546: but whether I break something around production is down to the individual developer
+  and all of our engineers and most of our designers and product people as well, if
+  they're making changes to the site, they will be the ones who deploy it to production,
+  they will be the ones who monitor it, they will be the ones who monitor it.
+1564: They will be the ones who choose whether or not to back it out, whether the
+  stuff's broken or whether to merge the request and move things forward if things
+  are working.
+1583: And for me at least, that's a nice way of balancing the responsibility aspect
+  with being able to identify what problems are early on aspect.
+1593: So, after all this has happened, I then sporadically am going to go and check
+  the Columbus Confidence dashboard again, because I still, even though it's merged
+  and stuff like that, someone else's stuff, I still want to make sure that I haven't
+  broken anything because I'm breaking this as well.
+1610: And that's basically it.
+1612: So, you've seen through this flow of like what I did for example today to actually
+  like push a change to production.
+1619: And this is something that probably almost every engineer in GitHub is doing
+  like probably zero to three times a day.
+1629: And so, I can't remember the, I should have got the number off in my head, but
+  the number of deploys we have in a given day is probably like, we're probably deploying
+  every 10, 20 minutes, pretty much 24 hours a day, like all the way through.
+1644: Because we have people in time zones all around the world.
+1647: The cool thing is, is that all this stuff can be done in such a way that we
+  have a smart infrastructure team that means that stuff can be done in such a way
+  that it doesn't disrupt our site.
+1655: And that we can continue to work and iterate in very small chunks, constantly,
+  rather than having like big, big ships where, as I mentioned before, all the kind
+  of risks that come with that approach.
+1666: So, we've run through these things.
+1668: So, first we've reached out to our back.
+1670: That's the default machine you have at GitHub.
+1673: We've reached out to GitHub.
+1674: We've reached out to GitHub.
+1675: We've wrote some code.
+1676: We've committed it.
+1677: We created a pull request.
+1678: We then deployed that to production.
+1680: We then make sure that we didn't break stuff.
+1682: And then we launched it.
+1684: So, there's some of the open source projects I mentioned there.
+1687: And if there's any other questions, please.
+1690: Yeah?
+1691: So, what was the system before this Hubot was used?
+1700: What was the system that Hubot used?
+1702: Hubot is also open source.
+1703: It's a Node.js based, I think.
+1706: It has various like back ends that can plug into like Camper, HipChat, Slat,
+  like IRC, Jabber, all these other ones.
+1716: The way deployments actually happen, that's like an internal app.
+1719: But, like, it's not really that hard that we provide all this stuff through
+  the deployment API.
+1723: Basically, all you would need to implement to do that is, however you currently
+  do your deployment process,
+1729: have Hubot make an HTTP call to whatever your current thing is saying,
+1734: '"Hey, I want you to deploy this branch here."'
+1737: And as long as you can do that, and make an outgoing HTTP call back to GitHub
+  saying,
+1743: '"This is what was deployed here and when," then you can let that''s it.'
+1748: So, the deployment thing itself is not that hard, provided you're not like manually
+  FTPing machines.
+1753: Sorry, manually FTPing files to your machines, which probably still is.
+1758: Yeah.
+1759: So, can you drill down that dashboard like into what the actual exceptions are?
+1763: So, you say you know it's like a...
+1764: So, that's what Haystack is doing and that's why I kind of didn't dig in there,
+1768: because there's a certain amount of background noise and it wouldn't be that
+  interesting,
+1771: and it maybe might not, like, make me or GitHub look as good as we should.
+1776: But, yeah, basically, you can, if there was a big spike like that, yeah, your
+  next step would be to jump into Haystack,
+1782: see what the exceptions are that are spiking.
+1785: Some examples in the last few weeks, like, the two typical things that happen
+  is the good one in some ways is the thing that spikes is, you know,
+1794: something that's bad in your code, and it's a new exception, you haven't seen
+  it before, and it's spiking because, like,
+1799: there's a bunch of people that hit this error.
+1801: That's, that's the better one.
+1803: The bad ones are when the kind of background one looks like you can all increase.
+1807: So, you've, like, destroyed somehow performance very consistently your entire
+  site, which means you're probably doing something hideous to the,
+1814: you know, something hideous to the backend or to a database or whatever, and
+  then those are the ones that are a bit harder to debug,
+1822: and those are the ones where, again, in probably both of those cases, you would
+  then immediately back out your branch,
+1827: and with the speed of unemployment, that means, you know, if you're paying attention,
+1831: it probably shouldn't affect people for more than, you know, 10 or 20 seconds
+  at worst.
+1837: Yep.
+1838: I think I must have missed it in your talk on the slides, but what is the time
+  scale between going to Canary and production and then...
+1844: So, I think it's 15 minutes, or 10 or 15 minutes from Canary to, like, doing
+  a full production deploy,
+1854: and then I think afterwards, we recommend, like, 15 to 30 minutes, you kind
+  of are monitoring a production.
+1861: But again, that varies very much on the change you're doing.
+1864: Like, in this case, like, I was basically 100% certain that this wasn't going
+  to cause any adverse effects.
+1870: I test it locally, and I know that, like, because I've done this on the same
+  thing on another table before,
+1875: I know that, like, the way it's been handling this in Rails, that I'm removing
+  dead code, effectively, at this point.
+1881: If I was pushing something much more dramatic, I would probably spend a lot
+  more time monitoring it,
+1887: and then that's afterwards when you would spend time monitoring either other
+  people's deployers,
+1891: because your code's still in production, just to make sure that, like, you have
+  a few errors or whatever.
+1896: Sorry, you basically block out people's deploying until you merge it, or is
+  that right?
+1903: Yeah, so, yeah, the floor is, I've got a branch, I deployed a branch, the contents
+  of that branch
+1909: is now what is deploying with the production service.
+1911: No one else can do any deployments until I'm then done testing my branch.
+1915: The result of the testing of the branch will be one or two things.
+1918: Either I decide that my branch is not ready for production, in which case I
+  back out,
+1922: I basically say I'm done, and then the next person goes to the front of the
+  queue,
+1925: or I merge my branch, like, merge my pool request even, and then, at that point,
+1931: it then also says the next person goes to the front of the queue.
+1936: Yeah? Sorry, what was your...
+1940: Yeah, so, we've been investigating that. I think the tricky thing with us is
+  doing that with the way everything is set up at the moment,
+1958: and the way stuff like that we handle data-based migrations, the way we handle
+  assets,
+1964: stuff like that makes it kind of tricky for us to do that at the moment.
+1967: I think that's definitely kind of a goal, eventually, that we should be able
+  to just,
+1972: as you say, roll things out a lot more fluidly like that.
+1975: In fact, it looks a small bit longer than that.
+1978: Yeah, yeah. So, I guess that's what the Canary is kind of doing a bit of that,
+1983: like a light version of... effectively, when we do the Canary, we roll out to,
+  like, one of each type of workers,
+1991: so we, like, have, like, a front-end, the back-end, like, a background job processor,
+  whatever.
+1996: So, one of each of them, like, gets this code, and then we, like, see what happens.
+2000: But, yeah, try it. If that was done automatically, it automatically stuck, like,
+  back and start, and that would be cool.
+2007: James?
+2008: So, how, so, you talked about doing small pieces, but how do you handle the
+  bigger pieces where everything changes at once?
+2015: So, like, last year, there was a B2Y change, all the tabs and things, so how
+  has that been changed?
+2019: Very good question. So, those changes are actually often not even a pull request.
+2024: So, what we do is we have, this would be, could be a tool by itself, we do things
+  called, like, staff shipping and dock shipping.
+2034: So, GitHub staff will have, like, a special, like, flag on their profile, and
+  part of that means that we get, like, opted in or out of certain features.
+2042: So, I had to remember my screenshot today to go and, like, turn off the staff
+  mode, because everything looks, like, different,
+2048: because we're trying and experimenting with all these new features.
+2051: Cool thing about that is that means that that code is all in production right
+  now.
+2055: Like, it's sitting there, it's live, it's just more or less, it's not an if
+  statement we have of, like, a nicer way of doing things than that.
+2063: But, you know, it's effectively an if statement of are you staff or are you
+  in this team?
+2067: If not, give you the old code, if so, give you the new code.
+2070: It's nice because it encourages you to write code and work with both parts at
+  once.
+2074: But it also means when you come to ship stock production, it's been tested for
+  quite a while,
+2078: and the actual flipping the switch is just moving that feature from, you know,
+  from just start to everyone.
+2086: But also with those things as well, what we tend to do is you can, that's one
+  way you can do the gradual rollout.
+2091: You can say, give this to 1% of users, 10%, 25%, 50%, 100%.
+2096: People doing JavaScript and stuff, which I don't do, also do clever things where
+  we, like, dock ship it.
+2101: So sometimes what we'll do is we'll actually, like, render the entire feature
+  in the background of the page
+2106: and just not display it to make sure that we're not introducing, like, JavaScript
+  errors and stuff like that.
+2111: So we can dock ship it such that that new feature is there hiding on the page.
+2116: You never see it, but that's our way of verifying that, like, you know, it may
+  have rendering issues,
+2120: but it's not going to, like, bring down the site, for example.
+2122: And again, we can, like, roll out those dock ships up gradually.
+2125: So by the time it actually comes to, like, roll out a big massive UI refresh,
+  yeah,
+2129: it's just a matter of, like, clicking the button instead of having to merge
+  port across the image.
+2134: Yeah.
+2136: What are the, sort of, typical bones of contention between developers and the
+  infrastructure teams?
+2142: I guess the usual ones.
+2144: So it was bad to, like, about two years ago, there was a banish situation and
+  a bunch of people myself
+2152: who had got, kind of, drafted into the infrastructure team.
+2154: And there was a, the usual, kind of, contention you tend to have with ops people
+  and application people
+2160: where, yeah, the ops people felt that because they were the ones on page rotations
+2165: and the application people weren't, the application people would just throw
+  stuff over the wall
+2169: and if everything blew up, that's fine, I don't need to worry about that, I'm
+  not getting paged.
+2174: And obviously responsible application people would be, like, being responsible.
+2178: And irresponsible application people would be waking people up at three in the
+  morning.
+2181: Because this is the, I guess, the blessing and curse of a geographically distributed
+  workforce
+2186: and one where we don't mandate people working offices and stuff like that is
+  that, you know,
+2190: I'm working away quite happily, you know, nine to five, and then that's, you
+  know, three in the morning
+2195: because someone's office is good.
+2196: So those kind of balances and then when people are getting woken up again and
+  again and again and again
+2202: and again by people being irresponsible, then, like, there's tension.
+2206: But I think that's something that we definitely resolved and a big part of resolving
+  that has been
+2212: part of the infrastructure too, like, making some of our systems more kind of
+  self-healing.
+2216: And part of that has also been, like, the application engineers, a lot of them
+  are now taking pagers.
+2221: And when I say pagers, it's not literal pagers anymore.
+2225: We use, like, the pager duty and it's, like, integrated with the keyboard and
+  stuff like that.
+2229: Such that if you bring stuff, you will get paged sometimes as well.
+2233: And generally having, like, some kind of microservices now have their own little
+  pager retitions.
+2237: I'm on call for this little microservices that manage, like, 50% a day.
+2240: But, again, this is the classic thing that gets sold with phones like this.
+2244: But, surprise, surprise, that microservice never ever goes down.
+2247: Because the first time they woke me up at 3:00 in the morning, I'm like,
+2249: this is never going to go down and wake me up at 3:00 in the morning ever again.
+2253: So that's the kind of typical tensions.
+2256: I would imagine people in here in ops or engineering would kind of relate to
+  that general relationship.
+2262: And I think, to be honest, I think that is a relatively healthy tension in that,
+  you know,
+2266: most companies, if, you know, the ops people might want to make sure that no
+  one ships code ever again
+2272: because everything's nice and stable and working out and everyone's getting
+  paged and it's fine and nothing's on fire.
+2276: And the application engineers want to ship things a million times a day because,
+  you know,
+2280: if I break it, I can just push that fix. It's fine. Don't worry about it.
+2283: And that tension, I think, is healthy and it results in better software.
+2288: And at the same time, software that's kind of iterated on costs or so.
+2295: I think we're all good. Thank you very much for the questions.

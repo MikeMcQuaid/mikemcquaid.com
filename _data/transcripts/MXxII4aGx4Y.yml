@@ -1,0 +1,595 @@
+---
+0: Thanks, everyone.
+7: Just to start with, I'm coming at this talk with two
+10: different hats on.
+11: So I am the lead maintainer of Homebrew, a Mac package
+14: manager.
+15: Anyone who used Homebrew ever?
+16: Cool, thank you very much.
+19: So has anyone submitted a PR to Homebrew ever, by any chance?
+23: Woo, well done, you.
+24: Thank you very much.
+25: And I can confirm at least several of those people were
+27: not lying.
+28: I recognize their faces.
+30: How many people have opened an issue on Homebrew only to
+33: have me immediately close it and probably be rude at you by
+36: mistake, because I'm busy?
+37: Yeah, sorry.
+39: I'm sorry.
+40: So if you want help submitting a PR to Homebrew ever, then get
+43: in touch with me, and I will try and help you as best I can.
+46: My other hat that I wear is GitHub.
+48: Who has heard of GitHub?
+50: Cool.
+52: So I don't think everyone who works at GitHub in this room
+55: put their hand up, which is a little bit worrying.
+57: I've been at GitHub for about four and a bit years, and I'm
+60: trying to make it better for open source software and better
+62: in general.
+63: So if you would like to talk to me about making GitHub better,
+66: then get in touch as long as you are going to be nice about it.
+69: Anyway, so the title here, why people don't contribute to your
+74: open source project.
+75: I'm going to come at this from perhaps a funny angle.
+79: What I'm talking to mainly is open source projects that have
+83: these things met already.
+84: So your open source project is already open sourced.
+88: Please, if you're one of those companies who's like, why is my
+90: open source project successful?
+91: I'm planning on open sourcing in three months.
+93: Then don't come to speak to me.
+95: I hope that you already have some users of your project, i.e.
+98: you're building something useful, which is useful to more
+102: than just you and more than just your organization.
+105: But you maybe don't have as many people contributing or as many
+109: people maintaining your project as you would like.
+112: So you may ask yourself, why is no one contributing to my project?
+118: But I would like to pivot this and think about a slightly
+120: different question.
+122: So if you're a company and you're making stuff for money, then if
+126: you're not making as much money as you would like, then you might
+128: ask yourself, why is no one buying my project?
+132: What product, even?
+133: Well, so we're going to ignore the fact, we're going to pretend
+135: that your product is not terrible.
+138: And instead, let's go and think about your product in the same
+142: way as we might think about the open source project before.
+144: So I would argue that it's open source that has users but not
+149: contributors and maintainers is not terribly dissimilar to the
+153: idea that your project is created.
+156: You have a decent product already.
+159: You have a bunch of people using it already, but you've
+162: not actually tried to sell it to anyone.
+164: And as a result, not enough people are buying it.
+167: So let's think about this through the rest of this talk,
+170: through four different ways of thinking about this.
+173: So we're going to talk about grouping the people who are using
+176: your project already into different categories.
+179: We're going to talk about a funnel with a terrible metaphor,
+181: which I like.
+182: We're going to talk about upselling people through the funnel,
+185: which is actually going down through the funnel, because I
+187: haven't really thought this through.
+189: And how to retain the people who you have put either up or
+193: down through the funnel, depending on which bit of the
+195: talk you remember.
+196: Right.
+197: So grouping your users.
+199: So firstly, why are people interacting with your project
+202: at all?
+203: So I'm going to say there's three different reasons, basically,
+206: or three different groups that people interact with any
+209: open source project.
+210: We're assuming when I say interaction here that this is
+213: interacting primarily online, primarily with, say, a GitHub
+217: repo, if that's the primary face of your open source project.
+222: So you've got the users.
+223: These are the people who are using the software.
+225: They may be file issues.
+226: They maybe don't.
+227: We're assuming for this case they don't write the code.
+230: They don't write docs.
+232: They're not triaging issues for your particular project.
+234: They may do it for other projects.
+236: But your project is going to have, hopefully, at least one
+239: of these, which is the person who wrote the software, i.e.
+243: you.
+244: If you don't use the software you wrote, then you perhaps
+247: have some bigger problems.
+249: So the next group is your contributors.
+251: So these, I'm going to say, again, my definition may vary
+254: from other people's.
+255: But my definition is these are people who have written code,
+258: or docs, or triage on your project.
+261: And they need some sort of help from other people with getting
+265: their work included.
+266: So if we're talking about a GitHub repository here,
+269: these are people who maybe are helpful in your community.
+271: They maybe submit PRs.
+273: But they don't have direct commit access
+275: to make the changes they want to the project directly.
+279: And then finally, you have maintainers.
+281: These are the people who review the incoming changes
+284: that are coming in.
+285: They review issues that are coming in.
+287: And they merge the work of contributors.
+289: And if they're feeling kind, they maybe
+291: help users once in a while with the issues
+293: that they're having.
+294: So again, you're going to have at least one of these.
+297: If you start a project by yourself on GitHub or any other similar
+300: platform, then the first person who started the project, the first user
+304: perhaps as well, is going to be the first maintainer.
+307: So let's have a think about how you might put these three groups through a funnel.
+313: So firstly, I'm going to make a couple of perhaps bold statements.
+318: So I would say no one became a contributor without being a user first.
+322: So this is something that maybe isn't always the case in open source.
+325: But I would argue for healthy projects, the best way of attracting and retaining
+  contributors
+331: is getting the people who are already using your software to get involved.
+335: I realize there's perhaps a growing movement of people who think it's a good
+  thing to just
+339: get up here on an open source project for the sake of it, who might go along
+  and try and contribute
+343: to a project because they think it will look good on their resume or whatever.
+346: I would argue that that person is, although they are a good intention, they are
+  probably not
+351: really helping either the project or themselves as much as they could be.
+355: The best way I think you can get involved is getting involved with a project
+  where you are
+359: helping both the project and yourself through your contribution.
+363: Secondly, no one ever became a maintainer without being a user.
+366: Even more so, how can you merge PRs from other people?
+370: How can you support a project if you have at no time used that project?
+376: But really, what this ends up being often is no one excels as a maintainer without
+  remaining
+380: a user.
+381: And I think this is an important part to think about when you're thinking about
+  why you need
+385: new contributors on a project at all.
+388: Because maintainers in a project are generally temporary.
+391: If you wrote some piece of software, chances are you're not going to be using
+  that on a day
+395: to day basis in five or ten years.
+398: Other people may be, but you're not likely to be doing so anymore.
+401: So as a result, at some point, there's going to be a time where it probably makes
+405: sense for you to hand off that project to other people.
+408: But you need to make sure that when that time comes, you actually have other
+  people you
+413: can hand off to.
+414: Because otherwise, you're going to have a project which just dies when you stop
+  being involved.
+420: So let's go back to this really awkward metaphor I was talking about before about
+  thinking about
+424: a product instead of an open source project.
+426: So in a sales funnel, I believe, I haven't really done anything in sales ever
+  other than
+433: this one time.
+435: So this may be completely wrong, but please don't correct me because that would
+  just be mean.
+439: So this is my understanding of a sales funnel.
+442: So you have leads, who are the people who may be interested in buying your product.
+448: You have prospects, who are people who are interested in buying your product,
+  but have not yet bought
+453: it.
+454: And then you have sales, who are people who have actually handed you over some
+  money,
+458: and in exchange, you have provided your product to them.
+462: So I would argue is a sort of similar tenuous similarity with those three groups
+  I was talking
+467: about before.
+468: You have your users, you have your contributors, and your maintainers.
+472: So we have similar levels of involvement here.
+475: You have people who are perhaps potentially interested in getting involved.
+479: You have people who have expressed interest in getting involved, but haven't
+  fully committed
+484: to maybe being a maintainer yet.
+486: And then you have the people who are really, really helping you run things.
+490: So people wonder often in open source projects, they say, well, I've got a bunch
+  of users, but
+496: no one's really contributing.
+498: Or I've got a bunch of contributors, but no one wants to become a maintainer.
+501: So I thought the numbers for homebrew may be kind of helpful.
+504: So homebrew has, according to Google Analytics, about 4 million users.
+509: I reckon it's more like about a million monthly kind of users based on our analytics.
+515: We have 6,000, maybe 7,000-ish homebrew contributors.
+521: That's 0.05% of our user base.
+524: And then of them, we have-- I don't know what the current number is today, but
+  sort of 12,
+529: 14,000 homebrew maintainers, which is 0.0015% of our user base.
+535: And that's-- we have probably about 25 people who have ever been a maintainer
+  on homebrew
+539: in the nine-year life of the project.
+542: So that's a pretty dramatic funnel.
+544: And hopefully, again, if you work in an open source project, hopefully you will
+  have better
+547: numbers than we do, but still, that shows the levels you can perhaps expect.
+553: You can expect every user is going to be a contributor to your project.
+556: And you can't expect that every contributor is going to want to be a maintainer.
+559: But what you can do is do your best to upsell, to make sure that as many people
+  as possible
+565: people will pass through those groups.
+569: So something that I've experienced in open source is that most maintainers are
+  not going,
+575: '"Me, me, please, please, please, I want to be the maintainer."'
+577: Most maintainers are the people involved in a project who are being really, really
+  helpful.
+581: And then when you ask them to consider being a maintainer, they-- most of the
+  talented maintainers
+586: I know say no at least once when they're first asked because they think, "No,
+  no, no, I'm
+591: not qualified to do this.
+592: I've just submitted a few good PRs, and that doesn't make me qualified to do
+  this.
+598: And I can't help you because I don't know everything that there is to know about
+  this
+602: stuff."
+603: Whereas the people who really, really, really want to be a maintainer, it's normally
+  some
+606: sort of powery thing or other potential psychology that I'm not going to do today.
+612: So most of these folks need to be encouraged and they need to be invited to get
+  involved
+617: with the project.
+618: And that applies with contributors and that applies with users who you want to
+  start getting towards
+623: this as well.
+624: So let's look at some, like, upsell through screenshots here.
+627: Right, so this is an example of us trying to upsell someone on Twitter.
+631: So they submitted-- and I don't-- I probably should have blanked out their name.
+634: So to be clear, this is not someone who I think is doing anything wrong.
+637: But this is, for example, the type of issue that you might get where if you're
+  not a very
+643: active software developer or if you're not familiar with the project you're submitting
+645: the issue to, it's not clear why it's not terribly helpful.
+649: So what we've tried to say to them is, "Okay, here is somewhere you can go."
+654: And we linked them to the issue template there so they can go and see, "Okay,
+  here's the type
+659: of things that we want when you're submitting a new issue."
+662: So we're trying to upsell that person from basically just a tweet saying, help
+  me, to an issue that
+669: will give us the information that we need for them to help us.
+673: And hopefully that means, again, the next time, they will jump straight to the
+  next step because
+677: they say, "Okay, I know what is required in order for me to be helped.
+680: So I'm going to follow these steps in advance."
+682: And actually, fun fact on our issue tracker, if you follow the steps required
+  to fix an issue,
+687: sorry, to report an issue well, often for us, you will figure out what the problem
+  is through
+691: doing so and then be able to help yourself, which is tremendously empowering.
+695: So the next step is similarly on someone's issue tracker.
+700: We might get an issue formed, filed, and it's not maybe as helpful as it could
+  be.
+705: So I have a little TextExpander shortcut that expands into this, which asks people
+  step by
+711: step, "Okay, here's basically the information I need to reproduce this issue."
+716: I may or may not have used this TextExpander shortcut on my peers or co-workers
+  in the past, and if
+722: you saw that and you're my co-worker, I definitely typed that out by hand.
+724: I definitely didn't just fob you off with a shortcut.
+729: So the next level we try and go to is trying to encourage people who show that
+  they have
+735: some level of understanding, they maybe submitted a decent issue already, and
+  try and upsell them
+740: into creating a pull request for us.
+742: So again, similarly, another little TextExpander shortcut that expands into something
+  where I
+747: can say, "Okay, it'd be nice if you could submit a PR."
+750: Now I think there's a common thing in open source that people can kind of say,
+  "Well,
+754: you know, fobbing people off asking them to submit a PR is not a very nice thing
+  to do."
+759: But I think it depends on the way you ask, because I think if you just say to
+  someone
+763: who submits an issue that's very well written now and you just say "Patch is
+  welcome,"
+768: that's kind of rude.
+769: Whereas if you say to someone, "Okay, here's the docs on how to submit a PR,
+  and if you
+773: get stuck, we'll try and help you as best we can," then that's actually helpful,
+  like
+778: that's good.
+779: And that shouldn't be seen as being aggressive or rude or anything like that,
+  it's sometimes taken
+784: that way.
+785: But I think in open source, again, we're all trying to help each other through
+  some form
+790: or another, and we don't all have infinite time.
+793: So if you can help someone help themselves, I actually think that's a tremendously
+  valuable
+797: thing to do.
+802: So if you click through to this, we have a doc that looks something like this.
+806: So we basically walk people through, more or less step by step, what's required
+  to make
+811: a contribution to homebrew, the type of things we expect.
+814: We don't want to tell people exactly every single command to run, or the text
+  to edit, or the
+819: files to change, or whatever.
+820: Because A, you can't write generic instructions that do that, and B, people need
+  to learn a
+824: certain amount through going through this process.
+827: And if they're not able to kind of figure out a certain amount of themselves,
+  then they're
+831: probably going to struggle with the rest of what's required to make a decent
+  contribution.
+834: But then this can go further as well.
+837: So if someone wants to be a maintainer, then we have documented pretty publicly
+  the expectations
+842: of what we expect from a maintainer.
+845: How people become maintainers, how people are invited to be maintainers, and
+  this step-by-step
+849: guide we follow ourselves as other maintainers when we are adding new people
+  to join the project.
+854: So this means that people can see, OK, well, if you're asking me to be a maintainer,
+  it's
+859: not this magical, quiet little cabal of people where I don't know what the expectations
+  are.
+863: The expectations are clearly documented, and anyone who is being a maintainer
+  can be pointed
+868: out, OK, well, these are the public expectations that are written down for how
+  you should be behaving.
+874: So people can, and people have in the past, called me out and said, well, on
+  the maintainer
+879: document it says this, but you're not doing that.
+881: And that means either I need to change my behavior or, probably more accurately,
+  the document needs
+886: Because, of course, I'm not doing anything wrong.
+892: So the next thing that's really important to do is thinking about retaining these
+  folks
+896: Like, be they users, be they maintainers, be they contributors.
+900: You need to ask yourself, do you have a leaky funnel?
+903: I.e., are the people who are traveling down, are they actually making it down
+  the funnel?
+908: Or are they popping out the sides because you've got big holes there?
+912: And they are people who want to contribute but can't, or people who want to maintain
+  the project,
+917: but you're making it too difficult for them to do so.
+919: So I'd like to think about a few little things that can kind of cause issues
+  for each of these groups.
+925: So users, firstly.
+928: So users want your project to be high quality.
+932: I mean, ultimately, most of us controversially, despite all evidence, want software
+  that actually works.
+939: And it's important to try and focus on that in your project.
+942: This is why, for example, people may disagree, but I don't agree with leaving
+  bugs intentionally unfixed in open source projects
+949: to try and attract more contributors.
+951: I don't think that helps make the project better for users.
+955: I know people may laugh about that, but this is a thing that is being done more
+  and more now.
+961: And I think the intent behind it is great.
+963: And that's why I won't ever name drop projects who are doing that, because I
+  think they want to have more contributors
+969: they want to bring more people into open source.
+971: And that's really great.
+972: But you need to think, are you doing that at the detriment of the people who
+  use your software?
+976: And I think there's ways of doing this that I have pointed out and will try and
+  continue to point out
+981: that do not involve making your software intentionally worse by not fixing things.
+985: The next thing is, relates to the first one, that users don't want to hear that
+  you merged something
+991: which broke their workflow because you felt guilty.
+995: Because someone went and spent a bunch of time making a PR,
+998: and you really felt bad because they're trying their absolute hardest
+1002: and you merged the PR and then it breaks over 10,000 people.
+1005: That's not helpful to the project either.
+1007: I understand, again, why people do that.
+1010: And it's a very valid, empathetic concern that people have that leads you to
+  that.
+1015: And I've done that a bunch of times myself, to be clear.
+1017: But it's something you need to try and resist to make sure that your users don't
+  leave your project.
+1022: And the final thing I'd say, perhaps fairly controversially, is no V2.0.
+1029: And what I mean by that, it's obviously not actually no V2.0.
+1033: But I mean, you see a bunch of open source projects that have decided that there's
+  too much stuff broken.
+1040: Everything needs to be rewritten from the ground up.
+1042: We need to break compatibility.
+1044: And then we're going to have this beautiful new future where everything can
+  be clean and nice and bug-free and with less code and 100% test coverage.
+1052: And it will be lovely and bunnies and flowers and et cetera.
+1055: And this stuff often, again, it comes from a really well-intentioned place.
+1060: But what ends up happening in these cases is you say to your users, oh, I'm
+  sorry that we broke all of your workflows and you need to rewrite every single use
+  of our application now.
+1069: But if you do so, it's going to be way better now.
+1073: And what ends up happening then in those cases is that your users end up either
+  sticking on your old version forever, which isn't great, because then the incentive
+  to get involved with your project diminishes.
+1084: Or they go off to one of your competitor projects who actually has an easier
+  migration path from your V1.0 than your V2.0 does.
+1093: So thinking along the same lines.
+1097: So what do contributors want and what do contributors need?
+1099: So the first thing is, who's familiar with the phrase byte shedding?
+1104: Okay, some people, not everyone.
+1105: So byte shedding is the idea that if you ask people to debate some complex technical
+  implementation detail, then you may not get many people joining that conversation,
+  be it in open source or in your workplace.
+1117: Whereas if you ask people what color the byte shed should be, everyone wants
+  to get involved and everyone has very strong opinions.
+1123: Because it's very easy to hold very strong opinions about things that are ultimately
+  maybe a bit banal or things that are ultimately, I don't know, just down to individual
+  preference.
+1133: So I think it's important when you're maintaining an open source community to
+  try as much as you can.
+1139: These things can't always be avoided.
+1141: But try to steer the community away from these type of discussions or at least
+  direct them outside of, for example, your issue tracker.
+1149: Because these end up sapping the time of contributors.
+1151: They end up sapping the time of maintainers.
+1153: And then there's just time that people are not spending working on the project,
+  but are instead debating something which often either doesn't really matter that
+  much or is not going to be decided by the people who are getting really involved
+  in that discussion.
+1168: Perhaps the opposite of that, it might seem, but it is important still to have
+  open discussions.
+1173: Like contributors, particularly people who are maybe more power users and are
+  getting involved with contributing to your project, they do want to get involved
+  with discussions around your project.
+1182: They do want to get involved with the development process.
+1184: And they may want to do that in a place that is open to them to do so, which
+  isn't your issue tracker.
+1189: So having a chat room, an IRC channel, a Slack channel, a discourse forum, whatever
+  it may be, having an open space for those folks is really great to help them with,
+  you know, their ability to get more involved with the community without needing
+  to just stick on the topic all the time.
+1206: And the last thing I think is that it's important to try and, and again, this
+  is a homebrew thing that I would like to see wider adopted, but maybe controversial,
+  is don't create hundreds and hundreds of issues and don't allow your users to create
+  hundreds and hundreds of issues just asking for feature A and feature B and feature
+  C.
+1224: If these are not features that you're planning on working on, if these are not
+  features that you're actively planning on collaborating with your community on and
+  helping people make a pull request so that feature is great, that feature request
+  should be closed.
+1237: It doesn't make sense to leave this stuff open for contributors to go and submit
+  a PR only to realize later on, well, I actually felt too bad about closing the original
+  issue, but I don't really want to accept your PR.
+1249: That's not helpful.
+1250: Have your issues that are open such that if anyone turned up tomorrow with a
+  perfect solution to that issue, you would be able to merge it.
+1256: And finally, onto your maintainers.
+1259: I think the first thing that I think is really important in any project is a
+  code of conduct, an expectation of what is the acceptable behavior on that project.
+1270: I think that helps serve maintainers in two ways.
+1273: One way is it helps give them a framework for how they can moderate community
+  discussions.
+1279: I think often in open source, you can get some very, very entitled users who
+  do not pay you any money, but they expect you to answer their beck and call whenever
+  they would like.
+1289: And I think it's reasonable for maintainers to have a document that says if
+  those people step over the bounds and if they're starting to be rude, that says,
+  no, actually, you can't be rude.
+1298: Here's the document you agree to when you agree to participate in our community,
+  please do not be rude or you're not welcome here.
+1303: And similarly, I think it's on the other way around.
+1306: I think it helps the community keep the maintainers accountable because also
+  maintainers should also seek to be helpful and polite and not rude whenever at all
+  possible.
+1317: Secondly, something I think is valuable in open source projects is having a
+  private place for maintainers to have discussions.
+1322: I think it's good that a lot of things happen in the open and open source, but
+  I think it's helpful when disagreements could sometimes be resolved privately between
+  maintainers so that they don't have a peanut gallery necessarily watching them be
+  rude to each other or with heated emotion or having a technical dispute in what
+  one person ends up looking foolish.
+1343: Like, that's not helpful for anyone, I think, to happen in the open, and I think
+  having it in the open could sometimes over-inflate emotions on everyone, and it's
+  helpful to have a private place, not always, and as little as possible, where disputes
+  can be resolved without having to have people watching.
+1360: And finally, as I've alluded to, we want to make sure that maintainers are always
+  growing, both as individuals.
+1367: People should feel that when they join the project, that in a year or two years'
+  time, they've learned more stuff about the project.
+1373: Hopefully, they learn more stuff about software development, and that they are
+  getting better and better at doing their job, but then also that the number of maintainers
+  are growing as well, that you are bringing new people into the project, so when
+  other people want to leave, that you have more people who can come in and replace
+  them, and continue to keep the project alive, hopefully indefinitely.
+1391: So, thinking about those four things I was saying, so think about grouping your
+  users into categories, think about when you're interacting with anyone in your project,
+  are they someone using the project, are they someone who's contributed in some way,
+  or are they a maintainer?
+1403: Think about how to get them through the open source funnel. Think about how
+  you can motivate people who are interacting with your project, maybe in a casual
+  way, to maybe get a little bit more involved, and then when they're already getting
+  involved, to level up, and then become a maintainer, hopefully one day.
+1418: Think about upselling them through that, with those little nudges that you can
+  do at each of those stages, and how to retain them as well, so that they want to
+  stay being involved with your project and your community, so that you can continue
+  to grow, without losing more people than you have attracted.
+1432: So, hopefully, this time next year, you will all come and want to know this
+  answer to your project, because we will solve all your problems. So, thank you so
+  much, and if anyone has any questions, I'll be happy to answer.
+1461: Yeah, so the question was, I don't have to decide, because sometimes, maybe
+  you don't plan to work on it during the next year, but maybe in three years, this
+  issue will become relevant, and it's good to have a discussion, because at some
+  point, the discussion will unfold, and maybe some ideas will become, and maybe some
+  people will be contributing, or maybe the project itself will be reached that point
+  where we want to implement this. So, I don't know, it's difficult to find this.
+1489: Yeah. So the question was, is it not useful sometimes to keep issues around
+  in case you need them in a few years?
+1495: And for me, the beauty of that is you can always reopen a closed issue.
+1500: So I generally, I don't know how many people work as commercial software developers,
+1505: but in my experience, often with commercial software development,
+1508: if something's not planned in the next six to eight weeks, it literally will
+  never happen.
+1513: So I would err on the side of saying, OK, it's fine to reopen things later on,
+1519: but try and err on the side of assuming you're not going to do stuff rather
+  than assuming you're going to do stuff.
+1524: And then it makes it easier for your community to know what's important right
+  now.
+1527: Sorry.
+1530: Why is, like, I've been at the receiving end of your amazing kind of messages,
+1538: and I actually really enjoy getting, like, an actual, like, something I can
+  read
+1545: and something which has some body to it and maybe a link to the relevant documentation
+1549: over, like, a quick job any day.
+1552: So what do you think it is that makes you so anxious about the candid responses?
+1559: And is that actually something that you feel from people that they get angry
+  about?
+1564: I don't actually know if people actually mind candid responses.
+1569: I think my concern is that people may feel that I haven't given them enough
+  time back.
+1575: But, yeah, that's maybe an illegitimate concern, really.
+1579: But, yeah, and I would advise people to use candid replies in general
+1584: because I think it makes community management a lot easier.
+1586: And I found, personally, the more canned responses I use,
+1590: the more very positive, like, crazy messages I can give to,
+1595: if I'm merging 30 PRs in a day, there's a limit to how much I can come up with
+  creatively
+1601: to be nice to every individual person.
+1602: Whereas if I have a canned response to everyone, yeah, okay, it's somewhat automated,
+1607: but it's genuine.
+1608: Like, I do genuinely think those people rock or whatever.
+1613: Yes, the question was,
+1627: is our project text free to copy?
+1630: And, yes, it's all under an open source license.
+1631: Okay.
+1632: It's time for two more questions.
+1633: Two more questions.
+1634: Anyone?
+1635: I have a couple of small, very small software projects.
+1642: And, for example, for one that I don't really care about,
+1645: I've received the PRs and I've merged them.
+1648: And the one that I actually care about,
+1651: and I can see it's used because I see traffic to it,
+1654: I get, like, an email every, like, two years.
+1658: So what do you do when that happens?
+1660: I mean, there's nothing to interact with that you can try to,
+1663: you know, make people more interested.
+1665: Like, I don't know.
+1666: Yeah, I mean, the question was,
+1668: what do you do if your project has a bunch of users
+1670: but isn't necessarily getting a lot of community action?
+1673: I think in some ways, yeah, I would agree with,
+1676: I don't know if it was a joke or not,
+1677: the person said it's perfect.
+1679: But, I mean, in general, if you have a lot of users
+1681: and you're not getting a lot of bug reports,
+1682: then well done.
+1683: You're better at writing software than me.
+1687: Any last question?
+1688: I heard about a strategy that someone was giving everyone
+1695: retainer access or write access to the repo
+1698: when they opened up a request.
+1700: I think it depends on what, sorry,
+1702: the question was, they heard about someone
+1705: who has given write access to the repo
+1707: for everyone who opens a PR.
+1708: And what do I think about that?
+1709: I think that depends on your project.
+1711: I think if your project is something that requires,
+1714: something that makes releases,
+1716: where you're still going to have a maintainer
+1718: who actually publishes that release
+1720: and makes sure it's not completely broken,
+1722: I think in Homebrew's case,
+1724: it would be possibly the worst thing
+1726: for security in the entire world.
+1727: So, I wouldn't do that.
+1730: But, yeah, I don't think it's always a terrible idea.
+1733: Thank you for coming up.
+1746: Thank you.

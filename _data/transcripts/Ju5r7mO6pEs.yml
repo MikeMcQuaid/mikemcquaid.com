@@ -1,0 +1,499 @@
+---
+0: Hi everyone, I'm Mike McQuaid. Thanks for joining me today at GitHub Universe.
+  Today I'm going to
+10: talk about why open source economics as an expression and sometimes open source
+  economy
+15: instead can bring some incorrect assumptions about what problems need to be solved
+  in open
+19: source projects and how we should go about solving them. So I come at this problem
+  from
+25: two different angles. So firstly I'm an employee at GitHub. I'm a staff engineer
+  in our communities
+31: team and since I've joined GitHub I've always been pretty passionate about making
+  GitHub a better
+36: place for our open source projects that reside on it. But my other angle for this
+  stuff which
+42: predates my involvement at GitHub is I'm also the project leader of the Homebrew
+  Mac and Linux Package
+48: Manager. I've been working on this for a few years before I joined GitHub and
+  it's my main kind of
+54: experience of GitHub and open source over the years. Also I've been pretty involved
+  with
+60: thinking about money and how that relates to Homebrew. So Homebrew ran a Kickstarter
+  whatever
+66: it was 12 10 years ago or something like that in order to kind of get some hardware
+  for us because
+70: that was what you did back then if you wanted to raise money on the internet.
+  To get that money
+76: distributed and used by the project I set up a bank account for us and eventually
+  helped find us a fiscal
+82: sponsor at the Software Freedom Conservancy who remains our fiscal sponsor to
+  this day and
+88: who receives the money that we receive through GitHub sponsors. So let's talk
+  a little bit about what
+95: open source economics aren't, what open source economics are and then now that
+  we've reframed
+101: the problem properly what are the solutions that arise from that. First let's
+  talk about what open source
+109: economics aren't. When most people hear the phrase or term economics they tend
+  to think about how money flows
+116: around an economy. So if you live in say some sort of first world capitalist
+  economy then that's going to be
+124: how money or capital flows around the system and between markets and the companies
+  that exist within it.
+132: So does this relate to open source? Well maybe but not quite so much. Is it open
+  source economics just
+143: about how money is going between projects? Well we at GitHub have a solution
+  to solve some of these problems
+150: we've got GitHub sponsors which allows you to sponsor open source projects and
+  allocate funding to those
+157: projects and allow those projects to put money through a fiscal sponsor or pay
+  out to them directly.
+162: And I was lucky enough to be one of the engineers that worked on this and I think
+  it's been an incredibly
+167: valuable addition to the open source ecosystem. But this doesn't quite fix all
+  of the problems a project may have.
+174: If a project struggles to make releases, struggles to review and merge pull requests,
+  close issues or answer discussions,
+182: then more money doesn't automatically make this project somehow do this better
+  or quicker.
+188: Some people might think or say that while they've got more money they can just
+  pay people to do this.
+195: But that's not always feasible to do so. Money can help but we need to understand
+  how it can be correctly
+201: invested and what the real problems underneath are that money can be a partial
+  solution to.
+208: So what are open source economics? Talked about what they aren't. Let's have
+  a look at what at least in my
+215: opinion they actually are. So economics is concerned with dealing with economic
+  problems. So the definition
+223: I found of an economic problem is allocation of limited resources. So based on
+  what we were talking
+229: about before people tend to think the allocation of these limited resources is
+  figuring out how open source
+234: projects can get money and how that projects money can be allocated efficiently
+  such that the project
+240: can be more effective. That can be true for certain projects in certain cases.
+  But the thing with economic
+248: problems is it's not just about the allocation of limited money. It can be also
+  about the allocation of
+254: limited labor, i.e. people and their time. So I think this is maybe where we
+  start to zoom in a little bit more
+263: on what the problem could be that needs to be solved with open source projects.
+  Is it just about money
+268: or is it about labor? So I think an open source economic problem is about the
+  allocation of limited
+277: maintainers. The people who actually run open source projects about how their
+  time gets allocated, how their
+283: time gets improved and how they as a really valuable resource for the community
+  get used more effectively.
+291: So open source software is a little bit different to other forces of labor. So
+  in some businesses
+300: and some markets at least, it's relatively easy to substitute people. But this
+  isn't always the case.
+305: Think of something like a brain surgeon. While there are more than one brain
+  surgeons obviously around the
+312: world, you can't simply substitute one for another. But I would argue in open
+  source it's an even more extreme case
+320: where many open source projects that can be valued and used by many, many people
+  may have a single
+326: person who fully understands that project, a single person who can confidently
+  review pull requests, and
+331: a single person who can merge and do releases. Also, it's not necessarily a problem
+  in itself that this is
+337: only one person that person may be very happy with the setup of how it is. But
+  that does mean that if you
+343: simply provide more money into the system, then you don't magically increase
+  the amount of time that that
+349: person has. So this brings us to a concept I've touched on before, which some
+  are if you may or may not be
+359: familiar with, I like to call the open source contributor funnel. So basically
+  what that relates to is in open source,
+365: you have many, many users of an open source project, at least one that is widely
+  used,
+370: a limited number of contributors, generally smaller than the number of main of
+  users,
+376: and then a smaller still number of maintainers.
+378: In Homebrew's case, this looks like us having millions, according to our analytics,
+385: of users, thousands of contributors, and tens of maintainers. So when we think
+  about this,
+393: we need to think about how maintainers time gets allocated. If you have, in our
+  case, 30 something
+398: maintainers who are helping to solve the problems for millions of users, how
+  do I go about helping
+404: people? Well, I need to be careful about how the time that I spend on the project
+  and the other
+411: maintainers spend on the project is allocated efficiently. If I were to go and
+  help every
+417: individual user with every individual problem that they have to their satisfaction,
+  then that could be
+423: actually a detriment to the project of a whole. Say if I'm deciding I need to
+  work on a new feature to make
+427: the project better for everyone, but instead I spend all that time helping a
+  specific user with a specific
+433: problem that relates only to a specific machine they have, that may well not
+  be the best use of my time
+438: on this project. And it's relatively easy for empathetic people who work on open
+  source projects
+445: to find their time monopolized by people who are also acting very reasonably
+  in their own self-interest
+452: to try and get their problems solved, but they can kind of suck some of the attention
+  away from those
+457: maintainers.
+461: So Nadia Iqbal, a former GitHub coworker and a friend of mine wrote a wonderful
+  book recently called
+467: Working in Public. And that covers a lot of these issues. It touches upon these
+  problems in a really
+474: interesting way. I recommend you pick up a copy and read it. But something I'd
+  like to pull out for this
+478: specific example is this quote where she says, "A tragedy of the commons occurs
+  not from consumers,
+484: in this case, open source users over appropriating the content itself, i.e. the
+  software, but from
+490: consumers over appropriating a creator, i.e. maintainer's attention."
+496: So what Nadia is saying here is that the actual scarce resource here is not the
+  maintainer software
+504: that they produce, or even the maintainer's money necessarily, but the maintainer's
+  attention and what
+510: they can spend that on. So money can be part of the solution here, as I've touched
+  upon a few times
+517: already, but it's definitely not all of it. Increasing the ability or the motivation
+  of a maintainer
+525: to be able to spend more of their time on the project, that can be a good thing
+  if it's allocated
+531: effectively, but they may or may not be better off as a result of the project
+  if that attention is not
+538: spent most efficiently. So maintainer income as well. So if I want to increase
+  the amount of attention on
+549: a project, I might think I can do that by increasing the amount of time the maintainer
+  spends on it.
+554: But there may be a bit of a threshold effect here. So some maintainers, a lot
+  of maintainers in fact,
+562: spend their evenings and weekends maybe working on their project. But if I want
+  them to spend
+567: significantly more than that on the project, then I might need them to have enough
+  resources that they
+573: can quit their day job and go and work on their open source project or projects
+  full-time.
+578: This is where that threshold effect kicks in that I mentioned earlier. They're
+  going to need to have
+583: a certain amount of money for them to be able to do that and then to be happy
+  to do that. And for some
+589: maintainers, there may be no amount of money which they're willing to do that
+  because they enjoy their
+593: open source projects as a hobby and they don't want it to be their full-time
+  job. So if there's even 5%
+600: less than the maintainer might require to quit their full-time job to go and
+  become a full-time maintainer
+605: on this open source project, then it doesn't matter because that's not enough
+  to increase the amount of
+611: attention and time that that maintainer can spend on this project. In some circumstances,
+  they may be able
+616: to pay other people to help them out and be able to spend more time working on
+  the project that might
+622: save them some time and then they can allocate their time a little bit more effectively.
+  But this is not
+626: always possible and it's also not always desirable. So what are some of the solutions
+  that we have to these problems?
+636: We've reframed it away from purely thinking about money to thinking about maintainers
+  attention and how
+642: money can be a component of improving that. But fundamentally, it's not the only
+  part and it's the
+647: thing that we need to focus on fixing first. If we simply increase the amount
+  of time a maintainer could
+653: spend on the project, but their attention is not allocated effectively, then
+  that's not going to
+657: improve the project and how it's run overall. So what I propose is the first
+  thing that we should think
+665: about is how to focus. And by this, I don't just mean how to not procrastinate
+  or how to spend more
+672: of your time working, but it's how the maintainers working on an open source
+  project can spend their
+677: time most effectively, how they can focus their efforts on the things that bring
+  the most value to the
+682: most users of the project and make the project the best it can be. So let's start
+  rather than
+689: thinking about anything too complicated with the tooling that assuming your project
+  is on GitHub,
+694: GitHub already provides for you. GitHub Actions is GitHub's continuous integration
+  and testing
+700: software that is really, really useful in being able to automate all sorts of
+  tasks to make your life
+707: easier when you're running an open source project. For example, in the homebrew
+  project that I run,
+712: our homebrew brew repository, which contains the code for the package manager
+  itself has various checks
+718: that you can see here, I've got a screenshot of. So we've got this pull request
+  that was remove
+723: useless require formula, basically just a fairly simple fix that was made to
+  clean up the code there.
+730: And we've got various checks that you can see on the side, we've got some triage
+  happening to make
+734: sure that the the PR is being labeled and approved and stuff like that. We've
+  got code curve to go and send off our
+742: code coverage. And then we've got various different workflows that are running.
+  So we've got some
+747: checks to make sure that the syntax of the code is correct. You can see some
+  more details of that on the
+754: right hand side, where we're installing shell check and we're running a command
+  called brew style, which
+758: underneath the hood is running rubocop and shell check to ensure that this the
+  code that has been added in
+764: the pull request and the code in the repository itself is all in a good state
+  and has the syntax that we
+770: wanted to have. We've also got some other jobs down there that I'm not going
+  to go to too much detail
+774: about, about vendoring gems and testing default formulas and other things which
+  are useful for homebrew.
+779: But these checks, if we were manually doing them on each individual pull request,
+  which I can remember back in
+785: the days before homebrew had any continuous integration at all, let alone GitHub
+  actions, we had to do this all
+790: completely manually, then that could take 5, 10, 20, even 60 minutes per pull
+  request to run the necessary tests.
+799: And also users weren't getting any great feedback from that either. Whereas the
+  nice thing with this
+804: system now is these tests and the more of these we add, we can save the time
+  that a maintainer has
+810: to go and manually comment and say, these are the problems that need to address
+  with the pull request
+815: because the contributor can see that the status of the continuous integration
+  run by GitHub actions
+821: failed and instead they can go and update and fix these issues by themselves.
+828: So looking at a more specific thing that we do with GitHub actions as well, this
+  is a workflow called
+833: action stale that homebrew makes pretty heavy use of. We previously used a probot,
+  another thing
+837: provided by GitHub in the past to kind of do this, but then this is the latest
+  recommended way to run
+844: a stale bot of some sort. What is a stale bot? I might hear you ask. Well, it's
+  something which can go
+849: through and triage your issues and pull requests. In a project like homebrew,
+  there's quite a lot of issues
+854: that get opened where someone may report a bug or open a pull request and we're
+  waiting on something
+860: from that user before we can progress. So in the case of a pull request, it might
+  be what I mentioned
+866: before, whether some syntax changes that need to be made or some errors that
+  need to be fixed in their
+870: code that they've added or tests that were failing or whatever it may be. In
+  an issue, it could be
+876: something like we've asked the user for more information, more on that later,
+  or there's been a bit of back and
+882: forth and it's unclear whether the issue is fixed or not. Now, in our opinion,
+  it's not great to have
+887: an issue tracker where we have all of these things which are effectively blocked
+  and there's no response
+892: from anyone. So if we have no response on an issue or a pull request in, say,
+  30 days, then we think it's
+899: better for a bot to post a message, say, hey, this is going to get closed in
+  a week unless anyone responds,
+904: and then close it automatically. And this provides a good prompt for the user
+  if they've kind of missed the
+909: earlier message, or if they've just forgotten about it, to be able to jump in
+  and provide the
+914: information that we might need for a pull request author to go and fix the changes
+  that are needed in
+920: there so that the pull requests can be merged. Or one of the maintainers to say,
+  hey, actually, I think
+927: this is a really high priority issue and we should keep this open. And then we
+  can assign a label, which
+932: the stale bot then knows to not go and try and close this issue again, but instead
+  keep it open
+937: indefinitely. So let's say this is a really good way, in my opinion, for projects
+  like homebrew that get
+942: a lot of issues and pull requests to kind of keep their issues and pull requests
+  lists fairly tidy and up to
+948: date. So another thing that we found pretty useful is using GitHub discussions.
+  So GitHub discussions is a
+956: relatively new feature, which allows you to have more freeform discussions on
+  GitHub itself. So rather than an issue where
+964: you are have a kind of open and closed status, a discussion can be answered or
+  left unanswered.
+970: But the other nice thing about discussions is that kind of can pull these discussions
+  into a separate place. So in our case, we put on a separate repository entirely.
+978: But even within your repository now, you could have discussions enabled, but
+  you could selectively decide if you're a maintainer who wants to focus purely on
+  the code, and maybe not on doing Q&A for users and helping them use your software,
+  that you're going to unwatch the discussions.
+995: Or if you're a community member that wants to help, and you maybe don't have
+  the understanding to be able to review pull requests or issues, you could unwatch
+  those. And then you could just be in this discussion forum and answer questions
+  in there.
+1006: So as you can see, I haven't showed you an example of Homebrew's issue tracker.
+  But these tend to be kind of questions in here where the first one brewed, so upgrades,
+  everything is a sort of discussion about how Homebrew works itself.
+1018: There's questions about the versions of some software, there's questions about
+  unable to install, which is an error which I can see as a maintainer is going to
+  be pretty specific to a single user's machine, or their setup.
+1032: So again, this is great for us because these are being pulled into a different
+  place where they can be responded and helped by different people, including not
+  just the maintainers.
+1041: And finally, there's issue forms, this is a relatively new feature shipping
+  at Universe this year, for open source projects, that Homebrew has been part of
+  the beta and alpha before that, to enable this.
+1054: So in dear GitHub, a few years ago, where various open source maintainers were
+  asking for more features, one of the things they asked for is the ability to have
+  issue templates, so we could request the same sort of information that users need
+  to fill in when they fill in an issue.
+1069: And Homebrew has made fairly heavy use of this for a long time, but the problem
+  was with these is that you didn't have any way of requiring certain sorts of information
+  or just stop users from adjusting the format.
+1081: So in this case, we've got the way now to require stuff like checkboxes.
+1087: So these little red asterisks on the side indicate that we require the user
+  to fill these in before they can create an issue.
+1094: So there's Iranbrew update, so that's Homebrew's updating system, and I'm still
+  able to reproduce my issue.
+1099: This itself can make users actually solve their own problems sometimes, because
+  it provides a cue for them before they open an issue to try this, which may well
+  help them solve their problem.
+1110: Similarly, I've resolved all the warnings from Brood Doctor, and that did not
+  fix my problem.
+1115: This is another way that they can go and learn things that might be able to
+  fix their local setup.
+1120: Because when I talked earlier about the scarcity of attention that maintainers
+  have, this is an ideal way of solving this sort of problem, where I can provide
+  users with ways that they can solve problems themselves.
+1132: And then they don't need to open an issue, they don't need to be part of the
+  attention of me or other maintainers.
+1140: And they're often happier because they're able to solve the problem themselves,
+  rather than having to wait and have a back and forth while we solve the problems
+  for them.
+1147: But obviously there's still cases where people have legitimate bugs that they've
+  discovered, and they need to be reported.
+1153: So that's when we want to get a bit more detail, we want to ask them what they're
+  trying to do and why.
+1158: This is because these types of questions can help us understand and help people
+  nudge towards better bug reports.
+1164: Sometimes people just describe what the problem is and not what they were doing
+  to provoke the problem.
+1169: And sometimes they might say what they were doing, but they don't say why they
+  were trying to do it.
+1174: And it may be they uncovered a bug by not using the software how we intend to,
+  or because we've not made it clear that this is not how the software is meant to
+  be used.
+1184: Similarly, what happened include all command output.
+1187: By that, we're trying to get all the information so that we can adequately see
+  without having to request to back and forth everything that we need to know to fix
+  the problem.
+1197: And there's various other steps.
+1198: If you look in the Humbru brew repository and try and create an issue, you can
+  see this live.
+1203: But finally, with focus, I think it's good to focus on tools and think about
+  how we can automate things and how we can improve things to mean the maintainers
+  are able to focus their attention more effectively for the project.
+1218: But at the end of the day, open source needs to be enjoyable.
+1222: Most people who are working open source are not doing it for their full time
+  day job.
+1227: And even those that are, we want them to enjoy their full time day job, too.
+1232: The motivation of open source maintainers is what keeps open source projects
+  running.
+1236: And it's what keeps the open source ecosystem going as a whole as well.
+1241: So if maintainers are spending too much of their time doing things that they
+  don't enjoy, their motivation will deplete over time and it eventually will expire.
+1249: And they won't be interested in working on that project anymore.
+1252: If it's not their full time day job, then they will probably just stop doing
+  it and stop responding to notifications and maybe unwatch the repositories.
+1261: If it is their full time day job, they'll probably start looking for a different
+  one.
+1264: And this can be even more tragic when maintainers are on some of those projects
+  I mentioned earlier where there's only a single maintainer who knows how to use
+  the project and knows how to run it and has permissions to merge pull requests.
+1276: In that case, the project is effectively dead unless it gets forked and revived
+  by someone else.
+1281: And even in that case, it's not ideal for other people in the ecosystem to not
+  know that that project is dead.
+1288: So as I say again, it's really important that we make sure maintainers are able
+  to enjoy projects.
+1297: And the important part of that is them focusing and spending their time on the
+  things that they enjoy doing and hopefully finding others to do or just saying no
+  and not doing the things that they don't want to.
+1308: So moving on and moving back to what we were talking about at the very beginning
+  money and how to spend it.
+1315: So money is useful for open source projects.
+1319: It may not fix the problems that we've immediately mentioned before that can
+  be helped with automation, focus and enjoyment, but it still provides many other
+  useful benefits.
+1327: So GitHub sponsors will allow you at the very basic level for maintainers to
+  receive some payment for the work that they're doing on open source.
+1335: At the very basic level, it can be just a nice extra bit of money that comes
+  in to support people and help them to feel more motivated when they work on open
+  source projects.
+1344: But some maintainers through GitHub sponsors alone have been able to go full
+  time working on their open source projects.
+1351: This obviously when it happens massively increases the attention they're able
+  to spend.
+1355: And hopefully provided that they enjoy the project and that that's something
+  that they have spent some focus on allows them to enjoy their job and their life
+  maybe a little bit better as well.
+1366: Even when that's not their goal, as I mentioned before, they can still just
+  top up their existing income and hopefully get a little bit of bonus motivation
+  from using GitHub sponsors.
+1378: Or if they want to just spend the money that they bring in already, they might
+  be able to spend some of that on more tools that can save them time and automate
+  away some of the boring tasks.
+1388: And also it's always good to be able to think about how they might be able to
+  spend their money and get away some of the boring tasks through people as well.
+1397: So not so much boring tasks, but thinking beyond that to how can a project be
+  more successful in the long term and survive some of these ups and downs that I
+  mentioned before.
+1409: One of the things you want to do with that is to bring on more maintainers.
+1413: We talked about the open source contribution funnel earlier where some subset
+  of users become contributors and some subset of contributors become maintainers.
+1422: And a good way of finding a really high quality subset of contributors that
+  might be interested in becoming maintainers is through various projects such as
+  outreach.
+1430: There's also major league hacking fellowships or Google summer of code.
+1434: So these projects all provide a way of having people come into the project who
+  may or may not have used it before, may or may not have worked on it before, but
+  are able to kind of spend a decent amount of focused paid time working with maintainers
+  on the project to solve their own little project within the wider project.
+1455: And this has been something that homebrew in particular has had a great experience
+  with all three of these programs outreach a major league hacking fellowships and
+  Google summer of code.
+1463: We've had people who've gone on from that as contributors who have gone and
+  just worked for the summer on their project and then produced a new feature which
+  has been really useful to homebrew.
+1474: And many of these still are around to this day and it's a useful thing for our
+  users to be able to use.
+1480: But also some of them have gone on and stuck around after their summer fellowship
+  and they've come and become maintainers of the project.
+1490: And this means that they stick around, they review other people's work, they
+  contribute additionally themselves, and they also help grow the project.
+1497: And the benefit from that is it slowly but surely reduces the burdens on the
+  existing maintainers for having to do everything themselves.
+1505: And it spreads out knowledge throughout the project.
+1508: I found personally why I've worked on homebrew over the years that some of the
+  kind of younger or people who are newer to the project are able to kind of bring
+  a certain level of kind of passion and experience and knowledge and excitement that
+  has slightly waned for me over the years.
+1526: And it's great to see more and more of them pick up the reins and have fewer
+  single points of failure in projects like ours because of the new people who are
+  able to come in.
+1535: Note that this still requires a time investment to be effective.
+1540: It's a little bit like mentoring a day job where it's something which doesn't
+  come for free.
+1545: It has to be a replacement of something you might otherwise be doing.
+1548: So it's probably important that maintainers who sign up for this stuff be aware
+  that it's going to be something which will require a bit of time investment.
+1555: And again, jumping back to what I said before, it should be something that they
+  probably enjoy as well.
+1561: But projects like Outreachy can be a really good way of spending your money.
+1565: Major League Hacking is funded in a slightly different way and Google Summer
+  of Code is funded by Google.
+1569: But for Outreachy, the project effectively needs to pay or find a sponsor to
+  provide payment for the student who's going to work over the summer for them.
+1577: But this could be a really good use of the project's funds to grow the long
+  term sustainability of these projects.
+1584: So in summary, open source economics, it's not just about the money, although
+  that is part of it.
+1590: But it's about maintainers being able to focus their time and attention more
+  effectively and using money to boost that amount of time they have and the motivation
+  to work on the project and hopefully result in maintainers that are happy, enjoy
+  what they're doing and are working in a sustainable way, which means we have more
+  projects that are able to be more successful.
+1610: Well, if you're a maintainer, I'd like to wish you good luck.
+1614: And if you're someone who's just interested in the open source ecosystem, hopefully
+  this has given you some tips on how you can help out and how you can make open source
+  better.
+1622: Good luck, everyone. And thanks for listening.

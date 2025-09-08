@@ -16,8 +16,30 @@ layout: base
   {{ content }}
 
   {% if page.youtube-id %}
-  <iframe width="678" height="408" frameborder="0" allowfullscreen
+  <iframe id="youtube-player" width="678" height="408" frameborder="0" allowfullscreen
     src="//www.youtube-nocookie.com/embed/{{ page.youtube-id }}"></iframe>
+  {% endif %}
+
+  {% if page.transcript and page.youtube-id %}
+  {% include transcript.html id=page.youtube-id video_id=page.youtube-id %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const player = document.getElementById('youtube-player');
+      const transcriptLinks = document.querySelectorAll('.transcript-timestamp[data-timestamp]');
+
+      if (!player || !transcriptLinks.length) return;
+
+      transcriptLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const timestamp = this.getAttribute('data-timestamp');
+          const videoId = '{{ page.youtube-id }}';
+
+          player.src = '//www.youtube-nocookie.com/embed/' + videoId + '?start=' + timestamp + '&autoplay=1';
+        });
+      });
+    });
+  </script>
   {% endif %}
 
   {% if page.speakerdeck-id %}

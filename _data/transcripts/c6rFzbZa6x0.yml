@@ -1,0 +1,587 @@
+---
+0: Hello everyone, quick introductions, I'm Mike, this is where you get me on the
+  internet.
+12: So I've been using Git for too long, since about 2006, and I like to kind of fight
+  it
+19: and things like that.
+20: So who here would say they know Git well?
+23: Who here has to use Git at some point during their job or uni or whatever, pretty
+  much everyone
+32: okay, so this is the very small group I'm interested in, who thinks, and this
+  isn't a challenge,
+38: who thinks they probably won't learn anything from this talk, because they know
+  everything
+42: about Git?
+43: That's disappointing.
+45: Right, so this talk, I don't know if you guys followed from whatever was going
+  on with
+52: to tag me up, but I was kind of pulled in at the last minute.
+55: So this is sort of snatched from a previous talk.
+58: So if the slides appear to make confusion, then that's why.
+64: It was previously following on for a kind of beginner's Git talk.
+67: So I'm going to sort of recap what would have been the beginner's Git talk very
+  briefly, and
+72: then kind of move on from there.
+74: So the first thing is, if you're not using it already, I really recommend there's
+  a tool
+79: called Gitx if you use a Mac or GitK if you use Windows or Linux or have no sense
+  of aesthetics.
+85: No, that's not saying those platforms are, but for anyone who's run GitK, you
+  know what
+93: I'm talking about.
+94: Right, so basically, that's something I found really helpful in Git, because instead
+  of looking
+99: at your logs or whatever and trying to understand, oh, when did that branch branch
+  off this and
+103: all this stuff, you can get a nice little view like this.
+107: You can see here, I've got these 0.1.
+110: That's a tag.
+111: That's a branch.
+112: That's another branch.
+113: That is a merge and a branch that no longer exists.
+116: There you go.
+117: So that's basically the kind of overview for it, particularly when you have a
+  repository
+121: where you start having branches off branches and lots of coworkers working on
+  lots of different
+125: things all at once and pull requests, some of which have merged and some of which
+  aren't.
+129: This becomes very useful in working out.
+131: Have we actually merged that bug fix from two weeks ago or is it still away floating
+  somewhere?
+137: Because particularly with stuff like this, anything that sort of, this is a bad
+  example,
+142: this is a straight hierarchy, but if, say, we didn't have this little blue line
+  joining
+146: here, then that would be effectively a floating which doesn't actually belong
+  anywhere and
+153: it's not been merged back anywhere.
+154: So then we would know that we need to merge that on.
+157: Git describe, very briefly, one of these things you may or may not know about.
+160: It's kind of useful in getting sensible version numbers.
+162: We call it git describe dash dash tags.
+164: Then on the last one, I will get these 0.1, which is the last tag, dash two,
+  two commits,
+170: and then the current short hash code where we are.
+174: So the nice thing about that is because the way it's arranged as well, they sort
+  nicely.
+178: So if you have any software where, say, you're doing builds automatically and
+  you want users
+184: or testers to be able to report a version number back, that's a good way of generating
+  it.
+188: Finally, git ref log.
+190: Who has or has not, sorry, who, that's not helpful, who has used git ref log
+  before?
+196: Not enough people.
+198: Git ref log is one of the first things you should be taught with Git.
+200: Because with Git, the thing that tends to scare the pants off everyone
+203: is the idea that you can go around rewriting history and then when people hear
+  that,
+207: they think, oh, I'm going to accidentally do something and I'm going to destroy
+  all my work
+210: and destroy all my co-workers work, destroy the company and the economy and everything.
+213: But with git ref log, you didn't interfere.
+216: Because what git ref log does, I presume pretty much everyone's familiar with
+  git log,
+220: which will go and list all the commits on the current broad shore.
+223: What git ref log does is effectively does the same thing,
+226: but for all the changes you make to the head pointer.
+231: So, a little bit of confusion there.
+233: I'm not going to go into too much detail about what the head pointer is,
+235: but head pointer is basically the current state effectively of your git repository.
+239: So, if I run git ref log and I've done some stuff,
+243: you can see here it's kind of tracking through.
+245: So, merge testing, I merge that, I made a commit and then I did a reset and a
+  commit there again.
+251: So, the interesting thing here is this part number two is me rewriting history.
+256: So, I made one commit and then I made another commit later on,
+259: which may have the same name, but it's a different commit.
+262: So, even though I've actually gone through and modified this commit,
+268: if I look in the history, if I look in git log or git x or whatever,
+271: then I won't see any evidence of this at all.
+274: I can still get back to that state at any point in the future,
+277: using the git ref log to go and find out where these things are.
+281: So, I would really advise you,
+283: particularly if you're going to do anything involving rewriting history,
+285: if you're worried, just run git ref log and then you can go and jump back to
+  any state.
+289: Basically, I think it tracks 30 days worth of state before Git will garbage collect
+  any of that.
+294: So, effectively, all the actions you've done in the last 30 days will be there
+  in ref log.
+299: So, fear not.
+301: Right, git blame.
+305: I presume you know about that, but that's, basically,
+308: if you want to blame something on your co-workers, you think,
+310: '"What idiot wrote this line here or whatever?"'
+313: So, you can go and shout them.
+315: In my experience, at least 50% of the time I run that,
+318: I find that the idiot was actually me.
+320: Which is a little bit embarrassing and I tend to go a bit quiet.
+325: Get SVN.
+326: So, what percent of the time does the opposite happen,
+328: where you go back and it's like,
+329: '"Oh, who wrote this clever little feature?"'
+331: '"Oh, lucky it was my past self."'
+332: Well, sorry.
+333: In subversion, I think there is subversion praise, which would do the same thing
+  as blame.
+338: But Git doesn't have praise.
+340: It just has blame.
+341: Which, that might tell you something.
+344: All right.
+345: Get SVN.
+346: I'm not going to go into detail about this, but basically,
+347: Git has the ability to interface with an SVN repository.
+352: It's quite useful if, say, you want to kind of learn Git, but you're somewhere
+  where either the current project you're on or the company you're at or whatever
+  is still using subversion.
+362: Then this basically lets you, you can do all the kind of cool Git magic locally,
+  and then it gets pushed to a subversion repository.
+368: So you can't rewrite history on the remote repository.
+371: Generally, that's a bad idea anyway.
+372: But you can do all this kind of cool stuff locally and deal with Git's branches
+  locally, rather than with subversion's horrific branches.
+379: Git rebase.
+381: Again, we'll come into a bit more detail about that later on.
+384: But effectively, rebasing is when I say I have a certain commit and I want to
+  go and...
+392: So with Git, all the commits, I'll jump back here, have parents.
+399: So the parent of MerchBond's testing's commit is...
+403: Well, it has two parents, in fact.
+405: So I won't start with that one.
+406: Testing the parent of that commit is this one, change license here.
+411: And then the parent of that is this one here.
+413: And then when you have a Merch commit, you have a commit which has two parents.
+416: So we see these two lines joining up.
+418: So basically what we have with rebase is it's a way of rewriting history that's
+  relatively common to do,
+426: which is basically you update the parent of a commit to point at the parent of
+  something else.
+431: So this would maybe be better named re-parent instead.
+435: So that's kind of useful, particularly if you are doing, for example, an open
+  source.
+442: You will use that often because what you tend to have is, you know, if I have
+  my branch that I want to submit to someone else's work,
+448: they probably don't care about the fact that I've had to merge back and forth
+  800 times.
+452: Their changes back to mine, my changes back to theirs, whatever.
+456: So you can use rebase to effectively kind of clean up their history, fix merge
+  conflicts and things like that by ensuring that the parent commit is always at the
+  top.
+467: Right.
+468: This is a little shortcut.
+469: Not many people, well, some people know either, some people don't.
+471: If you git checkout -b testing, that effectively does the same thing as creating
+  a branch and then checking it out.
+478: So that's a little shortcut.
+479: Git reset -b test hard is that will basically go and change your history at the
+  moment so that your head pointer, effectively the top point of where you are in
+  git, will point to the commit you specify at the end.
+495: Now, this is pretty dangerous as you might be able to tell by the dash dash hard.
+501: So what this will do is effectively anything in your working tree, like anything
+  you haven't committed yet, will be destroyed if you run this and you haven't saved
+  it.
+510: So in git -treat -saving, instead of saving you can think of committing effectively.
+517: As I showed you with the ref log before, if something is a commit, it has a shell
+  on and basically you don't need to worry about that for 30 days.
+525: That you effectively can't lose that unless you try really hard.
+529: So what I would encourage you to do if you're doing stuff with git, particularly
+  if you're doing rewriting history, if you're doing lots of incremental progress
+  during the day and stuff like that.
+537: And if you're the type of person who likes to have nice clean commits or the
+  type of person who likes to have one commit for their day's work rather than 800
+  commits, then commit lots during the day.
+546: And then either combine the commits or reset or whatever and then kind of build
+  stuff up later on, which you can then combine and push on.
+554: Because then that means if you need to jump back your progress from what you
+  did four hours ago, whatever.
+559: And again, talking about personal experience, I'm always one for thinking like,
+  "Oh, yeah, like, oh, that stuff I did this morning, I'm never going to need that
+  ever again."
+569: And then half an hour later, of course, I'm like, "Oh, why enough did I delete
+  that? I've wasted so much time."
+574: So if you continually commit the stuff you're doing, it doesn't matter, you can
+  go and get rid of it later on, git will clean it up eventually, but you don't need
+  to worry about losing it.
+584: Right, so I'm going to run through some slides briefly, one second.
+594: Right, so to demonstrate the rebasing I was talking about a minute ago, sorry
+  again, this is where it gets a little bit messy order.
+602: So the normal program will resume shortly.
+605: So if I want to, I have this commit called first point that I just made here.
+612: So that's got the hash 9f blah, blah, blah, blah.
+615: So if I committed that on what we had previously on the testing branch, then
+  the history would look something like this.
+620: And you can see testing and master have diverged at this point.
+623: They were in common here, and then they're not anymore.
+627: So these now have separate things on them.
+630: If I then type git rebase master on the testing branch, it will say in helpful
+  gitties, git almost never says anything in the language that humans can understand.
+640: Rewinding head to replay your work on top of it.
+643: Applying first point.
+644: Right, what does that mean?
+647: What that means is that the head, which is currently where I'm on testing here,
+  that's the branch I got checked out.
+653: It's rewinding that, so it's jumping back, because I said master, jumping back
+  down to here, and then going back up to here.
+661: And effectively what it's doing is just getting rid of this stuff in between,
+  storing it elsewhere, and then when it gets here, it's going to try and put these
+  commits on top of it.
+669: Which, in this case, because we don't have any merge conflicts, you get this.
+674: So to jump back between them again for a second, we have first point.
+678: So the only commit that's not on master, but is on testing, is its first point.
+684: So in rebase here, it kind of adjusts the history so it looks like this.
+689: Again, you might think, why on earth would I ever want to do that?
+692: But particularly if you're someone like, in my other life outside of work, I
+  work a lot of homebrew.
+700: And at homebrew, we get contributions from thousands of people.
+704: So we don't want these horrible little merge commit jumps like that for every
+  single contribution we have from everyone who's not in the core team.
+712: Because that would be 95% of our contributions.
+714: And then our history, which should look nice like this, would be completely unreadable.
+718: So rebase effectively allows us to go and make sure that these commits follow
+  a nice, fairly linear history, unless we have something where we actually want to
+  effectively record in the history that we've had a branch.
+730: I'll talk a little bit more about that in a minute.
+734: Right, git bisect.
+736: Git bisect is awesome.
+738: What it does is effectively does a binary search through your git history to
+  find where you had a particular bug.
+744: So let's demonstrate here.
+746: So this will be a very simple use case.
+748: So basically, say I have a bug that is in my current version of the application.
+753: I know a previous revision in the version control system where that bug was not
+  there.
+757: So while we type git bisect start, that kind of kicks off the process.
+761: Git bisect bad master, that's saying not that your boss is a nasty person.
+767: But saying that the top of the master branch is bad.
+771: That doesn't work.
+772: And then git bisect good and then specify a revision that does work.
+776: So then it's saying bisecting 55 revisions left to test after this, roughly six
+  steps.
+781: So then what I will do is basically just go through a bunch of commits.
+784: Like good, bad, etc.
+787: And then eventually it will go and iterate through these and it will tell you
+  the commit which has that problem in it.
+792: So particularly if you're dealing with lots and lots and lots of commits, obviously
+  because it's a nice fast binary search.
+798: It means actually this is really pretty quick.
+801: And I use this on a relatively regular basis to try and track stuff like regressions.
+805: But when it gets even cooler is git bisect run.
+810: So in this case, I have a situation where I have a particular, let me check,
+  yeah.
+820: Okay.
+821: So in this case, say I have a particular test, which is this spec mailers newsletter
+  spec.rb.
+827: So what I can do is I can use git bisect run and then I can effectively give
+  git bisect run the actual test.
+834: And if you know about Unix exit codes, good.
+839: If you don't, you might struggle with this a little bit.
+842: So effectively, as long as your command, which most things do, to be honest,
+  returns the right exit code by a zero for success and a one for failure or a non-zero
+  version for failure,
+855: then it will go and run through that process rather than you having to type good,
+  bad, good, bad, good, bad.
+860: It will then run through that process automatically, run the command, check out
+  another revision, run the command, check out another revision.
+867: So if you have a way of breaking your error effectively down to a specific test,
+  then this will run through and kind of find these regressions very quickly.
+876: So another good reason to have lots of good tests.
+878: How do you express what bisect run should run?
+882: Yes, that's slightly confusing there.
+884: I mean, you would specify, I've not specified actually the arguments there, but
+  you would specify effectively git bisect run and then just spec mailers, newsletter
+  spec.rb.rb.
+893: Okay, so it's just an argument.
+895: So no, in fact what, yeah.
+897: So what I've done here is not actually running the test because for some stupid
+  reason I decided to pick a stupid example.
+904: But in this case I've done, I'm trying to find the revision where this was introduced
+  by doing slightly arbitrary, by doing running ls.
+913: So I would do ls, spec mailers, newsletter spec.rb.rb.
+916: So then it's going through and runs ls, follow up, no such file directory, that's
+  a bad exit code.
+922: So then it goes through here and then it finds that this was the commit where
+  I went and introduced that particular file.
+929: Does that mean you can create a test that retrospectively can see if you know
+  the test was good at one point in the past?
+936: Yeah, I mean there's no reason the actual specific command you're running, that
+  doesn't have to be tied to your git history at all.
+941: So yeah, so you could run the commit, you could have a particular test.
+945: The only thing you would do in that case would be you would not commit that test
+  to the repository yet.
+950: Or at least have it not committed in the first revision you're checking.
+954: Because otherwise if it's committed then git will go and delete it and add it
+  and stuff like that.
+958: So what I would tend to do is just put the test in a different directory of whatever
+  temporarily while I'm running the bisect.
+964: And then at the end you type git bisect reset to get back.
+969: So git rebase -i.
+971: So rebase, bit confusing, rebase -i, bit more confusing but a lot more useful.
+977: So what I was doing before, I was showing how we could go and queue some commits
+  on top of another commit, reparent them.
+984: So with that, if I'm queueing these two commits on top of master.
+989: So I would type git rebase -i master.
+993: And then it will pop up my text editor, which the first time you run it you're
+  like huh, I didn't expect that to happen.
+999: And then it will go and list these things here.
+1002: It says pick, it says the SHA1, it says the commit, well the first line of the
+  commit.
+1008: So down here you have a list of all the commands you can do.
+1012: And basically, to walk you through these very briefly, pick just basically means
+  do nothing, use the commit as is.
+1018: What you can do is you can use that to reorder the commits immediately.
+1021: That's something I do quite often if I'm trying to kind of make my commits in
+  some sort of sensible order.
+1026: You know, say introducing certain things before other things and it makes a
+  bit more sense.
+1031: But it's different to the order that I've actually made the commits in.
+1034: Then you can go and just reorder them in here.
+1036: Again, you just cut and paste them in the text editor.
+1039: You can also cut lines out and things like that.
+1042: You can also add in new SHA1s that aren't in here and then it will do the right
+  thing.
+1047: You can use reword.
+1048: That will basically, when it gets to that commit, prompt you to alter the commit
+  message.
+1052: You can do edit, which will, when you get, it will go and, when it's rewinding,
+  when it gets to that commit, it will let you go and edit the contents of that commit.
+1060: Squash will go, I'll explain that in a second, that's basically a fix up and
+  a reword.
+1066: And fix up is the one I use constantly.
+1068: So if you look at my git history typically, it will look, they look nice and
+  clean like this one and done.
+1075: But it will typically look like add newsletter mailer and then fix me, fix me,
+  fix me, fix me, fix me, fix me, fix me.
+1081: And then what I do at the end is I use fix up and I combine all these together.
+1086: Or alternatively, I use squash, which combines them all together and then basically
+  prompts me to edit the commit message.
+1092: And we'll go and display in the editor all the commit messages and all the commit
+  sub-squash together.
+1097: So again, if, which you should do, now that you have git, it's great.
+1101: Because although it solves a lot of problems, you have a new thing to worry
+  about.
+1104: Which is with stuff like subversion or whatever, you know, sometimes you just
+  need to commit stuff.
+1108: You know, you need to get that into production, you need to, you know, do your
+  work.
+1111: You need to get it away so it's backed up somewhere else that isn't your own
+  machine.
+1115: But with git, now that you can control the history, what you should be aiming
+  for is to have a history which is very readable.
+1121: If I ever, I'm lucky enough to work with any of you people and I ever see a
+  commit in git that's called fix me, there's going to be trouble.
+1131: Because you've got no excuse with git because you can go and do that immediately
+  and then go back and edit it later.
+1136: And that's what I would kind of encourage you to do.
+1138: The workflow with subversion I found was a bit more, you know, you do some work,
+  you commit, so that sends it to the repo.
+1144: You do some work, you commit, that sends it to the repo.
+1146: With git, what I find myself doing instead is I will generally only push to
+  the repo maybe once or twice a day.
+1151: And what I will do is I'll kind of queue up all my commits, do all my work.
+1155: And then when I'm ready to push, I'll then go through, read through my history,
+  read through the commits, and then go and basically edit stuff so it's like a little
+  bit more easy on the eyes in the history.
+1166: And so, again, obviously the benefit of this stuff, particularly when we're
+  doing stuff like bisecting, when we're looking through the log, when we're looking
+  through the ref log.
+1174: If you have good commit messages, then it makes these things much easier when
+  you're going back and trying to work out why that idiot, who is probably me, did
+  something six months ago.
+1184: Git Cherry, I'm going to sort of fly through some of the remaining slides because
+  I have lots of slides and not much time.
+1192: Git Cherry basically lets you, if you run it on a branch, it will tell you a
+  list of commits that are on your current branch but not on the other one.
+1199: You can run external commands.
+1202: If you have anything in your path which has like git-gc-global or whatever,
+  it looks kind of like a git command.
+1210: Then you can basically just run git space gc-global and that will run in any
+  directory and stuff like that.
+1216: So that you can extend git with your own scripts if you do that.
+1221: What I was saying earlier about rebasing versus merging.
+1228: This is an example of the cmake virtual system.
+1231: You can see they have a very kind of merge heavy thing where they have all these
+  branches, merge topics, c-test, detect, maven errors, and warn.
+1239: Then they merge everything all together.
+1241: So I think personally their git commit history is really quite hard to follow.
+1247: It's quite hard to tell what happened, particularly because of the way it merges
+  work and things like that.
+1252: If you look at the date column on the side, it's going mental.
+1256: And it's quite hard to work out who committed what, when, who merged what, when,
+  whatever.
+1263: Whereas in Homer we try and have a bit more, like I was talking about earlier.
+1267: So in theory we could have the same kind of approach where we have 800 merges
+  and they're all going around and whatever.
+1274: But we try and kind of keep things nice and linear so it's easier to follow,
+  like individual commits.
+1279: So in terms of preferences, and that comes down to whether you use merge lots
+  or rebase lots.
+1287: In terms of preferences, I tend to, in a small team of people where you want
+  to actually signify something from merge commits.
+1295: So at my current employer, for example, we have, you know, our work branches
+  get merged into epic branches, which then get merged into master or staging.
+1304: So in those cases we want to actually know, like this merged, this bunch of
+  stuff in at this time.
+1311: But if you tend to have a bit more of a workflow where you only have one version,
+  effectively, that you care about,
+1318: you may be branching off that version but you're coming back later on.
+1321: And the history you only care about, a particular branch, then you probably
+  want to use rebase a bit more to clean things up.
+1327: A bit more like Homegroup.
+1329: Commit messages are important.
+1333: What you should have in your commit messages, it's like writing an email, think
+  of it that way.
+1337: The first line should be the short commit message.
+1340: Then you should have a local commit message that can spend multiple lines and
+  do lists like that.
+1344: For example, a good commit message written by me.
+1347: So actually, Git will deal with commits and can convert them to and from emails.
+1354: So if you think of stuff like this, so that would be the first line of my commit
+  here.
+1359: It's used that into the email subject.
+1361: Then we've got some text here, blah, blah, blah.
+1363: And then if you, again, convert it to an email, it goes and has a bunch of tips
+  down here.
+1369: So the main thing to come across, first line should be short.
+1372: If you've got a decent text editor, it will shout at you if it's more than 50
+  characters.
+1376: And then other lines should be wrapping around about 76 characters or whatever.
+1381: Again, not crucially important.
+1382: But the thing with some of this stuff is because Git's tools are built around
+  these assumptions, and because Git doesn't do them for you, if you don't follow
+  them, then things become a lot harder to read.
+1392: Particularly your main commit message on the first line.
+1395: I would highly recommend you keep that short.
+1398: It makes things much easier to read.
+1401: I'm going to fire through some other stuff very briefly.
+1403: Git filter branch.
+1405: You probably won't use this very often, but if you do, it's good to know it
+  exists.
+1408: Basically what that does is it runs through your entire history and lets you
+  rewrite your entire history.
+1412: So if you had an employee who left and he killed your parents in a freak yachting
+  accident and you want to say, "I don't want to recognize his contributions to my
+  project anymore."
+1421: You can go through and have all his commits rewritten to make it look like you
+  did them instead.
+1427: If you're using GitHub often and you like the command line, I recommend there's
+  a gem, and it's also in Homebrew if you don't like using gems, called hub.
+1437: That lets you do things like hub pull request, which then will create a pull
+  request from the command line.
+1442: It will pop up an editor and basically say what branch do you want to create
+  it from and to, stuff like that.
+1446: And if you create a lot of pull requests, again at my employer and at Homebrew,
+  we use pull requests a lot for a code review.
+1454: Then it makes things a lot nicer to be able to not have to go and click, click,
+  click, click, click through the web interface.
+1459: On GitHub, if you use @ and a username, you can talk to people directly.
+1463: So in here, this dude has said @myMcGrade and he's talking to me.
+1467: That will notify you and, you know, they'll bring you into the thread if you
+  haven't got it already.
+1472: You should get an email notification.
+1474: If you care about stuff like patch files, again, so you can merge them or so
+  you can do Unixy things with them.
+1480: Then if you append .patch to a pull request, which looks like this, or to a
+  commit.
+1486: Then if you append .patch to the web, then you will get a nice Unixy patch file.
+1491: 'If you do fixes #1, that will then close issue one when you go into it.'
+1498: So here I've said it closes this issue here, and then close the pull request
+  from a commit.
+1506: Going towards the end, if you're not.
+1510: svn.github, I don't actually know if it's this URL anymore, but what you can
+  do is you can actually check out, not many of you will notice,
+1518: every GitHub repository you can check out as subversion and commit to it as
+  well.
+1522: They have their own proprietary internal subversion git bridge.
+1526: So you can just do svn checkout, specify the same URL you've used with git,
+  but without .git depended,
+1534: and then there you go, you can use subversion with git.
+1538: Why?
+1539: Why?
+1540: So as much as I like git, particularly for people like designers or whatever,
+  the workflow with git is getting better,
+1549: and there's a lot of good tooling that's been built on top of it, but I think
+  it's still very rough.
+1554: And if you're a developer, it's worth your while learning how to use it.
+1558: I think if you're someone who commits to the first control repository once every
+  couple of months, it's probably not.
+1563: And subversion, I think, is a lot easier in terms of just getting that interface.
+1567: And actually, with what I was saying about git svn before, if you're using GitHub,
+  I would highly recommend this,
+1572: because that means all the git people--so subversion is an easier subset of
+  git's functionality than using git svn.
+1581: So effectively, all the git people get to do all their git stuff in their different
+  ways, and the subversion people can still do basically everything,
+1588: and they aren't limited.
+1590: Right.
+1591: We don't care about that.
+1594: So I would recommend--I know I'm blowing my intro a little bit--if you care
+  about lots of cool little things of doing in Git,
+1601: so I have my .files repository on GitHub.
+1604: If you go and have a look at that, then my git config is really, really heavily
+  commented.
+1609: It explains exactly what I'm doing with all--I've got about 100 aliases and
+  stuff like that to do things like, you know,
+1615: make--commit all my current changes, merge that, and make a pull request in
+  like a single command.
+1622: So if you want to kind of learn faster, cooler ways of doing things with Git,
+  check that out.
+1627: If you want to learn other stuff about Git, check out ProGit's probably the
+  best book that's out there at the moment.
+1632: And GitHub's help is pretty good, and a bit more human readable.
+1638: Or alternatively, contact me, and if you're nice, I might even apply.
+1643: And I know we're a little on time, but if anyone has any quick questions, it's
+  probably good.
+1648: In your intracted rebase, I saw you could delete a line from the commits at
+  the top, and it said that would completely destroy the commit.
+1657: Yeah.
+1658: Is that still there in that 30 days?
+1660: That would still be there in reflog, yeah.
+1662: I mean, that's basically just so people don't accidentally cut a line when I
+  think--get very scared.
+1666: Yeah, reflog's one of these weird things that no one really talks about it,
+  and Git never really talks about it as well.
+1673: But, you know, the assumptions are that it doesn't exist and that you're going
+  to lose all this stuff.
+1677: But as long as you keep that in mind, you'll be safe.
+1680: Any other questions?
+1686: Nope.
+1687: I don't know if I dare broach the subject, but I mean, he's Mercurial in the
+  past.
+1693: Is the only difference, or is the advantage in your opinion, that you can make
+  the commit history more readable?
+1701: Is that the only difference?
+1702: I mean, I've tried to use Git before, and I've used Git here and there.
+1707: Yeah.
+1708: I haven't looked too much into it.
+1710: Because I didn't really see a meet, like a point.
+1714: So you have, like, a reason why I would change from Mercurial to Git other than--
+1720: I've not used Mercurial heavily, so, I mean, what I say is pretty much based
+  on hearsay.
+1725: Right.
+1726: But I've heard Git's a lot more performant.
+1729: I've heard the user interface in Mercurial is significantly better.
+1732: Yeah.
+1733: The Windows version, for example, is significantly better.
+1735: I think, to be honest, it just-- I mean, most of this stuff, not so much in
+  the advanced Git thing,
+1741: but I think the big jump is going from something like subversion to a distributed
+  version control system,
+1746: be it Mercurial or Git or whatever.
+1748: In terms of the specific one you're using, Git's my one of choice.
+1752: That's the one I've poured all my time into, but I'm not really trying to invert
+  people between them.
+1757: I think, unless-- if you work on a project that uses Git, that's a good reason
+  to use Git.
+1761: If you don't, then double it.
+1765: I've tried to convert a really large subversion policy to Mercurial.
+1770: I think, basically, just about a day, I just killed the process.
+1773: But Git did complete, at least.
+1774: It took a while, but--
+1776: But for what it's worth, I was trying to do that in an extremely large SVN repo,
+1780: and I had to dump the entire repo to go through many, many hoops to get it in
+  Git.
+1784: But it is possible, even for, like, a 10-git repo.
+1789: Well, thanks very much, everyone.
+1791: Thank you.

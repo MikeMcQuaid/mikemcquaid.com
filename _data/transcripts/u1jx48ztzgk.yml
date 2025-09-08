@@ -1,0 +1,758 @@
+---
+0: Thank you.
+30: Can everyone see the screen okay?
+34: Is that working?
+35: Great.
+36: Well thanks very much everyone for having me today.
+41: I'm coming here today with like two different hats that I wear in terms of my
+  use of Ruby
+47: and in terms of like what I do as a software engineer.
+51: So the first one is I use Homebrew and I'm one of the maintainers of Homebrew.
+56: I've been a pre-maintainer for the last few years.
+59: Homebrew is a package manager for Macs.
+61: If anyone likes it and uses it then I've got some stickers that I'll stick outside
+  at the
+66: front.
+67: You can check out.
+68: So I've been working on that since 2009.
+70: That's basically like a way of installing software for it.
+74: Does anyone here use Homebrew?
+75: Yeah?
+76: If you want.
+77: Cool.
+78: And then my second role or the one that actually gives me money is working with
+  GitHub.
+85: So people who use GitHub, raise your hands.
+87: Cool.
+88: Yeah.
+89: I've been working there for about three and a half years.
+96: I work as an engineer there.
+97: And at the moment my main focus is like working on open source stuff.
+100: Trying to make GitHub better for open source software and people who are building
+  open source
+105: software.
+106: So feel free anytime you receive during the conference if you want to talk about
+  Homebrew,
+113: if you want to talk about open source or GitHub then just get in touch and we'll
+  have a chat.
+116: So start off with the basics.
+118: So what is open source?
+119: So who here thinks they know already what open source software is?
+124: Let's put your hand in the air.
+125: There's going to be a lot of putting your hands in the air by the way.
+128: So you can swap between hands if one gets tired or if you feel like you really
+  know something,
+133: two hands.
+134: And I'm also watching after people who don't know how to put their hands in the
+  air because
+138: you might be asked to come and dance or something like that.
+141: Right.
+142: So a fair few people know it but not everyone.
+145: So open source software, this is the definition I took from open source dot com
+  which is more
+150: or less like the kind of place where people are writing about kind of official
+  definitions
+156: of what it is.
+157: So effectively it's software where the code is available to you so that you can
+  choose to change
+165: the code and change the software.
+167: So it's basically you have a bit more control over the software.
+171: It's maybe to everyday kind of people who work on, you know, writing about computer
+  science
+176: or engineering, then it's kind of the same to them perhaps.
+179: Generally it's maybe available for free of charge.
+182: But as an engineer, then the cool thing about open source software is if I see
+  something in it
+186: that I think should be made differently or I want to work differently, then I
+  can change that.
+191: At least in theory.
+192: So why should you use open source software?
+197: So again, stick your hand up in the air if you use any sort of piece of open
+  source software.
+202: So anyone who hasn't raised their hands is probably wrong because almost everyone
+  nowadays is using open source in some way.
+209: If you visit almost any website now, almost any website you will interact at
+  least in some way with some sort of open source.
+216: You know, Linux is used on most servers now and then increasingly Microsoft,
+  who used to be the biggest proponent of open source software,
+224: they're using more and more open source now as well.
+226: So practically every website you will ever touch will have lots of open source
+  software that will be involved with the different kind of websites you can use.
+235: So I guess the main reason that people are interested in open source, particularly
+  nowadays,
+240: and a reason why it might be relevant to you is that generally it's always free
+  to use.
+245: So things like Google Chrome, things like OpenOffice, things like Firefox, the
+  browser we used to use.
+252: These are all things which are available freely and the reason why they're available
+  freely is because they're open source software.
+259: They may have companies behind them or they may not.
+262: In my case, working on Homeproof, Homeproof doesn't have any company behind it.
+265: No one aids anyone working on Homeproof to actually work on Homeproof.
+269: So we're all just volunteers during our spare time.
+272: But there are companies like Google who have released a bunch of open source
+  projects where they're being funded by people working full time at Homeproof.
+279: So it's also really widely used now.
+283: You know, maybe 25 years ago or something, there was bits and pieces of open
+  source around but they weren't ever kind of the majority in any sort of area of
+  software.
+292: Whereas nowadays, I think in most areas of software, certainly on the back end,
+  stuff which doesn't have a website, like increasingly all of that software is becoming
+  open source.
+305: And open source technologies are just winning because they are more widely used.
+311: So, I think that's a good argument for using it yourself as well.
+316: Because open source is, if you specialize in open source tools, then you're not
+  going to specialize in something which is controlled by a single company.
+323: And you're also using something which is going to be .
+329: So, it's often in my experience, most open source software, not all of it is
+  kind of well documented, not all of it is documented at all.
+337: But most of it is generally reasonably well documented.
+340: And I think the thing that's good about open source is, although when the documentation
+  isn't there, because it's so widely used, you can see so many people on sites like
+  Stack Overflow and around GitHub who may have the same problem as you have.
+354: So, as a result of it being widely used, you can kind of speak with those people
+  and figure out together how to solve some of these problems that you might have.
+361: And for me, again, that's, I remember back in, you know, maybe like eight years
+  ago now, when it was kind of coming to the end of people starting to use, you know,
+  if you wanted some library for your application, you might, you know, actually pay
+  and buy a library off another company.
+376: But the problem with that approach was when there was problems with that library,
+  because the company only had, you know, maybe hundreds, thousands or even 10,000
+  customers, there's just far fewer people on the internet using and talking about
+  this stuff.
+389: So if something doesn't work the way it's meant to work, you can't get that immediate
+  help.
+393: You can contact the company for support and help.
+395: But again, you're still reliant in that case on like having a conversation rather
+  than having that information and that conversation having already played out.
+404: And to sort of very tangentially like ram this into the flow of the conference,
+  I think open source is best for like agile and for entrepreneurs because of the
+  reasons I've stated already.
+418: Because it's freely available for people to use because it's widely used and
+  not tied to a particular company.
+423: I think it allows, you're starting a company, it allows you to get started much
+  more easily because you're not paying for a bunch of software to experiment with
+  and learn new things with new technologies.
+434: But you can just go out there, take stuff off the shelf that other companies
+  are using already.
+439: So for example, a database like MySQL, you can just download that and use that
+  freely on Windows, Mac or Linux today.
+446: But that's also being used by companies like Facebook to power like, I guess
+  what's probably the biggest data storage in the world.
+455: So the fact that increasingly these tools which some of the world's biggest companies
+  are using are available to you to freely use on your laptop or your server or whatever,
+  I think it makes a really strong argument for why I think that's important.
+469: So let's have a little segue on to what is GitHub.
+474: So I already asked you to raise your hands about what GitHub is, so I won't ask
+  you to do that again.
+479: One sec.
+483: So some little vital statistics for GitHub and how it relates to open source
+  software.
+488: So GitHub is roughly today like 21 million developers we've got working on GitHub.
+495: Not in the company obviously, that would be impressive.
+498: But 21 million people use our site in some form.
+502: And about 58 million repositories.
+505: If you haven't used GitHub, a repository is basically what we call like a project.
+509: So they're separated, everything on the site, all the projects basically are
+  separated under the username or an organization name if it's kind of being shared
+  between multiple users perhaps.
+521: And then the repository name.
+523: So of these repositories, as I said, 58 million.
+527: We've got about 28 million of them are public.
+529: On GitHub you can choose with any of your repositories whether it's public or
+  private.
+533: Public ones are available for free and private ones you need to pay money to
+  use.
+538: So obviously if you're a company trying to keep all your stuff secret, then generally
+  you would have a private repository.
+543: And if you're doing work in the open, then you're going to have a public repository.
+547: So of these 28 million public repositories, we consider about 20% of them to
+  be open source software.
+553: So that's ones that have a license, ones that have various other characteristics
+  we've determined to make them open source software
+560: and not say someone following a tutorial or whatever and it's not been licensed
+  in that way.
+567: So these kind of projects, they vary a lot in terms of the different technologies
+  they use, in terms of the size they are and stuff like that.
+573: So some four examples of like big projects you may have kind of seen or heard
+  of, depending on the language you use, I guess one would probably be more well known
+  to everyone in here.
+584: So you've got Node.js, Django, which is kind of like Rails for Python-ish, and
+  then Rust, which is like a new programming language, and Rails itself.
+596: So as you can see, these are all projects that have like lots of people have
+  contributed to them.
+601: In Rails' case, you've got like over 3,000 people have contributed in some form.
+605: So by contributed, I mean that's someone who has in the repository, they've submitted
+  some sort of change that has ended up making it there in the repository.
+615: So there's someone who at some point has helped to kind of make the project what
+  it is and helped build it.
+621: So I think that's, again, one of the really cool things about open source software.
+624: As I mentioned earlier, everyone can kind of modify it, but then you can modify
+  it and you can submit your changes, so other people can make use of your changes.
+632: And other people can build upon your work, and you can have this community that
+  are working together.
+636: The other cool thing about all these four projects is none of them are controlled
+  by like a single commercial company.
+642: There's companies that have more influence in each of these projects, but there's
+  no single company that gets to decide this is what happens entirely with any of
+  these projects.
+651: So they're basically run by a community of people, a significant number of which
+  are doing it for fun in their free time.
+660: So how can you get started in open source software?
+663: Well, I guess there's lots of different ways.
+666: I guess one way would be to start using it, to download something like MySQL
+  or any other piece of open source software, Ruby itself, Rails, and just start using
+  it.
+675: But then what I like to think about a little bit more today is how you can start
+  getting involved with open source as a contributor in the community.
+682: So one of the best places I think for that will go into a lot more detail than
+  the stuff I've talked about in this talk is the open source guides.
+691: This is something GitHub worked on recently.
+693: You can see it at HTTPS opensource.guide.
+696: That basically has a bunch of guides on how to get first started with open source
+  software, but then also how to kind of maintain projects, how to run projects, and
+  various issues that you come across when doing that.
+709: So I've got a bunch of little almost open source guides business cards as well.
+714: I'll stick them with the stickers at the front.
+716: You can feel free to take some of them away.
+717: But yeah, I would recommend going on there and checking that out.
+720: The other cool thing about that is the site itself is actually an open source
+  project.
+723: So you can go, and if you see a mistake there, you can kind of contribute to
+  there and to that project, and we're kind of building that in the open as well.
+732: But the main thing, I don't know if anyone else, has anyone heard this expression
+  before in terms of talking about software scratching an itch?
+740: So this is one of the best ways I think to get involved with open source software.
+745: So the expression is generally scratching your own itch.
+748: And what it means, I saw someone literally as I said that scratching their own
+  itch.
+752: So hopefully I'm not making people itch by saying that.
+754: But by scratching your own itch, what I mean is, in software, the cool thing
+  about open source software, as I said, is that you can modify it yourself.
+762: So scratching your own itch is finding some piece of open source software you
+  use, and then getting started by finding a small change that you think would be
+  other people would widely appreciate that change or whatever.
+775: And trying to make that change for yourself, and then submitting it back to the
+  open source project.
+781: So for me, that's how I got involved with Homebrew and various other projects,
+  is that I saw this project out there.
+787: It was doing like 90% of what I wanted it to do, but it wasn't quite as useful
+  to me as it could be.
+794: So I wanted to go and get involved with that project, so I could kind of scratch
+  my own itch, so I could make it better for me, but then while I made it better for
+  me, I also ended up making it better for everyone else who uses it as well.
+806: So let's have a little think now about what the different groups of people are
+  who work on open source.
+812: So I mentioned before that you can kind of get stuck with open source just by
+  using it, and there's these people called contributors, and I'll talk a little bit
+  more about people with goal maintainers as well.
+822: So the users of open source software are everyone.
+826: As I mentioned, whether people know it or not, almost everyone is using open
+  source on an almost daily basis now.
+831: But we're going to think a little bit more now about the type of users who maybe
+  are at least aware they're using the open source project.
+838: They maybe know that the open source project has a repository on GitHub.
+842: They maybe have submitted issues or bug reports to an open source project, but
+  they haven't themselves kind of contributed to that project yet.
+850: The next group of people are the contributors.
+854: So these are people who have written some sort of code that have made it into
+  the project, or it could be documentation or whatever.
+859: Basically anything that makes it into the project repository on GitHub.
+862: We're going to think about them as contributors because of people who contributed
+  something to the project.
+868: So, but these are people who, at least in my definition I'm going to use today,
+  people who don't themselves have the rights to just make changes without permission.
+878: So obviously with Rails having 3,000 people who have worked on it, not all those
+  3,000 people are maybe trusted to make every change every time.
+888: So what you have is the next group of people called the maintainers, who are
+  the people who have commit access to the project.
+895: So generally the way things work on GitHub is you have a contributor will submit
+  what we call a pull request, which is then viewed by the maintainers.
+905: And it can be viewed by anyone in fact.
+907: But a pull request is basically saying, hey, I've made this change on my version
+  of the project.
+912: And I would like you to pull this change into the main project itself.
+916: So, and then there's generally some sort of code review happens, testing, automated
+  or manual.
+922: And then basically if that looks good enough, then that pull request will then
+  be merged by one of the maintainers.
+927: So the maintainers are the people who are going to have the rights.
+930: And they're going to be the people who will decide whether or not that change
+  is good enough yet.
+935: It might mean that it needs to go back and forward a few times, maybe some code
+  reviews spot some problems that need to be changed,
+942: or the automated tests fail or whatever.
+945: So the maintainers are the people who are kind of guiding people through that
+  process.
+949: So I think it's worth noting that with contributing to open source software,
+  as I mentioned before with scratching an itch,
+956: no one ever really became a contributor, particularly, I mean, it does happen
+  sometimes, but most of the time,
+963: let's say no one ever becomes a contributor without being a user first.
+966: So that you should probably be spending the time, if you want to contribute to
+  open source software,
+970: trying to or managing to contribute to the projects you already use.
+973: Because that's how you're going to end up being most successful, I think.
+976: And if you want to be a maintainer one day, well, the way of doing that is by
+  contributing to a project first.
+982: Unless you start your own project and it becomes very successful, which is not
+  unlikely, but just it's hard,
+989: and there's a lot of other projects that kind of need help today that might be
+  better uses than starting your own thing.
+995: The best way of getting down that path and becoming a maintainer is just contributing.
+1000: Because ultimately, almost no one ends up starting out wanting to be a maintainer.
+1005: People end up on this path, they contribute a few times, their contributions
+  get better and better,
+1010: and then eventually they get asked to be one.
+1013: And finally, if you ever do find yourself being a maintainer of open source
+  software,
+1017: I don't think anyone can stay being a good maintainer of that software if they
+  don't use the software anymore.
+1022: So, to be a good maintainer, to be someone who is able to make good decisions
+  on what should and shouldn't be in the project,
+1028: you should really be using that project.
+1031: So, the way we think about it, at least on Homebrew, is this idea of almost
+  like a funnel.
+1036: So, let's have a look at some kind of some numbers for Homebrew.
+1040: So, based on Google Analytics, Google Analytics says Homebrew has about 4 million
+  users.
+1045: I reckon it's more like, you know, 1.2 million.
+1049: So, of them, we've had about 6,000 contributors.
+1053: So, that's 0.05% of our users, roughly.
+1057: And then we have 17 current maintainers, and about 25 maintainers in total,
+1062: because some have kind of left the project over the years.
+1064: So, that's 0.0015%.
+1067: So, as you can see, like the numbers on an open source project of people who
+  are going to contribute,
+1072: they vary from project to project, and maintainers vary from project to project.
+1076: But, you can expect that you're always going to have way, way, way more users
+  than you're going to have contributors,
+1082: and probably a lot more contributors than you're going to have maintainers.
+1086: So, how can we kind of...
+1088: So, I'm going to think, at the moment, with my Homebrew hat on.
+1091: So, if I'm a Homebrew maintainer, how can I get more contributors from my project,
+  if I have all these users?
+1097: Well, as a starting point, I think most people who contribute to a project were
+  kind of talked into it in the first place.
+1104: Although it's great, and hopefully I can kind of motivate everyone here to go
+  off and try and contribute to an open source project after today.
+1111: Not everyone is always kind of motivated to do that.
+1114: So, one of the ways of convincing people to do that sometimes is if they are
+  having a problem, then you can kind of, as I'll show you in a little bit,
+1121: you can sometimes kind of convince people, okay, well, I'm going to help you
+  solve your own problem, rather than just solving it for them.
+1128: And with maintainers as well, similarly, a lot of people don't necessarily want
+  to be maintainers.
+1135: They don't kind of think of themselves as contributing to a project so they
+  can become a maintainer.
+1140: But instead, they get talked into it because they make enough kind of good contributions
+  that they get asked to be one.
+1146: And ultimately, I think, in my experience with asking other people to be maintainers,
+  like, almost always, people think they're not qualified for the job,
+1154: and that they're being asked wrongly or whatever, and they need some kind of
+  convincing that they're going to do a good job.
+1161: So, let's have a look at some homebrew examples of this.
+1163: So, I don't know how easily you can see on the screen, but this was an example
+  of a tweet homebrew got,
+1169: where someone was complaining, "Brew update," which is our kind of update tool,
+  "fails with the permission denied.
+1176: Could this be related to the version of Mac OS they're using? Please advise
+  them where to get help."
+1181: So, with this person, what we're trying to do, and we then link them to our
+  issue tracker,
+1186: and how to, like, a link that doesn't show the full link, but how to kind of
+  file a good issue, basically.
+1191: So, what we're trying to do here is we're trying to, like, again, like, almost,
+  like, upsell or kind of convince this person,
+1197: okay, rather than just asking for help on Twitter, we're going to try and help
+  you learn how to file a good issue on an open source project.
+1203: Because if you want to file a good issue, the best way of doing that is by making
+  sure that, basically, other people can see how you've done that,
+1212: and what you need from the project, and what the project needs from you.
+1216: So, you need to make sure that you provide all of the information that the project
+  needs to know,
+1221: like things like the project version you're running, things like what the things
+  you were doing that produced the problem were, and stuff like that.
+1228: And then they're going to ask more information from you, and you need to have
+  that back and forward to figure out what the problem is,
+1234: and then to hopefully provide some sort of fix for that problem.
+1237: So, something like this, when you just ask on Twitter, like, what the problem
+  is, that doesn't give us enough information to figure that out.
+1244: So, we're trying to help him figure out, okay, not only how to give homebrew
+  more information, but also how to file better issue reports in future.
+1252: So, something we might put on an issue to try and help people in the right direction,
+  and I've occasionally used this with coworkers
+1259: who want me to help them with a problem, but aren't explaining it very well.
+1262: It's saying, okay, so, for us to debug this issue, ask, what were you trying
+  to do, and why?
+1268: So, generally, that's stuff like, what command were you running?
+1272: What were you trying to accomplish with homebrew?
+1274: It's generally something like, I was trying to install some package, and it
+  didn't work, and this is what happened.
+1280: Then the next step, as I said, is what happened?
+1283: So, was there an error message? Did it just never complete?
+1286: Did it take a long time? Did it take longer than you expected?
+1288: Basically, like, what was the difference between that and the next one, which
+  is what you expected to happen?
+1295: Because I'm trying to figure out what the difference is between those two things.
+1298: Because it could be that what you expected to happen is what's incorrect, and
+  what happened is what's correct.
+1304: In which case, we can help you understand that.
+1307: And then, finally, kind of step-by-step instructions to reproduce the problem.
+1312: So, again, in any software project, I think this is a big thing that hopefully
+  you can take away today.
+1317: Like, the best way of ever finding out and helping other people to help you
+  fix bugs is to make sure you have step-by-step reproduction.
+1325: And by that, what I mean is a series of commands or actions you can perform
+  that will produce the same bug every single time you run them.
+1334: Obviously, with not every bug, not every time is that going to be possible.
+1338: But I think if you can manage to get that, then it makes it much, much easier
+  for people to fix that, because then they can go and then follow the same steps,
+  and then they can start to kind of debug it and then figure out what the problem
+  is.
+1351: So, the next thing we might do is if someone has got in the habit of filing
+  good issues that have this information, then if they ask for help on an issue that
+  seems like it would be relatively easy to fix, but they haven't yet submitted a
+  fix for it themselves, then I might say something like this.
+1370: So, I say, again, I'm not sure if you can all read the text.
+1373: Could you try and open a pull request?
+1375: This document, which links them to a document on how to do that, should help,
+  and I'm happy to walk you through anything else.
+1381: So, what we're trying to do here is trying to convince people who are submitting
+  issues to consider, okay, well, maybe you can fix this issue yourself.
+1391: Maybe you have what's, maybe you have it in you to kind of figure out and solve
+  this problem with help from us, and then you'll have the satisfaction of solving
+  that yourself.
+1401: I think with Homebrew, it's maybe easier for us than it is for some projects,
+  because most of our users are software developers, so the majority of people probably
+  do have it in them to kind of make some sort of change.
+1414: But I think it's a good thing to kind of encourage in open source anyway, is
+  this idea that we are all in control, and we can all, given enough time and help
+  and learning, we can all kind of solve our own problems.
+1426: So, this is our little snapshot of that document we have before.
+1430: You can, again, it's, the colors are such, you can't really see it.
+1434: If you go to docs.brew.sh, that's Homebrew's documentation site, and then it's
+  kind of relatively prominently on there.
+1441: And we try and walk people through the step-by-step guide on what it needs to
+  take to open a pull request, and more importantly, to get it merged, i.e., for us
+  to accept it.
+1451: So, trying to get people guidance on what type of things are required for us
+  to know that your work is good enough for us to include in the project.
+1460: So, similarly with maintainers, we have a document for this as well, which kind
+  of walks through some of the expectations, in case you're interested, of what we
+  expect from a new maintainer.
+1473: So, what type of things do they need to do, what type of things do they need
+  to demonstrate, and how do we kind of communicate with that person that they should
+  be a new maintainer.
+1483: So, the last section of the talk I'm going to get onto is, how can you go about
+  keeping each of these groups of people happy?
+1491: So, you've got the people who use the software, the people who contribute to
+  the software, and the people who maintain the software.
+1497: All of these groups are important. Obviously, without any users, there's not
+  really any point in the software.
+1502: Without any contributors, you don't have that kind of large number of people
+  who are going to be helping make the software.
+1509: And you also don't have people who are going to come in and replace other maintainers
+  when they leave.
+1515: And without the maintainers, you don't have anyone who can kind of control access
+  to the software, maybe make new releases and stuff like that.
+1522: So, for users, I think the thing most people care about is high quality.
+1529: Who in here likes it when they come across bugs in software they use? No one.
+  Okay.
+1535: So, the most important thing to do, I think, with any piece of software is to
+  focus on it being high quality.
+1541: That doesn't mean necessarily the code always needs to be high quality, but
+  that means that using the software should be a pleasant experience.
+1548: It should not be very buggy. It should not be filled with lots of problems.
+1552: So, as a result of doing this, I think you need to be careful, if you're running
+  an open source project or any software project,
+1559: that you maintain the quality of the project whilst making it better, whilst
+  adding new features, whilst adding new changes and stuff like that.
+1567: Because, ultimately, if your quality keeps getting worse, then people are going
+  to stop using your project.
+1572: Or, if it's a paid project, stop paying you money and go to one of your competitors
+  who has managed to maintain that high quality.
+1579: So, the second one, and this relates to maintainers mostly, is relates to the
+  first, which is don't merge things out of guilt.
+1588: So, in some open source projects, if someone's worked really hard on trying
+  to solve a problem, but their code is maybe really still buggy or it's going to
+  cause problems down the line,
+1598: Sometimes, and I've done this myself, it can be tempting to maybe just include
+  their work because you feel really bad about them spending all this time and it's
+  maybe not good enough yet,
+1607: and you don't think it maybe is ever going to get good enough, just because
+  it's maybe a problem that can't be solved in a clean, nice way.
+1617: So, in that case, it's worth politely just declining the pull request if it's
+  on GitHub, rather than merge something that you think is going to make the project
+  maybe a little bit worse,
+1629: but maybe make you feel a little bit better.
+1631: Because, eventually, that's going to come around and it's going to cause more
+  problems for you than it solves.
+1636: And the last one I would say, again, this applies to most software projects
+  and is maybe controversial.
+1641: By no V2.0, what I more mean is what's kind of common more in open source projects
+  than in closed source software, but happens in all software,
+1652: is that sometimes the temptation, if your code maybe isn't that great, if your
+  project's not working as well as you want it to,
+1659: to just say, okay, I'm going to throw away everything I've done so far and I'm
+  just going to start again from scratch and make a complete replacement for the existing
+  tool.
+1667: Now, this is almost always a very, very, very, very, very, very, very, very,
+  very bad idea.
+1677: And the reason is because while you may be able to introduce new features, while
+  you may have new code and everything will be nice and clean after you do that,
+1686: you're also going to have all of the bugs that you fixed in the old version.
+1690: Maybe you might not have all of those bugs will come back, but you're going
+  to have a bunch of new bugs that are going to come back from new code that hasn't
+  been tested as much as the old code has.
+1699: And also in general, if you have a tool, again, either a tool that people pay
+  for or an open source tool, I think this applies to both.
+1707: If you completely change the way it looks, completely change the way it behaves,
+  then it's sometimes as easy for your users to use your new version as it is for
+  them to just move to a competitor or move to another project.
+1720: And with open source, you see this happen relatively often that people release
+  some new version of, say, a library, and they make it so that everyone who uses
+  the library needs to completely rewrite all their code so they can use the new version
+  of this library.
+1732: And what that ends up meaning is that actually I'm going to go and use another
+  library instead because I trust that library now to not make me have to rewrite
+  all my code every few years.
+1742: So for me with homebrewed, this has been an example where we have, you know,
+  the way our packages are built, we call them formula.
+1750: So if we made a new version, the temptation would be to make a new formula thing
+  which solves all the problems with the existing one.
+1757: But then all the thousands of formula out there and the thousands of contributors
+  and the probably, you know, as I said, millions of users are not going to have the
+  same functionality that they were used to before.
+1768: We almost have to start from scratch and build all this stuff again.
+1772: So although that would be tempting, that throws away a lot of the progress we've
+  made over the last eight years.
+1778: So I think it's not advisable.
+1780: So thinking about contributors, how can you make a project that is good for
+  contributors?
+1786: And how can you have, as a contributor, a good influence on a project?
+1791: So the first one is, has anyone heard of bike shedding, talking about that with
+  software?
+1797: Okay, so bike shedding is this idea with software that again applies with both
+  open source and closed source software.
+1804: That if you ask people, say you have some really complex part of the code, and
+  you ask people for feedback on, you know,
+1811: how should we change this code so it can be kind of, you know, easier to work
+  with and stuff like that.
+1816: Like, you might get a few opinions from a few people.
+1818: But if you say, okay, our office has a bike shed, I think the bike shed should
+  be painted red.
+1824: Then everyone in your company and everyone in your project will be like, no,
+  I think it should be blue or green or yellow.
+1830: And it's basically because there's certain decisions in any project that are,
+  or any company,
+1836: which are very, very easy for everyone to get involved and everyone to have
+  an opinion.
+1841: And it's very easy to have these discussions, particularly in open source projects
+  where everyone can kind of think, no, I like A or I like B or I like orange or bananas
+  or apples or whatever.
+1851: Like, and these conversations often end up spiraling out of control and you
+  just end up with hundreds, sometimes even thousands of people arguing about something
+  while none of them are actually volunteering to do the work.
+1865: And it's not really a conversation that can reach a helpful conclusion.
+1869: So both if you're contributing to an open source project and if you're trying
+  to help contributors be more effective on an open source project,
+1877: trying to stop those conversations getting out of control so that they don't
+  become bike shedding and instead keeping people focused on specific questions that
+  can have some sort of actionable, like technical outcome.
+1890: So the next one is like open discussions.
+1895: So we, you probably do want somewhere that people can kind of maybe talk about
+  what color the bike shed should be, but that should not be on the main, say issue
+  tracker for the project.
+1906: That's a good place for that is not when people are trying to talk about bugs,
+  when people are trying to talk about the code, but that can be going to happen somewhere
+  else.
+1914: So for example, this homebrew uses a tool called discourse, which provides like
+  a forum for us.
+1919: I think that's freely available if anyone else wants to use it as well for open
+  source projects at least.
+1924: And that allows us to go and say, okay, if you want to just kind of talk about
+  homebrew, then you can go and do that over here instead.
+1930: And if you want to kind of focus on homebrew's code and like working out how
+  that should be done, then we do that on the GitHub issue tracker instead.
+1938: And finally, in homebrew's case, we try and not get people to create lots and
+  lots of issues on our issue tracker about features.
+1950: And in general, when you're contributing to an open source project, you should
+  be very careful about submitting feature requests.
+1956: And the reason why is as I said before, you are often capable of making things
+  yourself.
+1961: Like if there's new features, you may be able to build that yourself.
+1965: And the problem is, is that because there's generally so many more users in
+  open source than there are contributors or maintainers,
+1972: there's a lot more time spent on suggesting features than there is on building
+  them.
+1977: So in homebrew, we generally don't allow any new feature requests that we don't
+  have one of our maintainers say, okay, this is something that we definitely want
+  to build in the near future.
+1987: And that basically just stops it getting out of control and having hundreds
+  or thousands or more of issues, which we've sort of said, okay, maybe we'll do this
+  at some point.
+1997: And then we never do. And that's unfair to the person who submitted the issue
+  because we've kind of promised them something we can't deliver.
+2004: And that's unfair to us because it makes our issue tracker hard to use.
+2008: I would say this is the case, not no feature issues, but even when you're working
+  on, again, closed source software as well,
+2015: it's always worth thinking about the things that you say in your project.
+2019: Yeah, this is nice to have. We would like to do this one day.
+2022: Like in my experience, anything that is not, you don't have a plan for when
+  it's going to get built.
+2028: Say if it's not getting built in the next two weeks or a month or a couple of
+  months or six months,
+2033: if it's something that, oh, we might do that in a year, we might do that in
+  a few years, chances are you're never going to do that.
+2038: So it's not worth spending too much time and energy thinking about a problem
+  which is not going to be solved for a few years,
+2046: maybe not even be solved ever.
+2049: So, and finally, for maintainers, the things that we generally try and do for
+  other maintainers
+2055: and to try and help our projects be more effective, the first one that are kind
+  of being used more and more on GitHub
+2061: and at conferences like this and generally in a lot of things around technology
+  is this idea of a code of conduct.
+2069: So that's basically just like a written document that describes what expectations
+  you have of people participating in an event or an open source project or whatever.
+2079: Basically just like making clear that it's not acceptable to be racist or sexist
+  or anything like that, for example.
+2086: And just writing that down makes it easier for people because they know that,
+  okay, you as a community have said that these things are not acceptable.
+2093: And it also makes it easier when you're running a community because if someone
+  behaves in a way that's inappropriate,
+2098: you can point them to this document and you can say, okay, you're not behaving
+  appropriately,
+2103: but also we're not picking on you, we've written this document and it's about
+  your behavior that we've written down before you behave in this way in this document.
+2112: So can you please change your behavior if you want to remain part of our community?
+2117: And next thing I think is important in open source is that maintainers have
+  a private space they can talk about things sometimes.
+2124: In homebrew there's one of the maintainers who I disagree with quite a lot,
+  but I like him and I respect him.
+2129: And it's helpful for us sometimes to have our kind of sometimes heated arguments
+  in a private space where other people don't have to see us maybe kind of arguing
+  with each other or whatever.
+2140: And then we can come at the end and try and reach some sort of kind of helpful
+  conclusion that we can present to other people,
+2147: rather than having to have like a loud discussion in public.
+2151: And the last thing I think that is most important to open source, to maintainers,
+  and to everything is to be always growing.
+2160: So maintainers should always be looking out for more maintainers, contributors
+  should always be looking out for more contributors that they can help,
+2167: and people should be looking out to get more users for an open source project.
+2171: Because this is how, as I said at the beginning, open source is a community
+  that we all kind of share and that we're all part of and we're all using.
+2179: And the only way this community can be sustained is by ensuring that more and
+  more people,
+2184: as they come into that community as users, more and more people come into that
+  community as contributors,
+2188: and more and more people come into that community as maintainers as well.
+2192: So with that, I think that's me, and if anyone has any questions, I'll be happy
+  to answer them.
+2198: Are we doing questions, Michael?
+2200: Yeah?
+2201: Anyone?
+2202: If you have any other questions?
+2203: Oh, there we go.
+2204: 'Male Speaker 2: So I have a maintainer.'
+2205: 'Male Speaker 2: So I generally thought I felt you''re trying to do that.'
+2206: If you have any other questions?
+2207: If you have any other questions?
+2208: If you have any other questions?
+2209: 'Male Speaker 2: So I have a maintainer on the open source project.'
+2210: 'Male Speaker 2: So I generally thought I felt that''s happening.'
+2211: 'Male Speaker 2: Yeah, so if you have any other questions?'
+2212: If you have any other questions?
+2213: Oh, there we go.
+2214: 'Male Speaker 2: So I have a maintainer on the open source project.'
+2217: So for example, full request and what is a polite way to decline the full request
+  or maybe
+2231: ask for changes?
+2232: 'Male Speaker 2: So what I have felt is a way to do is maybe write some sort
+  of suitable'
+2243: code for them.
+2244: So the way to do it is maybe write some sort of suitable code for them or it
+  may not work.
+2251: But was it right?
+2252: But they are not just complicated.
+2254: But they don't have an idea how to go about it.
+2259: So I feel like it's kind of so that something is on the table.
+2265: So that's how I feel.
+2270: Thanks.
+2278: That was a really good question.
+2279: Did everyone hear the question okay or did you need me to repeat?
+2282: No?
+2283: Cool.
+2284: So I think the best ways -- and I think this applies to progress in people you
+  work with as well.
+2291: So the first best way, I think, is making sure that -- and you can't always
+  go back and do this retroactively.
+2299: But trying to have as many of your checks be automated as possible.
+2303: So for me with Homebrew, my guide is if I give the same piece of review feedback
+  three times, I want to try and write an automated check for that.
+2311: And there's a few reasons for that.
+2313: One is because then people can get feedback on their computer before they even
+  submit the pull request if they can run that automated check locally.
+2322: Another one is that then they can get that immediately after they submit the
+  pull request rather than having to wait for me.
+2327: And then a third one, which is -- I don't know whether this is true or not,
+  but in my experience, people respond better to negativity from robots and positivity
+  from humans.
+2339: So if my robot says, okay -- and by robot I mean like, you know, automated tests
+  or some bot user on GitHub or whatever.
+2349: If the bot says, okay, you need to make this change and this change and this
+  change, it doesn't feel like it's a human who has a problem with me.
+2356: It's just like, you know, that's the system and it's obviously a system that
+  predates me and it's not personal and no one's picking on me or whatever.
+2364: So I feel like that tends to produce more positive interactions.
+2368: And also it makes it kind of clear if you use GitHub, for example, if you set
+  this up as continuous integration with something like Travis CI,
+2375: which provides free services for open source projects to do this, then people
+  see like a big red cross at the bottom of the pull request or a green tick depending
+  on whether it's passed or failed.
+2385: So I think robots are a really good way of solving that.
+2390: And then I agree with you.
+2391: I think that's a good point about trying to provide people like with a sample
+  of the code of how you think it should look.
+2398: And you can with some stuff on GitHub now just do it for them, but I think it's
+  sometimes more useful.
+2404: Even if people like literally are copying and pasting what you write into a
+  new commit and then pushing that.
+2410: I feel like that produces more of a kind of helpful, responsive sort of feedback
+  loop.
+2416: And then I think mainly the main thing is just being like nice, being friendly
+  about it.
+2422: And yeah, some people are always going to get pissed off anyway because there
+  are some bad humans and some good humans.
+2428: But I think if you kind of say thank you for your pull request, we really appreciate
+  it.
+2433: Like this is looking really good, but I just have like a few, a couple of like
+  small things that I'd like you to change before we can include it.
+2440: Stuff like that generally puts people on ease more than if they submit a change
+  and then you immediately just make, you know, 40 suggestions of things that need
+  to be changed.
+2450: And particularly, obviously something to avoid is ever being insulting about
+  the code.
+2456: Even if it's the worst code you've ever seen in your life, you know, saying
+  that that code is crappy doesn't help anyone.
+2462: That just makes it less likely that that person is going to want to contribute
+  again.
+2466: Because fundamentally you're wanting with, as a maintainer, you're wanting people
+  to walk away from the experience of contributing, feeling good about themselves
+  and feeling like they can do more than they felt they could.
+2479: And if they don't feel that way, then maybe the pull request gets merged, but
+  they won't probably want to do it again.
+2485: Because with open source, as I mentioned, the big thing is because a lot of
+  people are doing it as volunteers in either their spare time or not being paid directly
+  to do that.
+2495: If you make someone feel like crap, then they're not going to want to do that
+  again.
+2500: So, but yeah, thank you.
+2501: Great question.
+2502: Any other questions?
+2505: Well, if anyone wants to ask me anyone personally, then just grab me anytime
+  during the conference.
+2514: And thank you very much again for having me.
+2516: Thank you so much.

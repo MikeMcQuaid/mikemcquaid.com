@@ -1,0 +1,616 @@
+---
+0: Hello. Right, I'm going to start this talk with questions because I'm unconventional
+  like that.
+5: So, first question. How many people have either heard of Homebrew or have any idea
+  what it is
+10: and it's not about beer? Okay. How many people in here are running a Mac as their
+  kind of
+17: main-ish computer? Okay, about the same number of people. Okay, so if anyone gets
+  really bored
+24: or really confused with anything I'm saying, just shout and I'll try and go faster
+  or slower or
+29: whatever. How many people are using it? What was that? How many people are using
+  it? Oh, in here.
+33: Yeah. Sorry, I'm confused. What's going on? You didn't ask how many people are
+  using it. I think
+39: that's the most important thing. Oh, it's okay. I'm not a name like that.
+42: It's just like me. Right, so that's where you contact me. Homebrew. Why? So, there
+  was a man
+53: called Max. This man called Max used a thing called Macports and got very angry
+  with
+59: this thing called Macports because it does things like this. So, if you want to
+  install
+65: Git on Macports, Git being a popular first control system, then what Macports
+  has to do
+70: is install all these things first. So, what I will come to in a minute is actually
+  that is
+76: somewhat unnecessary because if you install Git in Homebrew, to jump ahead for
+  a moment, then
+81: you have to install this. Oh wait, I have forgotten to fill out the slide. Or
+  have I?
+85: To explain something which you probably don't care about, but people like me do
+  care lots
+91: about. Basically, all this shit already comes with your computer. Well, almost
+  a little bit.
+97: So, if you have a Mac. So, that's the difference between Macs and package management
+  Macs compared
+101: to Linux or Windows or whatever. And then you have a whole lot of crap, particularly
+  like open source
+106: libraries and things like that, that are provided with your Mac. Now, Macports
+  decides that actually,
+112: they don't like the way Apple do things. So, they're going to go build all this
+  stuff like
+115: they're themselves, so they can kind of control their versions. But the disadvantage
+  of doing
+119: it that way compared to this way is that when you install Git with Macports,
+  it takes a hell
+125: of a lot longer to install. And generally, it uses all this crap that you probably
+  don't care about,
+129: you probably don't want, whatever. So, Macs went and decided, I'm going to make
+  my own version.
+135: And everyone said, "Aha, you're an idiot. No one will use your version and you'll
+  have to do
+140: all the Macports with it eventually." And seemingly, they were wrong. But anyway,
+  so I ended up
+145: meeting Macs and a few other people did as well. And Homebrew kind of began.
+  So, Homebrew,
+152: it's GitHub based and uses kind of Git. And GitHub is the kind of storage method
+  and kind of back-end
+159: way of transferring data around and all that fun stuff. And I kind of stumbled
+  upon it because I was
+165: having similar problems with Macports and got involved. So, nowadays, Homebrew
+  has lots of users,
+171: lots of hopefully mostly helping users. And like all the actual kind of work
+  in the
+175: repository is done by these seven people. So, Macs, who's the repository and
+  anything,
+181: in his name. And then there's kind of the rest of us sorted in roughly kind of
+  commit order.
+188: And basically, what happens is with Homebrew, unlike most other package managers,
+  where if, say,
+196: there is an update to some package, say there's an update to Git tomorrow. So,
+  the way it works in most
+201: package managers is you have like a guy who's a maintainer. And he notices and
+  says, "Aha, there's a
+205: been update to Git. I will go and then update Git, blah, blah, blah." But that
+  relies, obviously,
+210: on him having free time to do that, him noticing, him setting it up, whatever.
+  And there's this very
+215: much kind of this two-tier structure of the people who are kind of actually doing
+  the stuff and then
+221: the people who use it. Whereas with Homebrew, we have these people who actually
+  are the only
+226: people who have commit access to the GitHub repository. But then we have a few
+  more people who've actually
+231: made commits, and I've got their names on the next slide. So, I hope you can
+  read that in terms
+237: of the small one over the back. So, we've had 2,908 contributors to Homebrew
+  as of today. So,
+244: basically, the way it works with Homebrew is most people will go, which is one
+  of the reasons why
+250: we're the most, one of the top three kind of forked repositories in GitHub. So,
+  people will fork the Homebrew
+255: repository. They will add their own new package or an update to an existing package
+  and then they can just
+260: send us a pull request. I'll talk a bit more about the process of that later
+  on. But basically,
+264: it means that rather than us kind of seven people having to do a whole lot of
+  work that you normally
+269: get done with a package manager, instead, we are kind of almost more kind of
+  wrangling and managing
+274: other people's contributions, which is probably 95% of the work that kind of
+  actually goes into Homebrew.
+279: So, in case you think, oh, this Homebrew stuff sounds great. How do I get me
+  some of that?
+286: Very briefly how to install it. So, you need an Intel CPU, you need a Mac, which
+  is running
+290: 10.5 or later, and then you need to install Xcode or this weird thing called
+  command line tools for
+295: Xcode, which basically is just Apple letting you have the compiler and stuff.
+  But that will automatically
+302: install as of Mavericks, so then things will be a bit happier. Do you have to
+  do that with Macboards?
+307: Yes, you do. You have to install it with Macboards as well. But if you want to
+  install it,
+314: we were one of the first cool people to do this thing, which makes security people
+  very upset,
+319: where you just say, "Let's just install stuff by piping a random script into
+  our terminal and doing what
+326: it said." We do prompt you and tell you what we're going to do and stuff like
+  that. But anyway,
+332: so that little one-liner will go and run the Homebrew installation script and
+  install on your system.
+338: So, once you have Homebrew installed, you might want to install something that
+  doesn't come on Macs,
+343: but it comes on Linux, like wget. So, if you type "brew install wget", then you
+  will see something a bit
+347: like this. So, it will download, it will run "configure", "make install", which
+  if you're a kind of somewhat
+353: Unix-y, open-source-y, Linux-y person, which will seem all terribly familiar.
+  And then, at the end,
+357: you have a bunch of stuff and the amount of time it takes to build it. And because
+  we're really cool like
+364: that, because on RSX it supports emoticons in the terminal now, we now have a
+  little emoticon for beer.
+371: And you would not believe how many people who otherwise seem to lead content
+  normal lives got very upset
+376: about that. So, what happens when you actually install it? So, what we do, again,
+  slightly
+384: different to other package managers, is we have a seller, and we separate each
+  package into its own
+389: prefix, and then we symlink everything into one place. I'll kind of walk you
+  through that in a minute.
+393: But basically, so when I install wget, rather than it stringing like shit all
+  over your computer,
+398: everything that wget actually has installed is under this one directory. So,
+  I go to user local,
+404: which is the default homebrew installation. If you don't like that, then leave.
+  And then under the
+409: seller, then I basically, I'm just saying list all the files under here, and
+  then that's the stuff
+414: that's installed. Basically, all of this is provided by wget itself. And then
+  the only thing which is
+419: actually homebrew files is this install receipt, which is basically just some
+  kind of basic JSON
+424: metadata. Again, different to other package managers, perhaps, we don't tend
+  to kind of have like a big
+429: package database and all these kind of binary archiving formats. Everything's
+  on plain test from
+433: disk, either in JSON or in Ruby files. So, if I want to install Qt, this is where
+  we get a bit of
+440: self-promotion. Because I got fed up of having things like that. You know, that
+  is 46 seconds of
+447: my life I'm never going to get back. And the problem is, well, sorry, the good
+  thing is about Macs is that,
+452: unlike Linux, where you can have all sorts of different distributions and different
+  versions,
+455: stuff like that, if I have a Mac and it's running the same off of the system,
+  10.8 or whatever,
+461: then if you have a Mac that's running 10.8 as well, then literally all the libraries
+  you have in your
+465: system that we kind of rely on will be exactly the same. And equally, if I compile
+  something on my
+471: system, I can just copy that onto your machine and that works fine. So, basically,
+  I created a kind
+475: of binary packaging format, which are called bottles, obviously keeping in the
+  theme. So, if you install Qt,
+480: then this uses a bottle instead. So, it downloads the bottle from SourceForge
+  until they shut this
+485: down for using too much bandwidth. And then it just pours the bottle instead,
+  which is a hell of a lot
+491: quicker, just downloading and extracting a tarball than it is to go and do the
+  same thing with building
+498: a tool yourself. Particularly something like Qt, which takes kind of half an
+  hour, an hour to build.
+502: So then, much the same result. So, what I was saying with the Simlink stuff before,
+510: basically, what we have is user local, which is our main kind of prefix, which
+  we kind of install
+515: everything into. And then, in the bin directory, if we look in here and we say,
+  let's look at the
+519: Simlinks. So, we have bin wget. It's not actually an executable, but it points
+  instead into the seller.
+525: So, basically, what we have is you only need to add user local bin to your path
+  and then you can just go
+531: and run and it will go and automatically Simlink everything into the right prefixes
+  and yad yad yad.
+537: So, the kind of cool thing about that is if you want to uninstall software, you
+  can just remove the
+540: prefix. You don't need to worry about, sorry, you can remove the place, the prefix
+  it has in the seller.
+545: And you don't need to worry about it kind of, as I said before, chucking shit
+  all over your system.
+550: So, to use homebrew, some kind of brief overview of stuff. So, you might run
+  brew outdated. That basically says,
+556: what do I have that needs upgraded on my machine? Then, surprisingly, you might
+  type brew upgrade to
+562: upgrade it. And then, if you want to upgrade the specific formula, like wget
+  what you saw before,
+568: then just brew upgrade. That's what you get. And some other stuff. So, we cache
+  all your stuff in
+575: to get that directory, the brew dash dash cache. You can list the contents doing
+  that. And to view the
+581: map page, which is unfortunately very infrequently updated and not in any way
+  up to date with what the
+588: code actually does. No, the map page works all right for anything you will need
+  to do. It's frustrating for
+593: people like me, who kind of use all the kind of nips and grindies, because then
+  we're out talking.
+596: If only you could find a technical right. Exactly.
+598: A technical right it would work for free. But yes, so, as well as having lots
+  of nice pull requests
+607: from people, unfortunately, sometimes people have issues. And I'm not just talking
+  about general
+610: issues people have in life. We call them issues because that's what GitHub calls
+  them and we use GitHub for
+615: bug tracking. So, if you have an issue with homebrew, here are the things you
+  should do before you bother me.
+622: You should do these. Did we update? Did we run Brew Doctor? Again, although we
+  kind of suck at
+628: documentation, something we are quite good at is we have lots of cool little
+  automated tools
+631: like Brew Doctor. So, basically, pretty much whenever we see the same bug occurring
+  again and again,
+636: because some user has some stupid thing on the computer, we go and add a check
+  for that in Brew Doctor.
+641: And if you run Brew Doctor, then it will list a bunch of stuff that we kind of
+  think is suspicious
+646: or wrong or whatever in the computer. That does not mean your computer is having
+  any problems, but it means when
+650: you have problems, then we can kind of point out to you what they might be and
+  try and suggest some sort
+654: of fixes.
+656: Are you running the latest version of Xcode? Have you completely ruined Macboards
+  and things?
+659: That's not just because we hate them. It's because they tend to interfere with
+  each other and they pick up
+664: each other's stuff and then it's all a big disaster. And you need to own user
+  local by your own user.
+672: Again, that's something we do. It's a little bit controversial. Again, it's a
+  good to people
+675: sometimes get upset. But the reasoning is on Macs, the applications directory
+  is user writable as well.
+682: So basically, if you can chuck applications in your application directory, why
+  not be able to use
+686: without changing to root and chuck applications in your user local.
+689: So, again, how to debug stuff. Go and send our stuff, run brew install dash v,
+  which is verbose,
+701: for the thing you're trying to install, and then gist the output. If you haven't
+  used gist,
+705: it's basically like a paste bin service provided by GitHub, and do the same thing
+  with brew doctor.
+710: And all of this is on a troubleshooting page. Which, at the top of it, we have
+  this.
+715: Troubleshooting. Please, please, please, please, brew doctor before creating
+  a ticket.
+720: If you create a ticket, please paste your brew doctor. Now, you would be surprised
+  how many
+725: people do not paste their brew doctor output. And you'd be surprised how many
+  people paste output,
+729: which includes this at the bottom of it. And then say, "But I did everything
+  you said!
+736: Oh, you're such entitled jerks!" That's more my issues than that.
+741: So, on to some slightly cooler stuff. Again, another thing that homebrew does,
+746: which is one of the reasons I think it's got a bit more popular, is it's really
+  easy to create new
+750: packages. So, say we were living in a parallel universe where we didn't have
+  wget in our repository.
+757: So, you would say, "I want me a bit of wgets." So, if you find the URL for where
+  the wget toggle
+763: is on the internet, then you can type brew create, and then point it to the toggle,
+767: and then it will download it, and then create a file for you. And then says,
+  "Please run brew audit,"
+772: which is another one of our tools for formula creation, which is what we call
+  our package description.
+778: So, this is probably going to be too small for anyone to read, but what we then
+  generate in the right
+783: place and stuff is this file here. And I'll just talk through very briefly what's
+  going on here.
+787: But basically, so this is our kind of formula description file. It's actually
+  just a class
+791: in Ruby. The subclass is from formula, and it's in a .rb file in the library
+  formula directory.
+796: And basically, we have gone and nicely pre-populated a lot of this stuff for
+  you.
+800: Pre-populated the name, the URL, the SHA-1. We don't have a version in that because
+  we sniff it from the URL.
+806: And then, you know, kind of some sensible stuff. And here, you have configure
+  and make install,
+811: and a test, which hopefully we're in. So, if I was to fix that up, then it would
+  look something
+815: like this afterwards. And you can see in here, basically, the stuff in orange,
+  although that
+820: should be orange as well, if you want to change that today. That's the only stuff
+  that you've actually
+824: had to enter manually yourself. So basically, for something like DoubleGet, the
+  only thing you
+828: actually need to enter is the home page and the test. So, as you can see, pretty
+  easy to make new
+834: deviant packages, compared to if anyone here has ever tried to make new kind
+  of deviant packages
+840: or RPMs. Again, they do things in a certain way, and that's okay. And they're
+  a lot more perhaps
+845: robust or thorough than we are, but it's a complete nightmare compared to stuff
+  like this.
+850: But anyway, then you can run BrutAuditWget, which basically goes and looks at
+  this,
+855: and makes sure you haven't made any silly mistakes or kind of bad practices or
+  whatever. And then,
+860: after that, you go and try and build this on your machine. And then,
+863: if you pass this buildBottle, then that basically means that you can kind of
+  distribute that binary,
+867: remember the bottling stuff I talked about earlier, for a brewbottle, then you
+  kind of generate a
+871: binary. You can then stick that into your formula file as well. We obviously,
+  like relatively sensible
+877: people, don't accept random binaries from people because we don't want random
+  binaries from random
+881: people to be installed on all our users' machines. But if you're doing this yourself,
+  or you can kind of
+886: quite happily go and have your own formula, which you don't share with other
+  people, then this type of stuff can
+890: become quite useful. But yeah, so you've added your beautiful new package. You
+  want to contribute
+895: that to Homebrew. So first thing, if you don't already have it, you need to install
+  Git. You need
+900: to then update. And then you need to go on GitHub to our repository, which is
+  github.com/mxcl/homebrew.
+908: And then you need to fork it using this button here. Or I should have described
+  that in text,
+916: because their interface will change and therefore my presentation will be better.
+920: But yeah, so then you get your own fork. For those who aren't familiar with,
+  is everyone more or less
+928: familiar with GitHub forking parlance and stuff? Stick your hand up if you're
+  not.
+933: Okay, cool. So very briefly, basically, that's just a complete copy of someone
+  else's repository,
+939: which you can make all your own modifications to. And then it means you can kind
+  of submit them back
+943: later on. Basically, so I have my own copy of the repository. This might seem
+  slightly odd,
+948: considering I have right access to the repository, but it's kind of useful sometimes
+  for code review.
+952: And obviously, if I want to kind of make random changes to Homebrew, I probably
+  want to test them
+956: myself before I push them to everyone. So here I've got a fork. I've made my
+  own branch here,
+963: called git-etc. And then what I'm going to do is make this pull request, which
+  is what this is in here.
+969: Um, sorry, by clicking that button there, which again, you know, you'll have
+  to change next week.
+974: So I then create this pull request, pops up a new that looks like this. Again,
+979: something different last week, it looks different the week after.
+982: But yeah, so basically it kind of has the vague contents of the commit, what
+  I want people to look
+986: at and stuff like that. And then that's the kind of commit at the bottom. And
+  then what this will do
+990: is get sent to the inboxes of everyone who does commit access on Homebrew and
+  other random people
+995: who follow the project. And we will see something like this, which is a nice,
+  beautiful pull request.
+999: This is how we do most of our kind of submissions, most of our kind of code view
+  between the team.
+1004: And basically lets us kind of go through, view the code and kind of files change.
+  And then we can review this.
+1009: So this is actually an outstanding pull request of mine, which, um, again, as
+  you may have noticed,
+1016: because there were only seven of us, and probably only kind of four to five
+  of us, like actively
+1020: working on Homebrew, it sometimes takes us a while to get to the pull request.
+  So far we've had,
+1024: thinking that four years Homebrew has been around, we've had something like
+  25,000 pull requests.
+1031: And so we did take a while. I made this five months ago. Five months ago, Jack
+  said, sorry,
+1037: keep meaning to look at it, we'll review soon. Not reviewed yet. But anyway,
+  so if you are contributing
+1045: to Homebrew, to save you a bit of time, stuff we don't accept, we don't like
+  self updating tools like
+1050: NPM. It's not that we don't like them. It's just, it doesn't play very nicely
+  to install that with
+1055: Homebrew. And then it kind of updates itself. And Homebrew doesn't think it's
+  the same version
+1059: as it is, and all this type of stuff. And niche stuff as well. Again, you would
+  think this would
+1064: be common sense. But if you wrote a project over the weekend, and it's a 0.0000001
+  release,
+1070: and no one has ever used it, and everyone you've ever shown it to think it's
+  rubbish,
+1073: don't submit it to Homebrew immediately, because chances are, politely, we don't
+  care, and other
+1080: people don't care yet. We may care, and other people may care later, but we
+  don't yet. So save
+1085: yourself some time and hold off for a little bit. But anyway, so all this stuff,
+  all this effort,
+1090: as you've seen before, there were kind of seven of us. It's kind of tricky to
+  get all this stuff done,
+1094: particularly with binary packages. So with binary packages before, anything
+  you'd install Homebrew,
+1099: which is kind of using a binary package using a bottle, was previously done
+  by me going and having
+1105: multiple VMs with each version of OSX on my machine. And I would go and have
+  to go manually build the
+1111: package on each VM, and then upload it. So this became a little bit unsustainable,
+  particularly when
+1117: I was on holiday and things like that. So we decided we would do a Kickstarter.
+  And basically,
+1123: what we told people to Kickstarter is, I wrote a little tool while I was away
+  and kind of had some
+1127: time off work last year in Sydney. And wrote basically a little tool for kind
+  of beginnings
+1133: of a sort of CI system called brew test port. Again, another little automated
+  thing. Basically,
+1137: just trying to turn our review process into code. So what this does is I'm getting
+  it to test a
+1143: particular pull request. It will then download the pull request, make sure there's
+  nothing wrong with
+1148: the system, make sure there's nothing wrong with the changes in the pull request,
+  which in this case,
+1151: was this package, "MOM", it didn't change. Download it, install it, bottle it,
+  make sure that's okay,
+1157: uninstall it, and then return the state. So I wrote this little tool. And we
+  basically went and asked some
+1163: people for some money. So we asked people for £1,500, so we could buy a Mac
+  mini. And thankfully,
+1171: we got quite a bit more than that. We got £15,000. In fact, we got our £1,500
+  two hours after the
+1176: Kickstarter began, from 755 very nice people. Again, if you're interested in
+  such things, the graph of
+1184: money looks like this. So that was, the green line is our £1,500. And I believe,
+  so that was basically just
+1193: everyone going mad. And then somewhere around here, it was John Gruber, who
+  reached Daring and Firewall,
+1198: retweeted us, and a bunch of other people. And we were also lucky enough to
+  be featured on the
+1203: Kickstarter homepage for a couple of days and all that type of thing. So yeah,
+  so we got lots of money,
+1207: and it's great. If you're vaguely interested, if you're the type of person who's
+  ever doing a Kickstarter,
+1213: so our breakdown looked like this. We got lots and lots of people off of Twitter.
+  22% of people clicked
+1220: directly from Twitter and gave our money that way. And obviously, that excludes
+  people where there's
+1225: no referral permission, which is about quarter. We put it on our GitHub page.
+  We got a bunch of
+1230: referrals from that. Some people found us through search. And then obviously,
+  we got 500 quid, which
+1236: is pretty nice from being on, well, sorry, 600 quid from being on the homepage,
+  and 500 quid from being
+1241: like a featured project in the kind of open software section. So instead of
+  one Mac Mini, we got four
+1247: Mac Mini's. Hooray! So basically, we were able to get all these. It was pretty
+  awesome. We had to set
+1254: up like an organization in the UK, so Homebrew actually kind of exists, because
+  I didn't want HMRC to
+1260: say, "Aha, you need a peer to have 15,000 pounds." And because we initially
+  didn't have a server farm,
+1267: my office had a thing that looked a bit like this. And my wife was continuing
+  asking, "When are these computers
+1274: going to go away, are they sitting here forever?" And I just made sure I kept
+  the electricity bills from
+1280: them. But we had nice, very nicely, a company called Positive Internet, who
+  I kind of randomly
+1285: interacted with their CEO on from a kind of podcast stuff he was doing. They
+  offered to us in their
+1292: data center called Positive Park, which is down near Cambridge. So I got on
+  the train with all the
+1298: computers, which is quite a scary thing to take like 8,000 pounds worth of computers
+  on a train.
+1304: And then we got a lot of nice stuff, a lot of switch, and time capsules to back
+  everything up.
+1310: And then we still got nice stuff for that. And then here we go, and there's
+  cables everywhere,
+1316: so it's probably getting on fire. But yeah, so it's pretty awesome. And now
+  what we have is we have a
+1321: Jenkins instance, which goes and runs pretty much all the time. It basically,
+  so we have kind of
+1327: several things it's doing. So basically everything, every change that's made
+  for Homebrew, it goes and
+1331: runs to make sure that it kind of passes all our little tests, and then emails.
+  If it doesn't,
+1337: it checks all pull requests. And GitHub has a neat pull request integration
+  now, so you can actually
+1342: basically mark in big red letters, this pull request succeeded or failed or
+  whatever. So that's kind of
+1347: nice. And we've found since doing that, that kind of automated process, a lot
+  of users will go and
+1351: kind of start fixing the issues themselves without us having to go and tell
+  them, which is great,
+1356: because as I said, probably 95% of our workload before was telling people exactly
+  what the output of
+1362: these tools are. We would just download them onto our local machines. The tool
+  would say, "This is bad." And then
+1367: we would type in, "This is bad." And then, you know, so this has made things
+  much better. And then it's also
+1372: mean that it's much, much easier for us to build binary packages now. I just
+  basically kick off the job,
+1377: and then in a couple of minutes, it's built the binary packages for all the
+  operating systems.
+1381: So across those kind of multiple Mac minis, we basically have it running. We
+  have one that's
+1387: just doing server-y stuff, and then the kind of current and past two generations
+  of OS X.
+1392: So that basically lets us build all our binaries and test stuff pretty thoroughly
+  between them as well,
+1398: which is quite nice. And we have a mailing list, if you're particularly, I don't
+  know, board or something,
+1404: then you could subscribe to the mailing list of "Only Build Failures in Home
+  Group."
+1408: It's a fun reading on a Saturday afternoon. So yeah, so if anyone is kind of
+  involved with,
+1415: like, an open source project or whatever, and you kind of feel, "Oh, man, it
+  really,
+1419: we had some hardware." I would really consider, I really advise you, sorry,
+  to consider something like
+1424: Kickstarter because it seems to have this weird traction in that people, because
+  it's time limited,
+1431: or basically the way it works, if anyone is not familiar, is you need to say
+  an amount of money
+1435: you want, and you get a month or however long you choose to raise that amount
+  of money. If you raise
+1439: that amount of money or more, you get to keep it. If you don't get to raise
+  that amount of money,
+1443: you don't get to keep anything. So it seems to kind of get people engaged, and
+  lots of people are
+1447: kind of more willing, similarly, to hand over stuff in exchange, you know, ridiculous
+  stuff like,
+1452: you know, 250 quid, and you get a t-shirt and a pun class, and people are more
+  than happy to kind of
+1457: hand over that money. Although it does mean that you need to get t-shirts printed
+  and stuff,
+1463: which is significantly harder than any part of writing the code on.
+1465: Yeah, so I guess that's basically the overview of Humbley, so if anyone has
+  any questions,
+1472: feel free. Just on that Kickstarter bit, did you have to pay any tax in the
+  end for when creating
+1481: that corporation? So it's created as basically a non-profit, just like committee,
+  sorry, community
+1489: organization, so you don't need to pay any tax because it's in no way related
+  to me, it's just this kind of
+1494: floating organization. What Kickstarter takes, between Kickstarter and Amazon
+1499: marketplace, they take about 10% of the money raised, but then again, it's such
+  a good kind of
+1504: crowdfunding tool that you don't really mind that.
+1506: You said several slides ago about the, one of the things you ask people is that
+  it's not working,
+1515: have you got the latest version Xcode working? Yeah.
+1517: So I've got lots of old Macs, and the answer to that is no, because I can't
+  put them on there,
+1523: because they're so old, but they still work. Is there any way you would get
+  this stuff to work
+1527: without using Xcode as the developer? So we basically, in that case I was being
+  overly concise,
+1536: so it's basically the latest version of Xcode for whatever operating system
+  you are on. So for the older
+1542: versions that don't get kept up to date with Xcode, then it's kind of fun. The
+  short answer is yes, but only for kind of new versions. So we've been kind of petitioning
+  Apple
+1552: to try and get, because obviously people don't want to install like a, what
+  was at one stage
+1557: like an eight gig package, just to have a compiler on their machine.
+1560: We have got some incremental progress with the kind of command line tool stuff,
+  which was like a separate
+1566: couple of hundred mega installer. And then in the latest version, we've kind
+  of been talking with
+1571: the two guys there, and it's kind of more or less perfect in there. And if any
+  of you have kind of used
+1577: the latest versions of OSX, you'll see if you try and do something with X11
+  or Java, then they're not
+1583: installed by default. And if you try and do something with Java, it will just
+  pop a little box saying,
+1587: if you're trying to use Java, would you like to install Java? So it's now starting
+  to do that with the compilers
+1592: as of 10.9, which obviously hasn't been released yet, but is in betas. So our
+  lives will become a bit
+1598: easier then, but we're still going to have to support new versions for ages.
+  So sadly, in terms of
+1604: distributing our own compilers and stuff like that, it's not actually that easy
+  because
+1609: on Macs particularly, there's a lot of, so there's a lot of stuff that's open
+  source, probably 75% of it,
+1615: but then a bunch of it is like Apple's private headers and all this type of
+  stuff, which we can't
+1619: redistribute. I mean, someone could and other people do, but we don't want the
+  legal pin.
+1624: How do you manage versions? We don't, basically. Well, basically what we do
+  is in Homebrew, we have
+1636: like only the latest version of each thing effectively. And then we have two
+  sort of
+1642: alternate strategies that are kind of hacks around the fact that we don't really
+  manage versions.
+1646: One is you can always just go through the git history and we have a command
+  that does that
+1650: and just pull out an old version and install it that way.
+1653: Would that be in parallel?
+1655: Oh yeah. The versions quite happily exist. I guess that's the difference compared
+  to other things.
+1659: Because of our kind of seller system, you can have as many packages as you want
+  with as many
+1665: versions as you want all in parallel. And even if they kind of conflict in terms
+1669: of naming and all this type of stuff, then they're just kind of nicely segmented
+  away.
+1673: The other kind of slight hack we have is we have like a Homebrew versions, like
+  other repository,
+1678: which contains, you know, like MySQL with a version number appended to the name.
+1683: And then, you know, that's just a kind of static version that kind of stays
+  along.
+1687: Well, that's great. Thank you very much, everyone.

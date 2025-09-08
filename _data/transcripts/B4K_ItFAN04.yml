@@ -1,0 +1,1013 @@
+---
+0: Okay, so we've started the webinar and we attend our, just join in then, and we'll
+  just start
+15: the broadcasting.
+16: Hi everyone, welcome and thanks for joining our webinar.
+27: I'm Laura, our special guest speaker, Mike McClade, Senior Commander at GitHub.
+31: I'm Laura, and I'm a career friend of mine, the go-to place for people who want
+  to choose
+35: their peers to tech and get job sale up.
+37: Today we've got some really exciting content for you guys, including insight into
+  working
+41: life at GitHub, advice on becoming a developer, and even a live group demo for
+  Q&A from KVN,
+46: so stay tuned.
+47: I want to encourage you guys to use the questions sections for anything you want
+  to ask Mike,
+51: and feel free to use the chat section for comments or your general thoughts.
+55: Without further ado, I want to introduce you to Mike.
+58: Mike, keep it awake.
+60: Hi everyone, thanks for coming along.
+65: I'm going to speak to you today a little bit about my experiences in my career
+  and the company
+72: I work at at the moment, which is called GitHub.
+74: Then, as Laura mentioned, I'll show you a little coding demo on Homebrew, which
+  is a project
+80: that's written in Ruby that I kind of work on in my spare time.
+83: and then speak to you a little bit at the end about becoming a Ruby developer.
+90: And I'll touch upon the relationship between Ruby and Rails and stuff like that
+  as well.
+95: So starting off with what I do.
+97: So my name is Mike McQuaid, as has already been mentioned.
+101: I've been working full time as a software engineer since 2007, when I graduated
+  from the University
+107: of Edinburgh.
+108: And I've been a homebrew maintainer since 2009.
+111: Homebrew is that open source project I mentioned that I'll show you the kind
+  of coding demo of.
+115: And I've been a senior engineer at GitHub since 2013.
+120: So I'll give you a little outline through each of my little steps, through my
+  work stuff, through
+127: my open source stuff, and then what I'm doing at the moment.
+131: So I'm originally from Edinburgh in Scotland, I studied at Edinburgh as well,
+  I studied a degree
+138: in computer science and management science, which is basically computer science
+  and business
+142: on the side.
+143: I did that 2003 to 2007.
+146: I'm relatively uncommon in my company and in my career, I guess, in general now,
+  because
+152: that's a very traditional way to go into software development.
+156: If you haven't done a degree in computer science, then that's completely fine.
+160: And I'll talk more later on about that, but it's not something to worry about.
+164: And with the various code academies and career recovery and all the kind of resources
+  that
+169: are on the internet now, you can learn enough without going through formal education
+  anymore.
+175: So as part of that program, between my third and fourth year, I did an internship
+  at a company
+180: in Edinburgh called Wolfson Microelectronics, where I was mostly writing C code
+  for audio chips.
+188: I was writing code that dealt with the Linux kernel and driver code and stuff
+  like that for there,
+193: which basically means kind of the code that speaks between the hardware and the
+  operating
+198: system to kind of provide an interface so the operating system can speak to the
+  kind of
+204: chips that the company was making.
+207: The year after that, I did Google Summer of Code.
+211: I worked using C++ for that and that was for a project called KDE.
+217: That was my first kind of big foray into open source.
+220: Then after that, I worked for a company in the UK called BT, British Telecom,
+  where I wrote
+224: mostly C and C++.
+226: And then for a startup in London called Mendeley, I was the first employee there.
+231: They're now a kind of research software company and they have a lot more than
+  just me working
+239: there and worked for a consulting company called KDAB, which was kind of based
+  around Europe.
+246: And then I entered the Ruby phase of my career.
+249: And one of the reasons I kind of have walked you through what I was doing and
+  the languages
+253: I did it in, but is because it's interesting to see that I think at least that
+  in the software
+259: field, you can kind of start out doing one thing and you can kind of move on
+  to something
+262: else.
+263: I don't think you need to worry too much, particularly in the early days, about
+  finding
+267: exactly like the perfect fit for you.
+270: Obviously it's good to kind of go into something that interests you and something
+  that is engaging,
+274: but it's always possible to move around.
+278: And in many ways, if you have a career in software and you're there for 10, 20,
+  30, 40 years,
+285: you're going to have to move around.
+286: You're going to have to make changes.
+287: I'm sure you can all remember what computers were like 5, 10, 20 years ago.
+292: And the skills that were involved with writing software for computers back then
+  varied quite
+297: a bit from what they do now.
+299: So I've had to adapt and I've had to change.
+302: And that also gives you a chance at each of those change points to kind of think,
+  am I
+306: doing what I want to be doing?
+308: Can I kind of move to something else I'm a bit more interested in or whatever?
+312: So then I worked for this company Alltrails, which was based in San Francisco.
+316: I worked remotely for them and in fact for KDAB before them as well from my home
+  in Edinburgh.
+321: And I was writing Ruby with them for the first time, doing Ruby on Rails.
+327: I had been working with Ruby, as I'll talk in a minute, about in my spare time
+  on open
+332: source, but that was my first kind of full-time Ruby gig, writing a Rails-based
+  web application.
+338: And then nowadays at GitHub, I'm writing mostly Ruby as well and Bash, which
+  is kind of, you
+343: may have heard called shell scripting in the past, and that's a way of interfacing
+  with
+350: Linux and Mac systems.
+353: So I kind of end up doing more of those two and I'm not running, although GitHub
+  is a big
+359: Ruby on Rails application, I end up kind of working mainly in the back-end for
+  there nowadays.
+365: Right, so on open source, I started with that work with Wolfson Microelectronics.
+371: I kind of had my first kind of major contribution, I guess, to an open source
+  project, which was
+374: to the Linux kernel.
+376: That's the thing that's used in Linux desktop machines and in Android phones
+  and various other
+382: places around the world nowadays.
+384: So that was, again, writing in C, then that KDE project through Google Summer
+  of Code and
+389: C++ again.
+391: And then the Homebrew project, which is, I'll show you a little bit of live coding
+  with that
+394: later on, that's what we call a package manager for OSX.
+398: It's kind of like an app store for things that you run in your terminal.
+402: There's lots of tools in there which are kind of useful for the developers who
+  use Macs, and
+407: it's the kind of package manager concept of something that's originally kind
+  of come out of,
+411: I guess Linux, in desktop Linux, kind of originally.
+415: So I work on that from 2009 until now, and I'm once known as a maintainer, which
+  means that
+421: as well as writing code myself, I kind of help review and include other people's
+  code as well.
+426: And then I have like a little project that I worked on from GitHub called Strap,
+  which is
+431: like a way of kind of setting up your Mac if you get a new Mac so that you can
+  kind of automatically
+436: install Homebrew and various other things that you kind of need when you're a
+  developer,
+440: with a nice little simple script and like a web application to set up your GitHub
+  stuff,
+445: rather than having to do that manually every time.
+448: And then I've worked on various other random open source projects over the years,
+  dealing
+453: with you know across Ruby, C++, but also like Python, PHP, Bash, Objective-C,
+  Puppet, JavaScript
+459: and various other languages.
+461: And I say that just to again mention that you can, you know, there's a lot of
+  languages out
+465: there that are being used for a wide variety of interesting things and chances
+  are in almost
+470: any job in the industry you're going to end up touching on more than one language
+  at some
+474: point.
+475: So I think it's one of those things where like I only speak English, but like
+  many people
+481: tell me about learning to speak actual foreign languages and then the more you
+  pick up the
+487: more easy it is to pick up more and more languages and stuff like that.
+491: Like with kind of a tool belt of a few languages under your belt, it will definitely
+  be kind
+496: of easy to advance in future.
+500: Right, so jumping on now to what GitHub does.
+503: So GitHub is my current employer and I've worked for them for, as I was saying
+  before, about two
+509: and a half, coming up to three years, they're a company where they basically
+  provide a community
+517: online, which last time I looked at the numbers, it was saying 50 million people,
+  38 million
+522: projects and it basically allows people to collaborate together on building software
+  online.
+528: If you start working as a developer, not every company obviously, but quite a
+  few companies
+533: use GitHub now to kind of do their work for developers to interact using something
+  called
+539: version control, which is, to give you a very brief overview, version control
+  is the way,
+544: because developers are normally working with text on a day to day basis, version
+  control
+548: allows you to kind of look back through previous versions of text and work with
+  other developers
+554: on a project, say, and you can kind of explain why and when you made each of
+  the changes, which
+559: makes it useful if you're going back and trying to figure out why something was
+  done in a particular
+562: way.
+563: GitHub is the 60th most visited site in the world according to Alexa when I looked,
+  I think
+568: it was last week, which means that we have a whole set of interesting challenges
+  when you
+573: are working on a site at that scale.
+577: We use Ruby on Rails for that, but then when you get to kind of a scale where
+  you're kind
+581: of getting loads and loads and loads of traffic, you have to kind of do interesting
+  things, you
+585: can't just do everything maybe the way it necessarily comes straight out of the
+  box, because you want
+590: to try and ensure that everyone who uses the site has good performance and if
+  you have
+594: a sudden spike of users who visit the site, then that doesn't bring the site
+  down for other
+598: people and stuff like that.
+600: And the big thing that got me interested in GitHub and is where a lot of people
+  end up kind
+605: of discovering it at first, is it's the kind of primary location for a new open
+  source project
+610: nowadays.
+611: That's where Homebrew is based and pretty much all the other open source I work
+  on now.
+615: And the advantage of GitHub is because it's a bit of a community, contributing
+  to any open
+619: source project on GitHub is broadly similar.
+622: You open a thing called a pull request, which is basically a way of saying, "I
+  want someone
+627: to include some code I've written into their project."
+632: And that's a kind of mechanism where there can then be a discussion and then
+  if they like
+637: and want to include what you've suggested, then they can merge that in.
+641: And I'll demonstrate that a little bit later on.
+643: We can kind of see an example when I do the coding exercise.
+648: So GitHub, as I mentioned, I'm writing Ruby there.
+652: Ruby is very widely used at GitHub, both on the main kind of site itself, but
+  also in lots
+658: of little things in the background, lots of kind of scripts we have running and
+  other
+662: little kind of tools that aren't necessarily seen directly by the outside world
+  that end
+666: up kind of supplying the services that make up GitHub itself.
+672: So most engineers, as a result in GitHub, are writing primarily Ruby codes.
+676: There's people who write a bit of C, a bit of C sharp for Windows applications
+  and stuff
+681: like that, but primarily most things are written in Ruby.
+686: And as I mentioned before, GitHub's probably one of the biggest Ruby on Rails
+  powered sites
+690: in the world in terms of the traffic and the throughput, which kind of makes
+  it an interesting
+695: situation to work on.
+696: And again, it goes to show you may kind of hear various people say various things
+  about
+701: Ruby and Ruby on Rails, and it's maybe some people might say it's not as cool
+  as it used
+707: to be, like when it was the kind of hip new thing and stuff like that.
+710: But it's important to know that, you know, Ruby on Rails is being used to build
+  very serious
+714: applications that are making real money in the real world.
+718: And I think personally, it's a fantastic tool for doing that.
+721: And that's one of the reasons why GitHub uses it is because it's such a good
+  tool.
+727: And then I personally, GitHub, so I worked for about a year and a half, two years
+  on our product
+736: called GitHub Enterprise, which is a tool that allows you basically to have your
+  own version
+741: of GitHub that sits inside your kind of company firewall or whatever.
+745: And then you can kind of share projects and collaborate and stuff like that without
+  having
+748: to put your stuff on GitHub, the main website.
+750: It's particularly useful for companies that either for legal reasons or just
+  cultural reasons,
+755: don't trust having any of their code outside of the company itself.
+759: And it's distributed by us as like a virtual machine to people that they can
+  then spin up
+764: and run.
+766: And then nowadays I'm mainly working on what we call internally the GitHub platform,
+  which
+770: is our like API web hooks, basically all the stuff that's not kind of front end
+  coding,
+776: but it's providing like an interface to either projects inside the company or
+  projects outside
+780: the company as well.
+782: And the things I probably am most known for and most enjoy doing are kind of
+  automating things.
+788: I think that's one of the things that's so great about being in software and
+  being a software
+793: engineer is, you know, most people nowadays have to use computers to do stuff
+  a lot of
+797: the time.
+798: And it's a fantastic feeling once you kind of get a bit of experience under your
+  belt and
+802: you realize that almost anything you have to do with a computer, you can learn
+  how to do
+806: it much faster.
+807: You can go and tell the computer how to repeat operations hundreds of thousands,
+  millions of
+811: times, you know, in a couple of seconds.
+814: And that just allows you the ability to kind of take a lot of boring, repetitive
+  tasks,
+819: for example, and automate them such that they're not nearly as repetitive to
+  perform anymore.
+825: Right.
+826: So I'm going to jump now into a little coding exercise that I'm going to do with
+  homebrew.
+832: So for this, I'm actually going to deal with a real world issue that I was looking
+  at today.
+839: So this is an example of GitHub.
+841: And you should also be able to see my screen over here.
+844: So this is one of the homebrew repositories called Homebrew Brew.
+850: Homebrew is the name of the organization.
+852: And then there's Brew, which is the kind of name of the project.
+856: So one of the other maintainers on this project, a guy called Dom, who's another
+  guy in the UK,
+861: who has this lovely picture of him and his dog down here.
+863: So he basically mentioned that he thinks we should do this thing here, which
+  interrogate taps with brew read all on tap.
+870: So what does that mean?
+871: I'll give you a very high level overview.
+873: So as I mentioned before, Homebrew is a way of kind of installing packages.
+877: It's what we call a package manager.
+879: And a tap is because Homebrew has like a beer theme, as you might be able to
+  tell from the name.
+885: A tap is like a third party kind of package and like repository, I guess.
+892: So if there was something that it wasn't in Homebrew and I wanted to make a few
+  packages in there, then I could go and make a tap and then allow other people to
+  distribute that.
+902: But what the problem is here that he noted is that in some cases you can have
+  taps which have things in them that are broken and then that causes problems for
+  users.
+913: So what he's suggesting we do is when you install a new tap, you run this brew
+  tap command.
+919: But what Dom's suggesting is that as well as this brew tap command, we want to
+  run brew read all, which basically reads through all the files in a tap and make
+  sure that everything valid.
+930: And then we want to do that whenever we run brew tap, just to make sure that
+  brew tap is actually working correctly and we're not going to cause errors when
+  we do that.
+940: So I'm going to jump over here.
+942: So this is a terminal.
+944: I don't know if many or any of you have seen this before, but this is basically
+  like a way you can kind of type.
+950: It's kind of like programming, but you can just type almost lines of code directly
+  into your kind of what we call this terminal here.
+958: So in here these commands he's described, this is how you interact with homebrew.
+963: So we've got this kind of brew command that you run like that and it's now telling
+  me ways you can use it.
+968: So what we might want to do is like this thing called the boneyard, which is
+  one of the homebrew taps.
+977: We're going to go and run brew tap on that because in fact that was my mess up
+  because it was already installed.
+985: So we'll just untap it before and then tap it afterwards.
+989: So that's just two commands in a row.
+992: So we've tapped this homebrew boneyard thing, which means it's been installed.
+997: So that's actually installing what's a Git repository.
+1001: So basically one of the projects from GitHub, because this is a separate project
+  there, and that's just like installed locally.
+1008: And this is all fine and it's all working.
+1011: But what we want to do, as Don mentioned, is go and check that when we run this
+  brew tap, it's actually going to go and check what we want it to do.
+1020: So I'm going to kind of walk through almost from the outside in of the Ruby
+  code here.
+1024: So this brew.rb file, this is what it's called basically when you want to brew
+  itself.
+1031: There's actually a bash script that calls this script, but we won't worry about
+  that because we're not doing anything about bash today.
+1036: So this goes through and does various little checks to begin with and stuff
+  like that, but we'll ignore them.
+1042: And we'll start off down here effectively.
+1044: So we have this thing where we say if we've got a cmd, which is short for command,
+  then we're going to go and like require, which means pull in another file, this
+  command from this directory in here.
+1060: And so in this case, the command is going to be tap because we've typed brew
+  tap.
+1066: So that's what the command is.
+1068: So then we can jump through into this file in here, which is this tap command
+  file.
+1072: So we've got a little bit of like almost help instructions at the top.
+1075: So that's what you'd see if you type brew tap dash dash help.
+1078: So we see that like this.
+1080: And then we can look through in this various options and things that are being
+  handled.
+1084: But the one we care about is this one here.
+1086: So we have specified a tap in here, which is, this is saying get the first argument,
+  the argv, which is a way of saying the values of all the arguments.
+1099: The first named argument, which is one that doesn't start with two dashes like
+  that as an option.
+1105: And we'll get the first one in there.
+1107: What you may see is a lot of programming languages sometimes use zero instead
+  of one to indicate the beginning of a list of array.
+1115: That's something you might notice.
+1116: So this is actually saying the first, but it's indicated here by a zero.
+1121: So we then get this tap in here and then we run this tap dot install method.
+1127: So what that's going to do is then we jump through to this file here and then
+  we have this install method.
+1134: And I'll walk through this one in a bit more detail and then we can go and like
+  actually write some code to do what we want to do.
+1139: So this is this install function here.
+1142: It takes one parameter, which is just options, which defaults to just an empty
+  hash, which is just a way of providing keys and values in Ruby.
+1152: So we go down here, various options are handled.
+1156: If the tap is already installed, then it raises a tap already installed error,
+  which basically equates to doing nothing.
+1164: So that's what's happening if we do here.
+1166: We've already installed it, so it's actually going to do nothing.
+1169: And then it's going to make sure git's installed.
+1173: Git is the command you use to kind of get things from GitHub.
+1176: And it's basically just checking that that's still there.
+1181: And then if it's installed, then there's various other things we can do in here,
+  but we can ignore that for now.
+1190: But this is what we care about here.
+1191: So if you remember, it said that tapping thing there and then started downloading
+  in there.
+1200: So we're basically, what we've done here is we've built up the arguments we're
+  passing to the git command.
+1206: So that's going to call git and then all of the things in args.
+1211: So that's going to call, let's say if I was typing here, git clone the requested
+  remote,
+1217: which if it's homebrew boneyard actually ends up being a GitHub URL.
+1224: So that's like that.
+1230: And then the path it wants to go to.
+1232: And that's basically just a location on disk.
+1234: So in this case, that would be user local, which is where homebrew is installed.
+1240: Library, which is just a directory for homebrew stuff, basically.
+1243: Taps, which is all the third-party repositories, then homebrew, and then homebrew
+  boneyard.
+1248: And then that's going to be the contents in there.
+1252: And then the depth one, we'll ignore that.
+1255: And then -q, which is quiet, which is basically just if you pass the quiet option,
+  which we have in here.
+1261: So then this calls it with a thing called safe system.
+1265: So what that does is that's basically making sure that the command runs correctly.
+1271: If it doesn't run, like system will just run this command as is.
+1275: And then if it fails, it won't do anything.
+1277: Safe system, if this command fails, then it will then throw an exception, which
+  is basically a way of throwing an error.
+1284: And something has to handle that error.
+1286: Otherwise, it will bubble all the way to the top of the application and then
+  cause the application to fail.
+1290: So we're going to go and replace this command.
+1293: So let's do git mic instead, which is not a real command, to see what happens
+  there.
+1300: So again, I have to untap it before because otherwise it will just do nothing.
+1303: So here we've got this error, failure while executing, blah, blah, blah, blah.
+1308: So what we probably want to do in here is we want to go and add in here another
+  safe system.
+1315: If you remember what Dom said he wanted to do back here was let's run this brew
+  read all.
+1321: So in here we're handling things if these commands fail.
+1326: This is this rescue.
+1327: This is the exception that got thrown by the safe system here.
+1331: And then it's getting handled by this or this.
+1335: So we can go and do the same thing and we can do brew and then read all like
+  that.
+1343: So we can go and say after we run git, run brew read all, but then we also want
+  to go and pass in the name.
+1352: But because that would just type brew read all name and what we want to do is
+  use a variable there instead.
+1360: So we can remove it from the quotes and do brew read all name like so.
+1365: So then when we run this, it's going to go and run like so.
+1373: And then tap homebrew boneyard and then run brew read all.
+1377: And because that works, it's all going to be fine.
+1379: But what we can do is again, we're going to replace this with a fake command
+  that doesn't exist, run this again, and then make sure that it works the way we
+  expect it to.
+1390: So yeah, so we get this unrun command read all, failure while executing brew
+  read all to homebrew boneyard.
+1397: And then this is the kind of interesting slash slightly clever bit.
+1400: So due to some code that's already there, thankfully we don't need to write
+  this, we have this homebrew boneyard directory.
+1408: And what's going to happen is if we try and tap that, it's going to make sure
+  that what it should be doing is deleting that directory.
+1417: So in here we've got this path.parent rmdir if possible.
+1422: But what we want to do is let's go and make that a little bit stricter and say
+  that we want to, no matter what happens, we want to go and delete that directory
+  in there.
+1432: The one that we've just created on the tap.
+1435: So we'll get this path and we'll do file utils rm-rf and then we'll pass in
+  that path.
+1447: So that's basically the equivalent of doing rm-rf which stands for remove a
+  file, remove it recursively, which means if it's inside a folder, if you pass it
+  a folder, it's going to remove that.
+1457: And then f which is just force.
+1460: So let's try this again, see whether afterwards it deletes this.
+1464: So we can now see that this home rm-boneyard directory is now gone.
+1473: So that deleted it as expected.
+1476: So we can then go and do this.
+1480: We can remove this here.
+1483: Try this once more.
+1485: Yep, so that's deleting it as expected there.
+1497: So we're going to put back that to the correct one.
+1499: What it would look like if it failed properly would be, and again this is tricky
+  because I can't make something that's actually being used by people fail.
+1507: So I'm going to go and, like this is what we call a formula file in homebrew
+  which is basically just a little description of what, how we're going to install
+  these things.
+1519: So I'm going to go and basically make that invalid and then edit it.
+1522: So I've made that invalid.
+1526: So then brew read all in that case, if I run homebrew boneyard like that, that
+  will then fail.
+1533: And then that's the same error that, if that ever happened, if someone made
+  a mistake there, then that would then do the same thing as what we faked before
+  with brew read all two.
+1543: And then that will fail up and delete that and stop causing any issues for people.
+1549: So what I'm going to do now is I'm going to have a look at my changes with the
+  git command.
+1555: So git diff means show me the differences that I've made here.
+1561: So then I can go and see that I've, the new lines I've added are in green and
+  lines that have been deleted are in red.
+1570: So I can see that I've added these two new lines and then I've deleted this
+  line here.
+1574: So what I'm now going to do is create a new branch in git.
+1579: So let's create a new branch called tap read all.
+1583: I'm going to check out that branch so I can go on it.
+1588: And now just check that all my changes are there.
+1597: And then I'm going to commit that, which means it's kind of like saving a change
+  if you haven't used version control before.
+1603: This is like saving a file.
+1605: But what it does as well as saving it, it will go and ask you for like what
+  have you actually done in here.
+1610: So you see it's saying please send to the commit message for your changes.
+1615: And then it's going to ignore all these lines down there.
+1617: So I'm going to say prefix it with tap because that's what I've touched here.
+1621: Run read all when tapping.
+1626: And then I'll like writing an email, but this is my almost subject up here and
+  this is the body down here.
+1634: So I'm going to write a little message.
+1635: So say this will let you read rather than me dictating to you.
+1641: And then I can then pass in a little like this number here, which is the issue
+  number.
+1659: And I can say fixes that, which means that that will, when this is, if this
+  is merged at some point, this will go and then close that issue at the same time.
+1669: So I'm now going to go and push this up to GitHub.
+1674: So I'm going to say push tap read all.
+1679: I'm going to push it up to my GitHub rather than homebrews itself.
+1686: So I can then submit a pull request from my one like you might do.
+1691: And then this branch called tap read all.
+1696: So I've now created this new branch on my Git repository here.
+1700: This is what we call a fork in GitHub, which is basically like my own private
+  copy of this repository,
+1708: which means I can kind of modify it and then send changes like this.
+1712: So I'm now, I've got this thing.
+1714: This is basically saying I've recently pushed a branch called tap read all.
+1718: And then I'm going to do this compare and pull request thing.
+1721: There's then a little checklist that they want me to fill in to basically say,
+  have I followed various guidelines?
+1729: And am I sure that it works basically?
+1737: And now I can go and then click create pull request.
+1741: And then I've got this nice little pull request on the brew repository,
+1745: which this is something that you could view on the internet live,
+1748: which now has basically a request for the other people who work on this project
+  to look at this.
+1754: They could then click at this files change.
+1756: That's similar to what they saw before that you have this is the line I've added,
+1760: this is the line I've added, this is the line I've deleted.
+1762: And then they can go and then click through here and have a look.
+1765: And then if I refresh that, then we might even get to see.
+1770: So what will happen as well, it's going to take a minute or two to start.
+1775: So I'll not wait for it.
+1777: But as well, what will happen in a minute is that this little brew test bot,
+1781: that's kind of marked the issue is in progress.
+1783: It will go and check out my changes, make sure that everything seems to work
+  the way it's meant to work.
+1790: And then kind of try it out and then report the status back and report whether
+  that passed or whether it failed.
+1796: And if it failed, I can go and click through and see what the problems are.
+1799: So that's all for the coding section for now.
+1805: And I'm going to jump back into the presentation again.
+1808: So becoming a Ruby developer, which I guess is why some of you are watching
+  this.
+1816: So I think Ruby is a really great language.
+1821: It's my favorite language that I've worked with.
+1823: As you probably saw before, I've kind of dabbled with a few different languages
+  over the years.
+1828: And I've stuck with Ruby because it's my favorite.
+1832: I mean, the top thing there, I think it's fun to write in.
+1836: It's nice because it allows you to be very expressive.
+1840: To get technical, it is both an object-oriented language and a good scripting
+  language
+1845: and a functional programming language, which means that you can explore lots
+  of different ways of programming
+1849: while you write Ruby in any application, really, which is good.
+1854: And as a result of allowing you lots of different ways of expressing yourself,
+1858: it allows you to kind of learn while you're working with Ruby and learn more
+  about Ruby,
+1862: learn more about other languages and use those to kind of solve things in very
+  elegant and very concise ways.
+1869: And that's something that I tend to enjoy doing.
+1872: It's really highly in demand.
+1874: It's if you look around like the jobs that are available for software engineers
+  nowadays,
+1879: particularly for entry level software engineers, there's a lot of jobs that
+  are available writing Ruby on Rails applications now.
+1885: It's used for a lot of web applications in the wild.
+1889: And as a result of being highly in demand, it actually pays reasonably well
+  as well,
+1895: compared to maybe some other jobs and some other things in the industry.
+1898: So that's a plus point, I think, as well.
+1900: Ruby on Rails is the main kind of framework behind Ruby.
+1905: So to explain the difference between the two, Ruby is the language.
+1908: So what I was doing before with Homebrew, that was all written just in plain
+  Ruby.
+1914: And Ruby on Rails is a way of using the language and it's what we call a framework,
+1919: which is a way of using the language to build web applications.
+1922: So it's a relatively opinionated way of setting up Ruby and lots of kind of
+  templating and lots of provided functionality for you.
+1931: So that if you're making a web application, you kind of have your application
+  structured in a sensible way that's kind of recommended by people who've been kind
+  of doing this type of thing for a long time.
+1939: So that's another thing that's kind of, I think, really good about Ruby, because
+  Rails is widely used, because it's well documented, because it's kind of quite friendly.
+1948: And as a community, it means that the whole of kind of Ruby, whether you're
+  working with Rails or not, kind of benefits for that as a result.
+1957: There's also these things called Ruby gems. You'll find when you become, the
+  more and more experienced you become as an engineer as well,
+1964: that you often will see the same problem in, you know, one, two, five, ten,
+  a hundred different places.
+1971: And you don't want to write the same code every time and repeat it again and
+  again and again.
+1976: So you can share code between your projects by copying and basing it or kind
+  of sharing code in different other ways.
+1984: But what a really nice thing is to do is when people kind of work on open source
+  projects is to go and make a thing called a Ruby gem,
+1991: which is like a little standalone library in Ruby, which you can then add to
+  your project, which then allows you to kind of take out little bits of functionality,
+1999: which then people can pull into their projects when they just want that little
+  bit of functionality.
+2004: Like, for example, when I was working with today, the CEO of my company made
+  a Ruby gem a long time ago called Rescue,
+2012: Rescue, which is a queuing system, which basically if you have a bunch of kind
+  of jobs that need to run in the background,
+2017: for example, in a web application, if you want to, you know, if a user clicks
+  on something,
+2022: then you run a bunch of code, which then generates what they want to see, and
+  then you give that all back to them.
+2028: But if you actually wanted to do something like, you know, process a PDF in
+  the background, which might take an hour or two,
+2034: then you would go and make a background job, which would do that, and then maybe
+  later on send them an email.
+2040: So Rescue is a solution for doing that. And one of the nice things about that
+  being a Ruby gem and that being open source
+2045: is that it means that every time someone using Ruby or Rails now wants a queuing
+  system,
+2050: they don't have to go and write it from scratch every single time. They can
+  reuse an existing tool like that.
+2055: And finally, I think the main benefit of Ruby nowadays is that it's pretty stable.
+  It's been used for quite a long time.
+2064: And as a result, it's got a wide body of knowledge. It's not really, really
+  buggy. It's not experimental.
+2071: And you have big companies that write various posts and things like that and
+  people who can help you on how to kind of make it scale
+2080: and run at a very high level of performance for, well, not a high level of performance,
+  maybe compared to some other languages,
+2086: but certainly you can run Ruby in such a way such that you can run very performant
+  websites and applications.
+2093: So finally, if you want to learn Ruby on Rails, there's some great resources
+  and some great, I guess, little tips.
+2103: I think the first thing I would say is if you're trying to learn any language
+  or framework or anything,
+2108: the easiest way to do that is to try and solve problems you already have, like
+  rather than going and saying,
+2113: OK, I'm going to go and try and follow a bunch of tutorials and things like
+  that and just do whatever other people tell me to do.
+2119: The best way of learning, I think, is to try and find some problem that you
+  or maybe a friend or a family member
+2124: or someone like that has and try and figure out a way of solving that using
+  Ruby or using Rails.
+2129: And that's, in my experience, a way that will get you much more involved in
+  the problem
+2134: and much more equipped to kind of see how you solve real-world problems rather
+  than just trying to solve tutorials.
+2141: That's important. Obviously, tutorials are important when you're right at the
+  beginning, but you should try and almost start
+2146: what we call in software, kind of scratching your own itch with these type of
+  things as soon as you can.
+2152: There's some great resources online.
+2154: To mention just two, there's Career Foundry, who's obviously hosting this webinar.
+2158: They've got a nice little post about whether you should learn Ruby on Rails
+  and the links down there.
+2163: You should be able to find it on their site.
+2165: And then the Ruby on Rails official documentation, which they call the Rails
+  Guides, which is guides.rubyonrails.org.
+2171: They're really great. The main one, I think, that's Ruby, I forget the exact
+  name off the top of my head,
+2180: but I think it's at the top of the page when you go there.
+2183: It walks you through basically building more or less a Twitter clone from scratch
+  with no program knowledge
+2188: and helps you to understand how a modern web application kind of fits together,
+  all the components that go in there,
+2194: how your browser speaks to the server, which speaks to the database and all
+  these type of things that you need to learn.
+2200: Another really useful resource, I think, is Heroku.
+2203: So previously, five or ten years ago, whenever you were running applications
+  and learning these things,
+2212: you would have to figure out a way to have a server somewhere that you can install
+  this on if you wanted other people to see your stuff.
+2219: But the great thing nowadays is Heroku makes it very easy.
+2222: If you just write a Ruby on Rails application more or less by default and you
+  use Git like we saw before,
+2229: then you can just push your repository to Heroku.
+2234: Heroku kind of magically figures it all out and will just spin up a web application
+  for you.
+2238: And then you can actually do that for free for small applications that don't
+  get much use or load.
+2244: But for bigger applications, then you can start asking Heroku for more resources
+  and that costs money.
+2251: And then if you're working in a team or even if you're working by yourself trying
+  to kind of get into open source,
+2257: then you can create public repositories, which are ones where anyone can see
+  the contents of them for free on GitHub.
+2263: That's a really good way to learn as well.
+2266: Or you can set up private repositories if you want to for, you can have as many
+  as you want for $7 a month.
+2272: So I guess those are the main resources I think are important when learning
+  Ruby on Rails to start with.
+2278: And I think hopefully I've given you a little overview of why you might want
+  to learn Ruby on Rails
+2284: and why you might want to learn Ruby and showing you a little bit of how Ruby
+  works.
+2288: So I think we're going to now go if anyone has any questions.
+2292: Great question.
+2293: So I think for building a portfolio, the best thing you can do in my opinion,
+  and I guess you might see from my experience is to work.
+2299: on open source, to try and make little projects and try and make little open
+  source projects out of them so people can see them.
+2309: It's really helpful for people to be able to go and look at your code.
+2319: Now some people may feel intimidated by that and may feel that if people are
+  looking at their code, they may, you know, people might judge them for it, whatever.
+2330: But I think one of the great things about this industry and about going into
+  programming in general is that everyone knows that everyone makes mistakes.
+2337: and everyone knows that everyone knows that everyone has to start somewhere.
+2352: So going out there and working on open source is a really good way to kind of
+  learn out there in the open and be able to kind of solicit feedback from other people
+  while you do so.
+2360: And it's much easier if you have a friend who's a more senior developer, say,
+  to be able to just post them like a link to your GitHub page and a particular line
+  of code or whatever than it is to kind of, you know, start zipping files up and
+  sending them across the internet like that.
+2375: So I would say that's the best way of doing it.
+2377: And then if you're working on stuff for a company that isn't, you're not able
+  to open source it for whatever reason, I think it's kind of nice to just have a
+  nice little simple homepage for yourself and have a portfolio page.
+2389: Just take some screenshots of whatever you've been working on, stuff you're
+  proud of and just write a little bit about the projects you worked on and why and
+  what your contribution was to it.
+2398: Obviously, I personally still have like a more formal CV or resume as well,
+  but it's nice to have like something a bit more visual so that you can kind of point
+  people to that as a portfolio.
+2407: Thanks Nick, that was a great answer.
+2412: And we've had another one on Twitter from Daniel Cervantes. He asked, "What
+  are the dos and don'ts when learning a new programming language?"
+2422: Great question. So dos and don'ts when learning a new programming language.
+  I would say the main do, as I mentioned before, is to try and work on something
+  that kind of interests you and ideally a problem that you're solving for yourself.
+2436: Another one I would say is to try and work on something small to start with.
+  Try and do - I guess that's a do and a don't - but do make sure you try and make
+  small little things that you can deliver in a small amount of time.
+2452: Even if that seems very, very simple, even if it seems trivial to start with.
+  Try and work on things that you can kind of get to completion rather than having,
+  you know, a hundred little projects that are all 90% there.
+2465: Because you'll learn a lot more by actually what we always call in GitHub, like
+  shipping, by actually releasing something to other people and actually releasing
+  something and going the whole train through from writing code to pushing up to the
+  internet to actually getting on Heroku and being able to click on it.
+2481: And being able to click around the site. Those are all important skills to learn
+  more than just necessarily writing the code. So going end to end there is really
+  good.
+2491: And I think another don't is just try not to get disheartened. I think one of
+  the tough things with programming is even when you've been doing it a very long
+  time, there's still days and hours and minutes and weeks, even sometimes where you
+  feel really stupid, because you're doing something which a lot of the time has never
+  been done by anyone before.
+2509: So it's natural that you're going to feel a little bit lost sometimes. And you
+  just need to kind of try and push through that and try and take satisfaction in
+  the kind of victories when you do manage to figure stuff out.
+2522: Another final one, I guess, is when you're starting out, particularly if you
+  work in a professional capacity, if you're able to get kind of a job relatively
+  early on. The thing I always advise people who are more junior is if you ever make
+  a mistake, if you're ever lost or screw up or whatever, just make sure you are kind
+  of vocal about that.
+2540: Make sure you raise your hand, say, I don't understand, say, I think I've broken
+  something, whatever. And people understand that people, you know, respect that,
+  because ultimately, as I've mentioned a few times, we all make mistakes in programming.
+2554: And what's important is not whether you make mistakes or not, but how you make
+  mistakes and how you rectify them. And a big part of that when you're working in
+  teams is making sure everyone in the team knows when you've made a mistake, not
+  so that anyone can blame you, but so that everyone can help you and jump on board
+  and make sure that you all work together on kind of finding a great solution.
+2573: Great. Thanks, Mike. We've had a couple from the audience. So I'll start with
+  this one from Joshua. Ask how long it took you to learn Ruby?
+2589: So I think it's interesting with learning a language, like learning a lot of
+  things in life. I'm still learning Ruby. I learn new things about Ruby on a day
+  to day basis, I think.
+2601: But I probably, I guess to get comfortable with the language such that I was
+  kind of happy applying for jobs, I was working my free time, but it kind of took
+  me like, probably like a couple of years before working in my kind of evenings and
+  weekends before I would have been happy kind of saying that I could kind of do that
+  comfortably for a living.
+2621: I don't think that's the case if you're kind of more dedicated and more focused
+  on just that and you don't have another day job on top of things.
+2629: And I think one of the differences as well is that I was not almost following
+  my own rules.
+2637: I was not going and reading through all these resources and stuff like that.
+  I was kind of just figuring it out as I went along.
+2642: I think a really good thing to do is to make sure that at the same time as building
+  stuff, you're just doing a lot of reading as well.
+2648: I think the most useful thing for me, which is probably a bit in depth for beginners,
+  but was when I've been working with Ruby for about maybe a year, maybe two years
+  or so, I read the kind of official Ruby programming language book, which kind of
+  details like everything you can do in Ruby.
+2664: And at the time I didn't necessarily understand all of it and I didn't necessarily
+  remember it all, but it was kind of good to get that overview of like everything
+  the language can do so I can then go and Google it later.
+2678: Okay.
+2679: Great.
+2680: Great.
+2681: We also had one from Patrick.
+2684: He asked, is there a good precursor language to learning Ruby?
+2688: He noticed you did C and C++ first.
+2691: Sure.
+2692: I would definitely not recommend learning C and C++ first.
+2697: That will be more confusing.
+2700: I think Ruby is a really great language to start with.
+2703: I have introduced other people to programming and Ruby has been their first
+  language and I think that is a more pleasant experience.
+2710: C and C++ are lower level languages, which means that you have to do more stuff
+  yourself.
+2718: There's less stuff that's provided by the language for you and you're kind of
+  closer to the machine, which means you have to have to write well in those languages.
+2727: You need to have a better understanding of what is going on inside the computer
+  than I think you do to learn Ruby.
+2733: So I definitely think Ruby is the best thing to jump into first.
+2738: Ruby and or Rails at the same time are kind of a great way to just get started
+  on programming.
+2747: We have also had one from Nestor.
+2752: He asked, why should I learn Ruby over JavaScript, which recently there's been
+  a lot of hype around JavaScript frameworks like Node, Angular, Ember, GoC, Meteor,
+  etc.
+2764: I mean, I don't want to, I've never written a production application, for example,
+  in Node, so I wouldn't want to kind of critique Node.
+2774: Node, I think JavaScript versus Ruby, I think Ruby is a more modern language
+  than JavaScript.
+2781: JavaScript is still getting a lot of work on it and it's changing a lot of ways,
+  but because Ruby is more modern in its conception, it's been able to do a lot of
+  different things.
+2793: I think the syntax is a lot more, I guess, human readable, I would say.
+2797: It's a lot more expressive in what you can do with it, I think.
+2802: There would be a lot of people, I'm sure, who would disagree with that.
+2806: But personally, I think it's a nicer language and it's a better language.
+2810: I think a more pragmatic argument would be that Ruby on Rails has been around
+  longer than Node.js.
+2816: So although the internet and Twitter particularly may go and get more excited
+  about certain languages and certain topics,
+2824: there's definitely a thing where more jobs are sometimes available in slightly
+  older technologies because they've been around for a while
+2835: and because companies know how to work them at scale, because there's companies
+  who provide consulting and training and all these type of things around them.
+2843: So if you were asking me in five or ten years, maybe by that point Node would
+  be a much better choice than Ruby, but I think today Ruby is a better choice for
+  those various reasons.
+2857: And, as I said, as a preference point of view, I've enjoyed writing Ruby a lot
+  more than I've enjoyed writing JavaScript.
+2867: Next, Mike, and another one from Josjeet.
+2871: He has asked what problems you have encountered working with Ruby.
+2876: That's a good question.
+2878: So I guess the problems you encounter working with Ruby are, I guess one of
+  them would be,
+2886: you can't do Ruby for everything.
+2888: The point that was made previously about Node.js, one of the things that is
+  appealing to some people about Node.js,
+2894: which is a framework that you can use to write JavaScript, is that you can write
+  JavaScript on the server,
+2901: but you can also write JavaScript in people's web browsers on the client as
+  well.
+2905: So you can basically get away with pretty much only writing JavaScript and not
+  having to understand a separate server and client side language.
+2915: So I guess you could say that's a problem with Ruby is that you can't do absolutely
+  everything in it.
+2921: And similarly with Ruby, it's not as performant for things which are very, very
+  CPU heavy.
+2930: So for example, if you were speaking to something on the internet and every
+  time you sent a message,
+2938: it took a second to get back to you or whatever, then in those cases, Ruby would
+  just be just as fast as everything else.
+2944: Because in that case, the slow thing is the internet connection and not the
+  language itself.
+2949: But if you're speaking to something which speaks back to you very, very fast,
+2953: if you're speaking directly to the CPU and trying to crunch numbers as quickly
+  as physically possible,
+2959: then a language like C or C++ or even Fortran are languages which can do mathematical
+  operations a bit quicker.
+2967: So from that perspective, Ruby is not the fastest language and that can sometimes
+  cause problems.
+2975: But then generally what you end up doing and what GitHub does is if you have
+  parts of your system that are very, very reliant on that performance.
+2982: And generally that will be five, one percent of a complex system will be really,
+  really CPU bound and very reliant on high performance for the rest of the system
+  to perform at a decent level.
+2996: Then you may end up just writing that in another language like C or Go or Rust
+  or various other what we call systems programming languages.
+3005: So I would say that's my main problem with Ruby.
+3008: I guess another kind of niche thing is that because Ruby is a very, I mentioned
+  earlier, a very flexible, a very dynamic language that allows you to write in lots
+  of different ways.
+3017: It's also possible to write some Ruby, which is kind of incomprehensible because
+  you can do all this really, really clever stuff.
+3026: And then you might feel very clever, but then it's when your co-workers come
+  and look at your work in six months, a year or whatever,
+3032: they can't make head or tail of what you've done because you've tried to be
+  too clever.
+3036: And that's a problem compared to languages like maybe Java, for example, which
+  it's quite hard to write Java in such a way that it's really incomprehensible like
+  that.
+3046: But then again, that's one of the things that makes, I think, Ruby a far more
+  powerful language than Java is that it gives you the, you know, there's that danger,
+3053: but there's also the kind of the power there as well.
+3058: Thanks Mike for your answer.
+3060: So we have one from Yao who has asked, is there a lot of freelance work in Ruby
+  on Rails?
+3067: Yeah, I think so.
+3069: I've not personally been a freelancer, but I have friends who are freelancers
+  in the Ruby on Rails world and they seem to have not much problem getting work with
+  Ruby on Rails work.
+3083: I think I would probably say it's in, you know, just to pull a number off the
+  top of my head.
+3088: It's probably in the top five are probably programming based consulting gigs
+  and freelance work that's around now,
+3095: because as I say, it's, it's a fairly widely used and established language at
+  that point.
+3100: So often when you're doing freelancer consulting work, the client, even though
+  they may not be writing the code,
+3107: they may have already decided the technologies they want to use because if they
+  have other freelancers or if they have, you know,
+3114: employees that they're coming in at a later date, they want to kind of have
+  something that is kind of going to be widely supported and not to user-teric.
+3122: So as a result, I think from a freelancer perspective, Ruby on Rails is definitely
+  a good choice.
+3128: Great.
+3130: We have one from Antonio.
+3132: He's asked, "Is Ruby on Rails an appropriate platform for a small to mid-size
+  business application
+3138: or is it better suited for larger corporate applications?"
+3142: I think it's well suited to both.
+3144: I think it probably is actually better for small applications.
+3148: So with Rails, GitHub is one of the reasons why we're probably one of the biggest
+  sites that are using Ruby on Rails
+3155: Rails is because there were other sites that are far more popular than we are,
+  like Twitter for example,
+3161: that initially started off using Ruby on Rails, but then as they've grown bigger,
+  they moved more and more of their code away from Ruby on Rails
+3167: to other languages that they feel are more maintainable or scale better and
+  perform better at kind of the very high volumes they have to deal with.
+3177: So from that perspective, I think Ruby on Rails is probably something that's
+  more suited to kind of smaller applications,
+3183: smaller and medium-size applications than really, really enormous ones.
+3187: But then again, as I've said, it is used in some enormous applications as well.
+3191: Great, so we have time for one more question and this one is from Joshua again.
+3201: He asks, "Do you recommend that you work in a team for your first Ruby project?"
+3207: Yeah, I mean, I think working in a team in programming generally is pretty invaluable.
+3213: As I said, I've been working remote for a long time, so I've been remote for
+  I think seven years now.
+3219: So working in a team does not necessarily mean working in the same room or the
+  same building or whatever,
+3223: or even the same country as the other people you're working with.
+3226: But I definitely think you will learn more when you're working in a team with
+  other people,
+3231: particularly if there's a mix of experience levels.
+3233: Whether you know more about Ruby than other people or less about Ruby,
+3237: and whether you have more experience or less experience in your industry or
+  in software in general,
+3243: you will end up learning a lot more through working with a group of other people
+3247: who have different ideas, different perspectives.
+3249: And that's why, if you see what we did with GitHub earlier, we made that pull
+  request.
+3254: One of the reasons we do that is because what's become more and more of a commonplace
+  thing to do in software
+3261: is getting effectively someone else to check over your work whenever you do
+  it.
+3265: And the reason for that is we're all working on, when you work in software,
+  on complex systems,
+3270: and the complex systems have side effects that you may not have anticipated,
+3274: and we're all ultimately only humans, so humans make mistakes,
+3278: and it's good to have someone else to kind of help you, check you haven't made
+  silly mistakes,
+3283: and also be able to teach you and for you to be able to teach them eventually
+  as well.
+3288: Fantastic, thanks Mike. So that's all we have time for today.
+3294: We'll make sure we answer the rest of your questions in an email.
+3297: But I'm sure you guys will all agree that that was an absolutely fantastic insight
+3301: into not only what it's like to be a developer, but what it takes to get there.
+3305: And I hope you're all inspired to go and start taking steps to changing your
+  career to tech,
+3310: if that's something you want to do.
+3312: Because you've joined us tonight, we'd like to give you guys something special.
+3315: We want to give you a web development short course for free.
+3319: We'll send this out to you, along with a copy of the webinar,
+3322: and some other great resources in the coming days, so keep an eye out on your
+  emails.
+3326: And if you're really thinking about learning moving on rails and becoming a
+  developer,
+3330: then here we do offer a course that promises to take you from beginner to job
+  ready in six months,
+3336: with the job guarantee as well.
+3338: So we'll send all this information to you in a follow-up email.
+3342: So once again, I really want to thank Mike for joining us today.
+3346: We really appreciate you sharing your exciting experience with our community.
+3350: And thank you so much for everyone for tuning in.
+3352: Remember to keep an eye out for all those resources in your email.
+3355: They'll be coming to you very soon, along with your free short course.
+3358: And that's all from us.
+3360: Thanks again for joining us, guys.
+3361: And have a great day wherever you are.
+3363: Thanks.
+3364: Thank you.
+3365: Thank you.

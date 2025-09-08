@@ -1,0 +1,400 @@
+---
+0: Hi everyone, welcome to my semi-talk. It feels strange after doing these for so
+  many Fosdems
+9: in a row to be sitting at my house by myself trying to do this. Excuse any misspeakings,
+17: I had my wisdom tooth out yesterday so things are a little bit ropey. And excuse
+  any mess
+24: in the background as this is my lovely home office in Edinburgh in Scotland.
+30: Well thank you for joining me today. I'm going to be talking about Homebrew as
+  usual and the macOS
+38: Big Sur and ARM also known as Apple Silicon and how Homebrew has adapted to support
+  both of these.
+46: Now through this talk I'll be using ARM mostly when referring to Apple Silicon
+  even though that's
+53: not what Apple calls it. This is just because it's a bit simpler for me and it
+  fits more easily on the
+59: slides. So those of you who haven't come across me before, nice to meet you. My
+  name is Mike McQuaid,
+65: here's some of the ways you can kind of contact me. I'm on GitHub and my username
+  on GitHub and on
+77: Twitter is the same, Mike McQuaid, just the same as my name. I'm an employee at
+  GitHub as well,
+81: I've been there about seven years. I'm a staff engineer working on communities.
+  So feel free to get in
+87: touch with me after this talk if you have any questions about Homebrew or GitHub
+  or you want
+92: to discuss anything in particular. But let's get on with things. Right so macOS
+  Big Sur is the first
+101: version of macOS that has adopted a new versioning model since OS X was originally
+  released
+110: a long time ago and this is interesting for us for a few reasons because we've
+  had to deal with various
+118: ups and downs through the betas. So in the first beta we had macOS 10.16 Big
+  Sur which was the version that we
+128: saw being used. So 10.15 was the previous version that we were supporting known
+  as Mojave and this
+138: looked kind of like it was all going to be fairly normal. But then stuff started
+  showing off in some
+142: of the betas with macOS 11 and then in the initial ones it seemed to be a difference
+  between 16 in some
+149: places and 11 in other places and this was differentiated by 10.16 for the Intel
+  betas and 11 for the ARM or
+161: Apple Silicon betas. And this obviously was fun in itself because you have two
+  different versions that
+168: refer to the same thing from our perspective. And also with the 11 it's been
+  10 point whatever for
+176: I think 12 years at this point. Maybe a bit longer actually I think maybe 15
+  or 16. I can't tell off the
+183: top of my head. And yeah there's a lot of regexes out there that assume a macOS
+  version is going to be
+189: 10 point something. So I immediately saw this and thought uh oh this is going
+  to break a ton of regexes.
+195: But where it gets even more fun is we're now on macOS 11.1 Big Sur. So previously
+  you had 10.16
+203: 0.1 0.2 0.3 whatever would be the way they would have done their releases.
+210: And that meant that we could kind of track the different versions and the major
+  minor
+215: versioning was kind of consistent. And we thought okay well if they move to this
+  11 model then it'll
+220: effectively be just the same as before but they will shift things slightly. And
+  instead what they've
+226: done is Apple have decided to have different SDKs per minor version of the OS.
+  So whereas previously
+233: they would have just had a 10.15 SDK and a 10.16 SDK now they have an 11.0 SDK
+  and 11.1 SDK.
+239: So again this is solvable stuff but there's a huge amount of assumptions in homebrew
+  and various build
+247: scripts that things are not going to work this way. And homebrew ends up acting
+  as a bit of a kind of
+253: glue layer for a lot of projects. So we abstract away and fix in the build system
+  some of the things where
+261: people pass you know SDKs that are no longer around selecting the right SDK based
+  on the OS based on the
+268: compiler you're using all this type of stuff. So this causes a bit of fun and
+  hiccups and we're still
+274: slightly figuring this out but I think we've got to a point now where we're pretty
+  stable and we have
+279: something which works reliably going forwards. So the next big change that we
+  saw was the arrival of Apple
+286: Silicon which I'm referring to as ARM throughout this. So Apple announced that
+  a few people had sort of
+294: suspected this was coming for a while but their own custom in-house architecture
+  that they were going
+300: to use that they had built for new Macs. So the interesting thing with this,
+  sorry give me one sec.
+307: The interesting thing with this was that it was going to require us to fix a
+  bunch of homebrew code to no
+320: longer make assumptions about what platform things are running on. So I'm sorry
+  but by platform there I
+327: mean architecture. So for a while homebrew has been Intel x86 only but this hasn't
+  always been the case.
+334: And so on Mac OS X when it originally was released for the first versions they
+  were all running on
+341: PPC 32 processors and I believe then there was PPC 32 and 64. So that's the power
+  PC architecture that
+349: Apple used to use. I believe some folks out there are still kind of running power
+  PC chips but you
+354: certainly don't see as much of them nowadays as you used to. And when Apple was
+  shipping these two
+359: versions at once they used what they called their I guess universal support where
+  they would ship
+365: fat binaries, their words not mine, basically binaries where they've been built
+  for each
+371: architecture and they've been kind of glued together with a tool called LiPo.
+  Again it feels like a pun
+378: intended there and those architectures are glued together in a single executable
+  say or library
+385: so when you run the executable it will select based on the architecture that
+  is what your current CPU is
+391: in your machine. So then after that Apple made the migration from PPC to Intel
+  chips. They previously
+400: made a move from a different Motorola architecture in the past to the PPC. So
+  Apple at this point have made a few
+407: architecture jumps over the years. So their way of handling this which I'll touch
+  upon later on as
+413: well was to have a thing called Rosetta which let if you had an x86 laptop you
+  could still run some of
+421: the PPC code because it's a completely different architecture it's not backwards
+  compatible in any
+426: sort of meaningful way. So they again provided these fat binaries with x86 as
+  well and this was about the sort of time
+434: where I had first started using a Mac I first started using a Mac in I think
+  it was 2008 or 9 or something
+443: and Macs were x86 and when I got involved with homebrew Apple was just starting
+  to explore x86 64 with
+454: Mac OS 10.6 Snow Leopard where they were providing 64-bit support for the first
+  time. There was a bit of 64-bit
+461: support in Leopard 10.5 but that was kind of minimal enough and it was you had
+  to kind of use a few kind
+467: of hacks to get working so not many people were distributing stuff there. So
+  this was homebrew
+472: supported both Leopard and Snow Leopard so we had to start dealing with kind
+  of multiple architectures at this point
+479: and in the early homebrew days as well we were a lot more of a compiling from
+  source package manager we
+486: had extensive options we had no CI and a much much smaller number of users who
+  didn't really expect
+491: things to work all the time so we provided a lot of customizability for people
+  to be able to select
+495: for some software to be able to build say all four of these architectures at
+  once but then pretty soon
+501: Apple were getting to the point where they were dropping their PPC stuff they
+  didn't support Rosetta
+504: anymore I forget what version they dropped that on and they were so we're going
+  to just x86 and x86.64
+511: and then before you know it we're just down to x86.64 so this has been probably
+  a pretty long time for
+518: homebrew that there's been no Macs that we or at least no Mac versions that we
+  support that have any support
+525: for x86 and or at least have no at least all of these Macs can run x86.64 code
+  so we've been steadily sort
+535: of um focusing on shipping macOS for a single architecture but I think we always
+  suspected
+541: something like this could happen in future and also not wanting to deliberately
+  tear out a bunch of the
+546: code before so we did tear out the code to build multiple architectures that
+  universal support
+552: that we talked about but we always kept around code letting homebrew be multiple
+  architecture
+557: friendly because although we don't support it we have some people who run homebrew
+  on raspberry pies
+562: and on PPC chips and stuff like that still so we thought we'd keep that around
+  and that's obviously proved
+569: useful to us now that we now have ARM64 aka ARM aka Apple Silicon which is where
+  we are today so
+579: we are now having to support homebrew on two architectures we're shipping binaries
+  for two
+585: architectures uh this is probably this is in fact yeah it is the first time that
+  we have had CI for
+591: multiple architectures both running the same OS and building the same thing in
+  different configurations in
+596: different places so that's been sort of interesting and it will be interesting
+  to see how that kind of
+601: challenge goes on in future so I mentioned in the past there was Rosetta which
+  was I guess a reference to
+608: the Rosetta Stone and and that allowed you to run PPC code on x86 so nowadays
+  we have with the new
+617: ARM Apple Silicon Max we have what Apple call Rosetta 2 which is what lets you
+  run x86 64 code I don't believe
+624: x86 code but I could be wrong there and it lets you run that on ARM so the benefits
+  of that is you still have a certain amount of
+634: AQUIS compatibility of those programs that haven't been ported yet and unlike
+  in the old days with Rosetta
+641: homebrew sort of just pretended that didn't exist whereas now we've actually
+  doubled down a little
+645: bit more and we're trying to work around Rosetta 2 to provide a nicer user experience
+  for our users
+651: so if you've been using homebrew on Mac particularly for a little while you've
+  known that we've used user local for a long time
+659: as a default installation location so the reasoning for this is because it lets
+  you pick stuff up in
+666: your compiler paths automatically it didn't used to be used for anything although
+  more and more stuff
+670: dumps things in there and it basically just was a nice easy location that we
+  could use
+677: so we've used that for a long time we've we've had sort of sporadic backlash
+  about that some of which is
+682: valid saying well this location is used by other tools so we can maybe avoid
+  it and some of it is
+689: invalid with asking people people getting very upset about changing the permissions
+  and suggesting that
+694: you install it in home instead because in my opinion that is an invalid viewpoint
+  to be concerned about
+701: because if you're concerned about your package manager being human readable and
+  someone getting access
+706: to be able to run an arbitrary coding machine then you probably care about the
+  fact that they can destroy or
+711: edit or modify all your documents and such like anyway but anyway moving on so
+  homebrew on linux has a
+719: slightly different default location and these default locations are not only
+  where the installer will
+725: install things for you but these are where the majority of the binary packages
+  work some binary packages we
+730: have are what we call relocatable so that means you can install them in a homebrew
+  installation anywhere
+737: and we can just modify the references in there and they can work anywhere but
+  a non-relocate non-relocatable
+744: binary package bottles we call them mean that unfortunately you have to use the
+  specific
+751: supported location so user local or in linux home linux brew linux brew looks
+  i'll explain why in a minute
+758: you have to use that location if you want to get the binary packages and as we
+  are mainly a binary package
+762: manager nowadays that's what we strongly recommend and that's arguably all we
+  support so if you install
+767: in a different location and that works for you then great if you install a different
+  location you have
+772: problems with builds and such like then we're unlikely to fix your problems unfortunately
+775: so the linux location the reasoning for that is because um homebrew on linux
+784: has quite a lot of users maybe the majority of the original sort of users but
+  back when it was called
+790: linux brew were on sort of scientific computing environments where they may well
+  have a bunch of
+796: stuff on big scientific computing clusters and they have access to a home directory
+  on their machine but
+803: they can't use the native package manager so linux brew was useful to be able
+  to install bits and pieces on
+807: those machines and a few of those folks found that it was relatively easy to
+  ask your sys admins for
+814: those machines because you normally don't have root on them if you're a scientist
+  working on them and if
+819: you get access to those machines to be able to create a new user called linux
+  brew and then you can get
+824: write access to their home directory then you can use this default installation
+  location which can be shared
+830: between multiple users on the same machine without needing root access for any
+  of them and have binary
+834: packages that can work in this location so i mentioned before the stuff with
+  rosetta 2
+841: and about how we're trying to support that a little bit better than we did before
+845: so as part of that because there's this transparent x86 compatibility layer and
+  because of our packages
+853: being installed in user local and not being really capable outside of that we
+  wanted to have a way to allow
+860: people until homebrew and arm is significantly more established and until binary
+  packages are fully supported for everything
+869: we wanted to have a way for people to kind of have a fallback that would still
+  work nicely for them which didn't involve building from source
+875: so homebrew and arm has a new default installation
+879: default installation location which is opt homebrew
+885: so again that looks a little bit like mac ports we can tip our hat to them and
+  say thank you for the
+889: inspiration there and this is a new location that we're we're using everything
+  will be all encapsulated
+896: there it's pretty obvious that everything in there will just be homebrew and
+  there is where the binaries on
+902: arm are going to be built for and we have now some minor restrictions on installation
+  locations which we didn't have before
+910: so if you try and install under arm into user local or try and install intel
+  under opt homebrew we now
+917: won't let you and the reason for that is we want to provide
+920: the support to effectively use if you're on an arm mac now the m1 chips i think
+  they call them
+927: and then in user local we want to reserve that for a rosetta 2 installation of
+  homebrew so that
+933: means you can have an installation in user local and an installation in opt homebrew
+  and the two of them
+938: will play nice with each other they will use the correct binary packages and
+  they won't get
+941: confused and start trying to link against the other one so now we've got to a
+  point where that allows
+948: people we have about a third i think of the usage from analytics data so far
+  for this rosetta 2 still
+954: the most people on our max are still just using this completely native location
+  and they're finding
+958: that that works pretty well for them i'll talk about what the breakdown is shortly
+  but if not you can
+964: use user local and there's some people it seems who just use that for everything
+  because they don't
+968: want to deal with the hassle so obviously there'll be a slight performance benefit
+  well it depends on
+973: the software you're running but for um natively compiled software there will
+  be some degree of
+978: performance benefit for running the natively compiled on binaries so that's beneficial
+  and we would like to
+985: sort of recommend that but then the user local rosetta 2 is a good fallback as
+  well
+990: so bottles these binary packages i mentioned so a bottle block for one of our
+  packages looks a little
+995: bit like something like this so you can see now this is basically all the supported
+  versions we have
+1000: now there are some versions where we try if the package isn't upgraded and we
+  release a new version
+1004: of mac os we try and just add the new binary package rather than removing any
+  old ones so this is a tool
+1010: that has all the supported versions of homebrew on mac os right now so we've
+  got big sir arm 64 big sir
+1017: catalina mojave high sierra sierra el capitan yosemite and mavericks going all
+  the way back so
+1024: the arm binary packages are just handled like any others we've got this arm
+  64 big sir we'll probably
+1030: continue that sort of naming format until we have at some point in the future
+  we'll have a mac os version
+1036: where they don't support intel anymore that seems fairly inevitable based on
+  the way they've dealt
+1040: with migrations in the past so until then we're just going to continue adding
+  and trying to build
+1046: these packages so how's that effort going for arm well as i mentioned before
+  not everything is available
+1052: yet for arm and we've got our arm ci which is a nice kind of collaboration between
+  three companies that
+1058: have helped us out here so github actions we've now replaced all our jenkins
+1063: installation that was our cause of security vulnerabilities for us in the past
+  and just
+1068: generally we didn't have the decent amount of admin staff to be able to actually
+  keep that up and
+1072: running well so we're using github actions for most of our ci and then for actually
+  building the binaries
+1078: themselves we've got our own workers in mac stadium so mac stadium have generously
+  provided us with
+1086: um various vms for our macs in the past so that's where we've been running our
+  um intel workloads for
+1092: a few years and then now apple supplies with some dtks that's um i forgot what
+  that stands for but
+1098: basically their arm kind of developer kits um and hopefully in future ones those
+  have to be returned
+1104: to apple we'll be able to get some mac minis or similar off them as well so
+  that we can run this um
+1111: arm ci so if you go and submit a homebrew package or change to the homebrew
+  core repository now it will
+1117: now be running github actions uh on a apple ddk hosted by mac stadium to build
+  our binary packages
+1124: the same way we do with intel ones so we've got at the moment we've got at my
+  time of checking last at
+1131: least uh 4615 intel big sur bottles so that's essentially all the packages that
+  need binary
+1138: packages and are working on big sur for intel which is you know pretty much
+  everything and then we have
+1145: 3850 for arm slash apple silicon so we're we're not fully there and there's
+  obviously going to be stuff
+1152: that's missed but for a good number of people it does seem that they're um able
+  to install everything
+1157: they want to install and get that all working on arm without the need to kind
+  of fall back on the
+1163: intel stuff so this has actually gone a lot quicker than i expected and it's
+  been i'd like to give a
+1169: particular shout out to fx cuder who is one of our maintainers who's been doing
+  a lot of work on this
+1175: um and particularly on the kind of packaging side and bottling side getting
+  this all up and running so
+1180: great work to everyone who's taking part in that and all the other homebrew
+  containers
+1185: who've kind of chipped in on the arm work as well so if you're wondering which
+  of those bottles apply
+1191: to you or not and you wanted to kind of check maybe before you buy an arm mac
+  or before you're sort of
+1196: making sort of decisions around this stuff then you can go on to formulae.brew.sh
+  that's our main
+1202: website now for hosting the stuff and as of today um eric has just added one
+  of our other maintainers
+1209: like nicely formatted stuff providing the detail of what the support is so you
+  can see for open ssl 1.1
+1215: we provide binary packages for big sir catalina mojave on intel and big sir
+  for apple silicon
+1221: and that details basically that okay we have a binary package there that means
+  the package will work
+1227: or at least should work um to the and we will support that to the same extent
+  as intel so we will treat
+1233: things not working there not compiling as well sorry not not compiling things
+  not working with
+1239: the binary package we'll treat that as a bug and we will try and endeavor to
+  fix them in the same way
+1243: as we would for intel so from that perspective i can announce today that homebrew
+  on arm slash apple silicon
+1251: is officially supported if you submit issues we will prioritize them the same
+  way as we would do with
+1256: intel ones and obviously we have limited amounts of maintainers who have arm
+  hardware so it may not be
+1262: quite as easy for us to fix these but we will still endeavor to do so and this
+  also brings us along to
+1269: the fact that we're calling this homebrew 3.00 so this has been a pretty big
+  deal getting all
+1275: the arm support working and it feels like a major milestone for homebrew that
+  we've been able to do so
+1279: relatively quickly and announce official support so i'm happy to announce homebrew
+  3.0 and now hopefully
+1286: you've enjoyed watching this video and i should be assuming that my children
+  are not interfering with
+1293: my life too much i should be in the matrix chat now and i can answer any questions
+  so thanks for joining me
+1298: goodbye

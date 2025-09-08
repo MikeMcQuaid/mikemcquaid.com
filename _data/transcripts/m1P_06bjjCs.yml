@@ -1,0 +1,382 @@
+---
+0: Hello, everyone. Konnichiwa. I'm gonna talk today about Homebrew and how we've
+  built Homebrew
+8: in Ruby. I'm gonna ask for quite a lot of putting your hands in the air because
+  it helps
+14: me be sure that you're listening and gets feedback, and also it stops you all
+  from falling
+20: asleep. So, anyone here use Homebrew? Awesome. Anyone here submitted a PR to Homebrew
+  ever?
+29: Was it merged? That is sad, and probably my fault. Does anyone like our new logo?
+  Can
+40: you tell the difference? It's really different from our old logo. In fact, who
+  thinks the
+47: new logo is on the left? And who thinks the new logo is the one on the right?
+  There was
+52: a designer guy who works on Homebrew who explained why this is not real, like
+  a real beer glass
+59: glass, whereas this is like real, and that's good. So, who likes putting their
+  hand in the
+64: air? Woo! Woo! Right, so I'm Mike. I've
+70: met some of you already. If I haven't met you already, feel free to come and talk
+  to me anytime.
+74: I'm here till Saturday night. I've been working on Homebrew for 10 years now this
+  year, which
+79: is quite exciting. And I'm the project leader apparently. I've been at GitHub
+  for about five,
+86: well, I guess just over five years now, and I'm a senior engineer working on improving
+  GitHub
+91: for open source on a team working on kind of fun secret stuff that will ship in
+  the next
+96: few months. If you're interested in talking about GitHub and open source or Homebrew,
+  then
+102: give me a shout. I've got my email address there. Feel free. If you email me,
+  I reply unless
+107: you're being mean, and then my coworker convince me it's generally better to
+  not reply and get
+112: in arguments with people on the internet. So, yeah. Feedback always welcome.
+  Going to talk
+119: today, as I mentioned, about Homebrew and Ruby. You may or may not know Homebrew,
+  the first
+124: version, like the first file and commit, was written in Ruby right from the outset.
+  I think a big part of the reasoning for that was Ruby was one of the
+132: languages that shipped with Mac OS, and Max Howell, the guy who created Homebrew
+  originally, wanted to build something that didn't require any dependencies to run
+  on Mac OS.
+141: And at the time, he had played around with a bunch of different languages, and
+  he, much like myself, fell in love with Ruby and thought that it was a good fit
+  for Homebrew.
+150: But because I am Scottish, we can't start with nice positive things, so we need
+  to start with the negatives. So, the first problem Homebrew has is a result of that.
+162: which is the fact that, because we want to use the Ruby that's provided with
+  Mac OS, we don't really get to control our own version.
+169: So, who here is running Ruby 2.6 in production at the moment? You lucky, lucky
+  people. How lucky you are.
+177: Yeah, so, Ruby 2.6 is cool. There's lots of good stuff in there. Unfortunately,
+  until 2016, Homebrew had to still work with Ruby 1.8. And until, like, earlier this
+  year, our installer script, also written in Ruby, had to
+192: that support Ruby 1.8. Is anyone, anyone here still running Ruby 1.8 in production?
+197: Yeah, a couple of people. Shout out the people at the back who are weeping as
+  they put their hands in the air.
+205: Ruby 1.8's great, to be clear, but, you know, it's 2019 now. We're all meant
+  to be in flying cars and Ruby 2. whatever versions.
+213: So, we're running 2.3, which is the version that ships from Mac OS. Like, this
+  is nice. It's certainly a step up from 2.0, which was the previous version we were
+  running, which was a step up from 1.8, which is the version before that.
+225: And if you run user bin Ruby on Mac OS, that's the version you get. And we use
+  this system version where possible. If you have a nice new enough version, which
+  is the current version of Mac OS or the previous one, and where you don't, this
+  is the thing that allowed us to get off supporting old versions of Ruby.
+243: We have our own little thing called portable Ruby. So, this is basically just
+  our own little binary build of Ruby that's built such that we don't hard code any
+  paths anywhere. And you can install that anywhere on your Mac OS system and it will
+  behave nicely and just work nicely.
+258: So, again, we still like to use the system stuff where possible. So, although
+  in theory, we could just use this to ship our own version of Ruby 2.6 for everyone,
+  it's a little bit nicer to rely on the system where we can.
+270: Unfortunately, there's a few bits of weirdness with this. A, like people, i.e.
+  me, have to remember to compile and build this for when we want to kind of get the
+  versions compatible, and that's a bit of a pain and a bit too manual a process for
+  my liking.
+284: And also, there's weird stuff I don't understand that I could probably understand
+  this week if I talk to enough people about if you have gems installed with the portable
+  Ruby version and then you install the, sorry,
+297: sorry, you remove that and you have an upgraded Mac OS version or whatever, then
+  they don't play nicely and the native extensions will start sobbing blood and all
+  that type of thing.
+306: So, and something else I discovered today, which made me sad. So, I've been inspired
+  to do a couple of things through Ruby with Kaiji.
+312: And one of the things was like, right, I'm going to finally get this frozen string
+  stuff sorted.
+315: Uh, and I was like, kept banging my head against the wall with some like ERB
+  issues and noticed this nice bug report, which has now been fixed by cropped that
+  bit out of it.
+325: And it's been fixed and was originally reported on 2.4 and didn't have a bad
+  port to 2.3, unfortunately.
+332: Uh, so I could request one, but who knows whether Apple will actually ever include
+  that or not.
+337: So, at the moment, I'm going to just live with having 732 comments at the top
+  of files saying frozen string literal equals true.
+346: Oh well.
+347: Uh, so one of the nice things about kind of living in the Ruby ecosystem is although
+  we're a little bit different and we're own special snowflake of an application,
+357: Um, we do rely on a lot of the kind of tools that are commonplace.
+361: So, if you use IRB like us, put your hand in the air.
+365: If you use, anyone use Ron?
+368: Or, yeah.
+369: Uh, so Ron is a nice little gem for generating man pages amongst other things.
+375: Um, so we use that for generating our man page from a markdown file.
+379: Uh, and ERB, which is one of the things that was broken.
+383: Oh no.
+384: Uh, Ruby prof, anyone?
+386: Nice little profiler.
+388: Uh, you may well use something better that I'm not aware of.
+392: Um, so we basically have our own little wrappers for all these things because,
+  uh,
+397: because Homebrew runs its own Ruby processes and everything has to be initialized
+  with a bunch of environment variables,
+404: which get kind of set from bash first of all.
+407: So then you kind of need these like little hooks that are basically just little
+  shims around installing gems and things like that.
+414: And we'll come onto it later.
+415: Um, and then executing the Ruby, the Ruby processes that Homebrew expects in
+  the right way.
+421: Um, and people use our spec.
+424: Anyone heard of that?
+425: Unusual little thing.
+426: Yep.
+427: Quite a few people.
+428: And anyone use the bundler install standalone mode.
+431: This is a relatively recent discovery of mine.
+433: And it's quite cool.
+434: We'll talk more about that now, in fact.
+436: Uh, so we do use bundler now to install our gems.
+440: We used to previously have this weird ghetto version of people just like downloading
+  stuff and untarring it.
+448: And then like just adding on GitHub and no one knew what version anything was.
+452: And it was very, very sad.
+454: Uh, basically based around the initial thing where we didn't want Homebrew to
+  kind of have to rely on users to manually install gems.
+462: And in general, we don't want Homebrew users doing not development work on Homebrew
+  to even care that Homebrew is written in Ruby.
+471: So a Homebrew user wanting to just install some software should not need to install
+  any gems.
+477: They should not need to know about Ruby gems or bundler or whatever these things
+  are.
+481: They should just be able to do that.
+482: And it's only when you kind of get a little bit deeper into kind of developing
+  Homebrew or developing a Homebrew formula,
+487: which is what we call our kind of package description files that you need to
+  care about any of that stuff.
+492: Uh, I also learned about gel, which was, uh, this tool that was released yesterday.
+497: That's kind of a much speedier version of bundler with kind of fewer features.
+501: So I've been playing around with that to see whether we could use that to speed
+  some stuff up as well.
+505: So as I mentioned, because we don't want to have, uh, users having to manually
+  learn this stuff.
+513: Like we don't want to have people have to do this.
+516: Uh, this would be a bit of a pain for, again, the reasons that people have to
+  manually install bundler and do that jazz,
+524: but also like it slows down the invocation of the Homebrew process.
+528: And we want to try and make things nice and snappy where we can.
+531: We have a single gem file while we actually have,
+534: we're down to just two gem files in our, uh, repository.
+538: Now we had four a few weeks ago.
+540: Um, so this includes, as you might expect,
+543: all the stuff that we need both at runtime, uh, but then various development
+  tools as well.
+548: And then this is the magic file that bundler standalone generates for you.
+552: Uh, so it sticks it in here for us.
+555: And then we have under library homebrew vendor bundle, Ruby.
+559: That's where we have like all our gems that we commit into the repo.
+563: Um, and then what this file gives you, which is pretty nifty is if you haven't
+  used it before,
+568: is basically a bunch of lines get spit out, which look like this,
+572: which is basically adding stuff to the load path based on the version of it.
+577: the version of the gem and the version of Ruby and all that type of jazz.
+581: So basically what that means is that you can even turn off Ruby gem support
+585: as I'll come along to later in your version of Ruby that you're running.
+589: Um, and you don't need to have bundler installed on the system at all.
+592: And then with this file,
+594: you can basically have it go and do all the magic and include all the gems at
+  the right versions
+598: and stuff like that without you having to worry about that.
+601: Um, so I found that a really nice way of effectively kind of making it easier
+  to run projects.
+606: And just get all your gems in place without needing to kind of have the,
+611: the runtime overhead of using bundler for stuff.
+614: I guess it's worth noting.
+617: Again, I keep talking about kind of the runtime overhead.
+620: That's because we're, I guess, in the relatively unusual case in 2019,
+625: in that we are still primarily a Ruby project,
+628: which does not operate on or inside a web request.
+633: Uh, we are still like just a command line application that just happens to be
+  written in Ruby.
+637: So for us,
+638: it's really important to basically spin everything up and get to doing work as
+  quickly as possible.
+644: Whereas if you're doing this in a rails project,
+646: like this would probably be pretty dramatic, premature optimization,
+651: because you're going to start your web server like once per deployment or whatever
+  it would be.
+656: And you don't need to kind of repeatedly do this again and again and again.
+658: So all this kind of overhead becomes not something you probably need to care
+  a whole lot about.
+664: But it would be nice if we could kind of check in all this stuff to the repo,
+669: but because we don't want to check binaries into the repo,
+672: because of the slight incompatibilities I mentioned earlier between the Ruby
+  versions we support,
+676: we don't check everything in.
+678: So like native extensions that get built, those don't go into the repo.
+682: But we manage to, with the gems we're using,
+686: we don't actually require any gems with native extensions for doing, again, user
+  stuff.
+691: It's only when you get to developer stuff.
+693: So for example, if you're using a brew style that does our style checking,
+698: I'll talk more about later,
+699: then that's going to install Rubicop, which needs some native extensions.
+703: If you're going to do like various other bits and pieces that are kind of more
+  developer-y
+707: and have to compile some secret underneath the hood,
+710: then that is going to have to pull in bundler,
+712: which then installs all this stuff for you.
+714: And then that's just like a nice little one-time thing.
+717: And then after that, you have everything that you need.
+719: And due to all this stuff,
+721: we now have the ability to use active support stuff inside Homebrew.
+726: Who likes active support string present?
+728: I realize it's maybe a divide.
+730: Oh, not a lot of people.
+732: Well, I like it.
+734: So there.
+735: So yeah, basically, it's now much easier for us to use particularly pure Ruby
+  gems inside
+741: Homebrew to kind of do a little bit more code reuse than we previously were.
+745: When previously, it was you find some cool gem that would be useful for doing
+  stuff in Homebrew,
+750: and the pain of vendoring that and any dependencies is high enough that you just
+  didn't bother.
+755: So we had like one completely standalone gem for doing like PList reading or
+  something.
+761: And then like, I think one internal gem that one of the homebrew maintainers
+  wrote to kind of read
+769: MacO files.
+770: And which are, it's like the Elf format equivalent on Mac OS.
+774: And but aside from that, we basically just didn't have anything.
+777: Whereas now we have active support.
+779: So as I'm talking, I guess about gems and our development dependencies, a special
+  mention goes
+786: to RuboCop because we use it pretty widely now and in some cool ways.
+790: So if you run our brew style command, that's going to go and check over the Homebrew
+  codebase
+797: and basically look for kind of style violations and stuff like that with RuboCop.
+801: It's mainly kind of part of our CI job, but it's also like a little thing that
+  we can go
+805: and tell people to run a single command to basically check everything's fine
+  before they submit a PR.
+810: But if you specify a formula, again, that's the kind of package descriptions,
+814: then you get Homebrew specific formula checks as well, which are nice.
+818: So because they've all been written in RuboCop and because again,
+821: the way that we tend to and try to do things, we don't believe in having to,
+827: I guess the sensible proper probably way of doing this would be saying,
+830: okay, well we make a Homebrew RuboCop gem that people install and then they get
+  all this cool stuff.
+836: But we want all this stuff to work as well as possible with no intervention at
+  all.
+841: So because the source code for these files is under a tree hierarchy that we
+  control,
+847: the really nice thing is if you install, say, any sort of editor like this is
+  VS Code,
+852: which is my current one of choice, and if you install the relevant kind of RuboCop
+  plugin,
+857: if you start like editing a file here, like I'm editing the wget formula,
+861: I've moved around the dependencies here, so I put them in the wrong order.
+866: And because basically we've tried to turn all maintainer pedantry into actual
+  code checks,
+873: because it's A, a pointless waste of time to have maintainers making the same
+  pedantic comments again and again,
+881: and B, if you encourage maintainers to instead of being pedantic on PRs to actually
+  write some code,
+886: like 90% of the time they'll decide that it's not actually important enough to
+  warrant writing the code in the test for that,
+892: and then you kill two words with one stone.
+894: So here I've moved around the build dependency, it wants that to be above this
+  dependency instead,
+901: because that's just the ordering we have here.
+903: So it's printed out a nice little error in here.
+906: So the cool thing about that, as I said, is that doesn't actually require any
+  intervention.
+910: If you were just contributing to HomeRoof for the first time,
+912: and you are a Ruby developer and had this set up in your editor of choice,
+916: then what's gonna happen is this is just gonna run without you having to do anything,
+920: and it's gonna use this custom cop that we've developed,
+925: and that has no dependencies,
+927: or the dependencies it does have, it just requires them using relative requires,
+931: so you don't need to do any manual setup yourself.
+934: So I found this flow pretty cool,
+936: and again, this is one of the cops that supports autocorrection,
+940: so you can just get it to go,
+942: and I actually had to hear like not save the file,
+945: because I have autocorrection set up by default,
+947: and it would just like helpfully move this up to the right place where it wants
+  it to be.
+952: So for me, this has been a cool, I guess,
+954: slight aside from Ruby specifically,
+956: but like a cool thing of trying to improve the developer experience for contributing
+  to HomeBrew.
+961: So we try and push things, like first it was kind of pushing as much as possible
+  into CI,
+965: and then now with stuff like this we're trying to push stuff that we can into
+  developers' local environment,
+971: and even into their text editor to mean that the flow that they have is a lot
+  more efficient.
+976: So, you know, I guess in a bad old days situation,
+983: like this is a comment that gets made by a human on a PR after you've submitted
+  it,
+987: and that's a bit annoying.
+988: In a slight middle ground, this gets kind of, you know, flagged by a CI job which
+  fails when you submit the PR,
+995: but I guess my view is, is it not nicer still if possible if you can get this
+  right when you're editing the file,
+1001: so you can get that immediate feedback loop and not require like turnaround
+  and CI jobs and all that type of thing.
+1008: So, one of the kind of, I guess, other funny things that we do a little bit
+  differently from other RubyLand stuff is,
+1016: despite being written in Ruby, we do not provide any sort of Ruby API.
+1019: If you are writing some gem or Rails application or whatever it may be and you
+  want to interface with HomeBrew,
+1025: then there is no like direct Ruby way of doing that, and that's somewhat intentional.
+1030: Unfortunately, as a result of doing that, you do get projects.
+1034: I'm allowed to shame this one, I feel, because it was A, made by my employer,
+1039: and B, like I helped to kind of tear down this part of the project and then
+  eventually the project itself,
+1045: but yet historically we've had projects who just, well, they don't provide a
+  Ruby API,
+1051: so we'll just like monkey patch their classes and then call HomeBrew and slightly
+  modify the behaviour to make it do what we want to do.
+1059: Put your hand up if you think this seems like a really good idea for sustainable
+  software development.
+1063: Hopefully, for the benefit of the tape, no hands were raised.
+1068: So, yeah, please don't do this.
+1070: But I will have to admit, I think I've done vaguely similar things to some Ruby
+  libraries in the past,
+1076: so I'm not completely innocent.
+1077: But instead, our API for HomeBrew is meant to be the command line interface.
+1081: So we treat the commands that generate output that looks like it is computer
+  readable.
+1090: We generally try and treat that as a stable API.
+1093: And even when commands behave in a way that is slightly annoying or opaque perhaps
+  in their output,
+1099: we try and respect that such that we don't break functionality for other people
+  in the future.
+1104: For example, when you run BrewSearch, if you have ever been inclined to run
+  that without any arguments,
+1110: then that will print out the list of formula that are currently installed on
+  your machine.
+1114: Sorry, not installed on your machine.
+1115: They're currently available on your machine.
+1117: That seems like a weird side effect behaviour, but there are enough people's
+  scripts on the internet,
+1121: because I go and look for such things because I am, I don't know, bored like
+  that,
+1127: that we don't want to break that.
+1130: So periodically, someone will try and refactor that functionality,
+1134: and they're told, no, actually, we're going to leave this how it is,
+1136: because this is essentially a public API at this point.
+1140: But some of the nicer APIs, I guess, we have instead are things like you can
+  ask BrewInfo,
+1144: which gets you your effectively machine readable version of the formula file,
+1150: if you pass the JSON argument.
+1152: So you can get it to spit out all this stuff,
+1154: and then you can use a tool like JQ,
+1156: with a nice little, like, command line JSON thing,
+1158: or if you're writing Ruby yourself,
+1160: I guess your API to homebrew is now shell out to brew info wget/json,
+1165: and then pass that to JSON parse,
+1167: or whatever your JSON library of choice is,
+1169: and there you go, you have a nice Ruby hash representing,
+1172: like, the various data for a homebrew formula.
+1175: And that also will represent, you can't quite see here,
+1178: but that will represent,
+1179: like, the stuff that you have installed on your system as well.
+1182: Um, if you don't have access to homebrew,

@@ -1,0 +1,549 @@
+---
+0: I'm going to do lots of things in the talk where I want you to put your hands in
+  the air.
+19: So first one, put your hand in the air if you use homebrew. Good. Put your hand
+  in the air if you
+29: have ever contributed to homebrew, made a issue or pull request or commit. Can
+  we clap? Thank you.
+37: Put your hand in the air if you love homebrew. Put your hand in the air if you
+  hate homebrew.
+44: So today I'm going to talk about using modern Ruby in homebrew to build a better,
+  faster homebrew. First, some
+58: background. This is not the right background. Put your hand in the air if you
+  hate windows xp.
+67: Good. It is too old. This is almost right. But this Mac version is also too old.
+  Homebrew does not
+78: support this. This also makes me sad. Ah, this is better. We have the right background.
+  We can continue
+85: the talk now. Homebrew supports this. Hello. I am Mike McQuaid. I have worked
+  on homebrew for 15 years,
+94: and I am the project leader. I am CTO of a startup, which is this little one over
+  here,
+100: called Workbrew, which is-- I'll talk a little bit more about that later, but
+  we're doing stuff to make
+106: homebrew better at work. I was at GitHub for 10 years, and I left as a principal
+  engineer last year.
+112: After the talk, I have homebrew stickers and workbrew stickers, and because I
+  found my sticker
+117: covered again, I have a bunch of GitHub stickers that you can have as well.
+124: So today I'm going to talk about these three things. So first, homebrew and Ruby
+  and our relationship
+130: together. Next, homebrew's Ruby tooling that we use, and how that's maybe changed
+  in the last four
+137: or five years. And then finally, what we're doing to build a better homebrew.
+  First, homebrew and Ruby.
+145: Put your hand in the air if you knew that homebrew used Ruby already. Okay, some
+  people, not everyone.
+152: So this, the text is very small, so you probably can't read it just now. But
+  this is the original
+158: first commit of homebrew, which was 15 years ago, next week. Exactly, which is
+  kind of funny. So
+166: it was by a guy called Max Howell, MXCL, up here on May 2009. And the first commit
+  was this readme file,
+176: where he talked about how homebrew was going to work.
+182: So the important bit for us, homebrew uses Ruby and some other stuff that is
+  already installed on
+187: Leopard. Just copy this directory somewhere. So right from the beginning, homebrew
+  has relied on Ruby.
+194: And in the beginning, homebrew always used the Ruby that was provided by macOS
+  X, macOS 10, I guess. So
+204: homebrew and Ruby have been very closely aligned from the beginning. In fact,
+  homebrew in the very early days
+210: it just looked a lot more obvious that it was using Ruby than it does today.
+214: So it used to be to install homebrew. There wasn't a brew command yet. There
+  wasn't a nice website with an installer,
+221: but you just ran this Ruby command after having checked out homebrew on your
+  disk.
+231: But now it is the call to bash. I think homebrew might have been one of the first
+  projects to do this.
+238: Put your hand in the air if you hate call to bash.
+241: Yes, some people. Put your hand in the air if you love call to bash.
+248: Most people don't care it seems.
+250: And installing wget, that's a nice example we have of a little simple homebrew
+  package,
+258: used to look a bit like this. So you would just run Ruby, and then you would
+  pass the actual formula
+265: file here directly and run that formula script with Ruby. Who knows what a formula
+  is already? A few
+272: people. Not everyone. So now you just type brew install Ruby, which means it's
+  easier to forget
+279: that you're using Ruby with homebrew at all.
+284: So I'm going to talk a little bit more about the formula here. This is the DSL
+  domain-specific
+291: language that we use in homebrew for writing packages. In my opinion, this is
+  one of the biggest
+297: reasons that homebrew has become so popular is compared to maybe apt-get or maybe
+  mac ports or maybe
+305: Debian. It's very, very easy to write a homebrew package. And one of the big
+  reasons it's very easy
+311: is because of Ruby. So this is slightly simplified so that we can kind of fit
+  it all in one slide,
+321: but this is a nice minimal example of what a formula can look like. This formula
+  is valid as it is,
+327: but if you go and look at the actual formula, you'll see there's a few more things
+  for
+332: boring reasons I won't get into right now. In my opinion, this is extremely readable
+  without being overly
+338: verbose. And I still think, I thought learned so 15 years ago for the first time,
+  and I still think
+344: today that Ruby is the best language for writing beautiful code like this. So
+  for this formula, we
+351: see this is called wget. That's the name of the class and also the name of the
+  package and also the name
+355: of the file on disk. This is a type of a formula. We've got a description here,
+  internet file retriever.
+362: We've got the home page where we say, okay, this is where we're going to go if
+  you want to learn more
+368: about wget. We've got the URL where it's going to be downloaded from, or at least
+  in this case, we're
+375: simplifying it here. You would actually download it directly from Homebrew. We
+  provide binary packages for
+380: you. I'll talk more about that later. But this is where Homebrew will download
+  it for on our CI systems.
+386: We've got a checksum, making sure that this is what we think it is, the license,
+  and then some commands
+393: we run. Again, if you've written a bit of Ruby, the system command would already
+  be familiar for you.
+397: So we're just passing this through. The prefix is the special place that we're
+  going to install the software,
+402: and then we run make install. So even from this dev install, it's very easy to
+  see what commands are
+408: needed to install wget under Homebrew. And as a result, I've seen other people
+  who don't even use
+414: Homebrew who are trying to figure out how to build a tool go and look at the
+  Homebrew formula because
+418: it's often the easiest thing to read if you don't know anything about the package
+  manager itself.
+422: And then here we've got an example of a little test. We're saying we want to
+  wget to dev null because
+429: we don't care what the output is, and just see if google.com is up. And hopefully,
+434: if it's not, then hopefully it's just Homebrew's wget that's broken and not Google
+  that's broken,
+439: because then we'll be sad. Although maybe this should be ChatGPT nowadays instead.
+443: Raise your hands if you know what a cask is. This is even less widely known than
+  a formula. Yeah,
+451: even fewer people. So a cask in Homebrew, it used to be part of a separate project
+  called Homebrew
+458: Cask. But that was merged back into Homebrew itself, and now we kind of have
+  them all in the same place.
+463: So a cask is generally something where the upstream project, upstream meaning
+  the people who make the
+470: software, they're the ones who create the packages or the binaries or the installer
+  file or whatever.
+477: And we just download from them and then we install it. So it works a little bit
+  differently. We're not
+481: having to do build instructions. We're more concerned with what package we might
+  get and then where we put it
+487: and how we uninstall it and stuff like that. So I'm not going to go through this
+  in as much detail,
+491: because I don't think it's quite as interesting. But we've got we're saying we've
+  got different things
+495: for the different architectures. This is for one password. We've got different
+  checksums for the
+500: different architectures, because unlike downloading from source, we're going
+  to use a different download
+506: depending on what system we're in, whether we're on Apple Silicon or whether
+  we're on Intel x86.
+512: We've got the URL we're downloading it from. We've got the name, description,
+  kind of like a formula,
+519: home page kind of like a formula. We're saying that it auto-updates. And basically
+  what this means is that
+524: this version might not always be correct because after you've installed it, one
+  password can then
+529: update itself. We've got the version of macOS it depends on. And then we've got
+  the app file that
+535: it installs. Again, this is a little bit minimal. The actual thing is slightly
+  bigger, but not by much.
+539: Another thing that's worth noting with casks is Homebrew now fully runs on Linux.
+  Most packages can be
+547: installed and work nicely on Linux as well. But casks are for now only on macOS.
+  We also write Homebrew
+555: itself in Ruby. So this is a nice little modern example of what we're doing nowadays.
+  So you can see
+561: we'll talk a little bit more about this later. If you're familiar with Sorbet,
+  you might know what type
+567: strict is or this signature and stuff like that. So we've got this command. This
+  is if you run brew docs.
+574: Then we specify what the arguments are. This command doesn't actually have any
+  arguments, but it does
+578: have a description which is used for help output for the man page and all this
+  type of stuff. And then
+583: we're saying we want to run a browser and we want to go to Homebrew's website.
+  Again, I think even if
+588: you don't know much Ruby, quite nice and readable. So I mentioned Homebrew initially
+  released 2009. Back then,
+599: it was macOS 10 Leopard, and it came with Ruby on the system, which was pretty
+  cool at the time.
+606: So in 2009, that was Ruby 1.87, which I think was released in 2009, maybe 2008,
+  something like that.
+614: So it wasn't too old. It was about right. And it was nice to be able to use Ruby
+  when building Homebrew.
+618: And then it meant that Homebrew didn't have to figure out how to install Ruby
+  or anything like
+622: that to run on a Mac system before you could use it. Apple did that all for us.
+  Unfortunately,
+628: because we were relying on the Apple version, by 2016, we were still running
+  Ruby 1.87.
+636: And in 2016, this is what my face looked like every time I had to still write
+  Ruby 1.8. And I go online,
+644: and I'd find, oh, this is this lovely thing you can do in Ruby or some new DSL
+  or technique or whatever.
+650: And it was released ages ago in Ruby 1.9. And I would
+654: every single time. Put your hand in the air if you still have to run Ruby 1.8
+  anywhere in 2024.
+664: Oh, one, two, three people at least, my friends. I think we love to those people.
+  And I'm sorry.
+676: So by 2017, things were going a little bit better. I still have my eyebrow raised
+  because I'm not quite
+684: as happy as I would like to be, because 2.4 has already been released. But Apple
+  released Ruby 2.3
+691: with macOS. So we're like, okay, we can now use this version. We can rely on
+  this now.
+696: It's not too old. Things should be okay.
+698: But by 2019, we're falling into the same pattern again. We're having to rely
+  on older versions and
+706: stuff like that. So the last Ruby Kaige I spoke at in Fukuoka, this is the version
+  we were running.
+711: Anyone still running 2.3 in production? I expect a few more people than 1.8.
+716: No, actually fewer. That's interesting. I guess you get either stuck on the old
+  ones,
+721: or you keep running through the new ones. But by 2019, macOS came with a newer
+  version,
+727: so we could upgrade to then. But then again, the same thing. By 2023, we're still
+  running Ruby 2.6,
+734: and we're stuck. This is on my lovely Apple Silicon laptop running the latest
+  version of macOS. Today,
+745: you still get Ruby 2.6.10. This makes me very sad. But we have some people at
+  Apple that we sometimes
+753: talk to about these things in Homebrew. And we said, please, please, please,
+  please, please, please,
+757: can we have a new Ruby? And they reminded us that, I can't remember how many
+  years ago now, maybe five,
+762: they said, the Ruby on the system is deprecated. You shouldn't be using this
+  anymore. And we said, yeah, but
+768: that's not us, right? Like, the rules don't apply. We're cool homebrew people.
+  I said, no,
+772: you're not getting a new Ruby now. Go fix this problem yourselves. So with tears
+  in my eyes, I had to say
+780: goodbye to macOS Ruby entirely for now. So we'd asked Apple for a newer one.
+  We didn't get what we wanted.
+788: But I'll talk in a minute. We were able to get a slightly newer Ruby ourselves.
+  So we just moved on to
+794: Ruby 3.1. And during this conference, I heard some people talking about some
+  cool things. There was a
+803: Vernier, I think it was, Jay Hawthorne and Aaron Patterson worked on this new
+  profiler for Ruby. It
+810: looked really shiny. I tried to get it set up with Homebrew because we have our
+  own like profiling
+815: tools and Homebrew. And I was very sad to see that it needed Ruby 3.2. So I thought,
+  hmm,
+820: can I get Homebrew upgraded to Ruby 3.3 during Ruby Kygi? And I got the PR merged
+  48 minutes ago.
+830: When you're going to do a talk on stage to a bunch of very lovely, knowledgeable
+  people like yourselves,
+843: put your hand in the air if you think the best thing to do is to try and get
+  this PR merged before.
+847: Some people. Some people. I'll try and make the talk better from now on so it
+  doesn't seem like
+855: I've done it all at the last minute. So we have this thing that enabled us to
+  get to a new version now.
+863: This didn't get updated in the last 48 minutes. We have this thing called portable
+  Ruby in Homebrew.
+870: So what that came from is back in the older days, I mentioned when we were on
+  2.3 or 2.6,
+875: we had to support all versions of macOS which were still running an older Ruby,
+  but we wanted to use
+882: the newer Ruby. So originally our portable Ruby was created so that we could
+  have a Ruby that could be
+887: installed anywhere on any system on any macOS version that we supported in Homebrew.
+  And it could be put
+894: anywhere on disk and moved around and everything like that, but could run a version
+  that matched the
+900: one in macOS. But when we moved to Ruby 3.1, we decided that now was the time
+  to move entirely to our
+908: own portable Ruby. So now if you're on Linux, you can supply a Ruby from the
+  system that's maybe Ruby 3.1,
+914: but if you're macOS, then you are always running portable Ruby now, which is
+  nice because we now
+918: have a lot more control over the Ruby versions we're running in Homebrew. And
+  without that, we wouldn't
+923: be able to be running Ruby 3.3, and it would take a lot longer than a week for
+  us to move across.
+929: We build binaries for Apple Silicon, for Intel x86-64, and for Linux x86-64 as
+  well. So now I've talked a
+941: little bit about Homebrew's relationship with Ruby and how we moved around the
+  versions and things like
+945: that. I'm going to talk about some of the Ruby tools that Homebrew uses. So RuboCop
+  deserves the
+953: first mention here because in Homebrew we use it really widely and for more and
+  more things and in
+957: some quite cool ways. It's kind of hard to demonstrate these during the talk,
+  but for example,
+964: when we first started using RuboCop, we just used it for Homebrew's internals
+  to try and enforce a few
+970: little rules and try and have some code consistency and make it easier for us
+  to review pull requests.
+975: Because Homebrew has had, I think, I can't remember, maybe about a thousand contributors
+  over the last 15
+982: years to the package manager and I think over 11,000 at this point to the formula.
+  So reviewing all those
+989: pull requests with now a team of about 30 people, but in, you know, even five
+  or six years ago I think
+996: we were fewer than 10 people, it's a lot of work. So we try and do as much stuff
+  with as much automation as
+1001: possible. So RuboCop is really helpful for that. But over time, we've built
+  it sort of into Homebrew
+1009: itself. So if you type brew style, wget, for example, then it's going to check
+  the contents of that file on
+1016: disk and make sure that that meets all our style guidelines. We also have a
+  bunch of RuboCops that
+1022: we built custom ourselves, which will do things like enforce the ordering in
+  a formula file or a
+1027: cast file. And a lot of them have auto-correction support, which means if you're
+  using an editor,
+1033: like I use VS Code and I enable auto-correction so I can edit a formula file
+  and then see inside my
+1039: editor, it will move things around and change things based on Homebrew's own
+  style guidelines.
+1044: For those of you running other open source projects, I'd really encourage you
+  to think about
+1049: how RuboCop and auto-correct can make life nicer for the people contributing
+  to your project,
+1055: because it's really nice. We have a dash dash fix argument to brew style, which
+  passes through to
+1060: RuboCop's auto-correct. And it's really nice to be able to say to our contributor,
+  just run this command
+1066: and we will fix up as many of the style violations as possible automatically
+  for you. We also use it on
+1073: Homebrew itself. So if you just run brew style, that's going to check Homebrew
+  itself is up to date.
+1079: And we run this in our CI, but it's also we run it locally to make sure that
+  we're using everything
+1085: the way we want it to. It's also nice because, as I'm sure most of you are used
+  to with RuboCop discussions,
+1090: it stops as much discussion on an individual pull request about what the styling
+  is and instead moves
+1097: that to a conversation about what should the RuboCop rules be for this repository.
+1102: If you're at my 2019 talk where I talked about some of the similar stuff here,
+  you would have heard me
+1107: mention RuboCop already. But since 2019, we're now using Sorbet as well, which
+  is the kind of Ruby
+1114: type checker that's come out of Stripe, I think. We initially sort of brought
+  it in again using it for
+1122: a few files here and there, but then now we're moving more and more to using
+  it more heavily. We're removing
+1128: some of our runtime checks in favor of Sorbet checks and we enable it by default
+  for developers now.
+1134: We have this brew type check command, which again passes through to kind of
+  Sorbet and checks things
+1140: that way with Homebrew. And we expect over time, we're going to try and get
+  as much of Homebrew to be
+1146: type strict as possible because we've found that it helps catch a lot of errors.
+1151: It also provides better documentation for users for our Ruby DSLs when we can
+  generate the typing
+1157: information that things expect. Also, our test suite. Who here has a test suite
+  with 100% coverage?
+1165: No one. Whoa, what one person? And then they immediately went like this because
+  they're not sure.
+1172: They don't want me to check off. I'm going to come and check your test suite
+  afterwards. And if it has 99%
+1176: coverage, you're going to have to tell all these people that you didn't tell
+  the truth.
+1180: But yes, our test suite is around about 70%, 75% coverage. It's pretty good.
+  It catches quite a lot of things.
+1190: There's a lot of regression tests in there because Homebrew does some weird
+  stuff and it's been around
+1194: for a long time. But it doesn't catch everything. And we're finding more and
+  more that Sorbet helps to catch
+1199: some of the issues that Rubocop may have missed in the past. And it particularly
+  catches a lot of typos.
+1205: So that's been very good for us.
+1207: Speaking of our test suite, we use RSpec for that.
+1212: Again, I saw there was one of the surveys outside in the booth area, in the
+  sponsor area,
+1218: where they got people to say whether using RSpec or MiniTest. It seems like
+  a lot of people are using RSpec.
+1223: Maybe a lot more than MiniTest, perhaps.
+1226: So if you run brew tests, that's what we're doing there. Shout out to the parallel
+  tests gem,
+1231: which is letting this run in 10 processes, which makes everything a lot quicker.
+1236: And yeah, it's not too bad. It takes about six minutes on my two or three year
+  old Mac.
+1242: And yeah, I feel like we've got a nice balance with Homebrew with testing for
+  being able to
+1248: verify that things are working correctly without having a test suite that takes
+  hours and hours to run.
+1255: So the final part of this talk today, I'm going to talk about what we're doing
+  in Homebrew to make
+1260: things better. And particularly, I'm going to talk about what we're hoping to
+  do better in the next
+1265: year. So if I'm at RubyKaigi next year, you can tap me on the shoulder and ask
+  why these things aren't as
+1272: good as I said they were going to be. So the first thing in Homebrew is improving
+  the performance.
+1279: Who finds Homebrew to be slow or too slow? Not too many people. Okay. Well,
+  apparently Google disagrees with you.
+1287: So we talked a little bit about the bottom one. Why is Homebrew written in Ruby?
+1292: I can't help you with why it's not installing. Don't open an issue. That's not
+  my job.
+1299: And then why is Homebrew so slow? So let's talk about this a little bit.
+1304: So I thought I would add this slide last night. And as we saw from the portable
+  Ruby upgrades,
+1311: I'm quite bad at procrastinating. And any chance to not do my talk and instead
+  write some code,
+1319: I do that instead. So I was going to just do this slide. But then I thought,
+  hey,
+1325: let's click through. What is that saying here? Okay. So why is Homebrew so slow?
+  Because Ruby is slow.
+1333: Oh, this is very mean. I can't put this on the screen at a conference where
+  Matt's is here. I don't want
+1341: to make Matt's cry. I can't let this insult against Ruby stand. Ruby, I will
+  defend your honor.
+1348: So I clicked through to here. And I saw someone was saying,
+1352: it's just annoying. Compare pip, which is three to four times faster. So there
+  were two of these
+1358: things. It was comparing pip help and pip list. I didn't include the Homebrew
+  output. I probably
+1364: should have done here as well. But I'll let you believe this person that it's
+  three to four times
+1368: faster. I thought pip help. Okay, brew help. For reasons I won't go into now,
+  that's probably going to
+1374: be a little bit hard to make really fast. But I was like, brew list, I should
+  be able to make that fast.
+1378: So last night, during the writing of this talk, after midnight, because I'm
+  an idiot,
+1388: I decided to open this pull request to make brew list much faster. And because
+  I am very petty,
+1398: I did a direct comparison with pip list. And it's now 1.28 times faster than
+  pip list.
+1403: And I also posted, we were meant to have a Homebrew hackathon in a couple of
+  months. I said,
+1414: by the end of the hackathon, we need to make sure that brew help is also faster
+  than pip help.
+1420: So we've had a lot of talks talking about performance optimization during this
+  conference.
+1425: So I wonder, how do you make Homebrew so much faster? Do we port to Rust? I
+  don't know.
+1434: Everyone likes Rust now. It's very cool. Obviously not as cool as Ruby, but
+  you know, it's cool now.
+1440: People are using it for improving the performance of their Ruby programs. Maybe
+  have some Rust code.
+1445: I don't know, like porting to C. Do I want to port to C? Oh, no. I've just looked
+  at the next slide.
+1454: It's really bad. We ported it to Bash. Maybe one of the worst languages that
+  ever existed.
+1460: So instead of beautiful Ruby, we now have this. Look, look at what I've done.
+  Please forgive me.
+1471: So the reason for this is when you run brew the command at first,
+1476: it's running a little bit of Bash to kind of clean up the environment and stuff
+  like that.
+1480: And then it goes and runs a bunch of Ruby code. And for reasons that are maybe
+  a little bit Ruby's fault,
+1486: but mainly Homebrew's fault, any Homebrew command like brew help that has to
+  be in Ruby
+1493: ends up being like quite slow because it kind of we have lots of requires. We
+  used to use active support,
+1499: which speeded things up a bit by removing that. But you know, just going and
+  printing a command from
+1505: a Homebrew Ruby command is too slow. So when we can, in a case like this, brew
+  list is effectively just
+1512: shelling out to ls here anyway. That's what the Ruby was doing. So that's why
+  I knew when I saw it,
+1521: I think this can be faster. And then if the input is too complex, if you pass
+  some difficult arguments
+1527: or whatever, and we don't know how to do that in Bash, or we don't want to make
+  our Bash any more ugly
+1533: than it has to be, then we just go and try in the Ruby version instead. So you
+  may have seen some
+1539: people talk about this already. Who has used Hyperfine before? Not many people.
+  So a few other talks
+1547: talked about this, and I'd like to encourage you, if you're ever working on
+  stuff with, say, Ruby or
+1553: CLI or whatever, something that's not in a web request, then Hyperfine is quite
+  nice. So I'm going to
+1559: compare the Ruby and Bash versions of these commands. So you can go and you
+  run these little benchmarks,
+1565: and then you can see how long is it taking, what's the min/max time. So to do
+  brew prefix in Ruby takes
+1570: about 400 milliseconds. To do it in Bash takes about 26. To do it brew command,
+  which is another command I
+1578: sped up recently by moving to Bash, takes about 400 milliseconds. Again, to
+  do it in Bash takes about 21.
+1584: So we can see Bash, you know, it has its place. It's a useful language. It's
+  horrible to write
+1591: compared to Ruby, and I hate myself a little bit every time I have to do it.
+  But in our case,
+1597: unlike a Rails app or whatever, the JIT doesn't help us very much because we're
+  mainly about spin up the
+1604: process, do some operations, close it down. So we don't get the chance to get
+  into really hot loops
+1610: where we can get lots of performance up with organizations. We do tend to try
+  with each newer
+1614: version of Ruby to play around with JIT settings, but we've not really found
+  any speed up yet.
+1617: Finally, we're building better security into Homebrew. So we've had some security
+  audits in the last few
+1627: years. We've had one that's public that you can look at Homebrew's blog and
+  learn about that. We have
+1631: another that's in progress that we're hoping to publish as soon as possible
+  once we fix a few more
+1635: issues. Also GitHub Actions, which is our CI provider, they have this thing
+  called Attestations now, which
+1644: is quite complicated. You can read more there, but essentially the short version
+  is it will go and let
+1648: you know whether the artifact, the bottle, the binary package that we provide
+  has come from GitHub Actions
+1655: and our CI servers, and you can verify it that way. This isn't enabled by default
+  yet, but we hope it to be
+1661: soon in future, which will provide again more added security to Homebrew's already
+  fairly good security flow.
+1667: And me personally, I found the work on Homebrew alone on the security side to
+  be
+1673: hard because we can't get everything into the open source project to get security
+  as well as
+1679: maybe big companies might want it to be. So I started this company last year
+  called Workbrew,
+1684: where it's like Homebrew for home and Workbrew for work. So the thing we're
+  doing right now is trying
+1690: to make Homebrew work better with MDM tools, say Jamf or Kanji or SimpleMDM
+  or whatever, but we're hoping
+1696: to work on more engineering specific features in the future. We've got our own
+  little installer that works
+1700: offline and provides portable Ruby and everything like that, and sets up Workbrew
+  and Homebrew at the same
+1705: time. We've got a nice little Rails app that lets you see every device you have
+  in your fleet of
+1712: MacBooks and see what is outdated and what is ready for upgrade and stuff like
+  that. I could then say
+1718: this FB303, I clicked on this button here, and then I get a nice little upgrader
+  to say I want to run
+1725: upgrade formula 303 and run on my laptop here, or I can run on everyone. So
+  if you're interested in Workbrew,
+1732: then do get in touch. Either tap me on the shoulder at the conference, send
+  me an email afterwards, or go
+1737: to our website and fill in our contact form. There's also a little demo video
+  there where it explains what
+1741: we're doing. So during this talk, and there's a very small text at the bottom,
+  but if you go to my
+1748: website, you can see all the slides if you want to follow along later on. We
+  talked about Homebrew and Ruby,
+1754: how they've had a good relationship since the beginning, and about how we're
+  getting onto newer versions. We
+1759: talked about the Ruby tooling like Sorbet and Rubocop and RSpec that we're relying
+  on very heavily in the
+1766: Homebrew ecosystem, and we talked about how we're going to build a better brew
+  in the coming years
+1770: in terms of performance and security. But because this is Ruby Kygi, and this
+  room is filled with
+1776: genius Rubyists, please help us. As I said, we want Homebrew to have better
+  performance and better
+1781: security. And one of the best things that you can do is join in with this effort
+  and help us.
+1786: If you don't know how to get started with the Homebrew, or you get confused
+  by our contribution
+1791: documentation, send me an email and I will help you out and get you started
+  with being a Homebrew
+1795: contributor. Thank you very much for having me. If you want to get in contact
+  or ask any questions,
+1800: you can get me on Mastodon, Twitter, or send me an email. Arigato gozaimasu.
+1811: Thank you.

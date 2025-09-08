@@ -1,0 +1,599 @@
+---
+0: Hi, everyone. We're going to talk to you today about the power of the open source
+15: community on GitHub. I'm Mike McQuaid, a senior engineer at GitHub, and I work
+  mainly on our
+21: open source stuff, trying to make GitHub better for open source people building
+  on GitHub.
+26: I'm Kat Fukui, a product designer on the community and safety team at GitHub,
+  and I work on building
+33: workflow tools specifically for the open source community.
+37: So we're going to walk you through a couple of different things. Firstly, what
+  open source
+44: software is on GitHub, how to create some inclusive open source communities on
+  GitHub, and how
+49: to improve the interactions within those open source communities, whether you're
+  doing so
+53: as a user, as a contributor, or a maintainer. So firstly, let's start by having
+  a wee look
+58: at what open source software looks like on GitHub. And to do that, we're going
+  to break down the
+64: repos that are on GitHub today. So GitHub, you probably saw in Chris's talk earlier,
+  we've
+68: got 21 million developers roughly today, and roughly about 58 million repositories.
+  So as
+74: I'm sure you'll know, repositories can be either public, which means anyone can
+  access them, or
+78: private, which means they're restricted to a smaller number of users. So within
+  our public
+84: repositories, we've got like 28 million roughly, and we consider about 20% of
+  those to be open
+90: source projects. We have various metrics we use to decide that based on like the
+  licenses, pull
+95: requests, things like that. And I think open source for GitHub is our most, one
+  of our most important
+102: attributes. And we really like to kind of talk about and think about what happens
+  with open source
+107: projects at scale. Because as we're going to talk about in this talk, I think
+  there's various
+111: interactions in open source communities, which are fine on a small scale, but
+  then as projects get
+117: bigger and bigger, become potentially problematic, or at least difficult. So
+  here's some examples of
+123: four open source projects that I think are really, really successful on GitHub.
+  These are all projects
+129: that you're probably familiar with in some way, or at least one or two of them.
+  And as you can see,
+132: they're all projects that have had these numbers maybe a little bit out of date
+  now. But all projects
+138: that have had huge numbers of commits from a really large number, at least a
+  thousand contributors for
+143: each of these projects. So obviously, when you're a project at these sort of
+  scale, you're going to
+148: have different problems to a project that has, you know, 10 contributors or hundreds
+  of commits.
+154: And I think what makes these projects really special is they're ones that we
+  at GitHub specifically
+158: recognize as projects that are welcoming to new contributors, despite the fact
+  that they've got
+162: so massive and despite the fact that they're used by millions of people daily
+  to kind of learn how to
+168: code, to work on production software systems, and for some people to just mess
+  around and play.
+174: So let's have a wee think about what makes a successful open source community.
+  Kat, what do you think?
+180: Good question, Mike. Well, I think the key to success lies in first understanding
+  that open source on
+186: GitHub is not just about the software, it's about the people. So how can we scale
+  a single positive
+192: interaction in a community such as Rails or Node to up to thousands of people?
+  So let's talk through
+199: a typical open source journey on GitHub. So here we go. We've got a developer,
+  and she uploads her code on
+204: GitHub, and it starts getting attention. So maybe people on Twitter are talking
+  about it. Maybe it starts
+209: trending on GitHub, and people are cloning it, forking it, and starring it. So
+  there's this
+215: turning point, though, where it becomes from an open source project to a community,
+  and that's when
+220: it gets its first issue or pull request for a non-collaborator. So this person
+  might not be in the same
+226: time zone. She might not know this person in real life, and that's really exciting.
+  But in order to scale
+231: from that point, from that very first issue, you have to think, you know, if
+  I'm doing one or two bug
+236: visits this week, what if that scales up to 50 issues and, you know, 50 pull
+  requests that I need to do code
+242: review? At that point, it's really crucial to find repeat contributors, and that's
+  the key to scaling up. You
+248: need to find people who are being converted from users to repeat contributors,
+  and contributors that are
+255: now turning into maintainers. And those are all positive interactions that creates
+  this community.
+262: But on the flip side, there are some not-so-positive interactions that can happen.
+  So let's go through a
+269: journey where that could be possible. So same journey, but she's looking for
+  some repeat contributors.
+276: Unfortunately, maybe there was a bad first impression by this new potential contributor.
+281: For example, maybe it took a while for her to respond to this person's first
+  issue in PR.
+287: If you've ever contributed to open source for the first time, you know that it
+  can be really
+291: intimidating, and it doesn't feel that great. Maybe there were some rude interactions,
+  maybe
+297: unconstructive criticism on the pull request, and maybe the contributing guidelines
+  weren't well documented,
+303: so this pull request wasn't set up for success, and ended up being closed out.
+  That also doesn't feel really good.
+309: And when you don't have that help to scale your community, that really leads
+  to maintainer burnout a lot of the time,
+314: and, you know, that also doesn't feel great.
+317: So how can we keep encouraging more positive interactions in communities to create
+  more inclusive open source spaces?
+326: And right here is a cycle of success that we are really building a framework
+  around at GitHub,
+331: and it can determine if a community can scale or not. So it's really important
+  in order to maintain the code,
+338: the growth, the documentation, and also the user base. But in order to do that,
+  you need to have
+343: sustainable growth, but also have a mechanism to moderate the users that are
+  coming into your project.
+348: So you saw earlier in those examples, there are over a thousand contributors.
+  At that point,
+353: you need to be able to do at every single stage in this cycle. And if there aren't
+  enough resources,
+359: a community can really struggle at that point. So with this model in mind, community
+  safety and
+364: the open source team at GitHub have been working on a framework to help you build
+  a scalable, inclusive
+370: community. So in the maintaining stage, we just released this last week, and
+  it's the add a code
+376: of conduct tool to your repository. Ta-da! So for some context, a code of conduct
+  is a document that
+384: explains the baseline of behaviors and expectations of your project. So here
+  we have some templates that
+390: you can choose from, and it's super, super easy to fill in your information and
+  adopt it right from there,
+396: out of the box. And why do we think this is really important for your community?
+  Well, it really helps,
+402: you know, first of all, understanding that everyone that contributes has to have
+  a certain behavior,
+409: and that we want to foster this really positive social atmosphere. And in the
+  end, it can help reduce
+415: the fatigue that maintainers have with dealing with human-to-human interactions.
+  And sometimes,
+420: I think it's harder to maintain those human interactions than maintaining code.
+  So here it is
+426: in action. Super easy. You fill in your details, choosing a template, and you
+  can open up a pull request
+434: so that the community sees this new change. So in the growing stage, not too
+  long ago, we released the
+441: first-time contributor badge, and this is a way to put a face to the new community
+  members. And we really want
+448: to foster a good first-time experience, though. When the maintainer opens up
+  this new pull request,
+453: they'll see this badge and act accordingly. So maybe a little less judgment when
+  reading the code,
+459: maybe some hand-holding to welcome them into the community. But then also, it
+  shows the maintainer
+464: that they could be reacting in a quicker time. And that way, you know, back to
+  those problems with the
+472: potential first-time contributor. They don't feel that their code is being ignored,
+  and they feel like
+477: they're welcome to the community. So also in -- oh, sparkles. Also in the growing
+  stage, we have just
+485: released the community profile. This is it. And it's a way to see how your community
+  compares to open source
+493: standards. And for the first iteration, we have this awesome checklist that shows
+  you how the
+497: community stands up to having a readme, a code of conduct, contributing guidelines,
+  and a license.
+503: So say you're not sure when's the right time to add a contributing guideline
+  to your community,
+508: and maybe you don't know how to write one. We want to be there with you at every
+  step of the way as
+513: you're growing. And this was really -- you know, that's the reason why we built
+  this. It's because
+517: we understand that a community has different needs as it grows, and we want to
+  be there with you to
+521: help you build the best community possible. So right now, it's an early access
+  beta, but it will be
+527: available in the next two weeks or so. And another shiny new thing that we've
+  been working on in the
+534: moderating stage are the temporary interaction limits. And these are ways to
+  force sort of a
+542: cool-down period in your repository. So you can actually limit who is interacting.
+  So commenting,
+548: opening up issues, and pull requests. You can limit it to existing users. So
+  in this example right here,
+555: say someone has been creating a lot of sock puppet accounts and maybe even spamming
+  or harassing any
+562: members in your community. So you can limit it to people who are prior users
+  and preventing people
+569: who have just created a new account from interacting with your repository. And,
+  you know, even internally
+575: at GitHub, because we're actually a remote and asynchronous company, we understand
+  that it's really
+581: easy to misunderstand people through a text-based medium completely online. I
+  mean, we're all human,
+586: and it happens. So sometimes it's good to restrict who is, like, communicating
+  in the repository to,
+594: you know, give everyone space, think about it, calm down, come back fresh, and,
+  you know,
+600: attack it from there. But also dealing with the harassment that sometimes happens
+  in repositories.
+609: So you can go to your repository settings, edit them there, and they toggle every
+  24 hours. And this is
+616: also in early access and will be rolling out in the next week or two.
+619: So going back into how all of the new features play into this model of success,
+626: we release the code of conduct tool to help you maintain your community's expectations
+  and also the
+633: interactions from users. We have the community profile and the first-time contributor
+  badge to help you grow
+638: your community. And we're giving you new tools to interact, um, how people interact
+  on your community
+643: in the moderating stage. So, Mike, what do you think is really important to keep
+  this model of success
+649: alive? I think the thing is, these are all great, like, technical solutions to
+  these problems,
+654: but I think to tackle any problems and also make positive interactions in open
+  source communities more
+661: likely, you really need to look at both technical and social solutions. And I
+  think the social solutions
+666: I'm going to talk through are looking at a different way, perhaps, of interacting
+  with open source
+671: projects, whether you're a user, whether you're a contributor, or whether you're
+  a maintainer. I think
+675: there's little things you can do whether you're in any of these groups. And again,
+  you may well find
+680: yourself in different groups for different pieces of software. I'm an open source
+  maintainer, but I might
+684: just be a user or a contributor for another project. And just things to think
+  about as you have these
+689: interactions to make them a little bit more positive. So, I'm going to start
+  off by talking about things
+695: I think users can do a little bit better. And when I refer to a user here, I
+  mean basically anyone who
+700: hasn't been a contributor, i.e. hasn't committed or submitted a pull request
+  ever to that project
+705: for code or documentation or whatever, and someone who's not a maintainer, i.e.
+  someone who doesn't have
+710: commit access to that project and can't make changes or close issues or whatever.
+  So, this is something where I'm
+718: interacting with the software primarily because it's something I probably use
+  or my company uses,
+722: or I'm trying to learn it. And I'm just trying to make sure that that is a positive
+  interaction.
+726: So, I think the first thing is setting your expectations accordingly. I think
+  a lot of
+731: people are surprised to hear that a lot of open source projects are run exclusively
+  by volunteers,
+736: and a lot of volunteers are doing this exclusively in their free time, using
+  resources that they've managed
+741: to get through begging and borrowing or whatever. And as a result, I think you
+  need to set your
+747: expectations going in on open source projects to be according to the resources
+  and funding that that
+753: project has. Okay, that might not be that obvious. And as a result, if you just
+  set them maybe a little
+758: bit lower than you might do for a commercial project at the same level, I think
+  that's reasonable.
+762: When I say expectations, I don't mean the quality of the software, but I mean
+  the quality of perhaps the
+766: support experience you get. For example, Homebrew, which is a project I work
+  on, I'm one of the
+771: maintainers for that, you know, we're entirely run by volunteers. So, when someone
+  comes along and is
+776: using Homebrew to do their job, I understand that it can be quite frustrating
+  for them if Homebrew doesn't
+781: work the way they want. But at the same time, when I'm answering their messages
+  at 9pm in my evening
+785: after a full day of work, I'm not going to be able to give quite the amount of
+  time and energy to that
+790: that I might be able to give where it's something that's part of my job. So,
+  the next thing that kind of
+795: relates to the prior one is everyone just helping out however they can. So, if
+  you use a piece of
+800: software for a non-trivial amount of time, then you're going to become more knowledgeable
+  than
+805: someone who just used it on day one. So, I think, again, another good thing with
+  open source to think
+810: about is like everyone is capable of helping out. You may not be able to spend
+  lots of time doing things,
+815: you may not be able to spend, you know, lots of effort or whatever, but if you
+  go and if you need help
+821: from someone else, if you need help from the open source project and you notice
+  why you're doing
+825: that, that there's someone else who needs help and there's someone else who has
+  a question that you
+828: could maybe answer, then, like, I would really encourage you to think about doing
+  that. Like,
+833: I think it's a really great thing about open source communities because these
+  interactions are in the
+836: open that if I'm asleep and I can't answer a question for someone because of
+  that, that someone else in
+842: the community can go and come and help them and answer their question maybe before
+  I woke up.
+846: And even within that as well, sometimes, if you do this in like a considerate
+  and careful and
+851: I guess an empathetic way, try to encourage people to have more positive interactions
+  themselves. So,
+858: someone might submit a bug report. I'm sure if you're a software or you've seen
+  one of these and the bug
+863: report is more or less this doesn't work. I tried to do it and it doesn't work.
+  That doesn't give me enough
+869: information I need to fix that problem. So, if you're another user who also runs
+  into the same
+874: problem, you might want to say to the first user, hey, like, could you describe
+  the situation in which
+879: this doesn't work? Or you could yourself provide like a series of, I guess, step-by-step
+  commands
+884: so that when someone does wake up, when someone is able to spend that time helping
+  you, then they can
+889: immediately jump in and be more productive immediately. And that ties onto the
+  next point, which is
+895: prioritizing the time of contributors and maintainers. So, in an open source
+  project, for example,
+899: like the ones we saw before and where you have thousands of contributors,
+904: you have millions of users in many cases, and maintainers in some cases with
+  some of these projects,
+910: there may only be single or double digits worth of maintainers. So, as a result,
+914: not every maintainer can help every user with every issue they have. And as a
+  result, if you're
+919: expecting help from people, then you need to try and do a little bit of the homework
+  yourself. Do some of the
+925: and say, okay, here's what I've tried already to fix my problem. Here's what
+  I looked. Here's what I,
+930: you know, my kind of inkling on what the problem might be. Because again, all
+  these things, they just
+935: help to mean that someone else is able to solve your problem quicker. So, although
+  all these user
+940: interactions might sound a little bit like compromises or something, or giving
+  up something from yourself
+944: for other people, it's worth bearing in mind that open source software is generally
+  developed for free and
+950: given to you kind of as is. So, these interactions just mean that you and the
+  project as a whole can
+956: have a better experience. Because every hour that a maintainer spends helping
+  someone with their
+961: problem is an hour they're not spending writing a bug fix. And while both are
+  important, it's important
+965: to help people with support issues and like to write code to fix problems, like
+  obviously balancing that
+971: time effectively is something I think everyone in the open source community can
+  help with rather than just
+975: maintainers. So, moving on to contributors now. As I mentioned before, I consider
+  a contributor to be
+981: anyone who has at least attempted to submit a commit or a pull request or to
+  a project. So,
+988: I think the thing with contributor interactions is that we're trying to think
+  about how can we get
+995: our stuff accepted. If it's kind of desirable to the project and if it's useful
+  to us and it's useful to
+1001: them, like what can we do to maximize our chances of success and also, again,
+  consider the time of
+1006: everyone who's working on it. So, a good starting point is just make sure you
+  kind of read and follow
+1011: the project guidelines. In general, you know, we have in software development
+  as a whole issues with
+1018: sometimes not writing as much good documentation as we should. And equally,
+  I think we have issues,
+1023: I know I'm guilty of this, sometimes of like not reading all the documentation.
+  I mean, you only need to
+1028: read online about the problems people have with assembling Ikea furniture to
+  know that sometimes
+1033: reading the manual is not always the first thing that jumps to mind. So, when
+  you're contributing to
+1037: an open source project, some projects don't have a lot, some projects do have
+  a lot, but try and at least
+1042: read everything that's available to you. Projects now on GitHub have issue templates,
+  pull request templates,
+1048: there's a contributing.md file in most repositories. And just try and make sure
+  you've read through them and
+1054: follow all the steps. If you're someone who's contributed before, try and make
+  sure that you
+1058: just double check that that hasn't changed, that there's been no process changes
+  or whatever.
+1062: And, again, this is just about helping yourself to, like, maximize the chances
+  of success and also,
+1067: like, helping prioritize the time. Someone else took the time to write that
+  documentation,
+1072: so it's probably beneficial to you if you take the time to read through it as
+  well.
+1075: The next thing is deferring to maintainers. Now, that sounds a little bit weird,
+  but, like,
+1079: what I'm trying to say here is not that maintainers are always right or anything
+  like that. What I'm
+1084: trying to say here is that they will reach a point in any, perhaps, conversation
+  on an open source
+1088: project where a contributor and a maintainer are arguing on whether a feature
+  should be in a project
+1095: or not in a project or whatever. And at the end of the day, you need to accept
+  that the maintainers,
+1098: the ones who, for better or for worse, are running the project on a day-to-day
+  basis. So, ultimately,
+1105: all conversations will reach a point where if a maintainer says, look, this
+  is kind of how it is,
+1111: this way or this way, like, hopefully you can kind of give them a certain amount
+  of deference that you
+1116: can say, well, okay, you're running this project. I may disagree with you on
+  this instance, perhaps,
+1120: but I'm going to kind of defer to your knowledge on this and hopefully kind
+  of have a positive
+1125: interaction with that way anyway. And the final thing I would encourage contributors,
+  although this
+1130: applies to users as well, is stepping outside of your comfort zone. So, to share
+  a personal anecdote,
+1135: so, I guess it was about eight years ago now, I kind of was dabbling with the
+  homebrew project,
+1141: and I kind of knew a guy who worked on it and stuff like that, and I was kind
+  of trying to suggest
+1146: some stuff to him to say, hey, maybe it would be better with this or that or
+  the other. And he kind
+1149: of poked me to say, okay, well, maybe you should go and submit a pull request.
+  And I said, well,
+1153: I've never written any Ruby before. I don't know any Ruby or whatever. And then
+  you fast forward it
+1157: a few years later, and now, like, I'm one of the homebrew maintainers, and I
+  write Ruby mainly as
+1162: my job. You know, the way I learned Ruby is through open source and through
+  contributing to homebrew
+1168: originally. And I think that sense of allowing yourself to be nudged a little
+  bit outside your
+1173: comfort zone is really useful, like, both to the project because you're able
+  to help out. Like, if,
+1179: you know, I had done other programming in the past, so I was able to write some
+  fairly horrendous Ruby that,
+1185: although terrible, was still useful to the project in some ways. And I'm able
+  to kind of understand
+1190: stuff and learn from that and get better. And that learning process has made
+  me better for homebrew,
+1195: and it's also made me made my career better, and it's made me kind of better
+  for future employers as
+1199: well. So I think it's beneficial to everyone to try and, like, take that step
+  outside your comfort zone.
+1207: So then stepping onto maintainers. So maintainers, as I said before, that's
+  someone who has commit
+1212: access to a project, who has permissions to close issues, close PRs, stuff like
+  that, can block people
+1219: on the project, whatever. So the first thing I think as a maintainer to bear
+  in mind, and this is the stuff
+1226: that I care pretty deeply about. We're running an event tomorrow for some maintainers,
+  and if you want to
+1231: talk to me about any stuff relating to maintaining specifically, please email
+  me at any time.
+1236: The first thing I think is really important is, like, self-care and avoiding
+  burnout. Being an open
+1242: source maintainer can sometimes be quite stressful. It can occupy an awful lot
+  of your time and an awful lot
+1247: of your headspace sometimes. And I think part of dealing with that is recognizing
+  a couple of things.
+1252: Firstly, an open source project without any maintainers anymore is basically
+  dead. You know, it may be like
+1259: a tree that has died that, from the outside, like, it looks okay, but, like,
+  it's going to rot and it's going to
+1264: fall over eventually. So as a result, you need to prioritize yourself and your
+  needs as a maintainer on an open
+1269: source project above those of contributors or users. Again, that sounds harsh,
+  but that's the realistic
+1276: reality of open source projects. An open source project with no maintainers
+  cannot receive any future
+1281: development, cannot accept any pull requests and will eventually fall over.
+  So, on a personal level,
+1287: what that tends to look like is figuring out that you can opt out of things
+  you may not want to do
+1292: in a project. That you can say no to features, to helping particular use cases,
+  to supporting certain
+1297: ways of using your project that you may not want to deal with. And again, it's
+  remembering that,
+1301: unless you are someone who is paid to do this and you're doing open source as
+  some sort of commercial
+1306: enterprise, like, that's okay. Like, your project exists on your terms and your
+  interactions with
+1311: your users exist on your terms. So it's important to realize and set those boundaries.
+  The next thing I
+1317: think is acting as a force multiplier. Again, stepping back to the example I
+  said before, before I'd ever
+1322: worked on Homebrew and that guy nudged me, okay, we'll try and learn some Ruby,
+  try and do this. So he
+1327: could have sat down with me every step of the way and tried to kind of walk
+  me through all this stuff,
+1330: but that wouldn't have actually been the best use of his time. So what I think
+  Homebrew and many
+1335: other projects are increasingly finding is really beneficial, is to try and
+  write tooling, write good
+1340: documentation and stuff like that, and automation as a maintainer, so that you
+  can ensure that
+1344: contributors don't have to get handheld through every step of the process, but
+  they can have, like,
+1349: CI, they can have little checks, like Rubicop, whatever, like, that kind of
+  guide them in the right
+1355: direction. And the other fun little fact I found personally on this as well,
+  is that people respond
+1360: way better to bots telling them, like, to change stuff than they do humans.
+  People are fine with
+1365: pedantic bots, whereas people don't like pedantic humans very much. And then,
+  finally, I think it's
+1371: considering how all your changes within a project affect 90% of users. So that's
+  just a number I've
+1377: pulled off the top of my head, but I think, again, with an open source project,
+  it's very easy to get kind of
+1381: stuck in the details on a particular pull request. And someone's maybe put a
+  lot of time into a pull
+1386: request, and you feel kind of bad, maybe, about not merging it or about not
+  accepting it. But I think,
+1392: for me, this is the thing I always come back to, is, like, how is this feature
+  going to affect 90%
+1395: of users? And if this is a feature that's going to be used by 5%, 1%, 0.1% of
+  users of this project,
+1402: but if that's, you know, a massive code change, say, or a massive refactoring
+  underneath it or whatever,
+1408: that's going to have consequences. That's going to have its own bugs. It's going
+  to have time that
+1413: you're going to have to spend maintaining this stuff. And as a result, for 90%
+  of your users,
+1418: it may be that merging this pull request is a bad idea. It's not the right thing
+  to do here.
+1422: So I think thinking about this thing in general, when you're kind of thinking
+  about every pull request,
+1427: every issue, thinking about, is this the best use of my time to kind of help
+  the majority of people
+1432: using my project? That can help you to set better boundaries. That can help
+  you to kind of
+1436: prioritize the things that are really important. And again, that can help you.
+  The force multiplier
+1441: thing is a great example of that. Because if I spend my time working on an open
+  source project,
+1446: on tooling, on documentation, to empower other contributors to do things, then
+  that, in turn,
+1452: expands out to mean that they are able to help themselves, they are able to
+  help their users,
+1457: and they are able to maybe one day become maintainers themselves as well.
+1460: So that's like a little brief walkthrough of some of the ways, I think, that
+  are beneficial with
+1468: open source projects to kind of interact better. Obviously, you could talk about
+  this for days.
+1473: I do. But I would really recommend you go and look, if you haven't already seen,
+1478: opensource.guide. This is a website that kind of GitHub released with help from
+  the community,
+1483: help from I think maintainers on most, if not all of the open source projects
+  I mentioned earlier,
+1489: on just thinking about, like, how do you do open source? And what are, you know,
+  you can see in
+1494: the top left, you've got kind of the most kind of starting from kind of some
+  basic things of like,
+1498: how do you even contribute to open source? If you're someone who's never done
+  it before,
+1501: okay, there's guides on how to create a pull request and stuff like that. But
+  like,
+1505: how do you find a project that you want to work on? And thinking through these
+  types of problems,
+1509: and we've tried to make it this documentation so that people can go and learn
+  about this stuff.
+1514: And also, at a higher level, like, how do you maintain successful open source
+  projects?
+1518: What are some of the legal issues maybe around open source? And things like,
+  how do you, like,
+1522: find financing and sponsorship for your open source project? These are all things
+  that are within
+1526: these guides. And the other cool thing about the guides is they are themselves
+  an open source project.
+1531: If you click through, if you scroll to, I think it's at the bottom of the page,
+  you can click
+1534: through to the GitHub repository. People are submitting pull requests there.
+  I think in the last couple of days,
+1538: someone submitted a Spanish translation of the entire set of the guides. So,
+  it's kind of cool
+1544: to see these documents evolving. And it means that, unlike if we published this
+  in a book or, like,
+1550: at some static site that was just maintained exclusively by people from GitHub,
+  this document is going to
+1556: evolve as the best practices in open source change and as GitHub itself changes.
+  And I really encourage you,
+1562: as I say, to check them out. And if you have wisdom in there that isn't already
+  there,
+1566: please submit a support request. It's also really beautiful and easy to navigate.
+  So,
+1570: please check it out. So, yeah. So, today we've kind of talked about a couple
+  of things. And so,
+1576: I'm going to give you a wee overview of, like, what is the open source that's
+  on GitHub and stuff like
+1582: that, talking about how you can kind of create successful open source communities
+  and how you can
+1587: improve those interactions. Kat walked through various of the features we've
+  added to GitHub to try and make it
+1591: easier for you to have those positive interactions in open source communities.
+  And then I kind of talk
+1596: through a little bit about, for users, contributors and maintainers, what are
+  the best ways to interact
+1601: on open source communities? And I just wanted to say, if you have any other
+  thoughts on this stuff,
+1607: as I say, submit a pull request to the open source guides. Or feel free to ask
+  us any questions.
+1612: Afterwards, we'll be kind of hanging around satellite today. Or on that's our
+  Twitter accounts. Feel free to hit us up that way.
+1618: I think we're both really excited about building a framework that can help the
+  future of communities
+1624: on GitHub. So, please, if you have any other suggestions or talk about your
+  own community
+1628: experiences, talk about that. And add us on Twitter. Thank you.
+1648: We'll see you next time.

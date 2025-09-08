@@ -1,0 +1,553 @@
+---
+0: Thank you.
+30: Is that me?
+32: There you go.
+33: Right.
+37: Can everyone hear me?
+39: Is the mic working?
+40: It's just for the recording.
+41: Oh, just for the recording.
+42: Gotcha.
+43: Cool.
+44: Thank you for coming, everyone.
+45: I'm going to try and stand here mostly because my beeper is not working.
+51: Unfortunately, I can't do anything except laser you with it.
+54: So I'm going to talk today about Homebrew 2.0.
+58: Starting point, who's heard of Homebrew?
+60: Anyone in the room?
+61: A few people.
+62: Who uses Homebrew?
+64: Again, probably the same.
+66: Who here has submitted a pull request to Homebrew ever?
+69: Nice.
+70: Who here maintains Homebrew?
+72: Hey, there's more than just me today.
+75: Exciting.
+77: And anyone submit a PR to Homebrew and had it rejected by me?
+83: Hey, only maintainers.
+88: That's fine.
+89: That's fine.
+90: Cool.
+91: And then we also have, who likes our new logo?
+93: In fact, no.
+94: A tougher question.
+95: Who can tell the difference between our new logo and our old logo?
+98: It's basically the easy way to tell, in case you're wondering if you've got a
+  vintage logo sticker on your laptop,
+105: is the new logo has a straight beer glass sides instead of overly curved one.
+111: We have one of the Homebrew cost maintainers' full-time job as a designer.
+115: In fact, is Vitor in the room?
+116: There.
+118: Hello.
+119: We've not met before.
+120: Hello.
+121: Yeah, so he sent me a list of corrections of why the old logo didn't meet standards.
+126: So, like, now we have a nice new logo with more accurate beer glasses so you
+  don't get confused
+132: and think that you're drinking when you're homebrewing or vice versa or whatever.
+135: Anyway, so, who am I?
+137: My name is Mike McQuaid.
+138: Thank you very much for having me here.
+140: My worlds collide often because I both work at GitHub and work on Homebrew.
+146: I'm not, my job at GitHub is not to work at Homebrew.
+150: That's a kind of happy side effect.
+152: And as a result, like, I'm often telling people, sometimes diplomatically, sometimes
+  not,
+157: in GitHub, everything that I kind of want GitHub to do better for open source.
+161: And then vice versa, kind of sometimes defending stuff that GitHub has done
+165: to kind of homebrew maintainers who are grumbling about it when it happens.
+168: But, yeah, so if you want to talk to me about Homebrew or open source stuff or
+  whatever,
+171: you can get me on Twitter.
+172: You can find my email address on my website and stuff like that.
+175: And I'm always happy to talk more about this type of stuff.
+178: I've been working on Homebrew for about 10 years.
+182: This year, I guess, 10 calendar years at least.
+184: I'm working for GitHub for about five.
+187: So, yeah, I was a happy GitHub user before I worked there.
+192: So I'm somewhat less biased than I might sound.
+194: We released Homebrew 2.0 yesterday.
+199: Like, I was sitting in the cafeteria, which was nice.
+206: It was kind of felt satisfying to actually, like, you know, tag the commit and
+  submit it, like,
+212: whilst here.
+214: So, yeah, I wasn't sure when we were going to release this.
+217: So because I did it yesterday, I figured, like, we could do in this talk some
+  of the things that my top 10 features, I guess,
+224: that we've shipped in Homebrew 2.0.
+227: Some of these things are not...
+229: So the difference between 1.9 and 2.0 were relatively minimal.
+232: But it was all...
+234: Most of these things were all things that I kind of wanted to see us do before
+  we would call ourselves 2.0.
+239: It's kind of fun because, I guess, this time, two years ago, I was doing the
+  same talk about Homebrew 1.0,
+245: which had been released a few months before.
+246: So it was a fun little game going back and comparing the notes from a few years
+  ago
+251: and seeing, like, what we've done in that time period and, like, what things
+  we've changed and what we haven't
+256: and all this type of thing.
+257: To make it more of an adventure, what I'm going to do is I'm putting up pictures
+  that are loosely related to the features
+264: and then we're going to see if you can guess what the feature is.
+268: Homebrew maintainers, you are not allowed to guess.
+270: Right.
+272: So the first one.
+276: Anyone guess?
+278: Support.
+279: Yes.
+280: So that is a picture of a...
+283: I know it looks like it's an actual photograph, but I did modify that myself.
+286: That is a picture of a mountain lion, which was RSX 10.8,
+291: and it is crying because it is no longer able to run Homebrew.
+294: So it's a little bit weird.
+296: It's like a feature, but the main thing, I guess, many of you here work on software
+  projects
+301: or open source software projects yourselves,
+303: and that allowed us to delete enormous amounts of legacy code
+306: because the versions pre-mountain lion and below ship with, like, now really,
+  really old compilers
+313: that don't support C++11, don't support C++14, and stuff like that.
+317: The Xcode shipped separately to the combine line tools, and sometimes the system
+  came with X11.
+324: TAR didn't come with LZMA support, and, yeah, basically all these things that
+  mean that
+330: you can remove a crap load of if statements all over the code, which makes me
+  happy.
+337: So the next one.
+338: The options.
+341: Yes.
+342: So the options.
+343: This has been a little bit contentious recently.
+345: I don't know if you've noticed.
+346: So in the Homebrew core repository, we now don't provide options on packages.
+352: Again, this seems like a weird thing.
+354: I'm starting with the, like, the horrible features that aren't really features
+  for anyone except maintainers first,
+359: and then we'll build into the nice stuff later.
+361: But anyway, so with the options stuff, basically we've had a long-running battle
+  with options.
+368: Much like this dog here, the options did not want to behave.
+371: So the way Homebrew started out, a little bit of history, if anyone hasn't been
+  using it for a very long time or whatever,
+380: Homebrew started out as being a from-source package manager for Mac that only
+  shipped for, I think, OSX 10.5
+387: was the version that we were at when it shipped.
+391: So people were using it.
+392: People were building stuff from source pretty much like the expectation was that
+  everyone who worked on Homebrew
+398: and was submitting stuff to Homebrew were the people using Homebrew and vice
+  versa.
+402: So there wasn't a long tail of users who didn't know how to kind of modify Homebrew.
+407: It was pretty much like everyone who was using Homebrew was the ones contributing
+  to it at the same time.
+411: And obviously over time, the tool becomes more popular.
+414: More and more people use it.
+415: And what ends up happening eventually is we end up getting bigger.
+420: We end up getting more support requests and we end up getting more bugs that
+  people find with the software.
+424: And one of the biggest causes of bugs, and you will sympathize if you run a from-source
+  like Linux distribution as well,
+432: is that weird things people have on their system, weird things they have set
+  up in their .files or their editors or whatever,
+439: can subtly break build processes really easily.
+443: So we ended up having binary packages for more and more stuff, eventually binary
+  packages for literally everything that is compiled.
+450: And then we've got to a point where we noticed that effectively all our support
+  issues are coming from a very small number of people who are doing from-source builds
+  of things.
+462: That made us want to use binaries more, and then the problem with the options
+  is we have the way it was working until recently.
+468: Well, it still works this way if you're running a third-party repository, but
+  in the main repository, you would have a package and it would have, say, four or
+  five different options in it.
+478: And because we don't have the CI infrastructure, we couldn't test that all those
+  options actually work correctly.
+484: And also, for each option you add to a formula, you add, my math is not great,
+  but if I've understood correctly, it's a factorial increase in the number of option
+  combinations.
+494: Someone who knows math is nodding at me, so I believe them.
+497: Yeah, so basically, you have a dramatic number of combinations.
+500: And some of the options didn't work, and then some of them only worked when in
+  combination with other options.
+505: So you end up in a situation where we're shipping a bunch of software that we
+  know is going to break, we know people are going to file issues, and we don't feel
+  very happy about just saying, you know, like, tough, this is broken, you can't do
+  anything about it.
+517: Particularly when you end up with more and more homebrew usage being stuff like,
+  you know, guides on the internet saying, hey, you want to encode this YouTube video,
+  just copy and paste this line to install homebrew, copy and paste this line to,
+  you know, install FFmpeg with 40 different options, and then there you go.
+533: So what we've done now is we've made homebrew core have no options in it, so
+  the binary packages are always the same for everyone.
+539: And what we're trying to do instead now is have, say, something like FFmpeg,
+  we're trying to build it with a sensible default of things that people can use.
+547: And when people ask for something, basically we're generally adding as much as
+  we can to provide as much support.
+555: So what we don't want to do is provide three different Open Jampeg encoders,
+  but we can have a discussion about what's the best one, and then we can make that
+  the default.
+563: But, yeah, so basically this is, this may be, if you're, if you haven't bumped
+  into this yet, this may be a couple of month hiccup, may be annoying for you, and
+  I apologize for that.
+573: But longer term, this is going to make it much easier for us to actually run
+  the project and have it be sustainable.
+578: So, next feature.
+581: Oh, I forgot this isn't working.
+582: Right.
+584: So, this is some Counter-Strike reference.
+587: I didn't really understand that.
+588: I think it's about tapping the mouse or something, but this is, this is some
+  loose Google image searching this morning, so I apologize.
+596: So, this references, anyone want to guess?
+599: Oh, sorry.
+604: No, you started, and then I gave it away.
+606: There was an idea, like, to move more things into taps?
+610: So, we now have one main tap, which is Homebrew Core.
+615: Previously, a couple of years ago, we would have, we had inside the Homebrew
+  organization, a bunch of, like, third-party repositories, which was sort of official
+  and sort of not.
+624: Now, the issue came about with that, that, like, some of these taps were fairly
+  well maintained, but would do things differently, and then some of them were, like,
+  completely unmaintained, like, literally no one had committed to them for years
+  at a time.
+636: And the problem is, because they're all under the Homebrew umbrella, it looks
+  like these are all official and these should all work.
+642: So, what we've done now is we've tried to move as much stuff as possible that
+  actually works and meets our requirements into the main tap, and then we're trying
+  to make it as easy as possible for other people to create their own taps.
+653: Sorry, I realize, who doesn't know what a tap is?
+655: Anyone?
+656: Yep.
+657: At least one person stuck their hand up.
+659: So, a tap is a third-party Homebrew repository, which effectively means if you're
+  used to other package managers, it's just a way of having a collection of packages
+  in one place.
+669: And what you can do is you can use the brew tap command to add more and more
+  of these so that you can install stuff maintained by other people other than the
+  main Homebrew maintainers.
+680: So, the default tap is on github.com slash homebrew slash homebrew core, and
+  then any other tap is generally shortened to be, so for example, the Linux one,
+  which I'll talk about later, would be Linux brew homebrew core.
+692: And again, that's like a short version of describing where it is on GitHub.
+696: You can also have taps that are not on GitHub or not using Git or whatever, but
+  that's kind of a longer tail that's talked about in the man page.
+704: Right, so the next thing, this is very niche, so this is literally probably no
+  one cares about this except me, so I'm not even going to ask.
+711: But Homebrew core now is all, or should be at least, all open source software.
+716: So, this is something that's come up, I guess, in a few talks I've heard over
+  this weekend, where we're having an interesting time in open source, where we have
+  some companies, the one that kind of jumps to mind, but they're not the only company,
+729: being like MongoDB, who are releasing open source software, which they claim
+  to be open source software, and which other organizations, such as in MongoDB's
+  case, I believe Fedora, Debian, and the OASI, currently claim to not be open source
+  software.
+744: So, this puts us in a tricky situation, because we are part of the Software Freedom
+  Conservancy, and one of the agreements of our terms as being part of that is our
+  default repository is all open source software.
+756: So, basically, what we decided to do is punt the work onto someone else, which
+  is the OSI, and we're basically saying, what the OSI says is open source is what
+  we consider to be open source,
+765: and everything in Homebrew core should be open source under that definition.
+768: So, we'll see what happens with licenses for various things in future, but it
+  has meant we've had to do stuff like raw MongoDB back to the last version, I can't
+  remember what it is off the top of my head,
+779: that was released under a OSI license, rather than their new SSPL thing.
+786: But, yeah, this is going to be interesting to see what happens in the next few
+  years, I think, because there's a lot of companies who are doing kind of open source
+  as a business type thing,
+795: who are moving in a direction which some might say is away from open source principles
+  and putting additional restrictions, which are certainly not, certainly prohibit
+  them being considered free software anymore and may or may not stop them being considered
+  open source software.
+812: So, we'll see what happens.
+814: Right, the next thing is this, anyone recognize this where you might see a page
+  like this?
+820: No, but that's a good question, a good suggestion.
+829: So, we have a site now which is formulae.brew.sh, which is a, like there was
+  a site previously called Browmeister, did anyone use that?
+840: So, yeah, so that was like a kind of package, online package browser for Homebrew
+  and this was sort of like an import of that that then got kind of a bit of a rewrite
+  and then it's now running on GitHub pages,
+851: basically just because I'm cheap and don't want to pay for infrastructure, but
+  I would recommend when you look at the GitHub pages source like you close one eye
+  at a time because like,
+862: because it's doing things like rendering a JSON API like static JSON files like
+  using liquid and things like the syntax highlighter is like looks really looks like
+  it's crying blood.
+874: So, it's not happy times, but it is kind of cool like how it works and that gets
+  updated on each push.
+879: So, that also means that as well as all the information you can get about a given
+  formula, that's wget there.
+885: And this is all basically like JSON encoded information that we're then representing
+  nicely.
+890: There's also a wee document on the formula.brew.sh, which provides like an API
+  doc.
+897: So, you can now use that to kind of query JSON information about formula and
+  about their analytics data as well.
+904: If you look at the very bottom, you can see installs 30 days.
+908: So, this is the nice thing that we've kind of got to through this as well.
+912: But I'm going to talk about later.
+914: So, in fact, talk about now.
+917: So, I don't know if anyone has seen this output ever.
+920: Again, this is relatively niche and a new command.
+923: But this is the output of BrewInfo Analytics.
+927: So, when we introduced Google Analytics a few years ago, one of the concerns
+  that people had was they said it would be nice for the community to be able to access
+  all the information the maintainers access.
+938: And we're kind of uncomfortable with there being sort of an information imbalance.
+941: And I can say, as of the last few days, there are only two homebrew maintainers
+  who have access to anything more than what the rest of the public have.
+950: And that's purely for just administrative reasons, because that's how the information
+  is generated.
+954: And the rest of it, you can get all the information on formula.brew.sh.
+958: And then you can use this brewinfo-analytics, which does a JSON call and pulls
+  that data off formula.brew.sh.
+965: And basically, what that's giving you is like the install counts and the balances
+  for each of these kind of formula here.
+971: So, here you can see an example of what I was talking about before of like the
+  option removal over time.
+976: So, like the options are diminishing there.
+979: So, such that you get to 99.9% at the top and 99.88% at the bottom.
+984: And again, hopefully that illustrates the point that even back when a year ago
+  when there was all these options,
+989: these were being used by, what, 0.12% of the people who were installing WGAT.
+996: But yeah, so this is a really nice tool, both for the maintainers, but then also
+  if you want to kind of,
+1001: I find it interesting, it's got Cask Analytics up there now as well.
+1005: If you kind of almost just want to discover new software kind of based on popularity,
+1009: it's kind of interesting to just kind of click through and see what stuff is
+  there and what it's being used for.
+1014: And you can kind of single click to the homepage and the formula and all this
+  type of stuff.
+1019: Any guesses on this one?
+1021: Linux.
+1022: Linux support.
+1023: Hooray!
+1024: So, Homebrew and Linux, which is also known as Linuxbrew, is officially supported.
+1030: Now, I don't know how many of you are Linux people in here, but there is sometimes
+  some confusion as to why one would want to run Homebrew on a system which has,
+1039: in my humble opinion, almost always a much better package manager than Homebrew
+  installed on it.
+1044: And a common use case I've heard, or one of the best use cases I've heard, is
+  there's quite a lot of people,
+1050: I believe some of the Linuxbrew maintainers, for example, have nice Linux machines,
+1056: like in high performance computing environments, for example, which they have
+  access to the machine,
+1061: they have access to a compiler, say, but they do not have root access on that
+  machine.
+1065: So, because Homebrew itself, you can actually technically install it anywhere,
+  we recommend you install it in the default location,
+1071: because then you get all the binary packages.
+1073: But because you can install it anywhere, on Linuxbrew that means that you can
+  basically have a fully working package manager,
+1078: just in your home directory, which you can use without anything other than just
+  a compiler, basically.
+1084: So this has now been merged, the projects are still somewhat separate, in that
+  we have our formula,
+1090: like the package descriptions are separate, but then the Linuxbrewbrew, like
+  package manager repository,
+1097: the bits that are actually kind of running the code, rather than just the formula
+  descriptions,
+1100: those repositories have now been merged, and we're kind of collaborating together
+  as a team, more than we were.
+1105: Yeah, so the tap, there is a homebrew-homebrew-core tap, which is for all the
+  macOS packages,
+1116: and then there's a Linux-Linuxbrew, sorry, Linux-homebrew-core, which is the
+  Linuxbrew equivalent.
+1122: But you can, more and more third-party taps are providing support for both Mac
+  and Linux.
+1128: And so the stuff you could install, for example, if you installed Linuxbrew
+  on your own server,
+1133: on your own machine, in the home directory, you can, in theory, run any package
+  that can be used with homebrew.
+1138: There's no underlying technical differences, it might just be that they don't
+  work
+1142: because they need to specify more dependencies, or slightly tweak the install,
+  or whatever.
+1146: But again, yeah, if you were working on Mac and Linux, it's relatively easy
+  to create your own formula
+1150: that kind of can be in sync and work on both.
+1152: Sorry, I have a question. If you installed, say for example, in your home directory,
+1156: that would mean replicating much of the user that is already present in Linux
+  system in your home directory?
+1162: Yes.
+1163: Okay, got it. Thanks.
+1164: Nice by design.
+1165: That's okay. I'm just asking.
+1167: Right. Again, you can see, you can definitely probably get a theme of the ones
+  where I spent
+1174: longer on Google image search, trying to find something that was tenuously related.
+1178: So this is basically, homebrew previously had things called or later bottles.
+1185: So that was a way that we allowed people to declare a binary package.
+1190: By default, the binary packages on homebrew are just built for the macOS version
+  that they're running on.
+1196: So if you're on the latest version of Mojave, previously that would have been,
+  you only can get binary packages that are built on Mojave.
+1203: And because again, like Apple don't guarantee, they guarantee a reasonable amount
+  of backwards compatibility, but certainly not forwards compatibility.
+1211: So we couldn't go and just build them on one version and assume they would work.
+1214: Now, after a fair bit of testing over the years and doing some tweaks to make
+  sure this stuff works, we now do this by default, which will probably not be noticeable
+  or make anyone particularly happy right now.
+1225: But when a new version of macOS is released, if you're running the betas, like
+  we generally have a bit of a frantic run to try and bring on the new version.
+1232: So this won't be necessary now.
+1234: We will still rebuild them for the new version to get kind of more optimized
+  binary packages.
+1237: But you will be able to use all the binary packages from the old versions on
+  the newer version, which should make life a little bit nicer.
+1246: So this is another one.
+1247: The clue for this one is right at the bottom.
+1251: Any guesses?
+1253: Yeah, so we now actually verify if you're part.
+1259: So previously, if you passed an invalid option to like a homebrew command, you
+  may have noticed we just silently ignored it because we just checked for, did you
+  specify this particular option string?
+1268: But we now actually use a proper option parser, which validates the options
+  for the formula, which validates the options for the command.
+1275: And the nice thing with this as well is it lets us all the manually curated
+  previously like output for all the help commands and stuff like that is now generated
+  from the options so that we know that the documentation and the options we actually
+  check are one to one in sync.
+1289: So the next one, which is the last and the last change, which you should be
+  aware of, is that now homebrew will run brew cleanup by default and automatically.
+1304: You can opt out of this behavior and some people may be inconvenienced by this
+  and I apologize, but we've had basically years and years of people on Twitter and
+  in person being like, oh, I never knew about brew cleanup.
+1316: And then I ran it and I saved like 20 gigs of space on my machine.
+1320: And to me, others may disagree to me, that strikes me as a really bad default
+  when people need to go and search the man page to find something that they are expected
+  to run periodically by themselves.
+1331: So now brew cleanup is run automatically every 30 days, like in full.
+1335: And then whenever you install or upgrade a package, it will basically like clean
+  up the old versions behind itself as it does that.
+1342: So as I say, there's an opt out if you check the man page for that, but that's
+  basically like a new thing, which will hopefully mean that it's a little bit easier
+  for you to kind of keep your homebrew up to date.
+1350: So the goal with this now is that because I guess with 1.0 we had brew update
+  would be run automatically.
+1356: So now you should be able to run, for example, just like brew install, brew
+  upgrade and never actually need to worry about running other commands.
+1363: So that is a fine workflow. Basically, if the only command you ever run are
+  install and upgrade, then you can still use homebrew quite well now,
+1371: which is hopefully getting us down to a nice minimal subset of commands that
+  you need to know about in order to kind of have homebrew work nicely for you.
+1378: So that's the last of the features I wanted to run through and I have time for
+  a couple of quick questions.
+1385: Seven minutes.
+1386: Seven minutes. So, yes.
+1388: Can you open this insight into what's the kind of status of homebrew cask upgrades?
+1394: Because I know there's been a challenge in the past.
+1396: Yeah.
+1397: Yeah.
+1398: So homebrew cask for anyone who's not.
+1400: Oh, sorry.
+1401: Repeat the question, says the thing on the bit of paper.
+1404: So the question was about what is the status of homebrew cask upgrades?
+1409: So homebrew cask for anyone who's not aware, that's a way of installing basically
+  like binary and proprietary software,
+1415: such as say something like Google Chrome, that you want an automated and repeatable
+  way of installing that
+1420: rather than going to the website and manually downloading it and click, click,
+  click.
+1423: And it allows you to use a homebrew, basically more or less identical interface
+  to homebrew as part of homebrew itself now to install that software.
+1432: So the question was about upgrading brew casks and what's the status with that?
+1436: Now you can basically, I'm looking at brew cask maintenance when I say this
+  to make sure I'm not saying anything wrong.
+1442: But my understanding is you can now upgrade brew casks, but that some of them
+  that have kind of weird versioning semantics
+1449: or don't provide upstream versions like may behave slightly differently.
+1453: Is that a fair description?
+1454: The latest casks will have to be forced to upgrade.
+1460: Yeah.
+1461: So some casks, the latest ones may need to have a forced upgrade, but otherwise
+  that's how they work now.
+1466: Cool.
+1467: Next question.
+1468: Sorry, what's next?
+1470: Oh, what's next?
+1471: What for homebrew?
+1472: Yeah.
+1473: I don't know.
+1474: So, yeah, yeah.
+1475: So, I mean, that's one of the fun things that we're doing, which is why there's
+  a bunch of maintainers in the room.
+1480: So we've been kind of building up our kind of funds and donations over the last
+  few years,
+1484: and we're actually spending some money now.
+1486: So we have, I think, 14 homebrew maintainers who are going to be at a meeting
+  in Brussels tomorrow
+1491: in which we're kind of going to plan some of the kind of future roadmap for
+  the project,
+1494: both on the organizational side and kind of maybe talk about some features we
+  want to build and stuff like that.
+1500: So, yeah, basically, so from my personal viewpoint, I guess in terms of the
+  features that I build,
+1505: like there's nothing really big that I'm like, I feel like homebrew kind of
+  needs now.
+1511: Like most of the really big things I feel like we've addressed in the last few
+  years.
+1515: So my personal priorities are more around stuff like our CI system is like something
+  that is a bit of a bus factor of one situation.
+1525: And I want to stop that being the case anymore.
+1528: And so that I, in case I get hit by a bus.
+1530: So, yeah, like no big things on the horizon, but just trying to make things
+  better and make the community work better.
+1539: Any other questions?
+1542: Yes.
+1547: How do you get involved with homebrew?
+1549: So, yeah, if you go to the GitHub repository, that's the best bet and that's
+  linked from the homepage as well.
+1554: That can describe basically some easy ways to get stuck in.
+1557: I would say, I mean, homebrew has 7,000 plus contributors at this point.
+1562: I would say it's probably one of the easiest projects to get involved with,
+  certainly if you use it,
+1568: because there's loads of stuff which kind of works fine, but needs slightly
+  tweaked or cleaned up.
+1573: And we have quite strict kind of linting tools.
+1575: There's one called brew audit, which will go and basically like complain about
+  various minutiae and packages that aren't quite how we want them.
+1582: So that is a really good way to get started.
+1585: If you can run brew audit on packages that you already have installed and you
+  already use,
+1589: and then you have a bit of a scratch or an itch type situation going on, then
+  you can submit a pull request to do that.
+1594: Another command that's useful for that is there's a brew bump formula PR command,
+1599: which literally lets you upgrade a homebrew formula to a new version in a single
+  commit and then will create the pull request for you.
+1608: So that's like literally the easiest way to get started with homebrew development.
+1611: And then you can kind of see how that goes and then you can get a first commit
+  in homebrew
+1615: without even having to know how to commit and create a GitHub pull request yourself.
+1620: So thank you. Good question.
+1622: Well, I think we're questionless now.
+1625: So thank you everyone for coming and thank you for using homebrew.
+1628: Thank you.
+1640: Yeah, sure.
+1653: I wanted to ask some private questions.
+1655: Good job, man.
+1656: I got it now.
+1657: Yeah, I see that.
+1658: I don't know if I can find a .
+1661: Do you see anything?
+1664: I have a question.
+1666: That would be .
+1667: Sorry.
+1668: Oh, yeah.
+1669: Have you seen him?
+1670: I don't know.
+1671: Yeah.
+1672: You got a minute?
+1673: Let's go.
+1674: Oh, yeah.
+1675: Let's go.
+1676: Oh, yeah.
+1677: Let's go.
+1678: Oh, yeah.
+1708: Thank you.
+1738: Thank you.
+1768: Thank you.
+1798: Thank you.

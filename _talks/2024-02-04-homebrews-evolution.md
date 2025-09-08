@@ -4,5 +4,6 @@ description: I look back at the last year of Homebrew and forward to what we exp
 speakerdeck-id: a7533630a8dc4f31a3aac74abbeaa114
 speakerdeck-ratio: 1.77777777777778
 youtube-id: jdGZr4jJ1wc
+transcript: true
 ---
 Presented at [FOSDEM 2024](https://fosdem.org/2024/schedule/event/fosdem-2024-2028-homebrew-s-evolution/).
