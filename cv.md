@@ -5,7 +5,7 @@ redirect_from: /resume/
 ---
 ### Mike McQuaid
 
-#### Fractional CTPO/Principal Engineer and Homebrew Project Leader
+#### Fractional CTO and Homebrew Project Leader
 
 Edinburgh-based product and engineering leader, ex-GitHub Principal Engineer (#232, 2013), with 18 years' experience reducing developer friction and scaling open-source software used by tens of millions.
 Published author, writer and experienced conference speaker (50+ talks) on engineering, open-source, automation, remote work and Git.
