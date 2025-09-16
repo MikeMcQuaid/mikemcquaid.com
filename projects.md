@@ -24,16 +24,6 @@ Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.o
 Organised first ever Homebrew maintainer meeting.
 Migrated Homebrew to GitHub Packages which required extensive changes and collaboration in both Homebrew and GitHub.
 
-#### [Workbrew](https://workbrew.com)
-
-![Workbrew]({{ '/images/a/workbrew.png' | absolute_url }})
-
-I started Workbrew in 2023 to provide missing features and support for companies using Homebrew.
-Workbrew's 1.0 release was in November 2024.
-It offers vulnerability reporting and mitigation, MDM integration, fleet configuration, remote `brew` execution and more.
-As of May 2025, Workbrew managed 1,725 devices.
-I’m currently Workbrew’s fractional Homebrew Fellow and Advisor, offering input on Homebrew integration, technical leadership and product direction.
-
 #### [Strap](https://github.com/MikeMcQuaid/strap)
 
 ![Strap]({{ '/images/a/strap.png' | absolute_url }})
@@ -43,6 +33,16 @@ A script to bootstrap a minimal macOS development system.
 Built for GitHub ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})) to reduce development downtime for all GitHub-employed engineers.
 
 ### Past
+
+#### [Workbrew](https://workbrew.com)
+
+![Workbrew]({{ '/images/a/workbrew.png' | absolute_url }})
+
+I started Workbrew in 2023 to provide missing features and support for companies using Homebrew.
+Workbrew's 1.0 release was in November 2024.
+It offers vulnerability reporting and mitigation, MDM integration, fleet configuration, remote `brew` execution and more.
+As of May 2025, Workbrew managed 1,725 devices.
+I’m currently Workbrew’s fractional Homebrew Fellow and Advisor, offering input on Homebrew integration, technical leadership and product direction.
 
 #### [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
 
