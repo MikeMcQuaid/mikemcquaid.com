@@ -10,8 +10,13 @@ My goal is to share contribution data to help inform the conversation.
 ### 🍺 Homebrew Contributions
 
 Hi, I'm Mike McQuaid 👋.
+I've spent most of the last 13 years working on Ruby on Rails applications you may have used such as
+[GitHub](https://github.com),
+[AllTrails](https://www.alltrails.com),
+[Workbrew](https://workbrew.com),
+and [Strap](https://github.com/mikemcquaid/strap).
 I've maintained
-[Homebrew](https://brew.sh)
+[Homebrew](https://brew.sh) (mostly written in Ruby)
 for 16 years and have been the Project Leader since the position was created in 2019.
 Some of
 [my responsibilities](https://docs.brew.sh/Homebrew-Leadership-Responsibilities#project-leader)
