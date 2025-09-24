@@ -320,12 +320,16 @@ table caption {
   text-align: left;
 }
 
+table {
+  width: 100%;
+}
+
 table, thead, tr, td, th {
   border: none;
   border-collapse: collapse;
 }
 
-tbody td {
+thead th, tbody td {
   text-align: center;
   padding: 0 0.2em;
 }
