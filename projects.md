@@ -256,7 +256,7 @@ Contributor.
 Improved and merged the
 [long-running launchd patchset](https://bugs.freedesktop.org/show_bug.cgi?id=14259).
 Bug fixes for macOS.
-[Released in 1.4.1](http://dbus.freedesktop.org/doc/NEWS).
+[Released in 1.4.1](https://dbus.freedesktop.org/doc/NEWS).
 
 #### [libgcal](https://code.google.com/archive/p/libgcal/)
 
