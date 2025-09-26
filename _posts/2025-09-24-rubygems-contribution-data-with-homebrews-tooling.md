@@ -7,7 +7,7 @@ If you need context, first read
 [Open Source Turmoil: RubyGems Maintainers Kicked Off GitHub](https://thenewstack.io/open-source-turmoil-rubygems-maintainers-kicked-off-github/).
 My goal is to share contribution data to help inform the conversation.
 
-### 🍺 Homebrew Contributions
+## 🍺 Homebrew Contributions
 
 Hi, I'm Mike McQuaid 👋.
 I've spent most of the last 13 years working on Ruby on Rails applications you may have used such as
@@ -68,7 +68,7 @@ The tools and data are open.
 Also, because we use OpenCollective,
 [the money coming into and out of Homebrew is open](https://opencollective.com/homebrew?hostname=opencollective.com#category-BUDGET).
 
-### 💎 RubyGems Contributions
+## 💎 RubyGems Contributions
 
 Ok Mike, that's a lot about Homebrew: what about RubyGems?
 Sorry, I'm getting to that.
@@ -356,7 +356,7 @@ In some cases, it can create problems that wouldn't exist otherwise.
 
 If you’d like to talk more about this post, the RubyGems situation, Homebrew, or would like my help as a Fractional CTO/Principal Engineer/open source expert through my
 [consulting business](https://mikemcquaid.com/cv/), please
-[reach out](https://mikemcquaid.com/about/).
+[reach out 💌](https://mikemcquaid.com/about/).
 
 If you want to financially support and encourage more of my work on Homebrew instead, consider sponsoring me on
 [GitHub Sponsors](https://github.com/sponsors/MikeMcQuaid) or
