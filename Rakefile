@@ -44,6 +44,8 @@ task test: :jekyll do
       %r{^https://stackoverflow\.com/},
       %r{^https://mikemcquaid\.com/.+[\-].+[\-].+},
       %r{^https://www\.patreon\.com/},
+      %r{^https://news\.ycombinator\.com/},
+      "https://www.yelp.com",
       "https://chatgpt.com",
       'https://www.scotlandis.com/scotsoft-2022/developer-conference/',
       'https://fellowship.mlh.io',
