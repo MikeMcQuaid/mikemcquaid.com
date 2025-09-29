@@ -5,9 +5,13 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [How Ruby Went Off the Rails](https://www.404media.co/how-ruby-went-off-the-rails/)
+
+Emanuel Maiberg on 404 Media, 29th September, 2025
+
 #### [Maintainer burnout at critical Kubernetes project puts OSS contributions back in the spotlight](https://www.thestack.technology/open-source-devs-burn-out-crucial-projects-in-jeopardy)
 
-Noah Bovenizer on The Stack, 20th Aug, 2025
+Noah Bovenizer on The Stack, 20th August, 2025
 
 #### [AI-first hiring is everywhere and it’s not slowing down](https://leaddev.com/hiring/ai-first-hiring-everywhere-not-slowing-down)
 
