@@ -41,6 +41,8 @@ and partly a matter of fair recognition, making "Homebrew maintainer" reflect th
 
 We built a command for this in Homebrew:
 [`brew contributions`](https://github.com/Homebrew/brew/blob/main/Library/Homebrew/dev-cmd/contributions.rb).
+If you're trying it yourself to replicate these results, it uses the GitHub token from `HOMEBREW_GITHUB_API_TOKEN` or your keychain.
+
 If I run it on myself for the last year, I get this output:
 
 ```console
@@ -325,6 +327,141 @@ aellispierce,all,0,0,0,0,0
 
 ---
 
+Added on request of [Nate Berkopec](https://www.nateberkopec.com):
+all the
+[contributors to rubygems/rubygems](https://github.com/rubygems/rubygems/graphs/contributors)
+in the last ~1.5 years for the same timescales as above:
+
+```console
+$ brew contributions --csv --from 2024-08-18 --org=rubygems --user=deivid-rodriguez,hsbt,segiddins,martinemde,simi,duckinator,nobu,tangrufus,Edouard-chin,voxik,soda92,technicalpickles,jenshenny,jeromedalbert,ccutrer,nevinera,indirect,tenderlove,Maumagnaguagno,MSP-Greg,ntkme,mame,byroot,composerinteralia,flavorjones,johnnyshields,olleolleolle,jeremyevans,amatsuda,ko1,junaruga,kddnewton,koic,rhenium,larskanis,ntl,matsadler
+...
+```
+
+| User             | Merged PRs | Approved PRs | Commits | Total |
+|-------------------|------------------|--------------------|-----------|-------|
+| deivid-rodriguez  | 100              | 13                 | 1303      | 1416  |
+| hsbt              | 58               | 4                  | 392       | 454   |
+| simi              | 37               | 100                | 255       | 392   |
+| segiddins         | 93               | 77                 | 194       | 364   |
+| martinemde        | 49               | 59                 | 64        | 172   |
+| duckinator        | 12               | 0                  | 36        | 48    |
+| olleolleolle      | 2                | 18                 | 7         | 27    |
+| Edouard-chin      | 7                | 0                  | 20        | 27    |
+| soda92            | 10               | 0                  | 16        | 26    |
+| tangrufus         | 2                | 0                  | 21        | 23    |
+| jeromedalbert     | 6                | 0                  | 7         | 13    |
+| tenderlove        | 6                | 0                  | 6         | 12    |
+| nobu              | 2                | 0                  | 9         | 11    |
+| indirect          | 1                | 7                  | 3         | 11    |
+| technicalpickles  | 2                | 0                  | 6         | 8     |
+| composerinteralia | 2                | 0                  | 2         | 4     |
+| MSP-Greg          | 2                | 0                  | 2         | 4     |
+| jeremyevans       | 1                | 0                  | 1         | 2     |
+| johnnyshields     | 1                | 0                  | 1         | 2     |
+| rhenium           | 1                | 0                  | 1         | 2     |
+| mame              | 1                | 0                  | 1         | 2     |
+| ntkme             | 1                | 0                  | 1         | 2     |
+| larskanis         | 1                | 0                  | 1         | 2     |
+| ntl               | 1                | 0                  | 1         | 2     |
+| ccutrer           | 1                | 0                  | 1         | 2     |
+| voxik             | 1                | 0                  | 1         | 2     |
+| koic              | 0                | 0                  | 0         | 0     |
+| matsadler         | 0                | 0                  | 0         | 0     |
+| kddnewton         | 0                | 0                  | 0         | 0     |
+| junaruga          | 0                | 0                  | 0         | 0     |
+| ko1               | 0                | 0                  | 0         | 0     |
+| amatsuda          | 0                | 0                  | 0         | 0     |
+| flavorjones       | 0                | 0                  | 0         | 0     |
+| byroot            | 0                | 0                  | 0         | 0     |
+| Maumagnaguagno    | 0                | 0                  | 0         | 0     |
+| nevinera          | 0                | 0                  | 0         | 0     |
+| jenshenny         | 0                | 0                  | 0         | 0     |
+
+<details>
+<summary>Full <code>brew contributions</code> Output</summary>
+<pre>
+$ brew contributions --csv --from 2024-08-18 --org=rubygems --user=deivid-rodriguez,hsbt,segiddins,martinemde,simi,duckinator,nobu,tangrufus,Edouard-chin,voxik,soda92,technicalpickles,jenshenny,jeromedalbert,ccutrer,nevinera,indirect,tenderlove,Maumagnaguagno,MSP-Greg,ntkme,mame,byroot,composerinteralia,flavorjones,johnnyshields,olleolleolle,jeremyevans,amatsuda,ko1,junaruga,kddnewton,koic,rhenium,larskanis,ntl,matsadler
+deivid-rodriguez contributed >=100 times (merged PR author), 13 times (approved PR reviewer), 1303 times (commit author or committer) and >=1416 times (total) after 2024-08-18.
+hsbt contributed 58 times (merged PR author), 4 times (approved PR reviewer), 392 times (commit author or committer) and 454 times (total) after 2024-08-18.
+segiddins contributed 93 times (merged PR author), 77 times (approved PR reviewer), 194 times (commit author or committer) and 364 times (total) after 2024-08-18.
+martinemde contributed 49 times (merged PR author), 59 times (approved PR reviewer), 64 times (commit author or committer) and 172 times (total) after 2024-08-18.
+simi contributed 37 times (merged PR author), >=100 times (approved PR reviewer), 255 times (commit author or committer) and >=392 times (total) after 2024-08-18.
+duckinator contributed 12 times (merged PR author), 36 times (commit author or committer) and 48 times (total) after 2024-08-18.
+nobu contributed 2 times (merged PR author), 9 times (commit author or committer) and 11 times (total) after 2024-08-18.
+tangrufus contributed 2 times (merged PR author), 21 times (commit author or committer) and 23 times (total) after 2024-08-18.
+Edouard-chin contributed 7 times (merged PR author), 20 times (commit author or committer) and 27 times (total) after 2024-08-18.
+voxik contributed 1 time (merged PR author), 1 time (commit author or committer) and 2 times (total) after 2024-08-18.
+soda92 contributed 10 times (merged PR author), 16 times (commit author or committer) and 26 times (total) after 2024-08-18.
+technicalpickles contributed 2 times (merged PR author), 6 times (commit author or committer) and 8 times (total) after 2024-08-18.
+jenshenny contributed 0 times (total) after 2024-08-18.
+jeromedalbert contributed 6 times (merged PR author), 7 times (commit author or committer) and 13 times (total) after 2024-08-18.
+ccutrer contributed 1 time (merged PR author), 1 time (commit author or committer) and 2 times (total) after 2024-08-18.
+nevinera contributed 0 times (total) after 2024-08-18.
+indirect contributed 1 time (merged PR author), 7 times (approved PR reviewer), 3 times (commit author or committer) and 11 times (total) after 2024-08-18.
+tenderlove contributed 6 times (merged PR author), 6 times (commit author or committer) and 12 times (total) after 2024-08-18.
+Maumagnaguagno contributed 0 times (total) after 2024-08-18.
+MSP-Greg contributed 2 times (merged PR author), 2 times (commit author or committer) and 4 times (total) after 2024-08-18.
+ntkme contributed 1 time (merged PR author), 1 time (commit author or committer) and 2 times (total) after 2024-08-18.
+mame contributed 1 time (merged PR author), 1 time (commit author or committer) and 2 times (total) after 2024-08-18.
+byroot contributed 0 times (total) after 2024-08-18.
+composerinteralia contributed 2 times (merged PR author), 2 times (commit author or committer) and 4 times (total) after 2024-08-18.
+flavorjones contributed 0 times (total) after 2024-08-18.
+johnnyshields contributed 1 time (merged PR author), 1 time (commit author or committer) and 2 times (total) after 2024-08-18.
+olleolleolle contributed 2 times (merged PR author), 18 times (approved PR reviewer), 7 times (commit author or committer) and 27 times (total) after 2024-08-18.
+jeremyevans contributed 1 time (merged PR author), 1 time (commit author or committer) and 2 times (total) after 2024-08-18.
+amatsuda contributed 0 times (total) after 2024-08-18.
+ko1 contributed 0 times (total) after 2024-08-18.
+junaruga contributed 0 times (total) after 2024-08-18.
+kddnewton contributed 0 times (total) after 2024-08-18.
+koic contributed 0 times (total) after 2024-08-18.
+rhenium contributed 1 time (merged PR author), 1 time (commit author or committer) and 2 times (total) after 2024-08-18.
+larskanis contributed 1 time (merged PR author), 1 time (commit author or committer) and 2 times (total) after 2024-08-18.
+ntl contributed 1 time (merged PR author), 1 time (commit author or committer) and 2 times (total) after 2024-08-18.
+matsadler contributed 0 times (total) after 2024-08-18.
+
+user,repository,merged_pr_author,approved_pr_review,committer,coauthor,total
+deivid-rodriguez,all,100,13,1303,0,1416
+hsbt,all,58,4,392,0,454
+simi,all,37,100,255,0,392
+segiddins,all,93,77,194,0,364
+martinemde,all,49,59,64,0,172
+duckinator,all,12,0,36,0,48
+olleolleolle,all,2,18,7,0,27
+Edouard-chin,all,7,0,20,0,27
+soda92,all,10,0,16,0,26
+tangrufus,all,2,0,21,0,23
+jeromedalbert,all,6,0,7,0,13
+tenderlove,all,6,0,6,0,12
+nobu,all,2,0,9,0,11
+indirect,all,1,7,3,0,11
+technicalpickles,all,2,0,6,0,8
+composerinteralia,all,2,0,2,0,4
+MSP-Greg,all,2,0,2,0,4
+jeremyevans,all,1,0,1,0,2
+johnnyshields,all,1,0,1,0,2
+rhenium,all,1,0,1,0,2
+mame,all,1,0,1,0,2
+ntkme,all,1,0,1,0,2
+larskanis,all,1,0,1,0,2
+ntl,all,1,0,1,0,2
+ccutrer,all,1,0,1,0,2
+voxik,all,1,0,1,0,2
+koic,all,0,0,0,0,0
+matsadler,all,0,0,0,0,0
+kddnewton,all,0,0,0,0,0
+junaruga,all,0,0,0,0,0
+ko1,all,0,0,0,0,0
+amatsuda,all,0,0,0,0,0
+flavorjones,all,0,0,0,0,0
+byroot,all,0,0,0,0,0
+Maumagnaguagno,all,0,0,0,0,0
+nevinera,all,0,0,0,0,0
+jenshenny,all,0,0,0,0,0
+</pre>
+</details>
+
+---
+
 I'm not going to make any value judgements about these data.
 Remember that
 [open source maintainers owe you nothing](https://mikemcquaid.com/open-source-maintainers-owe-you-nothing/).
@@ -351,6 +488,10 @@ to similarly analyse finances, but it doesn't seem to be public.
 This situation also highlights how funding and transparency can shape open source dynamics.
 [I've long believed that money is not the solution to every problem in open source](https://mikemcquaid.com/open-source-economics/).
 In some cases, it can create problems that wouldn't exist otherwise.
+
+---
+
+Edit: Tuesday 30th September 2025: added another table above for querying rubygems/rubygems contributors.
 
 ---
 
