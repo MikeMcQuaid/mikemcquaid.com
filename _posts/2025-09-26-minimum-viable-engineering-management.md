@@ -105,3 +105,10 @@ If you’d like to help with similar problems in your organisation through my
 [reach out 💌](https://mikemcquaid.com/about/).
 
 Thanks to [Nora McKinnell](https://www.linkedin.com/in/nmckinnell/), [Jen Anderson](https://www.linkedin.com/in/jenandersonhi/) (and ChatGPT5 🤖) for reviewing multiple drafts of this post.
+
+---
+
+Inspired by this post, I've launched
+[a podcast](https://mikemcquaid.com/minimum-viable-management/)
+about these topics with
+[Neha Batra, the best manager I've ever had in my career](https://www.linkedin.com/in/nbatra/).
