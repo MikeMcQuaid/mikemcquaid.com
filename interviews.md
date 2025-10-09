@@ -3,7 +3,11 @@ title: Interviews
 layout: page
 redirect_from: /press
 ---
-I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
+I sometimes give
+
+#### [Mike McQuaid on the Greatest Lessons He’s Learned in Over 16 Years at Homebrew](https://the-github-podcast.simplecast.com/episodes/mike-mcquaid-on-the-greatest-lessons-hes-learned-in-over-16-years-at-homebrew)
+
+GitHub Podcast, 7th October 2025
 
 #### [How Ruby Went Off the Rails](https://www.404media.co/how-ruby-went-off-the-rails/)
 
