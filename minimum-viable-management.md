@@ -1,6 +1,7 @@
 ---
 title: Minimum Viable Management
 layout: page
+image: /images/a/minimum-viable-management-thumbnail.png
 ---
 ![Minimum Viable Management]({{ '/images/a/minimum-viable-management.png' | absolute_url }})
 
