@@ -16,8 +16,14 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Run HTML Proofer tests
-        run: bundle exec rake
+      - name: Cache HTML Proofer
+        uses: actions/cache@v4
+        with:
+          path: tmp/.htmlproofer
+          key: ${{ runner.os }}-htmlproofer
+
+      - name: Run HTML Proofer
+        run: bundle exec rake test
 
       - name: Upload GitHub Pages artifact
         if: always()
