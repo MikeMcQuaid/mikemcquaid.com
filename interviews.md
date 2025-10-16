@@ -3,7 +3,7 @@ title: Interviews
 layout: page
 redirect_from: /press
 ---
-I sometimes give
+I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
 
 #### [Mike McQuaid on the Greatest Lessons He’s Learned in Over 16 Years at Homebrew](https://the-github-podcast.simplecast.com/episodes/mike-mcquaid-on-the-greatest-lessons-hes-learned-in-over-16-years-at-homebrew)
 
