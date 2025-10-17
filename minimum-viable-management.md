@@ -10,6 +10,10 @@ Minimum Viable Management is a podcast where Mike McQuaid and Neha Batra talk ab
 It was inspired by conversations around my writing on
 [Minimum Viable Engineering Management]({% post_url 2025-09-26-minimum-viable-engineering-management %}).
 
+It has a GitHub repository at
+[Minimum-Viable-Management/Minimum-Viable-Management](https://github.com/Minimum-Viable-Management/Minimum-Viable-Management)
+providing summaries of the topics covered by this podcast.
+
 Download or listen on:
 
 - [YouTube](https://www.youtube.com/playlist?list=PLdx6vnBOYrMZw3ZHjJJyItqQuZQhTIzhc)

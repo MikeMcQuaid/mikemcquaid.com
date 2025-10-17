@@ -109,6 +109,7 @@ Thanks to [Nora McKinnell](https://www.linkedin.com/in/nmckinnell/), [Jen Anders
 ---
 
 Inspired by this post, I've launched
-[a podcast](https://mikemcquaid.com/minimum-viable-management/)
+[a podcast](https://mikemcquaid.com/minimum-viable-management/) and a
+[GitHub Repository](https://github.com/Minimum-Viable-Management/Minimum-Viable-Management)
 about these topics with
 [Neha Batra, the best manager I've ever had in my career](https://www.linkedin.com/in/nbatra/).

@@ -24,6 +24,13 @@ Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.o
 Organised first ever Homebrew maintainer meeting.
 Migrated Homebrew to GitHub Packages which required extensive changes and collaboration in both Homebrew and GitHub.
 
+#### [Minimum Viable Management]({{ '/minimum-viable-management/' | absolute_url }})
+
+![Minimum Viable Management]({{ '/images/a/minimum-viable-management.png' | absolute_url }})
+
+Creator.
+A podcast where [Neha Batra](https://www.linkedin.com/in/nbatra/) and I talk about the messy, human side of engineering leadership and management.
+
 #### [Strap](https://github.com/MikeMcQuaid/strap)
 
 ![Strap]({{ '/images/a/strap.png' | absolute_url }})
