@@ -5,9 +5,16 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Mike McQuaid: If You Don't Like It, Quit](https://justin.searls.co/casts/hotfix-v44.0.2-if-you-dont-like-it-quit/)
+
+Breaking Change - Hotfix podcast, 17th October, 2025
+
+Also available in swear-free/bleeped version on The Changelog and Friends podcast
+[There will be bleeps](https://changelog.com/friends/113).
+
 #### [Mike McQuaid on the Greatest Lessons He’s Learned in Over 16 Years at Homebrew](https://the-github-podcast.simplecast.com/episodes/mike-mcquaid-on-the-greatest-lessons-hes-learned-in-over-16-years-at-homebrew)
 
-GitHub Podcast, 7th October 2025
+GitHub Podcast, 7th October, 2025
 
 #### [How Ruby Went Off the Rails](https://www.404media.co/how-ruby-went-off-the-rails/)
 
