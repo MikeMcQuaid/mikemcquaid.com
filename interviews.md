@@ -5,6 +5,10 @@ redirect_from: /press
 ---
 I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
 
+#### [Homebrew and macOS Package Management with Mike McQuaid](https://softwareengineeringdaily.com/2025/10/21/homebrew-and-open-source-on-macos-with-mike-mcquaid/)
+
+Software Engineering Daily, 21st October, 2025
+
 #### [Mike McQuaid: If You Don't Like It, Quit](https://justin.searls.co/casts/hotfix-v44.0.2-if-you-dont-like-it-quit/)
 
 Breaking Change - Hotfix podcast, 17th October, 2025
