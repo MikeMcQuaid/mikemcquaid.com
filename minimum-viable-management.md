@@ -17,6 +17,6 @@ providing summaries of the topics covered by this podcast.
 Download or listen on:
 
 - [YouTube](https://www.youtube.com/playlist?list=PLdx6vnBOYrMZw3ZHjJJyItqQuZQhTIzhc)
-- [Podcasts](https://podcasts.apple.com/gb/podcast/minimum-viable-management/id1845078315)
+- [Apple Podcasts](https://podcasts.apple.com/gb/podcast/minimum-viable-management/id1845078315)
 - [Spotify](https://open.spotify.com/show/2LgoStqQjQsv04nHWMI4GG)
 - [Podcast RSS Feed](https://api.riverside.fm/hosting/Ryz8eZPj.rss)
