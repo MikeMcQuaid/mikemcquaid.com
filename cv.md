@@ -26,7 +26,7 @@ Offer fractional CTO/CTPO and Principal Engineer services through remote or in-p
 
 Existing clients include startups, "Big Tech" notable software companies, financial companies and other consulting companies.
 
-##### [Administrate](https://www.getadministrate.com) - Fractional CTO (2025 - Present)
+##### [Administrate](https://www.getadministrate.com) - CTO (2025 - Present)
 
 Improving the world's best training management system's engineering velocity, productivity and culture through engineering leadership, writing and code.
 

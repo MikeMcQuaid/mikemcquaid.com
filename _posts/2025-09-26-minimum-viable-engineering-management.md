@@ -9,7 +9,7 @@ Over time, I realised it was actually pretty terrible.
 As a result, when I [started my own company](https://workbrew.com) and was a manager for the first time, I wanted to ensure we provided "minimum viable engineering management".
 What this meant was providing the necessary support and monitoring infrastructure to ensure great performance while letting managers, present (me) and future, spend most of their time on individual contributions.
 
-I've been working with [Administrate, the world's best Training Management System](https://www.getadministrate.com) as their Fractional CTO for a few months now.
+I've been working with [Administrate, the world's best Training Management System](https://www.getadministrate.com) as their CTO for a few months now.
 When I joined, there was a similar problem: it wasn’t clear how much management was too much or too little, so I wrote an internal document.
 It has been lightly modified for public consumption and turned into this post.
 
