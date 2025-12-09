@@ -367,9 +367,11 @@ tfoot {
 }
 
 blockquote {
+  font-size: 1.2em;
+
   &:before {
     display: block;
-    font-size: 5em;
+    font-size: 4em;
     content: '\201C';
     height: 0;
     margin: 0.5em 0 -0.3em -0.45em;
