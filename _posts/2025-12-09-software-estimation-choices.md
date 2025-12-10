@@ -28,11 +28,11 @@ This is why "high quality" has to be the goal, not perfection.
 ### 📦 Full Scope
 
 The "scope" of a software project is generally "how many different use cases do we build this for".
-If you want a feature to be everything to everyone: that will take longer.
+For a feature to be everything to everyone: that will take longer.
 
 This can be seen as a "product (manager) decision" instead of a "software (engineer) decision" but it must be a negotiation.
 There may be things the product manager or customer added to the scope thinking they would take a day but actually take a month.
-With open, supportive and respectful communication, you can often cut a lot of scope and save a lot of time.
+With open, supportive and respectful communication, a lot of scope can often be cut and a lot of time saved.
 
 ### 📅 Delivery Date
 
@@ -50,8 +50,8 @@ Good engineers will use the "extra time", if they have any, to improve quality o
 
 > High quality, full scope, delivery date. Choose two.
 
-Remember this and quote this when asked to delivery all three.
+Remember and quote this when asked to deliver all three.
 
-The only way you get to not have two is if you demand all three and usually end up with one or zero.
+The only way to not have two is demanding all three (and usually ending up with one or zero).
 
 Good luck!
