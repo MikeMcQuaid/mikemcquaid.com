@@ -5,11 +5,12 @@ layout: page
 
 (This is [a now page](https://nownownow.com/about), and if you have your own site, [you should make one, too](https://sivers.org/now2)).
 
-Updated July 7th, 2025, from my home in Edinburgh, Scotland.
+Updated December 11th, 2025, from my home in Edinburgh, Scotland.
 
 #### Work
 
-I’m currently focused on my fractional CTO/CTPO and Principal Engineer consulting work.
+I’m currently focused on my role as CTPO at Administrate.
+I initially worked with them as a Fractional CTO, while doing other consulting work, but have now joined full-time.
 
 I left my full-time role as CTPO at Workbrew but continue in a fractional role as Homebrew Fellow and Advisor.
 

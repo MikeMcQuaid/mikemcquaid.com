@@ -5,30 +5,19 @@ redirect_from: /resume/
 ---
 ### Mike McQuaid
 
-#### Fractional CTO and Homebrew Project Leader
+#### CTPO and Homebrew Project Leader
 
 Edinburgh-based product and engineering leader, ex-GitHub Principal Engineer (#232, 2013), with 18 years' experience reducing developer friction and scaling open-source software used by tens of millions.
 Published author, writer and experienced conference speaker (50+ talks) on engineering, open-source, automation, remote work and Git.
 Leading product and engineering at Homebrew and led at Workbrew, with product engineering experience at GitHub (before they had product managers).
 Early GitHub Copilot reviewer with hands-on experience integrating AI-driven coding assistants and review tools to boost developer velocity.
-Extensive experience with async, remote-first international teams since 2009.
+Full-time work has been exclusively on remote-first international teams since 2009.
 
 ### Experience
 
-#### Mike McQuaid Consulting (2009 – Present)
+#### [Administrate](https://www.getadministrate.com) - CTPO (2025 - Present)
 
-Offer fractional CTO/CTPO and Principal Engineer services through remote or in-person engagements for growth-oriented tech companies CEOs, investors and leadership.
-
-* Developer Velocity: multi‑week developer velocity deep dives, defining productivity metrics, optimizing CI/CD pipelines and eliminating workflow friction. TL;DR: makes your most expensive resource (your engineers) get more done in less time.
-* AI Coding Assistants: deliver focused deep‑dive evaluation and implementation playbooks for e.g. Cursor, Copilot, ChatGPT and other LLMs.
-* Open-Source Strategy: advise on sustainable governance, community growth and commercial licensing models.
-* Staff+ Mentorship: define clear career paths and mentor senior and staff+ engineers to maximise their impact.
-
-Existing clients include startups, "Big Tech" notable software companies, financial companies and other consulting companies.
-
-##### [Administrate](https://www.getadministrate.com) - CTO (2025 - Present)
-
-Improving the world's best training management system's engineering velocity, productivity and culture through engineering leadership, writing and code.
+Improving the world's best training management system's engineering velocity, productivity and culture through engineering and product leadership, writing and code.
 
 #### [Homebrew](https://brew.sh) — Project Leader (2009 – Present)
 
@@ -66,6 +55,17 @@ As CTPO, set product direction, owned engineering execution and established comp
   [LLM-native hiring process](https://mikemcquaid.com/how-and-why-i-interview-engineers-for-workbrew/)
   referenced on
   [LeadDev](https://leaddev.com/hiring/ai-first-hiring-everywhere-not-slowing-down)
+
+#### Mike McQuaid Consulting (2025)
+
+Offer fractional CTO/CTPO and Principal Engineer services through remote or in-person engagements for growth-oriented tech companies CEOs, investors and leadership.
+
+* Developer Velocity: multi‑week developer velocity deep dives, defining productivity metrics, optimizing CI/CD pipelines and eliminating workflow friction. TL;DR: makes your most expensive resource (your engineers) get more done in less time.
+* AI Coding Assistants: deliver focused deep‑dive evaluation and implementation playbooks for e.g. Cursor, Copilot, ChatGPT and other LLMs.
+* Open-Source Strategy: advise on sustainable governance, community growth and commercial licensing models.
+* Staff+ Mentorship: define clear career paths and mentor senior and staff+ engineers to maximise their impact.
+
+Existing clients include startups, "Big Tech" notable software companies, financial companies and other consulting companies.
 
 #### GitHub (2013 – 2023)
 

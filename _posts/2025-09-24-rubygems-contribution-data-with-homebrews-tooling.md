@@ -488,17 +488,3 @@ to similarly analyse finances, but it doesn't seem to be public.
 This situation also highlights how funding and transparency can shape open source dynamics.
 [I've long believed that money is not the solution to every problem in open source](https://mikemcquaid.com/open-source-economics/).
 In some cases, it can create problems that wouldn't exist otherwise.
-
----
-
-Edit: Tuesday 30th September 2025: added another table above for querying rubygems/rubygems contributors.
-
----
-
-If you’d like to talk more about this post, the RubyGems situation, Homebrew, or would like my help as a Fractional CTO/Principal Engineer/open source expert through my
-[consulting business](https://mikemcquaid.com/cv/), please
-[reach out 💌](https://mikemcquaid.com/about/).
-
-If you want to financially support and encourage more of my work on Homebrew instead, consider sponsoring me on
-[GitHub Sponsors](https://github.com/sponsors/MikeMcQuaid) or
-[Patreon](https://www.patreon.com/cw/MikeMcQuaid).
