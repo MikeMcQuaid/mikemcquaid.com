@@ -19,7 +19,7 @@ I've maintained
 [Homebrew](https://brew.sh) (mostly written in Ruby)
 for 16 years and have been the Project Leader since the position was created in 2019.
 Some of
-[my responsibilities](https://docs.brew.sh/Homebrew-Leadership-Responsibilities#project-leader)
+[my responsibilities](https://docs.brew.sh/Homebrew-Leadership-Responsibilities#project-leader-sole-responsibilities)
 include assessing whether
 [Homebrew maintainers'](https://github.com/homebrew/brew#who-we-are)
 contributions make them eligible for:

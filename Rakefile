@@ -47,6 +47,7 @@ task test: :jekyll do
       %r{^https://news\.ycombinator\.com/},
       %r{^https://brenebrown\.com/},
       %r{^https://app\.thestorygraph\.com/},
+      "https://comp-soc.com/",
       "https://www.yelp.com",
       "https://chatgpt.com",
       'https://www.scotlandis.com/scotsoft-2022/developer-conference/',

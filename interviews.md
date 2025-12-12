@@ -62,7 +62,7 @@ The Tech Lounge Podcast, 17th October, 2024
 
 FLOSS Weekly, 14th August, 2024
 
-#### [After 15 years, the maintainer of Homebrew plans to make a living](https://thenextweb.com/news/homebrew-maintainer-make-a-living-15-weeks)
+#### [After 15 years, the maintainer of Homebrew plans to make a living](https://web.archive.org/web/20250924175303/https://thenextweb.com/news/homebrew-maintainer-make-a-living-15-weeks)
 
 The Next Web, 26th July, 2024
 
@@ -146,7 +146,7 @@ The Changelog, 6th March 2019
 
 Remote Habits, 20th August 2018
 
-#### [When should you open source your software?](https://www.idgconnect.com/article/3579444/when-should-you-open-source-your-software.html)
+#### [When should you open source your software?](https://web.archive.org/web/20230501000000*/https://www.idgconnect.com/article/3579444/when-should-you-open-source-your-software.html)
 
 IDG Connect, 13th April 2018
 
