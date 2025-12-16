@@ -3,7 +3,7 @@ title: Interviews
 layout: page
 redirect_from: /press
 ---
-I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things. Here are some examples:
+I sometimes give interviews about open source, Workbrew, Homebrew, Git, GitHub and other things.
 
 #### [Homebrew and macOS Package Management with Mike McQuaid](https://softwareengineeringdaily.com/2025/10/21/homebrew-and-open-source-on-macos-with-mike-mcquaid/)
 

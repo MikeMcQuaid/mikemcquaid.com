@@ -1,0 +1,63 @@
+<script>
+  (() => {
+    const updateLabel = (button, text, defaultText) => {
+      const label = button.querySelector(".thought-button-label");
+      if (!label) return;
+      const base = label.dataset.defaultLabel || defaultText || label.textContent.trim() || "Copy Link";
+      label.dataset.defaultLabel = base;
+      label.textContent = text;
+      clearTimeout(label._resetTimer);
+      label._resetTimer = setTimeout(() => {
+        label.textContent = base;
+      }, 1500);
+    };
+
+    const copyToClipboard = async (text) => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "absolute";
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    };
+
+    document.querySelectorAll(".thought-button-copy").forEach((button) => {
+      button.style.display = "inline-flex";
+      button.addEventListener("click", async () => {
+        const url = button.closest(".thought-actions")?.dataset.thoughtUrl;
+        if (!url) return;
+        try {
+          await copyToClipboard(url);
+          updateLabel(button, "Copied!");
+        } catch (error) {
+          updateLabel(button, "Copy failed");
+        }
+      });
+    });
+
+    const shareSupported = typeof navigator !== "undefined" && typeof navigator.share === "function";
+    if (shareSupported) {
+      document.querySelectorAll(".thought-button-share").forEach((button) => {
+        button.style.display = "inline-flex";
+        button.addEventListener("click", async () => {
+          const container = button.closest(".thought-actions");
+          if (!container) return;
+          const url = container.dataset.thoughtUrl;
+          const title = container.dataset.thoughtTitle || document.title;
+          try {
+            await navigator.share({ title, text: title, url });
+          } catch (error) {
+            if (error && error.name === "AbortError") return;
+            updateLabel(button, "Share failed!");
+          }
+        });
+      });
+    }
+  })();
+</script>

@@ -1,0 +1,14 @@
+---
+title: Thoughts
+layout: page
+permalink: /thoughts/
+---
+<p>Short thoughts that are cross-posted to X (Twitter), Bluesky, Mastodon, LinkedIn and Threads.</p>
+
+<div class="thoughts-feed">
+  {% for thought in site.thoughts reversed %}
+  {% if site.future == false and thought.date > site.time %} {% continue %} {% endif %}
+  {% include thought-card.html thought=thought %}
+  {% endfor %}
+</div>
+{% include thought-actions.html %}

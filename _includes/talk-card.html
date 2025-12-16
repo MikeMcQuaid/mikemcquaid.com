@@ -1,0 +1,21 @@
+{% assign talk = include.talk %}
+{% assign talk_title = talk.title | default: talk.slug %}
+<li class="talk-card">
+  <a href="{{ talk.url | absolute_url }}" title="{{ talk_title }}">
+    {% if talk.speakerdeck-id %}
+    <span class="speakerdeck-thumb"><img alt="{{ talk_title }} slides thumbnail"
+        src="https://speakerd.s3.amazonaws.com/presentations/{{ talk.speakerdeck-id }}/preview_slide_0.jpg" /></span>
+    {% endif %}
+    <h2>
+      {{ talk_title }}
+    </h2>
+  </a>
+  {% if include.talk_date %}
+  <span>
+    {{ include.talk_date | date: "%-d %B %Y" }}
+  </span>
+  <br>
+  {% endif %}
+  {{ talk.description }}
+  <div class="clearboth"></div>
+</li>

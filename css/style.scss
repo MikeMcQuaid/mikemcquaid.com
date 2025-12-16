@@ -522,3 +522,105 @@ details > summary {
     margin: 0;
   }
 }
+
+.type-thought {
+  margin: 1em 0 2em 0;
+  padding-top: 2em;
+}
+
+.thoughts-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+.index-lists .thought-card {
+  margin-bottom: 2em;
+}
+
+.thought-card {
+  @include border($border-colour-light);
+  border-radius: 10px;
+  padding: 1em 1em 0.5em 1em;
+}
+
+.thought-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65em;
+  text-align: left;
+}
+
+.thought-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50% !important;
+  object-fit: cover;
+  padding: 0 !important;
+  margin: 0.1em 0 0 0 !important;
+}
+
+.thought-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.thought-author {
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
+.thought-date {
+  color: #555;
+  font-size: 0.95em;
+
+  @media (prefers-color-scheme: dark) {
+    color: #cdd1da;
+  }
+}
+
+.thought-body p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+.thought-actions {
+  display: flex;
+  gap: 0.75em;
+}
+
+.thought-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  padding: 0.5em 0.25em;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  background: $text-background-colour;
+  font: 18px sans-serif;
+  flex: 1 1 0;
+  text-decoration: none;
+
+  svg {
+    fill: currentColor;
+  }
+
+  &:hover {
+    background: darken($text-background-colour, 10%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: $page-text-colour;
+    background-color: $page-background-colour;
+
+    &:hover {
+      background: lighten($page-background-colour, 10%);
+    }
+  }
+}
+
+.thought-js-button {
+  display: none;
+}

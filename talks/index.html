@@ -2,22 +2,15 @@
 title: Talks
 layout: base
 ---
+<a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
+  <h2>
+    {{ page.title }}
+  </h2>
+</a>
+<p>Slides and, when available, recordings of talks I've given.</p>
 <ul class="index-lists talks">
   {% for talk in site.talks reversed %}
   {% if site.future == false and talk.date > site.time %} {% continue %} {% endif %}
-  <li>
-    <a href="{{ talk.url | absolute_url }}" title="{{ talk.title }}">
-      {% if talk.speakerdeck-id %}
-      <span class="speakerdeck-thumb"><img alt="{{ talk.title }} slides thumbnail"
-          src="https://speakerd.s3.amazonaws.com/presentations/{{ talk.speakerdeck-id }}/preview_slide_0.jpg" /></span>
-      {% endif %}
-      <h2>
-        {{ talk.title }}
-      </h2>
-    </a>
-    {{ talk.description }}
-    <br />
-    <div class="clearboth"></div>
-  </li>
+  {% include talk-card.html talk=talk %}
   {% endfor %}
 </ul>

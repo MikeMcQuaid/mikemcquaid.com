@@ -6,7 +6,7 @@ redirect_from:
 - /contact/
 ---
 Hi, I’m Mike McQuaid.
-I build great developer tools.
+I build great software and software teams.
 
 I live in Edinburgh, Scotland: you should visit, it’s lovely here
 
@@ -17,7 +17,8 @@ You can email me about:
 
 On this site, you’ll find:
 
-- [Articles]({{ '/' | absolute_url }}): blog posts I’ve written
+- [Articles]({{ '/articles' | absolute_url }}): blog posts I’ve written
+- [Thoughts]({{ '/thoughts' | absolute_url }}): microblog posts syndicated elsewhere
 - [Projects]({{ '/projects/' | absolute_url }}): things I’ve built or contributed to
 - [Talks]({{ '/talks/' | absolute_url }}): slides and recordings of talks I’ve given
 - [Interviews]({{ '/interviews/' | absolute_url }}): conversations and appearances in text, audio, and video

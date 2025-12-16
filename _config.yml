@@ -47,7 +47,10 @@ feed:
   path: atom.xml
   posts_limit: 25
   collections:
-    - talks
+    talks:
+      path: "/talks.xml"
+    thoughts:
+      path: "/thoughts.xml"
 
 sass:
   style: compressed
@@ -65,13 +68,21 @@ defaults:
       layout: talk
   - scope:
       path: ""
+      type: thoughts
+    values:
+      layout: thought
+  - scope:
+      path: ""
     values:
       image: /images/default-card.png
 
 collections:
   talks:
     output: true
-    permalink: "/:collection/:title/"
+    permalink: "/talks/:title/"
+  thoughts:
+    output: true
+    permalink: "/thoughts/:name/"
 
 github:
   repository_nwo: MikeMcQuaid/mikemcquaid.com

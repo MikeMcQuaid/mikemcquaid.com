@@ -1,0 +1,33 @@
+---
+title: Articles
+layout: base
+permalink: /articles/
+---
+<a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
+  <h2>
+    {{ page.title }}
+  </h2>
+</a>
+<p>Articles, mostly about software, I've written over the years.</p>
+
+<ul class="index-lists">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url | absolute_url }}" title="{{ post.title }}">
+      <h2>
+        {{ post.title }}
+      </h2>
+    </a>
+    <span>
+      {% if post.excerpt contains "<p>" %}
+        {{ post.excerpt }}
+        {% else %}
+      <p>{{ post.excerpt }}</p>
+      {% endif %}
+    </span>
+    <div class="clearboth"></div>
+  </li>
+  {% endfor %}
+</ul>
+
+{%- include newsletter.html -%}
