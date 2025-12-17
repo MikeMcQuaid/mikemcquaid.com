@@ -13,7 +13,7 @@ _Max Howell, 2013, creator of Homebrew_
 
 _Charlie Collins, 2013, coworker at AllTrails_
 
-### [KDAB](http://kdab.com/)
+### [KDAB](https://kdab.com/)
 >
 > KDAB is an internationally operating group of companies specializing in cross-platform software consultancy services. Mike has worked for KDAB as a software engineer on a variety of customer projects, as well as conducted Qt trainings on KDAB's behalf. Mike has always shown utmost professionalism and great technical expertise. Of particular value were his permanent quest for self-improvement, both in his own continued education as well as in improving our internal processes and our services to our customers. He always kept the greater goals in mind, both the customers' and KDAB's, even when deeply involved in the day-to-day detailed work.
 
