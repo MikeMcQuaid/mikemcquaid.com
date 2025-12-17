@@ -1,5 +1,7 @@
 ---
 ---
+@use "sass:color";
+
 $page-background-colour: #111;
 $page-background-dark-colour: black;
 $page-text-colour: #eee;
@@ -608,7 +610,7 @@ details > summary {
   }
 
   &:hover {
-    background: darken($text-background-colour, 10%);
+    background: color.adjust($text-background-colour, $lightness: -10%);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -616,7 +618,7 @@ details > summary {
     background-color: $page-background-colour;
 
     &:hover {
-      background: lighten($page-background-colour, 10%);
+      background: color.adjust($page-background-colour, $lightness: 10%);
     }
   }
 }
