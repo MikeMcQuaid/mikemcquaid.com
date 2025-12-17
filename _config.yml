@@ -74,7 +74,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /images/default-card.png
+      image: null
 
 collections:
   talks:
