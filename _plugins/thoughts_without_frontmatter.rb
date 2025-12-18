@@ -31,8 +31,6 @@ module ThoughtCollectionLoader
 
     def git_timestamp(path)
       git_output = `git log -1 --format=%cI -- "#{path}" 2>/dev/null`.strip
-      return File.mtime(path) if git_output.empty?
-
       Time.parse(git_output)
     end
 
