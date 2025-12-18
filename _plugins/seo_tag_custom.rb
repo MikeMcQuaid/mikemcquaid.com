@@ -11,7 +11,8 @@ module Jekyll
       page = context.registers[:page] || {}
       return output if page["collection"] != "thoughts"
 
-      output.gsub(%r{\n?\s*<meta\s+property="twitter:title"\s+content="[^"]*"\s*/>\s*}i, "\n")
+      output.gsub(%r{\n?\s*<meta\s+property="og:title"\s+content="[^"]*"\s*/>\s*}i, "\n")
+            .gsub(%r{\n?\s*<meta\s+property="twitter:title"\s+content="[^"]*"\s*/>\s*}i, "\n")
             .gsub(%r{\n?\s*<meta\s+name="twitter:title"\s+content="[^"]*"\s*/>\s*}i, "\n")
     end
   end
