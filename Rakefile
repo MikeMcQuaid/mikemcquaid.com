@@ -42,7 +42,7 @@ task test: :jekyll do
       %r{^https://www\.linkedin\.com/},
       %r{^https://docs\.github\.com/en/},
       %r{^https://stackoverflow\.com/},
-      %r{^https://mikemcquaid\.com/.+[\-].+[\-].+},
+      %r{^https://mikemcquaid\.com/},
       %r{^https://www\.patreon\.com/},
       %r{^https://news\.ycombinator\.com/},
       %r{^https://brenebrown\.com/},
