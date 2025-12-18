@@ -4,5 +4,6 @@ feed_collections:
   - posts
   - talks
   - thoughts
+  - interviews
 feed_title_suffix: false
 ---

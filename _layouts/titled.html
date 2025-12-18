@@ -1,0 +1,14 @@
+---
+layout: base
+---
+<a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
+  <h2>
+    {{ page.title }}
+  </h2>
+</a>
+
+{% if page.description %}
+<p>{{ page.description }}</p>
+{% endif %}
+
+{{ content }}

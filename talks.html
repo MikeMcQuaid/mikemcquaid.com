@@ -1,13 +1,8 @@
 ---
 title: Talks
-layout: base
+layout: titled
+description: Slides and, when available, recordings of talks I've given.
 ---
-<a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
-  <h2>
-    {{ page.title }}
-  </h2>
-</a>
-<p>Slides and, when available, recordings of talks I've given.</p>
 <ul class="index-lists talks">
   {% for talk in site.talks reversed %}
   {% if site.future == false and talk.date > site.time %} {% continue %} {% endif %}

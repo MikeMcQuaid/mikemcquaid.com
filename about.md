@@ -1,13 +1,11 @@
 ---
 title: About Me
-layout: page
+layout: titled
+description: Hi, I’m Mike McQuaid. I build great software and software teams.
 redirect_from:
 - /blog/about/
 - /contact/
 ---
-Hi, I’m Mike McQuaid.
-I build great software and software teams.
-
 I live in Edinburgh, Scotland: you should visit, it’s lovely here
 
 You can email me about:

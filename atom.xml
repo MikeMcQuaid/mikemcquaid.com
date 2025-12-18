@@ -11,12 +11,7 @@ posse_post:
     bsky:
       attach_link: true
       append_url: false
-    x:
-      truncate: true
-      append_url: true
-      append_url_spacer: " "
     mastodon:
-      append_url: true
       append_url_spacer: "\n\n"
     threads:
       attach_link: true

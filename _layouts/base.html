@@ -13,6 +13,8 @@
     href="{{ '/talks.xml' | absolute_url }}" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Thoughts)"
     href="{{ '/thoughts.xml' | absolute_url }}" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Interviews)"
+    href="{{ '/interviews.xml' | absolute_url }}" />
   <link rel="stylesheet" type="text/css" href="{{ '/css/styles.css' | absolute_url }}" />
   <link rel="stylesheet" type="text/css" href="{{ '/css/pygments.css' | absolute_url }}" />
   <link rel="icon" type="image/x-icon" sizes="any" href="{{ '/images/favicon.ico' | absolute_url }}">
@@ -71,6 +73,9 @@
             {% elsif page.collection == 'thoughts' or page.url contains '/thoughts/' %}
             {% assign feed_path = '/thoughts.xml' %}
             {% assign feed_label = 'RSS/Atom (Thoughts)' %}
+            {% elsif page.url contains '/interviews/' %}
+            {% assign feed_path = '/interviews.xml' %}
+            {% assign feed_label = 'RSS/Atom (Interviews)' %}
             {% else %}
             {% assign feed_path = '/all.xml' %}
             {% assign feed_label = 'RSS/Atom' %}

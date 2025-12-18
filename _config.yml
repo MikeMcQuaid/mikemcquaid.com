@@ -73,6 +73,8 @@ collections:
   thoughts:
     output: true
     permalink: "/thoughts/:name/"
+  interviews:
+    output: false
 
 github:
   repository_nwo: MikeMcQuaid/mikemcquaid.com

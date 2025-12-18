@@ -46,13 +46,28 @@
   {% for item in feed_items limit: 25 %}
     <entry>
       {% assign item_title = item.title | smartify | strip_html | normalize_whitespace | xml_escape %}
+      {% assign item_href = item.url | absolute_url %}
+      {% if item.link %}
+        {% assign item_href = item.link %}
+        {% unless item_href contains "://" %}
+          {% assign item_href = item_href | absolute_url %}
+        {% endunless %}
+      {% endif %}
 
       <title type="html">{{ item_title }}</title>
-      <link href="{{ item.url | absolute_url }}" rel="alternate" type="text/html" title="{{ item_title }}" />
+      <link href="{{ item_href | xml_escape }}" rel="alternate" type="text/html" title="{{ item_title }}" />
       <published>{{ item.date | date_to_xmlschema }}</published>
       <updated>{{ item.last_modified_at | default: item.date | date_to_xmlschema }}</updated>
-      <id>{{ item.id | absolute_url | xml_escape }}</id>
-      <content type="html" xml:base="{{ item.url | absolute_url | xml_escape }}"><![CDATA[{{ item.content | strip }}]]></content>
+      <id>{{ item_href | xml_escape }}</id>
+      {% capture item_content %}
+        {% if item.collection == "interviews" %}
+          Interviewed by {{ item.publication }}.
+          {{ item.content }}
+        {% else %}
+          {{ item.content }}
+        {% endif %}
+      {% endcapture %}
+      <content type="html" xml:base="{{ item_href | xml_escape }}"><![CDATA[{{ item_content | strip }}]]></content>
 
       {% assign item_author = item.author | default: site.author %}
       {% assign item_author_email = item_author.email %}

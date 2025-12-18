@@ -2,7 +2,7 @@
 title: Mike McQuaid
 layout: base
 ---
-{% assign combined = site.posts | concat: site.talks | concat: site.thoughts %}
+{% assign combined = site.posts | concat: site.talks | concat: site.thoughts | concat: site.interviews %}
 {% assign sorted = combined | sort: 'date' | reverse %}
 {% assign has_thoughts = false %}
 <ul class="index-lists">
@@ -12,6 +12,8 @@ layout: base
   {% include thought-card.html thought=item %}
   {% elsif item.collection == "talks" %}
   {% include talk-card.html talk=item talk_date=item.date %}
+  {% elsif item.collection == "interviews" %}
+  {% include interview-card.html interview=item index_page=true %}
   {% else %}
   <li>
     <a href="{{ item.url | absolute_url }}" title="{{ item.title | default: item.slug }}">
@@ -20,7 +22,7 @@ layout: base
       </h2>
     </a>
     <p class="post_date">
-      {{ item.date | date: "%-d %B %Y" }}
+      {{ item.date | date_to_long_string }}
     </p>
     <span>
       {% if item.excerpt contains "<p>" %}

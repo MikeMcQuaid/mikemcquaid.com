@@ -1,18 +1,12 @@
 ---
 title: Articles
-layout: base
+layout: titled
+description: Articles, mostly about software, I've written over the years.
 permalink: /articles/
 redirect_from:
 - /blog/
 - /posts/
 ---
-<a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
-  <h2>
-    {{ page.title }}
-  </h2>
-</a>
-<p>Articles, mostly about software, I've written over the years.</p>
-
 <ul class="index-lists">
   {% for post in site.posts %}
   <li>

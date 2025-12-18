@@ -12,7 +12,7 @@
   </a>
   {% if include.talk_date %}
   <span>
-    {{ include.talk_date | date: "%-d %B %Y" }}
+    {{ include.talk_date | date_to_long_string }}
   </span>
   <br>
   {% endif %}

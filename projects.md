@@ -1,9 +1,8 @@
 ---
 title: Projects
-layout: page
+layout: titled
+description: A portfolio of my career and hobby projects.
 ---
-A portfolio of my career and hobby projects.
-
 ### Current
 
 #### [Homebrew](https://brew.sh)

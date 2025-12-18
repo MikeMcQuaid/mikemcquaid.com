@@ -1,9 +1,9 @@
 ---
 layout: atom_feed
-feed_collection: talks
-feed_title_suffix: Talks
+feed_collection: interviews
+feed_title_suffix: Interviews
 posse_post:
-  format_string: "I gave a talk: {{title}}\n\n{{summary}}"
+  format_string: "{{title}}\n\nInterviewed by {{publication}}."
   truncate: true
   append_url: true
   append_url_spacer: " "

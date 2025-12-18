@@ -1,6 +1,6 @@
 ---
 title: Now
-layout: page
+layout: titled
 ---
 
 (This is [a now page](https://nownownow.com/about), and if you have your own site, [you should make one, too](https://sivers.org/now2)).

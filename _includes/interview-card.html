@@ -1,0 +1,19 @@
+<li>
+  <a href="{{ include.interview.link }}" title="{{ include.interview.title }}">
+    <h2>
+      {{ include.interview.title }}
+    </h2>
+  </a>
+  <p class="post_date">
+    {{ include.interview.date | date_to_long_string }}
+  </p>
+  <span>
+    {% if include.index_page %}
+    Interviewed by
+    {% endif %}
+    {{ include.interview.publication }}
+    {% if include.interview.content and include.interview.content != "" %}
+    {{ include.interview.content }}
+    {% endif %}
+  </span>
+</li>
