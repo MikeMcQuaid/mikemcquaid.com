@@ -18,13 +18,20 @@ $border-colour-dark: black;
   border: 1px solid $colour;
 }
 
+html {
+  background-color: $page-background-dark-colour;
+}
+
+body {
+  background-color: $page-background-colour;
+}
+
 html, body {
   font: 1.1em Georgia, serif;
   line-height: 150%;
   padding: 0;
   margin: 0;
   text-align: left;
-  background-color: $page-background-colour;
   color: $page-text-colour;
 
   @media print {
@@ -489,10 +496,9 @@ blockquote {
   }
 }
 
-#content > ul {
+.index-lists {
   margin-top: 0;
   padding-left: 0;
-  padding-top: 0.5em;
 }
 
 .clearboth {

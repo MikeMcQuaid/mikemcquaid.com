@@ -17,12 +17,14 @@
     href="{{ '/atom.xml' | absolute_url }}" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Talks)"
     href="{{ '/talks.xml' | absolute_url }}" />
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Thoughts)"
-    href="{{ '/thoughts.xml' | absolute_url }}" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Interviews)"
     href="{{ '/interviews.xml' | absolute_url }}" />
-	  <link rel="stylesheet" type="text/css" href="{{ '/css/styles.css' | absolute_url }}?v={{ '/css/styles.scss' | cache_bust }}" />
-	  <link rel="stylesheet" type="text/css" href="{{ '/css/pygments.css' | absolute_url }}?v={{ '/css/pygments.css' | cache_bust }}" />
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Thoughts)"
+    href="{{ '/thoughts.xml' | absolute_url }}" />
+  <link rel="stylesheet" type="text/css"
+    href="{{ '/css/styles.css' | absolute_url }}?v={{ '/css/styles.scss' | cache_bust }}" />
+  <link rel="stylesheet" type="text/css"
+    href="{{ '/css/pygments.css' | absolute_url }}?v={{ '/css/pygments.css' | cache_bust }}" />
   <link rel="icon" type="image/x-icon" sizes="any" href="{{ '/images/favicon.ico' | absolute_url }}">
   <link rel="icon" type="image/png" href="{{ '/images/icon.png' | absolute_url }}">
   <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | absolute_url }}">
@@ -39,10 +41,10 @@
       <div>
         <ul>
           <li><a href="{{ '/articles' | absolute_url }}">Articles</a></li>
-          <li><a href="{{ '/thoughts/' | absolute_url }}">Thoughts</a></li>
-          <li><a href="{{ '/projects/' | absolute_url }}">Projects</a></li>
           <li><a href="{{ '/talks/' | absolute_url }}">Talks</a></li>
           <li><a href="{{ '/interviews/' | absolute_url }}">Interviews</a></li>
+          <li><a href="{{ '/thoughts/' | absolute_url }}">Thoughts</a></li>
+          <li><a href="{{ '/projects/' | absolute_url }}">Projects</a></li>
           <li><a title="Curriculum Vitae/Resume" href="{{ '/cv/' | absolute_url }}">CV</a></li>
           <li><a href="{{ '/now/' | absolute_url }}">Now</a></li>
           <li><a href="{{ '/about/' | absolute_url }}">About</a></li>
