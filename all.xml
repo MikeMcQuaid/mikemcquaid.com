@@ -1,0 +1,8 @@
+---
+layout: atom_feed
+feed_collections:
+  - posts
+  - talks
+  - thoughts
+feed_title_suffix: false
+---

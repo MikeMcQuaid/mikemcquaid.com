@@ -35,22 +35,12 @@ exclude:
 
 plugins:
   - jekyll-asciidoc
-  - jekyll-feed
   - jekyll-optional-front-matter
   - jekyll-redirect-from
   - jekyll-relative-links
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-titles-from-headings
-
-feed:
-  path: atom.xml
-  posts_limit: 25
-  collections:
-    talks:
-      path: "/talks.xml"
-    thoughts:
-      path: "/thoughts.xml"
 
 sass:
   style: compressed

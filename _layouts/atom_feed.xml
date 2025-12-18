@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"{% if page.posse_post %} xmlns:posse="https://posseparty.com/2024/Feed"{% endif %}>
+  <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
+  <link href="{{ page.url | absolute_url }}" rel="self" type="application/atom+xml" />
+  <link href="{{ '/' | absolute_url }}" rel="alternate" type="text/html" />
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ page.url | absolute_url | xml_escape }}</id>
+
+  {% assign title = site.title %}
+  {% if page.feed_title_suffix != false and page.feed_title_suffix %}
+    {% assign title = title | append: " | " | append: page.feed_title_suffix %}
+  {% endif %}
+
+  <title type="html">{{ title | smartify | xml_escape }}</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  <author>
+    <name>{{ site.author.name | default: site.author | xml_escape }}</name>
+    {% if site.author.email %}
+      <email>{{ site.author.email | xml_escape }}</email>
+    {% endif %}
+    {% if site.author.uri %}
+      <uri>{{ site.author.uri | xml_escape }}</uri>
+    {% endif %}
+  </author>
+
+  {% assign feed_items = "" | split: "" %}
+  {% if page.feed_collections %}
+    {% for c in page.feed_collections %}
+      {% if c == "posts" %}
+        {% assign items = site.posts %}
+      {% else %}
+        {% assign items = site[c] %}
+      {% endif %}
+      {% assign feed_items = feed_items | concat: items %}
+    {% endfor %}
+  {% else %}
+    {% assign c = page.feed_collection %}
+    {% if c == "posts" %}
+      {% assign feed_items = site.posts %}
+    {% else %}
+      {% assign feed_items = site[c] %}
+    {% endif %}
+  {% endif %}
+
+  {% assign feed_items = feed_items | sort: "date" | reverse %}
+  {% for item in feed_items limit: 25 %}
+    <entry>
+      {% assign item_title = item.title | smartify | strip_html | normalize_whitespace | xml_escape %}
+
+      <title type="html">{{ item_title }}</title>
+      <link href="{{ item.url | absolute_url }}" rel="alternate" type="text/html" title="{{ item_title }}" />
+      <published>{{ item.date | date_to_xmlschema }}</published>
+      <updated>{{ item.last_modified_at | default: item.date | date_to_xmlschema }}</updated>
+      <id>{{ item.id | absolute_url | xml_escape }}</id>
+      <content type="html" xml:base="{{ item.url | absolute_url | xml_escape }}"><![CDATA[{{ item.content | strip }}]]></content>
+
+      {% assign item_author = item.author | default: site.author %}
+      {% assign item_author_email = item_author.email %}
+      {% assign item_author_uri = item_author.uri  %}
+      {% assign item_author_name = item_author.name %}
+
+      <author>
+        <name>{{ item_author_name | default: "" | xml_escape }}</name>
+        {% if item_author_email %}
+          <email>{{ item_author_email | xml_escape }}</email>
+        {% endif %}
+        {% if item_author_uri %}
+          <uri>{{ item_author_uri | xml_escape }}</uri>
+        {% endif %}
+      </author>
+
+      {% assign item_summary = item.description | default: item.excerpt %}
+      {% if item_summary and item_summary != empty %}
+        <summary type="html"><![CDATA[{{ item_summary | strip_html | normalize_whitespace }}]]></summary>
+      {% endif %}
+
+      {% if page.posse_post %}
+        <posse:post format="json"><![CDATA[{{ page.posse_post | jsonify }}]]></posse:post>
+      {% endif %}
+
+      {% assign item_image = item.image.path | default: item.image %}
+      {% if item_image %}
+        {% unless item_image contains "://" %}
+          {% assign item_image = item_image | absolute_url %}
+        {% endunless %}
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ item_image | xml_escape }}" />
+        <media:content medium="image" url="{{ item_image | xml_escape }}" xmlns:media="http://search.yahoo.com/mrss/" />
+      {% endif %}
+    </entry>
+  {% endfor %}
+</feed>

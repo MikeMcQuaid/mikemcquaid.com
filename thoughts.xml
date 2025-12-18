@@ -1,0 +1,9 @@
+---
+layout: atom_feed
+feed_collection: thoughts
+feed_title_suffix: Thoughts
+posse_post:
+  format_string: "{{content}}"
+  append_url: false
+  attach_link: false
+---

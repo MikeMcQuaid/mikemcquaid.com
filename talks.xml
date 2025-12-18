@@ -1,0 +1,27 @@
+---
+layout: atom_feed
+feed_collection: talks
+feed_title_suffix: Talks
+posse_post:
+  format_string: "I gave a talk: {{title}}\n\n{{summary}}"
+  truncate: true
+  append_url: true
+  append_url_spacer: " "
+  platform_overrides:
+    bsky:
+      attach_link: true
+      append_url: false
+    x:
+      truncate: true
+      append_url: true
+      append_url_spacer: " "
+    mastodon:
+      append_url: true
+      append_url_spacer: "\n\n"
+    threads:
+      attach_link: true
+      append_url: false
+    linkedin:
+      attach_link: true
+      append_url: false
+---
