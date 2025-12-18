@@ -36,8 +36,8 @@ In the spirit of ["vibe engineering"](https://simonwillison.net/2025/Oct/7/vibe-
 
 ### 🫵 What Do You Need To Do?
 
-**TL;DR: If you're subscribed to [`/atom.xml`]({{ '/atom.xml' | absolute_url }}), nothing changes.
-If you want additional content: subscribe to one or more of the new feeds above.
+**TL;DR: If you're subscribed to [`/atom.xml`]({{ '/atom.xml' | absolute_url }}), nothing changes.**
+**If you want additional content: subscribe to one or more of the new feeds above.**
 
 Thanks for reading this blog ❤️.
 It will be 20 years old in 2026 and it's nice to see the current blogging resurgence.
