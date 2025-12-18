@@ -533,7 +533,7 @@ details > summary {
 
 .type-thought {
   margin: 0 0 2em 0;
-  padding-top: 2em;
+  padding-top: 1.5em;
 }
 
 .thoughts-feed {
@@ -550,6 +550,7 @@ details > summary {
   @include border($border-colour-light);
   border-radius: 10px;
   padding: 1em 1em 0.5em 1em;
+  margin-top: 0.5em;
 }
 
 .thought-header {
