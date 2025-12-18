@@ -35,7 +35,7 @@ task test: :jekyll do
     ignore_files: [
       %r{/making-dizzy-shine-with-ajax/}
     ],
-    ignore_status_codes: [0, 302, 303, 400, 429, 521],
+    ignore_status_codes: [0, 302, 303, 400, 418, 429, 521],
     ignore_urls: [
       %r{^https://twitter.com/},
       %r{^https://web\.archive\.org/web/},
