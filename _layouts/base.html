@@ -5,7 +5,13 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="generator" content="Jekyll {{ jekyll.version }}" />
-  {% seo %}
+  {% seo_custom %}
+  {% if page.collection == "thoughts" %}
+  <meta name="twitter:title" content="{{ site.title | escape }}" />
+  <meta name="twitter:description"
+    content="{{ page.content | markdownify | strip_html | strip_newlines | strip | truncate: 200 | escape }}" />
+  {% endif %}
+
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/all.xml' | absolute_url }}" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Articles)"
     href="{{ '/atom.xml' | absolute_url }}" />
