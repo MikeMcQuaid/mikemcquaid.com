@@ -5,7 +5,7 @@ layout: base
 {% assign combined = site.posts | concat: site.talks | concat: site.thoughts | concat: site.interviews %}
 {% assign sorted = combined | sort: 'date' | reverse %}
 {% assign has_thoughts = false %}
-<ul class="index-lists">
+<ul class="index-lists index">
   {% for item in sorted limit:25 %}
   {% if item.collection == "thoughts" %}
   {% assign has_thoughts = true %}
