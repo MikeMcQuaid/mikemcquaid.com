@@ -2,6 +2,7 @@
 title: What is a Staff (or Staff-Plus or Principal) Engineer?
 redirect_from:
 - /2021/10/01/what-is-a-staff-plus-principal-engineer/
+description: "What Staff/Principal means at GitHub, how IC and EM tracks diverge, and guidance for choosing and succeeding on the Staff+ path."
 ---
 In 2020, GitHub promoted me from Senior to Staff Engineer. This title and role seems commonplace and well understood at some technology companies but unknown and unused at many others.
 

@@ -1,3 +1,6 @@
+---
+description: "Tips from years of remote work: measure output not hours, write more than meet, treat Slack/email as async, use emoji to convey tone, and meet in person sometimes."
+---
 COVID-19 was many people’s first introduction to the working-from-home experience. I’ve been lucky enough to have been working from home exclusively since 2009 and at US-based companies (e.g. GitHub) since 2012. I’ve also been an EU-based open-source maintainer since 2007 and maintaining the globally-distributed Homebrew package manager since 2009. These experiences have helped me learn some tips on how to be more effective working remotely that I’d like to share with you:
 
 - ⚙️ Evaluate performance on output, not on working hours: When everyone’s not colocated in the same place for meetings, pair programming, etc.: you don’t need everyone to work the same schedules. As long as there’s enough overlap for some synchronous meetings, most work should be done asynchronously at the times and places that are most productive for that individual. 40 hours spent “working” unproductively can be worse for the business than 20 focused hours spent working at maximum efficiency. Introspect when and how you are most productive and encourage your teams to do so too.

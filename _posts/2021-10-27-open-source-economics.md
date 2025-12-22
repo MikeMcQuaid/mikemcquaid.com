@@ -3,6 +3,7 @@ title: Open Source Economics (is not what you think)
 image: /images/a/open-source-economics.png
 redirect_from:
 - /2021/10/27/open-source-economics/
+description: "Why 'open source economics' is about more than money, and why sustainable projects need correct investment and understanding, not just cash."
 ---
 
 "Open Source Economics" and the "Open Source Economy" are regularly discussed in the context of how to improve open source software's sustainability, contributor diversity and ecosystem quality. Too often, though, the use of the word "economics" brings incorrect assumptions about the problems to be solved.

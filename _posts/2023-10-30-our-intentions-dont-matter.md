@@ -1,5 +1,6 @@
 ---
 title: Our Intentions Don't Matter
+description: "Why outcomes matter more than intentions, from the SBF/FTX saga to everyday coworkers, and how we should judge impact rather than stated motives."
 ---
 
 This is a bit of a departure from my usual writing but it's a topic that's been on my mind for years.

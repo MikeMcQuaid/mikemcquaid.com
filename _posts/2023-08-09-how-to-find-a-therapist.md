@@ -1,3 +1,6 @@
+---
+description: "Step-by-step approach I used to find a therapist: filter Psychology Today listings, screen for fit, book intro sessions, and choose based on what you need."
+---
 In 2020, due to the "fun" combination of COVID-19 and two young children at home, I wanted to see an (individual) therapist.
 At the time I was employed by GitHub, which had a program where I could get up to six sessions paid for by them.
 After five of these, I'd found some benefits but wanted to try a different approach with a therapist of my choice.

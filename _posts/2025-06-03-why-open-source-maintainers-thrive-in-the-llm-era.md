@@ -1,5 +1,6 @@
 ---
 title: Why Open Source Maintainers Thrive in the LLM Era
+description: "From early Copilot to Cursor/ChatGPT, I share how LLMs changed my workflow and why open source maintainers can thrive rather than be displaced in the LLM era."
 ---
 
 At the time of writing (June 2025), the prevailing view in the software industry is that LLM-powered AI is either completely useless or will imminently destroy all software engineering jobs.

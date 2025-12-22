@@ -1,5 +1,6 @@
 ---
 title: Minimum Viable Engineering Management
+description: "Guide to lightweight engineering management when you lack full-time managers: clear 1:1s, feedback, context sharing and just enough process to keep teams effective."
 ---
 
 When I first joined [GitHub](https://github.com) in 2013, there was no engineering management.

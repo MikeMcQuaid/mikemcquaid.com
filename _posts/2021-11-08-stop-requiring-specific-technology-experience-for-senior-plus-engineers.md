@@ -2,6 +2,7 @@
 title: Stop requiring specific technology experience for senior-plus engineers
 redirect_from:
 - /2021/11/08/stop-requiring-specific-technology-experience-for-senior-plus-engineers/
+description: "Why senior+ engineers shouldn't be screened by years in a specific technology and how to hire for capability and learning speed instead."
 ---
 
 A conversation I've had (too) many times in our industry:

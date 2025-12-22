@@ -1,6 +1,7 @@
 ---
 redirect_from:
 - /2021/09/09/the-mentorship-diamond/
+description: "Why everyone should have mentors and mentees, how I benefited at GitHub and Homebrew, and advice on balancing peer contact with mentorship."
 ---
 I’ve been very lucky to have some great mentors and mentees in my time at GitHub. Through weekly 1:1s with [@seejohnrun](https://twitter.com/seejohnrun) explaining to me what a staff engineer should (and should not) be doing I was able to get the role and (hopefully!) do a reasonable job at it. Currently, I’m lucky to have regular mentorship from [@eileencodes](https://github.com/eileencodes) who guides me on how to think about the most important work I could be doing and avoid pitfalls that I would not otherwise have seen.
 

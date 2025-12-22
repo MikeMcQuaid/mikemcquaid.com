@@ -1,5 +1,6 @@
 ---
 title: Two Years Building Workbrew, a Remote-First Enterprise Homebrew Startup
+description: "Lessons from two years building Workbrew after leaving GitHub—pivoting, fundraising, shipping an enterprise Homebrew layer, and running a remote team."
 ---
 
 I left GitHub after 10 years to cofound Raise.dev.

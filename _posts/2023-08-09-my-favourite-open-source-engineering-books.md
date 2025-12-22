@@ -1,3 +1,6 @@
+---
+description: "Books that shaped my open-source engineering approach, from usability to community and teamwork, with notes on why each title still matters."
+---
 I’ve been a professional software engineer and maintaining open source software since 2007. My work on open source has been heavily informed by industry best practises and my work on proprietary software has been heavily informed by open source best practises. Without these books, I’d be a worse engineer on many dimensions. Some of them may feel antiquated but all are still full of relevant wisdom for every open source (and proprietary) software engineer today.
 
 ### [The Design of Everyday Things](https://www.amazon.co.uk/Design-Everyday-Things-Revised-Expanded/dp/0465050654)

@@ -1,3 +1,6 @@
+---
+description: "My UK-centric personal, self-employed and small business finance tips: spend less than you earn, avoid debt, track accounts, save, invest and pay yourself first."
+---
 I'm sporadically asked for financial advice related to personal finances, self-employment, and small business, so I wrote them down.
 I hope you find some of it useful.
 I would be surprised if you disagree with none of it.

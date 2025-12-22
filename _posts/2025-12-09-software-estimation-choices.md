@@ -1,5 +1,6 @@
 ---
 title: Software Estimation Choices
+description: "Breaks estimation into quality, scope and delivery-date tradeoffs, argues you can only pick two at once, and suggests padding and communication to set realistic expectations."
 ---
 
 The process of software estimation is frustrating for software engineers and those who consume their estimates.

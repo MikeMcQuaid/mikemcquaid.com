@@ -1,6 +1,7 @@
 ---
 redirect_from:
 - /2021/11/29/hidden-complexities-of-software-estimation/
+description: "What tripped up one of my estimates and a checklist of hidden complexities to consider when sizing software work."
 ---
 I'm currently working on an internal GitHub project where, for a change, my estimations have been wildly off. Before this project, I'd had a good multi-year streak of never overshooting my estimates and consistently hitting deadlines. This overshoot, combined with some recent reading, has made me think about hidden complexities of software estimation and what I didn't consider when making my estimates. These are in a rough order from "most obvious" to "least obvious".
 

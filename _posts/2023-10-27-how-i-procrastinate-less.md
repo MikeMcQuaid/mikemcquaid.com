@@ -1,3 +1,6 @@
+---
+description: "Practical limits that helped me curb gaming, Linux tinkering, social media, news and HN/Reddit so I can get work done despite weak willpower."
+---
 I have been in a fight with my abysmal lack of self-control since I started university with limitless computer access.
 Each time I uncover some new self-control technique, the advances in technology force me to wrestle harder.
 

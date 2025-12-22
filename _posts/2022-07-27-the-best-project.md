@@ -2,6 +2,7 @@
 title: "The Best Project"
 redirect_from:
 - /2022/07/27/the-best-project/
+description: "A cautionary tale about a 'perfect' greenfield project that customers hated and the lessons about ignorance, arrogance and missing validation."
 ---
 
 This project was the best.

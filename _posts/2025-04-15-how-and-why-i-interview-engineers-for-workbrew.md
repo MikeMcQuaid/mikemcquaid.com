@@ -1,5 +1,6 @@
 ---
 title: How and why I interview engineers for Workbrew
+description: "How I interview engineers for Workbrew: pairing on real code, short predictable loops, valuing open source work, skipping trivia, and the reasoning behind each step."
 ---
 
 In the last

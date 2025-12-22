@@ -1,5 +1,6 @@
 ---
 title: Bootstrapping gem.coop Governance
+description: "How I helped gem.coop bootstrap democratic governance and financial transparency, why I stepped back, and hopes for community-led Ruby stewardship."
 ---
 
 [gem.coop](https://gem.coop) was announced on Monday.

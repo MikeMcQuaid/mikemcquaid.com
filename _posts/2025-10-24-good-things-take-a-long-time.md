@@ -1,5 +1,6 @@
 ---
 title: Good Things Take A Long Time
+description: "Reflections on long-term commitments in life, work and hobbies, why patience compounds results, and when quitting is the right move."
 ---
 
 In tech, 3 years is often considered a "long tenure".

@@ -1,5 +1,6 @@
 ---
 title: Entitlement in Open Source
+description: "Homebrew experiences on entitled behaviour in open source, why boundaries matter for maintainers, and definitions for users, contributors and maintainers."
 ---
 
 There have been discussions in the aftermath of the `log4j` vulnerability about whether or not open source is broken or sustainable, what we can do to improve the sustainability of the open source ecosystem moving forwards, and the entitlement of users and companies in expecting maintainers to fix their problems.
