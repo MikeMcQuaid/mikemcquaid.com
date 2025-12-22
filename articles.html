@@ -9,21 +9,7 @@ redirect_from:
 ---
 <ul class="index-lists">
   {% for post in site.posts %}
-  <li>
-    <a href="{{ post.url | absolute_url }}" title="{{ post.title }}">
-      <h2>
-        {{ post.title }}
-      </h2>
-    </a>
-    <span>
-      {% if post.excerpt contains "<p>" %}
-        {{ post.excerpt }}
-        {% else %}
-      <p>{{ post.excerpt }}</p>
-      {% endif %}
-    </span>
-    <div class="clearboth"></div>
-  </li>
+  {% include article-card.html article=post %}
   {% endfor %}
 </ul>
 

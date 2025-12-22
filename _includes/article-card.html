@@ -1,0 +1,21 @@
+<li>
+  <a href="{{ include.article.url | absolute_url }}" title="{{ include.article.title }}">
+    <h2>
+      {{ include.article.title }}
+    </h2>
+  </a>
+  {% if include.show_date %}
+  <p class="post_date">
+    {{ include.article.date | date_to_long_string }}
+  </p>
+  {% endif %}
+  <span>
+    {% assign item_excerpt = include.article.excerpt %}
+    {% if item_excerpt contains "<p>" %}
+      {{ item_excerpt }}
+      {% else %}
+    <p>{{ item_excerpt }}</p>
+    {% endif %}
+  </span>
+  <div class="clearboth"></div>
+</li>

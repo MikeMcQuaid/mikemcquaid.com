@@ -15,24 +15,7 @@ layout: base
   {% elsif item.collection == "interviews" %}
   {% include interview-card.html interview=item index_page=true %}
   {% else %}
-  <li>
-    <a href="{{ item.url | absolute_url }}" title="{{ item.title | default: item.slug }}">
-      <h2>
-        {{ item.title | default: item.slug }}
-      </h2>
-    </a>
-    <p class="post_date">
-      {{ item.date | date_to_long_string }}
-    </p>
-    <span>
-      {% if item.excerpt contains "<p>" %}
-        {{ item.excerpt }}
-        {% else %}
-      <p>{{ item.excerpt }}</p>
-      {% endif %}
-    </span>
-    <div class="clearboth"></div>
-  </li>
+  {% include article-card.html article=item show_date=true %}
   {% endif %}
   {% endfor %}
 </ul>
