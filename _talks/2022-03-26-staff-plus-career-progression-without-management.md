@@ -1,6 +1,6 @@
 ---
 title: "Staff+: Career Progression Without Management"
-description: The traditional route for progression in the software industry is from a senior-level individual contributor (IC), e.g. a senior engineer/marketer/data scientist/designer, into a management role.
+description: The traditional route for progression in the software industry is from a senior-level individual contributor (IC), e.g. a senior engineer, into a management role.
 speakerdeck-id: 83a8ce7ce0c54c23b76314524a4cfe19
 speakerdeck-ratio: 1.77777777777778
 ---
