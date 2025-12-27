@@ -6,4 +6,5 @@ feed_collections:
   - thoughts
   - interviews
 feed_title_suffix: false
+include_posse_post: false
 ---

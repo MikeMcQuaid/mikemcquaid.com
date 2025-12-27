@@ -6,11 +6,12 @@ posse_post:
   format_string: "{{summary}}"
   attach_link: true
   append_url: false
+  append_url_spacer: "\n\n"
   platform_overrides:
     mastodon:
+      attach_link: false
       append_url: true
-      append_url_spacer: "\n\n"
     x:
+      attach_link: false
       append_url: true
-      append_url_spacer: " "
 ---

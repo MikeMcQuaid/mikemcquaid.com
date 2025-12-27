@@ -4,19 +4,14 @@ feed_collection: interviews
 feed_title_suffix: Interviews
 posse_post:
   format_string: "{{title}}\n\nInterviewed by {{publication}}."
-  truncate: true
-  append_url: true
-  append_url_spacer: " "
+  attach_link: true
+  append_url: false
+  append_url_spacer: "\n\n"
   platform_overrides:
-    bsky:
-      attach_link: true
-      append_url: false
     mastodon:
-      append_url_spacer: "\n\n"
-    threads:
-      attach_link: true
-      append_url: false
-    linkedin:
-      attach_link: true
-      append_url: false
+      attach_link: false
+      append_url: true
+    x:
+      attach_link: false
+      append_url: true
 ---

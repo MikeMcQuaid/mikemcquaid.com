@@ -47,8 +47,10 @@
     <entry>
       {% assign item_title = item.title | smartify | strip_html | normalize_whitespace | xml_escape %}
       {% assign item_href = item.url | absolute_url %}
+      {% assign item_has_link = false %}
       {% if item.link %}
         {% assign item_href = item.link %}
+        {% assign item_has_link = true %}
         {% unless item_href contains "://" %}
           {% assign item_href = item_href | absolute_url %}
         {% endunless %}
@@ -89,12 +91,13 @@
         <summary type="html"><![CDATA[{{ item_summary | strip_html | normalize_whitespace }}]]></summary>
       {% endif %}
 
-      {% if page.posse_post %}
-        <posse:post format="json"><![CDATA[{{ page.posse_post | jsonify }}]]></posse:post>
+      {% assign entry_posse_post = item.posse_post | default: page.posse_post %}
+      {% if entry_posse_post and page.include_posse_post != false %}
+        <posse:post format="json"><![CDATA[{{ entry_posse_post | jsonify }}]]></posse:post>
       {% endif %}
 
       {% assign item_image = item.image.path | default: item.image %}
-      {% if item_image %}
+      {% if item_image and item_has_link == false %}
         {% unless item_image contains "://" %}
           {% assign item_image = item_image | absolute_url %}
         {% endunless %}

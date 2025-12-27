@@ -1,6 +1,11 @@
 {% assign thought = include.thought %}
 {% assign thought_date = thought.last_modified_at | default: site.time %}
 {% assign thought_url = thought.url | absolute_url %}
+{% assign thought_link = thought.link %}
+{% if thought_link and thought_link != "" %}
+{% assign thought_link = thought_link | absolute_url %}
+{% else %}
+{% endif %}
 <article class="thought-card" id="thought-{{ thought.slug }}">
   <header class="thought-header">
     <img class="thought-avatar" src="{{ '/images/me.jpg' | absolute_url }}" alt="Mike McQuaid" width="64" height="64" />
@@ -13,6 +18,9 @@
   </header>
   <div class="thought-body">
     {{ include.content | default: thought.content }}
+    {% if thought_link and thought_link != "" %}
+    <p><a href="{{ thought_link }}">{{ thought_link }}</a></p>
+    {% endif %}
   </div>
   <div class="thought-actions" data-thought-id="{{ thought.slug }}" data-thought-url="{{ thought_url }}">
     <a class="thought-button thought-button-email"

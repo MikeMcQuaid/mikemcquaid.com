@@ -6,4 +6,12 @@ posse_post:
   format_string: "{{content}}"
   append_url: false
   attach_link: false
+posse_post_with_link:
+  format_string: "{{content}}"
+  append_url: true
+  attach_link: false
+  append_url_spacer: "\n\n"
+  platform_overrides:
+    bsky:
+      append_url_label: ""
 ---
