@@ -220,7 +220,7 @@ Added support for Mac OS X 10.6 and Qt/Cocoa, added CPack packaging support and 
 Contributor.
 Added CPack packaging support, Windows support, other features and bug-fixes.
 
-#### [Qt Creator](http://code.qt.io/cgit/qt-creator/qt-creator.git)
+#### [Qt Creator](https://github.com/qt-creator/qt-creator)
 
 ![QtCreator]({{ '/images/a/qtcreator.png' | absolute_url }})
 

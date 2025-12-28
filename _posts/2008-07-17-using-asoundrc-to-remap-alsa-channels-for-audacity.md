@@ -24,7 +24,7 @@ pcm.mic2 {
 }
 {% endhighlight %}
 
-If you add the above to your "~/.[asoundrc](http://www.alsa-project.org/main/index.php/Asoundrc)" or _"/etc/asound.conf"_ then you will find that in Audacity's "Recoding" dropdown you will now have the option _"ALSA: mic2"_. This is simply the same as _"hw:0,2"_ but with the 9th channel swapped with the 1st and the 10th swapped with the second, thus allowing you to select _"2: Stereo"_ or _"1: Mono"_ from the _"Channels"_ dropdown and get the Line/Mic 2 input(s) in Audacity **without the need to constantly delete unwanted tracks**.
+If you add the above to your "~/.[asoundrc](https://www.alsa-project.org/main/index.php/Asoundrc)" or _"/etc/asound.conf"_ then you will find that in Audacity's "Recoding" dropdown you will now have the option _"ALSA: mic2"_. This is simply the same as _"hw:0,2"_ but with the 9th channel swapped with the 1st and the 10th swapped with the second, thus allowing you to select _"2: Stereo"_ or _"1: Mono"_ from the _"Channels"_ dropdown and get the Line/Mic 2 input(s) in Audacity **without the need to constantly delete unwanted tracks**.
 
 **Enjoy!**
 
