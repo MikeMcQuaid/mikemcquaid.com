@@ -56,9 +56,11 @@ module Jekyll
 
       collection.docs.each do |doc|
         path = doc.path
-        git_date_output = `git log -1 --format=%cI -- "#{path}" 2>/dev/null`.strip
-        raise Jekyll::Errors::FatalException, "Failed to get git date for #{path}!" if git_date_output.empty?
-        git_date = Time.parse(git_date_output)
+        git_log_dates_output = `git log --format=%cI --reverse -- "#{path}" 2>/dev/null`
+        git_creation_date_output = git_log_dates_output.lines.first.to_s.strip
+        raise Jekyll::Errors::FatalException, "Failed to get git date for #{path}!" if git_creation_date_output.empty?
+
+        git_date = Time.parse(git_creation_date_output)
 
         doc.read
         doc.data["title"] = thought_title_from_content(doc.content)
