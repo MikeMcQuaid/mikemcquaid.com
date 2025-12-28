@@ -6,7 +6,7 @@ module Jekyll
 
     def cache_bust(asset_path)
       site = @context.registers[:site]
-      relative_path = asset_path.to_s.sub(%r{\A/}, "")
+      relative_path = asset_path.to_s.delete_prefix("/")
       source_path = File.join(site.source, relative_path)
 
       cached = CACHE[source_path]
