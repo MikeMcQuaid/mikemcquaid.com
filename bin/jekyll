@@ -2,4 +2,8 @@
 
 set -euo pipefail
 
-brew bundle exec --check --install -- bundle exec jekyll "$@"
+if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
+  eval "$(brew bundle --check --install env)"
+fi
+
+bundle exec jekyll "$@"
