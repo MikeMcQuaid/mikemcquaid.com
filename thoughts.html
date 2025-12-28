@@ -7,7 +7,8 @@ redirect_from: /takes/
 <p>Short thoughts that are cross-posted to X (Twitter), Bluesky, Mastodon, LinkedIn and Threads.</p>
 
 <div class="thoughts-feed">
-  {% for thought in site.thoughts reversed %}
+  {% assign sorted_thoughts = site.thoughts | sort: 'date' | reverse %}
+  {% for thought in sorted_thoughts %}
   {% if site.future == false and thought.date > site.time %} {% continue %} {% endif %}
   {% include thought-card.html thought=thought %}
   {% endfor %}

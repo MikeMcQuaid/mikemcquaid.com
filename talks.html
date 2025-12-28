@@ -4,7 +4,8 @@ layout: titled
 description: Slides and, when available, recordings of talks I've given.
 ---
 <ul class="index-lists talks">
-  {% for talk in site.talks reversed %}
+  {% assign sorted_talks = site.talks | sort: 'date' | reverse %}
+  {% for talk in sorted_talks %}
   {% if site.future == false and talk.date > site.time %} {% continue %} {% endif %}
   {% include talk-card.html talk=talk %}
   {% endfor %}

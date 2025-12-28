@@ -5,7 +5,8 @@ description: I sometimes give interviews about open source, Workbrew, Homebrew, 
 redirect_from: /press
 ---
 <ul class="index-lists">
-  {% for interview in site.interviews reversed %}
+  {% assign sorted_interviews = site.interviews | sort: 'date' | reverse %}
+  {% for interview in sorted_interviews %}
   {% include interview-card.html interview=interview %}
   {% endfor %}
 </ul>
