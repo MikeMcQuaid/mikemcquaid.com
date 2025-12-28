@@ -22,7 +22,7 @@
     <p><a href="{{ thought_link }}">{{ thought_link }}</a></p>
     {% endif %}
   </div>
-  <div class="thought-actions" data-thought-id="{{ thought.slug }}" data-thought-url="{{ thought_url }}">
+  <div class="thought-actions" data-thought-id="{{ thought.slug }}" data-thought-url="{{ thought_url }}" data-thought-title="{{ thought.title | strip_html | escape }}">
     <a class="thought-button thought-button-email"
       href="mailto:{{ site.author.email }}?subject={{ 'Re: ' | append: thought.slug | uri_escape }}&body={{ 'My comment on ' | append: thought_url | uri_escape }}">
       <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

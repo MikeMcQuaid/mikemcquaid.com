@@ -49,7 +49,7 @@
           const container = button.closest(".thought-actions");
           if (!container) return;
           const url = container.dataset.thoughtUrl;
-          const title = container.dataset.thoughtTitle || document.title;
+          const title = container.dataset.thoughtTitle;
           try {
             await navigator.share({ title, text: title, url });
           } catch (error) {
