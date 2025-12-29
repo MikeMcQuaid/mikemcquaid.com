@@ -68,6 +68,9 @@
         {% else %}
           {{ item.content }}
         {% endif %}
+        {% if item.collection == "thoughts" and item_has_link %}
+          <p><a href="{{ item_href }}">{{ item_href }}</a></p>
+        {% endif %}
       {% endcapture %}
       <content type="html" xml:base="{{ item_href | xml_escape }}"><![CDATA[{{ item_content | strip }}]]></content>
 
