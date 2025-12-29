@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if ! git diff --cached --name-only --diff-filter=ACM -- _thoughts/*.md | grep -q .; then
+  exit 0
+fi
+
 bin/thought-link-metadata update
