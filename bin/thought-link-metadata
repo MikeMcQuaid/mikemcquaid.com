@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  echo "Usage: bin/thought-link-metadata [add-githooks|remove-githooks|status-githooks|update]"
+}
+
+action="${1:-status-githooks}"
+case "$action" in
+  add-githooks)
+    git config core.hooksPath .githooks
+    ;;
+  remove-githooks)
+    git config --unset core.hooksPath || true
+    ;;
+  status-githooks)
+    hooks_path="$(git config --get core.hooksPath || true)"
+    if [[ "$hooks_path" == ".githooks" ]]; then
+      echo "enabled (.githooks)"
+    elif [[ -z "$hooks_path" ]]; then
+      echo "disabled (default)"
+    else
+      echo "custom ($hooks_path)"
+    fi
+    ;;
+  update)
+    shift || true
+    if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
+      eval "$(brew bundle --check --install env)"
+    fi
+    bundle exec ruby -r ./lib/thought_link_metadata -e 'ThoughtLinkMetadata.run'
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac

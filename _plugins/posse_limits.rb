@@ -1,4 +1,5 @@
 require "time"
+require_relative "../lib/thought_link_metadata"
 
 module Jekyll
   class PosseLimits < Generator
@@ -63,6 +64,7 @@ module Jekyll
         git_date = Time.parse(git_creation_date_output)
 
         doc.read
+        apply_thought_link_metadata(doc)
         doc.data["title"] = thought_title_from_content(doc.content)
         doc.data["layout"] = "thought"
         doc.data["date"] = doc.data["last_modified_at"] = git_date
@@ -76,7 +78,6 @@ module Jekyll
       feed_page = feed_page_for(site, "thoughts")
       base_posse_post = feed_page.data.fetch("posse_post")
       linked_posse_post = feed_page.data.fetch("posse_post_with_link")
-
       docs.each do |doc|
         next if doc.data["posse_post"]
 
@@ -86,6 +87,16 @@ module Jekyll
         else
           linked_posse_post
         end.dup
+        if link != ""
+          link_title = doc.data["link_title"].to_s.strip
+          link_description = doc.data["link_description"].to_s.strip
+          if link_title.empty? || link_description.empty?
+            raise Jekyll::Errors::FatalException,
+                  "Thought link metadata missing: #{doc.relative_path}"
+          end
+          posse_post["title"] = link_title
+          posse_post["summary"] = link_description
+        end
         doc.data["posse_post"] = posse_post
       end
     end
@@ -166,6 +177,10 @@ module Jekyll
       truncated = candidate[0...THOUGHT_TITLE_MAX_LENGTH]
       truncated = truncated.sub(/\s+\S*\z/, "")
       "#{truncated.rstrip}..."
+    end
+
+    def apply_thought_link_metadata(doc)
+      ThoughtLinkMetadata.enrich_data!(doc.data)
     end
 
     def limit_with_url

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+bin/thought-link-metadata update

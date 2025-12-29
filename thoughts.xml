@@ -13,5 +13,12 @@ posse_post_with_link:
   append_url_spacer: "\n\n"
   platform_overrides:
     bsky:
-      append_url_label: ""
+      append_url: false
+      attach_link: true
+    threads:
+      append_url: false
+      attach_link: true
+    linkedin:
+      append_url: false
+      attach_link: true
 ---
