@@ -21,8 +21,27 @@
     {% if thought_link and thought_link != "" %}
     <p><a href="{{ thought_link }}">{{ thought_link }}</a></p>
     {% endif %}
+    {% assign thought_link_title = thought.link_title %}
+    {% assign thought_link_description = thought.link_description %}
+    {% if thought_link and thought_link != "" and thought_link_title and thought_link_description %}
+    <a class="thought-link-card" href="{{ thought_link }}">
+      {% assign thought_link_image = thought.link_image %}
+      {% if thought_link_image %}
+      <div class="thought-link-card-image">
+        <img src="{{ thought_link_image }}" alt="{{ thought_link_title | strip_html | escape }}" loading="lazy" />
+      </div>
+      {% endif %}
+      <div class="thought-link-card-body">
+        {% assign thought_link_host = thought_link | remove: 'https://' | remove: 'http://' | split: '/' | first %}
+        <div class="thought-link-card-host">{{ thought_link_host }}</div>
+        <div class="thought-link-card-title">{{ thought_link_title }}</div>
+        <div class="thought-link-card-description">{{ thought_link_description }}</div>
+      </div>
+    </a>
+    {% endif %}
   </div>
-  <div class="thought-actions" data-thought-id="{{ thought.slug }}" data-thought-url="{{ thought_url }}" data-thought-title="{{ thought.title | strip_html | escape }}">
+  <div class="thought-actions" data-thought-id="{{ thought.slug }}" data-thought-url="{{ thought_url }}"
+    data-thought-title="{{ thought.title | strip_html | escape }}">
     <a class="thought-button thought-button-email"
       href="mailto:{{ site.author.email }}?subject={{ 'Re: ' | append: thought.slug | uri_escape }}&body={{ 'My comment on ' | append: thought_url | uri_escape }}">
       <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

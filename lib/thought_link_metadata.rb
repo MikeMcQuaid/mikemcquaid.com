@@ -15,13 +15,15 @@ module ThoughtLinkMetadata
 
     link_title = data["link_title"].to_s.strip
     link_description = data["link_description"].to_s.strip
-    return false if !link_title.empty? && !link_description.empty?
+    link_image = data["link_image"].to_s.strip
+    return false if !link_title.empty? && !link_description.empty? && !link_image.empty?
 
     metadata = fetch(link)
     return false unless metadata
 
-    data["link_title"] = metadata.fetch(:title)
-    data["link_description"] = metadata.fetch(:description)
+    data["link_title"] = metadata.fetch(:title) if link_title.empty?
+    data["link_description"] = metadata.fetch(:description) if link_description.empty?
+    data["link_image"] = metadata.fetch(:image) if link_image.empty? && !metadata.fetch(:image).empty?
 
     true
   end
@@ -46,7 +48,7 @@ module ThoughtLinkMetadata
       updated = true
     end
 
-    warn "thought-link-metadata: added link_title/link_description metadata to thoughts." if updated
+    warn "thought-link-metadata: added link metadata to thoughts." if updated
   end
 
   def self.fetch(link)
@@ -59,9 +61,12 @@ module ThoughtLinkMetadata
     description = doc.at('meta[property="og:description"]')&.[]("content").to_s.strip
     description = doc.at('meta[name="description"]')&.[]("content").to_s.strip if description.empty?
 
-    return if title.empty? && description.empty?
+    image = doc.at('meta[property="og:image"]')&.[]("content").to_s.strip
+    image = URI.join(link, image).to_s if image != ""
 
-    { title:, description: }
+    return if title.empty? && description.empty? && image.empty?
+
+    { title:, description:, image: }
   end
 
 end
