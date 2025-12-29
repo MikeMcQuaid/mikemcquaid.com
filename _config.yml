@@ -42,9 +42,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-titles-from-headings
 
-sass:
-  style: compressed
-
 defaults:
   - scope:
       path: ""
