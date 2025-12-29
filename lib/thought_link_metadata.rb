@@ -28,23 +28,18 @@ module ThoughtLinkMetadata
     true
   end
 
-  def self.run
-    paths = Dir.glob("_thoughts/*.md")
+  def self.run(paths = nil)
+    paths = Dir.glob("_thoughts/*.md") if paths.nil? || paths.empty?
     updated = false
 
     paths.each do |path|
       content = File.read(path)
-      match = content.match(Jekyll::Document::YAML_FRONT_MATTER_REGEXP)
-      next unless match
-
-      data = YAML.safe_load(match[1], permitted_classes: [], aliases: true)
-      body = content[match.end(0)..]
+      data, body = parse_frontmatter(content)
       next unless data
 
       next unless enrich_data!(data)
 
-      frontmatter = YAML.dump(data).sub(/\A---\s*\n/, "")
-      File.write(path, +"---\n#{frontmatter}---\n#{body}")
+      File.write(path, render_frontmatter(data, body))
       updated = true
     end
 
@@ -67,6 +62,20 @@ module ThoughtLinkMetadata
     return if title.empty? && description.empty? && image.empty?
 
     { title:, description:, image: }
+  end
+
+  def self.parse_frontmatter(content)
+    match = content.match(Jekyll::Document::YAML_FRONT_MATTER_REGEXP)
+    return [nil, content] unless match
+
+    data = YAML.safe_load(match[1], permitted_classes: [], aliases: true) || {}
+    body = content[match.end(0)..]
+    [data, body]
+  end
+
+  def self.render_frontmatter(data, body)
+    frontmatter = YAML.dump(data).sub(/\A---\s*\n/, "")
+    +"---\n#{frontmatter}---\n#{body}"
   end
 
 end
