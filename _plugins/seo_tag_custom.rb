@@ -6,14 +6,22 @@ module Jekyll
     end
 
     def render(context)
-      output = Liquid::Template.parse("{% seo %}").render!(context)
+      output = Liquid::Template.parse("{% seo %}")
+                               .render!(context)
+                               .gsub(/\s*<!-- Begin Jekyll SEO tag v\d+\.\d+\.\d+ -->\s*/, "")
+                               .gsub(/\s*<!-- End Jekyll SEO tag -->\s*/, "")
 
-      page = context.registers[:page] || {}
+      page = context.registers.fetch(:page)
       return output if page["collection"] != "thoughts"
 
-      output.gsub(%r{\n?\s*<meta\s+property="og:title"\s+content="[^"]*"\s*/>\s*}i, "\n")
-            .gsub(%r{\n?\s*<meta\s+property="twitter:title"\s+content="[^"]*"\s*/>\s*}i, "\n")
-            .gsub(%r{\n?\s*<meta\s+name="twitter:title"\s+content="[^"]*"\s*/>\s*}i, "\n")
+      site = context.registers.fetch(:site)
+      site_title = site.config.fetch("title")
+      return output unless site_title
+
+      output.gsub(%r{(<meta\s+(?:property|name)="og:title"\s+content=")[^"]*("\s*/>)}i,
+                  "\\1#{site_title}\\2")
+            .gsub(%r{(<meta\s+(?:property|name)="twitter:title"\s+content=")[^"]*("\s*/>)}i,
+                  "\\1#{site_title}\\2")
     end
   end
 end
