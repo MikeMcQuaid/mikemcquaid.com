@@ -15,9 +15,6 @@ module Jekyll
       page = context.registers.fetch(:page)
       return output if page["collection"] != "thoughts"
 
-      output = output.gsub(%r{\n?\s*<meta\s+property="article:published_time"\s+content="[^"]*"\s*/>\s*}i, "\n")
-                     .gsub(%r{\n?\s*<script\s+type="application/ld\+json">.*?</script>\s*}im, "\n")
-
       site = context.registers.fetch(:site)
       site_config = site.config
       site_title = site_config.fetch("title")
@@ -26,12 +23,10 @@ module Jekyll
       handle = site_config.fetch("author").fetch("handle")
       title = "#{site_title}\n@#{handle}"
 
-      output = output.gsub(%r{(<meta\s+(?:property|name)="og:title"\s+content=")[^"]*("\s*/>)}i,
-                           "\\1#{title}\\2")
-                     .gsub(%r{(<meta\s+(?:property|name)="twitter:title"\s+content=")[^"]*("\s*/>)}i,
-                           "\\1#{title}\\2")
-
-      output
+      output.gsub(%r{(<meta\s+(?:property|name)="og:title"\s+content=")[^"]*("\s*/>)}i,
+                  "\\1#{title}\\2")
+            .gsub(%r{(<meta\s+(?:property|name)="twitter:title"\s+content=")[^"]*("\s*/>)}i,
+                  "\\1#{title}\\2")
     end
   end
 end
