@@ -13,7 +13,7 @@ twitter:
   username: MikeMcQuaid
   card: summary
 
-logo: /images/default-card.png
+logo: /images/logo.jpg
 
 social:
   name: Mike McQuaid
@@ -63,7 +63,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /images/default-card.png
+      image: /images/default-card.jpg
 
 collections:
   talks:

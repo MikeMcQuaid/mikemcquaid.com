@@ -10,7 +10,7 @@
   {% if description and description != "" %}
   <meta name="twitter:description" content="{{ description | strip_html |escape }}" />
   {% endif %}
-  <meta property="og:logo" content="{{ '/images/default-card.png' | absolute_url }}" />
+  <meta property="og:logo" content="{{ site.logo | absolute_url }}" />
   <meta property="article:publisher" content="{{ site.url }}" />
   <meta property="article:author" content="{{ site.author.uri }}" />
 
