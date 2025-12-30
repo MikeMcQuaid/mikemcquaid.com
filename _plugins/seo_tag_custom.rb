@@ -15,13 +15,19 @@ module Jekyll
       return output if page["collection"] != "thoughts"
 
       site = context.registers.fetch(:site)
-      site_title = site.config.fetch("title")
+      site_config = site.config
+      site_title = site_config.fetch("title")
       return output unless site_title
 
-      output.gsub(%r{(<meta\s+(?:property|name)="og:title"\s+content=")[^"]*("\s*/>)}i,
-                  "\\1#{site_title}\\2")
-            .gsub(%r{(<meta\s+(?:property|name)="twitter:title"\s+content=")[^"]*("\s*/>)}i,
-                  "\\1#{site_title}\\2")
+      handle = site_config.fetch("author").fetch("handle")
+      title = "#{site_title}\n@#{handle}"
+
+      output = output.gsub(%r{(<meta\s+(?:property|name)="og:title"\s+content=")[^"]*("\s*/>)}i,
+                           "\\1#{title}\\2")
+                     .gsub(%r{(<meta\s+(?:property|name)="twitter:title"\s+content=")[^"]*("\s*/>)}i,
+                           "\\1#{title}\\2")
+
+      output
     end
   end
 end

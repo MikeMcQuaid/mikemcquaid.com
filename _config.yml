@@ -6,6 +6,7 @@ author:
   name: Mike McQuaid
   email: mike@mikemcquaid.com
   uri: https://mikemcquaid.com
+  handle: MikeMcQuaid
   twitter: MikeMcQuaid
 
 twitter:
@@ -58,6 +59,7 @@ defaults:
       type: thoughts
     values:
       layout: thought
+      image: /images/me.jpg
   - scope:
       path: ""
     values:
