@@ -8,17 +8,13 @@ posse_post:
   attach_link: false
 posse_post_with_link:
   format_string: "{{content}}"
-  append_url: true
+  append_url: false
   attach_link: false
-  append_url_spacer: "\n\n"
   platform_overrides:
     bsky:
-      append_url: false
       attach_link: true
     threads:
-      append_url: false
       attach_link: true
     linkedin:
-      append_url: false
       attach_link: true
 ---
