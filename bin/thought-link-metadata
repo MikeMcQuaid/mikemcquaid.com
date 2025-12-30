@@ -70,6 +70,8 @@ EOF
 
     "$0" update "$file"
 
+    git commit "$file" -m "Add thought ${timestamp}"
+
     if [[ -t 0 ]]; then
       editor="${EDITOR:-code}"
       ${editor} "$file"
