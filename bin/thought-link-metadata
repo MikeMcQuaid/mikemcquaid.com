@@ -42,8 +42,9 @@ case "$action" in
     link=""
     thought_text=""
     if [[ -t 0 ]]; then
-      read -r -p "Thought: " thought_text
-      read -r -p "Optional link (leave blank for none): " link
+      echo "Thought (end with Ctrl-D):"
+      thought_text="$(cat < /dev/tty)"
+      read -r -p "Optional link (leave blank for none): " link < /dev/tty
     else
       thought_text="$(cat)"
     fi
