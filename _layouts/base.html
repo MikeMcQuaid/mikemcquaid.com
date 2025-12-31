@@ -15,6 +15,9 @@
   <meta property="og:logo" content="{{ site.logo | absolute_url }}" />
   <meta property="article:publisher" content="{{ site.url }}" />
   <meta property="article:author" content="{{ site.author.uri }}" />
+  {% if page.collection == "thoughts" %}
+  <link rel="alternate" type="application/activity+json" href="{{ page.url | absolute_url }}" />
+  {% endif %}
 
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/all.xml' | absolute_url }}" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Articles)"
