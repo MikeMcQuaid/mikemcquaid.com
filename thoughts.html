@@ -8,7 +8,7 @@ redirect_from: /takes/
 
 <div class="thoughts-feed">
   {% assign sorted_thoughts = site.thoughts | sort: 'date' | reverse %}
-  {% for thought in sorted_thoughts %}
+  {% for thought in sorted_thoughts limit: 10 %}
   {% if site.future == false and thought.date > site.time %} {% continue %} {% endif %}
   {% include thought-card.html thought=thought %}
   {% endfor %}

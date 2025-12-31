@@ -43,7 +43,8 @@
   {% endif %}
 
   {% assign feed_items = feed_items | sort: "date" | reverse %}
-  {% for item in feed_items limit: 25 %}
+  {% assign feed_limit = page.feed_limit | default: 25 %}
+  {% for item in feed_items limit: feed_limit %}
     <entry>
       {% assign item_title = item.title | smartify | strip_html | normalize_whitespace | xml_escape %}
       {% assign item_href = item.url | absolute_url %}

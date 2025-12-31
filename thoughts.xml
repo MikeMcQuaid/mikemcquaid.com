@@ -2,6 +2,7 @@
 layout: atom_feed
 feed_collection: thoughts
 feed_title_suffix: Thoughts
+feed_limit: 10
 posse_post:
   format_string: "{{content}}"
   append_url: false
