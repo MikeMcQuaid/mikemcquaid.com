@@ -5,12 +5,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width">
   {% seo_custom %}
-  <meta property="og:site_name" content="mikemcquaid.com" />
   {% assign description = page.description | default: page.excerpt %}
   {% if description and description != "" %}
   {% assign safe_description = description | strip_html | escape %}
   <meta name="twitter:description" content="{{ safe_description }}" />
-  <meta property="twitter:description" content="{{ safe_description }}" />
   {% endif %}
   <meta property="og:logo" content="{{ site.logo | absolute_url }}" />
   <meta property="article:publisher" content="{{ site.url }}" />

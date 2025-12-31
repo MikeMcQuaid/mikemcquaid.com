@@ -68,7 +68,7 @@
         {% else %}
           {{ item.content }}
         {% endif %}
-        {% if item.collection == "thoughts" and item_has_link %}
+        {% if item.collection == "thoughts" and item_has_link and page.include_posse_post == false %}
           <p><a href="{{ item_href }}">{{ item_href }}</a></p>
         {% endif %}
       {% endcapture %}

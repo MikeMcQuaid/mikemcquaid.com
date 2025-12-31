@@ -10,7 +10,6 @@ module Jekyll
                                .render!(context)
                                .gsub(/\s*<!-- Begin Jekyll SEO tag v\d+\.\d+\.\d+ -->\s*/, "")
                                .gsub(/\s*<!-- End Jekyll SEO tag -->\s*/, "")
-                               .gsub(%r{\n?\s*<meta\s+property="og:site_name"\s+content="[^"]*"\s*/>\s*}i, "\n")
 
       page = context.registers.fetch(:page)
       return output if page["collection"] != "thoughts"
