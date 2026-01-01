@@ -31,7 +31,7 @@ Homebrew is the de-facto macOS package manager with tens of millions of users wo
 
 #### [Workbrew](https://workbrew.com)
 
-##### Homebrew Fellow and Advisor (2025 – Present)
+##### Homebrew Fellow and Advisor (2025 – 2026)
 
 Deliver fractional advisory and technical leadership to Workbrew, focused on seamless integration with Homebrew’s open-source ecosystem and solving complex engineering challenges.
 
