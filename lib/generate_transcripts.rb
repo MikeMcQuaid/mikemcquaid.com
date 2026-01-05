@@ -36,6 +36,35 @@ class TranscriptGenerator
     puts "Transcript generation complete!"
   end
 
+  def run_for_video(video_path, output_dir: Pathname.pwd)
+    video_path = Pathname(video_path)
+    output_dir = Pathname(output_dir)
+
+    unless video_path.exist?
+      puts "File not found: #{video_path}"
+      return
+    end
+
+    output_path = output_dir / "#{video_path.basename.sub_ext("")}.txt"
+    audio_path = @audio_dir / "#{video_path.basename.sub_ext("")}.wav"
+
+    puts "Starting transcript generation for: #{video_path}"
+
+    if audio_path.exist?
+      puts "  Using cached audio file"
+    else
+      puts "  Extracting audio..."
+      return unless extract_audio(video_path, audio_path)
+    end
+
+    puts "  Generating transcript with Whisper..."
+    if run_whisper(audio_path, output_path, format: :txt)
+      puts "  ✓ Transcript written to #{output_path}"
+    else
+      puts "  ✗ Failed to generate transcript"
+    end
+  end
+
   private
 
   def find_talks_with_youtube
@@ -148,7 +177,7 @@ class TranscriptGenerator
     end
   end
 
-  def run_whisper(audio_path, output_path)
+  def run_whisper(audio_path, output_path, format: :yaml)
     processed_audio_path = @audio_dir / "#{audio_path.basename(".*")}_processed.wav"
     srt_cache_path = @audio_dir / "#{audio_path.basename(".*")}.srt"
 
@@ -177,7 +206,7 @@ class TranscriptGenerator
     # Step 2: Check for cached SRT file first
     if srt_cache_path.exist?
       puts "    Using cached SRT file"
-      convert_srt_to_yaml(srt_cache_path, output_path)
+      convert_srt(srt_cache_path, output_path, format)
       return true
     end
 
@@ -204,7 +233,7 @@ class TranscriptGenerator
     if status.success?
       # SRT file is now output directly to cache, convert to YAML
       if srt_cache_path.exist?
-        convert_srt_to_yaml(srt_cache_path, output_path)
+        convert_srt(srt_cache_path, output_path, format)
         true
       else
         puts "    Whisper failed: No SRT output generated"
@@ -265,6 +294,17 @@ class TranscriptGenerator
     txt_path.write(text)
   end
 
+  def convert_srt(srt_path, output_path, format)
+    case format
+    when :txt
+      convert_srt_to_txt(srt_path, output_path)
+    when :yaml
+      convert_srt_to_yaml(srt_path, output_path)
+    else
+      raise ArgumentError, "Unsupported output format: #{format}"
+    end
+  end
+
   def convert_srt_to_yaml(srt_path, yaml_path)
     content = srt_path.read
     transcript_data = {}
@@ -317,6 +357,28 @@ class TranscriptGenerator
     puts "  ✓ Added transcript: true to talk file"
   end
 
+  def extract_audio(video_path, output_path)
+    ffmpeg_cmd = [
+      "ffmpeg",
+      "-i", video_path.to_s,
+      "-vn",
+      "-acodec", "pcm_s16le",
+      "-ar", "44100",
+      "-ac", "2",
+      "-y", # Overwrite output file
+      output_path.to_s
+    ]
+
+    _, stderr, status = Open3.capture3(*ffmpeg_cmd)
+
+    if status.success?
+      true
+    else
+      puts "  FFmpeg audio extraction failed: #{stderr}"
+      false
+    end
+  end
+
   def load_processed_list
     if @processed_file.exist?
       @processed_file.readlines.map(&:strip)
@@ -332,5 +394,9 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   generator = TranscriptGenerator.new
-  generator.run
+  if ARGV.any?
+    generator.run_for_video(ARGV.first, output_dir: Pathname.pwd)
+  else
+    generator.run
+  end
 end

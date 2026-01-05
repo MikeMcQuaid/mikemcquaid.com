@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [[ "${HOMEBREW_GENERATE_TRANSCRIPTS:-}" != "1" || "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
+  export HOMEBREW_GENERATE_TRANSCRIPTS=1
+  eval "$(brew bundle --check --install env)"
+fi
+
+bundle exec ruby lib/generate_transcripts.rb "$@"
