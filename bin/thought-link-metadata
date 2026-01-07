@@ -71,7 +71,7 @@ EOF
 
     "$0" update "$file"
 
-    git commit "$file" -m "Add thought ${timestamp}"
+    git commit --no-verify "$file" -m "Add thought ${timestamp}"
 
     if [[ -t 0 ]]; then
       editor="${EDITOR:-code}"

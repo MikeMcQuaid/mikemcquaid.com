@@ -13,19 +13,48 @@ module ThoughtLinkMetadata
     link = data["link"].to_s.strip
     return false if link.empty?
 
-    link_title = data["link_title"].to_s.strip
-    link_description = data["link_description"].to_s.strip
-    link_image = data["link_image"].to_s.strip
-    return false if !link_title.empty? && !link_description.empty? && !link_image.empty?
+    updated = false
+
+    link_title_raw = data["link_title"]
+    link_title = normalize_text(link_title_raw)
+    if !link_title_raw.nil? && link_title != link_title_raw.to_s
+      data["link_title"] = link_title
+      updated = true
+    end
+
+    link_description_raw = data["link_description"]
+    link_description = normalize_text(link_description_raw)
+    if !link_description_raw.nil? && link_description != link_description_raw.to_s
+      data["link_description"] = link_description
+      updated = true
+    end
+
+    link_image_raw = data["link_image"]
+    link_image = link_image_raw.to_s.strip
+    if !link_image_raw.nil? && link_image != link_image_raw.to_s
+      data["link_image"] = link_image
+      updated = true
+    end
+
+    return updated if !link_title.empty? && !link_description.empty? && !link_image.empty?
 
     metadata = fetch(link)
-    return false unless metadata
+    return updated unless metadata
 
-    data["link_title"] = metadata.fetch(:title) if link_title.empty?
-    data["link_description"] = metadata.fetch(:description) if link_description.empty?
-    data["link_image"] = metadata.fetch(:image) if link_image.empty? && !metadata.fetch(:image).empty?
+    if link_title.empty?
+      data["link_title"] = metadata.fetch(:title)
+      updated = true
+    end
+    if link_description.empty?
+      data["link_description"] = metadata.fetch(:description)
+      updated = true
+    end
+    if link_image.empty? && !metadata.fetch(:image).empty?
+      data["link_image"] = metadata.fetch(:image)
+      updated = true
+    end
 
-    true
+    updated
   end
 
   def self.run(paths = nil)
@@ -50,11 +79,11 @@ module ThoughtLinkMetadata
     html = URI.open(link, "User-Agent" => USER_AGENT).read
     doc = Nokogiri::HTML(html)
 
-    title = doc.at('meta[property="og:title"]')&.[]("content").to_s.strip
-    title = doc.at("title")&.text.to_s.strip if title.empty?
+    title = normalize_text(doc.at('meta[property="og:title"]')&.[]("content"))
+    title = normalize_text(doc.at("title")&.text) if title.empty?
 
-    description = doc.at('meta[property="og:description"]')&.[]("content").to_s.strip
-    description = doc.at('meta[name="description"]')&.[]("content").to_s.strip if description.empty?
+    description = normalize_text(doc.at('meta[property="og:description"]')&.[]("content"))
+    description = normalize_text(doc.at('meta[name="description"]')&.[]("content")) if description.empty?
 
     image = doc.at('meta[property="og:image"]')&.[]("content").to_s.strip
     image = URI.join(link, image).to_s if image != ""
@@ -62,6 +91,10 @@ module ThoughtLinkMetadata
     return if title.empty? && description.empty? && image.empty?
 
     { title:, description:, image: }
+  end
+
+  def self.normalize_text(text)
+    text.to_s.gsub(/\s+/, " ").strip
   end
 
   def self.parse_frontmatter(content)
