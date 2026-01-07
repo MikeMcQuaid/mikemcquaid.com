@@ -60,7 +60,7 @@ Despite it being a relatively well-trodden path in the technology industry at th
 - The most important thing I'd consumed is Tanya Reilly's [Being Glue talk](https://noidea.dog/glue). It's a great way of thinking about the sort of work that effective Staff+ engineers can do (and all engineers, really) that is often undervalued. Find more from her at her [LeadDev blog](https://leaddev.com/community/tanya-reilly), [personal blog](https://noidea.dog/blog) and [talks](https://noidea.dog/talks).
 - [Staff Engineer: Leadership beyond the management track](https://www.amazon.co.uk/dp/B08RMSHYGG) book by Will Larson
 - [Staff Engineer stories/blog](https://staffeng.com/stories) on Will's [staffeng.com](https://staffeng.com) site
-- [StaffEng podcast](https://staffeng.com/stories) (also on [staffeng.com](https://podcast.staffeng.com)). Check out [my episode](https://podcast.staffeng.com/1687069/8247672-mike-mcquaid-github) if you're interested.
+- [StaffEng podcast](https://staffeng.com/stories) (also on [staffeng.com](https://podcast.staffeng.com)). Check out [my episode](https://podcast.staffeng.com/season-1/mike-mcquaid-github/) if you're interested.
 - [Rands Leadership Slack](https://randsinrepose.com/welcome-to-rands-leadership-slack/)'s [`#staff-principal-engineering`](https://rands-leadership.slack.com/archives/CUAAP1A3G) channel
 
 ---
