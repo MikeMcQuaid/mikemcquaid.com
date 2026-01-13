@@ -151,7 +151,7 @@ In the words of Level:
 > We're happy to have integrated Workbrew into our stack.
 > We also wanted to mention that the Workbrew team has been very responsive to even the silliest of questions and it's been a real delight conversing with them.
 >
-> <https://levelvc.com/brewing-better-builds-with-workbrew/>
+> <https://web.archive.org/web/20250813140218/https://levelvc.com/brewing-better-builds-with-workbrew>
 
 ## The Future
 
