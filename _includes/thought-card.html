@@ -26,7 +26,7 @@
     {% if thought_link and thought_link != "" and thought_link_title and thought_link_description %}
     <a class="thought-link-card" href="{{ thought_link }}">
       {% assign thought_link_image = thought.link_image %}
-      {% if thought_link_image %}
+      {% if thought_link_image and thought_link_image != "" %}
       <div class="thought-link-card-image">
         <img src="{{ thought_link_image }}" alt="{{ thought_link_title | strip_html | escape }}" loading="lazy" />
       </div>
