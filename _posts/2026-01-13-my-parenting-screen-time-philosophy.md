@@ -100,4 +100,4 @@ The only downside I've found is that you can expect your kids to kick your ass a
 
 ---
 
-Thanks to [Brian Corcoran](https://uk.linkedin.com/in/briandcorcoran) for complimenting my approach here in the pub one day and requesting this post.
+Thanks to [Brian Corcoran](https://www.linkedin.com/in/briandcorcoran/) for complimenting my approach here in the pub one day and requesting this post.
