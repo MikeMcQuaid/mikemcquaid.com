@@ -50,6 +50,7 @@
       {% assign item_href = item.url | absolute_url %}
       {% assign item_has_link = false %}
       {% if item.link %}
+        {% assign item_related_href = item_href %}
         {% assign item_href = item.link %}
         {% assign item_has_link = true %}
         {% unless item_href contains "://" %}
@@ -57,8 +58,11 @@
         {% endunless %}
       {% endif %}
 
-      <title type="html">{{ item_title }}</title>
+      <title>{{ item_title }}</title>
       <link href="{{ item_href | xml_escape }}" rel="alternate" type="text/html" title="{{ item_title }}" />
+      {% if item_related_href %}
+        <link href="{{ item_related_href | xml_escape }}" rel="related" type="text/html" title="{{ item_title }}" />
+      {% endif %}
       <published>{{ item.date | date_to_xmlschema }}</published>
       <updated>{{ item.last_modified_at | default: item.date | date_to_xmlschema }}</updated>
       <id>{{ item_href | xml_escape }}</id>
