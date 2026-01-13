@@ -86,7 +86,11 @@ module ThoughtLinkMetadata
     description = normalize_text(doc.at('meta[name="description"]')&.[]("content")) if description.empty?
 
     image = doc.at('meta[property="og:image"]')&.[]("content").to_s.strip
-    image = URI.join(link, image).to_s if image != ""
+    image = begin
+      URI.join(link, image).to_s
+    rescue URI::InvalidURIError
+      ""
+    end
 
     return if title.empty? && description.empty? && image.empty?
 

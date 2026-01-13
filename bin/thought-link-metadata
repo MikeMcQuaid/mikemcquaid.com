@@ -26,6 +26,10 @@ case "$action" in
   update)
     shift || true
     files=("$@")
+    if [[ "${#files[@]}" -eq 0 ]]; then
+      echo "no files provided!"
+      exit 1
+    fi
     if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
       eval "$(brew bundle --check --install env)"
     fi
