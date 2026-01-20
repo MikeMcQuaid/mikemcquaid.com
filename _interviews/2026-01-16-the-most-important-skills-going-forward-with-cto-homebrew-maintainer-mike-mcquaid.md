@@ -1,5 +1,5 @@
 ---
-title: "Homebrew and macOS Package Management with Mike McQuaid"
-link: https://softwareengineeringdaily.com/2025/10/21/homebrew-and-open-source-on-macos-with-mike-mcquaid/
-publication: "Software Engineering Daily"
+title: "The Most Important Skills Going Forward with CTO + Homebrew Maintainer Mike McQuaid"
+link: https://www.freecodecamp.org/news/the-most-important-skills-going-forward-with-cto-homebrew-maintainer-mike-mcquaid-podcast-204/
+publication: freeCodeCamp Podcast
 ---
