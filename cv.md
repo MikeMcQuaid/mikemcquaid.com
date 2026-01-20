@@ -29,7 +29,7 @@ Homebrew is the de-facto macOS package manager with tens of millions of users wo
 * Mentored new maintainers and contributors via [Google Summer of Code](https://summerofcode.withgoogle.com), [MLH Fellowship](https://fellowship.mlh.io) and [Outreachy](https://www.outreachy.org) programmes
 * Migrated Homebrew to GitHub Packages, partnering with GitHub’s internal teams
 
-#### [OpenUK](https://openuk.uk/openukboard/) - Board Member (2026 - Present)
+#### [OpenUK](https://openuk.uk/) - Board Member (2026 - Present)
 
 Strategic board member at OpenUK, the UK open technology industry body, helping drive sector growth, policy engagement and community development for open source and related technologies.
 
