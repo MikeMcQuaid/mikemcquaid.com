@@ -68,7 +68,7 @@
       <id>{{ item_href | xml_escape }}</id>
       {% capture item_content %}
         {% if item.collection == "interviews" %}
-          Interviewed by {{ item.publication }}.
+          <p>Interviewed by {{ item.publication }}.</p>
           {{ item.content }}
         {% else %}
           {{ item.content }}

@@ -139,12 +139,21 @@ module Jekyll
     def interview_text(doc)
       format_string = format_string_for("interviews", doc.site)
       title = doc.data.fetch("title").to_s
-      publication = doc.data.fetch("publication").to_s
-      render_format(format_string, title:, publication:)
+      content = interview_content_text(doc)
+      render_format(format_string, title:, content:)
     end
 
     def thought_text(doc)
       doc.content
+    end
+
+    def interview_content_text(doc)
+      publication = doc.data.fetch("publication").to_s
+      interviewed_by = "Interviewed by #{publication}."
+      body = doc.content.to_s.strip
+      return interviewed_by if body.empty?
+
+      "#{interviewed_by}\n\n#{body}"
     end
 
     def format_string_for(collection, site)

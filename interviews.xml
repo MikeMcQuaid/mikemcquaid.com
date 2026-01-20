@@ -3,7 +3,7 @@ layout: atom_feed
 feed_collection: interviews
 feed_title_suffix: Interviews
 posse_post:
-  format_string: "{{title}}\n\nInterviewed by {{publication}}."
+  format_string: "{{title}}\n\n{{content}}"
   attach_link: true
   append_url: false
   append_url_spacer: "\n\n"
