@@ -65,6 +65,7 @@ module Jekyll
 
         doc.read
         apply_thought_link_metadata(doc)
+        doc.data["description"] ||= thought_description_from_content(doc)
         doc.data["title"] = thought_title_from_content(doc.content)
         doc.data["layout"] = "thought"
         doc.data["date"] = doc.data["last_modified_at"] = git_date
@@ -186,6 +187,16 @@ module Jekyll
       truncated = candidate[0...THOUGHT_TITLE_MAX_LENGTH]
       truncated = truncated.sub(/\s+\S*\z/, "")
       "#{truncated.rstrip}..."
+    end
+
+    def thought_description_from_content(doc)
+      content = doc.content.to_s
+      return "" if content.empty?
+
+      converter = doc.site.find_converter_instance(Jekyll::Converters::Markdown)
+      html = converter ? converter.convert(content) : content
+      strip_html_filter = Object.new.extend(Liquid::StandardFilters)
+      strip_html_filter.strip_html(html).strip
     end
 
     def apply_thought_link_metadata(doc)
