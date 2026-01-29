@@ -2,6 +2,7 @@
 
 require "open-uri"
 require "jekyll"
+require "net/http"
 require "nokogiri"
 require "uri"
 require "yaml"
@@ -86,11 +87,7 @@ module ThoughtLinkMetadata
     description = normalize_text(doc.at('meta[name="description"]')&.[]("content")) if description.empty?
 
     image = doc.at('meta[property="og:image"]')&.[]("content").to_s.strip
-    image = begin
-      URI.join(link, image).to_s
-    rescue URI::InvalidURIError
-      ""
-    end
+    image = https_image_url(link, image)
 
     return if title.empty? && description.empty? && image.empty?
 
@@ -99,6 +96,65 @@ module ThoughtLinkMetadata
 
   def self.normalize_text(text)
     text.to_s.gsub(/\s+/, " ").strip
+  end
+
+  def self.https_image_url(link, image)
+    image = image.to_s.strip
+    return "" if image.empty?
+
+    absolute = begin
+      URI.join(link, image).to_s
+    rescue URI::InvalidURIError
+      ""
+    end
+    return "" if absolute.empty?
+
+    uri = URI.parse(absolute)
+    return "" unless uri.scheme&.downcase == "http" || uri.scheme&.downcase == "https"
+
+    uri.scheme = "https"
+    https_url = uri.to_s
+
+    return https_url if https_url_working?(https_url)
+
+    ""
+  rescue URI::InvalidURIError
+    ""
+  end
+
+  def self.https_url_working?(url)
+    uri = URI.parse(url)
+    limit = 5
+
+    while limit.positive?
+      response = net_http_request(uri, Net::HTTP::Head.new(uri.request_uri))
+      case response
+      when Net::HTTPRedirection
+        location = response["location"].to_s
+        return false if location.empty?
+
+        uri = URI.join(uri.to_s, location)
+        return false unless uri.scheme&.downcase == "https"
+      when Net::HTTPMethodNotAllowed
+        response = net_http_request(uri, Net::HTTP::Get.new(uri.request_uri, "Range" => "bytes=0-0"))
+        return response.is_a?(Net::HTTPSuccess) || response.is_a?(Net::HTTPPartialContent)
+      else
+        return response.is_a?(Net::HTTPSuccess)
+      end
+
+      limit -= 1
+    end
+
+    false
+  rescue URI::InvalidURIError
+    false
+  end
+
+  def self.net_http_request(uri, request)
+    request["User-Agent"] ||= USER_AGENT
+    Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == "https") do |http|
+      http.request(request)
+    end
   end
 
   def self.parse_frontmatter(content)
