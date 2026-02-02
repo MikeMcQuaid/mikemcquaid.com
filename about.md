@@ -1,11 +1,13 @@
 ---
 title: About Me
 layout: titled
-description: Hi, I’m Mike McQuaid. I build great software and software teams.
+description: Hi, I’m Mike McQuaid.
 redirect_from:
 - /blog/about/
 - /contact/
 ---
+I'm CTPO at Administrate, Homebrew Project Leader, ex-GitHub Principal Engineer (#232), author of Git in Practice and an open source and developer productivity leader.
+
 I live in Edinburgh, Scotland: you should visit, it’s lovely here
 
 You can email me about:
