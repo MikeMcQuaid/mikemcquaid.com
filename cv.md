@@ -8,7 +8,7 @@ redirect_from: /resume/
 #### CTPO and Homebrew Project Leader
 
 Engineering and product leader with 18 years of experience reducing developer friction and scaling open source software used by tens of millions.
-Currently CTPO at Administrate and Homebrew Project Leader, former GitHub Principal Engineer (employee #232) who led productivity initiatives including Merge Queue and Codespaces, cofounder and former CTPO of Workbrew.
+Currently CTPO at Administrate and Homebrew Project Leader, former GitHub Principal Engineer (employee #232) who led initiatives including Merge Queue and internal developer environment, cofounder and former CTPO of Workbrew.
 Published author (Git in Practice), writer and frequent speaker (50+ talks) on engineering leadership, open source, automation, remote work and Git.
 Remote-first since 2009, with hands-on adoption of AI coding assistants and review tooling to increase velocity.
 
