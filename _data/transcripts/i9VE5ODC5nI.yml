@@ -1,0 +1,559 @@
+---
+0: I like to do people putting their hands in the air in the talks because it stops
+  you
+9: from falling asleep and it makes me more visibly aware that people are actually
+  listening
+15: to what I'm saying.
+16: So put your hand in the air if you've ever used homebrew, okay, a reasonable number
+  of
+21: people.
+22: Put your hand in the air if you ever contributed to homebrew, put your hand in
+  the air if you
+27: ever tried to contribute to homebrew and I closed your PR.
+31: Sorry, sorry, yeah, so I'm, we've been, I've not been able to hear all the talks
+  today.
+41: I do follow, try as much as I can closely what's going on in package management
+  world.
+46: Shout out to Andrew's written a lot of very good comparative blog posts on this
+  stuff this
+50: year that I've enjoyed.
+52: So I'm going to try and talk about today is like a bit more high level than I
+  might say
+55: with homebrew stuff about, okay, what have we been doing in homebrew now and why
+  and
+59: what can we maybe learn about it in other package managers.
+62: So who am I?
+63: Hello, I'm Mike McQuaid.
+66: If you want to know about me now, my website is the best place.
+69: It's all connected to social media and stuff.
+71: I don't read anything on social media anymore.
+73: So email me if you want me to actually see it or post on social media if you want
+  to talk
+76: shit about me behind my back and feel great about it.
+79: My background, I guess, like how I've got into homebrew and stuff.
+83: So I've worked in software for almost 20 years.
+86: I've been working on homebrew for 17 years this year.
+89: I'm the project leader, which is an elected sort of dictatorship sort of position
+  thing.
+95: So I'm a CTPO in my normal life, day job, whatever, and that sort of vaguely overlaps
+100: with homebrew but not very directly.
+102: So why should anyone care about homebrew, package managers, why I have to say?
+109: I mean, who in here cares about package managers?
+111: Okay, good.
+112: I'm glad that someone does other than Andrew because otherwise he'll probably
+  cry.
+118: But I guess in my life, the thing that's great and terrible about homebrew is
+  that it's somewhat
+125: taken for granted.
+126: Like a lot of package managers, it's just part of the infrastructure of how the
+  internet works,
+131: how I do my job, whatever, right?
+133: So if you go and run, who's run Bruin still in the last week, say, okay, right?
+138: Like you probably didn't really think very much about it, right?
+142: Because you probably just ran something and then hopefully it worked.
+145: But then when it doesn't work, then everyone gets upset.
+149: Like most of the time, it only specific things are broken in specific ways for
+  specific people.
+155: But then when it's all broken for everyone, then everyone gets very concerned.
+160: And the emotional reaction that people tend to have to when these tools break
+  is heavy because
+167: they're so reliant on these tools.
+169: Like it's really important to them that it works.
+172: And in some ways it's, if I can be a little bit philosophical, it scares people
+  a little
+177: bit when they are forced to actually think how many bits of the internet and
+  tools that they
+184: rely on by all these people at all these places all around the world that they
+  are completely
+189: unable to do their job unless all of these things connect together.
+194: And often the people who are the most involved with open source are the people
+  who are the
+198: most forgiving when homebrew breaks.
+200: And the people who are the most disconnected from open source are the people
+  who are the
+205: most angry and sometimes abusive when homebrew breaks.
+208: It's a bit like your toilet, really, because when it's working, you probably
+  don't spend a lot
+215: of time deeply thinking about your toilet unless like me, you've recently been
+  in Japan and
+220: you're like, wow, their toilets are so much better here.
+222: Why is my toilet like that?
+224: But then when your toilet breaks, then we just get shit everywhere, right?
+228: Like there's chaos.
+230: No one knows what they're doing.
+231: No one knows how to fix it.
+232: No one really wants to stick their hands in there.
+235: We have friends at the beginning of the talk.
+237: We may be at the end.
+240: So most people get very frustrated when their tools are slow.
+243: Another one, bundler is slow.
+245: Like everyone often complained about that for a good many years, right?
+249: And then what gets done, people get frustrated.
+252: So in, I feel like in many ecosystems, people get the same feedback about things
+  being or
+258: feeling slow.
+259: They maybe don't even know why, but then sometimes the reason why it feels slow
+  is because we get
+263: new tools.
+264: So cargo is often held up as an example of a package manager that like feels
+  fast, right?
+270: And I've not done huge amounts of rust stuff, so I'm not super familiar, but
+  it's, you know,
+275: that reputation for speed is something that's appreciated in the community.
+279: It sort of founds the community's expectations of what these tools should be
+  like, how they
+284: should behave, how fast they should feel, how responsive they are.
+287: In some ways, it kind of helps to buy into like, what does that language community
+  care
+292: about?
+293: Like the rust community seems to care deeply about building lots of tools that
+  are responsive
+298: and fast, well-paralyzed and all these type of things.
+301: You know, a lot of the tools that I, one of my favorite tools that's embedded
+  just about
+305: everywhere now is like RIP grep, which if you were like, how many people went
+  down the path
+311: of like, oh, AK and then the silver searcher and finding the perfect tool to
+  search through
+316: your code base increasingly quickly, right?
+318: Yeah.
+319: So if you went down that line, then you learned a few years ago, like a lot of
+  these tools started
+324: to be built in rust and there just became this little niche of people in the
+  rust
+328: ecosystem who really care deeply about just being like, I'm going to make the
+  fastest version
+332: of X or I'm going to make a really paralyzed version of some existing Unix tool
+  that hasn't
+336: really been updated in 20 or 30 years, right?
+339: UV, obviously that's another example now, right?
+342: Where that in the Python ecosystem is kind of reshaped expectations of what speed
+  we should
+348: be expecting from these tools.
+349: What we can do and I think UV is an interesting example because I, again, I'm
+  not super au fait,
+355: so excuse me if I misspeak slightly on this, but my understanding is some of
+  the reasons why
+360: they've been able to be faster is because they've kind of dropped some support
+  for legacy things,
+365: which tools like PIP or whatever might still have to rely on, right?
+368: And again, like, this is where things get a little bit more tricky and a bit
+  more murky
+373: for us as like package manager like developers.
+376: It's like, okay, so what, to what extent do we prioritize speed or backwards
+  compatibility
+382: or following the leads of other tools or maybe we have multiple tools in the
+  same ecosystem?
+386: Who can say, right?
+388: So Bundler, right?
+389: Like, I feel like Bundler was a tool that 10 years ago I heard people complaining
+  about how
+394: slow it was all the time and then a lot of work went into it and then now it's
+  a tool where,
+398: you know, it's not the fastest thing in the world, but it's still like, it does
+  not seem
+402: to get that complaint levied against it nearly as often as it once did, right?
+408: And I think Bundler is a nice example because they didn't throw out everything
+  that they were
+412: doing.
+413: A lot of just time and effort went into it behind the scenes that meant that
+  the tool ended
+418: up just being fast.
+419: You can add a few more things, then you'll have 10% that don't work, then 5%
+  that don't
+422: work.
+423: And if you want to get 100% of packages working 100% all the time, you essentially
+  have to
+427: reimplement most of Homebrew and that's probably going to be a bit slower than
+  you have right
+431: now, right?
+432: So I ask us all to be collectively both inspired but cautiously skeptical of
+  some of these tools
+439: that appear out of nowhere and say, "Hey, we've been able to do this 10x faster
+  than anyone
+443: else."
+444: Because there's some stuff you can learn from that for sure.
+446: Like, we have learned from that in Homebrew.
+450: But there's also, it's very easy to make a prototype version of this which never
+  quite
+455: gets around to iterating into something that works reliably and can be used at
+  scale.
+460: Thank you.
+461: Why do people do that?
+463: In some ways, this reminds me, I don't know how many people ever saw the legendary
+  Stack
+471: Overflow answer that descends into madness about parsing HTML with regex.
+475: Yeah.
+476: It reminds me a bit of this, right?
+478: Because it's like, you can parse HTML in a simple way with regex really quickly
+  and easily.
+483: And it's like, look how little code this took.
+485: And it was really quick and efficient.
+486: And like, I'm 90% of the way to solving this problem.
+489: And then I just need to put a bit more time.
+491: Oh, I'm almost there.
+492: I'm almost there.
+493: But then if you know essentially enough about the problem states, you know that
+  like fundamentally,
+497: you are trying to do something that is with most regex parses.
+500: I know this pearl does some special things.
+503: It's fundamentally impossible, right?
+505: And it's a similar sort of vein here, right?
+508: Where what they are trying to do is admirable, but they have taken a shortcut
+  to do so that
+514: makes the end result essentially fundamentally impossible.
+517: So back to homebrew.
+518: Like, so the big thing we did recently in the last year essentially was if you've
+  used homebrew,
+523: you've seen we do this kind of concurrent downloading stuff, right?
+527: So in fact, the person who did much of the work, Marcus, is in the room with
+  us right now.
+532: Hats off to Marcus.
+536: And we also have done some work on like a slimmer like internal API and stuff
+  like that to try
+541: and focus on this stuff with speed, right?
+543: Ruby 4.0.1, like the time it takes to output hello world to a terminal is dramatically
+  slower
+549: than the time it takes back to do the same thing.
+551: And okay, most people like someone literally with the homebrew performance stuff
+  I posted
+557: recently on social media, someone replied saying, in what world does homebrew's
+  performance actually
+562: matter to end users anyway?
+563: Like, yes, this is a good point.
+565: But we still get people whining when like their shell initialization takes 0.1
+  seconds longer
+571: than it should have done or whatever, right?
+573: And then porting stuff to bash makes things, you know, in our case, sometimes
+  100 times faster
+578: than just by the time you spin up the Ruby interpreter, right?
+580: So again, like it's a weird thing and it's very project specific and it's not
+  general advice.
+586: But again, for all of you working package managers, probably your three items
+  are completely different.
+592: And some naive person from the outside looking in will probably have ideas of
+  why you're slow
+596: and what needs to be fixed.
+597: But you will know what these things are and you need to make sure you put these
+  things in front of your team
+601: and in front of contributors who might want to come in so that they actually
+  know how they can improve this stuff in a meaningful fashion.
+607: So as a result of that, like I think homebrew with the 5.0 release, like people
+  are complaining about it less.
+615: I think we've done a bit of a bundle of thing where homebrew is definitely not
+  fast compared to its competitors,
+619: but it certainly feels a bit faster than it was before.
+622: And I think we have now room for understanding and improvement of how we can
+  move forward.
+628: Right.
+629: So act two is let's think about like what we're doing in package manager land.
+635: We talked about like user expectations, performance and things like that.
+638: But I think another big part of software in general, right, like I've taken over
+  as like a CTO relatively recently.
+648: And one of my big things is like, how can I make things go faster?
+651: And one way of making things go faster is performance and profiling and optimization.
+655: And let's like do that.
+657: Another way of making things go faster is thinking about what are we doing today?
+661: And what are the things we can stop doing?
+663: And if you can just do fewer things, you get this combinatorial explosion of
+  once you have these different options and ways of building packages and their dependency
+  trees and everything like that,
+673: such that it became almost impossible to debug these issues in a meaningful way
+  and support them and stuff like that.
+678: Because again, we had limited CI infrastructure.
+681: So we're not able to just go and say, okay, well, we're going to build everything
+  in every combination every time for every dependency and figure out if that works.
+688: So instead, we moved essentially to a model of like our binary packages where
+  instead of going from Homebrew compiles a bunch of your machine,
+695: it's Homebrew gets a tar bowl that's already been built somewhere else and extracts
+  that, right?
+699: So that was dramatically faster for users.
+701: It was dramatically less error-prone for users.
+703: But for power users, that resulted in us basically being like, hey, there's a
+  bunch of stuff that you could do with Homebrew before that you now can't really
+  do.
+711: Or at least, to be more exact, if you want to do this, you need to go over there
+  and do the work yourselves because we're not going to do that work for you.
+718: Which, as far as a lot of open source users are concerned, is the same as saying
+  this is now fundamentally impossible.
+724: But the tricky thing with this is now we're in the situation where, because not
+  everything's being built on individual user machines,
+732: we need to figure out like, well, what are we going to support and what are we
+  going to build and all that type of stuff.
+737: So it started off with just like, okay, we build one package on one platform.
+741: We pick a macOS version.
+742: We build on x86-64.
+744: Great.
+745: Then eventually we add Linux support.
+747: Then Apple came along with Apple Silicon.
+750: And then we have to do ARM64 support.
+752: And then we decided because we hate ourselves, we're going to do ARM64 support
+  in Linux as well.
+757: And then I'm sure at some point there'll be something else, right?
+760: So like, yeah, exactly.
+764: Risk will come.
+765: I'm sure you can run homebrew on your toaster or whatever, right?
+768: So if, hands up, any folks in here who support like software on multiple platforms
+  or more platforms than they did 10 years ago, right?
+776: It, it's a bit of a pain in the ass, right?
+778: About what works for 90% of people most of the time, right?
+781: And then that was their primary focus, right?
+784: So in homebrew, we've tried to do the same thing, right?
+787: We, we tried to focus on like, what do most of our users actually do?
+791: And what that looks like is getting to a point where you realize, well, we're
+  supporting a bit too much, right?
+796: So we used to support, in theory at least, every macOS version.
+800: And then a few years ago we decided we're going to support three.
+802: We're going to support the current one and the two preceding ones, right?
+805: This makes people upset sometimes because they're still using their old Mac and
+  they feel like Apple's abandoned them and now we've abandoned them and this is really
+  unfair.
+813: But then even then, even with these three versions, what that looks like is,
+  okay, well, does that mean we have to support all of this?
+819: Or actually all of this?
+820: Which just gets into madness, right?
+822: Because every like line here, if you're going to support that, like we're saying
+  we expect all of 10,000 packages that we claim that will work on these are going
+  to work on these all the time.
+834: And when it doesn't, it's a bug and we're going to fix it and it's going to break
+  or whatever.
+837: And then it's come back to the like, well, Humber is slow, right?
+840: And maybe this isn't slow in terms of the behavior, but Humber is slow to fix
+  bugs.
+844: They're slow to merge our PRs because we have this matrix of issues that we have
+  to deal with all of the time, right?
+850: And what that means is you end up having to slim it down, right?
+853: So we say, okay, well, we're not going to support everything all the time.
+856: So we now don't build binary packages for the newest versions of macOS because
+  we're like, well, A, we don't need to necessarily hyper optimize for that.
+863: B, we probably get reasonable matrix coverage from the otherwise and C, like
+  Apple are dropping this, right?
+870: So on the 9th of September, sorry, on September 2026, we're going to stop building
+  binary packages for Intel altogether, right?
+878: On macOS, still on Linux because that's the majority architecture there.
+882: But it's like, well, why are we doing this?
+884: Could we indefinitely build this?
+886: Sure we could, but it's going to make the project slower.
+888: And we're at a point where Apple will have announced their plans to get off this.
+893: So again, multi-billion dollar corporation, 30 volunteers, right, who receive
+  a small stipend.
+900: But we should not be holding ourselves to a higher standard than multi-billion
+  dollar corporations, right?
+905: On this particular, we have to fight harder and harder against that in order
+  to have something that works for our users.
+909: And eventually we get to a point where we're like, well, this is a security feature
+  anyway.
+912: No, no, we're not interested in doing this anymore, right?
+916: So we, we used to just go, okay, we have these features and we turn them off.
+919: And then now we have like with a major or minor release, we deprecate, then we
+  disable, then we delete that code, right?
+925: And again, that, if you don't already do something like this in your project
+  and you have like a clear cadence, please, it's, it's so satisfying going and having
+  all that code that causes your pain in the ass.
+935: And knowing putting little markers and then be like in six months, I can just
+  delete all of this mess and not have to think about this ever again.
+944: Okay. Yes.
+945: It breaks backwards compatibility, but then if only we like one day, I think
+  someone will invent something.
+951: Let's hypothetically call it a version control system where if they wanted an
+  old version of some code, they could in fact go back in time.
+959: I, it's a crazy idea, but I think one day it might pay off, but you know, people,
+  again, it's this thing, it's entitlement.
+967: We don't have to deal with that and we shouldn't have to deal with that, right?
+970: Rust is a nice, good example of this, right?
+973: Where they just state, okay, here's our platform support.
+976: Here's what we have.
+977: We have tier one, tier one targets can be thought of as guaranteed to work.
+981: And in the spirit of open source, we almost directly stole this.
+984: And we now have our own support tiers in homebrew where we say, here we have
+  our tier one platforms.
+989: These are what we expect to work.
+991: Tier two is like, maybe this is going to work.
+993: Tier three, it's probably going to be broken.
+995: And then to homebrew sucking, we want you to know like, hey, we told you to do
+  it this way.
+1003: You are doing it a different way.
+1006: Someone said you are sucking.
+1009: For those at the back, I will neither confirm nor deny that.
+1013: But yeah, but it's important, right?
+1015: If you can just write this stuff down, you will find people are a lot more likely
+  to accept a thing which you put in a document or a section on your website.
+1023: Even if you repeat yourself verbatim in issue comments all day long, they will
+  argue with you until the sun goes home.
+1029: But if you say, here's our support document, you can submit a PR with a proposal
+  of why this should be changed.
+1034: They will never do that and they will stop arguing with you.
+1036: So, there we go.
+1038: You are as welcome, asshole.
+1040: Relatedly, we're going to enter the-- I thought I added disclaimer here, but
+  I think it's maybe gone.
+1046: But no, in fact, no, it's coming.
+1048: Right, let's skip over that for a sec.
+1050: Right, so act three, sustainability stuff, right?
+1054: So what do we think is the most important thing in open source sustainability,
+  right?
+1061: Money?
+1062: People, people.
+1063: Put your hand up if you think it's money.
+1067: The hecklers in the front are ruining this delightful setup.
+1071: Ironically, the hecklers in the front have given HomeRue quite a lot of money
+  to do that.
+1075: HomeRue did without any money for many years and it worked fine.
+1082: Code?
+1083: Let's just fix all-- but we can fix human problems with code, right?
+1086: We just need to write enough.
+1087: No?
+1088: No?
+1089: No?
+1090: Okay, yeah, okay.
+1091: Like, yeah, we don't like-- yeah.
+1092: Humans, okay.
+1093: The humans, we are what matter, right?
+1096: Like, if you are a maintainer or an open source project, it doesn't matter how
+  much money you
+1100: have.
+1101: It doesn't matter how much code you have.
+1102: It doesn't matter how many users you have.
+1103: If you decide and you're the sole maintainer that you're not going to work on
+  this anymore,
+1107: this project is effectively dead, right?
+1109: Someone can fork in it and they can take it on and lead from where you left
+  off.
+1113: Sometimes people do that.
+1115: A lot of the time they do not, right?
+1116: So, what this means is we need to take care of the humans, right?
+1120: If you're in a project where you've got multiple maintainers, take care of each
+  other.
+1124: If it's just you, take care of yourself.
+1126: I apologize in advance.
+1127: There's a lot of self-promotion coming because I've written a bunch about this
+  stuff.
+1131: It's a topic I care an awful lot about and I'm not going to reiterate all my
+  own blog posts,
+1136: but I am just going to put them on the screen.
+1137: So, you can go and look them up if you're really that bored.
+1141: Right.
+1142: So, the first one.
+1143: I wrote this thing a while ago.
+1144: Ironically, before AI stuff, robot pedantry human empathy.
+1148: So, this idea of like what we should try and do in our projects is automate
+  as much as we possibly
+1153: can, but also not automate the stuff that humans are actually good at.
+1157: Like, I remember I wrote this party in response to seeing projects that were
+  like automating their
+1161: messages of being like, you have made a new PR.
+1164: Good job.
+1165: You are valued as a human.
+1167: And it's like, well, that doesn't really mean a lot to people.
+1171: Let's have the robots do as much as we can.
+1183: Get them to do, again, pre-AI.
+1185: This is me mainly talking about CI when I'm talking about this.
+1187: I love an AI.
+1188: I'm not going to get into AI today.
+1190: And that's, as humans, right, we can tell people like, good job.
+1194: Thank you.
+1195: You kicked ass.
+1196: I'm looking forward to seeing another PR from you because you did such a good
+  job in this
+1199: stuff.
+1200: That really makes a difference.
+1201: There are people who contribute to open source for a long time just because
+  of nice things
+1206: one or two people did, right?
+1207: There's a guy here at this conference most years, Cornelius Schumacher.
+1211: He was my mentor on Google Summer of Code 2006 when I worked in KDE.
+1215: I can say there's absolutely no way I would have done any work on homebrew were
+  it not for him
+1219: being a really good Google Summer of Code mentor, right?
+1221: There's so many people throughout this entire conference, entire industry, who
+  have stories
+1225: like that where this one person made a difference and put me on a trajectory,
+  right?
+1229: That person could be you by just being nice, saying nice things, encouraging
+  people, right?
+1235: And I know we have to deal with a lot of toxicity and it's hard.
+1238: You can get a thick skin.
+1240: I have a very thick skin.
+1241: But trying to free yourself out for those moments where you can connect with
+  someone else
+1245: and be like, good job, well done.
+1247: It makes a big difference, right?
+1249: Next thing, contributor funnel, right?
+1252: All very brief TLDR of this.
+1255: Think about you have a nice funnel on your project, right?
+1258: A bit like a sales funnel of any of you know what that is.
+1260: But basically just this idea of like the people who use your project,
+1263: some small proportion of them will end up contributing to your project.
+1267: And then some small proportion of them will contribute enough that you want
+  to make them maintainers, right?
+1271: But like if you can get that funnel to be as effective as transitioning between
+  each stage,
+1277: that's going to be really good.
+1278: So one of the things Homebrew did really early on was some of the expectation
+  that like,
+1281: this is not a project run by us for you.
+1284: This is a project run by all of us together, right?
+1287: Homebrew had no way of doing automatic version bumps or anything like that when
+  it first created.
+1291: Max, the creator, was just like, right, I'm not going to appoint maintainers
+  for every package.
+1295: I'm just going to say, if you notice this is outdated, submit a pull request
+  to fix it, right?
+1299: That did a really good job of getting Homebrew a really, really decent number
+  of contributors for the number of users we had.
+1305: And we have a tiny number of maintainers, relatively, we have like 30.
+1308: But still, that's way better than it was like 10 years ago.
+1311: Open source economics, again, just restating the stuff about like money, right?
+1316: Like money is not really what matters, right?
+1319: Money helps with some problems.
+1321: If you want to come to my RubyGems talk later today, you'll hear me talk about
+  how money creates some other problems.
+1327: But what we want to use is the money to help the humans, right?
+1335: So we can help the humans do the right things.
+1337: Because ultimately, I think the scarcest resource in open source is maintainer,
+  not even maintainer time, maintainer motivation, right?
+1344: And if you have a project where the environment and the users and the support
+  structure and whatever makes you go, this fucking sucks, I don't want to do this
+  anymore, then that project will die very soon.
+1355: Cool.
+1356: So, how do you do that?
+1359: Say no to things.
+1361: Say no to most things, most of the time, right?
+1363: Like chances are, unless you hear a feature request a bunch of times or you
+  strongly disagree, you can say no.
+1369: That's fine.
+1370: You're allowed to do that.
+1371: Because ultimately, you owe no one anything.
+1374: Read the licenses of your software.
+1376: It says pretty much, and I'm not a lawyer, so please don't do this.
+1379: If I fuck up your shit on purpose, you still can't sue me because you agreed
+  to the license.
+1384: Again, I'm not a lawyer.
+1385: Do not do this.
+1388: So, what do we talk about today?
+1391: Default to fast, right?
+1392: Like performance, people care about it, particularly when other tools are faster
+  than yours.
+1397: It's not a bad idea to think about performance, even if you're just thinking
+  about performance from the scope of what you do with support, right?
+1404: Having a support reality that you can publish, and you can use that to set expectations.
+1408: And then finally, optimize for the maintainers, because they are the people
+  who keep your project alive.
+1412: So, one change is enough, right?
+1416: Just think about today, the projects you work on, what's something you could
+  do to help one of these three things.
+1421: Make something faster, maybe clarify, even if it's one sentence in your readme,
+  what you support and what you don't.
+1426: Or set a boundary for yourself or other maintainers for how you can better support
+  yourself as a human.
+1432: Hands up, who's going to be one of these three things in the next month?
+1437: Some people put up their hand while saying no, which is confusing.
+1442: If you have questions, I don't know if we've got time for any now.
+1445: We don't.
+1446: But send me an email.
+1447: Go on my website.
+1448: You can find how to contact me.
+1449: And thank you very much for coming.
+1450: Thank you.
+1451: Thank you.
+1452: Thank you.

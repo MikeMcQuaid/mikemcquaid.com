@@ -1,0 +1,395 @@
+---
+0: Thank you everyone for having me today, this is my first time at the big stage
+  in Homebrew,
+9: in Homebrew, Fosda. I've been here many years, I love this conference, it's the
+  best open source
+16: conference in the world, but first time here. So I thought, given this topic is
+  potentially
+23: contentious, I would get a friend of mine, hopefully make me feel a little bit
+  better.
+28: So I sent him the screenshot of when this got accepted, and I said, oh, fuck.
+  So he congratulated
+36: me, which was very kind. He thought nice things about the title, and then unfortunately
+  let
+43: me down. So hopefully I am not in fact fucked, but if I am, hopefully it is entertaining
+  for
+49: all of you to watch me, as we say in the UK, die on your arse. Anyway, so some
+  important
+56: framing, right? We're going to talk about some stuff today, which is pretty fresh,
+  like literally
+60: some people who have been involved in the story are possibly in the room, and
+  I've seen people
+66: at FOSVEM, right? So who already has an awareness of what happened with RubyGems,
+  even a vague
+74: one, right? And who has like strong opinions about maybe who was in the wrong
+  and who was in the
+79: right? Trick question. But yeah, okay, so a few of us. So what I ask us to bear
+  in mind, right? This is not a trial, right? It doesn't really help us to go and
+  point fingers, particularly at individuals, actually, because this is mainly a story
+  about groups of people, and communities, and open source foundations, and open source
+  maintainers, and companies, and all of that interesting stuff, right? And
+97: I actually think this stuff gets, particularly when I'm sitting on a stage, and
+  people won't be in the room, it's a bit mean, if we start pointing fingers at individuals,
+  so I'm just not going to do that. I'm going to try and avoid naming anyone except
+  myself, because I'm allowed to be self-deprecating because I'm British.
+115: So the next thing, again, I want us to just encourage anyone who right now is
+  like, this group with this person, completely fucked this up, and this group of
+  this person did everything right. Like, that's a bit of a red flag, right? You know,
+  many of us in the room, I'm sure are engineering, right? And this group of this
+  person did everything right? Like, that's a bit of a red flag, right? You know,
+  many of us in the room, I'm sure are engineering, right? And this group of this
+  person did everything right? Like, that's a bit of a red flag, right? You know,
+  many of us in the room, I'm sure are engineering, right?
+145: We work with engineers, right? And we work with software, and complex systems
+  fail in complex ways, right? So if you feel absolutely certain about something,
+  that means either you're probably missing something, or maybe you have a bias. That's
+  okay. No shame, no shade, whatever, right? But just let's try and try and come into
+  this with an open mind, right? Again, another important framing, I think, for all
+  this is incentives of everything, right? Like, very rarely
+175: in the world do we actually have particularly in things like open source
+179: and in workplaces and not Netflix shows or whatever like people who are just
+184: unbelievably evil and cackle away as they deliberately do the thing to
+187: maximally fuck over as many people as possible right like people are responding
+191: to the incentives that are put in front of them right people don't go into things
+195: generally with bad intentions and generally the people who we look at in
+198: these situations who we think maybe have bad intentions just have a really bad
+201: incentive structure set in front of them right so I'm also need to look at
+204: things through that lens and we're gonna try this being a lot of I guess the
+208: word drama has come up again and again when people have been talking about this
+211: right sometimes like favorably sometimes used to critique one side or another
+  or
+216: whatever but I feel like we thankfully have moved past the drama stage right
+  and
+222: we can be in the learning stage so let's do that this talk is about free and
+  open
+228: source software and specifically infrastructure projects which I'll talk a
+233: a little bit later on why this is a particularly important topic for me specifically
+  but these
+240: projects underpin an enormous amount of the internet right like for most even
+  kind of
+246: commercial software developers who are not here who care nothing about open source
+  who probably
+249: don't even really understand open source the amount of open source software that
+  has to work
+253: and go right and be lined up and perfectly orient itself for that person
+259: to do their day job and increasingly their day job far removed from technology
+264: is pretty breathtaking when you think about it right it's arguably open source
+268: software is one of the best achievements we've made as mankind and I love
+274: conferences like this because I think it really highlights the kind of beauty
+  of
+279: what we're doing here right we are creating this worldwide system of
+283: software which is incredibly powerful and many people rely on empowers so many
+287: other fields right but because it's invisible when it's working and because
+292: people don't think about it often it just fades into the background and that
+298: success that comes from making things invisible and transparent and just
+303: smoothly flowing makes it even more dramatical
+306: that's not a word even more dramatic when things fail when things fail they
+312: fail loudly they feel globally and the blast radius on important projects it's
+316: never small so Ruby gems is one of those systems and that's what the story today
+321: it's gonna be about not talking about heroes we're not talking about villains
+324: we're just talking about systems of distress and what we can learn so who am
+  I
+328: why am I talking about this and what can you maybe learn from me firstly I think
+334: that's legitimate to ask particularly in something like this story because I
+339: think a lot of the people who maybe have a strong opinions like when you
+343: understand a bit about their background it's maybe clear why they have the view
+347: they have so I'm the project leader of homebrew a Mac package manager it runs
+  on
+352: Linux and stuff as well so I've worked on that since 2009 so that'll be 17 years
+  this
+359: year which is slightly terrifying and I think what that does is it gives me a
+363: little bit of context about what it's like to run a package manager what it's
+367: like to work on these open source projects for long periods of time but we'll
+  see
+372: later I'm not super involved with this story beyond that right I was a principal
+378: engineer at github for a while that told me a fair bit about open source it told
+  me a
+384: fair bit about Ruby because that's what github is primarily built in and scale
+389: security liabilities etc I think most importantly actually for the story I'm
+  a
+394: Rubyist I first wrote some Ruby in 2005 I've probably written Ruby more than
+  any
+399: other language since about 2009 and I deeply love it I like the ecosystem I like
+403: many of the people I have friends I've met because of Ruby I have jobs that I've
+  got
+407: because of my work on Ruby and I have depend on it for most of my career finally
+413: and somewhat least importantly like I have a day job right open source is not
+  my
+418: life I'm a CTPO a small training management software company in Scotland but
+  as a
+424: result of that I have had to do an awful lot of like work around growing as a
+430: leader and trying to understand how systems and cultures and incentives are set
+  up
+435: and what happens right I'm not a Ruby James maintainer I never have been I have
+439: similarly with bundler I have no affiliation with Ruby central I've never
+443: been involved with them I've never given them any money I've never done any work
+447: with them or anything like that in this situation that I was asked to mediate
+  so
+451: some people we'll talk about later on like the way homebrew does governance was
+456: kind of cited relatively early on in this situation and as someone who was kind
+  of
+460: very involved with with homebrew and our governance process I was asked to
+463: kind of come in and see like well how can this apply to Ruby gems or not but
+466: unfortunately my mediation did not manage to stop happening what's happened
+472: right it's interesting because pretty much this whole story takes place between
+477: September and October 2025 we've we kind of have a bit of stability now I think
+482: some of the kind of strongest emotions were kind of past that stage which
+486: probably helps us to look back a little bit so we're talking about weeks for
+  most of
+491: these events rather than years although the context set beforehand and the stuff
+494: we'll learn afterwards we'll go back and forward I help gems that co-op you don't
+500: need to know what that is if you don't already and I help them kind of set up
+  their governance
+504: process I learned some stuff along the way so okay who knows what Ruby gems is
+  hand up
+511: okay most people so I'll keep this brief rubies package manager is Ruby gems
+  it's technically you
+519: could use another package manager but that's the main default that the vast majority
+  people use it was
+524: actually founded in 2004 and after Ruby had been around for a fair wee while
+  like
+530: nowadays often the software kind of comes with version can version locking and
+  package
+535: management along with the language right out the door but that was not the case
+  with Ruby gems and Ruby
+540: there's millions of applications that are on Ruby gems and as a result it's we're
+  not talking about some
+546: niche tool used by a few people we're talking about kind of critical infrastructure
+  on the internet
+550: which brings up things like software supply chains and all these other kind of
+  big grown-up selling
+555: words it's not side project as well right many open source projects are essentially
+  run by one person in their evenings and weekends they never get any money for it
+  they never spend any money on it and it's just like a fun little hobby but Ruby
+  gems is not in that category Ruby gems is much more critical
+572: so money money money is messy particularly when you involve it with open source
+  who feels a little bit uncomfortable talking about money sometimes
+582: yeah quite a lot of people and like open source money is even more potentially
+  uncomfortable
+588: because well some things cost money servers cost money storage cost money bank
+  with the cost money
+595: on coal if you want to pay someone well sorry if you want someone to be woken
+  up at three o'clock in the morning
+601: on a regular basis when stuff breaks then generally you need to provide a bit
+  more incentive to that
+608: than just peer pressure and community goodwill
+611: incidents cost money and if you've got years of work you can have it undone in
+  a few hours when you have some critical incident
+619: and it's why organizations behave differently under stress
+622: because depending on where the money is that tends to focus attention even more
+  closely when incidents are going on
+629: but not everything costs money
+631: let's compare with the open source project I've worked on for a while with homebrew
+  right
+637: so this is not to say homebrew is better or worse
+640: it's just a comparison because I think we're two projects both written in ruby
+  but we have a different approach to these things
+646: so homebrew's hosting when you download homebrew's binary packages we do not
+  pay any money for that
+651: because we were originally hosted by sourceforge then bin tray and then nowadays
+  it's github
+658: so the trade-off for that is that homebrew is not as independent as something
+  like rubygems is right like rubygems is not relying on any
+665: single vendor like they push their servers on every us but they could move relatively
+671: with big finger quotes easily to another provider
+675: and probably certainly a lot easier than homebrew could so in some ways we're
+  not even independent we're somewhat dependent on retaining in the good graces of
+  github right
+684: I used to work there I still know a lot of people there so I'm not as worried
+  about that as I might be something else but again that may or may not be a decision
+  that makes sense for your project or for rubygems
+694: so let's quickly scan through the timeline of what happened these events right
+  so ruby central the organization that's kind of often cited with this discussion
+  was founded originally in 2001 and by a couple of people in the ruby community who
+  wanted to provide a permanent nonprofit for running ruby community events and handling
+  sponsorship and logistics
+719: a few of those same people were involved with releasing rubygems in March 2004
+  and then we have to go forward about 11 years before we kind of reach the next group
+  that's kind of relevant this story which is ruby together
+736: so they were actually announced by ruby central in 2015 and they described their
+  purpose as funding on-call rotations maintenance work and improvements to shared
+  ruby infrastructure which included bundlers rubygems and rubygems.org which had
+  in their words historically been done by volunteers
+755: in 2022 these organizations merged and became a single nonprofit described the
+  motivation as reducing duplicated nonprofit overhead and unifying community
+766: for the events under the events under one roof so this brings us to basically
+  the more contentious events right hands up if you were following this live on social
+  media when it was going on in 2025
+780: right yeah a few people here so September 2025 everything kind of goes down within
+  a few weeks right and again i think there's some interesting context when we talk
+  about the setup for this taking you know almost 15 years and then within a few weeks
+  things radically change
+796: so one of the first things i think that happened was control of the main github
+  organization which was used by rubygems related projects was changed in a way that
+  restricted or removed access for some of the people who are maintaining rubygems
+  and this came out of some folks who were involved with ruby central that also involved
+  reading the github organization from rubygems to ruby central and essentially there
+  was as far as
+826: as various people involved various people involved are concerned some people
+  say this was very long time coming and this should have been expected and other
+  folks felt completely blindsided by what happened
+835: there wasn't certainly any public notice of this people had some sort of behind
+  the scenes warnings that something might be happening but certainly a bunch of people
+  were as i said essentially blindsided by what happens and the problem with this
+  is when you make decisions quickly and when you deliver them somewhat abruptly that
+  always tends to
+856: you feel hostile right it feels it can feel malicious it can feel difficult it
+  can feel targeted even if it wasn't necessarily intended that way
+863: and particularly in open source when we assume so much stuff is going to be done
+  in the public when there's no public communication at all then it can make this
+  very hard
+871: there was also essentially no governance process so i mentioned before homebrew's
+  governance process we'll talk a little bit about that later but essentially at the
+  time when this was all going on there wasn't a documented process about how people
+  get added to how people get added to how people get
+886: and removed who controls what which non-profit is responsible for what what taking
+  money means as a contractor or an employee or whatever with this organisation and
+  the problem is when you don't have a written governance structure then whoever holds
+  power ends up filling the gap and getting to make the decisions
+905: so after the initial shock we had an attempt at recovery right it looked like
+  things were going okay to begin with so we got to mid-september there was multiple
+  possible futures it looked like maybe we could get everything back everyone could
+  get back on the same page there might be some hurt feelings but we'll be okay there
+  was a governance PR proposed on september the 14th
+927: and you can go and see the url show on the screen in a few slides where you can
+  see the kind of conversation that was going back and forth this is how I kind of
+  ended up getting pulled in as well because it was based off homebrew's governance
+  and then I was I kind of offered to give some input there and then got pulled into
+  mediation as well
+942: and then shortly afterwards the access was restored for most of these people
+  right so if you go to the PR you can kind of see how this went on and like the sort
+  of tick-tock of what was going on in the event right
+957: so then by September the 18th we get to a point where I've offered to kind of
+  step in and mediate between both sides there's a lot of private conversations going
+  on a lot of private contacts going on and in public it looks good it looks like
+  we're both sides are discussing governance and then we get to the point the access
+  gets removed again for a bunch of people right and this is when things get a little
+  bit messier because some folks who had their access removed
+982: and then claimed that it was a mistake that their access had been removed and
+  then others took offense and essentially things get very messy very quickly right
+  and then trust just gets destroyed and never really rebuilt this is when we start
+  to get security concerns invoked as a justification as well there was mention of
+  supply side security which in recent history there have been NPM supply side security
+  attacks so RubyGems having a relatively similar trust model
+1012: like that was concerning to people being involved it also concentrated power
+  very quickly and made clear who had power to do what and who was citing these concerns
+  and using them to make what decisions
+1026: so by the time we get to late September we have another inflection point where
+  it becomes public on the 28th of September the root level infrastructure access
+  still existed outside the new control structure
+1039: so the people who were maintainers and had either been removed from the project
+  or had quit the project in protest at the changes some of them still had AWS access
+  and AWS root access even more severely right
+1053: so again this back and forth about exactly who had what access and when why
+  and what this meant but essentially regardless this is a bad situation right you
+  have a situation where the theoretical control of the project and the actual control
+  of the project are diverging pretty far right
+1068: and then essentially there was a lot of back and forth but eventually we reached
+  the end state where almost a month later in October the 17th RubyGems and Butler
+  moved to the Ruby core team so essentially Ruby central who had taken ownership
+  of these projects then gave ownership elsewhere and then the people who had been
+  existing maintainers of RubyGems declared that they were happy with that and they
+  were going to allow things to move on
+1094: So you can see you can read the route access event this has got kind of Ruby
+  central's take of like what went down with the AWS access and stuff like that this
+  was posted on the 9th of October
+1107: and then while this is all going on it gets to the point where there's enough
+  drama that like various parts of the tech press started reporting on it and people
+  are getting quotes blog posts social media press coverage essentially take over
+1123: we're not having really any discussions on PRs anymore this is all happening
+  out in the open and then the narrative stops being controlled by the people who
+  are just involved and things become a little bit reactive
+1134: people start raising privately a lot of people in the Ruby community people's
+  confidence drops like what does this mean for RubyGems is RubyGems still going to
+  be running anymore and worst of all lawsuits begin like we have again publicly on
+  the record both sides have talked about how they've engaged in legal action with
+  the other high
+1153: we have no insider knowledge as to what the statuses of said lawsuits but I
+  think it's relatively predictable that once that happens people are no longer interested
+  or able really to make good and be friends with people they are in lawsuits with
+  at that point
+1168: so what were the consequences what happened here well talk failed pretty quickly
+  right so people tried to voice what was going on and how they were feeling and how
+  they could improve things but then when people get kicked out the project then all
+  of that just becomes public discussion instead of private discussion
+1187: so a bunch of maintainers exit the project some people removed against their
+  will and then some people removed protest so you get to the point where the majority
+  of people who are working on RubyGems in the space of two months essentially have
+  left and gone and done their own thing
+1204: so doing their own thing what does that means well there was a single gem co-op
+  which some of the maintainers went off and decided to build so they essentially
+  built their own alternative to RubyGems both centralized service and they have forks
+  of various other projects and stuff as well so this was not an overnight replacement
+  but it was spun up relatively quickly and it built essentially a separate kind of
+  side ecosystem which changed the power
+1234: landscape right so forks don't need to necessarily win or get more users to
+  matter and in this case I think this kind of sent a message about how things could
+  be done differently and it also made clear that that group of people were not interested
+  in re-entering the fold again
+1248: so another interesting kind of consequence of this is I guess what I would call
+  professional open source so what I mean by that is we have a bunch of people in
+  this room I would guess probably the majority of people in the room how many people
+  are paid to do open source work for
+1264: primarily at the job okay I guess if you look around the room everyone that
+  is the minority right and I would say in the open source community in general it
+  is in the minority right so when you have people whose full-time salaried work is
+  focused primarily on open source and when they have bosses and leaders and HR teams
+  and their mortgage depends on them making those people happy then the incentives
+  are radically different right and it introduces different incentives to what exists
+  before when you have volunteers
+1294: working in their free of time and also you have the blurring between the two
+  where you have people taking contracts and doing paid work on open source they might
+  not be an employee but they have agreed to some sort of transactional relationship
+  in exchange for money
+1307: and that makes things hard and this is even more tricky when you have a project
+  like rubygems which is already hard because you're running critical open source
+  infrastructure and it requires many skills outside of writing code right which is
+  sometimes the easiest skill to be able to get from the community in open source
+1325: because what this means is that volunteers have their limits and people run
+  out right so what does this mean for careers right so a bunch of the people involved
+  in this story had at some point been paid either full-time or part-time or were
+  full-time employees of ruby central or ruby together or whatever it may be well
+  my potentially contentious take is open source is not a career right and by that
+  I don't mean those
+1355: you said it's your full-time job to work on open source I don't mean that you
+  somehow don't have a job and you're in a haze and don't really know where you are
+  what you're doing like obviously some people do have that but most of us don't open
+  source can be part of your career and even those folks I imagine who are working
+  full-time open source I would imagine your day-to-day looks pretty different to
+  how it did if it was just your evenings and weekends right it's a very different
+  way of working and I don't think we help our community by making out that the way
+  you work
+1385: worked before you received any money can just be paid a bay area salary without
+  any change to it so I think we also need to plan for our exit as individuals and
+  as organizations and exit of funding and all these types of things right we need
+  to plan for the transitions that are going to happen even when they're deeply uncomfortable
+1404: because ultimately one size does not fit all every project is going to ebb and
+  flow and change the years
+1411: and context is everything so what can we learn from all this well as I said
+  at the beginning it's not about blame
+1418: right we need to not blame because it just simplifies and polarizes and it prevents
+  learning
+1423: if you're 100% sure about who's right who's wrong
+1426: then that's going to feel good maybe for you but it's not going to explain very
+  much
+1430: governance and open source is really boring
+1433: until it's not
+1435: and at that time it's probably too late to introduce it
+1439: okay maybe money entering the equation makes things better
+1443: but it certainly makes things a lot more complicated
+1446: and we should think really carefully about how
+1448: and when and why you introduce money to the open source project
+1450: let's all not focus on who was right and who was wrong
+1454: not who messed up
+1455: but instead just try and ask better questions
+1458: let's ask about what broke and why it broke
+1460: and not who did what
+1461: and then we can learn something about governance or money
+1464: right if your project hasn't argued about governance or money yet
+1467: it probably will one day
+1469: be prepared and try and do this stuff before it becomes a problem
+1472: and that's the transferable lesson
+1474: if you've got questions then come and speak to me outside
+1476: you can email me or you can find how to contact me other ways on my website
+1480: thank you very much
+1490: Thank you.

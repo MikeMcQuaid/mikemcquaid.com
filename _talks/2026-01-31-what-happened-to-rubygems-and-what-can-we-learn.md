@@ -4,5 +4,6 @@ description: Lessons for non-Ruby projects on non-profits, governance, money and
 speakerdeck-id: aa5165e10bff4f90abf92fe12aed232b
 speakerdeck-ratio: 1.77777777777778
 youtube-id: 0AF8ayewrAQ
+transcript: true
 ---
 Presented at [FOSDEM 2026](https://fosdem.org/2026/schedule/event/YUJUKD-what_happened_to_rubygems_and_what_can_we_learn/).
