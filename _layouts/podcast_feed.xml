@@ -19,7 +19,7 @@
     {% assign feed_url = page.url | absolute_url %}
     {% assign feed_language = page.feed_language | default: "en" %}
     {% assign feed_explicit = page.feed_itunes_explicit | default: "false" %}
-    {% assign feed_image = page.feed_image | default: site.logo | default: "/images/default-card.jpg" %}
+    {% assign feed_image = page.feed_image | default: site.podcast_logo | default: site.logo | default: "/images/default-card.jpg" %}
 
     <atom:link href="{{ feed_url | xml_escape }}" rel="self" type="application/rss+xml"/>
     <title>{{ channel_title | xml_escape }}</title>
@@ -64,6 +64,10 @@
       {% if item_audio_url == "" %}
         {% continue %}
       {% endif %}
+      {% assign item_audio_length = item.podcast_audio_length | default: "" | strip %}
+      {% if item_audio_length == "" or item_audio_length == "0" %}
+        {% continue %}
+      {% endif %}
       {% assign audio_key = "|" | append: item_audio_url | append: "|" %}
       {% if seen_audio_urls contains audio_key %}
         {% continue %}
@@ -103,7 +107,7 @@
       {% if item.link_image and item.link_image != "" %}
       <itunes:image href="{{ item.link_image | xml_escape }}" />
       {% endif %}
-      <enclosure url="{{ item_audio_url | xml_escape }}" length="{{ item.podcast_audio_length | default: "0" | xml_escape }}" type="{{ item_audio_type | xml_escape }}"/>
+      <enclosure url="{{ item_audio_url | xml_escape }}" length="{{ item_audio_length | xml_escape }}" type="{{ item_audio_type | xml_escape }}"/>
       <link>{{ item_link | xml_escape }}</link>
       <description><![CDATA[{{ item_content | strip }}]]></description>
       <content:encoded><![CDATA[{{ item_content | strip }}]]></content:encoded>
