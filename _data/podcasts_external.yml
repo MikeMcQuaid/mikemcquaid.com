@@ -1,0 +1,357 @@
+---
+items:
+- id: 00ff42fd-20a5-4705-bfa2-53638066d3fa
+  source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+  title: Getting Shit Done in Institutions
+  description: "<p>David Yee, VP of Engineering at The New York Times and head of
+    its new AI platforms and products mission, joins Mike McQuaid and Neha Batra for
+    a candid, behind-the-scenes conversation about why institutions are built to resist
+    change and what to do about it. They dig into hidden norms, choosing the right
+    battles, translating “how things really work” and creating stability for teams
+    while you deliberately destabilize the system just enough to move it forward.</p>"
+  publication: Minimum Viable Management
+  date: '2026-01-24T12:55:51Z'
+  sort_unix: 1769259351
+  guid: 00ff42fd-20a5-4705-bfa2-53638066d3fa
+  podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/c0744bf875ca2fe6763dbe3f1a608bea63c7f091e4429bfa638ba97bd3d5a4fc/eyJlcGlzb2RlSWQiOiIwMGZmNDJmZC0yMGE1LTQ3MDUtYmZhMi01MzYzODA2NmQzZmEiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjk3M2RiMGU5NDc2NDAwMjBjOWMyMmY3L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjYtMS0yM19fMjEtMzMtMTgubXAzIn0=.mp3
+  podcast_audio_length: '22201480'
+- id: 73c879d9-c88e-4f62-a81f-1b536ac5cb24
+  source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+  title: Performance Reviews, Done Right
+  description: "<p>Performance reviews have a reputation for being stressful, confusing
+    and often disconnected from reality. Too often they surface feedback that should
+    have been shared months earlier or reduce a year of work into a single rating.
+    In this episode, Mike and Neha unpack why reviews fail and how managers can turn
+    them into a useful summary instead of a shock.</p><p></p><p>They explore what
+    companies expect from performance reviews, what managers struggle with and what
+    employees actually want to hear. The conversation covers documenting early signals,
+    balancing positive and critical feedback, avoiding ruinous empathy and ensuring
+    no one walks into a review surprised by the outcome. They also discuss practical
+    ways to give feedback throughout the life of a project, align on growth goals
+    and handle mismatches between perception and reality. A grounded, experience-based
+    discussion for anyone responsible for giving or receiving feedback.</p>"
+  publication: Minimum Viable Management
+  date: '2026-01-09T18:36:38Z'
+  sort_unix: 1767983798
+  guid: 73c879d9-c88e-4f62-a81f-1b536ac5cb24
+  podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/b79e836cc46b251795082bcd9d9e5687a48af673e6fef781196968f71f6a9711/eyJlcGlzb2RlSWQiOiI3M2M4NzlkOS1jODhlLTRmNjItYTgxZi0xYjUzNmFjNWNiMjQiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjk2MDBmNGM5NGM4OTA4M2RlNTI1OWE5L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjYtMS04X18yMS0xMC01Mi5tcDMifQ==.mp3
+  podcast_audio_length: '18492842'
+- id: aaa4075a-6710-4cef-9045-b066d00fd0eb
+  source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+  title: Politics at Work Without Losing Your Soul
+  description: "<p>In this episode, Mike and Neha are joined by Denise, an engineering
+    leader and former colleague from GitHub and Pivotal, to unpack the reality of
+    workplace politics and why ignoring them is not a neutral choice. Drawing on Denise’s
+    LeadDev talk and hard-earned lessons from management and senior IC roles, the
+    conversation explores political capital, information asymmetry, allyship and the
+    idea of “table flips” as a finite currency.</p><p></p><p>Together they discuss
+    when to spend influence, when to hold it back and how privilege shapes who gets
+    heard. From advocating for promotions to using power responsibly on the way out
+    of an organisation, this is a practical and candid look at how to navigate work
+    under capitalism without burning out or selling yourself short.</p>"
+  publication: Minimum Viable Management
+  date: '2025-12-29T15:20:37Z'
+  sort_unix: 1767021637
+  guid: aaa4075a-6710-4cef-9045-b066d00fd0eb
+  podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/596e9edc0528501a7c20b8c0ef2609bb4361b3f8524de68b08f28b3195af7372/eyJlcGlzb2RlSWQiOiJhYWE0MDc1YS02NzEwLTRjZWYtOTA0NS1iMDY2ZDAwZmQwZWIiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjk1Mjk5MmIxYmExMzE3NGUxMTQ3ZjUwL21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTItMjlfXzE2LTctMjIubXAzIn0=.mp3
+  podcast_audio_length: '23109831'
+- id: 8051bf87-eaba-4d1a-9c47-cd7d7a6c8f84
+  source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+  title: 'Beyond Engineering: Healthy Tension'
+  description: "<p>Product, design and engineering rarely agree and that’s a good
+    thing. In this episode, Mike McQuaid and Neha Batra break down what healthy tension
+    actually looks like, why alignment is overrated and how leaders can turn disagreement
+    into better outcomes.</p>"
+  publication: Minimum Viable Management
+  date: '2025-12-19T19:51:59Z'
+  sort_unix: 1766173919
+  guid: 8051bf87-eaba-4d1a-9c47-cd7d7a6c8f84
+  podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/caf8253f76c01b74c6262dac64a77720e139fe3439aab6d0fb7f134889c4ca1c/eyJlcGlzb2RlSWQiOiI4MDUxYmY4Ny1lYWJhLTRkMWEtOWM0Ny1jZDdkN2E2YzhmODQiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjk0NWE5ZjRiOWI2NGY5ZDFmZjU5Nzg5L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTItMTlfXzIwLTM5LTMyLm1wMyJ9.mp3
+  podcast_audio_length: '20289227'
+- id: 1e69291e-fa42-4ca8-a722-0acb2dd87d32
+  source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+  title: 'When Things Go Wrong: How Leaders Rebuild Trust'
+  description: "<p>Mike and Neha explore how leaders can recognise when things are
+    going wrong, why admitting mistakes builds trust, how to spot low psychological
+    safety, and the value of written plans, accountability and steady course correction
+    when guiding teams through tough moments.</p>"
+  publication: Minimum Viable Management
+  date: '2025-11-14T09:08:45Z'
+  sort_unix: 1763111325
+  guid: 1e69291e-fa42-4ca8-a722-0acb2dd87d32
+  podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/0e68337153f3e7e569d4edacdd6f58b6ee7f432d099d0935753bcb38bda7b767/eyJlcGlzb2RlSWQiOiIxZTY5MjkxZS1mYTQyLTRjYTgtYTcyMi0wYWNiMmRkODdkMzIiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjkxMTExM2Q2MzYwZWE2MWFhOWE5NzU2L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTEtOV9fMjMtMTAtNS5tcDMifQ==.mp3
+  podcast_audio_length: '22439167'
+- id: f04135da-c684-4431-90c7-42087a1e6746
+  source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+  title: Creating and Keeping Momentum
+  description: "<p>Mike McQuaid and Neha Batra break down how leaders spark momentum
+    and keep it steady. They start with clarity of mission, ruthless scope cuts, and
+    visible wins in weeks not years. They cover simple not easy systems that reduce
+    drag, like milestone slices, anti-goals, handoffs that follow the sun, and temporary
+    process as guardrails you later remove. They show why constraints breed creativity,
+    how to automate recurring pain, and why teams should target low volatility over
+    peak velocity. They close with saying no, letting the right fires burn, and building
+    a candid culture through trust and social capital.</p>"
+  publication: Minimum Viable Management
+  date: '2025-10-31T17:25:45Z'
+  sort_unix: 1761931545
+  guid: f04135da-c684-4431-90c7-42087a1e6746
+  podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/37bf18543a6b783b04cb20ae560a7f4b5db1c255aa539b59a0e8b7d8f8f8562e/eyJlcGlzb2RlSWQiOiJmMDQxMzVkYS1jNjg0LTQ0MzEtOTBjNy00MjA4N2ExZTY3NDYiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjkwNGVkNDU0NWE5ZmQ1MDI4OGY2NDI4L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTAtMzFfXzE4LTktMjUubXAzIn0=.mp3
+  podcast_audio_length: '29463062'
+- id: 7147f288-437f-464c-b30a-8b552ff25fd9
+  source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+  title: Psychological Safety vs. Telling the Truth
+  description: "<p>How can teams feel safe to speak up while still hearing hard truths?
+    In this episode of Minimum Viable Management, Mike McQuaid and Neha Batra explore
+    what it really means to balance psychological safety with direct, honest communication.
+    They discuss the practical work of rebuilding trust in teams, the role of consistency
+    and humility in leadership, and how to make openness a habit, even when conversations
+    are uncomfortable.</p><p>They also touch on remote work, written communication,
+    and when individual contributors should share their opinions in decision-making.
+    A candid look at how safety and honesty can, and must, coexist for teams to thrive.</p>"
+  publication: Minimum Viable Management
+  date: '2025-10-23T09:36:20Z'
+  sort_unix: 1761212180
+  guid: 7147f288-437f-464c-b30a-8b552ff25fd9
+  podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/837aad13d398c5c86b6e3c13e3c6b080a2d9530ec1c8569dc3ca530e555343f2/eyJlcGlzb2RlSWQiOiI3MTQ3ZjI4OC00MzdmLTQ2NGMtYjMwYS04YjU1MmZmMjVmZDkiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjhmOWY0Yjc4ZGNjNDlkZjE5NjNkODlkL21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTAtMjNfXzExLTI2LTE1Lm1wMyJ9.mp3
+  podcast_audio_length: '28287410'
+- id: d5cc998f-a819-4ec4-9261-c15aa0bee877
+  source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+  title: Leadership Is a Series of Decisions (and Compromises)
+  description: "<p>In this episode of Minimum Viable Management, Mike McQuaid and
+    Neha Batra dive deep into the messy art of decision-making. When should you seek
+    input and build consensus and when should you just make the call? They swap stories
+    about frameworks for faster, clearer decisions, how to handle reversibility (“one-way
+    vs two-way doors”), and how to communicate so people understand not just what
+    you decided, but why.</p><p>They also discuss how leaders can empower others to
+    show leadership at any level, the real cost of over-meeting, and what it means
+    to take ownership when things go wrong.</p>"
+  publication: Minimum Viable Management
+  date: '2025-10-14T14:23:01Z'
+  sort_unix: 1760451781
+  guid: d5cc998f-a819-4ec4-9261-c15aa0bee877
+  podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/61d0c8d81b43d6ece86544003c34dd632cca54f190a7c1d2e92af14b09a66929/eyJlcGlzb2RlSWQiOiJkNWNjOTk4Zi1hODE5LTRlYzQtOTI2MS1jMTVhYTBiZWU4NzciLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjhlZTRmMWJlNDJjYWNhOTllOWEzZTg1L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTAtMTRfXzE1LTI0LTQzLm1wMyJ9.mp3
+  podcast_audio_length: '27053909'
+- id: 41e62267-3861-4998-bd86-42aba65f8a22
+  source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+  title: Building Trust and Having Better Fights
+  description: "<p>In the first episode of Minimum Viable Management, Mike McQuaid
+    and Neha Batra reunite to talk about what “minimum viable management” really means:
+    how to lead effectively without drowning in meetings or bureaucracy. They cover
+    one-on-ones that actually work, giving and receiving feedback, establishing connections,
+    servant leadership without martyrdom, and what good arguments look like between
+    managers, engineers, and product.</p>"
+  publication: Minimum Viable Management
+  date: '2025-10-09T11:20:11Z'
+  sort_unix: 1760008811
+  guid: 41e62267-3861-4998-bd86-42aba65f8a22
+  podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/41b92a7444b00e56b6c7b6531add5d7d8791fad78639b20242ebd6dd8293afb4/eyJlcGlzb2RlSWQiOiI0MWU2MjI2Ny0zODYxLTQ5OTgtYmQ4Ni00MmFiYTY1ZjhhMjIiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjhlNTAxYzBkZTFjZTQ5NTVhNTYzYmE1L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTAtN19fMTQtNC0xNi5tcDMifQ==.mp3
+  podcast_audio_length: '26150642'
+- id: 6478eb02-da38-4964-beb1-313504ae1c30
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Paul and Mike - Sibling Viralry
+  link: https://mikemcquaid.com/balancingdads/
+  description: <p>Paul and Mike talk coronavirus, working through it, racism and sibling
+    fights.</p><p><a href="https://vi.to">Vito</a></p><p><a href="https://beinganantiracist.com">Being
+    an Antiracist by Kim Crayton</a></p><p><a href="https://twitter.com/mikemcquaid">Mike
+    on Twitter</a></p><p><a href="https://twitter.com/paulca">Paul on Twitter</a></p>
+  publication: Balancing Dads
+  date: '2020-07-22T20:45:47Z'
+  sort_unix: 1595450747
+  guid: 6478eb02-da38-4964-beb1-313504ae1c30
+  podcast_audio_url: https://archive.org/download/balancing-dads/S02E02.mp3
+  podcast_audio_length: '22691712'
+- id: 2e755c49-96fc-4457-be06-a88a96ec3c9c
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Derek Sivers - OxFord Focus
+  link: https://mikemcquaid.com/balancingdads/
+  description: <p>Paul and Mike talk to Derek Sivers (founder of CD Baby and HostBaby)
+    about outside play, computer games, focus, happiness, John Lennon's parenting
+    and singing.</p><p><a href="https://sivers.org">Derek's website</a></p><p><a href="https://dragonbox.com/">Dragonbox
+    Math Apps</a></p><p><a href="https://en.wikipedia.org/wiki/Steven_Universe">Steven
+    Universe on Wikipedia</a></p><p><a href="https://twitter.com/mikemcquaid">Mike
+    on Twitter</a></p><p><a href="https://twitter.com/paulca">Paul on Twitter</a></p>
+  publication: Balancing Dads
+  date: '2020-04-08T20:45:33Z'
+  sort_unix: 1586378733
+  guid: 2e755c49-96fc-4457-be06-a88a96ec3c9c
+  podcast_audio_url: https://archive.org/download/balancing-dads/S02E01.mp3
+  podcast_audio_length: '58550784'
+- id: 43c74d6d-a97e-4988-95a5-582a7dd3d8af
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Paul and Mike talk Coronavirus
+  link: https://mikemcquaid.com/balancingdads/
+  description: '<p>A between-season, random episode: Paul and Mike talk Coronavirus,
+    being stuck at home and how it could change the way we work.</p><ul><li><a href="https://www.bbc.co.uk/news/live/world-51939591">Coronavirus
+    updates - BBC News</a></li><li><a href="https://thewirecutter.com/blog/work-from-home-with-kids/">How
+    to Work From Home With Kids - Wirecutter</a></li><li><a href="https://thewirecutter.com/reviews/our-favorite-learning-apps-for-tablets-and-smartphones/">Best
+    Educational Apps and Learning Games for Kids - Wirecutter</a></li><li><a href="https://twitter.com/mikemcquaid">Mike
+    on Twitter</a></li><li><a href="https://twitter.com/paulca">Paul on Twitter</a></li></ul>'
+  publication: Balancing Dads
+  date: '2020-03-18T15:57:24Z'
+  sort_unix: 1584547044
+  guid: 43c74d6d-a97e-4988-95a5-582a7dd3d8af
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E11.mp3
+  podcast_audio_length: '24507264'
+- id: f4022544-d28c-442f-80f0-b2be7727c6ea
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Tom Preston-Werner - Medisins of the Father
+  link: https://mikemcquaid.com/balancingdads/
+  description: <p>Paul and Mike talk to Tom Preston-Werner (cofounder of Chatterbug
+    and GitHub) about giving your kids medicine, parental leave, screen time, flexible
+    working and avoiding meltdowns.</p><p>This is the last episode of Season 1; we're
+    going to have a wee break, get some feedback, find some more guests and then we'll
+    be back with Season 2. See you soon!</p><p><a href="https://twitter.com/mojombo">Tom
+    on Twitter</a></p><p><a href="https://tom.preston-werner.com">Tom's website</a></p><p><a
+    href="https://twitter.com/mikemcquaid">Mike on Twitter</a></p><p><a href="https://twitter.com/paulca">Paul
+    on Twitter</a></p>
+  publication: Balancing Dads
+  date: '2020-02-19T16:16:17Z'
+  sort_unix: 1582128977
+  guid: f4022544-d28c-442f-80f0-b2be7727c6ea
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E10.mp3
+  podcast_audio_length: '46674432'
+- id: e6830c1e-bd17-4972-a352-bcacf1c0d07b
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Paul and Mike - Axel Rosmeo and Juliat
+  link: https://mikemcquaid.com/balancingdads/
+  description: <p>No guest this time (we will have one next time)!</p><p>Paul and
+    Mike talk Dinotrux, dogs singing pirate metal, brushing teeth, meeting other parents
+    and Julia Donaldson and Axel Scheffler's latest book (and Axel's website).</p><ul><li><p><a
+    href="https://en.wikipedia.org/wiki/Dinotrux">Dinotrux on Wikipedia</a></p></li><li><p><a
+    href="https://en.wikipedia.org/wiki/No_Grave_But_the_Sea">No Grave But The Sea
+    (pirate metal with "dogs singing") on Wikipedia</a></p></li><li><p><a href="https://www.amazon.co.uk/Smeds-Smoos-Julia-Donaldson/dp/1407188895">The
+    Smeds and the Smoos on Amazon</a></p></li><li><p><a href="https://www.oralb.co.uk/en-gb/products/kids/vitality-disney-cars-kids-electric-toothbrush">Cars
+    Electric Toothbrush</a></p></li><li><p><a href="https://axelscheffler.com">Axel
+    Scheffler's website</a></p></li><li><p><a href="https://twitter.com/mikemcquaid">Mike
+    on Twitter</a></p></li><li><p><a href="https://twitter.com/paulca">Paul on Twitter</a></p></li></ul>
+  publication: Balancing Dads
+  date: '2020-01-30T10:31:54Z'
+  sort_unix: 1580380314
+  guid: e6830c1e-bd17-4972-a352-bcacf1c0d07b
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E09.mp3
+  podcast_audio_length: '32589696'
+- id: 92ebba19-1c10-408f-a6ba-9bbcb933bc2d
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Luke Hefson - Travel Advice from a Prodad Manager
+  link: https://mikemcquaid.com/balancingdads/
+  description: '<p>This time Mike and Paul get advice from with Luke Hefson: Shoreham-based
+    product manager at GitHub about traveling with kids and everyone talks about their
+    New Year''s Eves.</p><ul><li><p><a href="https://twitter.com/lukehefson">Luke
+    on Twitter</a></p></li><li><p><a href="https://twitter.com/mikemcquaid">Mike on
+    Twitter</a></p></li><li><p><a href="https://twitter.com/paulca">Paul on Twitter</a></p></li></ul>'
+  publication: Balancing Dads
+  date: '2020-01-08T21:27:51Z'
+  sort_unix: 1578518871
+  guid: 92ebba19-1c10-408f-a6ba-9bbcb933bc2d
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E08.mp3
+  podcast_audio_length: '44448000'
+- id: 728640ba-3344-4179-8b71-cb27a9246161
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Alex Lang and Thilo Utke - Paternity Leave(ing Work at 5:30)
+  link: https://mikemcquaid.com/balancingdads/
+  description: '<p>This time Mike and Paul are speaking with Alex Lang and Thilo Utke:
+    Berlin-based founders of Cobot about paternity leave, baby groups, having kids
+    while running a startup, memories and language.</p><ul><li>Author of "Cribsheet",
+    <a href="https://en.wikipedia.org/wiki/Emily_Oster">Emily Oster (Wikipedia)</a></li><li><a
+    href="https://twitter.com/cobot_me">Cobot on Twitter</a></li><li><a href="https://www.cobot.me">Cobot''s
+    homepage</a></li><li><a href="https://twitter.com/mikemcquaid">Mike on Twitter</a></li><li><a
+    href="https://twitter.com/paulca">Paul on Twitter</a></li></ul>'
+  publication: Balancing Dads
+  date: '2019-12-06T13:23:54Z'
+  sort_unix: 1575638634
+  guid: 728640ba-3344-4179-8b71-cb27a9246161
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E07.mp3
+  podcast_audio_length: '31074048'
+- id: d554139d-0a81-478c-8f20-9da87a5e53a0
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Paul and Mike - Sick Child(r|m)en
+  link: https://mikemcquaid.com/balancingdads/
+  description: <p>No guest this time (we expect one next time)! Mike and Paul talk
+    sick kids, balancing them with work, screen time, Scottish, English and Irish
+    healthcare for kids and anticipate schools.</p><ul><li><a href="https://twitter.com/mikemcquaid">Mike
+    on Twitter</a></li><li><a href="https://twitter.com/paulca">Paul on Twitter</a></li></ul>
+  publication: Balancing Dads
+  date: '2019-11-28T19:03:05Z'
+  sort_unix: 1574967785
+  guid: d554139d-0a81-478c-8f20-9da87a5e53a0
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E06.mp3
+  podcast_audio_length: '26659444'
+- id: 21428587-c766-47d9-90e3-5f2daa807f2a
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Paul and Mike - Halloween(ers)
+  link: https://mikemcquaid.com/balancingdads/
+  description: <p>No guest this time! Mike and Paul talk Halloween, Christmas, lying
+    to your children, advertising, toys, teenagers and threenagers.</p><ul><li><a
+    href="https://twitter.com/mikemcquaid">Mike on Twitter</a></li><li><a href="https://twitter.com/paulca">Paul
+    on Twitter</a></li></ul>
+  publication: Balancing Dads
+  date: '2019-11-10T15:28:55Z'
+  sort_unix: 1573399735
+  guid: 21428587-c766-47d9-90e3-5f2daa807f2a
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E05.mp3
+  podcast_audio_length: '32396160'
+- id: 9382bc0c-83a0-41da-9872-673d748f1e20
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Jame McCrae - Infectious Dadsease Dadctor
+  link: https://mikemcquaid.com/balancingdads/
+  description: '<p>This time Mike and Paul are speaking with Jame McCrae: Edinburgh-based
+    infectious disease doctor, father of one and Mike''s next-door neighbour about
+    doctors dating doctors, children sleeping, their toys and Julia Donaldson''s (great)
+    children''s books.</p><ul><li><a href="https://en.wikipedia.org/wiki/Sophie_the_Giraffe">Sophie
+    the Giraffe (Wikipedia)</a></li><li><a href="https://en.wikipedia.org/wiki/Julia_Donaldson#Works">Julia
+    Donaldson''s works (Wikipedia)</a></li><li>Jame has "no internet presence and
+    no plans to get one"</li><li><a href="https://twitter.com/mikemcquaid">Mike on
+    Twitter</a></li><li><a href="https://twitter.com/paulca">Paul on Twitter</a></li></ul><p>Sorry
+    about the sound quality of this one; we''re still trying to find the best way
+    to record multiple guests.</p>'
+  publication: Balancing Dads
+  date: '2019-10-26T19:42:09Z'
+  sort_unix: 1572118929
+  guid: 9382bc0c-83a0-41da-9872-673d748f1e20
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E04.mp3
+  podcast_audio_length: '35599592'
+- id: a27337f6-474f-46ad-9082-11c070310b6f
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Mike McQuaid - GitHusband Engineer
+  link: https://mikemcquaid.com/balancingdads/
+  description: '<p>This time we''re speaking with ... me? Edinburgh-based Mike McQuaid,
+    software engineer and father of two, is interviewed by his new co-host (from Episode
+    1): Paul Campbell.</p><ul><li><p><a href="https://twitter.com/mikemcquaid">Mike
+    on Twitter</a></p></li><li><p><a href="https://twitter.com/paulca">Paul on Twitter</a></p></li></ul>'
+  publication: Balancing Dads
+  date: '2019-10-17T09:04:17Z'
+  sort_unix: 1571303057
+  guid: a27337f6-474f-46ad-9082-11c070310b6f
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E03.mp3
+  podcast_audio_length: '40212189'
+- id: 179e85e1-5e43-4bbe-9919-eebfbcf1de31
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Lee Dohm - Community Dadager
+  link: https://mikemcquaid.com/balancingdads/
+  description: '<p>This episode we''re speaking to Kirkland, Washington-based Lee
+    Dohm: a community manager in the software industry and single dad.</p> <ul> <li><a
+    href="https://twitter.com/leedohm">Lee on Twitter</a></li> <li><a href="https://github.com/lee-dohm">Lee
+    on GitHub</a></li> <li><a href="https://twitter.com/mikemcquaid">Mike on Twitter</a></li>
+    </ul>'
+  publication: Balancing Dads
+  date: '2019-10-17T09:03:36Z'
+  sort_unix: 1571303016
+  guid: 179e85e1-5e43-4bbe-9919-eebfbcf1de31
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E02.mp3
+  podcast_audio_length: '31430449'
+- id: f7f880aa-e2b8-4d35-a65f-5f40f53068c6
+  source_feed_url: https://mikemcquaid.com/balancingdads.xml
+  title: Paul Campbell - CEdaddyO and Cofoundad
+  link: https://mikemcquaid.com/balancingdads/
+  description: <p>This time we're speaking with Dublin-based Paul Campbell a CEO,
+    founder, conference organiser and father of two.</p><ul><li><a href="https://twitter.com/paulca">Paul
+    on Twitter</a></li><li><a href="https://twitter.com/ullconf">Úll on Twitter (mentioned
+    conference)</a></li><li><a href="https://ti.to">Tito's homepage (Paul's company)</a></li><li><a
+    href="https://twitter.com/mikemcquaid">Mike on Twitter</a></li></ul>
+  publication: Balancing Dads
+  date: '2019-10-17T09:03:19Z'
+  sort_unix: 1571302999
+  guid: f7f880aa-e2b8-4d35-a65f-5f40f53068c6
+  podcast_audio_url: https://archive.org/download/balancing-dads/S01E01.mp3
+  podcast_audio_length: '33317116'

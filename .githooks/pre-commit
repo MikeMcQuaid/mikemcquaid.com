@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-thought_files=()
+metadata_files=()
 while IFS= read -r line; do
-  thought_files+=("$line")
+  metadata_files+=("$line")
 done < <(git diff --cached --name-only --diff-filter=ACM -- _thoughts/*.md)
+while IFS= read -r line; do
+  metadata_files+=("$line")
+done < <(git diff --cached --name-only --diff-filter=ACM -- _interviews/*.md)
 
-if [[ "${#thought_files[@]}" -eq 0 ]]; then
+if [[ "${#metadata_files[@]}" -eq 0 ]]; then
   exit 0
 fi
 
-bin/thought-link-metadata update "${thought_files[@]}"
+bin/enrich-metadata update "${metadata_files[@]}"

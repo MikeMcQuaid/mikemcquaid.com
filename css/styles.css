@@ -621,6 +621,33 @@ details>summary ul {
   opacity: 0.8;
 }
 
+.interview-link-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin-top: 0.4em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.7em;
+}
+
+.interview-media-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.interview-audio-embed {
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.index-lists.index .interview-card {
+  padding-bottom: 0.7em;
+}
+
 .thought-actions {
   display: flex;
   gap: 0.75em;

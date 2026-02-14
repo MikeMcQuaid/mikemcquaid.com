@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    {% assign feed_title_suffix = page.feed_title_suffix %}
+    {% if feed_title_suffix == nil %}
+      {% assign feed_title_suffix = "Podcasts" %}
+    {% endif %}
+    {% assign channel_title = site.title %}
+    {% if feed_title_suffix and feed_title_suffix != false %}
+      {% assign channel_title = channel_title | append: " | " | append: feed_title_suffix %}
+    {% endif %}
+    {% assign channel_description = page.feed_description | default: site.description %}
+    {% assign alternate_url = page.feed_alternate_url | default: '/interviews/' %}
+    {% assign channel_link = alternate_url | absolute_url %}
+    {% assign feed_url = page.url | absolute_url %}
+    {% assign feed_language = page.feed_language | default: "en" %}
+    {% assign feed_explicit = page.feed_itunes_explicit | default: "false" %}
+    {% assign feed_image = page.feed_image | default: site.logo | default: "/images/default-card.jpg" %}
+
+    <atom:link href="{{ feed_url | xml_escape }}" rel="self" type="application/rss+xml"/>
+    <title>{{ channel_title | xml_escape }}</title>
+    <description>{{ channel_description | xml_escape }}</description>
+    <itunes:author>{{ site.author.name | default: site.author | xml_escape }}</itunes:author>
+    <itunes:subtitle>{{ channel_description | xml_escape }}</itunes:subtitle>
+    <itunes:summary>{{ channel_description | xml_escape }}</itunes:summary>
+    <link>{{ channel_link | xml_escape }}</link>
+    <language>{{ feed_language | xml_escape }}</language>
+    <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
+    <itunes:category text="{{ page.feed_itunes_category | default: "Technology" | xml_escape }}"/>
+    <itunes:image href="{{ feed_image | absolute_url | xml_escape }}"/>
+    <itunes:explicit>{{ feed_explicit | xml_escape }}</itunes:explicit>
+    <itunes:owner>
+      <itunes:name>{{ site.author.name | default: site.author | xml_escape }}</itunes:name>
+      {% if site.author.email %}
+      <itunes:email>{{ site.author.email | xml_escape }}</itunes:email>
+      {% endif %}
+    </itunes:owner>
+    <copyright>Copyright {{ site.time | date: "%Y" }} {{ site.author.name | default: site.author | xml_escape }}</copyright>
+    <itunes:copyright>Copyright {{ site.time | date: "%Y" }} {{ site.author.name | default: site.author | xml_escape }}</itunes:copyright>
+
+    {% assign empty_list = "" | split: "" %}
+    {% assign external_podcasts = site.data.podcasts_external.items | default: empty_list %}
+    {% if page.include_interview_podcasts == false %}
+      {% assign interview_podcasts = empty_list %}
+    {% else %}
+      {% assign interview_podcasts = site.interviews | where_exp: "item", "item.podcast_audio_url" | sort: "date" %}
+    {% endif %}
+    {% assign publication_filter = page.podcast_feed_publication | default: "" | strip %}
+    {% if publication_filter != "" %}
+      {% assign external_podcasts = external_podcasts | where: "publication", publication_filter %}
+      {% assign interview_podcasts = interview_podcasts | where: "publication", publication_filter %}
+    {% endif %}
+    {% assign feed_items = interview_podcasts | concat: external_podcasts | sort: "date" | reverse %}
+    {% assign feed_limit = page.feed_limit | default: 250 %}
+    {% assign seen_audio_urls = "|" %}
+    {% assign seen_item_ids = "|" %}
+
+    {% for item in feed_items limit: feed_limit %}
+      {% assign item_audio_url = item.podcast_audio_url | default: "" | strip %}
+      {% if item_audio_url == "" %}
+        {% continue %}
+      {% endif %}
+      {% assign audio_key = "|" | append: item_audio_url | append: "|" %}
+      {% if seen_audio_urls contains audio_key %}
+        {% continue %}
+      {% endif %}
+      {% assign item_title = item.title | smartify | strip_html | normalize_whitespace | strip %}
+      {% assign item_link = item.link | default: "" | strip %}
+      {% if item_link == "" %}
+        {% assign item_link = item_audio_url %}
+      {% endif %}
+      {% assign item_id = item.id | default: item_link | default: item_audio_url %}
+      {% assign item_id_key = "|" | append: item_id | append: "|" %}
+      {% if seen_item_ids contains item_id_key %}
+        {% continue %}
+      {% endif %}
+      {% assign seen_audio_urls = seen_audio_urls | append: item_audio_url | append: "|" %}
+      {% assign seen_item_ids = seen_item_ids | append: item_id | append: "|" %}
+      {% assign item_description = item.description | default: item.content | default: "" | strip %}
+      {% assign item_summary = item_description | strip_html | normalize_whitespace | strip %}
+      {% assign item_audio_type = item.podcast_audio_type | default: "audio/mpeg" %}
+      {% capture item_content %}
+        {% if item.publication and item.publication != "" %}
+        <p><strong>Podcast:</strong> {{ item.publication }}</p>
+        {% endif %}
+        {% if item_description != "" %}
+        {{ item_description }}
+        {% endif %}
+      {% endcapture %}
+    <item>
+      <guid isPermaLink="false">{{ item_id | xml_escape }}</guid>
+      <pubDate>{{ item.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+      <title>{{ item_title | xml_escape }}</title>
+      <itunes:title>{{ item_title | xml_escape }}</itunes:title>
+      <itunes:author>{{ site.author.name | default: site.author | xml_escape }}</itunes:author>
+      {% if item.podcast_duration and item.podcast_duration != "" %}
+      <itunes:duration>{{ item.podcast_duration | xml_escape }}</itunes:duration>
+      {% endif %}
+      {% if item.link_image and item.link_image != "" %}
+      <itunes:image href="{{ item.link_image | xml_escape }}" />
+      {% endif %}
+      <enclosure url="{{ item_audio_url | xml_escape }}" length="{{ item.podcast_audio_length | default: "0" | xml_escape }}" type="{{ item_audio_type | xml_escape }}"/>
+      <link>{{ item_link | xml_escape }}</link>
+      <description><![CDATA[{{ item_content | strip }}]]></description>
+      <content:encoded><![CDATA[{{ item_content | strip }}]]></content:encoded>
+      {% if item_summary != "" %}
+      <itunes:summary>{{ item_summary | xml_escape }}</itunes:summary>
+      <itunes:subtitle>{{ item_summary | xml_escape }}</itunes:subtitle>
+      {% endif %}
+      <itunes:explicit>{{ feed_explicit | xml_escape }}</itunes:explicit>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

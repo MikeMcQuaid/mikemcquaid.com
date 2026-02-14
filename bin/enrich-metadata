@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 set -euo pipefail
 
 if [[ "${HOMEBREW_GENERATE_TRANSCRIPTS:-}" != "1" || "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
@@ -7,4 +6,4 @@ if [[ "${HOMEBREW_GENERATE_TRANSCRIPTS:-}" != "1" || "${HOMEBREW_INSIDE_BUNDLE:-
   eval "$(brew bundle --check --install env)"
 fi
 
-bundle exec ruby lib/generate_transcripts.rb "$@"
+bundle exec ruby lib/enrich_metadata_cli.rb "$@"

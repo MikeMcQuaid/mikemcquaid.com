@@ -1,4 +1,17 @@
-<li>
+<li class="interview-card">
+  {% assign interview_link = include.interview.link %}
+  {% assign interview_link_image = include.interview.link_image | default: "" | strip %}
+  {% assign interview_youtube_id = include.interview.youtube-id | default: "" | strip %}
+  {% assign interview_podcast_audio_url = include.interview.podcast_audio_url | default: "" | strip %}
+  {% assign interview_podcast_audio_length = include.interview.podcast_audio_length | default: "" | strip %}
+  {% assign interview_has_youtube = false %}
+  {% if interview_youtube_id != "" %}
+  {% assign interview_has_youtube = true %}
+  {% endif %}
+  {% assign interview_has_audio = false %}
+  {% if interview_podcast_audio_url != "" and interview_podcast_audio_length != "" %}
+  {% assign interview_has_audio = true %}
+  {% endif %}
   <a href="{{ include.interview.link }}" title="{{ include.interview.title }}">
     <h2>
       {{ include.interview.title }}
@@ -8,10 +21,37 @@
     {{ include.interview.date | date_to_long_string }}
   </p>
   <span>
-    {% if include.index_page %}
-    Interviewed by
-    {% endif %}
-    {{ include.interview.publication }}
+    <strong>
+      {% if include.index_page %}
+      Interviewed by
+      {% else %}
+      {% endif %}
+      {{ include.interview.publication }}
+    </strong>
+  </span>
+  {% if interview_has_youtube %}
+  <iframe class="interview-media-embed" title="{{ include.interview.title | strip_html | escape }}"
+    src="//www.youtube-nocookie.com/embed/{{ interview_youtube_id }}" allowfullscreen></iframe>
+  {% endif %}
+  {% if interview_has_youtube == false and interview_link and interview_link != "" and interview_link_image and interview_link_image != "" and
+  interview_link_image != interview_link %}
+  <a class="interview-link-card" href="{{ interview_link }}">
+    <div class="thought-link-card-image">
+      <img src="{{ interview_link_image }}" alt="" loading="lazy" />
+    </div>
+  </a>
+  {% endif %}
+  {% if interview_has_youtube == false and interview_has_audio %}
+  <audio class="interview-audio-embed" controls preload="none" src="{{ interview_podcast_audio_url }}">
+    <a href="{{ interview_podcast_audio_url }}">Download audio</a>
+  </audio>
+  {% endif %}
+  {% if include.interview.transcript and include.interview.transcript-id and include.interview.transcript-id != "" %}
+  {% include transcript.html id=include.interview.transcript-id video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
+  {% elsif include.interview.transcript and interview_youtube_id != "" %}
+  {% include transcript.html id=interview_youtube_id video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
+  {% endif %}
+  <span>
     {% if include.interview.content and include.interview.content != "" %}
     {{ include.interview.content }}
     {% endif %}

@@ -1,5 +1,5 @@
 require "time"
-require_relative "../lib/thought_link_metadata"
+require_relative "../lib/content_link_metadata"
 
 module Jekyll
   class PosseLimits < Generator
@@ -190,7 +190,7 @@ module Jekyll
     end
 
     def apply_thought_link_metadata(doc)
-      ThoughtLinkMetadata.enrich_data!(doc.data)
+      ContentLinkMetadata.enrich_data!(doc.data)
     end
 
     def limit_with_url
