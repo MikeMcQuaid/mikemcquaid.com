@@ -5,13 +5,16 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      xmlns:podcast="https://podcastindex.org/namespace/1.0">
   <channel>
-    {% assign feed_title_suffix = page.feed_title_suffix %}
-    {% if feed_title_suffix == nil %}
-      {% assign feed_title_suffix = "Podcasts" %}
-    {% endif %}
-    {% assign channel_title = site.title %}
-    {% if feed_title_suffix and feed_title_suffix != false %}
-      {% assign channel_title = channel_title | append: " | " | append: feed_title_suffix %}
+    {% assign channel_title = page.feed_title | default: "" | strip %}
+    {% if channel_title == "" %}
+      {% assign feed_title_suffix = page.feed_title_suffix %}
+      {% if feed_title_suffix == nil %}
+        {% assign feed_title_suffix = "Podcasts" %}
+      {% endif %}
+      {% assign channel_title = site.title %}
+      {% if feed_title_suffix and feed_title_suffix != false %}
+        {% assign channel_title = channel_title | append: " | " | append: feed_title_suffix %}
+      {% endif %}
     {% endif %}
     {% assign channel_description = page.feed_description | default: site.description %}
     {% assign alternate_url = page.feed_alternate_url | default: '/interviews/' %}

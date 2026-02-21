@@ -24,4 +24,4 @@ On this site, you’ll find:
 - [Projects]({{ '/projects/' | absolute_url }}): things I’ve built or contributed to
 - [Curriculum Vitae/Resume]({{ '/cv/' | absolute_url }}): my professional background
 - [Now]({{ '/now/' | absolute_url }}): what I’m doing currently
-- [Podcasts]({{ '/podcasts/' | absolute_url }}): podcast appearances and episodes from my own podcasts ([RSS Feed]({{ '/podcasts.xml' | absolute_url }}))
+- [Podcasts]({{ '/podcasts/' | absolute_url }}): podcast appearances and episodes from all my own podcasts ([RSS Feed]({{ '/podcasts.xml' | absolute_url }}))

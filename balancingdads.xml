@@ -1,6 +1,7 @@
 ---
 layout: podcast_feed
-feed_title_suffix: Balancing Dads
+feed_title: Balancing Dads
+feed_description: A podcast that assumes it’s normal for working dads to be present in their kids’ lives. We speak to fathers about their work-life balance and what works (and doesn’t) with their kids. Hosted by Paul Campbell and Mike McQuaid.
 feed_alternate_url: /balancingdads/
 podcast_feed_publication: Balancing Dads
 include_interview_podcasts: false
