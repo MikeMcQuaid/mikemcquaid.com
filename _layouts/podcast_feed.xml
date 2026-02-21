@@ -23,11 +23,12 @@
     {% assign feed_language = page.feed_language | default: "en" %}
     {% assign feed_explicit = page.feed_itunes_explicit | default: "false" %}
     {% assign feed_image = page.feed_image | default: site.podcast_logo | default: site.logo | default: "/images/default-card.jpg" %}
+    {% assign feed_author = page.feed_author | default: site.author.name | default: site.author %}
 
     <atom:link href="{{ feed_url | xml_escape }}" rel="self" type="application/rss+xml"/>
     <title>{{ channel_title | xml_escape }}</title>
     <description>{{ channel_description | xml_escape }}</description>
-    <itunes:author>{{ site.author.name | default: site.author | xml_escape }}</itunes:author>
+    <itunes:author>{{ feed_author | xml_escape }}</itunes:author>
     <itunes:subtitle>{{ channel_description | xml_escape }}</itunes:subtitle>
     <itunes:summary>{{ channel_description | xml_escape }}</itunes:summary>
     <link>{{ channel_link | xml_escape }}</link>
@@ -37,7 +38,7 @@
     <itunes:image href="{{ feed_image | absolute_url | xml_escape }}"/>
     <itunes:explicit>{{ feed_explicit | xml_escape }}</itunes:explicit>
     <itunes:owner>
-      <itunes:name>{{ site.author.name | default: site.author | xml_escape }}</itunes:name>
+      <itunes:name>{{ feed_author | xml_escape }}</itunes:name>
       {% if site.author.email %}
       <itunes:email>{{ site.author.email | xml_escape }}</itunes:email>
       {% endif %}
@@ -103,7 +104,7 @@
       <pubDate>{{ item.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
       <title>{{ item_title | xml_escape }}</title>
       <itunes:title>{{ item_title | xml_escape }}</itunes:title>
-      <itunes:author>{{ site.author.name | default: site.author | xml_escape }}</itunes:author>
+      <itunes:author>{{ feed_author | xml_escape }}</itunes:author>
       {% if item.podcast_duration and item.podcast_duration != "" %}
       <itunes:duration>{{ item.podcast_duration | xml_escape }}</itunes:duration>
       {% endif %}
