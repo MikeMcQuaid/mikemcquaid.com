@@ -31,7 +31,7 @@
   </span>
   {% if interview_has_youtube %}
   <iframe class="interview-media-embed" title="{{ include.interview.title | strip_html | escape }}"
-    src="//www.youtube-nocookie.com/embed/{{ interview_youtube_id }}" allowfullscreen></iframe>
+    src="//www.youtube-nocookie.com/embed/{{ interview_youtube_id }}" loading="lazy" allowfullscreen></iframe>
   {% endif %}
   {% if interview_has_youtube == false and interview_link and interview_link != "" and interview_link_image and interview_link_image != "" and
   interview_link_image != interview_link %}

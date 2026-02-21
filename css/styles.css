@@ -292,25 +292,6 @@ td img {
   margin-bottom: 4px;
 }
 
-.speakerdeck-thumb {
-  width: 321px;
-  height: 181px;
-  float: left;
-  margin: 0 1em 1.5em 0;
-  padding-top: 0.6em;
-}
-
-.speakerdeck-thumb img {
-  padding: 0 !important;
-  max-height: 181px;
-}
-
-@media only screen and (max-device-width: 730px) {
-  .speakerdeck-thumb {
-    float: none;
-  }
-}
-
 table caption {
   font-weight: bold;
   font-size: 1.1em;

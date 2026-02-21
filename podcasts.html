@@ -1,0 +1,48 @@
+---
+title: Podcasts
+layout: titled
+---
+<ul class="index-lists podcasts">
+  {% assign empty_list = "" | split: "" %}
+  {% assign external_podcasts = site.data.podcasts_external.items | default: empty_list %}
+  {% assign interview_podcasts = site.interviews | where_exp: "item", "item.podcast_audio_url" | sort: "date" %}
+  {% assign feed_items = interview_podcasts | concat: external_podcasts | sort: "date" | reverse %}
+  {% assign feed_limit = 250 %}
+  {% assign seen_item_ids = "|" %}
+
+  {% for item in feed_items limit: feed_limit %}
+  {% assign item_audio_url = item.podcast_audio_url | default: "" | strip %}
+  {% if item_audio_url == "" %}
+  {% continue %}
+  {% endif %}
+  {% assign item_audio_length = item.podcast_audio_length | default: "" | strip %}
+  {% if item_audio_length == "" or item_audio_length == "0" %}
+  {% continue %}
+  {% endif %}
+  {% assign item_link = item.link | default: "" | strip %}
+  {% if item_link == "" %}
+  {% assign item_link = item_audio_url %}
+  {% endif %}
+  {% assign item_guid = item.guid | default: "" | strip %}
+  {% assign item_source_id = item.id | default: item.path | default: item.url | default: item_link | default: item_audio_url %}
+  {% assign item_date_key = item.date | date: "%s" %}
+  {% assign item_title_key = item.title | default: "" | strip %}
+  {% assign item_publication_key = item.publication | default: "" | strip %}
+  {% assign item_id = item_source_id | append: "|" | append: item_date_key | append: "|" | append: item_title_key | append: "|" | append: item_publication_key | append: "|" | append: item_guid %}
+  {% assign item_id_key = "|" | append: item_id | append: "|" %}
+  {% if seen_item_ids contains item_id_key %}
+  {% continue %}
+  {% endif %}
+  {% assign seen_item_ids = seen_item_ids | append: item_id | append: "|" %}
+  <li class="podcast-card">
+    <h2>{{ item.title | smartify | strip_html | normalize_whitespace | strip }}</h2>
+    <p class="post_date">{{ item.date | date_to_long_string }}</p>
+    {% if item.publication and item.publication != "" %}
+    <p><strong>{{ item.publication }}</strong></p>
+    {% endif %}
+    <audio class="interview-audio-embed" controls preload="none" src="{{ item_audio_url }}">
+      <a href="{{ item_audio_url }}">Download audio</a>
+    </audio>
+  </li>
+  {% endfor %}
+</ul>

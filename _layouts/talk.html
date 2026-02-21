@@ -2,6 +2,7 @@
 layout: base
 ---
 <div class="type-post">
+  {% assign speakerdeck_ratio = page.speakerdeck-ratio | default: "1.77777777777778" %}
   <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
     <h2>
       {{ page.title }}
@@ -16,7 +17,7 @@ layout: base
   {{ content }}
 
   {% if page.youtube-id %}
-  <iframe id="youtube-player" width="678" height="408" frameborder="0" allowfullscreen
+  <iframe id="youtube-player" width="678" height="408" frameborder="0" loading="lazy" allowfullscreen
     src="//www.youtube-nocookie.com/embed/{{ page.youtube-id }}"></iframe>
   {% endif %}
 
@@ -43,8 +44,8 @@ layout: base
   {% endif %}
 
   {% if page.speakerdeck-id %}
-  <noscript>**Please enable JavaScript to view slides.**</noscript>
-  <script async class="speakerdeck-embed" data-id="{{ page.speakerdeck-id }}" data-ratio="{{ page.speakerdeck-ratio }}"
-    src="https://speakerdeck.com/assets/embed.js"></script>
+  <iframe class="interview-media-embed" title="{{ page.title | strip_html | escape }} slides"
+    style="aspect-ratio: {{ speakerdeck_ratio }};"
+    src="https://speakerdeck.com/player/{{ page.speakerdeck-id }}" loading="lazy" allowfullscreen></iframe>
   {% endif %}
 </div>

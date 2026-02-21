@@ -7,6 +7,6 @@ description: Slides and, when available, recordings of talks I've given.
   {% assign sorted_talks = site.talks | sort: 'date' | reverse %}
   {% for talk in sorted_talks %}
   {% if site.future == false and talk.date > site.time %} {% continue %} {% endif %}
-  {% include talk-card.html talk=talk %}
+  {% include talk-card.html talk=talk talk_date=talk.date %}
   {% endfor %}
 </ul>

@@ -1,20 +1,25 @@
 {% assign talk = include.talk %}
 {% assign talk_title = talk.title | default: talk.slug %}
+{% assign talk_date = include.talk_date | default: talk.date %}
+{% assign talk_youtube_id = talk.youtube-id | default: "" | strip %}
+{% assign talk_speakerdeck_id = talk.speakerdeck-id | default: "" | strip %}
+{% assign talk_speakerdeck_ratio = talk.speakerdeck-ratio | default: "1.77777777777778" | strip %}
 <li class="talk-card">
   <a href="{{ talk.url | absolute_url }}" title="{{ talk_title }}">
-    {% if talk.speakerdeck-id %}
-    <span class="speakerdeck-thumb"><img alt="{{ talk_title }} slides thumbnail"
-        src="https://speakerd.s3.amazonaws.com/presentations/{{ talk.speakerdeck-id }}/preview_slide_0.jpg" /></span>
-    {% endif %}
     <h2>
       {{ talk_title }}
     </h2>
   </a>
-  {% if include.talk_date %}
-  <span>
-    {{ include.talk_date | date_to_long_string }}
-  </span>
-  <br>
+  <p class="post_date">
+    {{ talk_date | date_to_long_string }}
+  </p>
+  {% if talk_youtube_id != "" %}
+  <iframe class="interview-media-embed" title="{{ talk_title | strip_html | escape }}"
+    src="//www.youtube-nocookie.com/embed/{{ talk_youtube_id }}" loading="lazy" allowfullscreen></iframe>
+  {% elsif talk_speakerdeck_id != "" %}
+  <iframe class="interview-media-embed" title="{{ talk_title | strip_html | escape }}"
+    style="aspect-ratio: {{ talk_speakerdeck_ratio }};"
+    src="https://speakerdeck.com/player/{{ talk_speakerdeck_id }}" loading="lazy" allowfullscreen></iframe>
   {% endif %}
   {{ talk.description }}
   <div class="clearboth"></div>
