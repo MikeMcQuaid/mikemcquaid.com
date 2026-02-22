@@ -3,4 +3,5 @@ layout: podcast_feed
 feed_title: Mike McQuaid's Podcasts
 feed_description: Mike McQuaid's podcast appearances and episodes from all his own podcasts.
 feed_alternate_url: /podcasts/
+feed_itunes_explicit: "true"
 ---

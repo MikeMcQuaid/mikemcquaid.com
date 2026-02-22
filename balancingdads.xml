@@ -7,4 +7,5 @@ feed_image: /images/balancingdads-podcast-logo.jpg
 feed_alternate_url: /balancingdads/
 podcast_feed_publication: Balancing Dads
 include_interview_podcasts: false
+feed_itunes_explicit: "true"
 ---
