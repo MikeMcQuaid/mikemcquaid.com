@@ -2,6 +2,16 @@
 title: Podcasts
 layout: titled
 ---
+<p>Podcast appearances and episodes from all my own podcasts.</p>
+
+<p>Listen below, download or listen on:</p>
+
+<ul>
+  <li><a href="https://podcasts.apple.com/gb/podcast/mike-mcquaids-podcasts/id1879095740">Apple Podcasts</a></li>
+  <li><a href="https://open.spotify.com/show/5PJiPr1nbKma3xcmUF81D2">Spotify</a></li>
+  <li><a href="{{ '/podcasts.xml' | absolute_url }}">Podcast RSS Feed</a></li>
+</ul>
+
 <ul class="index-lists podcasts">
   {% assign empty_list = "" | split: "" %}
   {% assign external_podcasts = site.data.podcasts_external.items | default: empty_list %}
