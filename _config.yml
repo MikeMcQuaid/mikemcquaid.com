@@ -60,7 +60,7 @@ defaults:
       type: thoughts
     values:
       layout: thought
-      image: /images/me.jpg
+      image: /images/me_small.jpg
   - scope:
       path: ""
     values:

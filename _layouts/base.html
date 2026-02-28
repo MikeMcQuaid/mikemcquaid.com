@@ -10,7 +10,9 @@
   {% assign safe_description = description | strip_html | escape %}
   <meta name="twitter:description" content="{{ safe_description }}" />
   {% endif %}
+  {% if page.collection != "thoughts" %}
   <meta property="og:logo" content="{{ site.logo | absolute_url }}" />
+  {% endif %}
   <meta property="article:publisher" content="{{ site.url }}" />
   <meta property="article:author" content="{{ site.author.uri }}" />
   {% if page.collection == "thoughts" %}
