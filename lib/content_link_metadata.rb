@@ -222,7 +222,7 @@ module ContentLinkMetadata
   def self.head_frontmatter(path)
     return @head_frontmatter_cache[path] if @head_frontmatter_cache.key?(path)
 
-    output, status = Open3.capture2("git", "show", "HEAD:#{path}")
+    output, _stderr, status = Open3.capture3("git", "show", "HEAD:#{path}")
     unless status.success?
       @head_frontmatter_cache[path] = nil
       return nil
