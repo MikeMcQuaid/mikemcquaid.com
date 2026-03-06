@@ -16,7 +16,14 @@ Remote-first since 2009, with hands-on adoption of AI coding assistants and revi
 
 #### [Administrate](https://www.getadministrate.com) - CTPO (2025 - Present)
 
-Improving the world's best training management system's engineering velocity, productivity and culture through engineering and product leadership, writing and code.
+Improving the world's best training management system where I:
+
+* Own product and engineering strategy, roadmap prioritisation and execution against company goals
+* Lead product managers and engineers including hiring, coaching, performance management and team design
+* Drive architecture, reliability, velocity, quality, productivity, culture and technical debt management
+* Grow, coach and improve agentic AI usage inside engineering and the rest of the company
+* Partner with Sales, Marketing and Customer Success on GTM priorities and customer-facing roadmap decisions
+* Track and improve product and engineering KPIs
 
 #### [Homebrew](https://brew.sh) — Project Leader (2009 – Present)
 
@@ -31,6 +38,10 @@ Homebrew is the de-facto macOS package manager with tens of millions of users wo
 #### [OpenUK](https://openuk.uk/) - Board Member (2026 - Present)
 
 Strategic board member at OpenUK, the UK open technology industry body, helping drive sector growth, policy engagement and community development for open source and related technologies.
+
+#### [O'Reilly Media](https://www.oreilly.com/live/event-detail.csp?series=0642572207397&event=0642572207380) - Live Course Instructor (2025)
+
+Designed and taught O'Reilly's live course "AI and the Coding Interview", helping engineers prepare for modern interview loops with and without AI/LLM tooling.
 
 #### [Workbrew](https://workbrew.com)
 
