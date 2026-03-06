@@ -5,6 +5,7 @@ feed_collections:
   - talks
   - thoughts
   - interviews
+include_external_podcasts: true
 feed_title_suffix: false
 include_posse_post: false
 ---

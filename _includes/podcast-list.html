@@ -1,0 +1,20 @@
+{% assign empty_list = "" | split: "" %}
+{% assign external_podcasts = site.data.podcasts_external.items | default: empty_list %}
+{% assign external_podcasts = external_podcasts | where_exp: "item", "item.podcast_audio_url" %}
+{% if include.include_interview_podcasts == false or include.include_interview_podcasts == "false" %}
+{% assign interview_podcasts = empty_list %}
+{% else %}
+{% assign interview_podcasts = site.interviews | where_exp: "item", "item.podcast_audio_url" | sort: "date" %}
+{% endif %}
+{% assign publication_filter = include.publication | default: "" | strip %}
+{% if publication_filter != "" %}
+{% assign external_podcasts = external_podcasts | where: "publication", publication_filter %}
+{% assign interview_podcasts = interview_podcasts | where: "publication", publication_filter %}
+{% endif %}
+{% assign feed_items = interview_podcasts | concat: external_podcasts | sort: "date" | reverse %}
+
+<ul class="index-lists podcasts">
+  {% for item in feed_items %}
+  {% include podcast-card.html podcast=item default_link=include.default_link %}
+  {% endfor %}
+</ul>

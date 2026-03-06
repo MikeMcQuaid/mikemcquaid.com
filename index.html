@@ -2,7 +2,9 @@
 title: Mike McQuaid
 layout: base
 ---
-{% assign combined = site.posts | concat: site.talks | concat: site.thoughts | concat: site.interviews %}
+{% assign empty_list = "" | split: "" %}
+{% assign external_podcasts = site.data.podcasts_external.items | default: empty_list %}
+{% assign combined = site.posts | concat: site.talks | concat: site.thoughts | concat: site.interviews | concat: external_podcasts %}
 {% assign sorted = combined | sort: 'date' | reverse %}
 {% assign has_thoughts = false %}
 <ul class="index-lists index">
@@ -14,6 +16,8 @@ layout: base
   {% include talk-card.html talk=item talk_date=item.date %}
   {% elsif item.collection == "interviews" %}
   {% include interview-card.html interview=item index_page=true %}
+  {% elsif item.source_feed_url and item.podcast_audio_url %}
+  {% include podcast-card.html podcast=item %}
   {% else %}
   {% include article-card.html article=item show_date=true %}
   {% endif %}

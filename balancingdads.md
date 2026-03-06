@@ -13,3 +13,7 @@ Download or listen on:
 - [Spotify](https://open.spotify.com/show/07rdnm3rGWXvaJF7385fxq)
 - [The Internet Archive](https://archive.org/details/balancing-dads)
 - [Podcast RSS Feed]({{ '/balancingdads.xml' | absolute_url }})
+
+### Episodes
+
+{% include podcast-list.html publication="Balancing Dads" include_interview_podcasts=false default_link="/balancingdads/" %}

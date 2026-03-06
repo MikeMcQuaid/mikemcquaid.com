@@ -20,3 +20,7 @@ Download or listen on:
 - [Apple Podcasts](https://podcasts.apple.com/gb/podcast/minimum-viable-management/id1845078315)
 - [Spotify](https://open.spotify.com/show/2LgoStqQjQsv04nHWMI4GG)
 - [Podcast RSS Feed](https://api.riverside.fm/hosting/Ryz8eZPj.rss)
+
+### Episodes
+
+{% include podcast-list.html publication="Minimum Viable Management" include_interview_podcasts=false default_link="/minimum-viable-management/" %}

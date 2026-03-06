@@ -42,20 +42,48 @@
     {% endif %}
   {% endif %}
 
+  {% if page.include_external_podcasts %}
+    {% assign empty_list = "" | split: "" %}
+    {% assign external_podcasts = site.data.podcasts_external.items | default: empty_list %}
+    {% assign external_podcast_publication = page.external_podcast_publication | default: "" | strip %}
+    {% if external_podcast_publication != "" %}
+      {% assign external_podcasts = external_podcasts | where: "publication", external_podcast_publication %}
+    {% endif %}
+    {% assign feed_items = feed_items | concat: external_podcasts %}
+  {% endif %}
+
   {% assign feed_items = feed_items | sort: "date" | reverse %}
   {% assign feed_limit = page.feed_limit | default: 25 %}
   {% for item in feed_items limit: feed_limit %}
     <entry>
       {% assign item_title = item.title | smartify | strip_html | normalize_whitespace | xml_escape %}
-      {% assign item_href = item.url | absolute_url %}
+      {% assign item_is_external_podcast = false %}
+      {% if item.source_feed_url %}
+        {% assign item_is_external_podcast = true %}
+      {% endif %}
+      {% assign item_href = item.url | default: "" | strip %}
+      {% if item_href != "" %}
+        {% unless item_href contains "://" %}
+          {% assign item_href = item_href | absolute_url %}
+        {% endunless %}
+      {% endif %}
       {% assign item_has_link = false %}
-      {% if item.link %}
-        {% assign item_related_href = item_href %}
-        {% assign item_href = item.link %}
+      {% assign item_link = item.link | default: "" | strip %}
+      {% if item_link != "" %}
+        {% if item_href != "" %}
+          {% assign item_related_href = item_href %}
+        {% endif %}
+        {% assign item_href = item_link %}
         {% assign item_has_link = true %}
         {% unless item_href contains "://" %}
           {% assign item_href = item_href | absolute_url %}
         {% endunless %}
+      {% endif %}
+      {% if item_href == "" %}
+        {% assign item_href = item.podcast_audio_url | default: "" | strip %}
+      {% endif %}
+      {% if item_href == "" %}
+        {% assign item_href = '/' | absolute_url %}
       {% endif %}
 
       <title>{{ item_title }}</title>
@@ -70,6 +98,23 @@
         {% if item.collection == "interviews" %}
           <p>Interviewed by {{ item.publication }}.</p>
           {{ item.content }}
+        {% elsif item_is_external_podcast %}
+          {% assign item_audio_url = item.podcast_audio_url | default: "" | strip %}
+          {% assign item_podcast_description = item.description | default: item.content | default: "" | strip %}
+          <p class="post_date">{{ item.date | date_to_long_string }}</p>
+          {% if item.publication and item.publication != "" %}
+            <p><strong>{{ item.publication }}</strong></p>
+          {% endif %}
+          {% if item_podcast_description != "" %}
+            {% if item_podcast_description contains "<p>" %}
+              {{ item_podcast_description }}
+            {% else %}
+              <p>{{ item_podcast_description }}</p>
+            {% endif %}
+          {% endif %}
+          {% if item_audio_url != "" %}
+            <p><a href="{{ item_audio_url }}">Download audio</a></p>
+          {% endif %}
         {% else %}
           {{ item.content }}
         {% endif %}

@@ -1,0 +1,27 @@
+<li class="interview-card">
+  {% assign podcast_link = include.default_link | default: include.podcast.link | default: include.podcast.podcast_audio_url | strip %}
+  {% assign podcast_audio_url = include.podcast.podcast_audio_url | default: "" | strip %}
+  {% assign podcast_description = include.podcast.description | default: include.podcast.content | default: "" | strip %}
+  {% assign podcast_title_is_link = podcast_link != "" and podcast_link != page.url %}
+  {% if podcast_title_is_link %}
+  <a href="{{ podcast_link }}" title="{{ include.podcast.title }}">
+    <h2>{{ include.podcast.title }}</h2>
+  </a>
+  {% else %}
+  <h2>{{ include.podcast.title }}</h2>
+  {% endif %}
+  <p class="post_date">
+    {{ include.podcast.date | date_to_long_string }}
+  </p>
+  {% if include.podcast.publication and include.podcast.publication != "" %}
+  <p><strong>{{ include.podcast.publication }}</strong></p>
+  {% endif %}
+  {% if podcast_description != "" %}
+  <span>{{ podcast_description }}</span>
+  {% endif %}
+  {% if podcast_audio_url != "" %}
+  <audio class="interview-audio-embed" controls preload="none" src="{{ podcast_audio_url }}">
+    <a href="{{ podcast_audio_url }}">Download audio</a>
+  </audio>
+  {% endif %}
+</li>
