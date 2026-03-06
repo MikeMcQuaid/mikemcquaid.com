@@ -42,6 +42,13 @@ Built for GitHub ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})) 
 
 ### Past
 
+#### [O'Reilly Live Course: AI and the Coding Interview](https://www.oreilly.com/live/event-detail.csp?series=0642572207397&event=0642572207380)
+
+![AI and the Coding Interview]({{ '/images/a/ai-and-the-coding-interview.png' | absolute_url }})
+
+Instructor.
+Designed and taught a live O'Reilly course on AI-assisted coding interviews, including practical workflows for both AI-allowed and AI-restricted interview processes.
+
 #### [Workbrew](https://workbrew.com)
 
 ![Workbrew]({{ '/images/a/workbrew.png' | absolute_url }})
@@ -94,13 +101,6 @@ Creator.
 An inactive podcast that assumes it's normal for working dads to be present in their kids' lives.
 We speak to fathers about their work-life balance and what works (and doesn't) with their kids.
 Was hosted by [Paul Campbell](https://twitter.com/paulca) and I.
-
-#### [O'Reilly Live Course: AI and the Coding Interview](https://www.oreilly.com/live/event-detail.csp?series=0642572207397&event=0642572207380)
-
-![AI and the Coding Interview]({{ '/images/a/ai-and-the-coding-interview.png' | absolute_url }})
-
-Instructor.
-Designed and taught a live O'Reilly course on AI-assisted coding interviews, including practical workflows for both AI-allowed and AI-restricted interview processes.
 
 #### [Open Source Guides](https://github.com/github/opensource.guide)
 
