@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "${repo_root}"
+
 if [[ "${HOMEBREW_GENERATE_TRANSCRIPTS:-}" != "1" || "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
   export HOMEBREW_GENERATE_TRANSCRIPTS=1
   eval "$(brew bundle --check --install env)"
