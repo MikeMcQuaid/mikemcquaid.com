@@ -25,3 +25,5 @@ On this site, you’ll find:
 - [Curriculum Vitae/Resume]({{ '/cv/' | absolute_url }}): my professional background
 - [Now]({{ '/now/' | absolute_url }}): what I’m doing currently
 - [Podcasts]({{ '/podcasts/' | absolute_url }}): podcast appearances and episodes from all my own podcasts ([RSS Feed]({{ '/podcasts.xml' | absolute_url }}))
+
+If you'd rather subscribe to one feed for recent articles, talks, interviews, thoughts and podcast appearances, use [https://mikemcquaid.com/all.xml](https://mikemcquaid.com/all.xml).
