@@ -21,11 +21,11 @@ As I care about backwards compatibility, a blog post is the only reliable way to
 As a result of leaning more into POSSE, on this site I've made a few changes:
 
 - Built my own mini Twitter/Bluesky/Mastodon/Threads equivalent called "Thoughts" at [`/thoughts`]({{ '/thoughts' | absolute_url }})
-- Moved the homepage at [`mikemcquaid.com`](https://mikemcquaid.com/) to be all recent Articles, Thoughts, Talks and Interviews.
+- Moved the homepage at [`mikemcquaid.com`](https://mikemcquaid.com/) to be all recent Articles, Thoughts, Talks, Interviews and podcasts.
 - Added a dedicated [`/articles`]({{ '/articles' | absolute_url }}) for all Articles instead.
-- Kept the original Atom/RSS feed at [`/atom.xml`]({{ '/atom.xml' | absolute_url }}) just for Articles (backwards-compatibility and all that)
+- Changed the default Atom/RSS feed at [`/atom.xml`]({{ '/atom.xml' | absolute_url }}) to publish all homepage content.
 - Added new dedicated Atom/RSS feeds:
-  - [All Feed]({{ '/all.xml' | absolute_url }}) (all homepage content, excluding Thoughts)
+  - [Articles Feed]({{ '/articles.xml' | absolute_url }})
   - [Talks Feed]({{ '/talks.xml' | absolute_url }})
   - [Interviews Feed]({{ '/interviews.xml' | absolute_url }})
   - [Thoughts Feed]({{ '/thoughts.xml' | absolute_url }})
@@ -37,8 +37,8 @@ In the spirit of ["vibe engineering"](https://simonwillison.net/2025/Oct/7/vibe-
 
 ### 🫵 What Do You Need To Do?
 
-**TL;DR: If you're subscribed to [`/atom.xml`]({{ '/atom.xml' | absolute_url }}), nothing changes.**
-**If you want additional content: subscribe to one or more of the new feeds above.**
+**TL;DR: Subscribe to [`/all.xml`]({{ '/all.xml' | absolute_url }}) for the all-content feed.**
+**If you want Articles only, subscribe to [`/articles.xml`]({{ '/articles.xml' | absolute_url }}).**
 
 Thanks for reading this blog ❤️.
 It will be 20 years old in 2026 and it's nice to see the current blogging resurgence.

@@ -19,7 +19,7 @@
 
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/all.xml' | absolute_url }}" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Articles)"
-    href="{{ '/atom.xml' | absolute_url }}" />
+    href="{{ '/articles.xml' | absolute_url }}" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Talks)"
     href="{{ '/talks.xml' | absolute_url }}" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Interviews)"
@@ -77,7 +77,7 @@
           </li>
           <li>
             {% if page.collection == 'posts' or page.url == '/articles/' %}
-            {% assign feed_path = '/atom.xml' %}
+            {% assign feed_path = '/articles.xml' %}
             {% assign feed_label = 'RSS/Atom (Articles)' %}
             {% elsif page.collection == 'talks' or page.url contains '/talks/' %}
             {% assign feed_path = '/talks.xml' %}

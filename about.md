@@ -17,7 +17,7 @@ You can email me about:
 
 On this site, you’ll find:
 
-- [Articles]({{ '/articles' | absolute_url }}): blog posts I’ve written ([RSS Feed]({{ '/atom.xml' | absolute_url }}))
+- [Articles]({{ '/articles' | absolute_url }}): blog posts I’ve written ([RSS Feed]({{ '/articles.xml' | absolute_url }}))
 - [Talks]({{ '/talks/' | absolute_url }}): slides and recordings of talks I’ve given  ([RSS Feed]({{ '/talks.xml' | absolute_url }}))
 - [Interviews]({{ '/interviews/' | absolute_url }}): conversations and appearances in text, audio, and video  ([RSS Feed]({{ '/interviews.xml' | absolute_url }}))
 - [Thoughts]({{ '/thoughts' | absolute_url }}): microblog posts syndicated elsewhere ([RSS Feed]({{ '/thoughts.xml' | absolute_url }}))
