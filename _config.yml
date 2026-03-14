@@ -33,6 +33,7 @@ exclude:
   - LICENSE.txt
   - Rakefile,
   - ReadMe.md
+  - tmp
   - vendor
 
 plugins:
