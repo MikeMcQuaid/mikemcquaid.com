@@ -1,0 +1,93 @@
+name: Content Maintenance
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/content-maintenance.yml"
+      - "_data/podcast_sources.yml"
+      - "lib/podcast_feed_importer.rb"
+      - "lib/podcast_feed_item_helpers.rb"
+
+permissions:
+  contents: write
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v6
+
+      - name: Configure Git
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Prune Thoughts
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          thoughts=( _thoughts/*.md )
+          if (( ${#thoughts[@]} <= 10 )); then
+            echo "No pruning needed."
+            exit 0
+          fi
+          mapfile -t sorted < <(for f in "${thoughts[@]}"; do printf '%s\t%s\n' "$(basename "$f")" "$f"; done | sort -r)
+          count=0
+          for entry in "${sorted[@]}"; do
+            file="${entry#*$'\t'}"
+            count=$((count + 1))
+            if (( count <= 10 )); then
+              continue
+            fi
+            rm -f "$file"
+          done
+
+      - name: Commit Pruned Thoughts
+        if: github.event_name != 'pull_request'
+        run: |
+          if git diff --quiet -- _thoughts; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git add _thoughts
+          git commit -m "Prune old thoughts"
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+        with:
+          core: false
+          cask: false
+
+      - name: Cache Homebrew prefix
+        uses: Homebrew/actions/cache-homebrew-prefix@main
+        with:
+          brewfile: true
+          uninstall: true
+
+      - name: Set up Ruby
+        uses: Homebrew/actions/setup-ruby@main
+        with:
+          bundler-cache: true
+
+      - name: Import External Podcasts
+        run: bundle exec ruby lib/podcast_feed_importer.rb
+
+      - name: Commit External Podcasts
+        if: github.event_name != 'pull_request'
+        run: |
+          if git diff --quiet -- _data/podcasts_external.yml; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git add _data/podcasts_external.yml
+          git commit -m "Update external podcast entries"
+
+      - name: Push Changes
+        if: github.event_name != 'pull_request'
+        run: git push
