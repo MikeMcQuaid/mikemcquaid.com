@@ -7,6 +7,7 @@ layout: base
 {% assign combined = site.posts | concat: site.talks | concat: site.thoughts | concat: site.interviews | concat: external_podcasts %}
 {% assign sorted = combined | sort: 'date' | reverse %}
 {% assign has_thoughts = false %}
+{% assign shown_post_urls = "" %}
 <ul class="index-lists index">
   {% for item in sorted limit:25 %}
   {% if item.collection == "thoughts" %}
@@ -19,8 +20,15 @@ layout: base
   {% elsif item.source_feed_url and item.podcast_audio_url %}
   {% include podcast-card.html podcast=item %}
   {% else %}
+  {% assign shown_post_urls = shown_post_urls | append: "|" | append: item.url %}
   {% include article-card.html article=item show_date=true %}
   {% endif %}
+  {% endfor %}
+  {% for post in site.posts limit:5 %}
+  {% assign post_marker = "|" | append: post.url %}
+  {% unless shown_post_urls contains post_marker %}
+  {% include article-card.html article=post show_date=true %}
+  {% endunless %}
   {% endfor %}
 </ul>
 {% if has_thoughts %}
