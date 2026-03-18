@@ -58,6 +58,7 @@ task test: :jekyll do
       'https://shepherd.com/best-books/becoming-a-great-open-source-software-engineer',
       'https://fs.blog/chestertons-fence/',
       'https://github.com/pulls',
+      %r{^https://github\.com/issues\?},
       'https://www.manning.com/books/git-in-practice?a_bid=5688bbf4&a_aid=MikeMcQuaid',
       'https://blogs.oracle.com/java/annoucing-javaone-2014-rock-stars-v2',
       'https://www.mailmunch.com/blog/sales-funnel/',
