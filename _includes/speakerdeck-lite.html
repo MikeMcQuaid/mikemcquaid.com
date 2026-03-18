@@ -1,0 +1,16 @@
+{% assign sd_id = include.id %}
+{% assign sd_title = include.title | strip_html | escape %}
+{% assign sd_ratio = include.ratio | default: "1.77777777777778" %}
+<div class="speakerdeck-lite" data-deck-id="{{ sd_id }}" data-ratio="{{ sd_ratio }}">
+  <a class="speakerdeck-lite-button" href="https://speakerdeck.com/player/{{ sd_id }}" aria-label="{{ sd_title }} slides">
+    <img
+      src="/images/media/talks/{{ sd_id }}.jpg"
+      onerror="this.onerror=null;this.style.display='none'"
+      alt=""
+      loading="lazy"
+      width="480"
+      height="270"
+    />
+    <span class="speakerdeck-lite-label">View Slides</span>
+  </a>
+</div>

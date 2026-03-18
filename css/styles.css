@@ -499,6 +499,10 @@ details>summary ul {
   margin: 0;
 }
 
+details ul li {
+  margin-bottom: 0 !important;
+}
+
 .type-thought {
   margin: 0 0 2em 0;
   padding-top: 1.5em;
@@ -617,6 +621,86 @@ details>summary ul {
   border: 0;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+
+.youtube-lite,
+.speakerdeck-lite {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  overflow: hidden;
+}
+
+.youtube-lite-button,
+.speakerdeck-lite-button {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.youtube-lite-button img,
+.speakerdeck-lite-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.youtube-lite-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 14px;
+}
+
+.youtube-lite-play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.youtube-lite:hover .youtube-lite-play {
+  background: #f00;
+}
+
+.speakerdeck-lite-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 0.5em 1.2em;
+  border-radius: 8px;
+}
+
+.speakerdeck-lite:hover .speakerdeck-lite-label {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .interview-audio-embed {

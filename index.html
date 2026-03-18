@@ -16,9 +16,9 @@ layout: base
   {% elsif item.collection == "talks" %}
   {% include talk-card.html talk=item talk_date=item.date %}
   {% elsif item.collection == "interviews" %}
-  {% include interview-card.html interview=item index_page=true %}
+  {% include interview-card.html interview=item index_page=true include_transcript=true %}
   {% elsif item.source_feed_url and item.podcast_audio_url %}
-  {% include podcast-card.html podcast=item %}
+  {% include podcast-card.html podcast=item include_transcript=true %}
   {% else %}
   {% assign shown_post_urls = shown_post_urls | append: "|" | append: item.url %}
   {% include article-card.html article=item show_date=true %}
@@ -31,6 +31,7 @@ layout: base
   {% endunless %}
   {% endfor %}
 </ul>
+<script defer src="{{ '/js/media-lite.js' | absolute_url }}?v={{ '/js/media-lite.js' | cache_bust }}"></script>
 {% if has_thoughts %}
 {% include thought-actions.html %}
 {% endif %}

@@ -4,6 +4,13 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width">
+  {% if page.collection == "talks" or page.url == "/" or page.url == "/talks/" or page.url == "/interviews/" %}
+  <link rel="dns-prefetch" href="//www.youtube.com">
+  {% endif %}
+  {% if page.collection == "talks" or page.url == "/" or page.url == "/talks/" %}
+  <link rel="dns-prefetch" href="//speakerdeck.com">
+  {% endif %}
+  <link rel="preload" as="image" href="{{ '/images/header.jpg' | absolute_url }}">
   {% seo_custom %}
   {% assign description = page.description | default: page.excerpt %}
   {% if description and description != "" %}
@@ -30,8 +37,10 @@
     href="{{ '/thoughts.xml' | absolute_url }}" />
   <link rel="stylesheet" type="text/css"
     href="{{ '/css/styles.css' | absolute_url }}?v={{ '/css/styles.css' | cache_bust }}" />
+  {% if page.collection == "posts" %}
   <link rel="stylesheet" type="text/css"
     href="{{ '/css/pygments.css' | absolute_url }}?v={{ '/css/pygments.css' | cache_bust }}" />
+  {% endif %}
   <link rel="icon" type="image/x-icon" sizes="any" href="{{ '/images/favicon.ico' | absolute_url }}">
   <link rel="icon" type="image/png" href="{{ '/images/icon.png' | absolute_url }}">
   <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | absolute_url }}">
@@ -69,7 +78,7 @@
       <div id="leftbar">
         <ul>
           <li>
-            <img id="avatar" alt="Mike McQuaid" width="80px" height="80px"
+            <img id="avatar" alt="Mike McQuaid" width="80" height="80"
               src="{{ '/images/me.jpg' | absolute_url }}" />
           </li>
           <li>

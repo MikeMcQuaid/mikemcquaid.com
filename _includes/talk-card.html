@@ -14,12 +14,9 @@
     {{ talk_date | date_to_long_string }}
   </p>
   {% if talk_youtube_id != "" %}
-  <iframe class="interview-media-embed" title="{{ talk_title | strip_html | escape }}"
-    src="//www.youtube-nocookie.com/embed/{{ talk_youtube_id }}" loading="lazy" allowfullscreen></iframe>
+  {% include youtube-lite.html id=talk_youtube_id title=talk_title %}
   {% elsif talk_speakerdeck_id != "" %}
-  <iframe class="interview-media-embed" title="{{ talk_title | strip_html | escape }}"
-    style="aspect-ratio: {{ talk_speakerdeck_ratio }};"
-    src="https://speakerdeck.com/player/{{ talk_speakerdeck_id }}" loading="lazy" allowfullscreen></iframe>
+  {% include speakerdeck-lite.html id=talk_speakerdeck_id title=talk_title ratio=talk_speakerdeck_ratio %}
   {% endif %}
   {{ talk.description }}
   <div class="clearboth"></div>

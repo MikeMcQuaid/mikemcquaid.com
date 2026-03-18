@@ -17,35 +17,18 @@ layout: base
   {{ content }}
 
   {% if page.youtube-id %}
-  <iframe id="youtube-player" width="678" height="408" frameborder="0" loading="lazy" allowfullscreen
-    src="//www.youtube-nocookie.com/embed/{{ page.youtube-id }}"></iframe>
+  {% include youtube-lite.html id=page.youtube-id title=page.title player_id="youtube-player" %}
   {% endif %}
 
-  {% if page.transcript and page.youtube-id %}
-  {% include transcript.html id=page.youtube-id video_id=page.youtube-id %}
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const player = document.getElementById('youtube-player');
-      const transcriptLinks = document.querySelectorAll('.transcript-timestamp[data-timestamp]');
-
-      if (!player || !transcriptLinks.length) return;
-
-      transcriptLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const timestamp = this.getAttribute('data-timestamp');
-          const videoId = '{{ page.youtube-id }}';
-
-          player.src = '//www.youtube-nocookie.com/embed/' + videoId + '?start=' + timestamp + '&autoplay=1';
-        });
-      });
-    });
-  </script>
+  {% assign talk_transcript_id = page.transcript-id | default: page.youtube-id %}
+  {% if page.transcript or page.transcript-id %}
+  {% include transcript.html id=talk_transcript_id video_id=page.youtube-id audio_url=page.podcast_audio_url %}
   {% endif %}
 
   {% if page.speakerdeck-id %}
-  <iframe class="interview-media-embed" title="{{ page.title | strip_html | escape }} slides"
-    style="aspect-ratio: {{ speakerdeck_ratio }};"
-    src="https://speakerdeck.com/player/{{ page.speakerdeck-id }}" loading="lazy" allowfullscreen></iframe>
+  {% include speakerdeck-lite.html id=page.speakerdeck-id title=page.title ratio=speakerdeck_ratio %}
+  {% endif %}
+  {% if page.youtube-id or page.speakerdeck-id or page.transcript or page.transcript-id %}
+  <script defer src="{{ '/js/media-lite.js' | absolute_url }}?v={{ '/js/media-lite.js' | cache_bust }}"></script>
   {% endif %}
 </div>

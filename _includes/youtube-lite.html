@@ -1,0 +1,15 @@
+{% assign yt_id = include.id %}
+{% assign yt_title = include.title | strip_html | escape %}
+<div class="youtube-lite" {% if include.player_id %}id="{{ include.player_id }}"{% endif %} data-video-id="{{ yt_id }}">
+  <a class="youtube-lite-button" href="https://www.youtube.com/watch?v={{ yt_id }}" aria-label="Play {{ yt_title }}">
+    <img
+      src="/images/media/youtube/{{ yt_id }}.jpg"
+      onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ yt_id }}/hqdefault.jpg'"
+      alt=""
+      loading="lazy"
+      width="480"
+      height="270"
+    />
+    <span class="youtube-lite-play"></span>
+  </a>
+</div>
