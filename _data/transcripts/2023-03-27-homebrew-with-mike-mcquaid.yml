@@ -1,0 +1,1223 @@
+---
+0: I don't swear too much but like is this podcast no swearing some swearing like
+  would you I can
+6: keep it completely clean if you want to I've got kids so I'm good at practicing
+  that okay I will see
+12: hi everyone and welcome to the developers bakery a podcast about open source projects
+28: tools and libraries for software developers my name is Nicola Corti and I'll be
+  your host for the show
+34: make sure you subscribe to the podcast on either spotify apple podcast google
+  podcast
+40: or directly on the website the bakery.dev thank you for listening and enjoy the
+  show
+57: hi everyone and welcome to another episode of the developers bakery today I have
+  another amazing
+64: guest on stage so please welcome Mike McQuaid homebrew project leader hi thanks
+  for having me
+73: everyone and thanks for having me Nicola thank you for being on show with us Mike
+  I'm I'm sure a lot
+80: of people in the audience use this software you maintain but before we deep dive
+  into that I want
+87: to give you a little bit of time to introduce yourself so what's your background
+  where you base
+91: and what do you do sure so other than being an open source maintainer I am a software
+  engineer for a
+99: living so I live in Edinburgh in Scotland I've relatively recently finished a
+  decade where I worked
+105: at GitHub and before that I've been at kind of various other companies and startups
+  and things like that
+109: I'm had a fairly boring traditional uh introduction into software and that I
+  did a computer science and
+115: business degree back in graduated in like 2007 and since then I've been working
+  in the industry ever
+121: since and yeah nowadays I'm a CTO although we don't have any other employees
+  yet so I'm also the
+126: primary code monkey at a startup called raise.dev with two former co-workers
+  from GitHub
+132: awesome uh but today we're not here to talk about raise.dev but talk about homebrew
+  so now I want to give
+141: you the honor to introduce this project to the audience which I'm sure folks
+  already know but for the
+146: people in the audience who might not know it now is the time to to know about
+  it sure so homebrew I guess
+152: my my simplest one-line summary for kind of non-technical people particularly
+  is that homebrew
+158: is kind of like a app store for your terminal so if you want to install particularly
+  like open source
+164: apps on your mac particularly those that run in your terminal but we also allow
+  you to support
+169: and install things like google chrome and things through casks we can come up
+  to them later then
+174: homebrew is basically the best way of installing any software really on your
+  mac awesome so I I think
+181: it's fair to say that homebrew is probably one of the most popular and successful
+  projects on GitHub
+186: and I'm actually curious to know if you can talk a little bit about the history
+  of this project like
+192: how did it became so popular and and famous sure and I feel like I need to add
+  to my existing uh
+200: description of homebrew as well and I forgot to mention that homebrew does and
+  has for quite a while
+205: now run on linux as well so it's our package manager for mac and linux the use
+  case on linux is maybe a
+210: little bit different but I don't want to let my penguin brothers and sisters
+  miss out on uh being
+216: included in part of the the story but let's go back in time to talk about the
+  history of homebrew so
+221: homebrew started in 2009 it was created by a guy called max howell who basically
+  was just I think
+228: using other package management options on his mac wasn't really happy with them
+  and thought he could
+233: make something better so one day after having some beer he went home and wrote
+  a kind of description
+240: of what the package manager that he thought should be created would look like
+  and because he'd been
+246: consuming beer earlier that evening it had a beer theme and you can see that
+  remains to this day with
+252: our kind of icons and naming and various other bits and pieces like that
+255: so he made this package manager that was kind of quite different to the approaches
+  that others have
+263: had in the past it's one of the big things github had been out for a few years
+  and he decided he was
+269: kind of going to go all in on github so homebrew was built in ruby and because
+  the ruby community had
+275: been an early adopter of github and max himself liked using ruby and he built
+  it in such a way that
+282: the expectation was that it wasn't going to be that max would build all of homebrew
+  and maintain
+287: everything that's in homebrew or equally that he was going to appoint all these
+  kind of maintainers
+292: and be like you maintain this you maintain that but instead he would kind of
+  crowdsource kind of
+296: the community on github to get more and more people involved and to get a sense
+  of how early this was
+302: in kind of github's history when homebrew was first created homebrew didn't actually
+  sorry github didn't
+306: even have pull requests at this time back then it would be you create an issue
+  with a link to a
+311: commit in your fork and then max would pull it into homebrew itself so fast forward
+  a little while
+317: homebrew is kind of picking up a bit of adoption and i had played with again
+  some package managers on
+322: mac i was a relatively early adopter to mac at this point i'd come from the desktop
+  linux land where i'd
+329: been doing some open source stuff over there and was wooed over to uh apple land
+  by having to do a
+336: bunch of cross-platform dev and i kind of had tried to create a project that
+  was sort of hacked an
+342: existing package manager into looking a bit more like homebrew and then i came
+  across homebrew and i
+346: thought this is a great idea this is a good fit and i started to kind of submit
+  some changes and get some
+351: commits in there that kind of made my life a little bit easier and then relatively
+  quickly i was asked to
+356: be a maintainer on homebrew i think i was the third one who kind of joined and
+  maybe about six months
+362: after homebrew was created in 2009 so from 2009 onwards i've been maintaining
+  homebrew and from
+371: i can't remember what year onwards i've been the project leader and i guess since
+  homebrew was created
+377: i've been fairly regularly and actively involved with both the code side of homebrew
+  and the community
+383: side and also kind of i guess almost i think of myself as kind of the honorary
+  unnamed project
+390: a product manager for homebrew where i'm trying to figure out like what features
+  make sense to
+395: have and not have and what defaults are better for more of our users and all
+  this type of stuff
+400: so that's really glorious and actually i want to thank you like as part of the
+  broader open source
+407: community the the software you're maintaining is like key to the daily workflow
+  of a lot of people
+413: and i'm actually wondering like like since 2009 that's that's really impressive
+  uh have you ever
+420: felt like uh i'm close to burnout or like i don't want to deal with homebrew
+  anymore like i had enough
+427: of it i'm curious to to know how you handle this yeah i've definitely had moments
+  where i felt that you
+435: maybe i might step away from homebrew um but in most of those cases that has
+  had a resolution in a
+442: different way so it's meant that i have you know for example done stuff like
+  remove the homebrew slack
+449: from my phone right don't get homebrew emails sent to my personal email account
+  i have a dedicated email
+454: account just for homebrew related stuff and various things like this to kind
+  of enforce boundaries
+458: and that's always helped and also over the years there's been various kind of
+  problematic members of
+463: homebrew's maintainers and also homebrew's kind of community and i think also
+  like managing to
+470: resolve conflicts with those people and sometimes those people stepping away
+  from homebrew has made
+476: things a lot better um but i think for me the biggest thing it comes down to
+  there's a thing i guess
+481: we put it in the show notes i wrote a post a few years ago that lots of non-maintainers
+  hate and
+486: lots of maintainers still regularly tell me that they love uh called why open
+  source maintainers are
+491: you nothing that basically goes into the licensing terms about you know legally
+  pretty much all open
+499: source software states in the license that you know even if i were to deliberately
+  which to be very
+504: clear i have not will not etc even though to deliberately break homebrew such
+  that it deliberately
+511: destroys data on your machine the license says tough luck right the license disclaims
+  me of all
+517: responsibility and warranties and the license says look i'm not even saying this
+  this code works right
+522: so use this completely your own risk right and obviously in the open source community
+  there's a little
+526: bit more of a kind of expectation of you know slightly higher expectations than
+  just deliberately breaking
+533: people's things but i guess personally i've adopted that and i think that's one
+  of the things that's
+538: helped me stick around for so long is that if someone is rude to me or unkind
+  to me or other maintainers
+545: if they make a legitimate feature request or a legitimate bug report and they're
+  being
+551: really unkind about it and i guess we would say in scotland an ar**hole you can
+  believe that if you'd like
+558: then my response is i close the issue and i ignore it and i walk away because
+  i don't spend my time
+564: pandering to those types of peoples and the other thing that is nice about this
+  stuff is that over time
+570: you start to get better and better at seeing the patterns for when things will
+  go well and when
+575: things will not go well in general i guess my advice i would give to the wider
+  community and perhaps even
+580: outside of software perhaps in your personal life is if someone does something
+  that is hurtful to you
+586: and you express to them this is hurtful please do not do that again if that person
+  or ask them for an
+594: apology if that person is unwilling to apologize that's a red flag if that person
+  then gets really
+600: mad and starts being even more rude and unkind then that's even more of a red
+  flag and equally if
+607: that person says look i'm really sorry i didn't mean to do that i i it was not
+  at all my intent to
+611: upset you or whatever like please accept my apology then that's a good sign and
+  generally the people who
+618: will when put in that situation double down on bad behavior it's not trying it's
+  not worth trying to
+624: fix those people or have a rational conversation with people my attitude on github
+  as it is on twitter
+630: mastodon personal email whatever is just block ignore move on life is too short
+  the world is too short
+636: and and yeah whereas people i have good friends family members homebrew maintainers
+  and myself many
+645: times have done stuff where i've upset someone else and we've had an apology
+  we've had a good
+650: conversation and we move on right and i think that's the flip side of this stuff
+  as well that's that's
+656: really inspiring mike thanks thanks for sharing i actually now want to deep dive
+  a little bit on the on the
+662: technical side like discovering how uh homebrew works under the hood especially
+  when you do brew install
+668: command which i'm sure a lot of people do daily what is actually happening under
+  the hood how does
+674: a formula works and so on who better than you can can tell us about it sure well
+  happy to help and if i
+680: go too deep then feel free to um pull me out of the the hole that i've dug myself
+  into totally so i guess
+688: at a high level homebrew is written in ruby so if you're writing brew running
+  brew commands like the
+694: first thing that happens is like well i say we're written in ruby we're in a
+  sort of weird combination
+698: of ruby and bash so the actual brew command itself when you run that that's running
+  some bash to go and
+705: fiddle with various things in your environment bash is good in that it's ubiquitous
+  we make it a hard
+711: requirement basically for anywhere that can or will run homebrew it's available
+  on all macs and on the
+717: vast vast majority of linux machines so we use that to do things like if your
+  machine doesn't have a
+723: ruby then it will set up download and install ruby and all that type of thing
+  that we provide
+727: so almost from there you we have a repository it's homebrew slash brew in the
+  homebrew github
+735: organization the brew repository that's kind of the package manager itself so
+  that goes and then
+740: parses what you've requested figures out what the come up various commands are
+  and i guess the most
+744: common command that people would run would be brew install when you would want
+  to install something
+748: new so at that point it figures out okay like what you want to install what are
+  the dependencies
+752: everything like that what state is your system in make sure everything is in
+  a good enough state that
+757: we expect things to work rather than immediately blow up do you have all the
+  dependencies you need like
+762: if the formula needs x code itself so i guess i'll take a brief side tour into
+  the word formula so
+770: that's again the kind of beer metaphor if you think of a formula maybe for the
+  description for a type of
+775: beer like we use it as a package description so originally when homebrew was
+  first created a formula
+781: just were the steps that your machine would run to build this from source so
+  it would download the
+786: source code from say wget to website build it all install it all stick it there
+  but i guess a few
+792: years into the existence of homebrew we wanted something like we wanted binary
+  packages basically
+797: so a way that you could have that stuff pre-compiled so not everyone's machine
+  is having to do the same
+802: work we call those bottles that was something i created in again i can't remember
+  the year now
+806: um and those are basically used most of the time for most supported configurations
+811: because they're much faster they're much more reliable so
+815: if you run brew install
+817: it will go and say okay so what is the package that we're installing like what
+  are the prerequisites
+823: for this package dependencies we would call them we install the dependencies
+  first
+827: we fetch them we download them fetch and download the package we want to install
+830: and then we basically like churn through fetch them install them install the
+  dependencies
+835: install the package itself print out the various messages of what we're doing
+  along the way
+840: clean things up as we may need to do or whatever and then just output the various
+  messages to the user
+847: and at the end of this point you know we may have gone to the network and github
+  for updates
+853: or the software itself or the binary packages and all this type of stuff
+857: and then when it's all concluded you should have a package on your machine that
+  is installed and working
+862: now i guess to take a very brief side tangent as well like a thing that often
+  annoys people with homebrew
+868: is they say well i just ran brew install and it upgraded all this other stuff
+  and it installed all
+874: this other stuff that i didn't want it to this is really annoying why didn't
+  do that homebrew didn't
+878: used to do that but the alternative was there's cases where to give you a little
+  example if a formula
+885: depends on another formula that is a newer version then we have a choice there
+  that either we upgrade
+892: that formula once we've done that which we have to do to install the package
+  that you've asked us to
+897: if we just upgrade that and do nothing else we then break everything else that
+  depends on that
+902: thing so what we have to then do is upgrade everything else that depends on it
+  as well
+906: which is i understand why that can be irritating and confusing for people but
+  i guess my personal
+911: view on software is that it's better that at least by default or like a lot of
+  the almost all the
+917: annoying behavior in homebrew is customizable so check homebrews uh it run man
+  brew to see if you can
+924: fiddle with your settings before complaining to us about them but yeah so in
+  my opinion the defaults
+930: should just do the right thing without requiring user intervention and it should
+  not break things
+936: and should be relatively conservative in that if we're like it's 50 50 whether
+  if we upgrade this
+942: whether it's necessary to kind of stop things being broken or not we would rather
+  upgrade something
+948: unnecessarily which then makes things less likely to break than the other way
+  around and and i guess
+956: as a final note like with homebrew as a package manager some people may be familiar
+  with these terms
+960: and not homebrew is what we would call a rolling release package manager as opposed
+  to something
+964: like debian which is i guess a stable or not rolling release package manager
+  what that means
+969: is that as soon as we have the newest version homebrew that works within everything
+  else with
+973: homebrew we will upgrade that software if the upstream package go wget whoever
+  says this software is
+981: stable and ready to go then we will ship it in homebrew and that does sometimes
+  mean that if you're
+986: relying on that being always stable at all times things may break so similarly
+  you can disable homebrew
+992: upgrading things you can just not upgrade things in homebrew you can disable
+  auto updates all these
+997: type of things if you want to do that you start to tread a little bit off the
+  beaten path if you do that
+1002: or alternatively if you're say on linux if you need something that is just really
+  really stable and
+1009: things don't upgrade beneath you at the time stuff like debian is a much better
+  fit for you than homebrew
+1013: totally i actually have to mention that personally i've been using homebrew
+  for so long and i haven't
+1018: had so many stability issues also with this auto upgrade feature and i'm quite
+  happy with it one thing
+1024: that you haven't that you actually briefly super shortly mentioned in the beginning
+  is about casks
+1030: and i have a lot of friends and colleagues which don't know about it so uh maybe
+  you can also briefly
+1036: touch on that sure so casks are interesting because again they kind of like
+  our linux support they started
+1043: off as like a little side project that had sort of like relationships with homebrew
+  but was a very
+1048: separate project was not included in homebrew's installation by default and
+  we had a google
+1053: summer code student uh anastasia a few years ago who basically kind of brought
+  a lot of casks into
+1059: homebrew itself and helped kind of the beginnings of kind of unifying these
+  two projects but essentially
+1064: the difference between a formula and a cask a formula is something where there
+  isn't software upstream
+1070: and say something like wget and we take the source code for that we build it
+  ourselves in homebrew
+1077: we build binary packages ourselves and we upload those obviously if something
+  is open source we
+1083: should always be able to get hold of the source code and we should always be
+  able to do that
+1085: so the homebrew the main repository for formula we call homebrew core that is
+  basically all the
+1091: stuff everything is there has to be open source everything there has to be built
+  by us
+1095: in comparison our casks live in a repository called homebrew cask so that that
+  can include some open
+1103: source software but the difference is we don't build the binaries for any of
+  those those are built by the
+1107: upstream projects so you might have something like uh just looking on my task
+  bar to see if i can find
+1113: a good example so i guess vs code would maybe be an example or or i think spotify
+  files chromium or i
+1121: guess i'm thinking for open source examples to begin with like there's various
+  things like that where
+1125: you could build them for source and you could make a formula from those but
+  generally the upstream
+1132: project does a better job of that and they publish binaries for mac anyway so
+  it makes more sense to
+1137: rely on their stuff and i guess there's also a slight you know there's some
+  blurred lines in
+1142: the middle here but also generally a formula is better when it is something
+  like a server or cli application
+1148: or a library or whatever and generally a cask is better when it's something
+  like a
+1152: a gui application right again the examples like vs code spotify chrome whatever
+  these are all things you can
+1159: install through homebrew cask that are again in some cases possible that someone
+  can make a formula but
+1166: generally it's a pain and people don't want to do that so we kind of provide
+  these different
+1172: mechanisms for doing things again perhaps the difference with casks is that
+  basically all of
+1177: those things those installers are things that you could just download install
+  yourself manually but
+1183: if you're like me and you like automating everything whenever possible it's
+  pretty nice to be able to do
+1188: brew install google chrome rather than having to like go to the chrome website
+  download a thing click
+1195: a thing down next next next blah blah blah all this type of stuff it's nice
+  to just have an automatic
+1200: way of doing that and i guess to step one level higher we also have a project
+  called brew bundle
+1205: which is if any of you are familiar in the ruby ecosystem of something like
+  a brew file
+1209: i'm not very adept in various other language specific packaging ecosystems but
+  effectively a way of
+1218: installing the dependencies for your project this kind of looks a little bit
+  like that and you can also use
+1223: it as i do when you change your job you might get a new laptop or whatever and
+  you want to install
+1228: everything if you have all of your dependencies that are installed from homebrew
+  and homebrew cask and
+1236: you can also pull stuff from the mac app store in there as well then you can
+  basically just have
+1240: it on a new machine and go have it go chug chug chug chug chug install the software
+  and then before
+1244: you know it you're up where you used to be and as a brief personal plug i also
+  have a little very
+1249: minimal open source project called strap which is basically the only thing i've
+  been able to make
+1254: by myself which has got any traction which effectively does that so it's on
+  a new mac
+1258: it basically sets up pulls down your dot files from github if there's a brew
+  file in there
+1262: installs all that stuff to basically just make the process of setting up strapping
+  bootstrapping
+1267: a new mac laptop much quicker and easier and stuff so if that's of interest
+  to you and if you like me
+1273: like spending absurd amounts of time automating things that you will have to
+  do every two to four
+1278: years then you too could waste your time and do this that's that's awesome i
+  thought i was smart
+1283: because i was just like extracting the the list of brew cask that i've installed
+  when
+1288: i was changing computer i was not aware of the of the brew bundle feature so
+  now i need to i need to look
+1293: into it now actually want to jump on you mentioned the concept of bottles so
+  you have pre-built with
+1301: such a big ecosystem i'm wondering like where are they stored like it should
+  be a lot of data right and a
+1308: lot of traffic specifically so can you please tell us where the files live and
+  what are the complexities of
+1315: handling those sure so the first place they ever lived was sourceforge because
+  they would give us
+1319: lots of free bandwidth but they had lots of down time and then there was some
+  kind of potential spyware
+1325: allegations and issues and things like that so we moved away from sourceforge
+  to another house called
+1331: bin tray which was hosted by j frog who kind of make artifactory and then they
+  sunset that a couple years ago
+1338: so at relatively short notice we had to sort of scramble to find a replacement
+  and we evaluated a
+1343: few options but then we decided in the end to use github packages and partly
+  because i was the person
+1349: implementing it and i thought that that was the best solution and partly because
+  we had kind of at the
+1354: time with me working at github internal access to be able to like make sure
+  that various features on
+1360: the roadmap that would have been useful to us could get met so github packages
+  is basically a docker
+1366: registry essentially but there's a thing called i think it's like oci open container
+  image or something
+1373: that basically lets you just chuck arbitrary tarballs into github packages and
+  other stores like that so
+1379: effectively we do that we have a way that we um binary packages bottles are
+  basically just tarballs
+1385: anyway so we chucked our tarballs into github packages and then we download
+  them from there
+1390: along with like a manifest file and stuff like that and yeah there is a lot
+  of data in there
+1395: i can't remember what it was when we did the migration but certainly in the
+  order of um
+1399: i think we've got terabytes of packages and then on a year we do probably petabytes
+  of downloads so
+1408: that's impressive and with so much data i'm actually i'm actually curious from
+  what you're
+1413: saying on like how your repository is structured i feel there is a lot of scrutiny
+  on what goes inside
+1420: the registry uh but i'm still curious like how do you protect yourselves against
+  malicious actors
+1427: people that wants to add let's say instead of having a open jdk with the n they
+  try to submit a
+1434: open with the m jdk so it's like someone typos that and download some malicious
+  package yep
+1439: so we have a very different trust model to say npm pi pi ruby gems and partly
+  because the system
+1448: software partly that's because that's how we used to do things and partly uh
+  just personal opinions of
+1455: the maintainers on the project about how we should run in the in something like
+  npm i could sign up
+1462: today and i can sign up and just upload basically any package right and anyone
+  can do that at any
+1468: point and if someone gets my credentials then they can start uploading new versions
+  as me and all this
+1474: type of stuff there's obviously been you know i'd be remiss if i didn't announce
+  there's various
+1478: movements across the ecosystem in places like npm to use 2fa to improve this
+  situation but the
+1484: difference in homebrew is because our package registry is effectively a git
+  repository so that gets you a
+1492: bunch of things so one of the things that gets you is the fact that there is
+  a global log of
+1498: everything that is made and all the changes that are made there and the second
+  is you know using
+1503: github's permission system we have a relatively small number of people there's
+  i think 29 homebrew
+1509: maintainers account today that could be wrong but around that sort of number
+  and those maintainers are
+1516: audited every year to make sure that they actually need the access they have
+  so we have a bunch of
+1520: people who are incredibly prolific contributors to homebrew in the past still
+  contribute occasionally but
+1525: are deemed to not need their right access anymore so we keep it pretty locked
+  down and if you want to
+1532: if you want to submit opem jdk with opem say then what you would have to do
+  is you'd have to submit
+1538: a pull request a maintainer would have to look at that review it say this is
+  okay your pull request
+1544: would have to pass various automated checks that we have as well and if there's
+  any doubt again similarly
+1549: we would have some would be pulled in there and then you would have to hope
+  that no one in the community
+1554: noticed what you've done even if you managed to somehow fool the maintainers
+  there because there would be a log
+1559: about who included it when why pull request etc so in reality this you know
+  there's a lot of
+1568: conversation about this sort of supply side security stuff i wouldn't pretend
+  that we don't have security
+1573: challenges and we haven't had security problems in the past but for us at least
+  like the trust model is
+1578: very very different because essentially particularly for formula where the criteria
+  is a little bit
+1584: stricter still it's we are basically packaging upstream software not and similarly
+  we don't we really don't
+1592: like people unless it's really really popular even submitting their own software
+  into homebrew so we
+1596: basically want third parties to say i trust this upstream repository i would
+  like this to be included into
+1602: homebrew and then a maintainer needs to say yes this seems okay and we have
+  some projects where you may notice
+1609: that there is a bot that will automatically update things but again we've had
+  a security issue in the
+1615: past with casks in this case and we addressed it there but we are basically
+  very stringent about what
+1621: situations and criteria things can be automatically updated in that fashion
+  and essentially if you were to
+1627: radically change the way the software worked or anything like that or the way
+  it had to be installed you
+1631: couldn't do that automatically that would basically just be a situation where
+  the upstream project
+1636: has said this is okay and then we would have a situation where we can kind of
+  automatically bump that
+1641: but if there was any malicious activity we would notice that we would push change
+  we revert it
+1645: and again that's all publicly logged and public information that's that's really
+  interesting actually i think
+1652: that effectively building in the open it brings brings a lot of benefit here
+  i i had so many issues
+1658: in the past with jcenter i think there was like name shadowing attacks uh for
+  one really popular android
+1664: android developer someone like used their package name with a typo and they
+  ended up distributing malicious
+1670: code all over the places there was like tracking network calls and so on so
+  yeah definitely having
+1675: everything open helps helps a lot here i'm actually curious to know like since
+  we're talking about
+1680: formulas let's go a little bit practical what what do you know by any chance
+  which one is the most
+1685: downloaded one yeah so we have a few ways of i could tell you the most used
+  in the last year
+1692: on mac os is a really boring formula that's basically just used for installing
+  um certificates for open
+1701: ssl and then the second most popular one is open ssl itself so that's we actually
+  have two different
+1707: types of events so we have we track install events and on request events and
+  the on request events
+1713: is someone actually request someone typed brew install whatever and the install
+  events are it could
+1721: be pulled in by something else and everything depends on open a cell so that's
+  why it ends up
+1724: the top of the list the in the last year the install and request events the
+  thing the top package that
+1729: someone's actually requested was node followed by python followed by git followed
+  by aws cli
+1735: so you can probably guess this stuff but yeah i guess the interesting fact is
+  how do we know this
+1740: stuff um and yeah the way we know this information and it's all public we've
+  got a website where you
+1747: can go and look at this analytics data but we yeah we track analytics for users
+  unless they've opted out
+1753: and we notify them before any analytics are sent with the instructions of how
+  to opt out and documentation of
+1758: what we do and obviously again because we're an open source project you can
+  see exactly how and when
+1763: the data is sent and where so let's let's deep dive a little bit more on this
+  telemetry problem because
+1770: i know recently there was a discussion in the in the golang space about adding
+  telemetry inside a go compiler
+1776: and things kind of blew up over there like a lot of negative comments like hey
+  you should not do that
+1781: but now we see the value of telemetry in open source because we can say like
+  hey which package is
+1786: the most downloaded it's not just about knowing which package is most downloaded
+  i'm sure you have
+1791: like you can do further analysis on how users are using homebrew thanks to that
+  data so maybe can
+1797: can you tell us a little bit like how do you feel about this telemetry where
+  where do you store the
+1802: data even how complicated it is to even like from the legal point of view to
+  have telemetry around
+1807: an open source tool like this one sure so i guess a little bit history so we
+  didn't always used to have
+1813: telemetry here uh we used to be able to only for binary packages infer like
+  manually see how many
+1822: downloads an individual binary package would have and again that was very variable
+  depending on the
+1827: binary package host that we were using at the time like in what format we could
+  get that information
+1832: it wasn't really automatable and it was again not accessible at all for things
+  that we didn't have
+1839: binary packages for which at the time was quite a significant amount to our
+  software so we looked
+1846: i can't remember how many years ago it was now like quite a long time ago at
+  various options for
+1851: storing analytics and recording them and things like that and at the time the
+  only thing that looked
+1855: like it was going to meet our scale and be free because at the time we had no
+  recurring income
+1859: was google analytics we investigated various people suggested we investigate
+  self-hosted options and
+1865: things like that but it became pretty clear pretty quickly that self-hosted
+  options without major corporate
+1870: backing we're going to just a fall over and be uh be prohibitively expensive
+  for us to run
+1876: so we've used google analytics for quite a while and we send them the absolute
+  minimum information
+1882: that we can to basically get what we need and as of fairly recently and various
+  points in the past when
+1889: we have sent information that we're like we don't need this anymore then we
+  stop sending that information
+1894: so we have kind of gathered information that kind of tracks users by a uuid
+  that's just randomly
+1903: generated on their machine and you can reset that tracking information at any
+  time and before we send any
+1909: analytics to any users we pop up a little message which should also make a ping
+  in your terminal
+1914: be it on a new installation or if you want some ancient homebrew version before
+  analytics
+1918: were addressed then it would now you know ping you and say hey we've enabled
+  analytics we haven't said
+1923: anything yet but we're going to uh and yeah like i guess as you mentioned with
+  go like when we first
+1930: introduced them and still regularly now there was a tremendous amount of negativity
+  towards analytics i think
+1936: some of that in our case is related to our decision to use google analytics
+  which is why we're now in
+1942: the process of kind of migrating away we have an influx db host in which we
+  are sending dual sending
+1949: analytics to google analytics and influx db but you can choose to opt out for
+  just google analytics or both
+1955: if you choose um but yeah the expectation is in probably 90 days or something
+  from now probably
+1962: less by the time this recording goes up then we are planning on removing the
+  analytics entirely in
+1969: favor of influx db that's awesome thank you very much for sharing and i'm actually
+  curious to know a
+1974: little bit more about the old opt-in versus opt-out thing because in the golang
+  space it created a lot
+1980: of controversy so maybe you can tell us a little bit more how on real managed
+  to have telemetry as an
+1988: opt-out i think this is what i see with a lot of stuff in homebrew having been
+  involved for a long time
+1996: i saw with the go telemetry thing and from what it's worth they have switched
+  from opt out uh like
+2002: we have to uh opt-in and i think that's a mistake because what happens is when
+  you use opt-in analytics
+2010: you are going to not gather a representative sample of the people who use your
+  software you're
+2016: going to rather a representative sample of the people who decide to enable analytics
+  on your software
+2021: which i i'm not convinced that those two groups are uh aligned yeah and similarly
+  i guess perhaps
+2028: not surprisingly being a mac person because this is quite a an apple ecosystem
+  viewpoint i think
+2033: defaults are really important and i think opt-in versus opt-out you basically
+  massively reduce the
+2038: discoverability of analytics at all there's a i've learned over the years with
+  stuff that homebrew
+2043: there's a very small proportion of our users who change anything from the defaults
+  ever and are even
+2048: aware that there are configuration options in homebrew full stop right most
+  people just don't use homebrew
+2054: and and also like even most software that way you know so as a result i just
+  think it would give us
+2060: essentially worthless data which would be almost impossible to make accurate
+  decisions on i guess
+2065: you touched on that earlier you you alluded to you know we're able to make decisions
+  like a good
+2069: example for us is if we have some software that's broken on the new mac os or
+  a new version of go if it
+2076: depends on go or whatever it may be like that the analytics help us to make
+  the decision okay how
+2081: many people actually use this right like how many how much time is this worth
+  us investing to get
+2086: this fixed and before analytics we had to basically have the assumption that
+  well everything is used
+2092: right so we have to go and fix this stuff whereas now it means that when you
+  know if you have a new
+2098: version of go that is blocked on being upgraded because of some software we
+  now have the ability to say well
+2104: the software that's blocking go go has got whatever millions of people installing
+  it and this other
+2110: software has you know 100 people installing in the last year or less maybe no
+  one in some cases so as
+2117: a result it's not worth keeping the software around or blocking it based on
+  that and it's also in some
+2122: cases if it's going to be very involved if the software is broken then in some
+  cases it's like well
+2127: if if enough people we discover stuff that has been broken for six months a
+  year no one's noticed no
+2133: one's reported an issue you go and look at the analytics oh 10 people installed
+  that in the last
+2137: year so it's not worth us spending our time and effort to kind of fix that stuff
+  and from my perspective
+2142: it's been tremendously valuable uh to in order to help us prioritize i also
+  think there's a kind of
+2148: fairly hilarious side note here which is that for those of us who have worked
+  in industry i'm sure
+2154: you're the same nicola every software company does some degree of measuring
+  what users do right and
+2162: some software companies for example google i guess one of the reasons people
+  don't like google analytics
+2169: one of the reasons people may have been upset about some of the proposals coming
+  out of google or
+2174: the information being sent to them for the go stuff google obviously is part
+  of their business model
+2179: not homebrew's analytics specifically but it's part of their business model
+  to use information about
+2184: users of their software in order to sell ads right and you can i'm not even
+  going to get into a debate
+2191: about you know whether that's good bad whatever but it's a i think a very reasonable
+  thing to say
+2197: i don't like that business model i do not approve of that i think the problem
+  is is that when that gets
+2203: moved to open source software and you have people saying that google but the
+  homebrews analytics or
+2207: spyware or whatever i guess you have to really ask yourself about what information
+  like how we could
+2213: possibly financially benefit from this information particularly when it's financially
+  benefit from
+2218: information which we make publicly available to you and our maintainers do not
+  have any more access
+2224: other than the few ones who have to be admins or google analytics and when we
+  move to influx db it's going to be
+2230: even even effectively more restricted and we gather less information or whatever
+  like our maintainers don't
+2236: have access to stuff that you don't have access to so i find it very hard to
+  see how homebrew could be
+2242: maliciously or unintentionally using this information to spy on you or yada
+  yada yada what it is is that
+2248: information helps you to make the software better and another irony i've seen
+  is that there is a lot of
+2254: people for whom they claim to subscribe to the scientific methods and think
+  that stuff like
+2259: making a decision based on data is generally a good thing to do but yet they
+  will insist that all of the
+2267: software they use or at least all of the open source software they use because
+  with most proprietary
+2271: software they have no way of even knowing what data has been gathered and how
+  and web software even more
+2277: so every web request you make to any server you have no idea what is being stored
+  and what not stored
+2282: and that's completely opaque to you but that's inside i think it's funny to
+  me that a lot of these folks
+2288: who would say that they subscribe to scientific empiricism at the same time
+  don't want to let open source
+2295: projects where you can see all the data being sent and received and stored don't
+  want open source
+2300: projects to get any of that data in order to make the software better and i
+  think frankly that just reveals a
+2307: astonishing naivety amongst the loudest voices here and then i guess as a as
+  a final note on this i think
+2314: the other thing that this stuff reveals which i've learned from homebrew over
+  the years is that sometimes
+2319: open source projects will make unpopular decisions in our cases there's been
+  various changes to the defaults
+2324: over the years that people have really not liked and you can get a lot of people
+  what feels like an awful
+2331: lot of people if a hundred people turn up and make comments across various issues
+  or in a discussion
+2337: forum or whatever that feels like a lot whereas as far as we can tell homebrew
+  has millions of users
+2344: um you know i'm not sure how many millions it's hard to kind of exactly um gather
+  that data accurately
+2350: but based on our our installation events and analytics that we have millions
+  of users as a
+2355: result a hundred people being really angry about something is ultimately insignificant
+  but when
+2361: those people are getting angry and to maybe go back to what we said much earlier
+  about people being rude
+2366: often those people cross a line into not just being frustrated about a technical
+  decision but being
+2372: rude abusive sending abusive emails to maintainers sending abusive emails to
+  their employers
+2377: demanding they be fired starting twitter campaigns all this type of stuff for
+  software that they get for
+2382: free often made by people in their spare time i also you know perhaps the stubborn
+  person that i am
+2389: i also even less want to validate the concerns of people who cannot do so in
+  a polite constructive and
+2396: professional manner and so that's that's my take on the the analytics debate
+  as is and hopefully that
+2404: will embolden some other maintainers to be willing to kind of make this sort
+  of these sort of
+2408: changes um and also i guess to gather the information they feel they need to
+  run their projects and if
+2414: you're just gathering information because you think it could be interesting
+  at some point in the future
+2418: that's maybe a good time to not gather that information but if you have a concrete
+  need
+2421: as we do in homebrew's case with a concrete use case that you can see being
+  informed by or enabled
+2427: by this data go gather that data let people opt out who want to opt out ignore
+  the haters thank you
+2434: very much for sharing your perspective that's extremely valuable and i think
+  it's spotlights the amount
+2439: of entitlement that at times i i also see in the open source community uh like
+  i gladly i never add like
+2445: negative emails being sent directly to me or to my employer at least that i'm
+  aware of uh but i had
+2451: some some issues in the past where people were like taking a picture with the
+  photo like with with their
+2458: phone they take a picture of their code uh and they put it that that's the only
+  content on the github issue
+2465: like your thing is broken please fix it now and it's like uh do a little bit
+  of effort you know
+2472: like i i'm happy to support you but you know uh i don't get paid for that like
+  in the open source
+2479: space so so yeah entitlement is is everywhere and when people cross the line
+  is is really terrible
+2484: so yeah i guess this is like one of the one of the major problem of the open
+  source space
+2491: yeah and i guess that's another thing where i would say that i i strongly agree
+  with you like that
+2498: entitlement is everywhere but again that's to me where a way to avoid burnout
+  is setting your boundaries
+2505: and thinking to yourself what you know it's maybe a little bit more nuanced
+  if you're being paid to
+2510: work on open source or paid to maintain a project uh by a company who is employing
+  you explicitly for
+2517: that purpose but if you like a lot of people are doing most of your open source
+  work either
+2521: unofficially during work time or in your spare time then you should only do
+  what you want to do
+2527: right like if someone makes an issue like that and you don't want to help close
+  it right you don't
+2531: have any obligation to help anyone right and also i guess again maybe a a good
+  principle for life
+2538: right is i am willing to help the most the people who are willing to put the
+  most effort into
+2544: asking for help right when someone says here's all the stuff i've done here's
+  all the stuff i've tried
+2549: i read your docs i followed your issue template all this type of stuff this
+  thing isn't working please help
+2555: i i may still depending what the issue is i might not be able to help them but
+  i'm a lot more willing
+2561: to do that for people who've done that and asked in a very nice and kind way
+  than someone who just as
+2565: you say takes a photo of some code dumps it in issue and puts please fix like
+  those type of things
+2571: nowadays i don't even respond i literally just close the issue and ignore it
+  because i just think it's
+2577: not worth my time as a maintainer working on that stuff because if i answer
+  a hundred or a thousand of those
+2584: issues i then don't do any work on the project right and the project doesn't
+  get that new feature
+2590: that you all wanted and you've been asking for months because instead i helped
+  a hundred people
+2594: who aren't willing to put the effort into even asking a good question that's
+  so true that's so true
+2600: so uh still on analytics you mentioned influx db so now i want to ask you another
+  question which is
+2607: like who is paying that db and this brings me to the topic of uh funding like
+  who is effectively like
+2615: where is the money model behind this is it like it's just open source it seems
+  like not there is
+2619: someone sponsoring supporting uh homebrew in which form and in which capacity
+  sure so again let's take a
+2627: little trip through memory lane so when homebrew was first created by max howell
+  it neither had any
+2633: money nor needed any money right everything was on github people would just
+  install stuff that's all kind
+2639: of unneeded right and then i guess our next step after that was stuff like source
+  forge or bin trade
+2645: or whatever where we had needs from other organizations beyond just github although
+  i guess
+2651: in some ways you could include github in this category as well and they gave
+  us some stuff that
+2655: we needed for free and this is a nice pattern that you see a decent number of
+  organizations will do
+2661: they will say okay well stuff's for free for public repos or open source or
+  whatever it may be and if
+2666: you want to do private repos or um commercial stuff or whatever you have to
+  pay money so that got us
+2672: quite far for a little while and then eventually we got to the point that we
+  actually needed some stuff
+2678: right so the first time we did that i think it was 2013 14 something like that
+  we were like okay we
+2684: want to do our own ci testing at this point there was no cloud providers offering
+  like this type of
+2689: or at least none that were offering kind of in the format that we felt that
+  we could use ci hardware
+2695: and also for me the um in the kind of earlier days particularly of homebrew
+  when we didn't have any
+2702: recurring revenue coming in i would have been reticent to sign up for a uh you
+  know a cloud provider
+2710: even if such thing existed in order to have mac hardware or whatever that if
+  we stop being able
+2716: to pay the bills then it would go away so we bought i think it was four physical
+  mac minis
+2722: class a friend of mine uh who ran an isp let me install them in the data center
+  there you know i drove
+2728: down for six hours and installed these like physical pieces of hardware into
+  a physical data center
+2733: um and then a few years later we were able to kind of transition from them to
+  a company called max
+2737: stadium that again gives us their stuff for free um and then more recently we
+  have um we joined the
+2745: software freedom conservancy which was what you call a fiscal host i essentially
+  an organization that
+2751: provides a bank account for your project to enable you to accept donations and
+  things like that
+2757: and then we were able to do things like set up a patreon get direct donations
+  through them
+2760: get some kind of commercial destinations all this type of stuff we were able
+  to kind of build up some
+2765: money that way and then start actually paying for some other services like um
+  we were able to pay for
+2770: say like google cloud and things like that and then more recently we transferred
+  from software freedom
+2775: conservancy as our fiscal host slash foundation to open collective and all our
+  funds are there and now a
+2782: a cool thing with open collective is you can actually see our balances how the
+  money gets spent what money
+2787: comes in what money goes out what reasons it goes for and when maintainers are
+  given money um then
+2794: you can see what that money was for like we just had our annual general meeting
+  uh in brussels
+2800: after fosdam we lasted that before the pandemic and yeah you can see various
+  maintainers thankfully the
+2808: the specifics of their receipts are not globally readable but you can see this
+  maintainer requested
+2814: this amount of money to be paid back for his or her flight over to this conference
+  so that provides a
+2822: little bit more transparency there and you can see i guess our income sources
+  as well so we've got a
+2826: bunch of existing income that is sitting there but our kind of new income comes
+  from uh github sponsors
+2834: and then patreon and then people through open collective kind of in that order
+  and it comes from
+2839: some organizations um github has given us money in the past as well and we have
+  some kind of ongoing
+2845: sponsors some one-off sponsors and we also have um one-off individuals who give
+  us money and ongoing
+2852: individuals who give us money if you want to see the full list you can see our
+  kind of github
+2856: sponsors page and our kind of sponsors that hit a certain tier are all included
+  in our readme on the
+2861: homebrew repository as well so as a result of all this i guess to go back to
+  your original question
+2866: that's what allows us to pay for things like a um influx db instance and we
+  have like a slightly
+2874: beefier than github's actions provides um google cloud like image that runs
+  our docker images and
+2881: stuff like that for ci and various other things like this like resources we
+  need although we're still lucky to
+2886: have you know great companies like um build pulse one password and various others
+  who give us free stuff
+2895: that we rely on use and like awesome uh now one question that came to my mind
+  is like okay uh
+2902: isn't open collective tools small for you folks shouldn't like have you ever
+  thought about
+2909: having like a proper homebrew foundation i couldn't find any reference about
+  it in the um in the web so
+2917: i was curious like um yeah like is there an entity behind homebrew or it's just
+  like a gira project
+2923: a gira borg no there's no there's no legal entity behind homebrew um we when
+  we were part of software
+2929: freedom of service and now part of open collective that's the closest thing
+  we have to a legal entity for
+2933: us i guess from our perspective we don't have any trademarks or anything like
+  that so there's
+2937: there's very little in the way of need that we would see for a legal entity
+  i'm also a bit of a
+2942: minimalist personally so i tend to have the attitude of if you're on the cusp
+  of whether or not you
+2948: could have a foundation or not uh then the admin overhead means that you probably
+  about to not have
+2954: one than have on um we do have kind of a governance structure and governance
+  documents i mentioned kind
+2961: of me being project leader and before that it was a bit more nebulous so you
+  know a few years ago
+2967: we kind of sort of solidified our our governance so that i'm now elected as
+  project leader we have
+2973: a project leadership committee committee who are elected and technical steering
+  committee and all
+2978: this type of stuff and yeah and this is basically all written down and we have
+  various kind of members
+2983: who are kind of more or less maintainers uh past and present and few other people
+  who have kind of
+2991: have extended periods of kind of involvement with the wider homebrew ecosystem
+  who are kind of asked to
+2996: kind of join us there and participate and stuff like that but even within that
+  we try and continually
+3003: sort of adapt our governance processes to try and keep them quite lightweight
+  and try and keep them quite
+3008: fast moving and responsive just because that feels like it uh it makes the project
+  work better and as
+3015: someone who's recently left a rather large organization the last thing i would
+  like is for homebrew to turn
+3021: into you know a huge bureaucratic organization where it takes a very long time
+  to get anything done
+3027: awesome so i'm curious like about this this governance structure and and maintainers
+  like
+3032: how can people effectively contribute to homebrew if if they want how do you
+  become a maintainer if if you
+3039: were to yeah so the the best way to contribute is to we have a little section
+  or kind of read me of
+3047: the homebrew reaper but there's a few different routes in there like i guess
+  some of it is deciding
+3052: whether you want to work in the package manager itself or the packages the packages
+  are often kind of
+3057: a place where you can jump in there and kind of fix some little style issues
+  and stuff like that
+3062: as a good way to get started in general like i want to be a maintainer is kind
+  of how do i do that is a
+3068: hard question to answer because it's very dependent on an individual by individual
+  basis like often
+3073: what happens is people just discover homebrew start what using it contributing
+  to it whatever it may be
+3080: and then we notice if you have a lot of high quality contributions and if generally
+  i guess the general
+3088: rule of thumb is you are saving more work than you're closing right if
+3092: you make great pull requests often and i review the pull requests i read basically
+  every pull
+3098: request that goes into the homebrew brew repository for example and if the majority
+  of your pull
+3104: requests are trending towards i don't have anything in there to correct and
+  they are non-controversial and
+3111: seem kind of pretty good and you you've kind of been sensible about writing
+  tests and code style and
+3118: fixing issues without people needing to point them out to you then you may be
+  asked to be a maintainer but
+3122: there's people who have done kind of decent pull requests but they still need
+  quite a lot of help kind of
+3128: getting them over the line and that's something where we're kind of happy to
+  have those people
+3132: repeatedly contribute and we really appreciate those contributions but they
+  may be not the best fit to
+3136: be a maintainer because part of the expectation is when you're a maintainer
+  is you don't just work on your own stuff
+3141: right you're not if you have little like projects that you're interested in
+  before you're not just
+3145: doing purely continuing to do that stuff and now you can merge it yourself but
+  instead being the idea
+3151: of like you yourself are getting involved with shepherding community contributions
+  reviewing other
+3156: people's codes and stuff like that that's great it's actually uh i would have
+  expected like a more
+3161: structured and a more like uh a bureaucratic way to get involved while it seems
+  like it's like any other
+3169: open source project like who contributes is like like the debian uh duocracy
+  kind of thing like if
+3176: if you contribute and you're valuable then you have push rights and and so on
+  yeah exactly and as i
+3182: touched on before as well we don't see these things as permanent you know we
+  have people who are very
+3187: prolific contributors and in some cases the life situation may change they may
+  have a child or start
+3194: university leave university change jobs whatever it may be and then in some
+  of those cases those people
+3200: will uh go and say well it's time for us to me to step down and in some cases
+  i review everyone's
+3206: contributions kind of once a year and it might just be like well it doesn't
+  look like you actually need
+3212: commit access anymore so um we're going to remove that just because you know
+  as i mentioned
+3217: earlier like that's it's a kind of security thing that we potentially could
+  have had i don't know how
+3223: many we've had over the years but if we had never removed any maintainers we'd
+  potentially have 100
+3227: people with commit access rather than 20 something people with commit access
+  totally i i'm curious to
+3233: know like for people that want to engage with with ombrio other than using the
+  the get up ripples are
+3237: there any like official venue like being i don't know a slack discord or get
+  up discussions that you
+3243: will suggest for folks to to engage with the broader homebrew community yeah
+  so we have a github
+3249: discussions repo like that's basically our our main place for sort of just chatting
+  about homebrew a bit
+3254: more we don't have a slack or discord or anything like that right now and because
+  i guess we don't
+3259: really have the resources to kind of accurately moderate those and ensure that
+  they're kind of nice safe
+3265: spaces for people um but yeah but i i would say the kind of discussions forum
+  is the best place to
+3271: to be and in general as well there's on places like matadon and twitter people
+  sort of chat about
+3277: homebrew stuff every so often we can do our best to kind of um get involved
+  there as long as your
+3283: chat is not just homebrew sucks or i hate homebrew because of whatever awesome
+  so as we slowly move
+3290: towards the end of this episode i actually want to ask you what's next for brew
+  like other than
+3295: like i understand that a lot of your time is dedicated in maintaining uh the
+  registry being
+3300: healthy and so on but are there any features or anything that you foresee coming
+  in the future
+3306: of brew that you want to call it out yeah so there's there's no major features
+  i see kind of on the
+3312: somewhat imminent horizon so we just released relatively recently homebrew 4.0
+  and and yeah there was i guess
+3319: the big features in that were pulling things from the api like we've got a kind
+  of api um
+3325: hack at least that's sort of on the github pages and yeah basically that has
+  been a fairly major
+3334: change we're still picking up some edge cases with that and similarly i mentioned
+  earlier with kind of
+3339: moving our analytics provider and that will enable us to um present our analytics
+  perhaps in a slightly
+3345: different way that's maybe more useful to people and also just remove a kind
+  of google dependency
+3349: um and yeah so basically like we're those things are both things that are sort
+  of like
+3355: released but not i guess as you might expect in a point zero release kind of
+  released and working
+3360: for most people most of the time but not like rock solid and perfect so at the
+  moment like my
+3366: main focus and i think the focus of a decent number of the maintainers beyond
+  just the day-to-day
+3370: keeping them running is improving those features and getting them to the point
+  where they're completely
+3375: done and then who knows what's next i mean we tend to not have long roadmaps
+  because because
+3382: everyone on the project is a volunteer essentially we don't really have a way
+  of saying well okay like
+3388: you have to deliver this thing in three months because people can just say no
+  but yeah i guess if you're
+3393: if you look at the kind of help wanted issues on our repos then that gives an
+  an indication of stuff
+3398: that we're trying to like invest more in but hasn't been done yet but no there's
+  no there's no big
+3405: changes that i expect to kind of happen imminently and another thing with humbrew
+  i guess it's worth
+3410: noting is that we although we've had a kind of v2 i used to joke that we will
+  never have a humbrew v2
+3415: because the idea of kind of i don't expect us to ever have a like well we broke
+  all backwards
+3421: compatibility and you have to rewrite all your formula and stuff like that from
+  scratch because
+3425: i think that would make humbrew dramatically less useful to a lot of people
+  and would make everyone
+3430: think about at least moving to another package manager where if they have to
+  rewrite everything
+3433: anyway so interesting thanks for sharing so now i want to give you the opportunity
+  actually to to
+3439: to share with with the audience if you have any blog posts uh other podcasts
+  that talks or any content
+3447: like you like the one you mentioned uh before when uh we were talking about
+  maintenance burden if if
+3454: people wants to like also understand better the culture around homebrew uh do
+  you feel there is
+3460: any any reading that is there is worth uh saving for them yeah so i've done
+  a bunch of writing on my
+3466: personal blog about related to i guess informed by my experiences in homebrew
+  about homebrew and open source
+3473: and uh even just kind of why your software development over the years so my
+  blog at kind
+3479: of mike mcquade.com is probably the best place if you want to kind of browse
+  through that you can
+3483: actually like i've written relatively few enough that it's all on a single page
+  that you can just scroll
+3489: up and down and see what takes your fancy but also i guess if you're interested
+  in my sort of more
+3494: short form thoughts than i'm on kind of mastodon nowadays i i'm technically
+  still on twitter but
+3499: like that's essentially writer only at this point um until i get fed up with
+  even doing that but yeah
+3505: so now feel free to kind of if i've said something that you find interesting
+  and you want to talk to
+3510: me send me an email or a whatever you call sending people stuff on mastodon
+  i can't keep up with the
+3517: verbiage and and yeah and i guess i mentioned earlier as well like my new employer
+  raised.dev we
+3524: don't have a product to announce yet but if you kind of follow me on mastodon
+  or whatever but
+3528: you will find out when we have something ready for you to use and we'd be interested
+  in you trying
+3532: that out as well awesome so my last question would have been where people can
+  find you online which
+3538: sort of you already answered but maybe you can share what's your twitter handle
+  and mastodon handle
+3542: so people can can search for you then follow sure so yeah on uh on twitter i'm
+  at mike mcquade on
+3549: mastodon i'm at mike at uh mastodon.mikemcquade.com i think um but yeah you
+  could find that in my
+3559: twitter bio and on my link to my website and stuff like that my website is mike
+  mcquade.com which is
+3564: just my name um and then yeah like i'm mike mcquade on github and most places
+  on the internet where i can
+3570: take that username awesome and with this uh this was an amazing episode really
+  insightful at least
+3577: for me it's a software i use really daily i want to thank you very much for
+  being with us on show
+3581: today yeah thanks for having me nicola and thanks for listening everyone and
+  i also again want to
+3586: thanks everyone for listening and i'll see you all in the next episode
+3597: you

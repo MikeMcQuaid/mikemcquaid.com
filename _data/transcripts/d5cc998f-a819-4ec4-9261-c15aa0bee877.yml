@@ -1,0 +1,660 @@
+---
+0: Hey, Neha. How are you doing today?
+1: Good. Hi, Mike. How are you doing?
+4: Yeah, really good. Thank you.
+5: So, yeah, I guess we did our little video of this, whatever it was, one week, two
+  weeks ago, and some people liked it and watched it.
+13: So I ponied up, paid for the Riverside premium plan, got a podcast set up, and
+  yeah, we're going to keep doing this.
+21: So, yeah, thanks for joining me on the journey, Neha.
+24: Well, it's a pleasure. I mean, I'm really surprised that so many people responded
+  to it.
+27: Like, we have these conversations all the time, and we just kind of figured we'd
+  put this up.
+31: And so I think today I kind of want to talk about decision-making.
+36: You and I both had a lot of conversations around decision-making and probably
+  have a pretty low tolerance when it comes to letting a decision lie out for a long
+  time,
+45: but also understand the necessity of building consensus, especially when you're
+  working remotely and async.
+52: And so I thought it'd be fun for us to talk about, like, when to build consensus
+  or seek input or decide unilaterally.
+58: And I was kind of curious if you have, like, any heuristics or if there's, like,
+  any line where you're, like, after this point, we have to go one way or the other.
+67: Yeah, I think my mind is, like, I tend towards trying to get decisions made quickly,
+  I guess, and then iterating from there.
+76: And as a result, I find, like, trying to get, like, true consensus is very painful
+  and slow and awkward.
+85: And, like, in all but the most diplomatic and happy, like-minded teams, it just
+  can take forever, right?
+93: So, like, a little framework I liked in the past that I've been leaning into,
+  and I'm interested in what you think about this, Neha, for a previous, my first
+  good manager, I would say in my career, a guy called Mirko Boom.
+105: And his framework was essentially, like, the first thing he would do was ask
+  what people think we should do, because if that matches what he's already thinks
+  you should do, then great.
+115: And then it can be, like, not command and control.
+117: I asked you, I did what the team thought, even though I was going to tell you
+  to do it anyway.
+121: Then step two is, like, if there's a misalignment, basically to have, like, a
+  time box discussion in which everyone's input is kind of heard or whatever.
+130: And then step three is basically being, like, do you feel like I heard everything
+  you needed to say, right, and I've heard your viewpoint?
+136: And once that's yes, or people, or you tell them that the answer is yes, then
+  at that point say, like, hey, it's my role as the decision maker to decide how we
+  go.
+147: Like, I've listened to what you said.
+148: We can always iterate and move on and blah, blah, blah, blah.
+150: But basically, like, we're going to do X and we're going to move forward from
+  that.
+154: And, like, that, obviously, based on how big the decision is, how long the time
+  box is, how many people need to be involved in that conversation, but, like, having,
+  like, a clear, almost, like, three-step process like that.
+165: How does that land with you?
+166: I think it does.
+168: I think, like, I think about it a little bit differently.
+170: So when I'm trying to make, when a decision needs to be made, right, first I'm
+  trying to understand, and I'm pulling out pieces of what you said, but, like, in
+  a different order.
+181: So is this going to be a controversial decision, right?
+184: Easiest way to gauge that is to ask, right, and say, like, hey, what do you think
+  we should do?
+187: And then if everyone says different things and all of a sudden you're like, okay,
+  we have some consensus building to do or we have to time box it or whatever, right?
+195: I'm trying to understand do we all have the same information, right, because
+  when we're trying to make decisions, right, it's, like, based on the information
+  that you know.
+204: And then, like, value system or priorities or incentives, right, often we could
+  have the exact same information, but my manager or, like, my counterpart has completely
+  different incentives.
+217: And, like, once I understand that, I can get out of, like, the he said, she said,
+  me versus you, and we can be like, okay, cool, these are the problems you need to
+  solve and these are the problems that I need to solve, right?
+227: And so I'm trying to understand, is this going to be controversial?
+230: Do we have the same information?
+231: And then if I am a driver of a decision or an owner of a decision, right, who
+  do I need to hear from in order to feel like the proper expertise has been, like,
+  revealed, right?
+245: And so I definitely, I think that that's independent of building consensus.
+252: I think that making a decision and making sure it's the right decision, like,
+  building consensus or at least, like, transferring knowledge that everyone understands
+  what we decided and why sometimes can come before or after.
+264: And what I prefer to do is I prefer to have, like, the right experts in the room
+  to talk about it and then find the right way to communicate, here's what we're deciding
+  and why, here's the information that you might need to know.
+276: Because if you don't do any of that work, then they're just going to look at,
+  like, leadership as making all these decisions in a tower and no one is going to
+  be able to grow or eventually make the micro decisions you need to do in engineering
+  or in any other job that, like, would disseminate from that, right?
+294: And when they see this decision, they're not going to be able to follow it or
+  understand how their work lines up to it unless they've done some of that processing.
+301: So I agree with you that, like, gauging, making sure you have the right people
+  in the room, time boxing, right, are all really important.
+309: And I also think that, like, even the mechanism or, like, the tool you use to
+  have those conversations, GitHub's, like, very interesting because every comment
+  is weighed equally, right?
+321: And so it's a place for everyone to announce and share and respond to issues
+  or whatever, but it's hard to kind of get signal from that.
+328: So figuring out the better way to, like, get signal for a certain decision or
+  to, like, take it to a doc or have comments, et cetera, might be a way to shift
+  the power so that you can prioritize experts or even doing a meeting, right?
+340: That means that experts are in the room and you can have, like, a more intimate
+  conversation.
+344: Try to avoid decision by consensus as much as possible.
+347: I want to instead focus on trust building with the team so that they understand
+  that they don't have to be part of every decision.
+357: And actually, it's comforting.
+358: They can focus on the work that they want to do and they know that the right
+  people are in the room to have those conversations, right?
+364: Yeah, I really like the focus you said there on, like, information.
+368: I think that's something I guess I've been on both sides of when a decision is
+  maybe controversial and people don't necessarily even disagree with the outcome.
+376: It's like they don't understand how you got there.
+379: And in the words of maths teachers everywhere, like, showing you're working,
+  right?
+383: And then you can get credit.
+385: The other one I've always loved since I learned about it is I think it's, like,
+  an Amazon thing originally or Jeff Bezos or whatever of the idea of, like, one-way
+  and two-way doors, right?
+394: It's like, how reversible is this decision?
+396: And, like, particularly with engineers sometimes, I find, like, I'll try and
+  push towards much more aggressive time boxes on, like, two-way doors.
+406: If it's like, look, if we put this thing out there and it's, like, literally
+  a click of a feature flag to get it back, then let's not spend our whole lives debating
+  this, right?
+415: Whereas if it's, like, you know, deleting a bunch of database backups, then it's
+  like, yeah, okay, cool, right?
+420: We probably want to make sure we've got this nailed because there's no undo button.
+425: Also, even for, like, the way the team works or processes like that, those are
+  often reversible decisions but don't feel like that unless leadership says so.
+434: And so my trick from, like, day one was always, like, hey, let's give this three
+  weeks and see how we feel.
+439: It's not enough to just do that because if you keep on saying that and you never
+  change anything, then no one's going to believe you.
+445: But I like to say, like, okay, cool, we're going to try this out.
+448: We're going to give it three weeks and schedule a retro or schedule some sort
+  of thing on the calendar so they know that there's a place for them to voice whether
+  this is working for them or not.
+458: And that's, like, also a way to kind of show that two-way door, the reversible
+  decision, to be like, cool, there's, like, literally a point for us to reverse this.
+465: And you will have a say at this point and I will tell you exactly how.
+469: And, like, funnily, right, like, this is, it's all about communication.
+472: So you were saying, you know, show your work.
+475: I really think that when it comes to decisions, having that logical proof of
+  being, like, here's how we got here and why this is the information that we were
+  accounting for and this is the responsibilities or the priorities we needed to optimize
+  for.
+487: That is, it's not going to make everyone happy, but, like, people at least understand.
+491: And while it can feel like a lot of work to explain every single decision you
+  do, if you're in an org of 500, 1,000 people, you're putting in one hour for everyone
+  to be able to at least understand and move on, right?
+506: I think it's worth it every time.
+507: Yeah, I think the thing about this stuff as well is, like, where you're taking
+  your input from and how you're actioning that and all that.
+516: And I think something that's sometimes underestimated by people, I think, is
+  the extent to which people involved with processes like this can show leadership,
+  regardless of their title or role or whatever, right?
+527: Because I think sometimes people go into these conversations and think, like,
+  oh, well, I'm talking with a VP, I'm only a, you know, senior engineer or whatever
+  it might be, and then they, like, self-censor and don't say that.
+541: But instead, it's like they have the ability to kind of show leadership from
+  any seat in the company by engaging with that.
+549: And also what I've seen, you know, I guess we talked a little bit about this
+  last week, but also as part of that is, like, as you become, you know, as you get
+  a higher level or you're aspiring for a higher level or whatever it may be, it's
+  like your ability to participate in those conversations and not throw your toys
+  out the pram when you don't get your way is that itself is leadership, right?
+567: And not, again, like, instantly jumping to back channels to bitch off about some
+  decision you didn't like, but being like, hey, well, you know, here's how we're
+  going to work around this or whatever.
+577: And just, like, showing leadership and accountability in that way, I think.
+581: Like, I think people think that, like, that's something that a title gives you,
+  whereas often it's the other way around.
+586: Like, you get the title by modeling that type of behavior.
+589: And I, like, I think for a lot of decisions, right, it's not necessarily the
+  most senior people in the room, especially, like, when it comes to management.
+597: Management is not on the ground writing the code, right?
+600: And so they actually are, if I'm seeing a decision being made of management only
+  about, like, technical decisions, that's, like, a red flag for me.
+608: You do need people on the ground.
+610: And yes, like, of course, I want to, like, invite the local principal I see into
+  the conversation or the senior staff engineer.
+617: But I also sometimes want to say, like, okay, cool.
+620: Who's the newest person to this code base, right?
+623: And so, like, they might have interesting input.
+626: Who's someone who's, like, worked in multiple teams?
+628: And, like, that could be a senior engineer, right, just like you said.
+632: But what I'm looking for, exactly as you said, is who is someone who is able
+  to speak, like, clearly about what they think?
+641: And they're not going to censor themselves for us, right?
+644: Who is then going to be responsible with the conversation that was had?
+650: And I'm always looking for new people, especially in the junior level, who can
+  give us the ground floor understanding of what's going on.
+658: Because the principal engineer is so used to things being a certain way, especially
+  if they've been at the company for, like, seven, eight years.
+664: They are going to assume constraints that maybe are movable.
+669: And I want other people in the room.
+671: So I'm looking for those future leaders who are like, okay, cool, I would love
+  for you to participate in this conversation.
+676: And if you can, you know, handle the power dynamics and still find a good way
+  to contribute, right, without getting intimidated by it or feeling like you're talking
+  too much, right, then you have this potential to grow a lot more.
+693: And we're going to keep on inviting you into those conversations.
+694: Yeah, I think that's the thing.
+696: And I think people sometimes get it backwards on what senior leaders are looking
+  for in those conversations, where people think, like, when I'm in those private
+  conversations with the senior leaders, I need to make sure I don't say something
+  that they won't like or give them information that might scare them or whatever.
+710: Or just say yes.
+711: Yeah, exactly.
+712: Just say yes.
+713: But then when I'm almost, like, talking with my buddies in, like, the team slack,
+  I can be, like, oh, you know, like, they're making all these stupid decisions.
+720: And it's, like, actually, it's the other way around, right?
+723: Like, the senior leaders, they don't mind when you challenge them and ask difficult
+  questions or raise difficult points.
+728: But it's, like, particularly when a decision has already been reached.
+732: Like, people talk and people find out if you're just, like, complaining and whining
+  in, like, and that's not to say that you have to always agree with everything, because
+  you can, like, build empathy with the team by being, like, hey.
+742: This isn't the outcome I wanted either.
+744: But, like, there's a level of, I guess, like, professionalism there that varies
+  probably very much from industry to industry and place to place.
+750: But, like, again, like, to me, like, leadership is, can be shown through not
+  just joining the, like, the complaining party and maybe being, like, hey, like,
+  well, here's another perspective or here's whatever, right?
+763: Yeah, I mean, that shit gets back to us, right?
+765: Like, I hear about it all the time when someone will say one thing in a meeting
+  and then, like, go complain in another avenue.
+770: Like, very often that stuff comes back to us.
+772: And, yeah, what we want exactly, as you said, is people who are saying, okay,
+  you can't, you don't have to shut down complaining.
+779: Everyone needs a place to, like, process information in different ways.
+784: But if you were in the room, like, I expect you to at least be, like, here is
+  what actually happened.
+788: And to do a little bit of fact-tracking and to be, like, yeah, I understand that
+  you're frustrated.
+793: This was a hard decision.
+795: And, like, they made these decisions because of these reasons.
+798: And you have to be on the other side.
+800: That definitely happens.
+801: Regardless of whether you're growing as an IC or growing in management, you have
+  to flip over to the other side and become the man a little bit.
+808: But I think that there's a balance, right?
+810: Like, I don't try to shut down complaining completely.
+812: I try to make sure that I'm inserting helpful information as we go so people
+  find a way out.
+819: And I used to say this to my reports in the past, which is, like, if you have
+  distracted or started, like, drama or confusion, your job is to take it out as well.
+830: You can begin it as long as you finish it as well and you bring people back to
+  their work, right?
+834: Because especially in a remote environment, you have Slack or you have Teams
+  or whatever.
+839: Everyone is reading that chat at different times, right?
+842: And so everyone is watching that entire process and going through the same emotional
+  rollercoaster.
+847: So if it's unresolved, then, like, everyone who happens to read that day or in
+  the next 24 hours are going to go through the same emotions.
+853: So you have to be responsible about that.
+855: And it's, like, a different thing than if you were in person.
+857: Because in person, it's just whoever was there physically present and then whatever
+  word spreads like rapid fire.
+864: But in remote world, you can have a thousand people in a channel who eventually
+  read that conversation and then come out with different opinions.
+872: Yeah, and I think some of this is ultimately up to compromise, right?
+876: Like, you just, like, sometimes compromise gets a bad name, both, like, an individual
+  level and a technical level or whatever.
+884: But I think for being a manager or a leader or whatever, I think particularly
+  management, like, there's a certain amount of compromise built in there.
+894: Like, in fact, so we got a question from Justin Kenyon, a former co-worker of
+  us both at LinkedIn, at GitHub.
+902: He posted it on LinkedIn.
+903: Oh, my boy.
+904: So what Justin said was, I want to hear a little bit more about what kinds of
+  internal compromises you both had to make to go from ICT, if that's individual contributor
+  to engineering manager, and how you think that can evolve over time.
+918: So do you want to kick us off on your thoughts on that, Neha?
+921: Yeah, I think that internal compromises are, like, compromises I had with myself.
+926: I think that one of them was, you know, my who I can complain to, who I can process
+  with, who I can talk to when it comes to hard decisions or trying to understand
+  what's going on gets much more limited, right?
+941: Like, there's IC channels, and I got kicked out of all of those, right, when
+  I became an E.
+946: And, like, I don't find it responsible to complain to my reports or my skip reports,
+  right?
+953: And even though most of my complaining is trying to understand and process so
+  I can move on, I have to be very selective with that over time.
+960: So that's, like, one internal compromise that came to mind.
+964: I think the other one is that, like, the responsibility I felt for those decisions
+  has changed.
+971: But that's also because my max IC title was senior level, and so, like, I never
+  made it to staff or principal IC level.
+979: So I can't really relate to that part and how that might have changed if I was,
+  like, a higher level IC level going to.
+984: Feeling the accountability of that decision and feeling like, okay, cool, who's
+  going to take us out of this?
+989: And then be like, oh, it's me, right?
+990: Like, I feel like I'm the fallback for all decisions.
+994: I don't – that doesn't burden me.
+997: Actually, in fact, I find that very energizing.
+999: I feel like, okay, cool, there's – I really pride autonomy, and I really, like,
+  enjoying having that ability of choice.
+1006: And so I'm like, okay, cool, if this is stuck, I know that it's me that I can,
+  like, go to, and I need to go do something about it.
+1013: And it feels very clear to me.
+1014: So I liked that part.
+1015: What about you?
+1016: Because I feel like you went to a much higher senior level on an IC side.
+1020: And so I think, like, for you, IC to EM was, like, a different touchpoint than
+  for me.
+1023: Yeah.
+1025: And I guess it's been interesting for me, like, the last few years, because
+  I guess I went from, I guess, GitHub, where I was a principal engineer.
+1033: And then I see – and, like, you know, I don't want to besmirch different people
+  who are staff engineers or principal engineers or whatever.
+1038: But I guess I would say I probably was pretty heavily on the end of, like, personally
+  writing an awful lot of code as a principal engineer.
+1046: Then went to kind of do the startup thing.
+1048: And again, started by writing a lot of code.
+1050: And then actually, like, I did a bit more management and then dialed that management
+  down to do more code again.
+1057: And then now I'm doing – I mean, in the kind of fractional CTO role I'm doing,
+  I'm doing essentially no coding.
+1064: I mean, occasionally I fiddle with the GitHub Actions workflow.
+1067: But in some ways, like, them being a Python shop, I did a work trial as, like,
+  a senior engineer at another place recently that I kind of turned down.
+1077: And they were also a Python shop.
+1078: And I think in some ways it not being the most comfortable stack to me has kind
+  of helped be a forcing function for, like, you know, I can go and write Python.
+1088: I could get good at Python again, whatever.
+1091: But, like, I don't – because I don't have that instant familiarity with it,
+  like I do with, like, Ruby or Rails or Bash or Go or whatever, like, it really forces
+  me to ask myself, instead of, like, what would I most rather be doing, but, like,
+  how can I be the most impactful right now?
+1107: Like, I always remember people saying that.
+1108: That was their big almost, like, transition to management light bulb moment.
+1112: And I'm, like, finally getting it after, you know, decades of hearing it is
+  that, you know, it's, like, right now, if I'm working with an engineering team and
+  I'm, like, building the levels of trust in engineering and between engineering and
+  other departments, it has higher impact on what the company needs right now than
+  another person works in Python code, right?
+1133: And that's not to diminish that, but it's to say that, like, the skills I have
+  and whatever and what the company needs right now, like, I think that's maybe a
+  compromise I've had and almost being, like, what does the company need versus what
+  do I want, right?
+1149: This reminds me, you know, when I was a VP, I was talking to some of my reports
+  and I was asking them, like, why, as, you know, I came into an area that, like,
+  I didn't have a lot of familiarity in to go be a leader for.
+1164: And I was accepted as that leader, right?
+1166: And I was asking them why.
+1167: And one of the things that they said, which I think, like, could be taken as
+  an insult, but I never did, was that they said, you know your role and, like, you
+  know that you're not the most technical person in the room.
+1178: And it's very similar to what you were saying, right?
+1180: Like, if you don't have familiarity with a stack, if you don't have familiarity
+  with a code base, right, you're not going to be the most technical person in the
+  room.
+1185: And that's kind of an internal compromise in a way is, like, you kind of lose
+  that expertise and, like, you are reliant on other sources of information in order
+  to make decisions.
+1196: And you have to understand how to navigate that.
+1199: And you have to hold your ground, right?
+1200: Not having familiarity allows you to see things in a different way.
+1206: And you have to understand how that plays out in the overall decision, right?
+1209: You need familiarity and a lack of familiarity in order to find the right compromise.
+1214: And so I think that, like, not being able to be the most technical and, like,
+  not being able to make all decisions by yourself anymore and knowing who to go to
+  and, like, being very good at navigating an org chart and talking to other people,
+  that is, like, a different skill set.
+1230: It's not completely different from being a senior level IC, but you're a little
+  bit more reliant, right?
+1236: And, of course, like, everyone should be able to go into the code base and answer
+  the questions on their own.
+1239: You need to form your own opinion.
+1241: But it's statistically unlikely, as you go extremely high, that you're going
+  to be the most technical person in the room for a lot of the decisions that you're
+  making.
+1250: That's that.
+1251: It doesn't feel good.
+1254: It means that, like, when you make those decisions, you're going to have to
+  just wait and time will tell.
+1258: And I fucking hate that shit, right?
+1260: Like, I want to know.
+1261: I don't get my tests passing anymore, right?
+1263: But that's, like, that's something that you have to accept and embrace, right?
+1266: And over time, you get a really good intuition.
+1269: Like, if you keep on doing that over time in management, then you get a pretty
+  good intuition for truths and semi-truths and non-truths and being able to weigh
+  those truths against each other.
+1282: And just like you said earlier, what's a reversible decision?
+1284: What's an irreversible decision?
+1286: A lot of it has to do with being accountable and saying, I'm willing to take
+  this risk with you all in going in this direction.
+1295: And if it doesn't work out, I will take the fall with you.
+1298: Not with you.
+1299: For you, pretty much, right?
+1301: So I think that that's also another part is that an internal compromise is that
+  you are essentially making a decision on imperfect information that you can't answer
+  on your own and taking the fall for it, right?
+1315: Because that's what accountability and ownership means, right?
+1317: Yep.
+1318: Yeah, I really like that point about accountability and ownership because I
+  think that's where there's often kind of confusion and upset is often when that's
+  unclear, right?
+1328: And I think that's, again, something that comes back to consensus, deciding
+  unilaterally, whatever.
+1335: Like, I think what sometimes when it doesn't go well is when you maybe make
+  a unilateral decision or a very short time box decision or whatever.
+1346: And then people think that they are accountable or responsible for the decision
+  that you have made.
+1351: And I guess, like, I found just being, like, really explicit about things all
+  the time is really helpful where you can say both, like, oh, by the way, if this
+  all goes to shit, like, that's on me.
+1364: That's not on you, right?
+1365: Like, and not, probably not helpful for you to shout, I told you so, if that
+  happens.
+1370: But at the same time, like, I will learn from the fact if this happens enough
+  times that, like, you recommended A, I said, let's do B, it was a mistake.
+1381: We should have done A, right?
+1382: Over time, like, a good leader will go and say, well, I should maybe be listening
+  to this person more.
+1387: But I think that's the other thing that's sometimes lost if you haven't sat
+  in that seat in some ways is that, like, you know, like, senior engineer or whatever,
+  like, you might really know a lot about this type of thing.
+1398: But if this all goes horribly wrong, like, you might perceive it as your fault,
+  but, like, the executive team, our customers, whoever are going to perceive it as
+  my fault, right?
+1407: So, like, it's important that I.
+1409: You, right?
+1410: They're not going to call it.
+1411: You're an engineer, right?
+1412: But it can go the other way around as well, where, like, I think, like, the
+  thing that I like about explicitness is it can also be quite explicit with delegation.
+1421: Like, I had a great conversation, like, a few months ago where someone, it was
+  a hard conversation, but the person said to me afterwards, like, they appreciated
+  how direct I was, where me and, you know, some of the executive team had made a
+  certain decision and they felt very strongly that we should go a different direction,
+  right?
+1437: And I said to them, basically, I was like, well, we can go your direction and
+  we will change that.
+1442: But just want to make clear, like, if we go your direction and it works out,
+  then you were right and we were wrong and your star is going to be rising and everyone's
+  going to be really happy with you, right?
+1452: Like, but if you essentially, like, talk us into going the other way and it
+  doesn't work out, then that's going to be on you, right?
+1460: Like, ultimately, we may well be responsible for that, but you will have accountability
+  for doing that.
+1467: And I guess in that case as well, I made it super explicit at the end and I
+  was like, with that in mind, do you still want us to go in this direction, right?
+1476: Because I think it would also be reasonable for them to be like, well, no, actually,
+  like, I'm not, I don't have a high degree of confidence, right?
+1482: And they did. And that's, again, that's leadership, right? Being able to say,
+  like, yeah, you know what, like, I think you should make a different decision and
+  I'm willing to take the consequences if that doesn't work out.
+1491: Like, that's what leadership is, right?
+1493: Yeah. So a few stories came to mind. I remember in my first team that I was
+  managing desktop, I remember the opposite happening, which was being given feedback
+  that I was building consensus too much.
+1508: And they just, like, wanted me to make more decisions, which was really interesting.
+  I think my reticence to that was not feeling ready to take ownership of the decisions
+  that I was making.
+1518: And so I wanted to make sure everyone was on the same page and we were all making
+  this together.
+1522: I think it's a, it's a trap to try to always build that kind of consensus.
+1527: And when I went into my director role, I remember that I was being asked to
+  be the directly responsible individual for one of the products that, like, I had
+  very little familiarity with, discussions.
+1540: And for the first time ever, having to have, like, very crisp language around
+  accountability and being like, I'm looking for your input into my decision, right?
+1552: And part of that was because that wasn't clear to folks initially.
+1557: And it wasn't even clear to me, right, until I was going and presenting to the
+  executive team.
+1562: And I remember I had just taken a decision from the team and I just, like, presented
+  what they said, right?
+1569: And then they asked me, what do you think?
+1571: And, like, I hadn't thought about what I thought.
+1574: And then my answer that came out of my mouth was the opposite of what I'd recommended,
+  right?
+1579: And they're like, so it's your job, Neha, to go and tell the team what you think.
+1585: And, like, you need to own that.
+1587: And I was like, fuck, I have to completely change how I've been approaching
+  everything so far.
+1591: And from that point on, when I was talking to the team and I would ask them,
+  okay, cool, what's your input?
+1596: And if I had, I would have to spend extra time to think, what do I actually
+  think?
+1601: And what is my opinion?
+1603: And my goal from then on out was to reconcile and tell them, I hear what you're
+  saying, I think the opposite, here's why, and try to reconcile that before I present
+  it to the executive team instead of afterwards.
+1615: I don't want them finding out later that I just disagreed behind their back,
+  right?
+1618: It felt so awful the first time around.
+1620: And I was like, I have to completely change how I process this and how I block
+  my calendar so that I have time to think about these decisions and to reconcile
+  with people before I take them forward, right?
+1629: Yeah, I really like that line.
+1631: I think I'm going to steal that about, like, this is, I'm looking for your input,
+  but it's my decision, right?
+1636: I think another thing, something you said before about kind of time box and
+  consensus where it made me think, like, one of the things I really liked was relatively
+  early in my career.
+1644: I had a job where both me personally and to customers, I was, like, billed out
+  at a certain rate per hour, right?
+1653: Like, and it transformed the way I looked at a lot of parts of my life because
+  when I knew essentially what each additional hour of my time was after tax or whatever,
+  it'd be like, okay, this task will take me one hour.
+1666: I really don't want to do it.
+1668: I like it considerably less than my job.
+1670: If I can pay someone to do it less than I can pay an additional hour, I'll go
+  do another hour at work and then I'll just, like, pay for someone else to do this
+  thing instead, right?
+1679: But the thing that I like that kind of I take into the workplace with this is,
+  again, with kind of maybe kind of consensus or, like, big meetings where we talk
+  it through with, like, 20 people is it's being like, okay, well, how much is every
+  person in that meeting paid, right?
+1695: Are we spending, and we're spending maybe, like, 90 minutes or debating this
+  thing, right, live on a synchronous meeting where we, videos on, like, we encourage
+  people not to multitask, whatever it may be, and being like, well, okay, we've spent,
+  like, $50,000 making that decision, right?
+1712: Is that a good use of our money?
+1714: Like, and sometimes it is, right?
+1717: Like, sometimes that's actually, like, well, we're making a decision which could
+  affect the company for, like, millions of dollars.
+1722: Great.
+1723: It only costs us $50,000 to make that decision.
+1725: But I do think it's sometimes clarifying because I think it's very, I can't
+  remember what it is, there's some law, essentially, about, like, things that are
+  measurable, right?
+1732: And we can go and often look at, like, the money saved or spent or whatever,
+  and that's very concrete and measurable.
+1739: We don't think about, like, 10 people earning roughly X amount of money in this
+  meeting, right?
+1744: Like, and that, I feel like that helps sometimes illustrate the point of why
+  a time box or a document might be better than meeting or all of these type of things,
+  right?
+1753: Yeah, especially in a remote situation, right?
+1756: If you are, people have the ability to read a document externally and then,
+  like, process the information, and then we can keep the conversation inside the
+  room or in the meeting to a minimum, right?
+1768: Where we're just, like, having conversation about the most controversial points,
+  right?
+1771: I always try to optimize for something like that, and the other part is, especially
+  if you're in an async or remote culture, decisions take, like, three times longer
+  because of time zones, right?
+1781: And so that's where having crisp language, having crisp documentation, having
+  a very clear time box, and the consequences of whether you miss that conversation
+  or not, and, like, what you, people need to disagree and commit and move forward.
+1795: All of that really comes into play, and you need to be very clear about the
+  culture you have on the team in order to make those conversations and keep the decisions
+  moving forward.
+1804: Yeah, I think this is something I've definitely found in working at a few places
+  that have kind of done the remote thing post-COVID, right?
+1811: Like, pre-COVID, places like GitHub and various other places I worked that were
+  kind of doing remote work.
+1816: It's, you know, a lot of time and effort goes into, like, recording things and
+  written documents and Slack and meeting up with your coworkers in person and whatever,
+  and a lot of places that kind of just went fully remote post-COVID were like, woohoo,
+  we don't need to spend any of this money anymore, right?
+1832: Whereas I remember a GitHub HR person once saying to me that, like, look, when
+  you weigh in, like, travel costs and home office equipment and everything like that,
+  like, our remote employees are not any cheaper than our, like, in-office employees,
+  right?
+1843: And ultimately, it's, like, how you spend the money and how they're happy and
+  whatever instead.
+1847: And I think the biggest part for me with this is, like, just being intentional
+  about, like, as you say, time zones and asynchronous working or whatever.
+1854: I mean, nowadays, like, writing documents and things like that is such a good
+  source for collaboration.
+1861: And with, like, AI even more so, right?
+1863: Like, I don't use AI to write my blog posts.
+1866: I use it to, like, suggest edits and I might use them or not use them, whatever.
+1869: But, like, if I'm writing some internal plan for, like, here's what we're going
+  to do the next six months, getting just terrible bullet points into, like, an actual
+  professional-looking document that I still agree with.
+1880: I read through it all before I would send it to anyone, you know, all of that
+  good stuff.
+1884: Yeah, I just think, like, there's no reason really to not be doing more of that
+  type of thing nowadays and that building that written culture.
+1891: And async culture and remote culture just really pays dividends, I think.
+1895: Yeah.
+1896: So, I think we're – we also have this question from someone on YouTube that
+  I'm going to read out and see what your opinions are, Mike.
+1905: So, it says, with all the generative AI agents, et cetera, how would you construct
+  a curriculum for pre-college students who are learning programming and computer
+  science for the first time?
+1915: Opening pitch is still to use things like Scratch, but bridge the gap by taking
+  their sketched-out wireframes, using AI to generate scaffolding, and then go old
+  school and have them adjust by hand.
+1928: So, just trying to get some of your opinions on that, Mike.
+1931: Yeah, cool.
+1932: Awesome.
+1933: I think that was Justin Zed for V on YouTube asked that.
+1937: Yeah, so, I did a little project recently with, like, a friend's kid who wanted
+  to do some stuff like this.
+1944: Like, he was in high school, was into Formula 1, so he did a bunch of stuff
+  playing with, like, Formula 1 open data and stuff like that.
+1951: So, I guess the fun meta thing with that is I actually used, like, ChatGPT to
+  help me design his, like, 12-week program that he would be kind of working on.
+1960: But, yeah, but my guidance, I may be a little bit more conservative than the
+  question asker here, where, like, I still think it's worthwhile basically writing
+  all the code yourself while you're still learning.
+1972: And what I said is to use ChatGPT and AI tools or whatever to, like, ask questions
+  for about stuff like, what does this code do?
+1979: And, like, how might I do this?
+1981: And I guess, you know, people used to say this about Stack Overflow before ChatGPT,
+  right?
+1986: About, like, you don't want to copy-paste the Stack Overflow answer and just
+  put that straight in your code base.
+1991: But it's a great place to, like, read what other people are doing and then adapt
+  that to do your – and I think it's the same thing here.
+1997: Like, I think ChatGPT is amazing for, and I guess, co-pilot and, you know, pick
+  your tool of choice, like, for being able to ask any question and get answers back,
+  which are mostly right most of the time, right?
+2009: Or certainly the same – a lower degree of error than you might get from a similar
+  peer, right?
+2014: And I just think, like, that's the good way and to kind of push people towards
+  lean on these AI tools as, like, a quick information source and a way that can kind
+  of ask questions on your code rather than, like, leaning on these tools too hard
+  to, like, actually write the code for you.
+2029: I think that's more of a, like, you know, senior plus engineer before you really
+  want to be going all in on the kind of agentic stuff, for example.
+2037: Yeah, I think that I agree because a lot of being able to evaluate what the
+  generative AI is doing is based on an intuition that, like, you've kind of done
+  a lot about yourself.
+2049: I could see a world where, like, over time, right, as more generative AI, if
+  that becomes really the core way of doing things, then we need to find a way to
+  cultivate that evaluative skill.
+2061: And so if I were generating a curriculum for pre-college students, I would use
+  the AI to ask these kinds of questions so that our evaluative side of things gets
+  more enhanced and, like, we train people to evaluate more.
+2077: So I would also, like, use generative AI or just AI agents to help people understand
+  the questions that they should be asking.
+2085: And so you're kind of reversing the roles temporarily to train that skill so
+  that eventually when you're in the reverse seats, you have, like, more of those
+  skills around evaluating the code, being able to review code that you've never seen
+  before, and really knowing what to look for.
+2098: And I think that those skills are going to become more and more important over
+  time.
+2101: So use that now and being able to cultivate that is a different skill set.
+2107: It's almost like writing an article versus, like, editing an article.
+2111: Those are similar but different skill sets.
+2114: Most people who are very good editors have written a lot of articles.
+2116: We don't want to skip that part.
+2119: But, like, also, editing itself can be, like, a hone skill.
+2121: Awesome.
+2122: Yeah, totally agree.
+2123: But, yeah, so thanks for the question.
+2125: I got two Justins this week.
+2126: If we can get any questions from people who are not called Justin, that would
+  be great.
+2130: Nothing against Justins.
+2132: But, you know, we just want to have a diversifier pool here.
+2135: Yeah, so drop something on a comment on YouTube or email me or Neha.
+2139: You can get me at mike at mikemcquade.com.
+2142: And, yeah, we'll be in your feeds with another episode coming soon.
+2145: Thanks, everyone, for listening.
+2146: Yeah, let's talk about.
+2147: Decisions was fun.
+2148: Thanks, Neha.
+2149: Bye.

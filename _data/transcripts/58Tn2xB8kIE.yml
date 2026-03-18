@@ -1,0 +1,2037 @@
+---
+0: Welcome back to the FreeCodeCamp podcast. I'm Quincy Larson, teacher and founder
+  of FreeCodeCamp.org, and today I'm interviewing Mike McQuaid, the maintainer of
+  the Homebrew Package Manager tool used by tens of millions of developers.
+16: First, let's jump to some community news. FreeCodeCamp just published a book,
+  a full-length book, that will teach you the math that powers most AI systems. Even
+  if you haven't touched math since high school, you may find this book helpful in
+  expanding your understanding of the layers of abstraction underpinning these emerging
+  tools.
+35: You'll learn key concepts in statistics, linear algebra, calculus, and optimization
+  theory. You'll also get a healthy dose of mathematical history. It's a full-length
+  book. Link is in the description.
+47: And if you're finding a sudden surge in AI tools to be overwhelming, FreeCodeCamp
+  publish this practical guide to using them effectively.
+56: Finally, this tutorial will separate the utility from the hype, and you'll learn
+  how to minimize hallucinations with context management. You'll learn about agentic
+  tools and in-editor assistance.
+68: It even has tips for how to prevent your own developer skills from atrophying,
+  so you can adopt these tools without becoming overly dependent on them. Very important.
+  35-minute read. Link is in the description.
+80: And FreeCodeCamp this week published a course on React optimization. You'll learn
+  key React design patterns to achieve screaming-fast front-ends.
+89: This course covers memoization, derived states, throttling, debalancing, concurrency,
+  visualization, virtualization, and more.
+97: It's a two-hour course on YouTube. And did you know you can learn music production
+  on FreeCodeCamp? You can.
+104: We just published a course on the popular Fruity Loop Studio, FL Studio, digital
+  audio workstation.
+111: This course will teach you sound design fundamentals, mixing, filters, drum sequencing,
+  bass lines, synth melodies, and even advanced concepts like kick drum ducking.
+121: You'll play along at home, and by the end of the course, you'll have your own
+  bass house track that you can share with your friends.
+127: It's a three-hour course on the FreeCodeCamp YouTube channel.
+130: Speaking of music, this week's song of the week is 2022 song Ditto by Korean
+  pop group New Jeans.
+138: I like the song because it feels so slow and relaxed, even though the BPM is
+  actually like 130.
+143: It's really fast tempo, but you don't necessarily feel it.
+146: It's got this weird kind of dynamic.
+149: It has really minimalist production.
+151: It's mainly just AOA drums and vocals, like heavily processed girl group vocals.
+157: And this is perfect late-night listening.
+159: And support for this podcast comes from a grant from AlgoMonster.
+166: AlgoMonster is a platform that teaches data structure and algorithm patterns
+  in a structured sequence so you can approach technical interview questions more
+  systematically.
+174: Their curriculum covers patterns like sliding window, two-pointers, graph search,
+  and dynamic programming, helping you learn each pattern once and apply it to solve
+  many problems.
+183: Start a structured interview prep routine at algo.monster.com.
+188: Support also comes from the 10,338 kind folks who donate to our charity each
+  month.
+194: Join them and support our mission at donate.freecodecamp.org.
+198: And you can get your FreeCodeCamp t-shirt and rep the FreeCodeCamp community
+  with pride.
+203: I'm wearing one right now.
+204: This shirt is extremely durable.
+206: I've washed it like 100 plus times.
+208: I've got like a whole closet full of them.
+210: And I wear it like five days a week.
+212: Like every work day, I'm rocking them.
+214: And they just fit really well.
+215: And I strongly encourage you to pick one up and rep the community.
+218: 20 bucks shipped anywhere in the U.S.
+222: If you're outside the U.S., just grab our assets from our assets library and
+  you can screen print it on a shirt yourself.
+227: But if you want the really high-quality shirt, you've got to come to the stage
+  for that.
+230: So shop.freecodecamp.org.
+233: And here is my interview with Mike McQuaid.
+236: He is a software engineer who previously worked at GitHub and now serves as lead
+  maintainer of Homebrew, a Mac package management tool used by tens of millions of
+  developers.
+247: He's based in Edinburgh, Scotland, and he's worked remotely as a dev for nearly
+  two decades.
+252: We talk about what a career in open source really looks like in terms of like
+  resources you have available, what the day-to-day is like, what skills are going
+  to be more important going forward now that we have all these AI code gen tools.
+266: And he uses them even at his level.
+269: He finds them to be useful and he talks about how he uses them and then how big
+  open source infrastructure really gets ridden and really gets maintained.
+277: Mike McQuaid, welcome to the Free Code Camp podcast.
+280: Yeah, thanks for having me, man.
+282: Well, congratulations on the release of Homebrew 5.0.
+286: Millions of developers rely on Homebrew as a package manager.
+290: And I have to ask, what does it feel like to hit publish on a major release like
+  that and have that immediately go out and be used by so many devs?
+300: Yeah, I think it's exciting.
+302: It's a little bit scary.
+303: Like you hope you've dot your I's and crossed your T's and not broken too many
+  people's things.
+308: But yeah, I think the main part of, yeah, exciting would be probably the main
+  word.
+312: Yeah.
+313: And maybe you can talk a little bit about some of the big improvements to Homebrew.
+318: We're going to dig into a lot of your worldview, a lot of your approach, how
+  you use LLM tools and don't use them, a lot of your taste.
+325: But real quick, for people who are not familiar with Homebrew, what does it do?
+331: So the way I like to describe it to, I guess, less technical folks is it's like
+  a package manager.
+338: Sorry, it's like an app store, but for open source software, right?
+341: And if people know what a terminal is, then I would describe it as being, you
+  know, a package manager for that as well, right?
+347: So if you're a dev, if you're working on software, if you may be used to using
+  NPM or something like that to install your JavaScript or PyPy or PIP to install
+  your Python code or whatever it may be,
+360: and if you want to install all of the stuff that doesn't come from one of those
+  language-based package managers,
+366: if you're on a Mac and increasingly numbers of people on a Linux, you're probably
+  going to install that through Homebrew instead.
+373: Yeah.
+374: And you have been maintaining this project for many, many years at this point.
+380: How long?
+381: 16 years.
+383: I guess now that we're in 2026, I guess it would be, yeah, 17 this year, later
+  this year.
+389: I mean, it's, you're one of the most veteran open source maintainers I've ever
+  had on the Free Code Camp podcast in 200 plus episodes.
+397: And you're not just doing this.
+399: You're also working full time.
+401: You were working at GitHub for a long time as a dev.
+403: How do you balance maintaining an open source project on top of full-time work?
+410: Yeah, it's a weird one because I get asked this a lot.
+414: And I guess the short answer is I sort of don't really know because I don't feel
+  like I'm doing anything especially different.
+420: But I guess if people looked at my calendar and how I spend my week,
+424: I think the main thing is I just don't really do very much stuff that I don't
+  think is important, right?
+432: That's both on homebrew itself, right?
+434: There's a lot of people who spend a lot more time on homebrew than I do, probably
+  on a given week.
+438: But also, like in life, right?
+442: Like I remember maybe dating myself a little bit when I was in college.
+446: There was the line about, you know, like work hard, party hard or whatever.
+449: And I think I still have a little bit of that ethos.
+453: Not so much the party hard in terms of like, you know, partying in a way that's
+  hard on your body.
+458: But like when I relax, I want to take that seriously, right?
+462: Like I don't spend a lot of time doom scrolling or whatever, right?
+466: Like the things I'm doing in my life, basically everything feels either important
+  or enjoyable or ideally both.
+473: Yeah.
+474: Okay.
+475: So it's more about what you don't do than what you do.
+478: Like the negative space of, okay, I've got work.
+481: I've got sleep.
+482: I've got family.
+483: Like what else can I fit in here?
+484: That is actually important.
+487: And as you said, doom scrolling, which is something I also do not do, is something
+  that you don't have to do.
+492: People feel compelled to do perhaps because apps want to draw you in and like
+  waste your time and stuff like that.
+498: Everybody's just trying to get time on site, time in app.
+500: But you've somehow figured out a way to prioritize around that.
+506: And just, you have the same 168 hours a week as everybody else, but you figured
+  out how to use that in an optimal way where you can work as a dev and you can maintain
+  a project.
+517: What advice would you give to somebody who is feeling like not everything they're
+  doing all the time is important or necessary in terms of like restructuring?
+526: If you didn't know a lot about them other than they were spending like, I don't
+  know, 15, 20 hours a week on stuff that they wouldn't consider particularly important
+  that they could swap out for something that is important.
+537: How would you recommend the contract?
+539: Ironically, I think it's like, it's both the, like pushing yourself in both extremes
+  in some ways, right?
+549: So I actually also play a bunch of computer games, which is maybe surprising,
+  like not huge amounts of my time, but like enough because I find like in 15, 20
+  minutes of playing a computer game, I can get really relaxed really quickly, particularly
+  if it's some game that I really love and have played a lot of.
+566: So, and sometimes I feel like your brain needs that stuff, right?
+571: Like I, I found myself during COVID, like binge reading, like relationship advice
+  for other people and read it just because my brain like needed to just have some
+  sort of like junk food for the brain, right?
+586: So I find like maybe some of it is like figuring out like, look, we don't, you
+  know, there's a lot of productivity culture out there, right?
+593: We don't need to be all working 24, seven, three, six, five, right?
+597: You need to have downtime.
+598: And actually I think that helps you work better and more effectively.
+602: And I think figuring out what those things are and what those compliments are,
+  like another thing for me, I remember when my kids were super young, right?
+610: Like when you've got, I know you've got kids as well, Quincy, like when you've
+  got kids who are like sub a year old, right?
+617: Like they require a lot of attention to just keep them safe, but not a lot of
+  like intelligence and thought, right?
+625: So like really fixating on keeping this little creature alive, but at the same
+  time, like you can feel your IQ dropping by the minute.
+632: Yeah.
+633: Like that for me, it was a really nice country.
+636: I remember one time my wife, I finished work and was like doing some stuff with
+  kids or whatever.
+639: And she was like, are you not tired from work?
+642: And I'm like, no, because these are exercising exactly the opposite parts of
+  my brain, right?
+647: Like I've had a lot of like, use the brain very hard, but like not having to
+  concentrate maybe as closely or, you know, think, thinking really hard, but not
+  moving my body to being like, I have to really move my body.
+661: I have to really concentrate.
+662: But intellectually, what I'm doing is like, have they got food?
+666: Have they got nappy that's clean?
+668: Like, you know, that's, that's it.
+669: So I think having that sort of approach to your life might be helpful about being
+  like, well, what are your goals?
+675: Like maybe just picking one of those goals and being like, I'm going to work
+  on this, this many hours a day or week or whatever.
+683: Right.
+684: And then outside of that, I'm going to chill really hard.
+687: I'm going to find a show I really like on Netflix.
+689: I'm going to watch all of it.
+690: I'm going to find some game I really love.
+692: I'm going to hang out with my best friend, whatever it may be.
+694: And I think that kind of like being on or off is what's really helpful.
+699: And that's sort of like middle mushy ground of like, I'm sort of working, sort
+  of not sort of relaxing, sort of not like that.
+707: That is where I feel like the lack of productivity lives.
+711: And there's kind of phantom productivity, which is illusory.
+715: It seems like you're being productive because you're responding to some like
+  email just in time as you're getting it or some notification pops up.
+722: And you're like getting pulled out of your relaxation time into productivity
+  mode where you're probably in a very mediocre way interacting and trying to nail
+  down that task that needs to be done because you just aren't warmed up.
+736: You don't have the focus or anything like that.
+737: You don't necessarily have the context.
+738: You're just trying to get it done so you can have that.
+741: I'm inbox zero right now.
+742: You know that vibe.
+744: But I would imagine you're the kind of person that doesn't have a whole lot of
+  notifications on on their phone.
+749: Yeah.
+750: A hundred percent.
+751: So I don't, when I was, well, I don't have generally, unless I'm on a work trip,
+  like company Slack on my phone.
+758: I don't have company email on my phone.
+759: I have calendars just because it's a bit more useful unless, you know, no one's
+  doing me scrolling their own calendar, I would hope.
+765: I don't have any social media apps on my phone.
+767: I, yeah.
+769: So basically my phone, I try to make it as boring as possible.
+773: Another hack I found is like the screen time feature that's kind of mainly designed
+  for parental controls.
+780: I have limits on certain apps that I use to like waste my time on websites, like
+  Hacker News.
+784: Really like Hacker News, but I can spend too much time there.
+788: And when my time is up, I don't have the passcode.
+791: My wife has the passcode.
+792: So I have to ask my wife, can I have more time on Hacker News, please?
+796: And she would say yes, but like that's humiliating.
+799: So I don't do it, right?
+800: Like, and yeah, there's various other little apps you can get that do things
+  like that.
+804: They just kind of break that like habit forming dopamine boosting thing.
+809: And as a result, my phone is mainly for little distractions or doing work or
+  like just reading
+816: a book, right?
+817: That's my main, almost like if I have 30 minutes to just relax and spend time
+  on my phone, I've
+823: got post-COVID really into just like reading long form science fiction books
+  again.
+827: And I love it.
+828: Yeah.
+830: I'm in the same boat.
+831: Like I basically don't have anything on my phone other than like podcast player.
+835: I've got the YouTube app because I do watch a lot of good YouTube video essays
+  on like,
+840: you know, information security and stuff like that.
+842: And also just on history and I'm big into music and stuff like that.
+846: So I'll watch about like the history of like some musical piece coming together
+  or something
+850: But, um, yeah, like just like you, you, you're really into power lifting, which
+  we'll talk
+856: about in a little bit.
+857: And you're also very accomplished with it.
+858: Uh, and of course, power lifting Instagram, I think is like the main place that
+  people share
+863: that sort of content.
+864: And, uh, my understanding is you'll install Instagram, fresh install.
+869: You'll sign in, you'll go watch your power lifting related videos, and then you
+  delete
+875: the app completely after you're done at the end of every session.
+877: Pretty much like, yeah, if I'm going on and posting stuff, reviewing stuff, that's
+  generally
+881: how I do it.
+882: Or I'm, I stay logged in on my desktop computer because it's just, there's something
+  about
+888: like, well, I'd say desktop, you know, laptop, but like there's something about
+  not being
+894: on the phone that just makes it like a little bit less addictive.
+896: And it's just that little like dopamine thing of like, you just pull it out your
+  pocket and
+900: you're like, give me something, come on, just give me something good.
+903: Like the, I, I just, I have no self-control with that.
+906: And I, I will just sit and like all of the kind of anti-doom scrolling stuff.
+911: Cause like, I, it's not that I think I have more self-control than most of the
+  listeners
+915: here.
+916: It's because I know that I don't, it's because I know that I, I am really incapable
+  of using
+921: my personal, like mental ability in the moment to stop myself wasting hours on
+  this stuff.
+928: Like, that's why I'm like, I just can't have it.
+930: Cause like, even, you know, I used to do this with like junk foods where I'm
+  like, I don't
+934: prohibit myself from having junk food.
+936: I just try not to have it in my house.
+937: There's a nice shop I can walk to that's five minutes away that has loads of
+  nice junk food.
+942: But I, then I'm pitting, like, I want junk food versus I'm lazy and I want to
+  walk to
+947: So like they sort of cancel each other out.
+949: And I feel it's the same thing with some of the kind of screen time stuff and
+  phone stuff
+953: and whatever is, it's just making it easier for yourself.
+957: Like just being like, I give up, I can't handle it.
+960: I'm going to just not have this.
+962: Yeah.
+963: So essentially just putting natural barriers and, and kind of like inventing
+  mechanisms
+968: to, to not necessarily forbid you from doing things, but make it inconvenient
+  to do those
+973: things that the, the type of behaviors that you want to limit essentially, and
+  not cut
+977: out completely, but limit.
+979: Yeah.
+980: It's like, I, I can't remember who I heard kind of came up with this concept
+  originally,
+984: but it's, there's this kind of almost like psychological concept that like, like
+  now you
+989: and future, you are almost like two separate people.
+992: So like one that came up the other day, like we have cheesy Christmas lights
+  in our house
+997: that are battery powered.
+998: And they take the same number of batteries.
+1000: And I always have a gift every year where I take all the batteries out.
+1004: And then the first thing I do is I go on Amazon and I order exactly the right
+  number
+1007: Again, I put it in with the packaging and then I forget.
+1010: And then in Christmas time, I take them all out and I'm like, Oh, I have to
+  buy like
+1012: 17 batteries.
+1014: And I'm like, Oh, I have them here already.
+1016: You give the gift to yourself.
+1017: Exactly.
+1018: So I feel like some of this stuff around boundaries is the same type of thing
+  where it's like,
+1023: I guess maybe it's, you know, Daniel Kahneman's thinking fast and slow or whatever
+  it may
+1027: be, but it's like short-term me, like when I'm thinking in the scope of like
+  seconds and
+1032: minutes and I just want to be entertained and I'm a bit bored or whatever.
+1035: It's like, I don't make good choices.
+1037: Whereas long-term, what do I want to do in 2026?
+1041: Like planning my life me?
+1042: Like, I feel like that person makes relatively good choices.
+1045: So what I want to try and do is have as many systems and processes and setups
+  to kind of
+1051: nudge like short-term me into the constrained way of thinking about the world
+  that kind of
+1058: Right.
+1059: So like, even like, you know, if I, I mean, you probably can't see, but if I
+  hold up my
+1063: So my home screen, I have nothing.
+1065: I removed everything.
+1067: It's all in the app library.
+1068: And at the bottom, I just have messages to talk to my wife and my friends, music,
+  to
+1072: listen to music, podcasts for obvious reasons and books because I'm allowed
+  to read books.
+1077: And that's like, even that little thing is just like, that's what I've decided.
+1082: Those are my four most important things.
+1084: Right.
+1085: So you want to like, make the stuff you want to do easy and then make the stuff
+  that you
+1089: don't want yourself to do.
+1090: Not maybe impossible, depending on your willpower or just even like harder,
+  right?
+1095: Like if it's, and if it's harder, then quickly you find you will do more of
+  the stuff you
+1100: want to do and less the stuff you don't want to do.
+1102: Wow.
+1104: So that was really cool.
+1107: For anybody who's listening and not watching the video version, I mean, that
+  was literally
+1111: like a perfectly empty iPhone with just the four apps in the dock.
+1117: And that was it.
+1118: Uh, well, I don't think I've ever seen that before.
+1120: I also use a lot of tricks like that, but you, you've taken it to the extreme,
+  which I
+1125: absolutely respect.
+1126: One question I have for you is, so you're working as a dev, you've got this
+  skillset, uh, that
+1130: you've been applying to provide for your family and yourself, uh, for, you know,
+  the past
+1136: couple of decades.
+1137: And at the same time, you could just go home.
+1140: You could relax, you could play more video games, you could spend more time
+  with your
+1143: kids.
+1144: You could do more of everything you're, that you enjoy doing, but you're instead
+  doing
+1150: this, like probably compensated in some way, but like largely, you know, volunteer
+  role
+1158: of helping maintain a major open source project along with a lot of other contributors
+  around
+1163: the world.
+1164: Um, why, why spend your time in this way?
+1167: Yeah.
+1169: I think that's a good question.
+1171: Uh, and again, it's one of those ones where like, I don't think about it much
+  until I'm,
+1177: I'm asked, but I mean, I guess like maybe some of my, my history, right?
+1181: So I got involved, I grew up in Scotland.
+1184: I got involved with tech basically just because I was like, I like computers,
+  right?
+1190: My, the first time my dad brought a computer home, I was just fascinated with
+  this thing.
+1195: Like he found any boring task he could get me to do for him as long as it involved
+  the
+1200: Right.
+1201: And then when it came time to go off to university and all that type of stuff,
+  then I was just
+1205: like, I just want to do computers.
+1207: And at this point, and particularly maybe for some of the younger listeners,
+  this might
+1211: be kind of hard to believe, but at this point, particularly in Scotland, like
+  being a software
+1216: engineer was not a particularly, you know, affluent or prosperous thing.
+1220: Right.
+1221: Like I grew up in an environment where it's like, be a lawyer, be a doctor.
+1224: Those are like real jobs that like pay well and all this type of stuff.
+1228: Right.
+1229: And I sort of rebelled against that.
+1230: Cause I was like, I don't know, man, I just like computers.
+1233: Um, and then, yeah, like, I guess I fell into an industry probably at the lucky
+  inflection
+1241: point time when a lot of these jobs became a lot better compensated and more
+  important.
+1246: And, and the internet was taking off more and all this type of stuff.
+1249: Um, so for me, I guess like that, that's kind of the same reason why I do a
+  lot of it is
+1255: that I just, I just love it.
+1257: Like I, I, I still enjoy doing what I do.
+1261: Like there's a certain amount with homebrew specifically where I'm like, you
+  know, I might
+1266: kind of grumble about certain things sometimes or not want to do this very specific
+  thing
+1270: And I'm like, yeah, but lots of people use this, right?
+1273: Like, and it's a, it's a kind of useful, like contribution that I find anywhere
+  between neutral
+1281: to actively enjoyable and it benefits a bunch of other people.
+1284: Um, so yeah, I guess that's, that's kind of why I do it.
+1288: Um, and even, even the how, right.
+1290: So like I have slightly more kind of blurred lines, right.
+1294: Where I've worked from home exclusively since 2009.
+1298: Uh, so for me, like 16 years, 17 years now.
+1303: So I was doing it before COVID kind of made it cool, I guess, but like, as a
+  part of that,
+1308: like a lot of stuff that, you know, was, I, again, most of that time was for
+  companies
+1314: in different time zones or whatever.
+1316: So as a result, like the whole, like you clock in at nine o'clock, you clock
+  out at 5.
+1321: PM, right.
+1322: Like it's, that's not really been my life or way of working for that.
+1326: So I don't have as strictly regimented, like this is, you know, work time and
+  open source
+1334: time for relaxing and whatever it may be.
+1337: So these lines get like a little bit more blurry on that.
+1341: Um, and I think also partly because I think this stuff kind of cross pollinates
+  a bit
+1347: as well.
+1348: So, um, I think the work I, you know, everywhere I've worked pretty much like
+  a reasonable number
+1356: of my coworkers have used homebrew.
+1357: Right.
+1358: So it's like, well, I'm, I know that work isn't telling me to like release this
+  fix, but
+1364: I know my coworkers are going to need it.
+1366: So, um, that seems worthwhile.
+1368: Right.
+1369: Like, and, uh, and again, maybe there's a little bit of career advice in there
+  and that like
+1373: a lot of the stuff I've done, like I'm a lot of my life and maybe balance or
+  whatever is
+1379: less about doing like, Hey, what does my boss really want me to be doing all
+  of the time
+1385: and more about like, well, you know, it's a balance between what do I want to
+  be doing?
+1389: What's my boss wanting me to be doing?
+1391: What's the company want me to be doing?
+1392: What do I think is best?
+1393: Right.
+1394: And we'll try and find some like blurred version in which everyone is like reasonably
+  happy,
+1400: but like maybe not.
+1402: I used to joke with some much higher achieving coworkers than me at my, uh,
+  at a previous
+1408: company that like they should aim to get worse performance reviews because actually
+  like they
+1414: are, you know, doing exceptionally well, making everyone really happy.
+1418: But in terms of like what that actually means in terms of their take home pay
+  or compensation
+1423: or impact on users or whatever, like they're like working 20% more and they're
+  having 1%
+1430: Whereas I guess I'm maybe just like a deeply lazy person or something, but like
+  my thing
+1437: is always like, what's the point at which me putting in another hour on this
+  task delivers
+1442: dramatically diminishing returns.
+1443: And I just try and just not do that.
+1445: Like all over my life.
+1447: And that's again, maybe how and why I've found more space that other people
+  might find difficult.
+1454: So you've cultivated this instinct of, okay, this is declining marginal value,
+  essentially
+1458: like, like the average, you know, minute put into this task, the, the output
+  is dropping
+1464: and you, you developed kind of an intuition for when you should just log off
+  essentially.
+1470: Um, it sounds like that is a really cool, uh, skill that you've developed and,
+  uh, your,
+1476: your advice aimed to get worse performance reviews.
+1479: Uh, because obviously the company just wants you to stamp out as many widgets
+  as you can
+1485: Right.
+1486: Uh, that's, that's how managers are evaluated generally.
+1489: What's the productivity of your team?
+1490: How is that measured?
+1491: All that stuff.
+1492: And what you're saying is like, like there comes a point where you really do
+  need to just,
+1497: um, go do something else.
+1499: And it's, it's not necessarily worth your time contributing even more to this
+  manager's
+1505: objective.
+1506: Yeah.
+1507: I, I mean, I think that's sometimes the case.
+1509: And also just sometimes like, you know, the number of hours you put into something,
+  like
+1514: you can distribute them differently and get a similar result.
+1517: Like something that sprung to mind was like, I wrote a book about Git a very
+  long time ago.
+1523: Um, and I was encouraged to almost be like, as a first time author, like, you
+  know, do a
+1529: little bit every day, slow and steady.
+1530: And I would have two week check-ins with my publisher.
+1533: But what I would do is the check-in was on a Monday.
+1536: On Saturday, I would just sit at a keyboard and just write until I hit the page
+  count.
+1540: I wouldn't even read it back.
+1541: I just write and write and write.
+1543: And then I hit like, you know, I was trying to do 20 pages or whatever.
+1545: I hit the end of page 20 and I would just stop and log off and be like, right,
+  done.
+1549: And then on Sunday, I then come with like fresh eyes and I'm like, I don't have
+  to write
+1555: I've done the writing.
+1556: And then I would just read through it all and be like, this is trash, this is
+  trash,
+1559: this is typo, move this around, blah, blah, blah, whatever.
+1561: And again, like that approach, I think if I, it would have been perfectly possible
+  to do
+1567: it in one sitting, I think, but it would take way longer and the output would
+  have been worse.
+1572: But instead you almost like carve the task in half and you rely on the fact
+  that some things
+1578: just do better for you coming and looking at them the next day.
+1581: Right.
+1582: Like, and, and that, like, it's, yeah, those types of like little weird approaches
+  and ways
+1587: of looking at things.
+1588: And I think that kind of comes on with like, say like at work, right.
+1593: Like where, when I was at GitHub, there was, people would talk about like, oh,
+  I, I want
+1597: to see, you know, my boss or the manager or CEO, I want to see a shitty first
+  draft of
+1602: Right.
+1603: My version of shitty first draft would be like, I do no research.
+1607: I just like type, I don't even read it back.
+1609: And then I would send it to my manager.
+1610: Like, and sometimes that would be perfect because she would say like, okay,
+  like this is interesting,
+1616: but like this full typo is like, you know, clean this up and we'll send it on
+  to someone.
+1620: And sometimes she, that would be enough for her to read it and be like, yeah,
+  we're not
+1625: Okay, cool.
+1626: And if that, and if that was the case, right.
+1629: If I put another hour of time in, if I, if I spend an hour instead of five minutes,
+  then
+1634: it's like that 55 minutes, which is completely wasted.
+1636: But to go back to what you said before, that was work.
+1638: I was working.
+1639: I could have been working for another 55 minutes.
+1641: I could have stayed later.
+1642: I could have not done something else, whatever it may have been, but that would
+  have just been
+1646: like lost to the ether.
+1647: Like, and it's, it's hard because I also feel like maybe it's like a, without
+  getting
+1654: too philosophical, like an education system stuff.
+1656: Where we, we grew up and often like, if you're like, if you do well in school
+  or high school
+1662: or college or whatever, it's like, do all the things to your maximum ability,
+  try and get
+1666: Like, and then if you do that, then you will be like happy and successful in
+  life.
+1672: And it's like, sometimes for some people, sure.
+1676: Like, but for me, like I was, you know, in school, my teachers hated that attitude
+  of
+1682: like, I'm going to do the minimum required effort to get an A right.
+1686: Like they really did not like it, but like, actually in the workplace, like
+  your boss might
+1692: not say that, but like, sometimes like, how can I get to a good result as quickly
+  as possible
+1697: in many contexts, that's the most valuable thing you could possibly do.
+1700: Right.
+1701: And actually like delivering something like 1.5 times as good in twice as much
+  time is
+1707: not what anyone wants.
+1710: But they might not ever tell you that that's, it's a hard, and your manager
+  may not actually
+1714: consciously realize that like, Hey, you just saved an hour of time because,
+  uh, like you
+1720: gave them what they wanted and they were able to evaluate it and make their
+  decision that
+1725: you didn't have any power in any way, uh, as to whether this is a go, no go
+  situation.
+1729: And then you went and spent that extra hour doing other work that is getting
+  things done
+1734: that the company wants to get done.
+1736: Uh, so you kind of like help them manage you in a way.
+1740: Yeah.
+1741: And, and the, this is one of the things that like, not to get too organizational
+  philosophical,
+1748: you have a podcast where you just talk about organizational behavior, open source
+1753: maintenance philosophy of being a manager, all this stuff, which is really cool
+  because you
+1756: were an IC for like so long and individual contributor.
+1760: And then you got into management like much later in your career.
+1763: So you have a lot of context from both sides.
+1766: But, uh, one of the things that I think is really interesting is if you just
+  give people
+1772: a lot of trust and you give them a whole lot of slack, they can prioritize things
+  for
+1775: you and they can put the right amount of time into things for you.
+1779: Like our staff at free code campus is 29 devs, uh, many of whom have teaching
+  backgrounds
+1784: And essentially I just like tell them like, go do what you think is the most
+  important,
+1788: get other people to help you with it.
+1789: If you think it's so important and then let's just see how that goes and just
+  check in and
+1795: tell me what you're doing.
+1796: And then I'll kind of give you a feel for like whether I think that is sufficiently
+  important
+1800: to do right now.
+1801: Cause in a perfect world you do everything, but there's that time trade off.
+1805: Everything has a marginal cost associated with it.
+1808: And so by pushing the decision making down as close to the person actually using
+  their
+1814: hands to execute that work, you are making the organization way more, uh, efficient
+  because
+1819: you're not abstracting that up and giving, you know, those decisions to somebody
+  who's several
+1824: layers of abstraction removed from the work being done.
+1828: Yeah, I, I definitely think like there's so much wisdom in what you were describing,
+  right?
+1832: Like high trust cultures are so helpful.
+1836: Like everyone likes being in them, uh, but they are sometimes hard to build.
+1841: And also sometimes part of like building that culture, at least in my case is
+  like doing
+1847: the work on yourself, right?
+1848: You might not naturally be someone who's very good at trusting or delegating
+  or whatever.
+1853: And that's also a skill that you can work on, right?
+1857: That requires you to admit like, Hey, maybe I'm not as great about this thing
+  as I thought.
+1863: Yeah, absolutely.
+1864: Well, I want to talk about that and we'll talk about management a little bit
+  more, but I'm
+1869: more interested in talking about being managed and the day-to-day experience,
+  uh, cause you
+1874: have worked at well-funded tech companies like GitHub, for example.
+1877: Uh, and then you've worked at scrappy open source projects where you're trying
+  to do more
+1883: with less essentially, or, or even get by with like fumes essentially.
+1887: Uh, what can you compare and contrast the, the experience, uh, your day job
+  as a dev working
+1894: at a well-funded tech company or even like a moderately well-funded startup
+  versus open source?
+1900: So, I mean, they each have their pros and cons, I think is the interesting thing.
+1904: Cause like, if, you know, if, if I never had to work again, like financially,
+  like I would
+1911: likely still do open source forever, but I don't know what types of, uh, professional
+1916: work I would do or not do forever.
+1918: And some of the reasons for that are, you know, like often when we're building
+  open source,
+1924: we're building something in a problem space that we as an individual deeply
+  care about
+1928: to the point that we don't have to be given any financial incentive on top of
+  that.
+1932: Whereas when we're working in a job, right?
+1935: Like a job is a job, right?
+1937: Even if you love your job, like for most people, if you were like, will you
+  keep doing this indefinitely
+1941: They would say, ah, no, I have, I have things I would rather do for free.
+1945: Thank you very much.
+1947: But also again, like pros and cons of that, like jobs and places like GitHub,
+  like I joined,
+1952: uh, in like 2013 when they had 200 and something people I left in 2023 when
+  they had like just
+1960: under 4,000 and, you know, you see a lot of change and structure and growth
+  and process
+1967: and bureaucracy and product managers and project managers and technical project
+  managers and
+1972: hierarchy and all this type of stuff, which, you know, sometimes at the time
+  as slightly rebellious,
+1978: icy type, open source type, I'm like, ah, this is all unnecessary.
+1981: And then you realize like, actually, it's really helpful and it's really nice.
+1984: And sometimes it's just much quicker to be able to say, hey, I'm your boss.
+1992: We've had a good chat about this and now you have to do it.
+1995: Whereas in, in open source land and even, I guess the difference between being
+  a manager
+2001: and being an individual contributor, right, you can't do that.
+2004: Like in some ways, manager, individual contributor, like open source contributor
+  or open source
+2011: leader or whatever, like in some ways they're kind of a spectrum because when
+  you're an IC,
+2015: like there's someone in the middle, like when I was a principal engineer at
+  GitHub, right?
+2018: Like I was, you know, important fancy principal engineer, blah, blah, blah.
+2022: Like I've been there a while, but I don't have any direct reports who I get
+  to tell what
+2029: they work on, right?
+2030: I don't have any budget.
+2031: I don't have a team.
+2032: So I have to just convince people that things are a good idea.
+2036: And that's much the same in open source, right?
+2039: If you want to be an open source leader and you want to get volunteers who are
+  being either
+2044: unpaid or paid, I guess, in homebrew's case, like incredibly below market rate
+  for like
+2051: what, what work they might be doing, you have to convince them like, Hey, this
+  is a good
+2057: Let, let me like almost like plant the flag and, you know, lead the rallying
+  call for like
+2062: why we should care about this thing and why you should come and get involved
+  with me.
+2066: Right.
+2067: Um, on this project or whatever.
+2069: And yeah, that's, that's tricky.
+2071: And it is harder to do that than it is to just be like, I'm your boss.
+2075: You have to write.
+2076: Yeah.
+2077: But at the same time, like the, I'm your boss.
+2079: You have to, that high trust environment you described before, like there's
+  only so many
+2084: times you can do that before you kill that, but people, people want to feel
+  particularly
+2089: as you progress in your career, particularly when you're doing stuff, not for
+  money and
+2092: in your spare time, you want to feel like you have like the ability to decide
+  what you
+2097: work on and how you work on it and what the output is.
+2100: And you don't want someone to just be like, I don't know, like, I guess we've
+  both got
+2104: guitars in the background, right?
+2105: I'm a bass player, right?
+2107: And the worst, uh, microaggression a guitar player could do to a bass player.
+2111: It's just being like, yeah, man, I want you to play like, like this.
+2114: And then just like play plucking on the bottom string, exactly what they want
+  you to play
+2118: as if it being like, ideally we would just clone me, the guitar player and give
+  me a
+2124: bass and I would do it.
+2125: But unfortunately we have you here.
+2126: So I have to tell you what I would do instead of me just doing it.
+2131: And, and sometimes in the workplace, it could feel the same way.
+2134: Like if someone is just being like, I would ideally do everything myself, but
+  I can't.
+2139: So you have to do it my way.
+2140: That doesn't feel nearly as good as someone who's like, Hey, I think you're
+  better at this
+2145: Like, here's a problem.
+2147: Do we agree?
+2148: This is a problem.
+2149: Great.
+2150: You go off and figure out how to solve that problem because like, you're going
+  to figure
+2153: this out better than I will.
+2154: Right.
+2155: Like that feels great to be on both sides of that.
+2157: Yeah.
+2158: So be like Slash.
+2159: Don't be like Billy Corgan who insisted on recording all the guitar and bass
+  parts himself
+2163: and didn't pass his musicians on the other musicians on the band to record good
+  takes.
+2169: Yeah.
+2170: And not pulling rank.
+2174: Very important.
+2175: Lesson for that.
+2176: You can only pull rank so many times before people just start talking behind
+  your back,
+2180: making fun of you for being some guy with the stick of their butt, you know,
+  like who doesn't
+2186: necessarily have the merit who was just given the power over you.
+2189: When you're in an open source community where, as you said, like everybody's
+  doing this mostly
+2196: because they care about the mission and things like that.
+2198: There is that very fragile kind of like motivational purpose, like the sense
+  of purpose that people
+2204: And you don't want to disrupt that.
+2206: And I want to talk a little bit about how homebrew is administered.
+2210: I know that you've been elected repeatedly as homebrew's project leader by the
+  community.
+2216: And there is infrastructure that like essentially gives you power.
+2220: And that power could be given to somebody else or it could be taken away from
+  you if people disagree
+2224: with what you're doing.
+2226: What is it like running a major open source project day to day?
+2230: Yeah.
+2231: So, I mean, I think the day to day side is, again, much like, you know, any
+  good or healthy
+2238: team, like there's not a lot of kind of intervention required, right?
+2244: Like everyone's just like buzzing away doing their own things.
+2247: But I think the kind of tricky part of the leadership side is the, I guess,
+  you know, dealing with
+2256: crises, right?
+2257: Deciding how and where and what needs to be done.
+2260: And sometimes like being the person to kind of resolve some gridlock or push
+  through maybe
+2267: a slightly unpopular decision, right?
+2269: So, it's funny because if you read Hacker News, which I do sometimes, when Homebrew
+  comes
+2278: up, like there's a lot of people on Hacker News that don't like me specifically
+  and some
+2282: of the stuff I've done with like leadership and whatever around Homebrew because
+  some of
+2286: the stuff I've done has been maybe forcing through some of the most controversial
+  changes.
+2290: But that's not because I unilaterally was the only person who thought that should
+  be done.
+2295: It's because I felt able to do that and to lead the charge.
+2300: Yeah, you have to be the face of the changes and bear in the front.
+2303: Yeah, for sure.
+2304: And also, sometimes it's like, you know, when you don't know how the sausage
+  is necessarily
+2309: made, it's like there's things where, sure, would it be nice if Homebrew could
+  do this
+2316: feature or support this workflow or whatever in perpetuity?
+2320: Like, yeah, sure.
+2321: But like, we're a bunch of volunteers scattered around the world.
+2324: We're not really paid.
+2326: Like, so with that in mind, like we have to, it comes, I guess, back almost
+  philosophically
+2332: to what we were saying near the beginning, right?
+2333: It's saying no to things and being like, well, what can we do and what can we
+  not do?
+2339: And I think one of the things, it's a bit more questionable now, but I liked
+  with being
+2346: in the Apple ecosystem, right?
+2348: Like, ironically, the first Mac I bought was six months before I became a Homebrew
+  maintainer
+2354: and, you know, have worked on it ever since, right?
+2358: But something that always influenced me about Apple's approach to software development,
+  maybe
+2362: a little bit more back then, is it's like their goal was not to give you all
+  of the functionality
+2367: that every other alternative would provide.
+2369: Their goal was to be like, the functionality we provide will work well.
+2374: It's not about just like ticking a box and being like, you can share, but it's
+  a bit janky
+2379: and it's a bit buggy.
+2380: It's going to fail 15% of the time.
+2382: As I say, unfortunately, some of this is maybe crept into the Apple ecosystem
+  now, but it
+2387: was about like, what can you actually do that's going to deliver a good experience
+  for the vast
+2392: majority of people, the vast majority of the time, right?
+2395: And some of the controversial stuff that has been removed or changed to one
+  of our Homebrew
+2400: was because we could not deliver a great experience to most people most of the
+  time.
+2405: And if you're one of the kind of, you know, power user types, then that can
+  be very frustrating
+2410: because essentially we're taking a very powerful tool and we're making it less
+  powerful because
+2414: some people can't file issues correctly or whatever it may be, right?
+2420: But like, that is the way the world is, right?
+2424: And the problem is, and this is maybe another philosophical thing, but the problem
+  is, is
+2430: that the people, you have to have an open source.
+2433: You have to let the people who are bearing the brunt of the pain of these decisions
+  be the
+2438: ones who make the decisions, right?
+2439: Like there's been a lot of talk about like community involvement and users in
+  open source
+2443: and in Homebrew among all open source projects, pretty much like we do listen
+  to users and we
+2449: do take feedback or whatever, but we're not, it's not a democracy, right?
+2453: Like we are the ones doing the work.
+2455: If we, the maintainers stop doing the work, the project no longer exists, right?
+2459: So as a result, we have to have something that allows us to work sustainably
+  and indefinitely
+2465: on the project.
+2466: And if that means that we do something in a direction that you don't like anymore,
+  then
+2472: Mac ports is another package manager for Mac OS.
+2474: And people, when I say that, they think I may be being like, you know, telling
+  them to piss
+2480: off or whatever, but it's like genuinely, I'm like genuinely this other tool
+  may be a better
+2484: fit for you now.
+2485: And this Homebrew maybe was the best tool.
+2487: And then maybe Homebrew is not the best tool for you anymore.
+2490: And that for me is not, it's not a sad or an emotional thing.
+2495: If someone decides another tool is better for them, right?
+2498: That's a good thing.
+2499: And in a weird way, I probably thought maybe long before today, right?
+2506: Like at some point, Homebrew will not be the best tool for anyone anymore.
+2511: And people will just stop working on it because everyone's moved to something
+  else.
+2515: And to me, that's not sad.
+2517: That's just how technology evolves and computers work and whatever.
+2521: Right.
+2522: And every individual that kind of makes that move, I think is like part of that
+  transition
+2527: in that process.
+2528: And we just need to be like, understand how that is.
+2532: And it's a very different proposition to when, if someone is a customer of a
+  company and
+2538: if all the customers go away, the company no longer exists and no one gets paid
+  and it
+2541: gets shut down and whatever, like Homebrew, Homebrew's code will always be there
+  forever.
+2545: Right.
+2546: Like it would be on the internet and our users are not customers.
+2549: Our users are people who use the software and maybe they contribute, maybe they
+  maintain
+2554: it for however amount of time, but like it's, it's very different.
+2558: It's more like a, you know, a co-op or a free food stall than it is a business.
+2564: Yeah.
+2565: And free code camp is similar in the sense that, uh, regardless of what happens,
+  like
+2569: a free code camp ever just ceases development.
+2571: Hey, it's open source fork it and you can run with it.
+2574: Um, and I think it's important that there's that release valve, uh, Apple's
+  philosophy of
+2581: just doing a few things, but doing them really well.
+2583: And here's the functionality here are the different API calls you can use in
+  Xcode and
+2587: But like, these will all work pretty reliably.
+2590: Uh, I, I, that I'm not like a huge Apple fanboy like you.
+2594: I switched to Apple from like Linux cause I was working at a shop, uh, that,
+  uh, when I
+2599: say shop, like, like it was a rail shop.
+2601: We were using Ruby on rails and they said, Hey, everybody works on Mac.
+2605: It'd be a lot simpler if you're on Mac instead of, you know, Debbie and I can't
+  remember which
+2609: distribution I was on at the time.
+2611: Uh, and, and that's how I got into it.
+2613: And, and then as I used it more, I did come to respect a lot of the opinionated
+  decisions,
+2618: you know, the convention over configuration essentially of like, here's how
+  we're doing
+2623: things.
+2624: If you don't like it, there are ways to like go and do your own thing, but like,
+  it's not
+2628: And it sounds like that is part of your philosophy as well, at least as how
+  you steward the open
+2635: One of the things you've mentioned that I thought was really interesting in
+  the past is if somebody
+2641: opens like a feature request or an issue and you're not going to do it, you
+  don't give
+2645: You just immediately kind of shut that and you're like, Hey, that's not what
+  we're going
+2649: Uh, is it hard to just constantly put down people's feature ideas and people's
+  bugs?
+2655: Yeah, it is in some ways.
+2658: Um, I think that, I mean, you get, you get a thick skin off to doing it for
+  a while.
+2664: Cause like most people accept that, right?
+2666: Like, and I just, there's a lot of things in life and in our industry.
+2670: And whatever, where I think you make the choice between short-term or long-term
+  kind
+2678: Right.
+2679: Like, and I've always been in lots of areas of life.
+2683: Like I favor the kind of like short-term pain, long-term gain sort of thing.
+2686: Again, back to the metaphor with kids, right?
+2689: The, it's the times you catch yourself saying, well, only this once.
+2693: And you're like, yeah, that's, that's not going to be a good idea.
+2697: Cause my kids are not going to accept that this is a thing that happens once.
+2701: They're going to want to do this again, again, again, again.
+2703: Right.
+2704: So like, maybe this makes my life easier right now to do this, but I'm again,
+  current Mike
+2709: and future Mike, like I'm, I'm like taking out like debt for future Mike and
+  current Mike
+2718: is benefiting that.
+2719: So let's not do that.
+2720: And I think people understand when you do that with their issues and stuff as
+  well.
+2725: Because, you know, I'm not going to name any names, but there's plenty of projects
+  out there
+2729: that have a hundred thousand open issues.
+2730: And realistically, the vast majority of them are never going to get done ever.
+2735: Right.
+2736: And, but yet on a bunch of them, if someone went and closed it and said, we're
+  not going
+2740: to do this, then a bunch of people will be like, ah, but it's like, but like
+  literally
+2744: the natural state right now, again, maybe too much philosophy in me, but like
+  the natural
+2750: state is this thing is not do, is not done.
+2753: You are proposing thing be done.
+2756: And the current situation is it's not being done.
+2760: So in the absence of someone doing it, it will not be done forever.
+2765: And I think in a homebrew, but because again, we, we get a reasonable sense
+  of like, sometimes
+2772: when issues come in, whether it's like, okay, anyone could fix this pretty easily.
+2777: Right.
+2778: Or only someone a little bit more seasoned could fix this.
+2781: Or like in sometimes cases in homebrew, there's some probably bits that it's
+  like, okay, probably
+2785: only two or three people have enough context or understanding to like fix this.
+2788: And if something comes in that affects a tiny number of people that only two
+  or three people
+2792: can fix and those people are not interested in doing so, then it's like, well,
+  let's not pretend.
+2799: Right.
+2800: Let's not lie to ourselves and be like, yeah, we're going to do your thing when
+  we're not
+2804: Right.
+2805: And that actually, I think works reasonably well.
+2808: And like, in real life in some ways as well.
+2812: Like in, you know, if we've got friends who are treating us badly or, or even
+  just like,
+2819: you know, I remember in the early days of Twitter, I had a good friend who I
+  would happily spend
+2824: hours chatting with in the pub.
+2826: And his Twitter, I followed him on Twitter and then I unfollowed him on Twitter.
+2829: And he was like, oh, why did you unfollow me?
+2831: And I'm like, cause you're not very interesting on Twitter.
+2834: Like I will go to you and sit with you in the pub for two hours and listen to
+  you talk about
+2839: Cause you're fascinating.
+2840: But on Twitter, like that it's not helping either of us like me following you
+  on Twitter.
+2845: And some people would look at that and be like, you know, you're excessively
+  blunt or whatever
+2850: it is, various other unkind adjectives.
+2852: But, um, I guess I've just, you know, maybe it's my life, but I I've reached
+  the age now
+2858: where most people around me kind of accept that and actually value and appreciate
+  that.
+2862: Cause the nice thing of knowing someone like me is if I say like, you did a
+  really good
+2867: job on that.
+2868: I'm not saying that to make you feel better.
+2870: I'm saying that cause I actually think it right.
+2872: Like, so people do tend to appreciate it when they, they learn that you're someone
+  who
+2878: is not just going to blow smoke up their arse and pretend that everything's
+  going to be
+2882: Um, but yeah, but it does sometimes take an adjustment and that's why, again,
+  you know,
+2887: if you look on Hacker News, like people will pick out like individual comments
+  I made and
+2891: they're like, that was very unkind or Mike's a dick or whatever it may be.
+2894: And it's like, yeah, but I made 10,000 of these last year.
+2898: Like, of course you will be able to find a bunch of places in which my communication
+  was
+2903: Right.
+2904: But we're not talking like Linus Torvald ripping into a contributor or anything
+  like that.
+2908: We're just talking about you bluntly saying, sorry, we're not going to do that.
+2911: Yeah.
+2912: But I mean, even, even folks like Linus Torvald's right.
+2915: Like, I think when, when you've been doing this for a while, you definitely,
+  I wouldn't
+2920: criticize how he runs his project because like, I know that it's hard.
+2926: And I think it's not just that it's hard, but it's like, it's like, when you're
+  an open
+2932: source maintainer, it's like, okay, imagine you're a manager in a company, but
+  every performance
+2936: review you do, you have to do in a stadium with a hundred thousand people watching
+  you.
+2942: It's like, when are you not going to say the wrong thing sometimes that people
+  aren't going
+2947: to like, right?
+2948: Or like, look at like, in some ways, like reality TV, right?
+2951: Like we all watch reality TV and we're like, oh, well, no, maybe we don't.
+2955: You watch this drug from reality TV.
+2956: But like some of us watch reality TV sometimes.
+2959: And it's like, you look at people and you're like, oh, they're so terrible or
+  whatever.
+2962: And it's like, yeah.
+2963: Like, you know, they're just a person.
+2964: They're just a horrible human being.
+2965: They combed through like hundreds of hours of footage to find that moment where
+  that person
+2969: was in, you know, a moment of weakness, right?
+2973: And yeah, you know, to credit to Linus Torvald, whom I have an incredible amount
+  of respect
+2978: for him, Torvald, he has sought anger management and he's acknowledged that
+  he should not be behaving
+2985: this way, but it's not like he's going to completely mellow out.
+2988: Exactly.
+2989: At the point, like there's a saying about kids will say, you're mean, but what
+  the
+2994: really saying is you mean what you say.
+2996: Like when they talk to the parents, right?
+2998: And I think that's like, it's kind of like a parental philosophy.
+3002: Like, oh, if I entertain the notion that soon, you know, homebrew is going to
+  have unicorns
+3007: and stuff like that, uh, leprechauns and stuff like that.
+3011: Like that, that's, that's ridiculous.
+3013: Like, like we're never going to do this and I'm just going to nip this in the
+  bud, so
+3017: to speak, uh, before people's expectations start to get out of whack.
+3021: Uh, that's kind of like how you, how you shut those down.
+3024: And also like, I try and like, I guess much like the, the parenting example,
+  right?
+3028: Like the other thing I try and do is be like, you know, I'm not always right.
+3033: And I'm willing to change my mind.
+3034: And, and even in times when I'm not willing to change my mind, if someone's
+  like, Hey man,
+3038: like sure you closed the issue, but you were a bit mean about it.
+3041: Then I try and make sure I'm like, I'm sorry, but like, it's not, it's, it's
+  easy to say
+3047: And again, you know, maybe kids, family, whatever, like advice is like a willingness
+  to kind of
+3054: admit when you're wrong and say, sorry.
+3055: But the problem is again, the, like the performance review in the stadium analogy,
+  like often it's
+3060: the people who are most annoyed with me, we're not even part of that conversation.
+3064: Like they're, and I, I don't feel like I owe them an apology based on something
+  I said to
+3070: someone else who isn't upset by it.
+3074: Like that's, I don't know why it's, but again, it's kind of weird.
+3078: Cause like we, we just don't, I don't think our brains as humans are very good
+  at processing
+3084: how to do this stuff.
+3086: So I think like I met with someone who's, you know, very involved with a bunch
+  of open
+3091: source maintainers and she said like, yeah, I, I think it, you probably just
+  all get a
+3097: very thick skin and that makes you a different sort of person.
+3101: And I, I think that's true.
+3102: Right.
+3103: Like I, I have to like remind people at work who criticize my work or whatever
+  and are worried
+3109: that I'm going to get really upset.
+3110: I'm like, look, like whatever you, even if you tried to say the most horrible
+  thing you
+3115: can imagine, like people have probably said worse in my inbox over the years.
+3119: So don't, don't worry about it.
+3121: Right.
+3122: I can tell the difference between it coming from a good place and a bad place.
+3125: And again, maybe that's part of it as well.
+3127: Like another thing you, you, you learn in open source pretty quickly, right.
+3131: Is if someone is, you know, like now that we've got code of conducts and all
+  that stuff,
+3136: if someone's indulging in bad behavior in really any, again, be it the workplace,
+  be it
+3141: open source, be it a friend.
+3142: If you can just say to them relatively calm and collected, like, Hey, that's
+  not cool.
+3148: Like you've upset my feelings or you're not doing that or whatever.
+3151: Like for me, there's that pivotal moment where even if they give you the worst
+  apology
+3156: ever, cause they've never learned how to apologize properly where they're like,
+  I'm sorry that
+3161: your feelings are hurt because blah, blah, blah.
+3163: Like if, if you are like, that seems to be actually coming from a genuine place,
+  then you
+3169: Right.
+3170: But if that person, when you point out like, Hey, not that great, like their
+  response is
+3175: to double down and be like, fuck you.
+3177: Then it might be like, it's just never worth putting a lot of energy into that
+  because it
+3183: never, it never works.
+3185: You're never going to, as, as much as I have tried and will probably still continue
+  to try,
+3189: like you can't shout at people on the internet to a point where the two of you
+  will just
+3195: all get along, right?
+3196: Like you can't reach everybody.
+3197: I mean, some people are just, they, they need something else in their life to,
+  to happen,
+3202: to be a catalyst for change.
+3203: And it's not going to be you talking to them.
+3206: You're just, you're just in the way, right?
+3209: You're collateral damage as they storm through their day.
+3212: And that's something else I always keep in mind.
+3215: Like the person I'm talking to on the other side of this comment or this email
+  or this
+3220: GitHub comment, you know, like this is a human being.
+3223: They're just trying to make it through their day.
+3224: Who knows what kind of horrible stuff has already happened to them today?
+3228: You know, like, cool, whatever.
+3231: But like, I don't have to interact with them any further.
+3233: I'm just going to politely disengage or block them if I have the means to do
+  that so
+3238: that they don't do this to other people.
+3239: And we're, we're going to move on and hopefully, you know, they're going to,
+  uh, find
+3245: serenity and, and find the impetus to change and not be a dick.
+3250: But, but that's the thing.
+3252: It's, it's, it's hard, right?
+3253: Like it's, it's hard to do that.
+3255: And it's hard to get like, I, I, my partner and a bunch of family members work
+  in healthcare,
+3259: right?
+3260: Like, and generally people who work in healthcare are really good at that because
+  like, why
+3265: are they doing what they're doing?
+3266: Like most of the time it's because they want to help people.
+3268: Why am I doing what I do?
+3269: Right.
+3270: Like, so at the end of the day, like if, if I could somehow do homebrew in a
+  way that
+3274: involved me never talking to another human and just talking to the computers
+  forever, I'd
+3278: Like that's, that's, that sounds way better to me.
+3281: That's not how the world works though.
+3282: You do actually have to talk to other humans.
+3285: You do.
+3286: You do.
+3287: Um, but, but that's the thing.
+3288: Like, so I'd be the first to say like, you know, my, my people skills on this
+  stuff and
+3292: particularly that skill you mentioned right there.
+3294: And I do think it's a skill that you can get better at, of being able to be
+  in that situation
+3298: where someone is, you know, on the internet screaming in your face and think
+  to yourself
+3302: like, wow, they're having a bad day, right?
+3304: Like they're, yeah.
+3306: Like what's happening in their life right now that is making them feel so intensely
+  about
+3311: Right.
+3312: Like, and I think that's a valuable thing when you can do that.
+3316: And I guess maybe pivoting back to work stuff, like, again, like that's an incredibly
+  valuable
+3321: thing to be able to do at work.
+3322: And I think the more senior you become, like if, you know, the company I'm in
+  right now,
+3326: I'm like the CTPO.
+3327: So I'm like the most senior technical person in the company.
+3329: Right.
+3330: Like, and to me, that means part of what that pay and title, whatever comes
+  with is it's
+3335: like, I need to take a lot more stuff on the chin than the, the person who just
+  graduated
+3340: And they're just, you know, new into the industry.
+3342: Like as you rise through the ranks and you, you get that stuff, it's your job
+  to like
+3347: figure out how to be able to like emotionally regulate yourself, how to be able
+  to be sympathetic
+3352: and empathetic to the people you work with and your customers and your coworkers,
+  something
+3357: Right.
+3358: And that's, I think like part of what it is, but the beautiful thing about that,
+  right.
+3362: Is if, if you get better than that, you're probably going to also be a better,
+  like, like husband,
+3367: wife, dad, mom, like friend.
+3372: Like, yeah, it's, it's, it's a skill that works in all directions.
+3375: Right.
+3376: And it's so useful.
+3377: Like the other, like I drive really slowly, especially when I have my kids in
+  my car, like
+3381: I'll drive like five minutes, five miles per hour below the speed limit.
+3386: And in Texas, that's like, that is not cool.
+3390: Like people get really pissy.
+3392: They honk at me, they drive around, they flip me off, they whip around me in
+  a very dangerous
+3396: fashion to, in some sort of weird, uh, you know, machismo, uh, display, but
+  it's cool.
+3403: Like, like they're having a bad day or they're in a hurry to get to their job
+  or something
+3407: Like I, I don't take it personally when people, you know, do that.
+3412: I'm fine with driving like a proverbial grandparent, you know?
+3415: Um, and it actually helps me boost my temperance because I'm, you know, dealing
+  with more hostility
+3422: throughout the day.
+3423: Uh, and, and that is one thing that I consider myself really good at is not
+  losing my cool
+3429: and trying to like absorb that energy without bouncing it back.
+3433: Right.
+3434: And it sounds like you've gotten good at that.
+3436: Uh, and I think this like, we're going to get back into open source software
+  development
+3442: and stuff like this, but this is a great time to talk about like your habits
+  because you
+3446: are very much a creature of habit.
+3448: My understanding is you have these recurring things that you do like every week
+  and it's
+3453: years, years and years.
+3455: How long have you lived in Edinburgh, Scotland?
+3459: Yeah.
+3460: So I've been here, I was born here, uh, I guess I'm 41.
+3463: So like on and off, I've been here the majority of my life, probably at least
+  30 of my 40 years
+3470: I've been in the same city.
+3471: Um, and you know, there's a lot of nice things about that.
+3475: Right.
+3476: I have my best friend from, uh, like high school, my oldest friend really, uh,
+  we come
+3483: around, he comes around like once a week.
+3485: We watch sci-fi together that my wife doesn't want to watch.
+3488: Um, and yeah, like it's, there's lots of nice things from just having that continuity.
+3495: And similarly, I guess with like habits and stuff, right.
+3499: You, you get good at things by just doing them lots and lots and lots, right.
+3504: Like, and trying and repeating and whatever.
+3507: And I think I've got like become a reasonable software developer, like, and
+  various other
+3513: things in my life by just doing it lots and regularly.
+3516: Like, and I think there's a lot of these things where it's interesting.
+3520: Like there's a famous, uh, Scottish cyclist, a guy called Chris Hoy, who's at
+  one point,
+3526: I think had more Olympic gold medals than any other person.
+3528: Um, and I remember hearing him speak one time and he was saying, he was like,
+  if you were
+3534: asked in my school, like who, who was going to like win a gold medal in the
+  Olympics, like
+3539: you wouldn't have probably put me in the top 10 people.
+3541: But the difference with me compared to everyone else is I just was just very
+  consistent over
+3546: a long period of time.
+3547: Like I just had my training and he just trained hard, train hard, train hard,
+  train hard, train
+3552: hard, train hard, train hard, and did that.
+3554: And, you know, I'm not going to put false hope in people's heads and say that
+  like anyone
+3558: can, you know, if only you just are consistent, you too can win more Olympic
+  gold medals than
+3562: Right.
+3563: But there will probably be some stuff where you can go from being like average
+  to being
+3569: great, right.
+3570: Just by being consistent and putting the time and effort in.
+3573: Right.
+3574: And that's a perfect point for us to address the fact that you are currently
+  the Scottish
+3580: champion for the M1 division of, I think it's like 81 kilogram body weight powerlifting.
+3589: Is that correct?
+3590: Yeah.
+3591: So I guess a fun parallel between powerlifting and open source is like every
+  time you do
+3597: a powerlifting competition anywhere in the world, that's like a sort of officially
+  sanctioned
+3600: one, there's a site open powerlifting.org and they have all this open data on
+  GitLab.
+3605: And so as a GitHub employee, that was the first thing that got me to sign up
+  for a GitLab
+3609: account actually.
+3610: And they have the site that's updated once a day that just has all the results
+  for everyone.
+3614: Right.
+3615: So you can go and look and if you hear someone does powerlifting, you can like
+  look them
+3618: up and see what they've done or whatever.
+3619: Yeah.
+3620: So yeah, so like in, it's not small country, not huge amounts of competition,
+  but yeah,
+3624: like in my age and weight class or whatever, like I've won it the last kind
+  of couple of
+3629: years and hope to win it again this year.
+3631: And yeah, and that, that's a classic example again of what you've said of like,
+  it's just
+3636: going to the gym a bunch of times, doing the same things a bunch of times, creature
+  habit
+3640: and slowly but surely you kind of progress.
+3643: And it's fits and spurts and whatever.
+3646: And cause it's very numerical, you can like literally see and be like, okay,
+  it went up
+3651: and then it stayed still for a while and then went up for a bit and stayed still,
+  whatever
+3654: it may be, you know?
+3655: Yeah.
+3656: And I don't know a whole lot about powerlifting.
+3658: Like I, I got kind of freaked out when I was doing some heavy squats.
+3661: Like, am I going to damage my spine?
+3662: Like, am I going to be permanently injured?
+3664: So I, I, I like, uh, but I never actually formally like competed or did power,
+  but I did all
+3669: the powerlifting exercises as part of my weight training regimen.
+3672: And, uh, and, and my understanding is there's the three main exercises, uh,
+  and correct me
+3677: if I'm wrong, but just for anybody who's not familiar with powerlifting, so
+  you can understand
+3680: what we're talking about, you're squatting heavy amounts of weight, you're benching
+  heavy
+3685: amounts of weight and you're, um, what's the term for deadlifting, deadlifting.
+3690: Thank you.
+3691: Uh, and essentially those are the three main powerlifting exercises.
+3694: And then you take the total amount of weight and you add them together and that's
+  your like
+3699: number essentially.
+3700: So it's a very quantitative, uh, area of athleticism.
+3703: Can you talk about like what your training range regime is regimen?
+3708: Um, and like, uh, how you go about just like when you go to the gym, how frequently
+  you go
+3714: to the gym, like all that stuff.
+3715: Just give us a very high level overview of sure.
+3718: How you've managed to remain the champion for several years in a row and, uh,
+  how you approach
+3723: this in such a kind of like disciplined routine oriented way, as opposed to
+  just like cramming
+3729: essentially.
+3730: Well, so the funny thing is try to do that too.
+3732: Yeah.
+3733: So the first year that I became the champion, uh, I was the champion essentially
+  by default
+3737: because no one else qualified in my age and weight class, right?
+3741: Such that it, I was the one person who competed, but I still did it and did
+  legal lifts and whatever.
+3747: So sort of still counts, but like, it's, you know, just to deflate, uh, my ego
+  somewhat.
+3752: But I think the thing I get to jump back to something that you said that made
+  me feel,
+3757: uh, it's kind of interesting.
+3758: It's like that, that fear, right?
+3760: Like I, that's another thing, I guess there's maybe a running theme in this
+  podcast of like
+3763: cross cutting things, right?
+3765: Well, so for me, that fear, like if I've got like, for me, the squats, the scariest
+  one,
+3769: like when I've got a heavy squat on my back and I need to go do it, that feeling
+  is almost
+3774: identical to the feeling of like when I've done a bungee jump.
+3777: And it's also almost identical to the feeling before I go on stage and do a
+  talk or amongst a big
+3782: crowd or when I've been in a pay negotiation and I like say a number that I
+  feel like a
+3786: little bit uncomfortable with, or I'm in a job interview or whatever.
+3789: And it's, it does, it feels like all of these things are kind of training, right?
+3794: Like in forcing yourself to do things that are maybe uncomfortable to you.
+3798: And that crossover is kind of useful, right?
+3802: Um, I guess to your specific question, like I go to the gym, like sort of depends
+  like anywhere
+3807: between kind of three and five days a week.
+3810: And I have like a coach, um, shout out if anyone, you will do online programming
+  for
+3816: His name's Keir White.
+3817: He's based in Scotland.
+3818: You can look him up on Instagram.
+3820: Um, if you're interested, but yeah, he's, he's been great.
+3823: I've known him before.
+3824: He was my coach.
+3825: I've had a few coaches in the past and yeah.
+3827: And you basically just like go to the gym, lift the weights with the numbers,
+  record a video,
+3832: send it to your coach, tell him like what you think you did well or badly.
+3835: He tells you what he think you did well or badly repeats for many years.
+3839: Right.
+3840: I guess I've been doing it for like essentially that pattern in some form on
+  and off for like
+3845: eight or nine years.
+3846: Um, and I probably have gone, you know, probably coming up to eight or nine
+  years of doing like
+3853: at least one sort of squat bench or deadlift in a given week for probably that
+  whole time.
+3859: And yeah, it all sort of adds up.
+3862: And I think that's the other thing that's sort of nice about it, like about
+  sort of strength
+3865: training stuff is there's no, there's no like easy fixes, right?
+3869: You can't go from having never been in the gym to the strongest in the world
+  in a year.
+3874: Like that's, it's just impossible.
+3875: Right.
+3876: Um, and there's also like a lot of things in life, there's shortcuts, right?
+3880: There's, um, different approaches and different ways of doing things and compromises
+  and
+3885: And there's things like risky, like, uh, training regimens that are more rigorous,
+  but
+3891: could increase the likelihood of injury.
+3894: Or like, I guess like performance and hunting drugs.
+3896: So like, uh, various sports, including powerlifting have, like in some sports
+  they're banned, right?
+3902: But in some sports, it's like, you have people who use them, who have their
+  own division over
+3906: here and people who don't use them, they have their own division over here.
+3908: And the people who use them are generally much stronger.
+3911: They look much better, but there are particularly sometimes long-term health
+  consequences of
+3916: these things.
+3917: So, and I'm not going to tell anyone what the should or shouldn't be doing,
+  but like, for
+3920: me, that's like the priority is my health.
+3922: So I'm not going to go down that route.
+3924: Um, and yeah, and I think that sort of applies maybe again, tenuous metaphor,
+  but like a little
+3931: bit back to work in the workplace again, right?
+3933: Where there's, there are shortcuts to get ahead, right?
+3935: There are ways of like burning bridges and using people and stomping on other
+  people and
+3941: lying and being deceptive or exaggerating things or whatever.
+3943: But again, all of those things feel like if you're really in this stuff for
+  the long game,
+3948: like that stuff catches up with you.
+3950: Right.
+3951: And the amount of people I've worked with where they treat their coworkers appallingly
+  or whatever.
+3956: And it's like, and then five or 10 years later in their career, they find things
+  are a little
+3962: bit harder than they used to be.
+3963: And that's because maybe no one's written anything on the internet about it.
+3966: Maybe no one works at the same company, but people talk, right?
+3969: And if you're someone who consistently treats people badly, the tech industry
+  is a surprisingly
+3975: small place and people hear about it.
+3977: Right.
+3978: And the other way as well, right?
+3979: If you're someone who I've had a bunch of coworkers, I'm sure you have as well,
+  Quincy,
+3983: where it's like, they're just a saint.
+3984: And like every interaction I've had with them is amazing.
+3987: And when I get the chance to like, one of my favorite things in this industry
+  is when
+3991: one of those people is like, will you give me like a reference for a job?
+3995: Right.
+3996: And I'm like, yes.
+3997: And I can just go on and just be like, let me tell you why this person is absolutely
+4001: incredible and really amazing.
+4002: And like, it feels great.
+4004: Like, it feels great to reward their good behavior with being able to like tell
+  someone
+4008: else, particularly with what I said before about me being the type of person
+  who doesn't
+4012: If I actually think they're terrible, then I don't give those references.
+4014: So, yeah.
+4016: So one way to look at it is like the wheels of justice turn slowly, but they
+  do turn in
+4021: the sense of there's like kind of a karma.
+4024: There is a reputation that may be unspoken in many ways, but like at the end
+  of the day,
+4030: would you recommend this person for the role?
+4032: No, I wouldn't recommend them because they're a dick.
+4036: Right.
+4037: They're toxic.
+4038: Uh, they're, they're, they're, they're trying to be like that guy.
+4040: Like I would encourage everybody to check out this movie.
+4042: It's, it's not safe for kids, but, uh, I saw this movie called Nightcrawler.
+4047: It's just like about the sociopath who like climbs the ranks and just, you know,
+  he'll do
+4053: anything to get ahead.
+4055: And, and it's repulsive and the acting is incredible.
+4058: Uh, Jake Gyllenhaal.
+4059: Um, and, and like, you're going to recognize that these people are out there
+  and, uh, they're
+4064: not going to be able to sustain themselves longterm.
+4066: There will be comeuppance eventually for them.
+4070: And, and that is one of the things that, that gives me like when I have to interact
+  with
+4073: such a person, they, they give me a little bit of solace.
+4076: It's like, they can't get away with this forever.
+4078: Right.
+4079: Uh, and at the same time, when you encounter somebody who's really chill, but
+  you know,
+4084: you can tell they've got great potential and they're going places and you can
+  be a helpful
+4088: in helping them go to those places.
+4090: Right.
+4091: You can, you can give them opportunities.
+4093: You can encourage other people to try them out.
+4096: Uh, you know, I think, I think that's a really cool thing about the open source.
+4100: Community and software development in general, I think people are looking out
+  for one another
+4104: and they are noticing people who are really chill and really good at what they
+  do.
+4109: And they're elevating those people.
+4110: Yeah.
+4111: I think that's, again, something I really loved about software in general is
+  it's right from
+4117: maybe like the first work experience I ever did when I was like 14 or something,
+  working
+4121: like it support in like my dad's like office in Edinburgh.
+4126: Um, just like, there's just an, an ethos of like collaboration and like, oh,
+  you know, a
+4133: That's cool.
+4134: Like, let's all learn about that.
+4135: And like, I, I just, I found that very, like, I, you know, I, I also did work
+  experience.
+4141: I remember when I was younger in like a law firm and like the contrast between
+  like tech
+4146: and law could not have been more stark in terms of like the, you know, like
+  admiring and
+4152: respecting kind of youth and new people coming in and new ways of doing things
+  and new technologies
+4156: and whatever.
+4157: And it's in many cases, like the people who you might've expected to be most
+  experienced
+4163: and most stuck in their ways were often the people who were the most like actively
+  embracing
+4168: like youth and change and what's happening.
+4172: And, and that's, I think a beautiful thing about technology, right.
+4176: Is when we can, when we can try and have that attitude, right.
+4180: Which doesn't always exist in other industries.
+4182: And I guess it's maybe particularly rapid right now when everything's changing
+  radically.
+4186: Yeah.
+4187: Well, let's talk about that change because I, no, no episode of the Free Code
+  Camp podcast
+4191: is out, is complete without a discussion of LLM tools, AI code gen, stuff like
+  that.
+4196: Um, you have been a dev for a long time.
+4199: Uh, a lot of these tools didn't necessarily just explode onto your radar like
+  they did for
+4204: a lot of lay people.
+4205: Like you've seen them gradually improving over time and you've seen the tools
+  get better
+4210: How do you make sense of, uh, you know, like a lot of managerial decisions and
+  you're a
+4216: manager too.
+4217: So you're a perfect person to ask this question to you.
+4219: Like a lot of the managers who are going out, like we're going to hire fewer
+  developers
+4222: and we're going to rely more on AI code gen.
+4224: Yeah.
+4226: So I don't really know where we're at with a lot of these tools right now.
+4232: I think it's interesting because there's definitely a lot of people who are
+  pushing
+4237: narratives pretty hard, who, who are pushing the narratives the hardest, who
+  are themselves
+4242: like most likely to benefit.
+4244: Like if you're the, the Claude code, like principal engineer, or if you're the
+  CEO of
+4249: NVIDIA, of course you're going to tell people that they should stop teaching
+  their kids how
+4252: to code.
+4253: I think it's pretty much a direct quote from what he said.
+4256: And I think the thing is, and I also think on the flip side, like they'll like
+  everything,
+4261: We have loads of things where like, you can go out and buy bread, right?
+4265: Like very easily, but yet some people bake it at home, right?
+4268: Like, why do they do that?
+4270: Because they want to, they like it.
+4272: They like the process.
+4273: They might think it tastes better.
+4274: It might taste better.
+4275: Like whatever it may be.
+4276: Right.
+4277: And I think there's always going to be room for like an artisanal way of doing
+  things,
+4282: Like even at peak LLM, right?
+4285: And I think again, like me loving open source, the beauty of open source is
+  right.
+4289: If you want to go and run your open source project in a like full speed ahead,
+  let's do
+4294: everything with LLMs, like a hundred percent all the way, all the time, you
+  can do that.
+4299: And also if you can, if you want to say, I'm not even going to allow code completion
+  using
+4303: LLMs for anyone who works on my project, you can do that.
+4306: Like you, you can decide, right?
+4308: I think what's more interesting and difficult and nuanced is like the industry
+  as a whole,
+4314: where does that go?
+4315: And I don't know what it means long or even medium, maybe even short term for
+  hiring and
+4323: for kind of maybe more junior folks where things are a little bit difficult
+  there.
+4327: All I feel like I do know is that like, this is, this is changing things and
+  it is going to
+4334: be a big deal.
+4335: And people on maybe hacker news or whatever, who are like, Oh, these tools are
+  useless.
+4338: They, they can't do anything meaningful.
+4340: Like you are, if you're, if you're taking that position in, you know, early
+  2026, you've
+4347: either not seriously tried any of these tools or you have, you know, not learned
+  how to use
+4356: them properly or something or whatever it may be, or maybe you're using them
+  in the wrong
+4361: way on the wrong code base or you are on a bad day or whatever, but there are
+  a lot of
+4365: people getting a lot of value at these tools.
+4367: And I think that that's the only bit of it that I find undeniable.
+4372: And I also feel like in my, you know, in my time in the industry, I guess we
+  are, the internet,
+4378: you know, coding for the internet was already established by the time I was
+  working professionally.
+4382: And then I guess the big changes were maybe like mobile or social media or crypto
+  or whatever.
+4387: Right.
+4388: I feel like this is going to be bigger for actual software engineers and software
+  engineering
+4391: than any of those were in the past.
+4395: Um, and I think it's going to be more like when we went from maybe a similar
+  to, uh, writing
+4401: high level program languages, um, in terms of like the impact.
+4405: But I also think most of what is hard about software engineering is not writing
+  the code,
+4410: Like actually I think you could probably have had a similar conversation around
+  the eras of
+4417: like higher level programming languages.
+4419: And like, well, actually, if you look at this compared to assembler, now we
+  don't need to
+4423: think about any of this stuff anymore.
+4424: It just gets done for us automatically by the compiler.
+4426: Right.
+4427: And it's like, well, yeah, like, and also in the early days of the compiler,
+  right?
+4431: Like it was similar, right?
+4432: Where in the early days of the compiler, then you should handwrite your assembler
+  from the
+4436: code that you really care about.
+4437: Cause it's going to actually be like good code.
+4439: Right.
+4440: And over time that becomes less and less true.
+4442: Um, I wrote, there's an anecdote back to Linus Torvalds of him working on,
+4447: uh, if I remember correctly, like when he was working on Git and so much of
+  the software
+4451: in Git is around like the SHA one hashing function being really fast.
+4454: So he was like, what's the state of the art?
+4456: And there was an open SSL one, which is written in assembler for each, uh, architecture
+  to be
+4462: the fastest.
+4463: And he was like, Oh, that seems really fast.
+4465: But he tried his own version just written in C and based on his understanding
+  of C and
+4469: the, the way the compiler would behave or whatever it outperformed the open
+  SSL version.
+4473: Right.
+4474: But that's something of like, maybe when that code was first written, the compiler
+4478: version would have been trash, but these tools get better.
+4481: And I think we're seeing a similar thing with LLMs where it might be that like
+  nothing at
+4485: your work right now is a good fit for LLMs.
+4488: It doesn't work well with your programming language or your toolkit or your
+  legacy code or whatever
+4493: it may be.
+4494: But like, if you think that that's literally going to never change, like, yeah,
+  you, you
+4500: need to reanalyze things because eventually these tools are going to come and
+  they're going
+4504: to change the way you do your job.
+4506: And if you are insistent that you write every character by hand forever, I think
+  some of
+4511: those people will not have a job in the future.
+4513: Let's talk about how you use it day to day.
+4516: Like what tools are you using?
+4518: How are you using them?
+4519: To the extent that you can just give us a high level overview of how you've
+  adopted these
+4523: tools.
+4524: So my main tools of choice are ChatGPT for just like a separate kind of chat
+  interface
+4530: of which I'll ask it anything, you know, program related questions, maybe small
+  code snippets,
+4536: but not like main languages, like not like multiple files or anything like that.
+4541: And I like that it's kind of quite nice and separate and it's its own thing.
+4545: And I can do it with my phone and my Mac and jump back and forward between the
+  two.
+4551: And then I would use opening a codex in the CLI for like my kind of like agentic
+  kind of
+4558: more vibe coding sort of stuff where I'm not looking at every line of code as
+  it's being
+4563: written, but I will review it all later, basically, unless it's a complete throwaway
+  one time
+4570: script sort of thing.
+4571: And then I have my cursor is my main, like I'm coding, but with kind of AI assistance
+  kind
+4579: I used to use cursors like kind of agentic mode and questions mode or whatever
+  a bit more,
+4585: but I now mainly just use cursor because I think it has the best kind of autocomplete.
+4589: And I like that way of working.
+4592: So those are my main three drivers, I would say.
+4595: Well, since you've got a lot of experience using these tools, I'm going to ask
+  you a question
+4599: that I've asked a lot of devs who use them a lot.
+4601: Do you think that agents are the future or do you think that code completion
+  itself is where
+4609: a lot of the utility is going to remain for more senior developers like you,
+  where you're
+4613: just looking at the chunk of code and you're working directly with it and it's
+  just helping
+4616: you essentially fill it in faster?
+4618: Yeah, I think it depends on what you're working on and what the code basis and
+  the languages
+4624: and whatever.
+4625: So for example, on Homebrew, like I know Homebrew's code base well enough that
+  I can read a bug
+4630: report and I'm like, I know which file needs changed, right?
+4634: And I could prompt an AI to change that file because I know what it is, but
+  it's probably
+4642: going to take me longer.
+4644: Like literally, I think in some of those cases to use the agents would take
+  me more keystrokes
+4651: than it would be to do it manually by hand, right?
+4655: Even if I gave the agent just like the issue, it's going to like turn around
+  and do its own
+4660: thing and it's probably not going to quite do it the way that I know that it
+  needs to be
+4663: done and I know some of the edge cases that maybe aren't documented or whatever.
+4666: And again, I guess some people could say, maybe rightly, maybe wrongly, well,
+  you could
+4671: just add all this to your agent's MD or your documentation and over time the
+  agent will get
+4675: just as good as you.
+4676: And it's like, yeah, but in this particular case, it's like I have to pull out,
+  you know,
+4680: 16 years worth of context and put it into text so the agent can understand it.
+4685: Like I just don't think that's going to happen, right?
+4687: But on the flip side, I now if I'm working on like a script, right?
+4692: And so right now I'm doing like a, I'm working on a kind of JIRA to GitHub migration,
+  right?
+4697: And I'm doing a bunch of data analysis as part of that.
+4699: And most of my data analysis now is just like, hey, OpenAI Codex, write some
+  code that gives
+4707: me this output based on the data, right?
+4708: And I don't even tell it the structure of the data.
+4710: It goes and looks for it, right?
+4712: And so far I haven't read any of the code, right?
+4715: And some people might say, but how do you know it's correct?
+4718: And it's like by looking at the output, right?
+4720: And this is code that's not going to be shared or used by anyone else.
+4724: And once I've got the data crunched how I want it to be crunched, I'm going
+  to throw
+4727: away the script and never look at it again.
+4729: And that's definitely something where probably even a year ago, like A, I don't
+  think I would
+4733: have got the output I was looking for as quickly and B, I think I would have
+  had much more
+4738: of a sense of like, I must read the code or I'm somehow being irresponsible.
+4741: But given the sandboxing progressions and stuff that we've had as well, I'm
+  just like, it's
+4748: I don't need to read this.
+4749: It feels weird even saying that.
+4752: Yeah.
+4753: But I mean, again, if it's software with an audience of one and it's just doing
+  a task
+4758: and you just care about the quality of the output, if there's some sanity checks,
+  if you
+4763: can just get a feel for like, oh, it went completely out.
+4765: This value is an order of magnitude different than it should be.
+4767: Then that is kind of like the canary in the coal mine that might inspire you
+  to actually
+4772: go scrutinize the code more.
+4773: But a lot of this stuff is so routine.
+4777: It's been done so many times that you don't need to go and reinvent the wheel.
+4781: But yet there may not be like some package or some ready-made script that you
+  can use.
+4785: So you just create one.
+4786: And I think that's one of the big use cases for agents and for like air quotes
+  vibe coding.
+4793: Everybody gets pissed when they use that term.
+4794: But essentially, that's what you're doing in the definition of Karpathy is you're
+  not
+4798: even looking at the code.
+4799: And you wouldn't do that for production-grade code, of course.
+4802: But in this use case, it's perfectly serviceable.
+4806: Yeah.
+4807: But I mean, but increasingly, there's some cases where even if I was to make
+  that production-grade
+4812: code, like I would, again, probably a year, year and a half ago, I would have
+  very much
+4817: operated from the principle of like, I need to be reading this as I go along.
+4821: Whereas now, I would basically like, I'd basically get it working without ever
+  looking at the
+4826: And then I will read the code from top to bottom, right?
+4828: Like, and check every line, tweak certain things in, put it into maybe my house
+  style.
+4833: Partly, it's just almost like a learning and understanding thing as much as
+  a, actually,
+4837: I know ultimately it doesn't matter in Ruby if I use, if not, or unless, right?
+4843: Like, whatever, like, but I prefer one and not the other.
+4847: And I feel like that's sometimes my way of like, understanding the code is going
+  through
+4851: and like, fiddling with it, slightly rewriting it and whatever.
+4853: And I think, I think that's the interesting thing is that I think even then
+  these tools
+4860: are getting better and they're getting more powerful such that it's closer to
+  what I would
+4865: have written like much more quickly and more readily, right?
+4869: Particularly once you kind of learn like a few, like little catchphrases that
+  you can
+4874: spit in to your agent's MD file or whatever.
+4878: And I think that that's the thing.
+4880: It's that question, I guess, like what we talked about before of like, what,
+  what is good
+4884: enough, right?
+4885: Like, and I think these tools are very good at getting to good enough exceptionally
+  quickly,
+4890: I think where things go a bit more is when like, you don't spend the time or
+  effort reading
+4898: it and you just almost like generate the code and throw it over the wall.
+4901: And then it's someone else's problem to make sure that that's good enough.
+4904: Like that's happening certainly a lot in open source.
+4908: I don't think it's happening as much in the workplace, although I hear stories,
+  but like,
+4913: I think that's going to be the thing that we're going to be like, nope, like
+  can't do that.
+4916: If the AI generated it and you did the prompt, then you own that output, right?
+4921: And you need to get good at understanding that code.
+4924: And I think my maybe scary prediction for the next couple of years, I think
+  we're probably
+4928: going to see some very bad things happen at some point where people have just
+  YOLO'd
+4933: it a bit too hard and whoops, turns out there was no encryption on our database.
+4937: Whoops, turns out it was publicly accessible.
+4939: Whoops, everyone's stuff got stolen and someone will go, oh, well, that was
+  ChatsyPT's fault,
+4946: It's like, well, nope, that's not, that's not how it works.
+4949: Sorry.
+4950: Yeah.
+4951: I mean, same thing with any tools.
+4954: You are the person wielding those tools.
+4956: And it's ridiculous to say that, oh, we know how these tools work.
+4960: There's just token predictors, right?
+4961: But they're very useful, as you pointed out.
+4964: So I want to remind everybody that this is an unedited podcast interview.
+4969: I have no idea how Mike McQuaid is going to answer.
+4972: And it could be completely in contradiction of my own personal opinion.
+4976: But I respect his opinion as a dev who's worked for decades at this point, who
+  has worked at
+4982: the highest levels of the field as an IC, worked as a manager, who's worked
+  as a maintainer
+4987: of one of the biggest open source projects, certainly in the Mac space.
+4992: Mike, like, in light of how the field is changing, how would you advise somebody
+  who's getting into
+5000: the field now, like, what would you recommend they do, uh, that maybe be different
+  from what
+5005: they would do five years ago?
+5006: Yeah, it's hard.
+5008: I've been asked this question a lot and I never feel like I give a great answer.
+5012: Um, I think the main thing I would probably do is get really good at reading
+  code and reviewing
+5021: other people's code.
+5022: Like, so I wrote a blog post along these lines, which is why I think open source
+  maintainers
+5027: are good at that is because, um, you know, some people, you know, every PR you
+  do at work,
+5033: it just looks good to me.
+5034: Right.
+5035: And you don't really engage and grapple with other people's code and that you
+  can do that
+5039: and get away with that.
+5040: And most cultures in many workplaces, no one's going to come back at you and
+  be like, Hey,
+5046: someone else wrote this code, but you didn't spot the bug.
+5048: So I'm the site went down.
+5050: Right.
+5051: Like ideally that would be, ideally we would have a culture where it's like
+  it's equal
+5055: responsibility of the person who reviewed it and the person who created it to
+  make sure
+5059: that that code is correct.
+5061: But I don't think that's the majority culture.
+5062: We can change the culture though.
+5064: We can, we can, but I think that's, that's in some ways where we need to be
+  going because
+5069: you need to be able to do that for your AI generated code.
+5074: You're going to need to generate code probably with AI, but you need to be able
+  to read that
+5078: and understand that and analyze that and catch bugs in that by yourself without
+  another human
+5083: doing it for you or with you.
+5085: And how exactly you learn that skill.
+5088: I don't really know beyond being an open source maintainer, right?
+5092: Like, and doing a bunch of open source and maybe reviewing other people's code
+  and seeing
+5096: how other people will do it.
+5097: But I do think it's maybe a little bit of, if I can be very harsh, intellectual
+  laziness
+5103: that crept into our discipline that we got away with for a long amount of time
+  that it's
+5108: like, it's okay that you don't really read or understand anyone else's code
+  and anyone
+5112: else's code is basically legacy code as far as you're concerned.
+5115: And you would ideally just rewrite it into your own style.
+5117: I think that's the big thing that we can't, you can't do that anymore, right?
+5120: Like you're going to have to use these tools and you're going to have to be
+  able to understand
+5125: them and catch them when they're doing the wrong thing.
+5128: And that's a completely different skill to just like be able to write it all
+  from scratch
+5131: by yourself.
+5132: And arguably that's gone from, you know, maybe the third, fourth, fifth, most
+  important skill
+5137: for a software engineer.
+5138: That's maybe going to be the most important skill.
+5140: So that's, that's the thing I would get people to focus on.
+5143: That makes a lot of sense.
+5144: I mean, yeah, get really good at reading code.
+5149: That's I think the direct quote of what you said there.
+5153: And I think that's profound.
+5154: And that might, I might make the video headline because I think it's, it's,
+  it is a change.
+5159: Right.
+5160: And I agree with like the intellectual laziness point that you, that you mentioned.
+5166: I think laziness on a whole across many different fields is going to be on the
+  upswing as people
+5173: just want to get through their day so they can get back into TikTok or wherever,
+  you know,
+5178: Skinnerbox they want to put themselves into.
+5180: But this is a new year.
+5184: It's 2026.
+5185: The year is filled with possibilities.
+5188: What are you going to do with this year?
+5191: Yeah.
+5193: I mean, I guess maybe touching a little bit of each of the topics we've touched
+  upon.
+5197: I guess I want to make homebrew is like great.
+5201: It's mostly feature complete, but like, I think the, the main area I care about
+  is trying
+5206: to make it more performant, right?
+5208: Just trying to make it do things, the same things faster than it previously
+  does.
+5212: Right.
+5213: So that's my focus.
+5214: It was my focus last year.
+5215: It's my focus this year as well.
+5216: Like improve her homes and homebrew.
+5218: Um, I guess like at work, I'm like a CTPO.
+5221: I want to like grow my teams, like happiness at work, trust at work, output
+  at work, like
+5227: all of that stuff combined.
+5228: And then, you know, I guess we talked about powerlifting.
+5231: I want to win some medals this year.
+5234: Um, and then just try and be a better dad, husband, friend, human, like hopefully
+  get to
+5241: And I'm a nicer person than I was at the beginning of it.
+5245: Mike McQuaid, it's been such a privilege to talk with you and learn more, uh,
+  with your
+5250: perspectives that you shared.
+5252: Uh, thanks again for coming on the show.
+5254: Thanks for having me, Quincy.
+5255: Yeah.
+5256: And then everybody tuning in until next week.
+5258: Happy coding.
+5259: See you then.

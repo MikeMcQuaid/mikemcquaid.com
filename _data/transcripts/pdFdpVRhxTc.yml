@@ -1,0 +1,1931 @@
+---
+0: It's really funny to hear them talk about it.
+3: All right, let's begin because we know we got a hard stop.
+10: Well, we are here with a breaking changelog.
+19: Justin asked me to do that pun.
+21: A crossover episode.
+23: We are publishing shows to both changelog and friends and to Justin's breaking
+  change.
+30: Merge conflict.
+32: I don't know what this is on his pod, but it'll be there.
+35: The explicit version will be over on Justin's side.
+39: On our side, there will be bleeps because we also have not just Justin, but also
+  Mike McQuaid with us.
+46: What's up, Mike?
+47: Thanks for having me.
+48: I hope to make heavy use of your bleep counter today, as is my Scottish self-employed
+  tradition.
+55: Well, Mike's only requirement was that there would become a non-bleeped version
+  of his voice out there on the internet talking about this, and so Justin will happily
+  oblige.
+65: Yes, and I'm not going to make it a contest or anything, but I've got a feeling
+  I'm not going to go bleep-free for what we're about to talk about.
+72: And the reason for the bleeps is because we've got trouble right here at Ruby
+  Central.
+76: Yes, that's an old music man.
+80: What is that?
+81: Reference.
+83: For a new problem.
+85: Maybe not a new problem.
+86: An old problem.
+87: An issue that's been going on with Ruby Gems, with Ruby Central, with Ruby Together,
+  with Ruby.
+95: The community, more so than the programming language.
+98: Language is doing just fine, isn't it, Mike?
+99: Seems to be.
+101: I wrote some today.
+102: It still works.
+103: Yeah.
+105: Did you install any Gems?
+107: I did.
+108: They installed okay.
+109: It seems to be fine.
+112: Yeah, I was actually doing an iOS project when all this stuff broke, but then
+  I was worried that, like, you know, Ruby would stop working.
+118: So I dropped that, switched gears, and now I've been working on my posse party
+  project in earnest to try to get it done before the servers turn off.
+125: Just in case.
+126: Just in case.
+127: Well, there's a lot of ins, a lot of outs, a lot of what have yous, as the dude
+  would say, to this particular story.
+132: More, probably, than I can summarize, which is why I've mostly ignored this in
+  Changelog News, because there's just so much going on.
+140: And every once in a while, I just link over to Justin, who's been commentating
+  and color commentating.
+146: But we're going to let Mike try to set the table for us, just some of the events
+  that's going on.
+150: For those who are uninitiated with some of the Ruby drama that's been percolating
+  and coming to a head recently with an actual root access event published on rubygems.org.
+162: So, Mike, help everybody understand exactly what's been going down.
+166: Yeah, so I guess things kicked off probably what we are.
+171: We're October 15th at the time of recording.
+173: So, this time a month ago, things seemed to all be fairly normal and stable and
+  whatever.
+181: No one seemed to really know much.
+182: And I guess my first personal involvement was there was like a governance PR
+  on RubyGems that was based on the homebrew one.
+193: I was pulled in and asked to kind of give my thoughts on that.
+196: And then a few people started messaging me and whatever.
+199: But essentially what went down is Ruby Central, for the main parties involved
+  here, is the nonprofit organization that controls rubygems.org.
+210: And they had as employees and contractors at various points, various maintainers
+  of RubyGems, the open source projects.
+219: And those people were involved with rubygems.org, kind of on-call rotations and
+  whatever.
+225: So, essentially, kind of, I guess, last month, you know, we're talking, I think,
+  September the 18th or whatever.
+233: From then onwards, over the kind of following few weeks, the Ruby Central notified
+  RubyGems maintainers, including, I guess, Andre Arco.
+244: Like, I guess, if you want to read the two differences of accounts, I guess the
+  starkest extremes here are Andre's written a few things on his blog.
+253: RubyGems have written a few things on their blog.
+254: And basically, from September the 18th onwards, Andre and some other RubyGems
+  maintainers were removed from the on-call rotation.
+264: They were removed from their GitHub access and various bits and pieces went down.
+269: There's kind of back and forth and arguments and disputes about what was communicated
+  exactly by who and when and what happened and what didn't happen and whatever.
+279: But, essentially, we're at the point today where almost no one who was involved
+  with RubyGems, the open source project, has access to be involved with it today.
+291: Andre and a bunch of the other RubyGems maintainers have created their own thing
+  called gem.coop, which right now is essentially like a modified version fork, whatever
+  you want to call it, of rubygems.org.
+306: It's run as, like, separate infrastructure.
+307: Andre has personally been involved with kind of some competitors to, like, Bundler
+  and RubyGems and whatever.
+314: I think there's a tool called RV.
+315: And what seems to be now public knowledge is that both parties are writing various
+  blog posts, targeting the other, and it sounds like there's some kind of lawsuits
+  in action between various parties as well.
+331: Does that provide the overview you're looking for, Jared, or do you want a bit
+  more color on particular bits?
+335: I think that's a good overview.
+337: I think that brings us to what seems to be the biggest milestone or moment, which
+  was published just last week by Shan Kiriton, executive director at Ruby Central
+  of this AWS Root Access event that happened in September.
+359: Justin, you want to hop in here on that, or do you want Mike to continue?
+362: Yeah, so if you're, uh, if you, if you had been following along the thing that
+  everybody had been clamoring for, kind of regardless, like, people are taking sides.
+374: There's a lot of, even though we're not public figures, we're not famous people.
+383: It's like Ruby's been a smallish pond for a long time.
+386: A lot of these people have been there for 20 years, 20 plus years.
+390: And everybody kind of knows everybody.
+393: If you go to the conferences and we've all seen each other and people talk and
+  there's different cliques and there's different groups.
+398: And so like, regardless of like, kind of like where your allegiances fall in
+  terms of who, what friend group is sort of thinking this way or that way.
+406: And, and, and, and, and where things line up in general, that's like, I'm talking
+  about a universe of like 200 people max and like way more people in the world use
+  Ruby and, and also read the internet.
+419: And so they've been operating under this complete lack of complete just information
+  of like, what's the whole story?
+426: Like something isn't adding up here.
+428: Uh, you know, some people have been happy to fill the void with like sort of
+  conspiratorial thinking throughout.
+433: Like, this is all a takeover from Shopify.
+436: Cause they're trying to get after this one guy.
+438: And it was like, okay, so why?
+439: And then no one's got an answer for that.
+440: Right.
+441: Like, uh, and other people are just very honestly and earnestly being like Ruby
+  central saying that they just removed everyone for supply chain reasons.
+449: Like why?
+451: And Ruby central is not talking, right?
+452: Like, and so that, and, and all you get is like kind of hand wavy.
+455: Oh, well, because the lawyer is telling us we can't or something like that.
+458: If you, if you ask people, uh, this blog post, which what was it?
+463: Was it the 30th?
+464: No, it was, it was more recently.
+466: It was about the event on the third.
+468: Was it published?
+469: It was published October 9th, October 9th.
+471: So the event might've been the 30th and not yet the event.
+474: No, on the 30th was the blog post that raised concerns.
+477: That's right.
+479: So part of why this is confusing is the post is a timeline, but the timeline
+  is like three timelines in reverse order to, to, to first talk about like the last
+  thing that happened and in what order things happened when the last thing happened.
+494: And then the next section explains like the why that, the why behind that.
+498: And then the next last section is the why behind that.
+500: Uh, and if you were to like, and I, and this is why, as soon as I read it, I
+  put up my own blog posts.
+506: I kind of tried to unspool it to explain like, what are the stakes, what this
+  reads like to me when you, when you go through it.
+513: So I'll first try to like summarize the, it's characterized as a post-mortem
+  of a security incident response where on September 30th, uh, person named Joel Draper
+  or Draper posts, a blog post that says, uh, yo, Andre Arco still has all these systems
+  accesses.
+532: Like the only person who's like the only person who's, he's the, the only owner
+  of a particular GitHub organization.
+537: Uh, he's still got these AWS accesses.
+541: And, and I think that the, if not expressly stated implication of the post is
+  this is how incompetent Ruby central is that like, here we are weeks after supposedly
+  having these accesses removed.
+557: He actually still has this access.
+558: And so look at how insecure this is.
+560: Like, you know, this is, this is Ruby central, not having their act together.
+564: Because they had taken access away from Andre as well as other Ruby gems.org
+  maintainers prior.
+571: However, Andre still had access according to the Joel Draper's draper draper
+  draper.
+577: It's two P's.
+578: I don't know.
+579: Two P's, but Joel Draper just sounds more natural.
+581: Yeah.
+582: And my wife and I are rewatching Mad Men coincidentally.
+585: Yes.
+586: And so it's just like, it's really hard to separate.
+588: I agree.
+589: I haven't seen it for years, but I'm still saying Draper.
+591: Anywho, this post that he says on September 30th is that they're so, I mean,
+  the implication is that the incompetence of Ruby central, who is the, is it a foundation?
+603: Is it a nonprofit?
+604: Help us understand some of the entities here.
+606: Ruby central.
+607: Is it a for profit?
+608: My understanding is it's a 501c3.
+611: Okay.
+612: Which I, frankly, I really wish I didn't know about U.S. nonprofit organizations,
+  considering I don't live there and I never will.
+620: But yet I've been involved with like open source nonprofit stuff long enough
+  that I'm sadly intimately aware.
+627: So a 501c3, they're, they're somewhat hard to establish nowadays because various
+  government agencies have decided that like open source software is a bit too easy
+  to look businessy, right?
+641: So basically it's an organization that exists to own the assets of Ruby gems.
+647: It merged previously with Ruby together, which was started by Andre.
+652: I don't know who started Ruby central personally, but basically it exists as
+  an entity to provide legal ownership of the service, to provide the ability to receive
+  tax-free donations from individuals and companies,
+668: and then redistribute those to whatever nonprofit appropriate areas that they
+  do, which has been Ruby gems maintenance, Ruby gems on call, some conferences, et
+  cetera.
+685: And there's a lot of moving parts, which makes us hard to track.
+687: There's like the repos on GitHub.
+690: There's the servers that are actually running said code.
+693: There's the access to the servers.
+695: There's other things that make this just really hard to track, but back to, so
+  that's Ruby central, the entity back to where Justin was.
+702: They published this post about Joel Drapper's post saying that Andre still had
+  access or implying that there was still access.
+708: So, so, so before the post post, don't worry.
+711: Like, like they actually were notified of, of this permissions exposure.
+716: So it wasn't a zero day announcement.
+719: No, yeah, they had, it looks like seven minutes where Andre emailed them that
+  he still had these accesses and that this was the only disclosure.
+729: Gotcha.
+730: Joel post goes up, uh, uh, you know, at five 30 UTC, uh, you know, and now this
+  is Justin, the guy just reading a blog post or forgive me if my characterizations
+  are at all inaccurate.
+742: Uh, you know, at that point, Ruby central has to treat it like a security incident.
+747: So they go into emergency mode, try to lock down all these systems, uh, initiate
+  password reset, uh, and then begin a, a relatively long, you know, investigation
+  of all these other knock on systems first over the next few hours.
+760: And then the next few days, uh, when, let's see the, the, when they backtrack,
+  right?
+767: So that's September 30th.
+768: Then there's an analysis of events that goes back and says, Hey, look on, on
+  September 18th, Ruby central notified Mr. Arco via email that he was going to have
+  his access removed or that it had been removed.
+779: Uh, and while they removed his particular IAM, I assume like AWS account that
+  presumably would be tied to his email.
+790: address, uh, they, they did not rotate the password on the AWS route account.
+796: So, you know, like if you're familiar with AWS, there's typically an email address
+  and a root password, uh, or an email address that is effectively the root account.
+804: And it's bad practice to use that thing.
+807: Right.
+808: And log in as it, because you don't have any of the sort of like, you know, policies
+  and procedures available to you.
+813: But because Andre was like kind of the core, one of the, one of, if not the core
+  operator of Ruby, uh, gems.org for so long, uh, it appears that even though that
+  he was removed from whatever their password vault system was, presumably like a
+  one password.
+829: Uh, he had a separate copy of, of that password or that login item somewhere.
+835: Uh, because even though his, you know, email was his, his individual AWS account
+  was apparently according to Ruby central disabled.
+844: Uh, it looks like roughly eight hours, uh, after that notice sent, uh, they state
+  that an unauthorized actor from San Francisco logged into that AWS account into
+  the root AWS account and then proceeded to change the password.
+859: Uh, and as far as they know, didn't do anything else, I don't, I'm not an expert
+  in, you know, cloud forensics.
+867: So I have no idea if that's a thing that like Ruby said, it's like the absence
+  of evidence is what's leading them to say that, or whether they have any sort of
+  like, you know, dispositive proof that nothing.
+875: I think I read somewhere that they did have some, like, there's like some sort
+  of immutable time-based log and they confirmed from the log, like what had happened,
+  what hadn't happened.
+884: I read both sides of that and I think Mike's, what Mike just stated seemed like
+  it was more informed than the ulterior, which is once you have root access, you
+  can change everything.
+893: I don't know AWS well enough to confirm or deny a side, but I, that does, that
+  did at the time of my reading seem to be the most reasonable stance that they could
+  confirm it.
+903: That being said, I also don't know for sure.
+906: Yeah.
+907: I, I, I, I pride myself in my ignorance when it comes to DevOps stuff.
+911: So I'll take your word for it.
+913: AWS stuff.
+914: I, I think the thing that jumps out at me with a lot of this stuff is you, you,
+  you can plausibly see why both sides thought they were doing the right thing a lot
+  of times in, in this, right?
+927: So like from, I guess, Andre's perspective, what's been published is he says
+  like, well, I thought this was, I didn't have enough information to go on that.
+937: This wasn't, was a legitimate event and it wasn't like someone at Ruby central's
+  email or GitHub account or whatever had been hacked.
+944: So I was trying to do what I could to preserve the integrity of the service.
+947: But I think like what is hard for me with the communication of both sides, right?
+953: Is I think particularly unsurprisingly now that maybe some lawyers are involved
+  is that I would love to, maybe it's the, just cause I'm British.
+962: I would love like a bit more from both sides and saying like, Hey, turns out
+  in hindsight, I didn't do the best thing here.
+970: Right.
+971: And going forward, if you find yourself in the situation I was in, my advice
+  to you is to do X instead of Y and I did Y, right?
+980: And I think that's the hard thing with all this is that it, we're now at a point
+  where there seems to be like some degree of stability and it doesn't seem like Ruby
+  central is going to be inviting the folks who've left, including Andre back into
+  the fold anytime soon.
+997: It doesn't seem that like, you know, Andre and co are going to take control over
+  Ruby gems, GitHub org or whatever, anytime soon.
+1006: Like, but I feel like the main parties who have suffered through this are people
+  in the Ruby community who, of which I include myself, who are just have a lot of
+  uncertainty of like what's going on.
+1020: And I can't remember if I said this publicly or privately, but like essentially
+  the person I feel the most for is anyone in the last month.
+1027: Who is trying to pitch a new Ruby project at work with, to a management or leadership
+  team who looks at Hacker News even once a week, right?
+1037: Like good luck, right?
+1038: Because a whole lot of fear, uncertainty and doubt has come into this.
+1042: And also like, I think both sides, I see, you know, I'm, I'm a strong proponent
+  of, you know, I wrote a post a few years ago, which some people hate.
+1051: Some people love called open source maintainers.
+1054: Are you nothing, which points out from like a legal liability perspective, essentially
+  every open source license says like, if you don't like the terms of that I'm providing
+  you here, you can go fuck yourself.
+1066: And just take what you're given and like it, you know, and from that perspective,
+  like I am sympathetic and I, I tend towards my sympathy being towards the maintainers.
+1076: But at the same time, we have like a critical part of the Ruby ecosystem, which
+  essentially had no governance process, no public governance process whatsoever,
+  right?
+1086: That had, and still has to some degree, very little beyond the legal required
+  levels of financial transparency of required of like a 501c3.
+1097: And a lot of figures making decisions and making statements where most people
+  like, I don't know who this person is, right?
+1105: I don't know who this person is, how they got access, who's right, who's wrong.
+1109: Are my Ruby gems safe or unsafe or whatever, right?
+1113: And I think that's the part about this, what I find really frustrating is that
+  like a whole lot of people are still in the Ruby because we're still being disrupted
+  by this.
+1124: And it doesn't seem like it's going to get solved anytime soon, maybe ever,
+  right?
+1130: Because right now, both parties are now just in damage control.
+1135: Because both, again, like both sides on, I had someone that was Blue Sky or
+  Mastodon, whatever, who was basically, oh, blah, blah, blah, you seem to have switched
+  sides on this.
+1143: And I'm like, well, I don't think, I mean, rarely in life is there a situation
+  where what side A is 100% right, side B is 100% wrong.
+1152: But like, this is definitely a situation where that's not the case.
+1154: Both sides have made mistakes.
+1156: You may well be inclined more towards one side than the other.
+1159: But like, both sides have to do things to repair trust and fix things and improve
+  things moving forward, right?
+1164: I'm going to just jump in real quick.
+1167: Sorry, Mike.
+1168: Because I want to do point out like two of the things from this timeline, then
+  we can move on to the bigger conversation.
+1173: Like, open source maintainers who have an MIT license indeed owe you nothing.
+1179: However, part of the complexity here is like what's under dispute.
+1183: And this is just like a natural, like, and I wrote about this in my first post
+  on the topic.
+1186: Like, the fact that Ruby itself is 30 years old, mostly maintained by a committer
+  group that's mostly based in Japan.
+1194: The Ruby Gems as a tool was created in America by Americans initially and then
+  hosted in America, has a separate lineage.
+1203: And there's a three-legged stool between, like, custody of the code for Ruby
+  Gems and then later Bundler and then later they merge, custody and management of
+  Ruby the language, and then, like, RubyGems.org, which is like a going concern and
+  operational, you know, system that is running in the cloud.
+1219: And so, from a just accesses perspective, like, we're not talking about, like,
+  who's got commit bit necessarily.
+1227: So, when they say that he logged in with the rude email eight hours after getting
+  noticed that his personal access had been revoked, and then he changes the password,
+  and that's on September 18th, you know, you scroll down, and it also says on the
+  28th, he logged in again while he was in Tokyo at Kaigi on Rails, another conference
+  event.
+1247: And then it's only on September 30th, seven minutes before our blog post, that
+  there's any disclosure whatsoever, right?
+1255: So, like, if he was concerned about the security, their implication in this
+  post is if he was supposedly concerned about the security, had there been a, you
+  know, had this exposure been leaked out to other maintainers or if it was out in
+  the wild or something, like, 12 days is an awful long fucking time to sit on that
+  information and not disclose it.
+1275: Additionally, when you go back and ask, like, so why did we get to that point?
+1278: Like, what actually happened?
+1279: You scroll down, and the precipitating event to why are we getting serious about
+  supply chain security was apparently, and this is an event that, you know, predates
+  August 3rd.
+1294: So, presumably, you know, when, and I haven't met her, Shan, the new executive
+  director at Ruby Central, doesn't have a lot of technical technology experience,
+  but does have nonprofit experience.
+1307: I imagine, you know, Mike, if it's as dire as you're saying in terms of, like,
+  lack of governance, lack of policies and procedures, my understanding is they didn't
+  even have, like, terms of service and privacy policy up at the website until earlier
+  this year.
+1319: I suspect she probably came in and she's like, we got to, like, get serious,
+  right?
+1324: We got to run this thing better.
+1325: We got to introduce the, you know, standard operating procedure, you know, make
+  sure that we're buttoned up from a regulatory perspective.
+1333: And then we got to, you know, understanding Ruby Central has been extremely
+  budget constrained since, since RailsConf and RailsWorld turned into the schism,
+  also get the budget under control.
+1345: And so, I knew, and I talked to Marty about this, I think, like, maybe late
+  last year, early this year, when he was taking on the role at Ruby Central, that
+  they were trying to get more, you know, serious about controlling the finances and
+  getting the budget managed well.
+1361: And so, like, when you, when you go through the timeline, apparently they cut
+  the budget for secondary on-call rotation for rubygems.org, which had previously
+  apparently been $50,000 annually, and that all of that had, or that, that amount
+  anyway, had gone to Andre Arco's, you know, consultancy to provide that service,
+  even though it was rarely invoked.
+1383: When he was informed that they were removing that budget, he sent an email to
+  Marty that was, you know, kind of spitballing an idea, it looks like, to say, well,
+  in lieu of getting paid in dollars, if, if, if I could be permitted to have access
+  to the HTTP logs, that could then be used for, presumably by a company to do some
+  sort of analysis for some sort of marketable purpose.
+1407: Uh, and there, you can debate whether there's any sort of like PII implication,
+  or if that could be discerned from the logs.
+1415: And, and Mike, my understanding is you probably have, being the homebrew guy,
+  probably been approached by similar companies in the past, uh, regardless of the
+  actual mechanics and what the, what, what that would look like.
+1426: It was pretty clearly not something in the privacy policy currently, or the
+  terms of service.
+1430: And so this, that email is received on August 3rd, and then it looks like the
+  board and leadership team, and I'm imagining now, and this is just speculation on
+  my part, Shan is executive director, who's not, you know, still trying to get her
+  bearings and trying to button the stuff up, probably sees that as like, and this
+  is the person who has all of the access to all these systems and could just take
+  it anyway.
+1448: And it's upset that, you know, we're cutting the budget, like that's probably
+  the precipitating event.
+1453: And that's how they characterize it in this email of the thing that leads to,
+  we got to tighten up the security and these accesses and get to, we don't have an
+  operator agreement signed for all these people who have the, you know, operational
+  access.
+1466: And we don't have committer license agreements for all the people who are committing
+  to this code base and could cause, you know, disputes later.
+1472: And so we got to get those in place.
+1474: So like first cut everyone's access, get the agreements in place, and then we
+  can start to rebuild on a, you know, firmer footing is my understanding of the timeline.
+1483: Now, like that's, that, that's what I read reading this, right.
+1487: It is like, and it sure, it boils up to unauthorized access, ultimately acute
+  alleged against Andre and changing the password and not disclosing it.
+1495: But, but do I have anything there based on your, cause Mike, you've been in
+  a lot of the same discussions that I have.
+1501: And with some of the principles did, is anything that I just characterized wrong
+  or is anything you'd want to add to that?
+1506: Yeah.
+1507: I don't think there's anything massively incorrect or whatever there, I guess
+  for me, it's kind of an emphasis thing.
+1513: And I, I, just to jump back, like, I guess maybe a bit of context that might
+  be helpful for folks of where I fit into this party, right.
+1520: So I'm a homebrew maintainer, homebrew being a macOS package manager.
+1524: If you've not used it before, you can use it on Linux now as well.
+1527: Yeah, I've worked on that for 16 years.
+1529: I've essentially been probably the main person since the creator left, who's
+  kind of stepped into leadership stuff and have kind of led us through various levels
+  of financing and fiscal hosting and all the kind of,
+1542: a lot of the kind of boring non-profit-esque stuff.
+1545: But notably, homebrew does not have a dedicated non-profit.
+1549: We do not have any dedicated employees or anything like that.
+1553: But we have an open collective, which essentially, if you've never used open
+  collective before, is like a online banking app, but is in the spirit of open source
+  public, right.
+1564: So you can go and see two homebrew maintainers went out for lunch about a month
+  and a half ago in Singapore together, as our expenses, public docs say that they
+  can do.
+1574: And they had lunch, they talked about homebrew, and they expensed that to the
+  project, and I approved that expense, right.
+1580: So, like, essentially, all the money coming in and out of the project, you can
+  just go and look, right, without even logging in and see, like, what's going on
+  here.
+1588: You can't see people's specific receipts with their credit card numbers for
+  hopefully obvious reasons.
+1593: But the thing I struggle with with a lot of this stuff is, like, like, okay,
+  homebrew and RubyGems will be going for about the same amount of time.
+1600: RubyGems has definitely received dramatically more money in that time, I would
+  bet, than homebrew.
+1607: It would surprise me if it was as little as 10x more than homebrew.
+1611: But yet, we, a group of volunteers scattered around the world, have been able
+  to have transparent governance, transparent finances for, like, five plus years.
+1623: And, you know, I appreciate, like, this is all part of a kind of tightening
+  process and whatever.
+1627: But the thing that, to me, that all of these kind of blog posts and a lot of
+  the discussion is missing is, like, okay, who got what money from who and when,
+  right?
+1638: Like, that goes as far as Ruby Central employees, Ruby Central board members,
+  Ruby Central contractors.
+1643: It goes, like, you know, there's been a lot of conspiracy about, like, how much
+  Mike Purim, like, has provided or removed funding.
+1652: DHH has provided or removed funding.
+1653: Shopify has provided or removed funding, right?
+1655: And I don't even want to speculate on one of those because I don't know what's
+  true or not true.
+1660: But the thing I find slightly depressing about it all is, like, it would be
+  very easy to have all that information be at least semi-public, right?
+1668: But it's not.
+1669: So it becomes, like, an exercise.
+1672: And I do think, again, like, with the, like, what access Andre had to what and
+  when and how and whatever, I also think, again, what I said earlier about the open
+  source maintainers owe you nothing thing.
+1682: It's like, at that point, is he an unpaid volunteer working on a service, right?
+1689: And providing that to the best of his abilities.
+1691: Like, if I certainly think from the accounts we're looking at, had Andre never
+  received a cent from Ruby Central ever, I think you would read his narrative and
+  be like, that is 100% defensible, like what he did.
+1705: And Ruby Central are 100% of the wrong because they are a well-funded organization
+  with full-time employees who, like, sorry, the bar is just much, much higher for
+  them than it is for unpaid volunteers.
+1716: But if volunteers are paid, how much are they employees?
+1721: Are they contractors?
+1722: Like, what's their contract say or not say or whatever?
+1724: And I think that stuff is where it just all gets very murky.
+1728: And that stuff is where, personally, it makes me not happy that this is happening.
+1734: But I've been sort of saying, sometimes privately, sometimes a bit more diplomatically
+  publicly for years, that like, hey, look, it seems like a lot of people have decided
+  that open source sustainability is a problem we solve by just throwing more money
+  at things, right?
+1749: And this is the type of thing that happens when we do that, right?
+1754: It's not to say that we shouldn't, no one should have been getting paid, or
+  we shouldn't have had money or whatever.
+1759: But like, once you start getting a lot of money involved in these things, things
+  get very complicated, right?
+1764: And you need to have significant levels of like, maturity and governance and
+  transparency and experience in open source and experience in nonprofits to not fuck
+  it up.
+1775: And then maybe even if you have all those things, you still fuck it up, right?
+1778: But like, I think that's where this stuff gets interesting for me is I'm like,
+  well, you know, in some ways, if you were to look at homebrew and look at RubyGems,
+  you would say like, well, you know, homebrews all this in this precarious, silly
+  situation, because they don't have a dedicated nonprofit, they don't have significant
+  corporate backing, whatever.
+1798: But in a funny way, we are immune to a lot of the problems that have happened
+  here, because we have not gone in so hard on like, we now have significant dependencies
+  on paying significant numbers of people, like their monthly wage, right?
+1814: And again, not to say we're doing it better, they're doing it worse, whatever.
+1818: But I think there's a lot of the open source, I guess I sometimes call it like
+  big open source, right, that is trying to push a lot of people in this direction,
+  that like, we all need to just get maintainers to be paid full time employees, right,
+  and contract everything out and whatever.
+1837: And I think what gets lost is like, well, what happens if we do that, what are
+  the pros and cons, and to what extent that events like this happen, or at least
+  get a lot more messy and complicated than they could have been otherwise, if there
+  was not the same degree of money involved.
+1851: So if I were to just jump to the end of this, and I'm going to jump right back
+  where you are, Mike, but if I were to jump to the end, it's a guy who just types
+  gem install every once in a while, or bundle, right?
+1865: I know you two, I've interviewed DHH, I've interviewed Shopify people, I've
+  never met Andre myself, I'm tangentially related to the Ruby community, as a regular
+  old Ruby user.
+1877: And to speak to Mike's point from earlier, at the end of this is a rubygems.org
+  AWS root access event.
+1887: Like, if that's what I hear, and I find out it was days or hours, or however
+  long it was, and was it Andre, was it somebody else, were they malicious, were they
+  not, can we verify it?
+1898: Like, that's a five alarm fire, isn't it?
+1901: I mean, I install my gems, just like anybody else does, unless you've switched
+  over to gem.coop, from rubygems.org, and somebody had root access to their AWS account
+  for some amount of time.
+1915: And that's probably all that I'm hearing, maybe a little bit more about other
+  things.
+1919: And so this, the end result is a disaster.
+1921: I mean, this has been disastrous.
+1922: And now we're in, like you said, Mike, damage control.
+1926: And so that's just incredibly unfortunate, and a fact of history now that I
+  think comes from whether he said, she said, they did this, they did that, who's
+  to blame, etc.
+1938: It comes down to, like, money has just muddied and created no end of trouble.
+1947: And it's just really, really murky now, like, how you navigate money and open
+  source.
+1953: I mean, just combining those two things together, which has been a desire and
+  something I've preached for many years, is, like, we need more money in open source.
+1959: We need to fund these people.
+1960: We need to sustain these people.
+1961: We need to help these people because they're giving things away for free, and
+  then other people are using them and taking advantage and applying pressure, etc.,
+  etc.
+1969: But we've gotten some money now.
+1972: I mean, I'm not talking about now this year, but, like, over the last 15, 10,
+  15 years, money's come in in certain amounts.
+1979: You know, it's not evenly distributed by any means.
+1982: And it seems like, I don't know if I can say it's caused more trouble than it's
+  solved problems.
+1989: Maybe it's been better than, maybe it's a net positive.
+1992: But, man, it sure made things even more complicated.
+1995: And I'm not sure how we navigate this.
+1998: I'm not sure how we navigate this going forward.
+2002: Maybe the answer is complete transparency, and maybe the answer is, I don't
+  know.
+2009: I can't even imagine an answer that makes sense.
+2011: But, Mike, your stance is, like, you can't do it.
+2014: You can't do full-time open source maintainer as, you know, free to work on
+  the project however they like.
+2023: Like, whatever we all imagine would be the perfect life of an open source maintainer,
+  like, there is no such thing.
+2029: Is that your stance?
+2031: Pretty much.
+2032: I mean, Justin's, like, you know, hotfix podcast thing was, like, okay, come
+  with, like, a pithy quote that's, like, a controversial statement.
+2042: And I think the shortest, pithiest version I got was, like, open source is not
+  a career, right?
+2047: Like, and what I mean from that is that I think there's plenty of ways to be
+  an open source maintainer and make a load of money, right?
+2058: Like, I've done fairly well for myself financially.
+2060: I have had some doors open for me that would not have been opened otherwise
+  were it not for my open source work, for sure, right?
+2068: Like, I mean, arguably, maybe bar my first job out of university, college, whatever.
+2073: Like, I think every other job, my open source maintenance has influenced me
+  getting that job.
+2079: But also, every other job has never has my paid main work been working on open
+  source, right?
+2088: Like, that, and particularly working on homebrew, right?
+2091: Like, I've had, when I was at GitHub, I was at GitHub for 10 years, I had, like,
+  a couple of months in which I was, you know, given permission to help migrate us
+  urgently from bin tray to GitHub packages, right?
+2104: And I worked on a bunch of internal code for that.
+2108: I worked on a bunch of external code for that in homebrew.
+2110: But, like, bar that, like, that was not my job.
+2112: I did homebrew stuff in bits of spare time, in evenings and weekends, in time
+  between meetings, whatever it may be, right?
+2120: And that was not what I was paid for or promoted for or whatever, right?
+2125: I built stuff internally, right?
+2127: I guess not unrelatedly, I was, you know, one of the first people to, first
+  four engineers to build, like, GitHub sponsors, right?
+2134: So I, you know, that was an interesting thing for me because it was being on
+  the front line of, like, well, what happens if we put a bunch more money into open
+  source?
+2143: And I think, like, GitHub sponsors, again, it was telling because if you looked,
+  and a lot of this is all public knowledge, right?
+2150: If you look at the people who have made the most money out of GitHub sponsors,
+  they are not the best open source maintainers.
+2156: And they would not be offended in me stating that they are not the best open
+  source maintainers.
+2161: They are the people who have done the best job selling themselves and selling
+  something which other people value through GitHub sponsors as, like, a payment provider,
+  essentially, right?
+2171: And good on them.
+2173: That's great that they do that.
+2175: But there's a lot of people, myself included, who just slap up at GitHub sponsors,
+  right?
+2179: Like, I do a lot of homebrew stuff, and I have done for 16 years.
+2183: My monthly GitHub sponsors payment is $22 a month, right?
+2187: That's not me going and saying, I want to get a bunch more.
+2189: I get, you know, a bit more than that.
+2191: I get $300 a month from homebrew as, like, our kind of maintainer stipend.
+2195: But, you know, the reason why I don't get a load of money that way is because
+  I have not dedicated time and energy into building, essentially, a sales process
+  for my sponsorship pipeline.
+2208: And that's how it works, right?
+2210: If you want to be an open source maintainer that gets funded primarily through
+  sponsorships and money and whatever, it doesn't look like a tip jar.
+2217: It looks like you are now running, essentially, like, you know, in the same
+  way that other influencers might have an influencer economy or whatever.
+2224: And there's various routes of making that money and paying those bills and getting
+  that open source work, right?
+2230: But there's not a single easily trended path that is not without compromises.
+2234: And it makes me very cross to see a bunch of particularly younger maintainers
+  being told, like, no, this is the way.
+2242: If you follow this, you will both be rich and you can work on whatever source
+  you ever want, whenever you want, right?
+2248: That's just a lie.
+2249: That's just bullshit, right?
+2250: Yeah.
+2252: Well, hold on, Justin.
+2254: For those who are putting them through the pain of watching us on video, the
+  fringe benefit of doing the video version of this is for the last 10 minutes, you
+  can watch Justin sit there and chomp at the bit for his opportunity.
+2272: Because we've said so many things that I'm sure he wants to address.
+2275: So much so that at one point he was literally holding his mouth shut because
+  he has so many things to say right now.
+2280: This guy talks for three hours uninterrupted and he hasn't had a chance to say
+  anything for the last 10 minutes.
+2286: So, Justin, just turning the floor over to you, my friend, which of these many
+  points would you like to address first?
+2292: Got to admit to anyone watching the video, I did get distracted at one point
+  because my pen ran out of ink and I had to write down.
+2298: He literally left at one point.
+2300: He literally left and then came back.
+2301: So that was distraction number two.
+2305: Distraction number one was I saw somebody texted me that the Vision Pro with
+  M5 was announced.
+2314: Oh.
+2315: Well, there's a fire alarm fire right there.
+2317: Yeah.
+2318: Just to tell you, my priority is as one of the five remaining daily driver Vision
+  Pro users who I use the Mac virtual display every day, like we've discussed several
+  times on the show even.
+2333: So I will not be buying it because because it's just basically I'm using it
+  as a monitor.
+2339: But and I'd much rather just talk about that now.
+2343: But to try to honor what Mike just said, when we say open source is not a career,
+  it's kind of running a consultancy.
+2352: It's helping co-found, help start whatever, like a consulting company speaking
+  at conferences, doing some amount of open source.
+2360: You know, none of I was very fortunate in life and that none of my open source
+  was super successful.
+2365: It seems like a huge pain in the ass when it when that happens for the most
+  part in terms of the burden of issues and pull requests and yada yada.
+2376: But I was visible enough that people would come up to me, younger folks, less
+  experienced people, people trying to succeed in this industry.
+2384: And they would whether it was about speaking or whether it was about blogging
+  or whether it was about doing open source, a lot of the activities that people saw
+  me do, they'd look at that and they'd confuse the means with the ends.
+2398: So they'd say, hey, how do I break into open source?
+2402: And I'm like, that's a real weird goal because like I do open source because
+  I'm trying to get something done that makes me money, like working for a client.
+2412: And like we got a you know, the first real project I did was like I was a Java
+  client.
+2418: And like we had a whole lot of JavaScript and no way to run tests against it
+  in CI.
+2422: And I was like, that won't do.
+2424: And so like we started unit testing our JavaScript with Jasmine, like locally.
+2428: Well, how do you get that running in CI?
+2430: I was like, oh, I had to figure out a you know, this is back in 2010 or whatever,
+  like run a pseudo HTML and JavaScript like fake environment in a Java runtime.
+2442: And and then make a Maven plug in that we could incorporate into the build like
+  and I did that on my own time on a weekend or, you know, late at night or something.
+2450: And then I just plugged it into the client code the next day.
+2453: Right.
+2454: Now, here you go, a gift free of charge because it makes my life easier at work
+  and we're going to ship your code better.
+2459: Right.
+2460: And almost every one of my open source projects was that it was I have a job
+  that pays me money that that job would be massively improved in terms of the outcomes
+  or my life at that job.
+2471: By writing some open source.
+2472: So I'm going to solve my problem and I'm going to make it open because that's
+  that's easier than getting approval to make it closed internally.
+2482: Like if I if I have some like, you know, asinine idea for how I can make things
+  a little bit better.
+2487: Forgiveness is way better than permission.
+2489: Maybe it won't work.
+2490: Like why?
+2491: Why would I fight for like budget and time to go on some, you know, escapade
+  to like, hey, I can vaguely improve things in a way that you don't understand when
+  I could just go on my own GitHub, publish something.
+2501: Publicly and then go and consume that at work.
+2504: And if it turns out that it's useful, then work is happy to like, let me spend
+  some hours building it because then I've got a virtuous, you know, I've got at least
+  one person depending on it.
+2513: And that's the person paying me.
+2515: So then I can keep working on it a little bit and make it a little bit better,
+  respond to issues and feedback.
+2519: And that's typically how I've done open source.
+2521: Right.
+2522: I guess one way to do it.
+2523: And in a very, very small sense that at least has like incentives aligned where
+  it's like, I make this thing better because it's built for purpose for somebody
+  who needs it.
+2536: So that's not that's not breaking into open source.
+2539: That's not saying like, OK, so what I want to do is I want to work on this open
+  source project.
+2543: And I've seen this play out lots of times, whether it's through the sponsorship
+  deal or, you know, what Ruby together and later Ruby central did was they actually
+  paid hourly for people to work on bundler and Ruby gems code bases.
+2557: And when you're like talking about like a high one hundred fifty dollar an hour
+  or whatever it is, hourly rate to work on an open source tool, then a lot of questions
+  arise.
+2566: Like, what do you work on?
+2568: Who chooses the priority of that work?
+2571: Like it's a you know, if you're talking about one hundred fifty bucks an hour
+  or zero dollars an hour with most of the people contributing, making zero dollars
+  an hour.
+2579: Like suddenly there's a perverse incentive there to be like, all right, well,
+  either, you know, what if there's nothing else to do?
+2587: Like what if bundler is a solved problem and basically does everything it needs?
+2590: Like now you've got a perverse incentive to create make work to justify more
+  hours to get more money.
+2596: And and if the goal at the end of the ends is I want to get make make a, you
+  know, replacement level tech career doing open source activities.
+2607: I think like the places that leads you in terms of the amount of complexity
+  and machinations in terms of like how that funding gets to you and the amount of
+  singing and dancing.
+2616: And and and and and glad handing and arm twisting that you need to do to like,
+  you know, extract those dollars from people who might not necessarily see a direct
+  value or benefit or ROI for giving you that money.
+2629: It leads to places like this that are as goddamn confusing as the situation
+  that we're in now.
+2635: And that's that's, you know, I guess maybe a twisted knife version of the picture
+  that Mike's painting is like this is just all about at the end of the day.
+2645: It's like incentives were not aligned because people wanted to get paid.
+2650: And this is where this leads you.
+2652: And yes, it's really sad that a lot of people do open source for free, but like
+  a lot of people have hobbies for free.
+2658: And if they choose to keep doing them, it's kind of their their task.
+2661: I don't know what to tell you.
+2662: And that's the thing.
+2663: Like for me, genuinely, open source for free as a hobby is a beautiful thing.
+2670: Like we should think very carefully before we decide to kill that by either
+  paying everyone, which won't happen, or by making people who aren't being paid feel
+  like they are being exploited.
+2685: Right.
+2686: Like I again, it really fucks me off.
+2688: No end.
+2689: When you have people often with minimal involvement in open source themselves
+  going around telling open source maintainers big companies are exploiting your labor.
+2697: And I said, well, if only there was a way to get a big company to pay me to
+  write software for them.
+2703: Oh, wait, we have lots of that.
+2705: But the reason why lots of people, including me, enjoy open source software
+  and have continued to work on it for a very long time is it's like I don't have
+  a engineering manager or product manager or technical project manager being like,
+  please sign your TPS reports.
+2720: When will this be done?
+2721: Is this a yellow T-shirt or a green T-shirt size project?
+2725: Like being able to just opt out from all of that bureaucracy is, you know, that
+  bureaucracy is important and necessary sometimes, but it's also nice to not have
+  to do that.
+2735: And when you don't have to do that, you can operate in a different way and work
+  in a different way.
+2740: And that's fine.
+2741: And again, we go back to the open source maintainers owe you nothing, where
+  it's like if someone doesn't like it.
+2745: Like, I mean, there's legitimately issues on homebrew that people file and it's
+  like, this is a legit issue, but you're being a dickhead about it.
+2752: So I'm just going to close your issue.
+2754: And when they're like, oh, but then I'm like, well, fuck you.
+2756: Tough, tough luck.
+2757: I can do what I want.
+2758: Right.
+2759: But if I'm a paid employee and if that person is a paid customer, right, in
+  some companies you can do that.
+2767: Right.
+2768: But that's not terribly advisable.
+2770: And I think this goes back to what we were saying about perverse incentives
+  and like who gets paid and who doesn't get paid.
+2776: It's like, well, open source maintainers owe you nothing.
+2778: Sure.
+2779: People who are being paid to do something owe someone something.
+2783: Right.
+2784: And it might.
+2785: And again, in homebrew's case, we specifically do.
+2787: We have like all open tooling and open documentation and blah, blah, blah.
+2790: And we pay maintainers that hit a certain threshold, $300 a month.
+2796: We call it a stipend.
+2797: There are people for whom I'm sure the average, you know, American child delivering
+  newspapers, if that's still a thing that happens.
+2806: Like is making significantly better hourly wage than some of these open source
+  maintainers are.
+2811: But it's fine because that's just a token amount for appreciation for them.
+2815: And we're not like, but even then we have had, it's not, we've not done anything
+  publicly or whatever because we try and in homebrew do a reasonable job at keeping
+  some of our drama behind closed doors.
+2826: But even in that case, for a very small amount of money, we had a person with
+  a very well-paid day job who was doing the wrong thing essentially because they
+  wanted to hit a threshold to get an extra $300 a month.
+2840: And that made us reconsider how we do this stuff.
+2844: But to go way back to something that Justin said right at the beginning, right?
+2846: Like about, you know, he did open source to solve his own problems, right?
+2851: Back when I got involved first with open source in the heady days of the Linux
+  desktop back in like 2007 when I did my first Google Summer of Code and met a lot
+  of these KDE people and I was like a Linux guy.
+2863: Like the thing that people used to say all the time then that I never hear anyone
+  saying now is open source is about scratching your own itch, right?
+2869: And what people meant by that back then was like open source is primarily about
+  solving your own problems and then releasing it in a way that other people can benefit
+  from you doing that, right?
+2879: And that's why I did it.
+2882: And it's why I do it.
+2883: Because when I work on homebrew and I make homebrew a little bit better, it's
+  usually because something in homebrew annoys me and I use homebrew, therefore I
+  make it better.
+2891: And that's completely the opposite from the attitude Justin was saying of like,
+  how do I break it into open source?
+2897: It's like, well, whenever anyone's asked me that, I'm like, well, find a tool
+  that you use, find something annoying with that tool and then go fix it, right?
+2905: And they're like, oh, but, you know, I don't know JavaScript yet or I don't
+  know this or I haven't contributed to that code base or I can't find a mentor or
+  whatever.
+2911: And like, again, as we're being a bit more spicy on this podcast, it's like,
+  well, congratulations, you lose.
+2917: You're never going to be a successful open source maintainer, right?
+2919: Like, I've never seen someone who's been a good open source maintainer who has
+  been taught into being so, right?
+2925: Or encouraged or given enough money that they kind of finally get over a line
+  or whatever, right?
+2929: That helps people contribute and it's great.
+2932: And we shouldn't discount that as being a thing that we do for some people sometimes.
+2935: But like most of the time, most of those people, it's intrinsic internal motivation
+  that gets them to do this stuff, right?
+2942: And that doesn't come from, I want money, I want clout, I want my resume or
+  CV to look better.
+2949: It has to come from like, I just want to do it because it's interesting and
+  fun for me, right?
+2953: Yeah.
+2955: I think this goes beyond open source software because the pattern is very generic.
+2959: It's like, I love doing X, so I do it for fun.
+2964: I would love to do X more.
+2966: If I could only make money doing X, I could do it more and then X becomes not
+  fun anymore if that's successful.
+2971: Like, basically, that's the pattern.
+2973: So it's not just software but creation of all kinds.
+2975: Anytime you can parlay your hobby or your passion into a job, your passion is
+  now your job.
+2982: And your job's a job and jobs aren't fun.
+2985: Even if it's the exact same activity.
+2986: Yeah, and you can add to that, Jared, because then you can take all your friends
+  you have good relationships with.
+2992: And I tried this one.
+2993: And then you hire your friends.
+2995: And then your friends aren't your friends either.
+2997: That's right.
+2998: And you live in a basement in Ohio and you're like, oh my God, what have I done
+  with my life?
+3001: I've destroyed my hobby and my friends.
+3003: But I got money in exchange, you know, or just train it all in for money.
+3007: Yeah, that's the unsolvable problem, I think, right there.
+3013: And, you know, for years and years, we've been looking for more paths to funding,
+  more ways because there's so many different kinds of open source.
+3024: And there's ones that have an easy time making money because they are right
+  there staring you in the face like they're like end user applications.
+3031: And then there's the dependency, the dependency, the dependency, who only has
+  a GitHub account and is not on any social networks and is never going to make a
+  dollar on their GitHub sponsors because nobody even knows that they're transitively
+  installing, you know, XZ, for instance, just naming one that was exploited.
+3049: And so maybe I just thought there was different models.
+3051: We need to just explore all these different models.
+3053: And I remember going back years to Nadia Ekbal's Lemonade Stand repo, which
+  she published back when she was doing her open source funding, writing.
+3063: And she documented like, here's all the different ways, bounty programs, open
+  core, blah, blah, blah, blah.
+3069: And it's like, pick one that helps you.
+3071: And we've explored on this show over the course of, you know, a decade now,
+  different people doing these different models and with more or less success.
+3081: At the end of the day, the happiest people that we've ever talked about, talked
+  to about their work are the ones that are like, yeah, I do this for fun.
+3088: I'm not going to monetize.
+3089: And it's like, that's, that ends up being the healthiest relationship to your
+  open source code is I do this for fun.
+3097: I'm not trying to monetize it because every one of these models, we can go through
+  them all and they all produce at some point the perverse incentives that have happened
+  in the Ruby community.
+3109: To me, it's not even monetization versus not, it's like direct monetization
+  versus indirect monetization, right?
+3116: And I can't remember who it was.
+3118: I'm sure it's some much wise and old philosopher or whatever who said this.
+3122: I'm going to paraphrase it and butcher it horribly.
+3124: But basically, like the idea of like the best things in life are achieved indirectly,
+  right?
+3130: So like, let's not be overly crude.
+3134: I'll try and be relatively diplomatic.
+3136: But basically, you know, for example, if your goal is romantic companionship,
+  right?
+3142: There's ways of getting elements of that very quickly in exchange for money,
+  right?
+3147: But most people would say that actually, that's probably not the most fulfilling
+  long term option.
+3153: And the most fulfilling long term option, you know, I've been with my now wife
+  for 23 years, like we have a perfect marriage and relationship.
+3160: I'm very, very happy.
+3161: That takes a lot of time and effort, right?
+3164: And again, I have almost like a pending blog post brewing about just being patient
+  feels like it pays a lot of dividends on this stuff.
+3175: Like, I was at GitHub for 10 years.
+3177: I've been with my wife for 23.
+3179: My best friend who comes around to my house, we're currently watching Alien
+  Earth.
+3183: It's very good.
+3184: Right now you're watching it?
+3185: Well, I mean, not right now because I'm on a podcast.
+3187: Okay, well, you said your best friend coming over and you're currently watching
+  Alien Earth.
+3191: I'm like, dang, this guy can multitask.
+3192: I'll do my best to multitask.
+3194: But yeah, I mean, we've been friends for like 30 years, right?
+3196: And most of, and homebrew for 16 years.
+3198: Like most of the good things in my life are things that I have done for more
+  than 10 years, right?
+3204: And there has been ups and downs in those times.
+3206: And there's been times where if you were to look at some tiny microcosm of like
+  the first, you know, months or weeks or whatever, or a particular segment, you'd
+  be like, oh, well, this isn't worth it.
+3216: I'm going to quit.
+3217: But again, like all of these things are things that I've got and I have made
+  me very, very happy and I'm delighted with, not because I wanted to make as much
+  money as possible or have as much whatever as possible, human relationship, interaction,
+  whatever.
+3237: But just because like I enjoy the process going along and I still enjoy the
+  process going along and that tends to get you to a very good place.
+3245: If every day you enjoy your life and you keep doing that and keep enjoying your
+  life and at the same time, you know, stuff like money, you're like, okay, well,
+  I need to pay the bills.
+3255: I need to make sure that I make enough money to provide for me and my family
+  and whatever.
+3260: But you're also really excited about what you're doing, then that tends to work
+  pretty well.
+3265: And if you go and chase like maximum financial return for anything, right, on
+  a short-term basis, like, okay, you might make a bunch of money, like often you
+  don't, but you're probably going to be miserable in the longer term.
+3278: And you're going to be like, why am I doing this?
+3280: And I need to quit and whatever, right?
+3282: And that's the definition of sustainability, right?
+3286: Like when we're not talking about open source sustainability, when we talk about
+  anything being sustainable, the idea is how do we get people to be able to do this
+  for a long period of time?
+3295: And without being a, you know, a cheese ball, like open source sustainability
+  comes from within, right?
+3301: The reason why I have been able to do it for a long time and not burn out and
+  literally in that 16-year window, I don't think I've gone a month without working
+  on homebrew.
+3310: I've maybe not even gone three weeks without working on homebrew.
+3312: And the reason why is because I enjoyed it then and I enjoy it now.
+3316: And I know what I'm willing to do and what I'm not willing to do.
+3319: And for me, it has to stay enjoyable or I'm going to quit.
+3322: And I built a group of maintainers where I'm very protective over them because
+  I know that's the same for them, right?
+3327: And to me, just almost looking at yourself in the mirror and be like, am I enjoying
+  this?
+3332: Is this good?
+3333: Like, and if it is, great, do more of that.
+3335: And if it's not, then just stop, right?
+3337: And that terrifies a lot of people because it's like, oh, well, open source
+  will collapse if we have all these maintainers who walk away.
+3342: And it's like, well, actually, no, because someone will step up and do what
+  needs to be done if what you're doing is really important.
+3349: And that's maybe the hardest part of it all.
+3352: It's like, maybe that open source project you've spent a huge amount of time
+  and energy into, maybe it's not that important.
+3357: Maybe it is replaceable.
+3358: And maybe your role is replaceable.
+3361: And that fucking sucks to look in the mirror and think that.
+3364: But maybe that's true.
+3365: Maybe you need to do that.
+3370: Look, if you're watching this video, you're going to be probably noticing that,
+  like, we're three white men, you know, the collective noun for white middle-aged
+  men is podcast.
+3386: I get it.
+3389: But it's true.
+3392: And one thing that a piece of context, right, about like that 2015 to 2021 era,
+  especially in the US and politically, is like this conversation about like, you
+  know, just being tut tutted by older guys who were already successful in their careers.
+3408: Like, oh, just do it as a hobby.
+3409: Just do open source in your free time or something.
+3411: When that comes into contact with this motivation that, like, open source isn't
+  ends, not a means.
+3416: It's a way to get, because highly visible people are doing it, people rightly
+  assume, you know, for whatever reason you're doing it, if I were to do that at the
+  same stage or at the same level of impact or in the same high profile project, then
+  I too would be highly visible.
+3432: And therefore, I could parlay that into, you know, more marketability, right,
+  as an employee.
+3438: I'd be hired in at the staff level or the principal level, or I'd have better
+  employment prospects.
+3445: And so there's a, you know, even though I started doing open source to scratch
+  my own itch, to Mike's point, and that's still the reason I'm ever motivated to
+  do it, it created a virtuous cycle, not just for my employer to be able to benefit
+  from my hobby work, but for me to be able to parlay those projects into new relationships
+  and credibility.
+3467: Because your, you know, GitHub profile kind of redounds to like at least some
+  kind of proof that this guy can write working software and this is what it solves,
+  right?
+3474: And mixed in with all of that is like, well, what if you don't have the free
+  time, or if you've got family responsibilities, or there's some other, you know,
+  systemic reason why you aren't able to just work for free and make this time possible.
+3495: It's creating an avenue for more privileged people who do have that luxury of
+  time to pursue that hobby.
+3502: And then, and then even though it's just a hobby, it's not like, I definitely
+  made more, more money out of my like, programming habit, then out of my Japanese
+  language acquisition habit, you know, like, in terms of a hobby.
+3517: So, so, so like, that's not, that's not lost on me here.
+3520: It's just kind of a fact of life, and I don't know how to solve it.
+3525: Because when you try to solve this through the lens of, and that's why we got,
+  like, when the conclusion, and I heard this a lot in the late 2010s was, and that's
+  why we have to pay people to write open source.
+3535: I was like, that's, there's just so many, like, you know, the number of circles
+  and loops necessary to kind of connect these dots together in a way that's actually
+  going to get the outcome that you want, is so convoluted, that this is probably
+  just going to make things worse.
+3554: I can't say we're in a much better place, you know, in all of these experiments
+  where people are, and to, to, to, again, to Mike's point, where people are being
+  directly compensated for their open source efforts, especially in an ad hoc or,
+  or a, you know, semi-directed pseudo employment manner, like through, you know,
+  contracting and through kind of, you know, like an amalgamation of funds and sponsors
+  and donors.
+3579: Like, it, I don't know what to do, I just want, I just want to put it out there
+  so we don't get emails about privilege, I'll be honest, that's why I said those
+  things.
+3588: I think, I think it's a good point, and I think it's well made, and I'm glad
+  you made that.
+3594: I think for me, my take is, like, should we try and improve the diversity of
+  open source, et cetera?
+3600: Like, yeah, we should, I do, like, hopefully all of us would agree with that
+  to some degree.
+3606: But I also think not everyone having the free time, again, it's one of those
+  things where if, sometimes I think the people pushing a certain narrative haven't
+  done the five whys on, like, the reason why they're often doing that is because
+  they themselves come from a position of, like, you need to do open source to have
+  a really great career, right?
+3626: And I'm like, well, no, I've worked with plenty of, like, staff plus engineers
+  at GitHub who are phenomenal engineers who've literally never done a single open
+  source commit ever, right?
+3636: And I would not tell those people that they should or shouldn't, right?
+3640: Like, considering the number of open source related emails I've had that have
+  fascinating things to say about the size or presence of my penis, and whatever may
+  relate to that, and various interactions with my mother, et cetera.
+3656: So, like, I don't encourage anyone who, like, doesn't have a current interest
+  in open source to sign up to receive those types of emails, right?
+3666: And I don't think we're going to solve that problem anytime soon.
+3669: But I think that's the thing.
+3671: It's like, do we see open source as, like, an essential on-ramp that we have
+  to use to, like, get people to be successful in the software industry?
+3678: And if you start from that, like, prior, then it's like, yeah, of course you're
+  going to start thinking, like, we have to improve diversity and pay people to encourage
+  people in, because otherwise you're just going to, you know, really fuck up the
+  software industry by not, like, solving that.
+3693: But I don't think that is a problem.
+3695: And ironically, I think that is a problem that is exacerbated by people saying
+  we have to pay and we need to put more money in rather than it being solved by that,
+  right?
+3705: Because no one has to write open source, right?
+3708: Like, that's, I think that's the fundamental thing.
+3711: If I can say anything to any person who listened to this, it's like, literally,
+  if you have a job where you write open source, even if you're a paid employee or
+  contractor or whatever, like, I'm sure you can find something else where you don't
+  have to do that, right?
+3722: Like, everyone writing open source, in some degree, has some element of choice.
+3729: Maybe not short term, maybe this month's mortgage payment relies on you, you
+  know, writing open source and whatever, right?
+3736: But, like, long term in the career.
+3738: And also something, Justin, you said, you pointed this out on your podcast a
+  lot about how there was this golden age of, you know, the three of us, again, are
+  probably similar sort of age.
+3747: There was this golden age of programming, like, the early 2000s, where, you
+  know, if you came out and you're interested in open source, like, chances are that
+  was going to help you into a reasonable tech job and you could probably make a decent
+  amount of money.
+3758: And then now we're seeing, you know, like, things are completely horrific for
+  a lot of juniors trying to get into the industry.
+3764: And I think that's the thing.
+3766: It's like, I don't like that.
+3767: I don't think anyone in this call likes that.
+3770: But you can't, we can't just magically go backwards and undo that and fix that.
+3776: And I think often the people I hear advocating this type of stuff around open
+  source just have wishful thinking of, like, no, if we can go back, we'll do it right
+  this time and we'll, like, reinvent it and whatever.
+3787: And so, well, that's not how it's been.
+3789: And I loved your point, Jared, about how this is just universal for hobbies,
+  right?
+3793: Like, we could probably have had exactly the same conversation we had right
+  now about, like, music or whatever, right?
+3800: Like, and money and whatever.
+3803: Like, I remember when I was at GitHub and there was, I can't remember the name
+  of the band.
+3806: There was some, like, top 10 indie rock band and one, like, GitHub conference,
+  like, GitHub had paid for this band to come play.
+3813: And the band came out on stage.
+3814: Was that when Cold War Kids played at a...
+3817: That's, yeah, that's the name of the band.
+3819: But, like, having been there in the room, and I think there was a Silicon Valley
+  episode that was loosely based on this, like, they came out and started playing.
+3826: Hold on, I got to interrupt you.
+3827: Like, if you don't know this, like, most Silicon Valley episodes were based
+  on interviews with Chris Wonstreth and people.
+3833: I re-watched it all recently with my wife, and it's aged well.
+3837: But anyway, so, like, they came on stage, they started playing, and, like, 75%
+  of the people immediately left the room because they were like, I don't want to
+  be here, right?
+3845: And I'm going to confess something to the, you know, the two of you here.
+3849: Hopefully no one else hears this.
+3851: But, you know, like, I used to be an aspiring musician.
+3853: I have anyone on video who can see my mostly now unplayed guitars behind me,
+  right?
+3858: And I immediately thought to myself, what a bunch of fucking sellouts, right?
+3862: Like, I would hope to myself that I would never be at a level where I would
+  take any amount of money to go play to a room of nerds, myself included, like, who
+  don't want you to be here and would just immediately leave the room as soon as you
+  start playing, right?
+3876: Like, and, and again, like, you could say, we can have the same conversation,
+  money and music, right?
+3882: Like, was that bad that they had that money or took that money or whatever,
+  right?
+3887: Like, I'm not a musician.
+3888: I'm sure lots of musicians are very angry at me for, based on what I've said,
+  and I'm being a massive hypocrite.
+3893: But, like, yeah, it's, I'm sure there's another podcast having an identical
+  conversation about this.
+3897: And I think, like, we're not special in software open source.
+3900: And this is not the first industry to have this problem, nor will it be the
+  last.
+3904: No, I think that's a great point.
+3907: And I think that I've said this before, that people, by and large, people don't
+  make music in order to make money.
+3914: They make money so that they can make music, right?
+3918: And I think that there are people who've done both, and they're called rich
+  and famous rock stars or whatever.
+3924: And, of course, people idolize those because wouldn't it be the dream to be
+  able to be rich and famous and make music?
+3930: Like, that's, yeah, that's a lot of people's dream, which is why it's really
+  hard to do.
+3934: And we draw that across to open source.
+3936: And we have had some people who've made livings, who've made really good livings,
+  publishing open source code and creating a following and becoming whatever you have
+  to be in order to get that done.
+3948: You can go to the top of GitHub sponsors and see a few of those people there.
+3952: It's an entirely different skill set, just like being a rich and famous rock
+  star requires more than being able to play the guitar.
+3958: Because lots of people can play the guitar, but there's more to it than just
+  that.
+3961: One of those major factors, in fact, is timing and luck.
+3965: And it has nothing to do with who you are, your skill set.
+3969: Another major factor is what you look like, unfortunately, but that's the case.
+3973: And so open source as career might follow the exact same trajectory as music
+  as career.
+3982: It's like, yeah, a few lucky, very privileged people find a way to make that
+  work and they live a great life.
+3991: And the rest of us, it's like you got to decide if you want to do it or not.
+3993: At the end of the day, open source is a gift to the world.
+3996: It's you giving back.
+3998: A lot of the motivations for doing it is people saying, well, I got so much
+  for free that I felt like I should just give back.
+4005: And so that's what I do.
+4007: And so that's a gift.
+4009: And a gift comes from a place of privilege.
+4012: You have excess.
+4013: And so you give it.
+4015: And one of the beautiful things about the digital economy is that we can give
+  it to everybody, whereas if I was going to go out and buy a new Vision Pro M5, I
+  could just give it to Justin.
+4027: I couldn't give it to the entire world.
+4029: It's an amazing thing to be able to do your work once and gift it to the entire
+  world.
+4033: And sometimes it just has to stay that.
+4036: You got my address, right, for that?
+4039: I figure you already have it on order, so I'm probably just.
+4042: No, no, no, not yet.
+4044: You need the phone.
+4045: You got to scan your face.
+4046: I buy you the new one.
+4047: So you send me your original, maybe sign in.
+4049: I got Justin Searle's original Vision Pro.
+4052: There's a thing here, right?
+4056: Because we're kind of conflating programming and making a living programming
+  and open source as like a hobby activity or whatever.
+4062: And just like music, there's a difference between like being able to play music
+  as a skill.
+4069: Being able to program a computer is a skill.
+4072: And being a songwriter who puts love and craft and passion and creativity and
+  something of themselves into the music that they create is a passion, a craft.
+4086: You know, it's an individual pursuit.
+4089: And yes, if you do that, you are lucky to get paid.
+4092: And if it does all work out and the stars align, then that's a goddamn miracle
+  and good for you.
+4097: Like, but at the same time, getting paid as a musician with that skill to go
+  play gigs.
+4102: Like, there's a guy who, you know, sings at the lobby bar at a hotel next to
+  my house every Tuesday.
+4107: And he's mostly playing, you know, Wonderwall and, you know, the old country
+  road.
+4113: And like, he's not there for his health, but like there's a transaction happening
+  and I don't begrudge him at all.
+4119: It's like, that's, you know, there's ambience and there's music.
+4122: And so like, hell, you know, the Cold War kids made me laugh, Mike, because
+  across the street, there's a new hotel that opened.
+4128: I live in Orlando and it's just all resorts and stuff and pools and whatnot.
+4131: The new hotel opened earlier this year or late last year and they had the Goo
+  Goo Dolls play.
+4136: And I was like, hell yeah, I'm going to go over for a free Goo Goo Dolls concert
+  and free food and drinks.
+4141: And yeah, right.
+4143: I don't begrudge them at all because that was like, that was them applying their
+  skill for, for, for money in that, in, in that sense.
+4150: You know, um, I mean, the songs were written all 20 years ago and everyone's
+  really old and they look suspiciously good.
+4156: And that made me wonder about how they're maintaining that.
+4159: But like when I, when I, when a programmer is applying that skill to make money
+  at the, at the end of the day, somebody, whoever's paying that money is going to
+  be looking for some kind of value out of it.
+4173: And if you, and if, and if you're, whether you're, you're, you're working, uh,
+  for somebody and they're, you know, why do we have planning sessions?
+4183: Why do we have product owners?
+4184: Why do we have requirements handed to us?
+4186: It's because the things that we're typically being asked to build as programmers
+  are at the behest of somebody else who, who wants to see that software built or,
+  or continue to operate or to be refined or whatever in order for them to extract
+  some kind of value out of it.
+4199: And just like with the singer songwriter who can like eventually get to the
+  point where they get to open new hotels and, and, and get paid to sing their own
+  songs.
+4207: Like every now and then you get really, really lucky.
+4210: Like you, you, I worked on Ruby and, and rails for years and years and years.
+4214: And now there's a Ruby and rails team at a company like Shopify and they hired
+  me and I get to continue doing the stuff.
+4220: You know, I talked to, with Aaron Patterson's a good friend with me, uh, of
+  mine and, and, uh, yes, that's part of my bias and my allegiances is I talked to
+  like that crowd of people more than the maintainer side of people who are involved
+  in this particular dispute and fully own that.
+4238: But like, Oh, I'll talk to him about his job and it's confusing.
+4242: Sometimes I'm like, well, he has work stresses here and there and stuff, but
+  like at the end of the day, he, he, he makes good money doing, doing that for Shopify.
+4250: Shopify gets a lot of benefit out of that.
+4253: Um, but like if he were to quit, he would basically be doing the same fucking
+  thing every day for free, you know?
+4261: Like, so that is the stars completely aligning.
+4263: And you know what?
+4264: Like I know half a dozen people for whom that is true out of how many thousands
+  of people that I've interacted with.
+4270: And so it's just an unrealistic thing.
+4273: And now this is back to Mike and this, our original kind of hot fix premise.
+4277: It's an unrealistic thing to just plan on your career being that it's way too
+  high of a bar.
+4287: It's way too skinny of a bottleneck to hope that you're going to like with any
+  level of confidence squeeze through.
+4294: Cause so few people do and not for lack of trying.
+4297: Well, it's like all the youth right now, they all want to be YouTubers or, or
+  TikTokers.
+4303: And it's like, that's the, it's the new version of, I want to be a rock star.
+4307: It's like, you know how many rock stars there are?
+4309: There's like seven of them, you know?
+4310: But the influence of your economy, I think that's, it's similar.
+4314: And I think, again, it's been democratized to a certain degree.
+4316: Yeah.
+4317: And we're, I guess, as again, like, you know, three white men in our forties,
+  like we're
+4321: probably like, if we had like some Gen Z guest on, yes, it's Gen Z because I'm
+  British.
+4329: And then if we, I'm sure they would have a very different perspective here.
+4332: But again, I sort of wonder whether some of this comes from like the, the concept
+  of like
+4337: the side hustle, right?
+4338: Where like the side hustle is often the, like, I have a hobby and I am going
+  to, on top of
+4345: my job, I am going to monetize my hobby.
+4347: And hopefully I can get to a point, like you said earlier, Jared, like where
+  my hobby can
+4352: become my job because I fully monetize it and I can pay the bills and whatever.
+4355: And I think, again, music is an obvious example, right?
+4358: Where there are people for whom music is their career, right?
+4361: And they, I know some of them for whom they then go home and they are not interested
+  in
+4367: playing or producing music in their spare time at all anymore.
+4369: Like it's, I would just do it for money.
+4371: There's people for whom they are not interested in ever making any money from
+  their career
+4375: ever, right?
+4376: In which if we wanted to have a horrific open source metaphor, you know, some
+  like, I was
+4383: going to say man or woman, it's probably like a dude with long hair playing
+  their guitar
+4386: around a fire while their friends, some of them might want to listen, probably
+  most of them
+4391: You know, someone could go up to them and be, you're being exploited for your
+  labor.
+4394: Like you should be paid the same as Taylor Swift for this, right?
+4397: Like, and it's like, well, actually no one wants to pay that person because
+  they're not
+4401: very good and they don't want that job, right?
+4403: That person is doing it entirely as a hobby.
+4405: And then there's the people where there's like a blend between the two.
+4408: Maybe it's their hobby and it's their job, right?
+4411: And I think that's the thing.
+4412: It's like career, hobby, both, right?
+4415: And all of those are acceptable options, but it feels like this stuff often
+  gets conflated.
+4419: And even someone like Aaron Patterson, right?
+4421: Good example, right?
+4422: He's written a absolute boatload of open source code in the years.
+4425: It would be interesting if you went back and somehow did accounting of like,
+  okay, well,
+4430: what's that?
+4431: That's almost take the amount of money you've been paid to write open source.
+4435: And then the amount of hours you have spent doing open source and hobby related
+  things,
+4440: say any work on a public repo on GitHub in your entire history as a programmer.
+4445: And that's figure out like what your hourly rate is.
+4449: And my guess would be like, it's obviously getting better each year that he
+  is employed
+4453: by Shopify.
+4454: But my guess would be, it's actually a lot worse than you think it is because
+  he, again,
+4459: like musicians, right?
+4460: Like musicians are not getting paid to play their scales, right?
+4463: People are just sitting, when I used to actually be a half decent musician,
+  a lot of it was
+4467: just sitting and spending two hours playing the same riff again and again and
+  again and
+4471: again, slightly faster, slightly faster, slightly faster, slightly faster.
+4473: And like, you know, no one's going to pay you to do that really boring stuff,
+  right?
+4478: And it's, I don't think open source is dissimilar.
+4481: And like what I worry about is, again, I'm from an era of which it wasn't clear
+  that open
+4487: source was going to win, right?
+4488: When I was at university, there was still all the kind of like Linux and like,
+  I can't
+4493: remember the name of the company that basically there was this big lawsuit and,
+  you know,
+4497: Steve Ballmer, Linux is a cancer, all this type of stuff, right?
+4500: And it looked, it was like a battle between proprietary software and open source
+  software.
+4504: And some reason, the only reason we're even having this conversation is because
+  open source
+4507: software so clearly and unambiguously won.
+4510: And I, maybe I'm being paranoid here, but I worry for a world in which we say,
+  okay, any
+4516: big company that uses any open source software in any capacity is extractive.
+4520: And unless you are paying all those maintainers a Bay Area, like living wage,
+  then you're an
+4526: evil company, right?
+4527: Like what happens if we actually go all in that viewpoint?
+4530: Like, do we make those companies be like, well, you know what?
+4533: I'm actually not going to touch open source anymore.
+4535: I'm just going to pay a team internally to build this stuff, right?
+4538: And for a lot of people like me, like that would be a very sad thing, right?
+4542: And it would, that would be the end in some ways of a lot of the non-hobbyists
+  like open
+4549: source, right?
+4550: And I just think, where does the money come from to pay every single open source
+  maintainer
+4555: with 10 stars on GitHub, like a living Bay Area salary, right?
+4559: Particularly if, as Justin said, we say to them, hey, we just give you that
+  money unconditionally.
+4563: You don't need to have a product manager or whatever.
+4566: You just build whatever you think is best, however you think is best, right?
+4568: Like that's, I mean, it seems ridiculous to me.
+4571: Maybe that's just me, but like, I think that's the logical conclusion we get
+  of the like peak
+4578: we should pay everyone because otherwise it's unethical argument here, right?
+4581: Yeah.
+4582: To that point, we just did a show recently with Feras, a book of DJ about NPM
+  security in
+4587: light of the, just the onslaught of NPM hacks, which have been going on and
+  continue.
+4592: I think after he published that there's even some newer ones and one of the
+  things, and
+4596: he runs, you know, he owns and operates a secure socket security company.
+4600: And so he's very much in the infosec world and talking with, you know, CTOs
+  and CEOs of
+4606: larger corporations.
+4608: And they're saying things like, well, this is not because of open source sustainability,
+4614: but it's because of open source security and this, you can't trust a network
+  thing.
+4619: They're starting to have those conversations, especially because of the, you
+  know, first
+4624: time to say it on the episode, I'm glad we're over an hour in because of the
+  new enthusiasm
+4629: around AI code gen tools, they're saying things like, you know, do we need NPM?
+4634: Should we have, should we use, this is not, should we contribute?
+4637: This is, should we even use Ruby gems?
+4640: Why don't we just write everything in house?
+4643: And like that is starting to percolate amongst leadership in, you know, Silicon
+  Valley companies.
+4649: And you add to that an open source tax, so to speak of whatever, whatever it
+  would be, Mike,
+4654: when you talk about every maintainer has to get this much money, therefore every
+  user has
+4658: to pay in according to their dependencies or whatever, however you'd actually
+  work out
+4661: the impossible logistics of all that, it would just be one more reason why people
+  will start
+4667: to opt out of the economy altogether and say, yeah, because I, I look at a world,
+  I don't
+4674: know if we're going to get there guys, where my code gen tools can reproduce
+  for me instead
+4681: of a vendoring a gem, why don't you just reproduce a gem?
+4683: And now I don't think we're going to be there myself anytime real soon, especially
+  with gems
+4689: such as a large, you know, rails for instance, which is not a gem, it's a meta
+  gem of many
+4693: gems, but the smaller ones, it's like, why would I even have, why would I care
+  about open
+4698: I can just generate everything.
+4699: And I'm, it's, uh, we, we, it's Jared, it's funny.
+4705: You mentioned this because it's not just your fever dream, but it's like increasingly
+  a thing
+4710: that I am also hearing.
+4712: In fact, I, I'm living it, but I, I, my brother, uh, Jeremy, he works for cars.com.
+4720: He's Elixir and Elixir programmer.
+4722: And you, he gave a talk at Elixir Conf last month, uh, which the, I don't know
+  if it was
+4730: the title, but like, basically like the, the, the thrust is zero dependency
+  software, like
+4734: instead of pulling in these dependencies, and it's not from a security perspective,
+  although
+4739: that's when you're talking about open source tax, most people aren't thinking
+  about how
+4742: this stuff gets funded.
+4743: They're thinking in terms of the, the, yes, maybe the security concerns that
+  like, I don't
+4749: trust the software necessarily, especially if you're in a regulated industry
+  and you got
+4753: to go and you have, or have lawyers go and check licenses and verify all that
+  stuff there.
+4758: There's that tax for sure.
+4759: Right.
+4760: But more so like I now, you know, I am running code that I don't control or
+  understand, and
+4767: it's going to have its own update schedule.
+4769: And I have to keep all of these dependencies up to date.
+4771: And of course, of course, the NPM community is famous for like really, really
+  tiny modules.
+4776: And that's lots and lots of things that you have to keep up to date.
+4779: Uh, and so that upgrade burden is really high.
+4781: And right now you, you, you take cloud code, you take codec CLI, you pointed
+  at a readme and
+4787: you say, all right, go clone this repo.
+4790: And I just want this section from the readme.
+4793: I just need this kind of a couple of features right here.
+4796: Just go clean room, implement that for me, if you don't mind.
+4799: And like, it'll do it.
+4800: And you can just vendor that in to your point.
+4803: You vendor that into your project.
+4804: And so like, I'm working on this posse party rails app.
+4807: And, and since going with agents, I'm trying to think now I started working
+  with agents in
+4812: April, you know, started with, you know, the GitHub copilot stuff, moved on
+  to cursor,
+4817: moved on to cloud code.
+4818: Now I'm in the heart of drugs and, uh, the, the, the, I think that I may have
+  added zero
+4827: new gems, like zero new dependencies.
+4830: You're doing like OAuth stuff.
+4832: You're, you're talking to APIs.
+4833: I mean, this is like.
+4835: It's almost all integration work.
+4836: That would be, you know, this would be for me to, as a starting point, it'd
+  be all gems.
+4840: I'd be like, I get the, the blue sky gem.
+4843: I get the Instagram gem, right?
+4845: I OAuth gem.
+4846: And then I just like tie those things together.
+4848: Cause it's just posting, you know, across different social networks.
+4851: I won't say just to belittle it, but my point is like, I would expect that to
+  be mostly
+4855: third-party code.
+4856: And 10 years ago, that's how I would have done it too.
+4859: But I, you know, it's not just because of AI enabling this.
+4862: It's like, I learned the hard way that if you're writing code, that's basically
+  glue
+4865: code of like eight other different things.
+4867: Like, it's kind of like you're on one train and trying to jump onto another
+  moving train,
+4872: you know, like in real time is to try to keep everything in line and you're
+  just holding
+4875: the stuff together.
+4876: And so, no, I've got, I've, I've written, in fact, this week I'm rewriting my
+  LinkedIn
+4882: integration that, you know, it's not just a whole bunch of HTTP requests to
+  post stuff.
+4887: You got to like, wait for it to download.
+4889: So you need another whole series of, you know, self-enqueuing tasks to go check
+  to see if
+4894: the download's done.
+4895: And then my wife, Becky is like, well, if it doesn't support stories, I'm not
+  going to
+4898: use it.
+4899: So I'm adding story support, which I think has like supported by, as far as
+  I know, no,
+4903: definitely no Ruby gems, but I don't know if any dependencies are doing this
+  much.
+4907: And so, so the nice thing is that, you know, when you own the code, you can
+  build on top
+4912: And when it's inside the code base and it's part of the context of whatever
+  your agents
+4915: And like, there's a lot to be said for as the cost of code, and this is how
+  we tie back
+4921: to this conversation as the cost of code, basically craters to zero asymptotically
+  here.
+4926: Like the, the, the writing of the code is not the part that is necessarily making
+  is worth
+4932: So if I'm a maintainer and I want to get paid to write open source code, like
+  that, the market
+4937: dynamics for that are also flatlining, uh, right now.
+4941: And so this could have, what we could be experiencing this conflict being a
+  flashpoint and you know,
+4949: where did, where did it all start?
+4950: According to Ruby central, it started with them cutting budgets, right?
+4953: And why were they cutting budgets?
+4955: Because sponsorships declining, why is sponsors declining apart from the macro
+  stuff and apart
+4960: from the conference stuff that, that Ruby central also runs.
+4962: I think a part of it is like a general sense that, uh, we've, we've already
+  hit peak open
+4968: source, right?
+4969: Like in the sense of the, like people's unpaid labor is the way that we're going
+  to get all
+4975: of this stuff built, not in the sense that things are going to be necessarily
+  open or built
+4979: on open protocols and platforms.
+4980: If anything, that's probably going in the opposite direction, but the, the value
+  of an individual
+4984: programmer going and hacking out a particular issue or a PR is going to go down.
+4988: If like, now you can just at codex something or at Claude something.
+4992: And, and Mike, you've been working with this too, like using copilot agent and
+  finding
+4996: it, you tell me how you found it.
+4998: So, I mean, it's funny cause a lot, there's a lot of copilot related stuff.
+5003: I was one of the first people to test an internal beta of that alpha technically.
+5008: Um, and the reason why lots of people inside GitHub would like me to test things
+  is because
+5013: I seem to be allergic to telling people that things were good when I thought
+  they were a
+5019: heap of shit, even when it was strategically and politically advisable for me
+  to say like
+5023: this person's pet project is wonderful.
+5025: Um, so yeah, my feedback on copilot pretty early on was like, wow, this is surprisingly
+5030: not a piece of shit.
+5031: Like when you describe, I mean, you have to remember like when copilot came
+  out before
+5035: chat GPT and stuff, right.
+5036: Or at least it was, it was being alpha'd before that.
+5040: So this sounded like ridiculous, right.
+5042: That we would like use AI, whatever.
+5044: And I was like, wow, this is a better auto completion for Ruby than I've ever
+  seen using
+5048: any, any ID or indexing or whatever.
+5050: Right.
+5051: And it immediately made me more productive.
+5052: So fast forward to the kind of copilot coding agent stuff.
+5055: Again, I saw the kind of memes on how I can use of like Microsoft employees
+  being encouraged
+5061: or forced to use this publicly and it just being an absolute disaster.
+5063: And I was like, well, I'm going to try this out.
+5065: And again, like maybe because Umbrue has borderline fascistic issue templates
+  that demand everything
+5073: of you and essentially like force you into Mike McQuaid's opinionated way of
+  how you file
+5081: a bug, right.
+5082: But if you follow that template properly, it's actually really great context
+  for an LM, particularly
+5088: when it has all the comments of us discussing it, right.
+5091: And I, I basically just, I think a couple of months ago, I signed every bug
+  in the home
+5096: brew package manager to copilot agents.
+5098: And then, you know, it took a couple of weeks.
+5100: Some of them got there 99% their first time.
+5103: Some of them got 50% of the way and I finished off a lot of this stuff.
+5106: But like essentially in two weeks, those were all fixed.
+5109: Right.
+5110: And you can go and look at the public record and see how well that went or didn't
+  go or
+5114: But like anyone who says like this stuff is not productivity boost is like in
+  any circumstance
+5120: is massively kidding themselves.
+5122: And the awkward reality of it, again, back to the conversation is, I would say,
+  is copilot
+5127: agent great?
+5128: Does it avoid handholding?
+5131: No, definitely not.
+5132: Is it better than the standards drive by a homebrew contributor?
+5136: Jury's out, right.
+5138: It's certainly comparable.
+5139: And I definitely think at this point, like the first iteration of PR, I would
+  struggle to
+5145: tell them there's an issue between copilot and a first time contributor.
+5149: A homebrew maintainer and indeed myself who's worked on homebrew longer than
+  anyone else will
+5157: do a much better job.
+5158: But even then, like I find myself leaning on it because sometimes it's like
+  there's 10
+5164: Copilot, go fucking pick one.
+5166: Right.
+5167: And whatever mess you make, I will clean that off and get out of the line.
+5170: But it's that like empty page problem.
+5171: And yeah, I think this, I'm probably not quite as, not like pro AI, but like
+  I don't maybe
+5181: buy stuff quite as heavily as Justin says about like the cost going to zero.
+5185: But I definitely think it's impacting stuff pretty heavily.
+5188: And I think we're in some ways seeing like a reversion in the tech industry
+  of like back
+5194: to what skills are valuable, who's valuable, whatever.
+5197: Right.
+5198: And back perhaps to being like, maybe tech is just a slightly less fun place
+  to work.
+5203: Right.
+5204: Like going way back for me, like back in 2009, I got a job on like the third
+  application or
+5209: whatever to a company called KDAB, who I knew about them because they employed
+  more than
+5214: anyone else of KDE maintainers in the KDE ecosystem.
+5218: And I was like a big Linux on the desktop guy and being contributing to KDE.
+5222: I was like, woohoo, I'm going to go work for this company and I can get paid
+  to write
+5224: open source.
+5225: I discovered pretty quickly on my first like 100% open source project that it's
+  like, ah,
+5230: actually getting paid to work on open source as a consultancy looks like very
+  tedious,
+5236: boring work.
+5237: And I can probably say specifically now, considering it's been that long ago.
+5240: So KOffice, which was like KDE's like open office alternative, essentially like
+  a corporate
+5245: sponsor was like, we want KOffice to be good.
+5247: Here's a spreadsheet with 5,000 regressions compared to Microsoft Word in KOffice.
+5254: Go for these particular import documents, go through and just fix these line
+  by line, one
+5259: Incredibly tedious work.
+5261: No volunteer wanted to spend their spare time doing it.
+5264: So a company paid people to do it.
+5266: And again, this kind of comes back to a lot of the stuff in the early conversation,
+  all
+5270: the fun, enjoyable parts of open source.
+5273: I don't think you're ever going to struggle to find people to do those, at least
+  not until
+5277: you tell them all they're being horribly exploited by capitalism by doing so.
+5280: But like, there's going to always be a bunch of really boring, shitty, tedious
+  work in open
+5285: Maybe it's supply chain security stuff.
+5287: Maybe it's whatever.
+5288: That's the stuff we need to get the money towards and fund the stuff that people
+  don't
+5292: And I think that's going to be there.
+5296: And again, it's one of those things where the jury's out with all the supply
+  chain security
+5300: stuff, whether the costs of that balloon beyond what people are willing to pay.
+5305: Right.
+5306: Like if we have a team internally or we have LLMs that mean that we don't have
+  to pay this
+5311: tax, then maybe that's what we do now.
+5318: One thing I'll add, I, I've seen some people on the internet be critical of
+  like in way back
+5326: to Ruby central, that organization we're talking about at the beginning of this
+  conversation
+5330: and kind of incited this back and forth that Shan, the new executive director
+  is not technical
+5337: and not from technical communities, but rather is like more there for her nonprofit
+  experience.
+5342: You know, I, I remember when, uh, uh, Ruby central was just Ben and Evan and
+  then they
+5348: added Marty like in 2012 or whatever.
+5351: And it was just the three of them as, as the chair people, I guess.
+5355: Uh, and all previous, all programmers.
+5358: And that felt right.
+5361: And back then in that era that we kind of keep hearkening back to the writing
+  of the code,
+5368: the building of the tool that like, you know, the brilliant API and the, just
+  the
+5372: the, the, the blood, sweat and tears to get it over the finish line at a high
+  enough level
+5376: of quality, whether it's a CLI or whatever it is, a library.
+5379: And then to publish it, that was like where all the action was.
+5382: That was the work.
+5383: That was the thing that required brilliance.
+5384: And that's what the market was, you know, rewarding so handsomely in terms of
+  great tech
+5389: If it's the case that it is now no longer, you know, uh, an incredibly rare
+  thing to have
+5399: capacity for writing replacement level, decent code.
+5403: That means everything else now is more valuable.
+5406: And so to Mike's point, if I'm run, if I'm operating a service and, you know,
+  Jared was scared
+5413: shitless.
+5414: He said, he said shitless, he bleeped it out.
+5416: No, I'm kidding.
+5417: I, I, I want to add more, I want to more bleeps, uh, uh, more bleeps for a minute.
+5423: I want to be Mike.
+5424: I was lying earlier.
+5425: Oh gosh, he's got you down.
+5426: Uh, he, he does.
+5428: Uh, but like if I, if I'm running a service and I'm going to be scared, you
+  know, bleepless
+5435: to have, uh, uh, a root level security event occur at the place that I'm downloading
+  all
+5441: of my gems, which could then be root kidding my computer for all of, I know
+  for, I don't
+5446: know what it, what it was 12 days.
+5447: Like I'm actually really glad that the executive director has a, like the hat
+  on now to finally
+5456: like shore up the governance, make sure that like their regulatory and their,
+  their finances
+5461: and their tax situation is all buttoned up.
+5463: And probably, I think at the end of the day, we'll probably end up being much
+  more transparent
+5467: than they've been in the past, which was just the result of negligence, I'm
+  sure.
+5471: And not malevolence up to this point.
+5474: Uh, like those are actually the skills that are more valuable because you can't
+  just easily
+5478: replace them.
+5479: It requires good judgment and diligence and like experience and oversight.
+5484: Um, so like, you know, part of this is a story of just an organization maturing,
+  but I think
+5489: part of it is also like a reflection of like the change in what's, what's valuable
+  and important
+5495: And as you look at open source or your conversation with frost, which I thought
+  was excellent, you
+5499: know, frost is a real smart guy.
+5500: Like it's, it's, this is where the new locus of, of, of, of control goes when,
+  when the
+5508: writing of the code is no longer the most important thing.
+5510: Yeah.
+5513: Now I'm out of things to say, so I'll just say a cliche, the times they are
+  a change in,
+5520: are they not?
+5521: As a musical cliche for Mike's on Mike's behalf.
+5526: You like that one, Bob Dylan, right?
+5528: Yeah.
+5529: I love it.
+5530: I don't know that Bob Dylan song.
+5532: You don't know Bob Dylan?
+5533: Come on, man.
+5534: Unless it's like Northern, Northern European power metal.
+5537: I'm pretty, uh, lacking right now.
+5541: I don't, I don't, I don't know if they got Dylan in Scotland.
+5543: They still have newspaper boys and children.
+5546: I, I, do you have milk men still up there, Mike?
+5548: Is that we until recently had our milk delivered to our house by.
+5552: That's amazing.
+5554: That's so idyllic.
+5555: That is idyllic.
+5556: Living a dream over here.
+5557: Well, you knew so much about American culture.
+5559: I figure Bob Dylan would be right in your wheelhouse, but you know, that only
+  extends so far,
+5563: I guess.
+5564: Yeah.
+5565: I, I only do the parts of American culture, I guess, to echo this conversation
+  that I'm
+5570: paid in order to, forced to learn in order to maintain and sustain employment.
+5576: Right.
+5577: And that hasn't yet gone as far as Bob Dylan.
+5579: Well, I'll send you a $10 donation and a Bob Dylan album.
+5582: You can just get to work on that.
+5583: I feel like this is my, I, the moment when the American should make some sort
+  of sports
+5588: metaphor and I, I nod along as if I understand what baseballs, fourth strike,
+  third innings,
+5595: catch, MLB championship Fridays means.
+5600: Well, this is a, this is a nerdier podcast, but the joke I was going to make
+  was going to
+5604: say, no, when do you like alien earth so much because it takes place in a world
+  where America
+5608: doesn't exist anymore.
+5609: You can finally relax.
+5610: It's just five corporations.
+5612: You just get a continent.
+5615: Just like how it should be.
+5616: All right, Justin, this is as much your podcast as it is mine.
+5621: If it were mine, I would say thanks and end it.
+5623: But do you have more things you want to talk about?
+5625: Well, since this is going to show up on my feed as a hot fix, we try to end
+  every single
+5630: interview with some sort of pithy one liner that, that, that represents what
+  is the fix to
+5638: the problem statement.
+5639: And it's the guest who I guess in this case is Mike being double hosted by us.
+5643: Hey, I'm just trying to, I'm trying to beat the bleep filter.
+5652: You can't, you got to keep it in.
+5653: That stays in.
+5654: Mike, Mike, it's your job now to like help us land the plane and find a title
+  for this
+5661: thing, at least on my feed.
+5662: Like what is, so if the problem statement is, you know, open source is not a
+  career.
+5667: Like, what's the fix?
+5669: Like how do, what, what do you tell people instead?
+5673: Like, like, like, like how should they, how should they, what's the takeaway
+  for them in
+5678: terms of like, where should their attention be?
+5679: Or, or, or you tell me.
+5682: Well, I guess in some ways I would divide the statement in two, right?
+5685: So from the open source side of things, do open source if you want to do open
+  source,
+5690: If you don't want to do it anymore, don't do it anymore.
+5693: This is when like, when this podcast gets published and like 99% of open source
+  maintainers
+5697: quit and we have a world crisis and I'm like, oh well.
+5701: But like genuinely, like, and we, I very strongly encourage people in Homebrew
+  to be like, hey,
+5708: the day you're not using Homebrew anymore, thanks for all your work.
+5712: Stop using it.
+5713: Move on.
+5714: There's been people kicked out of Homebrew who are doing a good job, but clearly
+  Homebrew
+5719: has been very bad for their mental health, so we kicked them out of Homebrew,
+  right?
+5723: Like ultimately this stuff needs to be fun and it needs to be something that
+  you enjoy.
+5728: And if you care about sustainability and burnout and open source, you want that
+  stuff to be
+5732: Like go, you know, if you're an open source maintainer, go get some therapy,
+  right?
+5736: You probably have some shit you need to deal with, like chances are.
+5740: And then the career side of things is like, again, same deal, like, right?
+5744: If you work in tech, chances are you have a career, which is nice, right?
+5751: It's harder right now than it used to be.
+5753: I'm lucky enough to have a lot of friends with careers outside of tech.
+5757: You know, people who are personal trainers who are opening up the gym at like
+  five o'clock
+5762: in the morning, working like a 60-hour week with a split shift, right?
+5766: Like that's fucking hard.
+5768: Those people do not get paid a lot of money.
+5770: They work really hard and they make a really big difference in people's lives,
+  right?
+5774: If you're in a situation where you're getting paid good money to sit in your
+  ass in your
+5778: home office nine to five Monday to Friday, like, you know, again, maybe it's
+  about figuring
+5783: out a way to be happy with that or your life.
+5786: And if you don't like that, then quit, go do something else.
+5788: But like, same deal, right?
+5789: Find a career that has some happy medium point between paying your bills, getting
+  what you
+5795: need out of life, and that you can actually enjoy and not hate, right?
+5799: And do that, right?
+5801: Just in both camps, do what makes you happy, right?
+5804: Because that's, at the end of the day, that's probably what is going to give
+  you a better life
+5809: and also give those around you a better life and even give like other people
+  that work
+5814: with you at your work where you're open source or whatever.
+5816: If you're fucking miserable doing what you're doing, like, you're probably not
+  very nice
+5820: So let's just, it'll be happy kids.
+5823: That's going to make some people cross, I think.
+5830: All right.
+5832: So I started with don't do open source if you don't want to, which is a little
+  bit long
+5835: for a podcast title.
+5836: Then I said, do open source for you.
+5838: And then I just flipped your problem statement and said, open source is a hobby.
+5841: Yeah, that works.
+5844: Works for you?
+5845: Or just unhappy maintainers should quit?
+5848: If you don't like it, quit.
+5851: Yeah, pretty much.
+5852: All right.
+5853: Love it.
+5854: Well, on that note, I'll pretend I'm going to hit my button that plays my music
+  now.
+5860: And then I'll have my call out and I'll say, hey, Jared, thanks a lot for, we're
+  playing
+5865: at Jared's house right now because we're in his Riverside account.
+5868: Instead of Mike's Riverside account or my squad cast account.
+5871: Just really, we're, we're all broken, but we're glad that you're listening.
+5878: Hello.
+5879: If you're still listening at this point, especially nobody's paying me.
+5884: I've got no sponsors.
+5885: That's why I get to skip the bleeps.
+5887: That's right.
+5888: Our sponsors pay us extra to bleep things out, you know.
+5891: So we're going to make lots of money off this episode.
+5894: I hope it was sufficiently brand safe for you.
+5897: That's a new business model.
+5899: Pay per bleep.
+5900: Think about it.
+5901: There's some, there's some words I decided in advance I wasn't going to say.
+5904: So you should be glad for those.
+5906: I appreciate it.
+5907: That's a sign of a good friend, Mike.
+5909: All right.
+5912: Well, we'll just hit the button on both sides.
+5914: I'm not going to end it.
+5915: I'm going to let Justin's be the end.
+5916: I'm going to hit the music when he said he's going to hit his music.
+5919: So the show's over at this point.
+5921: Well, all right.
+5923: Okay.
+5925: I'm going to keep this stuff in.
+5926: So am I then.
+5928: All right.
+5929: Well, gosh, maybe I should just sing.
+5931: If you're going to ruin your show, I'm going to ruin mine.
+5933: Yeah, that's mutually assured content.

@@ -1,0 +1,1049 @@
+---
+0: Homebrew is a widely used package manager that simplifies the installation of open-source
+  software on macOS.
+6: It was created in response to the growing demand for a lightweight, developer-friendly
+  tool suited to an increasingly Mac-centric development ecosystem.
+16: Today, Homebrew is a near-essential part of the macOS software development toolkit.
+22: Mike McQuaid joined the project early on and collaborated closely with its creator,
+  Max Howell.
+28: He joins the podcast with Kevin Ball to discuss Homebrew's origins, architecture,
+  its emphasis on automation and CICD, long-term sustainability, controversial trade-offs,
+  and much more.
+40: Kevin Ball, or Kate Ball, is the Vice President of Engineering at Mento and an
+  independent coach for engineers and engineering leaders.
+48: He co-founded and served as CTO for two companies, founded the San Diego JavaScript
+  Meetup, and organizes the AI in Action discussion group through Latent Space.
+57: Check out the show notes to follow KBall on Twitter or LinkedIn, or visit his
+  website, KBall.llc.
+63: Mike, welcome to the show.
+77: Hey, thanks for having me, Kevin.
+79: Yeah, excited to get to talk to you.
+81: Let's maybe start with a little bit about you.
+83: Can you talk about your background and then how you got into Homebrew and where
+  we're going to go today?
+88: Yeah, sure.
+89: So I feel like in tech, I've kind of had two lives, right?
+94: So there's my, maybe a little bit like being a really rubbish superhero, right?
+100: Where I guess my commercial job-related life, you know, I'm a guy from Scotland.
+107: I'm interested in computers, did the computer science degree thing, got the tech
+  job thing.
+112: I've been doing that since 2007.
+115: Just, you know, like getting jobs, changing jobs, paying the bills, having fun,
+  all that stuff.
+120: But then there's my open source life, which is generally what's of more interest
+  to people with homebrew and all that type of background.
+127: So my love of open source, I guess, probably started while I was at university.
+132: Like I came to university.
+134: I heard about, you know, when I was in high school, people talking about installing
+  Linux on the machine the same way that you might talk about, you know, taking illicit
+  drugs or whatever.
+142: It was this kind of like risky, dangerous, sort of like somewhat admirable thing.
+148: So, yeah, so I got to university, like a bit of a kind of Windows power user,
+  had not done meaningful programming really, like beyond just trying to get games
+  working on my computer.
+159: And, you know, peer pressure happened pretty quickly.
+163: And I was like, okay, I need to get on the installing Linux on my desktop bandwagon,
+  right?
+167: So got Linux on my desktop machine, got like a little home server of an old computer
+  running my parents' house so I could like send data back and forth and all this
+  type of stuff.
+177: And, yeah, and obviously, you know, desktop Linux, one of the nice things about
+  it, I mean, probably even now, but certainly back in, you know, 2003, 2004, when
+  I was first dabbling with it, is like open source is front and center, right?
+190: And you very quickly realize like, oh, this is like a community of people building
+  a thing.
+196: And as much as I feel like I'm a consumer and I'm using this thing, if I file
+  a bug, there's a very real chance that like the guy or girl who wrote that is the
+  person who responds to my tickets.
+208: So, yeah, so I guess that kind of growing awareness, you know, I started like
+  helping out with things and helping out on IRC channels and bug trackers and forums
+  and all this type of stuff.
+222: And then like, you know, forking stuff myself, modifying it a little bit, publishing
+  up the changes in case anyone cared.
+228: But, yeah, but I guess for me, the main thing was probably like I did Google
+  Summer of Code back in 2000 and what would it be?
+235: It was 2007 for the KDE, like desktop environment still around.
+238: And, yeah, and I basically sort of fell in love with the open source community
+  through that, really, like from spending a three-month project, just writing lots
+  of code, seeing very high degrees of trust and mentorship and help and whatever.
+250: And then I just went on from that being a huge proponent of it in my work life.
+255: And then I guess the two streams probably crossed again in 2009.
+259: I was in London working for a stock called Mendeley across the other side of
+  London.
+264: A friend of a friend was a guy called Max Howell, who was also working in London.
+268: A huge stock called Last.fm.
+270: That probably brings back memories for a certain number of people.
+273: And, yeah, so he had been tasked with, you know, doing various bits and pieces
+  and building desktop applications.
+281: And I believe the official story is, like, he was in the pub one night complaining
+  about all the package managers being terrible.
+288: And someone said to him, well, if you hate them all so much, why don't you make
+  your own one, right?
+292: And he left the pub, went down, wrote a sort of outline of what homebrew should
+  be, started building it.
+299: And then I got involved, you know, I can't remember what it was, like four or
+  five months later, kind of heard about this thing.
+305: I'd sort of tried to build something vaguely similar myself.
+309: And, yeah, that was, I guess, 16 years ago, like in September, that I've been
+  working on this thing.
+315: And, yeah, and that's my open source story, I guess.
+318: That's awesome.
+320: Yeah, I feel like a lot of us have that experience with open source of, like,
+  this stuff is all crap.
+323: Wait, with this stuff, though, I can actually do it myself and make it my version.
+327: Yeah, totally.
+329: So I feel like in today's age, especially with Max having become, at least in
+  the U.S. and much of Europe, the sort of de facto development environment for many,
+  many developers, a huge number of our listeners are probably homebrew users.
+345: But I don't know how many of them have actually looked below the hood at how
+  it works or why it became the de facto norm.
+352: Why is this one not terrible the way that all the package managers that Max was
+  complaining about are?
+357: So how would you describe, like, what are the core, like, choices or approaches
+  that have made homebrew so successful?
+363: Yeah.
+364: Before we get to that, I just noticed this is, again, I've been working on homebrew
+  for 16 years.
+368: It's the first time I've ever thought of this.
+370: I think because you were saying in that sentence, and you're talking about Max,
+  the Apple computers, and Max, the creator of homebrew, and it's only just twigged.
+378: And I'm like, oh, yeah, that's a fun little coincidence.
+380: That is a fun one.
+381: But anyway, yeah, so how homebrew works.
+384: So I think one of the things I've found in my career in general, right, is I'm
+  a maintainer.
+390: I'm not a creator, right?
+391: Like, I'm someone who is very good at taking something that someone else has
+  made and riffing off it and evolving it and growing it and blah, blah, blah.
+399: But, like, I am rubbish at coming up with new ideas myself, right?
+403: So a lot of the kind of brilliance of homebrew, I think, goes back to Max's original
+  design, right?
+409: And I think the, I guess, the less interesting parts of the design first, but
+  people might not know this, so let's tell them.
+417: Anyway, so homebrew is and was from day one written in Ruby primarily.
+422: And so, like, at the time, you know, Ruby was sort of starting, Ruby and Rails
+  were starting to take off.
+428: Ruby was, like, a very, you know, becoming a popular language in 2009.
+431: And, you know, nowadays it's the same.
+435: You know, there's still a bunch of code that probably goes right back to the
+  first kind of few commits.
+440: And if you sort of squint a little, you can see that, you know, the DSLs and
+  stuff that are being used in homebrew today are still much the same as back then.
+447: So I think that brings you to the first part of our move that I think was initially
+  brilliant, which is, like, something Ruby is very good at is building these DSLs,
+  domain-specific languages, I guess we would call them, where because Ruby code can
+  be at least made to look very much like just normal English, right?
+465: And because Ruby is a very low syntax, heavy language, you can build these things
+  that look a little bit more like you're just declaring, you know, it almost looks
+  a little bit like YAML without as much indentation and stuff sometimes, where you
+  can just look like you're declaring data, but you're actually calling functions
+  inside a class and things like that.
+489: And as a result of that, homebrew started off with these things called formula.
+493: So the formula is basically like a definition of how a package is built.
+497: Originally, homebrew started off being a from-source package manager, so everything
+  is built on your machine.
+501: Nowadays, basically, everything is built by someone else, usually homebrew somewhere
+  else elsewhere.
+506: But that kind of initial formula description was very, very easy to read and
+  write and contribute to.
+514: So I think that was a key thing to begin with.
+516: Like, if you've ever worked with other package managers, particularly back in
+  that era, and had to, like, package something in, you know, AppGet or RPM or whatever,
+  like, it was a nightmare, frankly.
+529: Like, it was horrendous how many steps it would take and how many things you'd
+  have to do to pass all the lints and test all this stuff on your local machine.
+537: Whereas the Ruby formula made it very easy to read and understand what's going
+  on and design and contribute.
+544: And that's the next thing, I think, that was the really smart choice.
+548: Like, I was speaking with a CEO recently who said something along the lines of,
+  you know, all the best engineers are lazy, right?
+556: And often engineers that he might have a problem with are the ones who are being
+  insufficiently lazy, not working hard enough.
+565: But, like, there was a certain amount of that from the outside with Max, right,
+  where he said, like, hey, like, you know, if this package manager is going to be
+  successful, we're probably going to have, like, five, six, 10,000 packages.
+575: Like, I don't want to maintain 10,000 packages, right?
+577: Like, I also don't want to go down the route of, you know, something like Debian
+  or whatever, where I have to find, you know, 1,000 people who are willing to maintain
+  10,000 packages.
+587: So this was around the era that GitHub was starting to take off.
+591: So he basically was like, right, we're going to design the package manager.
+594: So it's a GitHub-based workflow, right?
+598: And Homebrew actually predated pull requests even on GitHub.
+602: So the original flow, I mean, the first few commits I had would be, I would be
+  on IRC and I would DM Max with, like, a commit in my fork.
+610: And he would be like, yeah, that looks good.
+612: He would then cherry pick that from my fork and then push that to the Homebrew
+  repo, right?
+617: And then over time, we ended up pull requests and reviews and all this type of
+  good stuff.
+622: But yeah, I think that model from the outset of designing it to be both very,
+  very easy to contribute to, but also designing community contribution and community
+  maintenance as being a core part of the overall flow of Homebrew is, I think, what
+  resulted in it being as successful as it's been.
+639: That's fascinating.
+640: And I think for open source in general, the packages that sustain themselves
+  seem to be those that manage to build that community early.
+649: So thinking about that from the beginning is great.
+652: Another thing that I think makes Homebrew different from at least the package
+  managers that went before in Mac land and also a lot of the Linux package managers
+  is it's pretty much all user space, right?
+665: Yeah, so that's one of the nice things about macOS and one of the reasons I'm
+  still a fairly diehard Mac fan today is back in the Linux package manager days when
+  I was working with that.
+680: I mean, the Linux package managers, I would still say to this day that I don't
+  think AppGet is better than Homebrew in every way, but I think overall, it is a
+  more powerful package manager.
+692: Like, it has a lot more stuff, a lot more sorted than Homebrew does, right?
+698: But it always, there was a slight weirdness to me always where essentially like
+  some random utility that I'm pulling off someone's GitHub, right?
+709: That I, essentially if it breaks, it has no consequence to me.
+717: And my libc or like kernel are essentially managed in exactly the same way as
+  far as the package manager is concerned, right?
+726: And one of the nice things about macOS or, I mean, even nowadays, again, if you
+  sort of look at it from a funny perspective, things like WSL or like there's Linux
+  distors that are doing this now as well.
+739: You have a kind of a mutable file system like a modern macOS does and Homebrew
+  and Linux is taking off on those as well.
+745: It's this idea that like, as you say, you have this user space package manager,
+  right?
+751: Which is living in a non-protected part of the file system.
+756: You don't need to run sudo to run it and stuff like that once it's installed.
+761: And then basically you sort of limit the damage that that can do to your system.
+766: And nowadays, I think partly because of maybe Homebrew becoming more popular,
+  like the, you know, the macOS space system is like super locked down and you can
+  get access and modify things if you want to, but you're going to have to boot your
+  Mac in a special mode and blah, blah, blah.
+782: And that basically just means that developers on Macs now don't have to like
+  fiddle with things in user bin.
+788: User bin is up to Apple, like opt homebrew bin is up to homebrew and you can
+  just remove opt homebrew bin and every, at least like desktop application on your
+  system should just continue to work fine as is, you know.
+804: All your programming projects may explode, but you know, that's, it has less
+  of a degree of concern that you're actually going to like break your system or whatever,
+  which was at least theoretically possible in the battle days.
+816: Yeah.
+817: Well, and it, it makes, for example, staying up to date with Apple's upgrades
+  a lot less painful as well.
+823: I feel like it used to be, I would, and I still have some of these instincts,
+  but I would resist forever upgrading to the newer OSs because I knew my whole dev
+  environment would break.
+832: And I'd have to go and rebuild everything.
+835: And I feel like that problem has more or less gone away.
+837: Yeah.
+838: So that I'm glad to hear your perception is that problem has mostly gone away
+  that, I mean, to be fair, Apple are better on some of the stuff than they used to
+  be, but it's still, it's definitely an area of pain that projects like homebrew
+  mainly feel.
+852: But in some ways, like if homebrew can do one thing, well, it's providing a abstraction
+  layer over all of this stuff so that we have to care and worry about and fix this
+  stuff and you don't.
+865: Right.
+866: So, yeah, like that's, that's very much a, a goal of our package manager is to.
+872: I wouldn't say it's completely painless at this point, but it's, I mean, it used
+  to be days and now it's like, oh, I've got a couple hours of cleaning things up.
+882: Let's maybe actually then peel back that abstraction layer a little bit because,
+  you know, I, as a user, I just know the APIs you provide, but what are actually
+  the key pieces that go into making a package manager work?
+895: Yeah, so I think homebrew is a bit of a special snowflake of a package manager
+  in lots of ways.
+901: I guess I've mentioned some of them already, you know, some of the package managers
+  that have come after have really leaned into the same sort of model of community
+  contribution and stuff like that.
+909: Some haven't.
+910: I think one of the things we do that often surprises people is, you know, we
+  have, I guess, our, our stats and best estimates or whatever are like, you know,
+  five, 10 million kind of relatively active users of homebrew, which is a scary amount
+  of people.
+928: And then in terms of maintainers, we have like 30 people, right?
+933: And probably on a day-to-day basis, probably, you know, 10 to 15 of them are
+  active and it's, you know, you tend to have this parallel function of even within
+  those maintainers, there's some people who do a really disproportionate amount of
+  the work.
+945: And in the total history of all of whom were maintainers ever, I think there's
+  been probably less than 16 people, maybe even less than 50 people.
+954: So obviously like that's, that's good scaling, right?
+956: Like how you can get a relatively small number of people to provide that amount
+  of service.
+961: Some of that is the contributors I mentioned before, like, you know, getting
+  third parties to go and help and submit changes probably got like, yeah, I mean,
+  definitely over 10,000 contributors.
+971: I don't think we're anywhere near to a hundred thousand, but you know, in the
+  five figures there, but still there's like, you know, there's scaling effects and
+  you're like, how can you make that happen for 20,000 packages,
+982: which are getting probably, you know, 10, 20, a hundred updates a day across
+  that.
+988: So something we have done certainly, at least from the very early days of me
+  being involved with Homebrew is going back to what we said before about laziness.
+996: Like I'm an exceptional lazy person.
+998: I like the people I work with to be lazy and I really encourage that, right?
+1003: So my, one of my positions for a long time, which is kind of funny, now we've
+  got AI because it's, you know, encouraging you to think about that in a different
+  way still was almost like, I guess I wrote a blog post about this called robot pedantry,
+  human empathy.
+1016: Like, because at the time I felt like I was seeing, you know, people were almost
+  being like, oh, I'm going to write a bot to thank first time contributors to a project
+  or whatever.
+1027: And like, my observation was, is that like, if people have a bot doing it, it
+  doesn't mean anything.
+1033: They don't really feel valued and considered by a bot, right?
+1037: But like on the flip side, people are very tolerant of bots being, I don't know
+  if you've ever had one of those pull request reviews in a work environment or whatever.
+1046: That are brutal?
+1048: Yeah, well, not even brutal.
+1049: Like I would say like excessively pedantic, right?
+1051: Where say you're using semicolons in JavaScript the way that they don't like,
+  and you did it 20 times and they go through and on every single occurrence, they're
+  like, use semicolons.
+1061: And like when a human does that, you hate that person, right?
+1065: Whereas when a, what I would call a robot or like a CI job or a linter or whatever
+  does it, you're like, that is actively helpful.
+1073: And if you didn't tell me all of the occurrences, you would not be a useful
+  tool, right?
+1077: So something I tried to encourage in myself and in others in Homebrew from the
+  early days was being like, okay, anytime you are regularly making the same comment
+  on say three pull requests, right?
+1088: Figure out a way to turn that into an automated check that can run, that can
+  make the CI red so that the user has that indication that like there is a problem
+  here.
+1098: And I guess there's, you know, to adopt horrible tech industry jargon, like
+  shifting things left as well, right?
+1105: And so also that idea of like, okay, ideally we move from a human comment to
+  being a CI comment, like on a pull request or whatever.
+1115: But then ideally still, we move from a CI comment to a local development environment
+  comment.
+1120: So again, we have a bunch of automated checks.
+1123: So the most common linter in Ruby land is a tool called Rubocop.
+1127: So we now have it configured so that if you open Homebrew in like a, in VS code,
+  you'll get prompted to install the Rubocop plugin.
+1136: And if you install that, then when you're writing Homebrew code, we will pop
+  up straight in your editor and tell you like, this is against like essentially the
+  description of this formula is not in the format we like.
+1147: Like you have started with a or an, and we don't like you to start with a or
+  an because it doesn't look nice in our output or whatever, right?
+1154: So then you can have a user who's working on this for the first time who gets
+  that input straight away, right?
+1159: And if you've enabled auto formatting in your editor, then some of those Rubocops
+  have auto correction.
+1164: So you could start your description with an A or an an.
+1166: I can't remember whether this one does auto correction or not, but we'll assume
+  it does for this anecdote.
+1171: You could type that in and you press save.
+1173: And if you've got format and save enabled, then you'll just see that text just
+  disappear, right?
+1176: So obviously that contribution experience is like delightful when it all, when
+  all the, you know, stars align and all that stuff happens.
+1184: And instead of a human being like, don't do this, don't do this, don't do this,
+  your editor is automatically making your codes the way we need it to look.
+1191: So it passes CI.
+1193: And even if it does make it to CI, again, like we have a pretty time zone distributed
+  team now.
+1197: So we probably have decent follow the sun coverage, but like before we had that,
+  there was something really delightful about seeing someone open a pull request,
+  see, you know, our linter spits out 10 warnings.
+1209: They read them all, they action them all, they improve everything.
+1212: And then you wake up in the morning and you're like, oh, this, there was 20
+  things I would have said on the first version of this pull request.
+1218: Instead, our CI tooling and the robots or whatever settled this, the person
+  has got it ready and now I can just merge it straight away, right?
+1225: And then everyone has a better experience and that's how the projects can scale
+  dramatically better in that way.
+1230: And I also, my, you know, while I'm on my soapbox, like my personal experience
+  is a lot of companies could do with moving a lot more in that direction than they
+  think as well.
+1240: Because generally, humans don't like doing that stuff.
+1244: And generally, pretty much every software company in the world, if you're like,
+  I can give you a way to move faster without negatively impacting your quality, like
+  most people or most companies, most developers would say, yes, please.
+1256: And that's how you get there.
+1258: You get there by very heavy but reliable automation.
+1262: There's a mindset shift there that takes a while to sink in.
+1264: And I find I'm climbing that whole mental climb again now with these AI coding
+  tools because there's things they're good at, there's things they're not good at.
+1273: But a thing they are very good at is writing tools.
+1275: So you can use them to automate your check that you are going to do.
+1279: And it's mind boggling how much faster you can go as you accumulate those.
+1284: I'm in the same space right now where I would say I'm a, like AI, I don't know,
+  user and mild optimist.
+1293: But it's like figuring out the places in which these tools are very well suited
+  and very badly suited, right?
+1299: Because, you know, it's like that old expression used to be of, I can't remember
+  where I first heard this, but, you know, like your average not tech person would
+  be like, I hate computers because they never do what I tell them to.
+1313: And then the tech person responds is, no, you hate them because they do exactly
+  what you tell them to when that's not what you mean, right?
+1319: And I think it's interesting because I feel like a lot of the time, some of
+  the modern LLM tools are getting better at inferring what you meant rather than
+  what you told them to do.
+1331: But then on the flip side, the responses are now non-deterministic.
+1334: So you can't, you know, those examples before with the CI and the linting or
+  whatever, I'm sure I could describe in prose and feed that into ChatGPT and have
+  that somehow run in my CI pipelines.
+1347: But the problem is if you rerun that on the same code three times, you're going
+  to get, like, you don't get the same response every time without some sort of deterministic,
+  like, code layer living underneath or on top that is making sure that that stuff
+  works as it does.
+1363: So, yeah, I still feel like that's a big point of growth that we're still figuring
+  out is like figuring out how do we make these two tools play together in the nicest
+  possible fashion.
+1373: The automated validations that you're doing are actually great for that because
+  if you can put this non-deterministic thing in a loop with deterministic validation
+  for correctness, your quality gets so much higher.
+1386: Yeah, yeah, I've definitely felt that when I've been doing stuff, I'm yet to
+  really go hard on, like, agentic stuff, like, particularly agentic, not in my, not
+  in a window in the foreground sort of approaches.
+1399: It's on my to-do list to play around with that in the next few weeks.
+1401: But even on that, like, I definitely find in tools like Cursors Agent Mode or
+  whatever, if you can say, here's how you run the test, here's how you link the code,
+  here's how you type check the code.
+1413: So, Homebrew nowadays uses Sorbet, which is like a type checker built by Stripe
+  kind of type checker runtime type system, runs exceptionally fast to kind of check
+  the entire code base.
+1425: Then, yeah, like, the more of those guardrails you have, then the better these
+  tools do because they're able to validate their own behavior without you having
+  to say, like, oh, no, that should be, you know, like an integer being passed this
+  method, not a, you know, a number one in quotes or whatever.
+1443: So, let's come back a little bit to the pieces that make Homebrew work.
+1447: So, we talked about kind of the automations for contribution and the key sort
+  of piece of formula, which are building DSLs.
+1454: What's the engine inside of Homebrew?
+1457: Presumably, you have some sort of dependency resolution or thing like that going
+  on.
+1461: And, like, what are the, like, I don't know the software architecture of a package
+  manager.
+1465: Yeah.
+1466: So, I mean, I don't know that I know the software architecture of a package
+  manager either, but I can speak to, yeah, Homebrew basically where you touch upon
+  dependency resolution.
+1474: That's the most common thing that, you know, of value in some ways that a package
+  manager is providing.
+1482: So, if you don't use or have never really thought about a package manager before,
+  essentially, like, the two key things you might say that they are doing for you
+  is one is just a way of essentially specifying, here's a bit of software.
+1495: I want this installed.
+1497: You figure out however that gets installed and the way of indicating you want
+  two pieces of software installed should be the same, even if the underlying build
+  mechanism, distribution mechanism, whatever, is radically different between those
+  two things.
+1512: So, it's that abstraction layer.
+1515: Generally, as well as that, there's some sort of version-based behavior as well.
+1520: This is something where Homebrew's got a lot of flack over the years and were
+  better than we used to.
+1526: But, again, let's differentiate between different types of package managers
+  for a moment, right?
+1531: So, you have, I guess, what you might call, I guess you were saying, user space
+  earlier.
+1536: Some might say, like, system package managers, right?
+1538: Which would be, Homebrew would be sort of an example, but definitely something
+  like Appget on Debian or Ubuntu, something like Yum or whatever on Fedora, I think
+  that's been, or DNF maybe now.
+1551: I can't remember, it's been a while, a merge on Gen2, Pac-Man on Arch, et cetera.
+1556: So, those are responsible generally for installing everything that might be
+  on a system or not.
+1562: And, like, again, you can debate whether Homebrew is one of those or not.
+1566: But what Homebrew is definitely not, which people are often more familiar with,
+  is a language package manager.
+1571: So, say something like NPM or Cargo in Rustland or PIP in Pythonland or GEM
+  or Bundler in Rubyland, et cetera, et cetera.
+1581: These package managers where everything you install through that thing will
+  be written, at least primarily, in that language.
+1589: They may also have C extensions or whatever, depending on the language.
+1592: But, essentially, you're installing libraries mainly for the writing software
+  yourself in that language.
+1601: Right, so one of the big differences between the language package managers and
+  the system package managers is the language package managers generally have this
+  model of, like, okay, well, we basically can let anyone sort of publish anything.
+1612: And, ultimately, the people who are in control of uploading a new version and
+  deciding whether people get upgrades or not are the publishers of that package and,
+  generally, the authors and the creators and the repo owners on GitHub.
+1626: Whereas with system package managers, generally, there's a bit of a, like, okay,
+  because of the dependencies, which we mentioned earlier, you need to verify that
+  it is okay for everyone to get a new version of a thing, right?
+1639: So, if I have some library that 1,000 packages in Homebrew depend on, I release
+  my version 2, and I say, okay, Homebrew, we're ready for version 2 of the package,
+  right?
+1650: Like, if I'm in entire control of that happening, then, again, depending on
+  the package manager, like, that might be okay.
+1657: It might be that they can just upload version 2, and then everything sticks
+  on version 1 until we manually, like, change it, and it says it goes to version
+  2.
+1665: So, Homebrew was designed from the early days to be, again, more package manager
+  terminology, I'm afraid, what you call a rolling release package manager.
+1674: So, things like Ubuntu or Debian, you might be familiar that they have, every
+  so often they've got, you know, I can't remember what an Ubuntu one is, but it's,
+  you know, like, poetic pelican or, you know, it's always like a, you know, two letters
+  the same or Debian buster or whatever, right?
+1692: So, they generally, the way they do that is they say, okay, we're going to,
+  like, branch off a while before we essentially get all the packages so they're,
+  like, vaguely stable together, and then we have a point where we say, okay, we've
+  released this new thing, we basically are only going to do security updates and
+  bug fixes until, you know, there's ways of you working around that, but by default,
+  that's how we're going to do things.
+1715: Then you have a rolling release package manager, which is what Homebrew is,
+  which is essentially, you get the newest version of everything all the time.
+1722: So, if you just type brew install, you know, some package name, say MySQL, right,
+  in Homebrew, at least, let's simplify things and look at Homebrew 10 years ago to
+  start with, like, if you type brew install MySQL, you will always get the newest
+  version of MySQL, right?
+1738: And if yesterday, whoever it is that owns MySQL nowadays, Oracle, dropped a
+  new major version, and we're on MySQL 10, and it has no backwards compatibility
+  with MySQL 8, right, like, tough luck, right?
+1751: Like, all your shit's broken, but Homebrew is internally consistent, so it's
+  fine.
+1756: We evolve from there to be like, okay, well, then we're going to at least have
+  CI where we're going to test and make sure that everything works within Homebrew's
+  ecosystem, at least, so you're not breaking any other packages in Homebrew.
+1769: That's one of the fun artifacts of our CI is that when that happens with something
+  like OpenSSL, which has thousands of dependencies, what that looks like is a CI
+  job that will take two to three days to run of continuously churning away for, like,
+  you know, 48 hours.
+1787: We've had various CI providers and hosting providers who assume that that's
+  a typo, where we say, like, hey, like, your timeouts are triggering too long.
+1796: You know, they're kicking in off to, I think, like, one time it's like, we're
+  kicking in off to 48 hours, and they're like, oh, do you mean, like, 48 minutes?
+1803: No, 48 hours.
+1804: They're like, yeah, that's, surely it's not taking longer than 40.
+1807: No, yeah, this job takes up to 72 hours to run.
+1810: So that's been a little bit of a surprise.
+1815: And again, that's part of the reason why people, when they might critique Homebrew
+  and Homebrew's model, it's like, yeah, like this, it's hard to do this stuff at
+  this sort of scale, right?
+1823: And then more recently, Homebrew has done a bit more around versioning.
+1827: So now you can install MySQL at 5.7, right?
+1831: And that means that you will sit on that version forever, right?
+1835: But because of Homebrew's original architecture, the way we do that is we maintain
+  a separate MySQL at 5.7 package, and we have to maintain that indefinitely.
+1845: And if there's something that has to happen to all the MySQL versions for a
+  new macOS version, we have to essentially port it between all of those, right?
+1852: So there's a little bit of overhead there, which is why we don't do this for
+  every single package all the time.
+1858: So that is interesting.
+1861: So what's the ICD provider using today?
+1864: So nowadays we use GitHub Actions, but we have our own self-hosted runners for
+  doing a lot of the hard work, basically.
+1874: So particularly on macOS, essentially we need the newest version of macOS pretty
+  much as a month, two months before Apple released the new version, because we want
+  to be able to test things and verify things or whatever.
+1891: And we are yet to find a, we would ideally use an entirely hosted solution,
+  we are yet to ever find an entirely hosted solution who can do things as fast as
+  we need them to be done, but also provide like, you know, 72 hour timeouts on things.
+1907: So our self-hosted runners used to be, again, like a little bit of fun, open
+  source lore, used to be physical Mac minis that were originally installed in a data
+  center by me taking them down in a suitcase from Scotland on a train, which then,
+  which ended up like going in the car of someone whose podcast I listened to, who
+  let me stay in his house and then put them in the data center of his ISP.
+1932: And then later I took another train and then moved them up back to Scotland
+  and blah, blah, blah.
+1938: So yeah, so there's, there's a bunch of funny games that happens with this before
+  this stuff was available for, by cloud providers.
+1945: But nowadays there's a company called Mac Stadium who we've worked with for
+  a long time now, probably coming up to 10 years, who provide like hosted Macs for
+  us to use.
+1955: And they've got like a nice sort of Kubernetes-like abstraction layer that lets
+  us kind of spin up and spin down VMs of the various macOS versions we need to run.
+1966: So yeah, so that's basically what powers are, like CI, like the, the actual,
+  where the code is being run and built side of things.
+1974: But yeah, but then the, the main almost like centralized server now is all on
+  Gap Actions.
+1979: Who funds that?
+1980: Do they donate those resources?
+1983: So originally Mac Stadium donated all of the resources and then Apple helped
+  when we were in the Apple Silicon transition.
+1994: That's the first time I guess Apple like gave us something, which was nice.
+1998: So they got us access to basically to a bunch of free Apple Silicon hardware.
+2002: And then eventually, essentially we, well, and this is, to be very clear, this
+  is completely fair enough of Mac Stadium, but essentially we kept on being like,
+  we need more, bigger, faster, et cetera.
+2013: And they were like, yeah, like I think you can pay for some stuff now, right?
+2017: So we have, basically we pay Mac Stadium, but we receive a very heavy discount
+  and you can see if you're interested in Homebrew's finances and financial situation.
+2028: I guess that's another fun little thing where all our finances now are on, I
+  think, called Open Collective, which is essentially, if you imagine that you, if
+  you imagine you're like personal banking app, right?
+2039: And you can go and see all the transactions.
+2041: Oh, you know, 223 on this day, you spent this amount with this vendor or whatever.
+2046: It's essentially that, but like the ledger is public.
+2049: Like you, anyone could go, like Kevin, you can go and see how much money like
+  Homebrew received and spent and from whom in the last year.
+2058: And you can also see, like we do a small maintainer stipend of like whatever
+  it is, like $300 a month for people who are still active on the project.
+2067: So you can see who got that stipend and when and how much and when it was paid
+  out and all that type of stuff.
+2074: And obviously, like, you know, this sounds like a privacy accident waiting to
+  happen, but Open Collective have been very good about making sure everything that
+  should be private remains private and whatever.
+2082: But yeah, it's quite cool.
+2084: It's a quite cool open source way of doing funding where rather than having
+  very strict rules on how money can be spent, essentially you have like this open
+  ledger approach.
+2095: So yeah, that's essentially how that's funded.
+2097: You can literally go and see how much did we spend with Mac Stadium last month
+  and all that type of stuff on our Open Collective if you were so interested.
+2105: Yeah, that's actually kind of wild.
+2108: I'm looking at it, just glancing at it here.
+2110: That's very cool to have that level of transparency and to have, you know, for
+  a registry, you know, you need a lot of resources.
+2120: And so having that visible and having people able to see like, hey, this is
+  what it costs to make your life just work like this.
+2127: Yeah.
+2128: I mean, we're lucky as well.
+2129: I guess I would be remiss if I didn't mention, like, we get a lot of free resources
+  from a bunch of companies as well.
+2136: So DNS simple, one password, formerly DigitalOcean in the past, like, we basically
+  have a lot of vendors who have given us a lot of free stuff, which is very nice.
+2145: And it's obviously, I don't know how much of that reaches across the Atlantic
+  to where you are, Kevin, but certainly Scotsmen such as myself are stereotypically
+  very cheap and very careful with our money.
+2156: So my preferred price for any vendor arrangement is always free, and that is
+  what I've always attempted to negotiate.
+2163: So, yeah, like, we're very lucky to have that.
+2165: And I guess the biggest one, you know, a former employer of mine, and it's been
+  easier to be a bit more sycophantic about them before I worked there and after I
+  worked there, because I've been on Homebrew on both ends, is, you know, GitHub has
+  contributed a huge amount to Homebrew in terms of why they've both given us a bunch
+  of money,
+2183: but also, like, when you download any of Homebrew's binary packages nowadays,
+  that's all on GitHub packages kind of infrastructure, which is, like, primarily
+  a Docker registry, which is why it might be a little bit confusing as to how we
+  are using that for our stuff.
+2198: But, yeah, but basically, we had a situation, I can't remember how long ago,
+  it was five years ago, maybe, where our previous hosting provider, Bintrey, with
+  about 90 days notice, were like, yeah, we can't post your stuff anymore.
+2211: Sorry. And so we had to find a new provider and migrate everything over there
+  and whatever.
+2215: So that was very good of GitHub to be willing to do that.
+2218: And I remember at the time seeing, essentially, when the switchover happened,
+  like, seeing all of the internal graphs of usage and being like, yeah, like, this
+  is, I'm sure a lot, GitHub Actors has had a lot more usage over time.
+2233: But, like, you know, at the time, it was, like, 50, 75% of the usage of the
+  entire system was people using Homebrew.
+2239: So if we couldn't do that without a big funder like GitHub, and I feel like
+  we're all so used to GitHub at this point that we kind of expect...
+2247: It's just infrastructure.
+2248: We expect it to just work, right?
+2250: Exactly. And we expect it to all be, or just work all the time and be free to
+  everyone, certainly everyone doing open source.
+2256: So, yeah, like, I think a lot of my former co-workers have and have and do work
+  very hard to make all this stuff work.
+2265: So, yeah, particularly shout out to get help there.
+2267: Yeah, for sure.
+2268: Let's maybe actually talk about...
+2271: So you've mentioned a couple of big changes that have happened over the years.
+2274: So one was migrating to GitHub packages.
+2276: I don't know if there's more to that story that's worth diving into.
+2279: But some of the other ones, actually, one I'm curious around is you mentioned
+  originally all of the building happened on developer machines, right?
+2288: You install and it builds for you right there.
+2290: And nowadays, very little is happening on developer machines.
+2295: What drove that transition?
+2297: And were there any, like, interesting technical challenges to make it a reality?
+2301: Yeah, yeah.
+2303: So let me get to that in one second.
+2305: First, I'll say on the GitHub packages migration, I think it's quite interesting
+  for people of a certain ilk.
+2311: If that does interest you, then I did a talk at, I think it was the Staff Plus
+  Conference in London, like, two or three years ago.
+2318: And you can go and find that on their web page.
+2321: If you go on my website, mikemcquade.com, under the talk section, I think there's
+  a link over there or whatever.
+2326: But, you know, that's basically the, if you're interested in a dedicated 30-minute
+  discussion of why that was an interesting technical thing to work on, you might
+  find that interesting.
+2335: In terms of the source migration, yeah, like that, I sort of spearhead that
+  the most, right?
+2340: So it's pretty much the only concept in Homebrew that I have created myself,
+  which is why if you hate the naming, then that's my fault.
+2348: I'm sorry.
+2349: So we call, keeping with the beer metaphor in Homebrew, we call our binary packages
+  bottles, which are then poured onto the file system, right?
+2357: So I created bottles originally as just a way to speed up a select number of
+  packages, right?
+2364: So I've been talking to Max and there was, I guess, QT, the kind of cross-platform
+  programming framework that both Max and I worked on with the past.
+2374: We were both using it when I was at Medley and he was at Last.fm.
+2377: So we had quite a lot of experience with that.
+2379: It was an early package in Homebrew that got like reasonable levels of uptake.
+2382: And like the build times were just, well, were and still are kind of bonkers.
+2388: Like it, you know, it would take multiple, it would take often close to or over
+  an hour on kind of fairly standard Mac hardware at the time.
+2396: So there was a element of like, this is not a great user experience for someone
+  to type brew install QT and then have to wait an hour before they get what they
+  want.
+2405: There was also the aspect of just like errors, right?
+2410: So you could sometimes get to a point where when you were compiling stuff, particularly
+  back in the day when it was easier to play around with your macOS base system where
+  QT would build for, you know, say it was going to take an hour, 59 minutes and 59
+  seconds, and then have an error and be like, oops, something went wrong.
+2427: And then essentially you lose all of your progress and state and you file a
+  bug report, right?
+2433: And we would notice that these bug reports were sometimes like, well, very often
+  when building things from source, the number of bugs that were just like, this user
+  has done something weird with their machine, right?
+2445: And we were able to defensively improve some of that, but it became pretty apparent
+  that like, essentially when you build a bottle rather than like, say something like
+  QT, you're running a compiler and linker to do various things or various libraries
+  and move things around and install things and blah, blah, blah.
+2465: And when that was all happening in the user's machine, when it was building
+  from source, we would say, there's just so many things that can go wrong.
+2472: Essentially, you're running probably over the course of that build system, probably
+  in excess of like a million, maybe 10 million, maybe even like a billion separate
+  shell commands, any of which failing for a particular reason will take down the
+  whole thing, basically.
+2489: So whereas this kind of bottle architecture we moved to was essentially, again,
+  I'm not a particularly smart guy, so I believe in the simplest solution to any problem.
+2500: So essentially, the bottles are just a toggle, right?
+2503: It's basically just, we build that, we run all those commands.
+2506: Originally, the first few bottles were like, literally, I just build it on my
+  personal machine, on my MacBook.
+2513: And then we have, we run brew bottle, QT, it spits out a tarball, we upload
+  the tarball, we provide the checksums for the tarball so that you know it hasn't
+  been tampered with, and then people download that tarball and it saves them an hour,
+  right?
+2527: So that started off being like, just on, you know, and I guess I'd say the commands
+  from before, essentially, you go from a million commands to being essentially download
+  tarball, extract tarball.
+2538: And the ways in which that could go wrong were dramatically fewer, and it dramatically
+  reduced our support burden.
+2547: And going back to what we said way earlier, again, a big motivation in homebrew
+  has been some of the changes which I pushed through that have been very unpopular
+  in the package manager have basically happened because I'm like, without this, this
+  project will die.
+2561: But we do not have the resources to deal with the amount of incoming support
+  requests we have for supporting this power user feature, which maybe lots of people
+  love, but like generates a really spectacular number of support requests.
+2576: So we are going to do it this new way, which is a way that we're actually able
+  to support.
+2580: So that was another motivation of this stuff, is it's just like, because fewer
+  things can go wrong, fewer people submit issues, and we're able to maintain the
+  package manager better at the cost, in some cases, of some flexibility for our users.
+2592: Yeah, well, and it highlights, right, all engineering is about trade-offs.
+2596: This is a trade-off that you absolutely had to make in order to support the
+  number or the sort of scale that you're at.
+2604: Do you do those binaries? Are they statically linked or can they reference libraries
+  on the system?
+2609: Or how do you navigate dealing with library code or other system dependencies?
+2615: Yeah, so most of the time they're dynamically linked.
+2617: So we will link to stuff provided by Apple, and we will link to stuff that's
+  provided ourselves in other packages, bottles, libraries, etc.,
+2626: which is where things get a little bit more complex because if you upgrade a
+  library and then you have to rebuild everything and that's how you get your, you
+  know, 72-hour CI jobs.
+2635: But yeah, so that's essentially this, you know, these cascading chains of dependencies
+  where you have to ensure all the linking between all of them is consistent and stable
+  and all that good stuff.
+2646: And you sort of alluded to another change, which is this removing optional compile
+  flags or kind of reducing the sort of set of options available.
+2654: Yeah.
+2656: So that's probably my, I would say, most impactful in terms of making homebrew
+  long-term, scalable, and maintainable.
+2665: But definitely the most overwhelming negative feedback I've ever received for
+  any bit of work I've ever done and was probably the first thing that built me a
+  much thicker skin in open source.
+2678: In fact, speaking with thicker skin in open source, like just as a funny anecdote,
+  again, like so right now I have a person who was banned from the homebrew issue
+  tracker last week,
+2687: who is now on his third new email account that he signed up with just to send
+  me a piece of emails and I'm having this fun back and forth of he has now had two
+  GitHub accounts banned and I'm just going through not replying to any of his emails
+  and one by one taking the time to make sure that every new email he signs up with
+  gets banned by this email provider.
+2707: So it's, you know, like only with maybe 16 years open source could this become
+  a fun pastime of like recognizing every time he's going to try and log into some
+  new email provider or GitHub account or whatever,
+2717: like seeing that it's banned and me taking the satisfaction in that despite
+  not seeing like him actually seeing any response from me.
+2724: As an aside, like so that example you mentioned with the options, again, this
+  was a thing that became the natural end of the road with the,
+2733: so as I mentioned, we started off doing the binary packages just for a few select
+  packages and then we got to a point where we're like,
+2739: okay, like basically everything is going to be better with these binary packages.
+2744: But the problem is if we provide options, like we don't really have, we have
+  never built and like all these things in open source,
+2755: if someone had come along and built this, I would have been delighted, but no
+  one did.
+2759: We don't really have a way to kind of have this optional behavior with our binary
+  packages.
+2763: And what happens is when you provide these compile options, then those people
+  are just falling back to building from source.
+2771: We go back to this world in which everything is, again, very complex.
+2777: Lots of things can go wrong.
+2778: We get lots of issues filed.
+2780: But also when you have, again, this is obvious to anyone who's done, you know,
+  a decent amount of, you know, even probably high school level maths.
+2788: But right, if you have one option, you know, in a formula, then you have one
+  thing that can, then you essentially have a, that can be on or off.
+2795: That's, you know, two combinations, right?
+2798: You get the combinatoric explosion.
+2800: Exactly.
+2801: Yeah.
+2802: So you have two, you have that, you have three, you have, so, you know, we would
+  have many of our popular formulas would have five, 10 different options.
+2809: And there's just a, from our perspective, felt obviously not literally, but
+  a perceivably near infinite number of things that could go wrong.
+2818: And just, we ended up constantly having this whack-a-mole, right?
+2822: And some of the kind of power users said, well, you know, you could have just
+  said that people shouldn't file issues.
+2827: And, you know, like you didn't need to take away our toys just because some
+  people were misbehaving with them.
+2832: And it's like, unfortunately, again, when the scale of something like Homebrew,
+  you only need 0.1% of users to be regularly doing the wrong thing before you just
+  have this absolute diluge of noise.
+2845: And what happens is, again, like the most, it's funny because there's a lot
+  of talk for a while about like problems in open source and funding and sustainability
+  and scalability and all this type of stuff, right?
+2855: I think a lot of that's overblown.
+2857: But like one of the things I do think is if you want to talk about sustainability
+  in open source, the scarcest resource available in open source is the time of a
+  maintainer, right?
+2867: Money is good when it can give you more time for existing maintainers.
+2871: Often it cannot.
+2874: But in this case, you know, you can say, okay, well, just close these issues,
+  don't respond to them.
+2877: But it's like, but every time a maintainer, and often with the way it helps
+  notifications or whatever work, it's not just one maintainer reading that.
+2884: It's one or five or 10 or 20, right?
+2887: Like say even one person reads this, you know, if we're getting 75, 90% of our
+  issues are just this noise, then that is all time that that maintainer, I guess
+  in many cases it was often me, cannot fix your bug.
+2902: Like, I cannot release your feature.
+2903: I cannot release a critical security vulnerability update because I'm spending
+  all my time triaging just all of this noise, which essentially the only way to make
+  it go away, because we would tell people again, like, don't file these issues, please.
+2918: People keep finding that the only way to make it go away is to take your toys
+  away and say, sorry, this kind of option behavior, it does not work for us to be
+  able to maintain a scalable package manager with these around.
+2931: And yeah, to this day, I still meet people who are very disappointed in this
+  choice.
+2935: But I think if they were aware that there was a time when it looked like we
+  either do this, or literally the package manager will die, and everyone will quit,
+  then they realized they would maybe realize that like, well, that that was preferable
+  to the other outcome.
+2953: I mean, I spent a couple years, about a couple years as a primary maintainer
+  for a big open source package, I was paid to do it, right?
+2960: It was a job.
+2961: And it's still like, it's so exhausting to deal with the noise.
+2964: And yeah, that is hard.
+2967: So how, this is one example of a way that you've made maintaining homebrew a
+  little bit more sustainable.
+2975: How do you think about creating a sustainable environment for your team of maintainers?
+2980: Yeah, I mean, that's, I guess that somewhat alludes back to the, the thing I
+  said earlier, well, two things, I guess.
+2988: So one is the most valuable primary resource is maintainer time.
+2994: And to me, what that looks like is, I mean, in a funny way, you could say, maybe
+  even maintainer time is an output and maintainer, and the input is maintainer motivation,
+  right?
+3008: So what that looks like is most of our maintainers, right, as I mentioned, people
+  receive a small stipend of like $300 a month.
+3016: I mean, some of our maintainers are maintaining, are like, you know, merging
+  300 pull requests in a week, right?
+3022: So the dollar by time, like compensation.
+3025: You don't do this to make money.
+3027: It's not a money driven thing, right?
+3030: Even, I guess, me working on it for 16 years, like the vast majority of this
+  time, I have never been paid anything to do any of my work on homebrew.
+3041: And there's never been a time when I've had more than maybe a couple of months
+  where my primary paid responsibility has been doing anything related to homebrew
+  directly.
+3050: So like, as a result, you need to just be like, how can this stay interesting
+  and fun and healthy and whatever?
+3060: And what that looks like, again, something which I've got a bit of flack for,
+  but I very much stand behind, is homebrew has to be a safe space for the people
+  who are working on it.
+3070: And that doesn't mean, you know, we can't have challenging conversations, and
+  it doesn't mean we can't disagree and whatever.
+3077: But what it does mean is if someone is being abusive, as nowadays, it used to
+  be I would give them, you know, two strikes, three strikes, whatever.
+3082: Nowadays, my general policy with an open source and somewhat in life is if you
+  are being a very unpleasant, mean person, even if it's completely unintentional,
+  like I have found, if you receive one notification saying,
+3100: Hey, this is not okay, your behavior is not being appropriate, that you can
+  judge how well that will go from the person's reaction to that, like someone who
+  even tries and gives a horrible apology about like, I'm sorry, you felt that way,
+  blah, blah, blah, like, you can still tell that like, they're trying, they've maybe
+  never heard a good apology, they may be never given a good apology.
+3125: But you know what, they're trying, and they're trying to adjust their behavior.
+  Like, those people, I will give them a bunch of chances. But when someone is called
+  out on their behavior in that way, and their response is to double down, or get
+  incredibly defensive, or say, well, no, actually, you are the problem. Like you,
+  you go read your code of conduct, you're bullying me or being mean, or whatever
+  it may be, right? Like, that never ends well.
+3149: Like, and if you read through people getting blocked on homebrew, sometimes
+  people get blocked on homebrew, for what seems like almost nothing. But the reason
+  why they get blocked is because, A, we've had a conversation privately as maintainers
+  about this, and what's going on. Sometimes there's a bunch of stuff where someone
+  only says one borderline thing in public, but they've sent a bunch of private emails
+  to a bunch of people, which are significantly worse.
+3173: But often, it's just like, I've been doing this for 16 years. And frankly, like,
+  I can just tell when this is not going to end well. So the quicker we can just shut
+  this down, the better, right. And I think that's what it looks like. Another, I
+  guess, maybe more recent addition is, you know, for the last, maybe six years, bar
+  a couple years break with COVID, we try and have most of the maintainers meet in
+  person, once a year, right.
+3197: And if you looked at people's contribution graphs and get up, there was an explosion
+  of activity when that happens. Because, again, people, you're re-energized, and
+  you meet people. And also, like, when I promised I was going to review someone's
+  PR, and I see them in person, and then over drink, they're like, oh, did you review
+  that PR? I'm like, oh, shit, I'm really sorry. I'm going to go review it right now,
+  or whatever, right.
+3217: And that's helpful, and it's energetic. And it's something I felt like I learned
+  back in the day from KDE of, like, going to their conferences when it was, like,
+  hundreds of maintainers back in, like, whatever it was, 2007, 2008, you know, and
+  just seeing, like, oh, yeah, like, this is, you need to build something I'm not
+  very good at, personally, but, like, you need to build a community.
+3236: Like, we've talked about the community of contributors. There's also a community
+  of maintainers, and that needs to be a small group of people who remain actually
+  regularly using, contributing, and maintaining homebrew, who feel like they're a
+  bit of a team, and they have some sort of sense of collective identity together.
+3253: And, like, I think that helps a lot. And it also helps with, as I mentioned
+  before, with kind of people being abusive, is, like, I just go into, even before
+  I had kids, I go into protective dad mode, and I'm like, you know what, you can
+  say a lot of shit to me, but the bar what I'm going to tolerate for my team of people
+  who are spending their evenings and weekends trying to build you shit that you get
+  to use for free, my bar of the amount of abuse I'm going to let you give them is
+  not very high.
+3279: And if that means that homebrew has lost some valued contributors over the years
+  who we just needed to tolerate that every few months they were going to go and be
+  very rude or ruin someone's day, so be it. Fine. We can be less. That's the one
+  area of almost, like, productivity decrease I will happily accept is, like, if we
+  can have a twice as fast homebrew where everyone has to deal with assholes all the
+  time, or we can have a half as fast homebrew, then we can have a half as fast homebrew
+  that's a nicer place to deal with.
+3308: I'm aware of saying that, you know, if you Google Mike McQuaid asshole, there
+  is a, it's a not minority position that I myself am an asshole, but I do this from
+  a position of trying to make it a better friendly place for people, so.
+3320: Yes. I think I have no stake in this, and I'm not in the community, but I wish
+  more parts of the tech ecosystem had that type of zero tolerance for asshole.
+3329: Yeah. I just, I don't know, like, again, not naming names or employers or whatever,
+  but I've definitely, I'm sure you're the same, Kevin, where there's been people
+  who have had problematic behaviors at previous companies I've worked for, where
+  the signs were there in the first week, right?
+3343: And I have said that, like, before when I was like, as so long as I have any
+  influence, right, if you push the boundaries, I know you're coming really close
+  to the line in your first week where you should be in a good, happy place, you should
+  be trying to impress your coworkers, we should be trying to impress you.
+3362: If that's the first thing you do when you enter a company, not a good fit, right,
+  as far as I'm concerned, because at the end of the day, you know, and again, that's
+  the other maybe difference with Homebrew compared to some other projects is that,
+  like, we are, you know, we have a lot of perks that you don't get at work in that
+  no one can really tell anyone what to do.
+3381: I can tell people, I'm not going to let this PR be merged as is, but I can't
+  say you have to go off and write this code by tomorrow or else, you know, like,
+  no one gets to do that.
+3392: That's nice. And you don't, you know, so you don't really have bosses bossing
+  you around to the same extent.
+3397: But the flip side of that is like, you know, I want us to have the level of
+  interaction that would be considered standard in a workplace.
+3405: And that means that, you know, just being abusive and, like, flaming people
+  and whatever and, like, losing your temper, like, that's, you know, these things
+  happen.
+3414: But, like, essentially, how much slack you're going to get cut is proportional
+  to, like, how much time and effort and energy you put into the project.
+3422: If the first interaction we've ever had with you is very negative and angry
+  and whatever, then no, not interested in continuing that.
+3430: But if, and this has unfortunately happened with Humber in the past, if you're
+  a prolific contributor who's been very involved, maybe a maintainer for a long period
+  of time,
+3438: and over time, those rates of problematic behavior rise and rise and rise and
+  rise and rise,
+3443: eventually we're going to have a conversation where it's like, either you need
+  to fix this or we need to part ways.
+3450: And, like, much as, like, in a job situation, you can sometimes have those people
+  who, they used to be great, but, you know, either they changed or, in happier ways,
+  the culture changed, right?
+3461: And we all change to be people who are not going to tolerate that anymore.
+3466: And I guess if there's a last note on that, if you're a maintainer listening
+  to this, like, I would encourage you to read, like, one of my most cited posts,
+  as far as I could tell,
+3475: that I'm the proudest about, is a post I wrote a few years ago called Open Source
+  Maintainers Owe You Nothing,
+3480: which is basically, if you look through the licenses of open source software,
+  then that's what it says.
+3485: Essentially, it says, you know, we do this without warranties or disclaimers
+  or promises of damage.
+3490: And, you know, how much of this is legally enforceable is debatable.
+3492: But, like, literally, most open source licenses say if a maintainer was to push
+  out a change that deliberately destroyed all the files on your machine,
+3500: like, in agreeing to the open source license and using that, you are agreeing
+  that, like, you can't hold them responsible in any way for doing that, right?
+3510: I think most people would agree that's when it crossed the line.
+3512: It's been like, you know, maybe you're legally okay, but that would, at the
+  very least, make you a bit of a dick.
+3517: But the thing that I think is so crucial about that way of thinking is, it's
+  like, if you're a maintainer, you do not have to do anything that people don't want
+  you to do, right?
+3525: And if your project, maintaining it, is not fun or interesting for you anymore,
+  and you're just being guilted into doing things, then you can stop, and that's okay.
+3535: And not only is it okay, you probably should do that, right?
+3538: And you need to find a way to have your responsibilities on that open source
+  project be something that actually you find interesting and engaging.
+3547: And as you mentioned before, Kevin, like, sometimes the way you can do that
+  is, like, I take a job where I get paid to do this, and sometimes I don't like it,
+  but then I look at my bank balance, and I'm like, okay, this is fine, because it's
+  worth what that is.
+3561: Exactly. Yeah. If you're getting paid for to do a job, there will be parts of
+  it you don't like that you still should do.
+3566: If you're not getting paid, which most open source maintainers are not, like,
+  you darn well better enjoy it.
+3572: Yeah. And even on the, you're not getting paid, like, I guess I would extend
+  that to say you're getting paid, like, a reasonable market rate, right?
+3579: Like, someone who's getting $10 a month to get up sponsors, also does not owe
+  anyone anything, really.
+3586: Correct. Yeah, for sure.
+3587: I think this is the thing. And to me, this is, again, back to open source sustainability,
+  where I think, like, the, without sounding too, I don't know, like, cliche or whatever,
+  like, I think a lot of sustainability comes from within.
+3600: And it's about figuring out, like, what is sustainable for me as a human, like,
+  and what can I do? And what is, you know, since I become a husband and father and
+  whatever, like, what can I do on homebrew that is not going to negatively impact
+  my family, right?
+3616: And that is, again, all of the stuff that kind of goes into running an open
+  source project that people don't really think about, because you don't necessarily
+  have anyone who's going to be saying to you, hey, like, you know, like, it's 11
+  o'clock on a Friday evening, like, you need to be up early tomorrow.
+3635: There's a problem with homebrew, you're staying up late, dealing with this right
+  now, like, maybe you just need to let it slide. Maybe you just need to let people
+  suffer until tomorrow morning, because actually, you need to get a good night's
+  sleep, because you're going to be grumpy with your family or whatever you've done,
+  right?
+3648: And in most good workplaces that I've been in, your boss, or your co workers
+  would be the people nudging you in that way. Whereas an open source, again, historically,
+  there's not been as much of that. And something again, I hope for homebrew sake,
+  and we do see a bit of that is when people are saying like, oh, you know, I need
+  to step up till this is fixed. And people like, I got this, or this can wait, right?
+  Like, you need to look after you.
+3672: And like, that's the stuff that keeps people around and happy and, you know,
+  keeps humans maintainable, as well as the software.
+3681: 100%. All right, well, we're coming close to the end of our time here. Is there
+  anything we haven't talked about yet that you think would be important to touch
+  on or leave people with?
+3691: I don't think so, especially, I guess, just to maybe extend even more of what
+  I was saying before, like, you know, I guess I found in work in the industry for
+  whatever, it's been like, 18 years and open source for, you know, 16 with homebrew
+  and a few more, like it, a lot of this stuff that I maybe dismissed when I was younger
+  about the human interpersonal stuff and squishy feelings and
+3718: therapists and boundaries and all of these, like, you know, cheesy grown up
+  words, or if you're Scottish, like cheesy American words, it's, it's all really
+  important at the end of the day.
+3729: And like, this is what stuff is built on the back of. And like, something I,
+  I really admire when I'm looking at, you know, the LinkedIn or resume or CV or whatever
+  you want to call it of a person who's applying for a job or I'm going to work with
+  or whatever, is like, you know, like, we've got this industry expectation that like,
+  you know, you don't want to be at too many jobs for like a year or less, right.
+3754: But I really love when I see people who've done one thing for a decade or more,
+  right. And I guess like almost like a challenge I would put to anyone listening
+  to this is like, what would it take for you to be happy in your job or your industry
+  or your open source project, or, you know, maybe to be even deeper still like your
+  marriage or your house or your friendship or whatever.
+3776: Whatever. What would it take for that to be still in a really good place in
+  10 years, right. And think about what you can do to get there because, you know,
+  I used to say to myself, like, oh, you know, I've got 10 years homebrew movie and
+  then I'm going to quit.
+3789: But then I'm like, well, you know, maybe I've got 20 or 30 or whatever. I don't
+  really know, because it remains sustainable for me to do.
+3797: And it remains, hopefully at least beneficial for others to kind of receive
+  the kind of work I'm doing.
+3803: And I think, I think the world is much better when people can focus on that.
+3808: And often, you know, to quote every flight attendant or whatever, like putting
+  on your own life mask first, like helps us all be able to do more better stuff together
+  than it does when we're monitoring ourselves.
+3822: And then we burn out in two years or whatever.

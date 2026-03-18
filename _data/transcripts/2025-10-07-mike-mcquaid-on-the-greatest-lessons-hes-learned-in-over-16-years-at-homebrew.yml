@@ -1,0 +1,753 @@
+---
+0: This is the GitHub Podcast, a show dedicated to the topics, trends, stories, and
+  culture
+8: in and around the open source developer community on GitHub.
+11: I'm one of your hosts.
+13: My name is Abby from the open source programs team, and I'm joined with my lovely
+  co-host,
+17: I am Andrea Griffiths, Senior Developer Advocate at GitHub, and I am delighted
+  to be here today
+24: because we are talking to the amazing Mike McQuaid.
+28: And if you ever use Mac for development, you've probably used his work without
+  knowing it.
+33: Mike is the project leader of Homebrew, the package manager that's installed on
+  tens of
+37: millions of Macs worldwide.
+39: Project he's been maintaining for over 16 years, I think longer than anyone else.
+44: So that makes him one of the most experienced open source maintainers in the world,
+  and we're
+49: just delighted to have Mike here with us today.
+51: We're going to talk about Homebrew, his evolution and growth as a maintainer throughout
+  the years,
+56: and also the open source zone upcoming to GitHub Universe.
+60: Hey Mike, welcome to the show.
+61: Hey, thanks for having me.
+63: Can you tell us a bit about like, why did you start contributing to Homebrew?
+67: What it is?
+68: So Homebrew, my like one-liner to describe what it is, I guess, for the probably
+  fairly
+75: savvy group who would be listening to this would be, it's basically like a pack
+  app store
+81: for open source software in your terminal.
+84: And so we have other non-open source software and stuff in there as well, but
+  that's like
+88: what most people use it for most of the time.
+90: And also, I guess another way would be saying if you're like a developer and you're
+  on a
+94: Mac, chances are you install a bunch of stuff.
+97: All the stuff that you don't install with like NPM or RubyGems or PyPy or whatever,
+  you're
+101: probably installing with Homebrew.
+102: So like your database and all that type of stuff.
+104: So you're likely to have used Homebrew.
+106: Some people that might be listening to this or watching us now are probably as
+  old as
+112: Homebrew or younger than Homebrew, which is kind of wild, right?
+116: Yeah.
+117: Homebrew is all day known.
+119: Homebrew is all day known.
+121: Listen, I'm not one of those that is like back in my day, but for real, we don't
+  appreciate
+126: Before Homebrew, Mike, what do people have to do?
+130: Like what were we subjected to then?
+133: So Homebrew was made by a guy called Max Howell originally.
+137: So he was working at a startup in London and he was complaining about Mac ports,
+  a package
+144: manager, still a very good package manager around to this day.
+146: He was complaining in the pub in London, as you do when you're in London.
+150: And I think apparently one of his coworkers eventually snapped and said like,
+  well, if
+154: you know so much, why don't you just go and make your own package manager?
+157: So he went home having had some beer and then wrote up his design for a beer
+  themed package
+164: manager, which then became Homebrew.
+165: So I guess my involvement was maybe a few months into having created Homebrew.
+172: Like a few people were starting to use it mainly in the Ruby community to begin
+  with.
+175: And I heard about this from like a friend of friend.
+178: I was also a tech startup in London at the time.
+180: And I tried to build a thing on top of Mac ports to sort of make it work in a
+  more, what
+186: I didn't realize at the time, more Homebrew-y way.
+189: And then I came across Homebrew and I was like, oh, this is cool.
+191: I'm going to use this, right?
+193: And I didn't start using it thinking I was going to contribute code or maintain
+  or anything
+198: like that.
+199: But I'd done bits and pieces in open source over the years with like KDE and
+  Linux and
+203: various other bits and pieces.
+205: So when I had a problem, like it was fairly natural for me to go and be like,
+  okay, I'm
+210: going to go and submit a change to Homebrew.
+211: I was going to say submit a pull request, but actually Homebrew predates pull
+  requests being
+216: on GitHub.
+217: So the way it started is me and Max would both be on IRC and I would like DM
+  him on IRC
+224: with a link to my commit on GitHub in my fork, which he would then, you know,
+  check out locally
+230: and pull that in and then push it and whatever, right?
+233: And eventually it got to the point that like I contributed a few bits and pieces
+  and he
+237: was like, hey, like, why don't you be a maintainer and help me do some of this?
+241: So I think I was the third person to join with Max being the first.
+246: And yeah, and then I just sort of never got around to not doing that.
+250: And I still am doing it to this day.
+252: I didn't realize there was a time GitHub didn't have pull requests.
+255: So that's news to me.
+257: That's amazing.
+258: You joined this team.
+260: You became a maintainer.
+261: At the time, it was only the two of you.
+263: How many maintainers are there now?
+265: I'm actually, I need to check because it like varies from week to week, month
+  to month.
+270: And we just had, we're about to have some new people join and we just had some
+  people leave.
+274: So we've got, let's see, 29 people as of today.
+277: And yeah, I would say like on a day to day basis, not all of those people are
+  involved,
+283: but like on a week to week basis, probably like at least probably half of them
+  are involved
+286: in some way.
+287: But yeah, but still, it's not a lot of people considering Homebrew has, we don't
+  have exact
+292: numbers, but perhaps tens of millions of users.
+295: So yeah, it's not bad going for 30 people.
+298: Oh, of course.
+299: And the OSI did a little blog post about you.
+301: You said the ratio from, you have a hundred to one contributor to maintainer
+  ratio, which
+305: is really impressive.
+306: How do you think you got to that place?
+308: You have so many contributors.
+309: So not to bore the listeners too much with package management minutiae, but the
+  way most
+315: package managers like Homebrew kind of work is you have one maintainer for each
+  package.
+319: It may well be a maintainer maintains like multiple packages or whatever, but
+  essentially
+323: you tend to have like potentially even thousands of maintainers packaging things.
+327: When you go to like stuff like NPM, there's probably literally millions of maintainers
+  maybe
+331: at this point.
+332: But at Homebrew, the way we did it is like, okay, like the goal of the maintainers
+  is not
+337: to do all the work, but essentially to shepherd the work that is coming in from
+  other people.
+341: So that's been part of it.
+343: Part of it is like the Homebrew's, I guess, DSL, like domain specific language,
+  like the
+349: way you define what gets installed and how it gets installed is like very readable
+  and
+354: it's written in Ruby and it's pretty easy even if you've never done literally
+  any program
+357: for let alone any Ruby before to kind of contribute and fix things and whatever.
+361: And then the other thing which I'd like to take at least partial credit for is
+  I'm, I
+366: am and Homebrew is very, very, very into like automation and tooling and stuff
+  like that.
+371: Right.
+372: So you can make your first contribution to Homebrew by running like a single
+  command that
+376: will change the version and commit it and make a pull request and open the pull
+  request
+381: for you.
+382: So like we've just made it really, really, really easy to make a contribution,
+  but not in
+389: the way that some projects have done where they make it easy by kind of maybe
+  keeping
+393: issues around that remain unfixed, essentially like giving people a scratch pad
+  to play with,
+397: but like actually letting people easily contribute valuable work for us.
+401: And then the other thing on the automation side is like we, we again, try and
+  have as much
+406: human review instead turn into like automated tests.
+410: And to, you know, I guess there's chat in enterprise-y, software-y circles about
+  shift
+416: But basically what that means from like the Homebrew perspective is like what
+  might have
+421: started off as being a human says, Hey, I review your PR, please do X.
+426: Then maybe turns into a CI check that says the same thing like automatically
+  for you.
+431: So a human doesn't need to be awake, but then we, we integrate with like your
+  editor now.
+435: So if you use like VS code, making a Homebrew formula or whatever, then we will
+  provide in
+440: line in editor without you having to do anything other than have Homebrew install
+  guidance of
+445: like what you should be changing and what you should be doing.
+446: And if you have like auto formatting enabled, then you can literally like do
+  the wrong thing,
+450: press save and watch it like all jiggle around and automatically do its stuff,
+  which I
+454: still find very cool.
+455: So all of that stuff, basically, I guess we've just tried to make it very, very
+  easy to contribute
+460: and try and eliminate that friction from the process whenever we can.
+463: You're reading a ton about being a maintainer about, of course, helping contributors
+  come
+474: into the project.
+475: Some of your, my favorite writing of yours is about contributor funnels and that
+  myth that
+480: maintainers can just tell people what to work on.
+483: The technical aspects of automation and making it easy using the tools to get
+  folks to a place
+489: where they're contributing and it's meaningful to them is awesome.
+492: But also there is a human perspective there.
+495: How do you keep people motivated?
+496: How do you make volunteers want to do this when you can't really give them deadlines
+  or say
+501: like, okay, well, this needs to be done first.
+503: Like I, that's always mind-boggling to me for a project this size.
+507: And that is depended on by millions of developers every day.
+511: I mean, I think the, the short answer is, I guess, soft power instead of hard
+  power.
+516: Like, so like nowadays we have like a governance structure and I'm in the project
+  leader and
+520: I'm elected and blah, blah, blah.
+521: So I have a certain amount of hard power in which I can say to people, I mean,
+  I can't
+526: really say you must do this, but I can say we will not do this.
+530: Right.
+531: We're not going to move forward wherever.
+532: But in my mind, every time you do that, you sort of lose something a little bit.
+536: Like ideally everything is a conversation negotiation and you convince people
+  that it's the right
+541: thing to do or they should work on this or whatever, rather than telling people
+  what they
+546: have to do.
+547: And I guess one of the nice things about open source is like, you know what?
+551: In the workplace, people also prefer to be told like, Hey, I'd like you to do
+  X rather
+557: than being like, I command you to do X.
+559: Generally people don't like that very much.
+561: And I certainly don't.
+563: And I think that's the main thing.
+564: I guess another big thing we do on Homebrew, which has made me in some ways and
+  some places
+569: on the internet, a slightly controversial figure.
+571: And if you Google Mike McQuaid's low end swear word that begins with A, then
+  you can find
+578: quite a lot of people talk about how I'm not very nice to deal with.
+582: But the reason why I'm sometimes not very nice to deal with is because sort of
+  the reverse
+586: of that contributor funnel, right?
+588: So all of the maintainers of Homebrew use Homebrew, right?
+591: And we can exist and happily use Homebrew and find Homebrew to be a useful tool,
+  even if
+597: no one else does.
+598: But the problem is, is all of these maintainers who are doing this primarily
+  in their spare
+603: time, primarily either completely unpaid or essentially with a very small stipend
+  that
+608: in no way matches any sort of reasonable hourly wage.
+612: Most children delivering newspapers are probably getting a better hourly wage
+  than a homebrew
+615: maintainer does for their work.
+616: As a result, they need to want to do this stuff, right?
+620: And if you deal with really unpleasant people being unpleasant to you, then you
+  don't want
+625: So in Homebrew, we have a very, very low level of tolerance for people being
+  unpleasant.
+633: And we would rather lose a potential future contributor, maintainer, advocate
+  for Homebrew
+638: or whatever, than we would lose a maintainer.
+640: Because as I mentioned before, when you have millions of users and 30 maintainers,
+  sorry,
+645: we can afford to lose some users.
+648: We can't afford to lose maintainers who burn out just because people are being
+  unpleasant
+653: to them.
+654: So for me, it's, you know, like if you know me in my open source life or personal
+  life
+658: or whatever, like my take is I'm going to try and be nice and friendly and I
+  try and let
+662: people maybe treat me a little bit worse than they should.
+665: But like if you come after my peeps, right, they're my people and I'm going to
+  be defensive
+669: of my people and I'm going to look after them.
+672: And to me, like that's how you keep people involved, right, is people knowing
+  that you
+676: have their back when other people might be being unpleasant to them.
+679: And I guess the second piece of that that's a little bit more recent that I feel
+  like in,
+684: you know, post-COVID remote culture, et cetera, that I think has been super important
+  is like
+688: we try and get together.
+689: We generally have a homebrew like AGM that we try and coincide with like Foz
+  them every
+696: year just because it's most of our maintainers are in Europe.
+698: It's a free conference and it's unticketed and people can just turn up and do
+  as much
+702: as they want.
+703: And yeah, that like getting to meet people and know people face-to-face is always
+  helpful.
+708: I mean, that's a huge part of open source, right?
+711: Is that ultimately it's a wider startup product development, et cetera.
+716: Whereas like most of the time you're going to have more people who want more
+  stuff than
+719: And there's two ways generally of handling that.
+723: One is to just tell them upfront, no, and people don't tend to like that, but
+  it saves
+727: everyone's time and they move on.
+728: Or you make promises, which you just break.
+732: And sometimes you break those promises by essentially having an issue that sits
+  open for
+736: 10 years and someone's like, yeah, we was definitely going to do this.
+738: And then no one ever does.
+739: And is it not better to be told?
+741: No, actually it turns out we're not going to do this.
+742: And sometimes that stirs people into action as well.
+745: Because again, an open source, as I'm sure people hate it when I say this, but
+  I had never
+749: written any meaningful about Ruby before I'd been involved with Homebrew.
+752: I'd never really been a maintainer that reviewed anyone else before I did that
+  in Homebrew.
+756: And like, you can just do this stuff and learn it.
+759: And if you really, really want it bad enough, you will find a way to like learn
+  it and do
+763: it right.
+764: You mentioned Fostum and I absolutely love stopping by the Homebrew booth at
+  Fostum.
+769: Sometimes you can get a shiny sticker.
+771: I think if you ask the right person, we have non-shiny stickers and we have shiny
+  stickers
+776: for people who either contributed or people who donate any amount of money.
+779: So if you want a shiny one, that's how you get one.
+781: Oh, awesome.
+782: Oh, that's the secret.
+783: But you'll also be at the open source zone at GitHub Universe this year.
+788: So GitHub Universe is at the end of October, October 28th and 29th.
+791: How was it last year?
+793: Last year was great.
+794: So it was myself and Patrick, who was one of the Homebrew maintainers, were there
+  last
+798: This year, it will be Patrick and Izzy.
+800: They're going to have a really good time there, I suspect.
+803: I guess one of the nice things about open source stuff in person is like rarely
+  on the internet
+807: do people say like, oh, hey, I use your tool every day.
+810: I like it.
+811: Whereas when people walk past a booth, they say that stuff and that makes you
+  feel good
+816: because often you don't get a lot of that.
+818: But also just like talking to users of Homebrew and like problems they've had
+  and things they
+822: maybe don't know about and things that we can kind of do to improve.
+826: And like, again, it's good from my perspective to get kind of a sense with your
+  project that
+831: maybe higher level things like so rarely do you get an issue that's just like
+  Homebrew
+837: feels slow.
+838: Whereas when you talk to lots of people and like that's their main cause of concern,
+842: It just feels slow.
+843: So then we went away from Universe last year.
+847: We had our AGM at FOSDEM and we were like, okay, like one of the main things
+  we want to
+851: focus on is Homebrew feels slow.
+853: Let's make it not feel slow.
+855: And we worked on a bunch of stuff in that direction.
+857: And some of it is already landed and some of it's probably going to land like
+  maybe just
+861: before Universe actually in ways to make Homebrew both feel and be like much
+  faster.
+866: So like that type of feedback is really lovely to kind of get and be able to
+  turn that all
+870: the way through to like actual stuff that people are going to be able to use.
+873: That's amazing.
+874: I love that.
+875: So see, folks, when you go to these conferences and you talk to the maintainers,
+  things actually
+880: Indeed.
+881: You actually take it all in and take it back to the teams.
+884: And listen, you still say no when you need to say no because you have to.
+890: But I'm looking forward to meeting EC and Patrick.
+893: Yeah, so the open source zone is a lovely corner of GitHub Universe where it's
+  all different
+897: open source projects get featured.
+899: Every year there's a call for applications.
+901: So there's a chance for any open source project to get a booth at GitHub Universe,
+  which is
+905: My favorite thing about the open source zone was just the conversations that
+  sparked.
+909: I remember just standing in the open source zone.
+912: Mike, you called me over and you introduced me to this researcher I had to meet.
+915: And she's been amazing.
+916: And she did a lot of great work with different GitHub people since Universe.
+920: So just the connections that happened in that space were great.
+924: I love the serendipity of this stuff.
+925: And I mean, I think it's something that's kind of wonderful about open source
+  and tech
+928: in general, right, is that often so many people are willing to help so many people.
+932: And I've had a couple of people reach out to me in the last few weeks and be
+  like, hey,
+936: Bumbu did this thing.
+937: We're a small open source project.
+938: Can you give us some guidance?
+939: I would encourage, again, anyone listening to this, you know, if you have questions
+  like
+944: that and you want to connect with another human and want them to maybe help you
+  out,
+948: then just ask.
+949: They're going to say yes, probably a lot more than you think.
+951: And also people like me will reply to your email a lot more than you think.
+956: And we'll do what we can to help you out.
+958: Okay, going into this topic, because I think that for folks that are listening
+  to this and
+969: have you in the same pestle I do, Mike, as the goat maintainer, right?
+974: And so you've been maintaining this project for so long.
+977: Of course, things have changed.
+980: Earlier in the call, we're talking about how a lot, there has been a lot of happening,
+983: obviously, in a span of 16 years.
+985: So I have two questions there.
+988: For one, I think, how does your, the way that you maintain this project change?
+992: Especially, let's say, back then to now, since you become a father to, like,
+  obviously,
+996: priorities change.
+998: Everything shifts a bit.
+999: How has the way that you approach maintainership evolved?
+1002: And then for folks who are coming in, the new maintainers, you mentioned there's
+  going to be
+1006: some new ones coming in, helping people become active maintainers, handing off
+  responsibilities
+1011: and grow in these projects without losing that institutional knowledge is a
+  challenge.
+1017: How do you do that?
+1018: That's definitely front of mind.
+1019: And that's definitely a thing that has changed over the years is how much I'm
+  concerned about,
+1023: like, I guess what they might call the bus factor.
+1026: I guess for anyone who hasn't heard that, it's a slightly grisly definition,
+  which is
+1029: essentially, like, how many people need to get hit by a bus before the project
+  dies, basically.
+1035: And, yeah, there's certain parts of homebrew where I wouldn't say the bus factor
+  is one
+1041: on anything, but there's definitely bits where, you know, you have a maintainer
+  who's on holiday
+1046: for a few weeks and you realize, like, no one really knows how to fix this without
+  them.
+1051: And it's, you're like, okay, this probably means we need a bit more documentation
+  or whatever.
+1056: I don't really like writing very much, particularly documentation, but it's
+  often, like, just really
+1062: necessary to do.
+1063: And often I find myself in a situation where it's, like, actually, like, okay,
+  I could write
+1067: a bunch of code or whatever, but, like, probably the most valuable thing for
+  me to do is to,
+1071: like, write down a doc, right?
+1072: So, for example, something that's on my to-do list right now is, like, we are
+  a package manager
+1077: and we package software.
+1078: And on the internet, people use software to do a wide variety of things.
+1082: And we have been historically, like, on a case-by-case basis deciding, okay,
+  like,
+1086: what might be too much violence or what might be too much stuff with, like,
+  sex or whatever
+1091: for us to package it or not package it.
+1094: And again, you get the fun facts of being, like, an international project where
+  you come
+1099: in not just what the project should be doing, but, like, individual maintainers'
+  views on,
+1102: like, well, my country thinks sex is no big deal and violence is a big deal,
+  or my country
+1107: thinks the other way around, or I work in a big corporation and we're going
+  to probably
+1110: block this and we don't know what homebrews to get blocked.
+1112: And then people being like, well, if they block for that type of thing, then
+  good.
+1116: So, like, all of these type of negotiations and generally, like, that is best
+  suited by
+1121: writing down a document and then we can discuss something written down and then
+  that can be
+1126: almost like it settled and moved on.
+1127: I guess related to that, I have become, particularly since becoming a father
+  and spouse and stuff
+1133: like that. Like, I try to do less arguing with people on the internet, as satisfying
+  as it can
+1139: sometimes be. It rarely achieves very much and I try to, like, I'm a pretty
+  liberal use of the kind
+1145: of lock thread feature, not because I'm like, oh my goodness, if anyone else
+  speaks here, the worst
+1150: thing would happen, but just because it's like, okay, look, sometimes we get
+  to a point where it's
+1154: like, you're not going to change my mind, I'm not going to change your mind.
+  Let's not go back and
+1158: forth on this. Let's just move on and you can take this to another place. For
+  me, homebrew still
+1163: is not something which, at least directly, has ever kind of driven money into
+  my pocket. So it's
+1170: like, it has to be something I actually enjoy doing and I don't really enjoy
+  dealing with people who
+1174: are shouting at me or calling me names. So as a result, there's times where,
+  I mean, literally for
+1178: me, other maintainers have different views. Like, if someone files a legitimate
+  bug and they're just
+1183: being really mean about it, I'm just going to be like, well, I don't have any
+  desire to fix that.
+1187: If someone else comes along and says like, me too, I'm affected by this and
+  they can say it in a nice
+1192: way, then cool. I might help them. People say, oh, it's a marathon, not a sprint.
+  But I kind of
+1197: genuinely think that about like open source. And I maybe have a blog post brewing
+  at some point about
+1202: doing things for a long time. I was at GitHub for 10 years. I've been with my
+  now wife for 23 years.
+1207: My best friend comes around to my house every week. We've been friends for like
+  30 years. And like,
+1212: I want to be able to still doing homebrew, still be doing homebrew when for
+  20 years,
+1216: maybe even 30 years, who knows, maybe even more if it still even exists at that
+  point.
+1220: And what's going to keep me doing that is enjoying it and not burning out and
+  all that good stuff.
+1225: And that also, I feel like helps me provide an example to other maintainers
+  inside or outside
+1230: homebrew to similarly, like how to survive long-term in what's not always easiest
+  environment.
+1237: Absolutely. Let's print all of that out and put it in a t-shirt.
+1239: You know, I haven't stopped and thought about the fact that, yeah, this is obviously
+  a global project
+1246: and you're dealing with not just the way that you approach building software,
+  but how it's done
+1253: anywhere else in the world. And you have to take all of that into account of
+  how you manage a project
+1257: this size. So that necessary community management key. And listen, folks, Mike's
+  been doing it for 16 years.
+1267: We'll take some notes. You definitely know what you're talking about.
+1269: You mentioned GitHub and homebrew sort of growing up together and like you were
+  one of GitHub's early
+1275: employees. I'm really curious to hear your thoughts on how GitHub's relationship
+  with open source
+1280: projects like homebrew have changed over the years.
+1283: Yeah. I feel like it's sort of goes up and down, right? Like, like anything
+  does. But I mean,
+1288: fundamentally for me, I think the open source community is in some way forgotten
+  that like it,
+1294: and I guess from having been on the on-call rotations on GitHub and stuff, like
+  lots of people use
+1299: GitHub and lots of resources are given away for free for open source. And I
+  feel like in some ways I can be
+1306: more defensive of GitHub in that way than I was. Maybe when I was an employee,
+  when people were like,
+1310: oh, you're just paid to say that. And now I'm not paid to say that. But like,
+  particularly now with
+1315: GitHub actions minutes and stuff like that, there's a huge amount of infrastructure
+  that is available
+1319: between, I don't know, GitHub actions and co-pilot and repo hosting or whatever.
+  In the early days in
+1325: which I was doing open source, like all of that stuff had to be built individually
+  for each project.
+1330: And it had to be maintained by people and they were getting woke up in the middle
+  of the night if
+1334: things went down and all this type of stuff. And like now you don't have to
+  do that for the vast
+1340: majority of projects and you have a vast amount of very high level impressive
+  technology available
+1346: mostly for free. And that's great. To me, like that's the foundation of the
+  relationship between
+1352: GitHub and open source. It's just like the stuff that is given away for free
+  and used for free.
+1356: And you know, GitHub benefits from that as well, because that's how GitHub grew.
+  Like GitHub grew
+1361: essentially by convincing a bunch of open source projects, you should use this.
+  And then a bunch of
+1365: business followed from that. I also think I guess the relationship, it's depends
+  what GitHub is
+1371: particularly passionate about at any given time and how much that aligns. So
+  if you're a big fan of
+1377: co-pilot, which I am personally, then you're probably quite excited about what
+  GitHub is doing with
+1382: co-pilot right now. If you don't care about that, like if, if all you live in
+  is GitHub PRs,
+1387: then I can understand why you might get frustrated when the PR page is either
+  slower or not getting
+1392: faster or quick enough or whatever it may be. And so, yeah, I think like that's
+  maybe how stuff
+1397: changes over the years. And I guess finally, like, you know, GitHub is part
+  of Microsoft now and
+1401: it's like a big, bigger, more grown up company. And you can't just necessarily
+  message your friend
+1406: that works there and get stuff sorted that way. But there's good things about
+  that and bad things
+1411: you read about using AI as, you know, good out of complete. And, you know, you
+  just mentioned that
+1423: actually, yeah, you are, you are a fan of co-pilot. You review thousands of
+  contributions to the project
+1429: that they're saying. Have you seen the quality of the contributions change?
+  What can we do? How can we
+1435: help maintainers when we're wanting to use AI tools? So I think on the maintainer
+  side, there's some stuff
+1440: that's there already. Like, I think like the co-pilot code review, it's not
+  a replacement for
+1445: a human, but it definitely catches certain cases in a way that's really helpful
+  and saves time for a
+1452: human sometimes. It's funny, like pre all the current AI wave, maybe like 2018,
+  one of my blog posts called
+1457: Robot Pedantry Human Empathy, kind of about this, where I was talking about
+  how people will accept a
+1463: robot or I guess now an AI being super pedantic about like, oh, you made a typo
+  here and here and
+1469: here and here and here. Whereas when your human co-worker does that, you tend
+  to think that they're
+1473: just rather annoying. So I think like leaning into stuff like that is quite
+  helpful. And I guess
+1478: different people have had different experiences. I feel like I've had probably
+  a pretty good experience,
+1482: maybe because I know the homebrew code base so well with like assigning issues
+  to co-pilot. The fun
+1486: thing is, if you want to go see, you can go and look because it's all on the
+  public record of the PRs.
+1489: I think I just two to three months ago assigned every bug on homebrew on the
+  package manager side,
+1494: at least to co-pilot just to see what would happen. Right. And what happened
+  was they all got fixed.
+1499: Did co-pilot get a hundred percent of the way there itself? I don't think in
+  any of the cases it did,
+1504: but it certainly saved me a lot of time and would get between 50 and 95% the
+  way there on the first
+1511: time. And then with a couple of prompts get probably 60 to 99% there. And then
+  what I do is I then just
+1519: go and take over, take the wheel and then finish off the last bits. And that
+  was still very helpful.
+1524: Particularly with dealing with, I guess, people talk about it with writing a
+  bit more like the kind
+1528: of blank page problem of like, okay, there's about 10 different ways of fixing
+  this bug. Like I can't
+1532: decide which one to do. And then I'm just like, okay, right, co-pilot, you pick,
+  and then I'll fix
+1536: whatever you try and do. And I also think with homebrew, we maybe benefit a
+  little bit more with that
+1542: stuff because we were early adopters of like GitHub's like issue, mandatory
+  issue templates. In fact,
+1547: I feel like part of the reason this got built is I just whined so much about
+  it internally for such a
+1552: long period of time. One of the nice things about that is like, you know, we,
+  we get people to provide
+1556: step-by-step reproduction instructions in that. And then the AI model can then
+  go and see that and
+1562: just essentially do what the person has told them to do to find the bug and
+  then do it again to find
+1568: the repro. So yeah, stuff like that is kind of helpful. I guess on the human
+  side, like I wouldn't
+1572: say we've had a marked level of almost like contribution, either improvement
+  or decline.
+1578: Probably I think the cases where people are using AI tooling locally themselves
+  very well is not
+1586: visible. And I think that's fine. Like personally, I don't care if you did a
+  hundred percent of the work
+1592: or copilot data or clone code or cursor or whatever, as long as you as the human
+  have given it a once
+1598: over and been like, okay, like this looks good, or I'm going to tweak this or
+  whatever before you want
+1604: a homebrew human to review it. That's fine with me. In my mind, that's the key
+  to successful AI usage,
+1609: right? We're still, I think we probably will be forever, but we're still in
+  the era where a human
+1615: needs to be in the loop somewhere. You need to have a human review the output
+  before their coworkers do
+1620: it. And if you get very good at code review, then you are more likely to get
+  better at doing that with
+1626: an AI as you would with a human. But in some ways, the interactions feel pretty
+  similar. Even a human
+1631: who's not using AI, we may go through like five or 10 rounds of back and forth
+  in a PR. And then
+1637: eventually, provided I have the permissions on their fork to do so, I'm just
+  like, look, I'll do the last
+1642: bit, right? Rather than me trying to tell you what code to write, I'll just
+  go and write the codes and
+1647: then we can merge the PR and we can move on. Sometimes that final little bit,
+  it just makes
+1650: sense for the maintainer to jump in and do it. Yeah. So Mike, bummed we won't
+  see you at Universe
+1655: this year, but if someone listening goes to the open source zone, stops by the
+  homebrew booth,
+1660: what should they say to Issy and Patrick? First, assuming you use homebrew,
+  say thanks, good job. But then
+1666: after that, I just encourage you to, in a nice, polite, respectful way, like
+  say, what things about
+1672: homebrew would you like to see be better, right? And they will collect that
+  feedback and we'll do better
+1678: with that. My also tip for that with feedback for homebrew or any other technology
+  process is to try and
+1684: focus when you're saying that on the problem that you're experiencing and not
+  the solution that you
+1689: perceive. One of the perils you have of having technical users, whether you
+  work at GitHub or we work on
+1695: homebrew or whatever, is people who can write code themselves tend to jump straight
+  from I have the
+1700: problem to I can see in my head what the code should be to solve the problem.
+  I'm going to tell
+1704: you that. But like, if you don't know the homebrew code base, like the back
+  of your hand, which you
+1709: probably don't, then it's more helpful for people to know like what are the
+  pain points of the problems
+1713: you're experiencing rather than what you perceive the solution to be.
+1721: Well, let's move to the section where we all share an open source project that
+  we're excited
+1725: about. Mike, you're our guest. Are you ready to go first?
+1729: Yeah, so I've got like a bit of a deep cut actually right now. So there's a
+  tool called
+1734: SOMO, S-O-M-O. It's under the GitHub user Theo PFR, who's Theodore Pifer, I
+  think, a 24-year-old
+1744: programmer and student from Munich. So it is a cool little application written
+  in Rust that shows what
+1751: ports on your local Mac are open and closed. And this is a very niche thing
+  that you probably only
+1761: need every few months. But like if you accidentally end up starting your Rails
+  server or MySQL server or
+1767: something like that on a port, and then another thing is like saying, hey, I
+  can't open this port
+1773: because this other thing's got the port, then this is a very nice, easy way
+  to figure that out. It's a
+1778: cool little tool that I've liked recently.
+1779: Thanks for bringing this up. Starting it right now. Boom.
+1782: Andrea, do you have yours?
+1785: Yes. This just so happened to be a Microsoft in-source project that was just
+  released, I guess,
+1791: a couple of weeks ago, the spec kit, that toolkit for us to start thinking about
+  spectrum development and
+1797: utilizing that methodology with the help of AI to basically ship faster. I'm
+  excited to use it. I think
+1804: it's great that we're investing on beyond the AI tools themselves and ways to
+  help the humans work
+1811: with the tools better. So now we're moving into a world where, yeah, everybody
+  has the power of
+1818: co-pilot or whatever your preferred tool is. Understanding spectrum development,
+  understanding
+1824: the who, the what they have beyond the immediate problem and the code is huge.
+  So if you're an
+1830: entrepreneur or if you want to be, I think it's a good approach to building
+  software. What about you,
+1836: Abby? What's yours?
+1837: Mine's a deep cut. I came across it recently. It's a super old project, but
+  my friend,
+1842: my friend Luke, he made CSS Diner. It's flukeout.github.io. Flukeout's his handle.
+  And it's
+1849: like just this fun little tool to help you learn CSS. And there's this little
+  animation of like
+1854: plates dancing. And it tells you to select the plates. And then you learn how
+  to use CSS to like
+1860: select it. It's really fun. It's a nice way to learn how to code like CSS at
+  least. And it's kind
+1865: of old, but I wish I want to see more projects like this. This is why I bring
+  it up. I want to see
+1869: people make fun educational tools.
+1872: Abby, I love this. This is so cute. And then it even has a help I'm stuck. So
+  it gives you like a
+1878: little, yeah, this is a great little tool. I love this. Shout out to that human.
+1881: Well, to everyone who's been listening, this has been the GitHub podcast where
+  we talk about the
+1886: topics, trends, and culture around the open source community on GitHub. My name's
+  Abby. You can find
+1891: me at abbycabs, most places on the internet.
+1895: I'm Mike McQuaid, everywhere on the internet. Pretty much mikemcquaid.com is
+  my blog where you
+1901: can find links to posts and talks and social stuff and all that good stuff.
+1906: And I'm Andrea Griffiths, a la Columbia Dev in all places. I'm andreagriffiths.dev.
+  That's
+1912: my site. And it's been fun to be here with you two. Thank you. This was delightful.
+1921: Thank you.

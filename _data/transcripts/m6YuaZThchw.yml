@@ -1,0 +1,2049 @@
+---
+0: Today's guests are Mike McQuaid and John Britton.
+2: They met while working together at GitHub.
+4: Mike and John are the founders of Workbrew,
+6: a startup built to provide the missing enterprise features
+10: for managing Homebrew.
+11: Mike is the project lead and longest serving
+15: maintainer of Homebrew, applause,
+17: the package manager for Mac
+19: that almost every one of you will have used.
+20: I used it today to install Docker.
+22: We get the inside story on Homebrew,
+25: including its London pub origins.
+26: I would never have imagined that it began in a pub in London
+30: with a random chat.
+31: I mean, I guess the naming and the beer theme
+34: might have led one slightly more in that direction.
+38: We learn what it's been like
+39: to work with the biggest company in the world, Apple.
+42: He's based in the Shetland Islands of Scotland.
+44: If you look at a map, Shetland is far away.
+47: Essentially, that's the short version.
+49: Someone in Apple being like,
+50: oh, we have to get this thing here.
+52: Like, can it not just go to an office
+54: or a bigger city or whatever?
+56: We can't.
+57: Like, if you want this to happen,
+58: this is what you need to show out, right?
+61: We learn how Mike and John
+62: think about open source sustainability.
+64: You will find various parts of the internet
+66: that don't like me very much for this viewpoint.
+68: But in the end, to me,
+69: the only way you are able to successfully scale that
+72: is you say some of these features go away.
+73: And how Mike and John are taking these lessons forward
+76: to build Workbrew with a very unique approach.
+79: Enjoy.
+80: Probably everyone listening has used Brew, Homebrew,
+85: to manage their packages on Mac,
+88: unless they're, like, really hardcore on Linux or Windows.
+94: Do you want to talk a bit about the actual, like, story of Homebrew?
+100: Because this is a tool that we all use.
+102: So I just want to say something about the hardcore Linux users.
+105: Is that I would say that, like, both Mike and I
+107: kind of came to be as hardcore Linux users
+110: and ended up in this situation of working on a Mac
+113: because of its similarity to Unix operating systems.
+116: But there was something huge missing there.
+117: And I think that the story of Homebrew's origin and whatnot
+120: that Mike will tell
+121: is definitely, like, going to encompass that as well.
+125: So, I mean, I guess as John said,
+127: I almost mentioned this earlier.
+128: But, yeah, for me, I realized recently
+130: I think I was a, you know, Linux user for,
+133: I don't know, like, five or six years primarily.
+137: And at less than a year after moving from Linux to macOS,
+140: I ended up maintaining Homebrew.
+141: So that's, you know, how I ended up over there.
+144: I've, my, occasionally when Linux people give me trouble,
+149: I point out I have, like, one commit in Linux kernel
+153: from back in the day, like, 2000 and whatever year it was.
+157: So, yeah, that's my nice little Linux fight back thing that I have.
+163: Linux credibility.
+164: Yeah, exactly.
+165: Also, fun fact, Homebrew itself runs on Linux nowadays as well.
+169: So we might talk about that later
+171: because it's sometimes a little bit confusing
+173: why you would want to do that.
+174: But anyway, so, right, we're back in 2009.
+178: I'm working in London for a stock called Mendeley.
+181: There's a guy called Max Howell
+183: also working in London for another stock called Last.fm.
+185: He has irritations with the way package management
+190: is currently working on Mac.
+191: He's been playing around with Mac ports and think and coming by.
+196: There was one other option that, like, leaves my mind right now.
+199: And I think he was whining about it in the pub one day
+202: and basically someone said to him,
+203: hey, if you hate package management and you know all this stuff so much,
+207: why don't you make your own package manager?
+209: I think mainly intending him to just shut up.
+211: But he went off and started work on Homebrew.
+214: It's interesting.
+216: You can kind of go back and look through the Git logs.
+218: It's like one of the kind of few examples, I guess,
+222: of a big open source project that was started with kind of re-be-driven development.
+225: So the first project commit in Homebrew itself
+229: is like a description of how Homebrew is going to work.
+231: And Mac wrote all that down before he wrote the codes.
+234: And I often think, like, that's a sign
+237: when things are going to be optimized for usability and developer happiness
+240: as you think from the outside in.
+242: Think, like, how should people be interacting with this
+244: rather than just, like, writing code and then being like,
+247: well, they interact with it how I tell them to.
+249: Anyway, so he'd been working on this for a little while.
+252: He open sourced it.
+253: It started to get picked up by a few more people.
+256: I discovered it because I basically built a sort of hack on top of Mac ports
+260: to make it work in the way I didn't know at the time.
+264: But this Homebrew tool worked to use a lot more stuff from the system
+268: so it'd be kind of faster to build various tools.
+270: I discovered Homebrew.
+271: I was like, this is cool, and sort of just started getting involved.
+274: And, yeah, I think one other non-Macs person
+280: had kind of been getting involved as a maintainer at that time.
+283: And, yeah, like, I guess, fast forward 15 years,
+285: we've got kind of gone from, you know, a few contributors,
+289: a few maintainers to about 30 maintainers.
+292: We've got about, I think, 15,000 or something contributors,
+296: maybe more than that, and 20,000 packages
+298: kind of in our, like, officially supported ecosystem
+301: and then probably tens of thousands more
+303: in the kind of wider ecosystem.
+304: That's so cool.
+306: I would never have imagined that it began in a pub in London
+310: with a random chat.
+312: I mean, I guess the naming and the beer theme
+315: might have led one slightly more in that direction
+318: if you ponder it sufficiently.
+320: Yeah, that makes more sense now.
+322: Wow.
+323: So, Mike, could you just tell me
+327: what you just told me about WorkOS?
+328: Because I just told Mike that WorkOS is the sponsor,
+331: and this is what Mike said.
+333: Yeah, so WorkOS isn't paying me any money for this.
+336: I pay WorkOS money for this,
+338: but WorkOS is, like, one of the best developer tools
+341: I've, like, ever used.
+342: It's the documentation and the experience
+345: with building with them is so, so good.
+348: Like, I initially was almost like,
+349: okay, this seems expensive,
+351: but then, like, I built an integration
+354: with them in about 20 minutes
+356: that I had spent two hours,
+358: sorry, two days,
+359: banged my head off the wall
+360: trying to build it directly with Okta.
+362: I then have, like,
+363: many, many SSO providers,
+365: like, support instead of just one.
+368: So, yeah, like, for me,
+369: WorkOS is one of the nicest developer experiences
+371: I've encountered in the last, like,
+373: five years, probably.
+374: And it's still surprising
+376: because a bunch of the developer team
+377: are ex-GitHub
+378: and therefore very good at their job.
+380: Amazing.
+381: And was it a case of, like,
+384: build it and they will come?
+386: I don't think so.
+388: I mean, the funny thing in open source land,
+390: back then we used to talk a lot more about this
+393: than we do now when it's, you know,
+395: there's a bit more of, like,
+396: oh, clout and you should get some GitHub stuff
+399: on your resume or CV or whatever.
+401: Like, back then I remember people said
+404: a lot of open source is just scratching your own itch, right?
+407: Where essentially Max had a problem himself
+410: that he wanted to solve primarily for himself
+412: and then he was like,
+413: okay, well, I'll put this on.
+415: At the time, also quite new,
+416: this thing called GitHub.
+417: And I guess that was the other sort of interesting thing
+420: and it's been interesting for me
+421: kind of being on both sides of that
+423: is, like,
+424: Homebrew was also one of the first software projects,
+426: certainly the first package managers
+428: to kind of really lean in heavily
+429: on the kind of GitHub way of doing things, right?
+433: So Max, from the outset,
+434: I guess he would say that he was being lazy
+436: and I guess, you know,
+437: maybe he was being lazy,
+438: but he was also being smart.
+440: The best engineers, in my opinion,
+441: are often fairly lazy
+443: because he had the attitude of, like,
+445: hey, I don't want to maintain this all myself.
+447: I want to have the community maintain this.
+449: And if you want the community to maintain it,
+451: you need to make getting involved,
+453: merchant pull requests,
+456: all this type of stuff,
+457: like, as easy as possible.
+458: So that was a big focus of his in the early days
+461: and that was, I guess,
+463: a big focus of mine increasingly
+464: with Homebrew and GitHub and things like that
+467: is that generally you want to take the behaviors
+470: that you want people to do
+471: in a developer tool
+472: and make them as easy as possible.
+474: And if the stuff you don't want people to do,
+476: you want to make that either impossible
+477: or harder for them to do
+479: than the easy thing,
+480: than the right thing.
+481: That makes sense.
+482: And what does that, like,
+483: functionally kind of look like?
+485: To me, in something like Homebrew,
+487: it looks like,
+489: I guess it depends on
+490: what layer you look at, right?
+491: So part of it is,
+493: essentially,
+494: we really try and optimize
+495: the friction of, like,
+497: onboarding, I guess,
+498: both from a user level
+500: and a contributor level
+501: and a maintainer level.
+502: So for a user,
+503: Homebrew was, I think,
+504: maybe one of the first projects,
+506: maybe the first to the now infamous,
+508: get a bash script
+510: and pipe it into curl
+512: that some people don't like very much.
+514: And if you don't like that
+516: then you might want to hear more
+517: about Workbrew later.
+518: We'll talk about that.
+519: But I guess from that perspective,
+522: a lot of these tools
+524: that have installers,
+525: having something where you can,
+526: like,
+527: get installed
+528: a single command,
+529: no dependencies,
+530: everything gets done for you.
+531: that was very heavily optimizing
+534: Similarly for contributors,
+536: the docs,
+537: the automation,
+538: the tooling,
+539: everything like that,
+540: such that the flow
+542: as possible
+543: for that person
+544: getting started
+545: with the project.
+546: And when we see people
+548: multiple times,
+549: we're quite aggressive
+551: about jumping on them
+552: and really prioritizing
+553: fixing that stuff
+554: the project scales,
+556: And we have still
+558: very, very many more
+559: than we have maintainers.
+561: And then the last thing
+562: is similarly doing that
+563: for the maintainer approach
+564: and they're making it easy
+565: for us to add new maintainers
+567: but also making it easy
+568: to do their job,
+569: trying to automate
+570: the absolute living hell
+572: out of everything
+573: we possibly can,
+574: trying to lean into,
+575: robots,
+576: automation,
+577: CI all over the place,
+580: linting all over the place
+581: to try and essentially
+582: just remove
+583: the amount of manual work
+584: that a human has to do
+586: that can be done
+587: by a robot
+588: or a CI
+589: or a GitHub action
+591: or whatever it may be.
+592: I mean,
+593: what makes it possible
+594: for such a relatively
+596: small team
+597: of volunteers
+598: to run
+599: a huge part
+600: of the infrastructure
+601: of Mac development.
+603: unbelievable to me
+604: how small but mighty
+607: that group of people is
+608: and they deserve
+609: all the accolades
+610: and all the support
+612: for, you know,
+613: as a developer myself,
+614: I'm a user of Homebrew.
+615: I use it every day.
+616: I couldn't imagine
+618: and it's just, like,
+619: unbelievable that,
+620: you know,
+621: it's possible
+622: to do something like that
+624: you know,
+625: small,
+626: dedicated crew.
+627: Yeah,
+628: I mean,
+629: it almost feels like,
+630: I don't know if I ever
+632: really thought about,
+633: oh,
+634: where did Brew come from?
+635: It's, like,
+636: like,
+637: inherent part
+638: of, like,
+639: like,
+640: developing with Macs.
+641: such a,
+642: did,
+643: did, like,
+644: Apple get involved
+645: in it at all?
+646: Not really.
+648: Like,
+649: they've helped us out
+650: So we have
+652: contacts at Apple
+653: who we can kind of
+654: escalate stuff to
+655: and help us out there
+657: and ask questions
+658: I guess the most notable
+660: case of Apple
+661: helping us out
+662: because obviously
+663: they realized that
+664: it was very much
+665: in their self-interest
+666: in that case to do it
+667: was when there was
+668: the Apple Silicon transition,
+669: you know,
+670: pretty much,
+671: as soon as they
+672: announced, like,
+673: move to Apple Silicon
+674: and there was these
+675: and stuff like that,
+676: they got in contact
+677: with us straight away
+678: and we're basically,
+679: like,
+680: of these kits
+681: of your maintainers
+682: and we also want to,
+684: like,
+685: get these kits
+686: in data centers
+687: so you can start
+689: building,
+690: building stuff in CI
+691: and automating things
+692: and packaging things
+693: and integrate that
+694: into your workflow
+695: and you're not having to,
+696: pay out the nose
+698: for a lot of this stuff.
+699: And even that process
+700: was kind of an interesting
+701: case of, like,
+703: worlds colliding
+704: there was conversations
+706: with some of the Apple folks,
+707: some of them knew already,
+708: some of them would go,
+709: so where's the homebrew office?
+710: And it's like,
+711: there is no homebrew office.
+712: There is no homebrew office.
+713: Okay, so what country
+714: are your maintainers based in?
+716: Like,
+717: All of them?
+718: Maybe, like,
+719: 20 countries, right?
+720: And I remember, like,
+722: one of the folks
+724: who was very early
+725: getting a lot of our stuff
+726: sorted out
+727: and he's a workbrew employee
+729: nowadays as well
+730: and he's based
+732: in the Shetland Islands
+733: of Scotland.
+734: So, like,
+735: if you look at a map,
+736: Shetland is far away,
+738: That's the short version.
+740: And, yeah,
+742: basically, like,
+743: someone in Apple being like,
+745: how, like,
+746: we have to get this thing here.
+748: can it not just go to an office
+750: or a bigger city or whatever?
+751: And it's like,
+752: no, we can't.
+753: This is, like,
+754: if you want this to happen,
+755: this is what you need to
+756: sort out, right?
+757: And it did all get sorted out
+759: and it was all fine.
+760: But it's,
+761: it's definitely an interesting
+762: cultural thing.
+763: And I think Apple,
+765: you know,
+766: I'm a massive Apple fanboy.
+767: I basically own
+768: essentially almost every
+770: thing they've ever made
+771: with the exception
+772: And I'll take one
+773: if anyone wants to give
+774: one to me for free.
+775: But anyone's listening.
+777: for my startup lifestyle
+779: But, yeah,
+781: you know,
+782: But they definitely,
+783: like,
+784: don't quite get open source,
+786: there's certain teams
+789: and individuals
+790: in the organization
+791: who have that background
+793: or relationships
+794: or whatever.
+795: organizationally
+796: is, like,
+797: they're not,
+798: super tuned in
+799: until almost,
+800: how to partner
+801: with a bunch
+802: of volunteers
+803: with no legal entities
+804: scattered around the world.
+805: Yeah,
+806: it's actually really surprising
+807: that they're not
+808: giving bucket loads
+809: of money
+810: to you guys.
+811: I don't know.
+812: Well,
+813: this is a lot
+814: around open source
+815: right now,
+816: where it's like,
+817: why?
+820: I'm actually not
+821: being too facetious
+822: hopefully,
+823: why should they?
+824: They don't have to.
+826: Humbro is operating fine
+829: without getting buckets
+831: from Apple.
+832: And from both parties'
+835: it would be hard
+836: to justify going
+837: from nothing
+838: to buckets
+839: without some sort
+841: understanding
+842: that relationship is,
+844: of quid pro quo.
+845: And,
+846: you know,
+847: that's when
+848: you have
+849: a volunteer
+850: scattered around
+851: and,
+852: you know,
+853: maybe the world,
+854: I haven't checked
+855: Close to the largest
+856: company in the world.
+857: in the world,
+858: there's an imbalance
+861: there.
+862: also,
+863: maybe it's pertinent
+864: to maybe the way
+865: right now,
+866: where there's an awful
+867: in and around
+868: open source right now.
+869: And I'm maybe
+870: one of the old school
+871: maybe even free
+873: software people,
+874: kind of the point
+876: is they don't have
+877: to give you anything.
+878: I don't feel
+879: like any company
+880: who uses Homebrew
+881: or relies on Homebrew
+882: is obliged
+884: to Homebrew.
+885: a bunch of them do
+886: and that's great
+887: when they do
+888: appreciate that
+889: useful for us.
+890: But,
+891: if the license,
+893: if we demanded
+895: that every company
+896: gave us money,
+898: then in my mind,
+899: we're not open
+900: We're a different thing.
+901: We're a proprietary
+902: product with a free tier,
+903: right?
+904: My message would be like,
+905: don't try to use
+906: open source as a playbook.
+907: You know,
+908: build your product,
+909: get people to use it.
+910: Like,
+911: the idea that,
+912: open source is a marketing strategy
+914: is something I just see
+915: like way too often.
+916: Yeah.
+917: And I guess it depends
+918: what you're optimizing for,
+919: right?
+920: If you're trying to
+921: maximize reach,
+923: then,
+924: yeah,
+925: make it open source,
+926: put it under the most liberal
+927: open source license possible,
+928: the MIT license
+929: let everyone in the world
+931: But then converting
+933: those people into paying
+934: customers later
+935: is not something
+937: that you have built
+938: your relationship
+939: right?
+940: And it's funny
+941: because I guess
+942: the open source
+943: in some ways,
+944: I think like open source
+945: is a short-term
+947: business model.
+948: It's not a long-term
+949: profit-making business model.
+951: And it's one that
+952: when these companies
+953: get bigger
+954: and zero interest rates
+956: and investor pressure
+957: and all these types
+958: of things happen
+959: and you get squeezed more,
+960: then it's like,
+961: you know,
+962: to what,
+963: are you able
+965: to your,
+966: like,
+967: whoever it may be,
+968: your community,
+969: your customers,
+970: your employees
+971: hey,
+972: all this open source
+973: like,
+974: turns out,
+975: changed our minds.
+976: Bad idea.
+977: I don't know how to do that anymore.
+978: yeah,
+979: and I think John and I
+980: share a similarly
+982: bad taste in our mouth
+984: from places
+985: that have done that
+986: where it's not even
+987: doing the wrong thing.
+988: It's just,
+989: you cause a lot of aggro
+991: that you don't
+993: and that aggro
+994: ends up feeling like
+996: it is open source's fault
+998: whereas I think
+999: it's the exact opposite of that.
+1001: open source to be
+1002: something that it's not.
+1004: that makes sense
+1005: and yeah,
+1007: it's like,
+1008: it definitely is like
+1009: one of the biggest
+1010: conversations right now.
+1011: I think even
+1012: like the whole
+1013: WordPress stuff
+1014: is like
+1015: this kind of like
+1018: whether you should pay
+1019: things that you're not
+1020: obligated to
+1021: or whether you should
+1022: that you're not obligated to.
+1024: I mean,
+1025: to like looking at the origins
+1027: and looking at the licensing.
+1029: for me,
+1030: it's like
+1031: we have this internal
+1032: that we talk about
+1033: which is
+1034: don't give what you'll
+1035: later have to take away
+1036: and when you think
+1038: about open source,
+1039: like what you're really doing
+1040: is if you come from
+1041: like the free software
+1042: it's like the freedoms.
+1043: The freedom to copy,
+1044: the freedom to change,
+1045: the freedom to distribute,
+1046: you know,
+1047: all of those
+1048: like core tenants.
+1050: if you're starting
+1052: where you're telling
+1053: what you're giving them,
+1055: then of course
+1056: the internet
+1057: is going to be mad at you
+1058: when you change that.
+1059: Whereas like
+1060: from our perspective
+1061: the idea
+1063: you know,
+1064: building a business
+1065: around open source
+1066: is that
+1067: this is an open source project.
+1069: It's
+1070: open to
+1071: for anybody to do
+1072: right?
+1073: that doesn't have to change.
+1075: You can come along
+1077: and build a business
+1078: related to it
+1079: try to solve more problems
+1081: the same problem space
+1082: and
+1083: not put yourself
+1085: where your entire
+1086: business model
+1087: is like
+1088: hinging on the fact
+1089: that you need to
+1090: change something
+1092: about the way
+1093: your open source project
+1096: Like I think
+1097: I'm not actually familiar
+1098: with the
+1099: situation with WordPress.
+1100: like read over it
+1101: like very briefly
+1102: but
+1103: there's definitely
+1104: this case of
+1105: open source projects
+1106: there's like
+1107: a valuable service
+1108: and the business model
+1109: provide support
+1112: or the business model
+1113: is provide a hosted version
+1115: and to turn around
+1116: we're the only people
+1118: that can provide
+1119: is a big challenge,
+1121: And that's what a lot
+1122: kind of come down to
+1123: hey,
+1124: we invested all of this effort
+1125: an open source project
+1126: and now we're going
+1127: to like try to
+1128: retain for ourselves
+1129: the ability
+1130: to be the only one
+1131: as a hosted service
+1133: and that just seems
+1135: very challenging
+1137: to operate
+1138: and to execute
+1139: and it
+1140: doesn't really jive
+1142: with the expectations
+1143: want out of open source
+1145: and so
+1146: I just think
+1147: a flawed logic.
+1148: I think it's a much
+1149: to say
+1150: there's a huge
+1151: infrastructure
+1152: people make
+1153: get a lot of value
+1154: as it is
+1155: and
+1156: if there are
+1157: why not go build
+1158: those bits
+1159: additional bits
+1160: that are not
+1161: that are
+1163: kind of complimentary
+1164: I think this brings us
+1165: really easily
+1166: into the concept
+1168: building this
+1169: it's the missing pieces
+1171: Mike uses this analogy
+1173: of like the Lego set
+1174: if you think about
+1176: and you think about
+1177: the code
+1179: and the available modules
+1180: the standard bricks
+1181: you can go and build
+1183: with the standard bricks
+1184: but when you buy
+1185: that set
+1186: that's the Millennium Falcon
+1187: all these pieces
+1189: that are super custom
+1190: to your exact
+1191: use case
+1192: and those are the bits
+1193: that we build
+1194: right
+1195: you've got Chewbacca's
+1197: yeah exactly
+1198: yeah
+1199: they're not
+1200: the Chewbacca is too
+1201: specific to like
+1202: your company
+1204: you know
+1205: that makes total sense
+1207: and I guess
+1208: it's also reassuring
+1209: in the sense of like
+1210: the open source part
+1212: you
+1213: you couldn't
+1214: even if you wanted
+1215: to do like
+1216: a massive rug pull
+1217: and be like
+1218: homebrew
+1220: no longer
+1221: like
+1222: or whatever
+1223: because you
+1224: you're working
+1225: that I guess
+1226: homebrew is not
+1227: part of workbrew
+1228: it's something
+1229: that you're heavily
+1230: affiliated to
+1231: but you're not
+1233: you don't own
+1235: you're like
+1236: building on top
+1237: as well right
+1239: Mike should talk
+1240: like in a little
+1241: I mean for me
+1242: this sort of
+1243: like
+1244: why
+1245: why now
+1246: because
+1247: various people
+1249: including John
+1250: for the last
+1252: like you know
+1253: 10 years
+1254: 10 years
+1255: hey you should
+1256: go and make
+1257: like a work
+1258: a homebrew company
+1259: and I've been like
+1260: I don't like that idea
+1262: and I think like
+1263: for various reasons
+1265: but one of those
+1266: reasons was
+1267: the fact that
+1268: homebrew was in
+1269: a place that
+1270: there was a risk
+1271: have happened
+1272: 10 years ago
+1273: that like
+1274: if a big
+1275: injection of VC
+1276: happened
+1277: to go into
+1278: something around
+1279: you know
+1280: in the homebrew
+1281: that you could
+1282: quite easily
+1283: capture that project
+1284: was so nebulous
+1285: right
+1286: whereas now
+1287: governance structure
+1288: like I'm
+1289: leader of
+1290: as was mentioned
+1291: am literally
+1292: elected to that
+1293: position every year
+1294: like
+1295: it just so
+1296: no one
+1297: against me
+1298: and no one
+1299: has ever been
+1300: elected except me
+1301: had that position
+1302: but that's
+1303: not a guaranteed
+1304: and if I
+1305: were to
+1306: really annoy
+1307: everyone involved
+1308: community
+1309: and all the
+1310: I would not
+1312: get re-elected
+1313: like someone else
+1314: and they would
+1315: and they would
+1316: homebrew
+1317: right
+1318: so
+1319: that structure
+1320: means
+1321: as well as
+1322: boring licensing
+1323: details stuff
+1324: I wouldn't
+1325: essentially
+1326: is its
+1327: it's a
+1328: and it
+1329: that way
+1330: forever
+1331: workbrew
+1332: may or may
+1333: like involved
+1335: with homebrew
+1336: like past
+1337: present future
+1338: whatever
+1339: the idea
+1340: that workbrew
+1341: could somehow
+1342: homebrew
+1343: and take
+1345: it's not
+1346: right
+1347: it's set up
+1348: that that
+1349: a tenable
+1350: in some ways
+1351: that I actually
+1352: like the most
+1353: and I don't
+1354: work through
+1355: so I'm not
+1356: paid to say
+1357: the relationship
+1358: git and github
+1359: was like
+1360: I think that's
+1362: look at like
+1363: like a big
+1364: has with
+1365: that's the
+1366: internally we
+1367: kind of jive
+1368: because it's
+1369: like was github
+1370: the development
+1371: of a bunch
+1372: in git
+1373: sure like did
+1374: github help
+1375: of git
+1376: but back
+1378: when like
+1379: and bitbucket
+1380: and various
+1381: of relatively
+1383: git hosts
+1384: were around
+1385: like github
+1386: trying to
+1387: like eliminate
+1388: or fork git
+1389: or like find
+1390: a way to
+1391: like everyone
+1392: who uses
+1393: git on their
+1394: needs to
+1395: us money
+1396: that was
+1397: thing but
+1398: I also think
+1399: the growth
+1400: of github
+1401: hand in
+1402: back and
+1403: being a git
+1404: bunch
+1405: of I guess
+1406: some of
+1407: like I
+1408: a bunch
+1409: git that
+1410: be there
+1411: not been
+1412: for github
+1413: working full
+1414: features
+1415: right and
+1416: the same
+1417: homebrew
+1418: some ways
+1419: the features
+1420: substantial
+1421: we're still
+1422: company
+1423: but there's
+1424: still stuff
+1425: in homebrew
+1426: which was
+1427: and would
+1428: there
+1429: not for
+1430: that we
+1431: in the
+1432: right and
+1433: for all the
+1434: use however
+1435: yeah that's
+1436: actually really
+1437: cool and I
+1438: the kind of
+1439: comparison I
+1441: ever heard
+1442: anyone even
+1444: make the link
+1445: between git
+1446: and github in the
+1448: oh like this is
+1450: you know like
+1451: people do it
+1452: like I don't
+1454: people complain
+1455: about like this
+1456: project is too
+1457: tied to this one
+1458: um I you
+1460: about git
+1461: github um which
+1463: is really cool
+1464: as well
+1465: thing you hear
+1466: people periodically
+1467: on the orange
+1468: site is people
+1469: being like hey
+1470: people can think
+1471: github are the
+1472: same thing and
+1473: they're not and
+1474: isn't that bad
+1475: right like and
+1476: it's you know I
+1478: don't think github
+1479: cares very much
+1480: about um about
+1483: about not being
+1484: associated one-to-one
+1485: with git because
+1486: they feel like that's
+1487: not necessary
+1488: for them right
+1489: grown a brand
+1490: which is bigger
+1491: than git right
+1492: and that's you
+1494: know I think the
+1495: way that both
+1496: parties handled that
+1497: admirable really
+1498: other other ways to
+1499: look at that too
+1500: similarities between
+1502: git and github
+1503: and between what
+1504: workbrew and
+1505: you know git is
+1506: kind of the
+1507: behind the scenes
+1509: like technical
+1511: enabler of the
+1512: product but you
+1514: know the stuff
+1515: github successful
+1516: it wasn't just
+1517: obviously there
+1518: was like timing
+1519: with git and
+1520: decentralized version
+1521: branching and merging
+1522: all that stuff but
+1523: like you know
+1524: and the pull
+1525: big you know the
+1526: big drivers of the
+1528: and I think that
+1529: it's similar you
+1531: that it's like
+1532: there's this
+1533: underlying architecture
+1534: that brew is the
+1535: software onto a
+1536: machine there's a
+1538: to do more than
+1540: you know just the
+1542: libraries that
+1543: there's a huge
+1544: opportunity for
+1545: teams to
+1546: have shared
+1548: environments and
+1549: do things that
+1550: don't make sense
+1551: player model and
+1553: model and so
+1554: you know we
+1555: the opportunity
+1556: add a lot of
+1557: complementary
+1558: functionality and
+1559: you know build a
+1560: business on that
+1561: another kind of
+1562: company that I
+1563: really admire in
+1564: this space of
+1565: it's not quite
+1566: open core like
+1567: open core right
+1568: like it's not
+1569: they control git
+1570: thing it's this
+1572: complementary style
+1573: and I'm not
+1574: sure if you're
+1575: company called
+1576: tail scale but
+1578: amazing kind of
+1581: I want to call
+1582: them like a VPN
+1583: not quite a VPN
+1584: it's a peer-to-peer
+1587: tunneling like
+1588: overlay network
+1589: tool but it's
+1590: built off of this
+1591: called WireGuard
+1592: and you know
+1594: people don't really
+1596: make the correlation
+1597: and WireGuard
+1598: unless they're really
+1599: nerdy about it
+1600: underlying enabling
+1602: technology that
+1603: they build kind
+1604: of a multiplayer
+1605: peer-to-peer
+1606: administration layer
+1607: on top of and
+1608: they run you know
+1609: all these like web
+1610: do like stun
+1611: tunneling and
+1612: they do you know
+1613: NAT traversals and
+1614: complicated networking
+1615: stuff that you
+1617: but really there's a
+1620: huge value in them
+1621: and what's what's
+1623: it's like all of
+1624: functionality makes
+1625: WireGuard feel like
+1626: magic and that's
+1627: their product and
+1628: it's like WireGuard
+1630: enabling technology
+1631: and I think that
+1632: you know for us
+1633: similarly Brew is
+1634: enabling technology
+1635: that's really awesome
+1636: and we want to
+1637: magic to teams
+1638: right bring it to
+1639: can say you know
+1640: get your engineers
+1641: up and running as
+1642: fast as possible on
+1643: day one make sure
+1644: makes a change to
+1645: the developer
+1647: environment it works
+1648: you're not repeating
+1649: yourselves over and
+1650: over again when
+1651: of date you can
+1652: easily when there's
+1653: a vulnerability you
+1654: away you know about
+1655: it you can you
+1656: know remediate you
+1657: an audit history of
+1658: what's going on like
+1659: all of this stuff
+1660: is really really
+1661: valuable from a
+1662: business perspective
+1663: and it's not
+1664: something that you
+1665: know the open
+1666: source community is
+1667: like eager to build
+1668: like I don't see a
+1670: lot of open source
+1671: engineers in their
+1672: what does this
+1673: billion dollar
+1674: company need to
+1675: with my open source
+1676: project let me spend
+1677: my time working on
+1678: it for free right
+1679: so we can build some
+1680: of those bits and
+1681: and I mean that was
+1682: in some ways the
+1683: earliest motivation
+1684: for work brew
+1685: really was like
+1686: we sort of decided
+1687: on this we're going
+1688: to build a commercial
+1692: layer around
+1693: homebrew before we
+1695: nailed down the
+1696: exact ideas but the
+1697: exact ideas came
+1698: from people in the
+1700: homebrew community
+1701: including one grumpy
+1703: scotsman who may or
+1704: may not be a very I
+1707: don't know whatever
+1708: adjective you want to
+1709: like I said no to
+1712: a lot of these
+1713: things over the
+1714: would come from a
+1715: big company and say
+1716: my compliance
+1717: requirements mean I
+1718: need to ABCD and
+1720: and it would be a
+1721: non-trivial lift for
+1722: the homebrew folks
+1723: and I'd be like now
+1724: we're not going to
+1725: periodically I would
+1727: other maintainers and
+1728: be like I'm just
+1729: no one's super
+1730: passionate about doing
+1732: they're all like no
+1733: don't want to do
+1734: this how about
+1735: project receives a
+1737: large company to
+1738: complete your
+1739: questionnaire yeah
+1741: exactly classic
+1742: example right but I
+1744: mean I found this
+1745: actually like a
+1746: previous job so like
+1747: Linux guy and I
+1749: worked on KDE like
+1751: the Linux desktop
+1752: environment and and
+1754: one of the things I
+1756: about back then I
+1757: worked for a company
+1758: called KDAB who
+1759: consultancy company
+1760: around QT that the
+1762: tech that and KDE
+1764: was built in and I
+1765: because they were
+1766: like the the biggest
+1767: contributor to KDE
+1768: of any like company
+1769: right so I joined
+1770: and I was like I'm
+1771: this open source work
+1772: gonna be sorry for
+1773: money and it's gonna
+1774: whatever and then I
+1776: learned that like a
+1777: lot of the open
+1778: source work for money
+1779: work around this
+1781: stuff is the stuff
+1783: right because all of
+1785: the fun jobs that's
+1786: the stuff that they
+1787: problems getting
+1788: volunteers in their
+1789: spare time to make
+1790: sure that they do
+1791: this but like a
+1793: essentially when you
+1794: have a spec and
+1795: you need to
+1796: hell up something to
+1797: make sure that like
+1799: you behave in the
+1800: same way as some
+1801: software on windows or
+1803: a bigger open
+1804: whatever and you
+1805: want to just like
+1806: nail that down such
+1807: that you completely
+1808: of the specification
+1809: right that's that's
+1811: not so fun right
+1812: like but it is
+1813: really valuable and
+1814: important to big
+1815: companies and that
+1816: they will pay for
+1817: people to do right
+1818: and in some ways I'm
+1819: also inspired by that
+1821: where it's previously
+1823: with those
+1824: organizations it
+1825: wasn't that I was
+1826: saying like we
+1827: don't that your
+1829: right it's your
+1831: they did have
+1832: problems and they
+1833: them but it's like
+1834: we can't solve that
+1836: we're not the right
+1838: people we're not
+1839: qualified well enough
+1840: and in some cases
+1841: when even when
+1843: people would come
+1844: pull requests to
+1845: this functionality
+1846: functionality it was
+1847: like well now no
+1848: one's using it so
+1850: it bit rots and
+1851: then a year later
+1852: someone tries to use
+1853: it again it
+1854: because homebrew
+1855: doesn't use it
+1856: right and 99.99%
+1858: of homebrew users
+1859: whereas now we
+1860: have a world with
+1861: workbrew with this
+1862: it's like we have
+1863: customers using this
+1864: stuff every single
+1865: day right so if
+1867: project has an
+1868: issue there we
+1869: fix it within
+1870: minutes or hours
+1871: right instead of
+1872: it being like a
+1873: year of this thing
+1874: just being broken
+1875: right and so
+1877: yeah I think I
+1878: different way of
+1879: doing this stuff
+1880: this stuff and I
+1881: think it's where
+1883: people are best
+1884: aligned right we
+1886: in workbrew are
+1887: best aligned to
+1888: solve these problems
+1889: for customers and
+1890: we do it with some
+1892: some proprietary
+1893: software and we do
+1894: some stuff for free
+1895: and some stuff for
+1896: money right and
+1897: whereas workbrew is
+1898: sorry homebrew is
+1900: best aligned to do
+1901: what suits the
+1902: community to kind
+1903: of coalesce behind
+1905: the stuff that works
+1906: for 99% of people
+1907: right and if you're
+1908: in some very
+1909: niche use case or
+1910: 0.1% or whatever
+1911: then it's you know
+1912: it's probably not
+1913: good for you as
+1914: workbrew might be
+1915: this is also the
+1916: configuration or
+1917: simple defaults or
+1919: solving the case for
+1920: the majority of
+1921: people you know
+1922: there are a lot of
+1923: you know I'm not a
+1924: I'm not a maintainer
+1925: but I'm a contributor
+1926: to homebrew and I'm a
+1927: heavy user and there
+1928: are some things in
+1929: work the way I want
+1930: them to but kind of
+1932: the consensus is like
+1933: this is the way it is
+1934: because we need to
+1935: make life manageable
+1936: for the maintainers
+1937: if we changed it the
+1939: support load or the
+1940: burden of maintain
+1941: maintenance would be
+1942: much higher so we've
+1943: optimized for you know
+1944: the homebrew project
+1945: has optimized some
+1946: things for maintainers
+1948: rather than for users
+1949: in the sense that like
+1950: this always works it
+1951: never has a problem
+1952: we're never having to
+1953: support it and so
+1954: kind of the the idea
+1956: of the project the
+1958: open source project is
+1959: kind of the one true
+1960: way to use the thing
+1962: that applies to the
+1964: most people and is the
+1965: most reliable and the
+1966: most robust and the
+1967: easiest to maintain and
+1968: know every time a new
+1969: mac os version gets
+1970: released homebrew is
+1971: waiting right like that's
+1973: accomplishment for the
+1975: project but when it
+1976: comes to you know big
+1977: companies something that
+1979: we learned at our time
+1980: at github was that you
+1982: know a small company of
+1983: 100 employees telling a
+1984: company of 100,000
+1985: engineers how to build
+1986: software is kind of
+1988: laughable the idea that
+1990: the 100 person company
+1991: knows how 100,000
+1992: person companies should be
+1993: running their software
+1994: teams and that you know
+1995: controls aren't
+1996: necessary right like
+1998: these these kind of
+1999: like very I don't know
+2002: very basic ideas right
+2003: and the reality is that
+2005: those really big
+2006: companies or you know
+2008: the companies that have
+2009: requirements they get a
+2011: lot of value out of the
+2012: things to have checkboxes
+2014: and have options and to
+2015: be able to say this is
+2017: we make this tool you
+2019: know fit our working
+2020: style rather than having
+2021: to conform to what's
+2022: there and so another
+2024: took away from our time
+2025: make github and what
+2027: we kind of emphasize
+2028: that you know the idea
+2031: of configurability is
+2033: kind of a debt that you
+2034: have to maintain and a
+2036: burden and you know the
+2038: open source project is
+2039: not really willing to do
+2040: that in in some cases
+2041: but for us that's
+2043: willing to sell we're
+2045: to maintain to make this
+2047: thing work for you know
+2048: various sizes of
+2049: companies with different
+2050: controls and security
+2051: and compliance requirements
+2053: and all that kind of
+2054: stuff and make that our
+2056: value add to make it fit
+2058: your needs and so I
+2059: think it's just like a
+2060: great opportunity to work
+2061: with them work on an
+2063: open source project but
+2064: model and it's not
+2066: really open core it's
+2067: not really like an
+2068: open source company it's
+2069: more of like a
+2070: complementary business to
+2071: an existing open source
+2072: company or an existing
+2074: open source project I
+2076: comes back in some ways
+2077: to the title of the
+2078: podcast right this is
+2080: scaling dev tools right
+2082: and in some ways there
+2083: is the the open source
+2085: way and there is the
+2087: the business way and I
+2088: think where it gets
+2090: messy or people get
+2091: confused is when they try
+2093: and combine the two so
+2095: about sustainability and
+2097: open source nowadays right
+2098: and I have been you know
+2100: moderately critical on the
+2104: internet and more loudly
+2105: critical in person at
+2107: that about the idea that
+2109: essentially the way you
+2110: fix open source
+2111: sustainability is just
+2112: throw money at every
+2113: that fixes all the
+2114: problems right it doesn't
+2115: it doesn't I've seen it
+2117: in hubbrew and I've seen
+2118: it in many other
+2119: projects and many other
+2120: maintainers who are in my
+2121: inbox like trying to
+2123: done right the way in my
+2126: experience the way you
+2127: sustainability is by
+2128: figuring out what
+2130: sustainability looks like
+2131: open source project right
+2132: and some of that comes
+2134: from personal boundaries of
+2135: the maintainers with each
+2137: other with the community
+2138: personal boundaries with
+2139: maintainers in terms of
+2140: like what what are we
+2141: doing here what are we
+2142: trying to build right are
+2143: we gonna do the Jamie
+2145: Zawinski rule of like
+2146: every all software grows
+2148: client right or are we
+2149: gonna say no this is the
+2151: line beyond which we
+2152: don't we don't go we're
+2153: not interested that's out
+2154: of scope use this other
+2156: project whatever it may be
+2157: and that's how you have to
+2159: do this because in you
+2160: know 10 years ago
+2161: homebrew had probably like
+2162: half the number of
+2163: maintainers maybe a third
+2165: uh but we had like maybe
+2167: one like one tenth if not
+2170: much less than that of the
+2171: users right and the way
+2173: you scale doing that as
+2174: John kind of mentioned
+2175: and alluded to as well is
+2176: you do that by filing off
+2178: the rough edges right and
+2179: if you have a feature that
+2180: blows up for users 10% of
+2182: the time right there might
+2183: be a bunch of used power
+2184: users who love that
+2185: feature and it makes their
+2186: life really happy and the
+2188: workflows are great but like
+2189: if 10% of users who bump
+2191: into that even they have
+2192: like 0.1% of those
+2193: users go and complain on
+2196: our discussions or like
+2198: in the past when we had
+2199: IRC channels or in our
+2200: issue track or whatever
+2201: that gets very very hard
+2203: for 30 people to manage
+2204: right and the only way in
+2206: the end like I've been
+2208: you know some you will
+2209: find various parts of the
+2210: internet that don't like
+2211: viewpoint but in the end
+2213: to me the only way you
+2214: are able to successfully
+2215: scale that is you say
+2216: some of these features go
+2217: away right if you want to
+2219: build a plugin or support
+2220: your own way of doing
+2221: things over here that's
+2222: fine but in the open
+2224: source project we do not
+2225: have the infrastructure to
+2227: do this stuff like we
+2228: can't do it and if you
+2230: there's that doesn't
+2232: solve the problem either
+2233: because you end up in
+2234: this I should probably
+2236: name for it but like
+2237: this sort of open source
+2238: sustainability money-wise
+2240: gulf of like too much
+2242: money for stickers not
+2243: enough money to pay
+2244: anyone right where like
+2246: if you don't have a
+2247: quite even one person's
+2249: full-time salary coming
+2251: it reliably but you've
+2252: got way too much like
+2254: what do you do with
+2255: that and how do you use
+2256: that to somehow magically
+2257: scale the project so
+2258: that everyone is able to
+2259: do more with less or the
+2262: same amount right but I
+2263: think on the business
+2264: side that's when it gets
+2265: can go and build a
+2266: business where if you
+2268: most businesses well no
+2271: most businesses certainly
+2272: are business you start
+2273: from the outset with a
+2274: model of looking at
+2276: being like well
+2277: ultimately we are going
+2278: to have to build
+2279: something and we're
+2280: people money for a
+2282: product and exchange for
+2283: that product like they
+2284: are going to get a great
+2286: user experience that they
+2287: don't otherwise get
+2288: right and to me like
+2289: that's another way that
+2290: you build sustainability
+2291: both for open source and
+2293: for dev tools in general
+2294: right like github as a
+2297: you know if you look at
+2298: the offering on github
+2299: nowadays and how many
+2300: billions of features
+2301: they have and ci runners
+2303: thing you couldn't do
+2304: that with a bunch of
+2305: volunteers like you can
+2306: do that with 30
+2307: volunteers working
+2308: right like maybe their
+2311: 2007 or 8 or whatever
+2314: it was you could have
+2315: done that you maybe
+2316: that indefinitely with
+2317: like a small number of
+2319: people just doing things
+2321: but you wouldn't scale
+2323: that to you know like
+2325: hundreds of millions of
+2326: users for sure like
+2327: that's all of that stuff
+2329: requires many many
+2330: people being having a
+2332: level of dedication that
+2333: is not really
+2335: compatible with them
+2336: having a full-time job
+2338: yeah it may it makes
+2340: uh it makes sense what
+2341: you're saying there
+2342: about like um you know
+2345: how you unless you're
+2346: paying people the full
+2347: salary like money is not
+2349: really going to help
+2350: like do that and that
+2351: you do need a company
+2353: to go and like give
+2355: those like those extra
+2357: features that maybe not
+2358: so many people need that
+2360: cause a lot of problems
+2361: you know you're you're
+2362: willing to do all the
+2363: boring fiddly things
+2365: that big companies need
+2368: and that is not fitting
+2370: for open source it makes
+2372: so much sense this is
+2373: very cool i honestly like
+2375: i hadn't really seen
+2377: this sort of model or
+2378: like really thought about
+2379: this maybe it's probably
+2380: the right way i'd seen
+2381: it i guess but not
+2383: thought about it um it's
+2385: very cool and it seems
+2386: like you're not gonna have
+2388: to worry about really any
+2390: of the kind of issues
+2391: that a lot of open
+2392: source companies have
+2393: with like monetizing
+2395: uh the project um it's
+2399: very cool and we're kind
+2402: but i just wanted to ask
+2403: like who who are you
+2405: like kind of selling to
+2407: it's like it departments
+2408: or how yeah so there
+2410: there are really three
+2412: you know types of people
+2413: that are interested in
+2414: in work brew um
+2415: obviously first and
+2416: foremost is the
+2417: developer um homebrew is
+2419: incredibly popular with
+2420: developers on max and
+2422: at the minimum there are
+2425: developers out there that
+2426: work at companies where
+2427: they have security and
+2428: compliance requirements
+2429: that prevent them from
+2430: using homebrew you know
+2432: imagine trying to do your
+2433: work without access to
+2434: homebrew how much less
+2435: productive you would be
+2436: um so really one of the
+2439: core you know values that
+2440: we provide is just the
+2441: ability for engineers that
+2443: these security compliance
+2444: requirements to have
+2445: access to the tools that
+2446: they already know and
+2447: love and use um in
+2449: addition for engineers we
+2451: aim to you know make the
+2453: process better help them
+2455: get up and running faster
+2456: um and really make it so
+2458: that it's a treat your
+2462: local development
+2463: developer environment like
+2464: its infrastructure and the
+2466: idea being that you know i
+2468: have worked in vms i've
+2470: containers i've worked in
+2471: cloud idees and they all
+2473: have a trade-off in that
+2475: you get consistency speed
+2476: of startup all those
+2477: types of things in
+2478: exchange for worse
+2480: ergonomics i love working
+2483: on my local machine with
+2484: my local editor on my
+2485: local file system with my
+2486: local network with all the
+2487: things that are ergonomic
+2489: and the way that i like
+2490: them and anytime i
+2491: introduce a docker or vm
+2493: or cloud id or anything
+2494: like that into my
+2495: workflow it drains me it
+2497: makes me less productive
+2498: in addition all of those
+2500: options cost more they're
+2502: either you're paying for
+2503: vms you're using more
+2505: battery life using more
+2506: processor you're doing
+2507: whatever you have these
+2508: really amazing apple
+2510: silicon devices you're
+2511: dollars pop for and
+2513: then you're shelling out
+2514: into a cloud environment
+2515: like what what are we
+2516: even doing it doesn't
+2517: make any sense so that's
+2519: the story for the
+2520: developers it's like have
+2521: access and have really
+2522: great ergonomics the
+2524: next big category of
+2525: people is the it managers
+2526: so these are the folks
+2527: who in your company
+2528: they're responsible for
+2529: issuing you a laptop and
+2531: making sure that you're
+2532: up and running and for
+2533: engineers oftentimes
+2534: these people you don't
+2535: need to interact with
+2536: you can self-serve you
+2537: can fix your own
+2538: it department at github
+2539: was amazing the people
+2541: on that team you know
+2542: were there to support
+2543: you when you needed
+2544: them they helped you
+2545: situation they helped
+2546: you with getting access
+2547: to things but at the
+2549: had the situation where
+2550: we had a lot of talented
+2551: engineers who knew what
+2552: they were doing so it
+2553: where they had a lot of
+2554: trust and there was
+2556: make sure things that
+2557: were necessary got done
+2559: and so as it managers
+2560: we want to give them a
+2561: way to lighten their
+2562: workload and be able to
+2564: get brew into the hands
+2566: of their team in a
+2567: reliable repeatable
+2569: really easy way and then
+2571: once it's out there know
+2572: what's going on have
+2573: visibility into how are
+2574: people using this thing
+2575: do i need to be worried
+2577: that they're installing
+2578: some software that could
+2579: have a supply chain
+2580: attack or things like
+2581: that and then the last
+2583: people that were you
+2585: know trying to serve are
+2586: whether it's a CISO
+2588: or you know kind of
+2589: somebody who's on the
+2590: AppSec side but they're
+2592: they're interested in
+2593: is secure we're building
+2595: a bunch of functionality
+2597: around making sure that
+2599: compliance standards so
+2601: you know there's SOC 2
+2602: there's ISO 27001
+2604: there's you know all the
+2606: different kind of credit
+2608: card compliance like
+2609: there's there's all
+2610: different industries have
+2611: their compliance standards
+2612: and inevitably they
+2614: people are using
+2615: whether it means you
+2617: know the people on
+2618: their devices are using
+2619: admin accounts rather
+2620: than the standard users
+2621: and what what's entailed
+2622: interacts with that or if
+2624: it's about what pieces of
+2626: integrated into their
+2627: workflows so you know
+2629: we're serving those
+2630: people by saying hey
+2631: level overview of
+2632: happening you can get
+2634: alerts about when there
+2635: are vulnerabilities you
+2636: vulnerabilities you can
+2637: set policies and
+2638: guidelines to make sure
+2639: that the usage of these
+2641: tools are contained one
+2643: of the really powerful
+2644: features of homebrew is
+2646: that it's not tied to
+2648: one library of packages
+2650: they're the official
+2651: packages in homebrew core
+2652: and homebrew cask but
+2654: you can actually add a
+2655: third-party library called
+2656: a tap and install any
+2658: software homebrew you can
+2659: create your own taps you
+2660: can use taps by third-party
+2661: vendors and that
+2663: represents for security
+2665: folks a really really big
+2667: issue they're like oh my
+2668: god literally anything
+2669: could be installed in the
+2670: machines I have no idea
+2671: about it and so you know
+2673: for them we're making it
+2674: so you can see are
+2675: people using third-party
+2676: libraries third-party
+2677: taps which which ones are
+2678: they using do you have a
+2680: control policy that you
+2681: need to implement so
+2682: stuff around there that's
+2684: really valuable and so
+2685: you know those are the
+2686: people we're trying to
+2687: serve and I think that
+2688: kind of the last thing
+2689: I'll say about this is
+2690: kind of the business
+2691: model and like how
+2692: this so we have pretty
+2695: much two two stories
+2698: version and one there's
+2699: a paid version so
+2701: workbrew is available
+2702: for free for unlimited
+2703: users unlimited devices
+2705: it's the best way to
+2706: install brew on a fleet
+2708: whether you have 10 or
+2709: 10,000 devices you can
+2711: go to workbrew you can
+2712: install brew on every
+2713: device have it be
+2714: consistent get it ready
+2715: minutes and have full
+2717: visibility into everything
+2718: there this is kind of
+2720: like table stakes for
+2721: any company that's doing
+2722: any kind of sock to
+2723: compliance or any kind
+2725: of you know good
+2726: security practices and we
+2727: made that totally free
+2728: then beyond that if
+2731: security controls or
+2733: if you want to add
+2734: remote management or
+2735: if you want to have
+2736: any kind of interaction
+2737: around automation and
+2739: default packages and
+2740: kind of environment
+2741: setup then we have a
+2742: paid plan that you can
+2743: get additional features
+2744: from but it's really
+2746: targeted those those
+2747: three use cases
+2748: very cool very cool
+2750: kind of reminds me of
+2751: like sneak in a sense
+2752: of like the kind of
+2753: model that if you've
+2755: thought about it that
+2756: way but like I can
+2757: totally imagine like
+2758: I've I've had to use
+2760: sneak at work because
+2763: we went through
+2764: sock to compliance and
+2765: it was like just like
+2768: my manager loved it
+2770: because you know you
+2771: can just everything is
+2773: like you know compliant
+2777: bits in with vanter and
+2778: stuff like that and
+2780: then for me it was
+2781: like generally good
+2782: because you know a lot
+2785: of the time you just
+2786: press a button upgrade
+2788: and stuff rather than
+2789: like solving it
+2790: yourself but um yeah
+2792: that's very cool it's
+2794: uh very very exciting
+2796: um yeah and thank you
+2798: so much for sharing the
+2800: journey and um yeah
+2802: and thanks uh thanks
+2803: mike for helping us
+2804: download all the stuff
+2807: we need onto our max
+2808: so um yeah thank you
+2811: john and mike um and
+2813: thanks everyone for
+2814: listening uh so workbrew.com
+2816: if people want to
+2817: learn more check out
+2818: workbrew.com and you
+2819: know thank you so much
+2820: podcast we're really
+2821: grateful to be here and
+2822: have this conversation
+2823: you know look forward to
+2824: coming back at some
+2825: point in the future and
+2826: giving an update amazing
+2827: yep thanks jack and
+2829: listening

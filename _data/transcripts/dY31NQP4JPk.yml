@@ -1,0 +1,1161 @@
+---
+0: hello and welcome to the live stream homebrew is turning 15 happy birthday homebrew
+5: my name is john britton i'm the co-founder and ceo of forkbrew and today i'm joined
+  by
+10: two outstanding guests uh max howell
+14: welcome to the show hey thanks for having us let's see if i can do this there
+  we go
+24: so uh hello uh let me give it a short introduction so uh mike is the uh project
+  leader of homebrew
+32: my co-founder and cpo at workbrew and max is the original creator of homebrew
+  um welcome
+40: and maybe you could each give a little introduction about yourself uh max why
+  don't you go first
+44: uh thanks john and thanks for having me on uh good to see you again mike nice
+  tank top
+54: yeah so uh i'm max how i've uh been in open source for more than 20 years i stopped
+  counting at some
+63: point i got involved in open source because uh i thought i wanted to be a scientist
+  which turned
+70: out to be incorrect as everybody else told me in my life chemistry is super boring
+  i i thought i enjoyed
+78: it but just turned out i like the academic side of things didn't like actually
+  working in it so one day
+83: in a depressed funk i went home and installed linux on my home computer and discovered
+  the open source
+88: communities of the world this was like 2003 2004 it's about then i met mike actually
+  we were both
+95: working on kde at the time uh which is this desktop environment for linux which
+  i think still exists
+102: i don't know i haven't used it in a while but uh i'm just got me a job in the
+  industry lost fem in
+107: london that's where i created homebrew um back in 2009 ish so yeah 15 15 years
+  about 11 hours ago
+115: almost 11 hours ago apparently my commit was four minutes past midnight
+119: yeah well mike was saying the other day how when we uh started working on homebrew
+  like debian was
+126: 15 years old and uh that felt ancient and here we are 15 years so yeah thanks
+  for having me on looking
+133: forward to this uh this whole chat yeah thanks max yeah mike why don't you go
+  ahead and introduce
+138: yourself and kind of your relation to homebrew yeah of course um yeah i feel
+  honored to lead max not
+145: just for his contributions to homebrew but his contributions to excellent voices
+  whenever i i forget
+150: because we normally talk of our text message nowadays whenever i hear max on
+  a podcast or whatever i just
+155: think he is most delightfully deep voice in the world so i'll do my best to have
+  a suitable timber uh yeah
+164: so i'm mike uh i've worked on open source not as long as max but probably you
+  know like sub 20
+171: slightly over 15 years um i got into software i guess the more traditional route
+  just going and doing a cs
+181: degree and got uh fell into linux distros and all that nonsense when i was at
+  university and ended up
+189: with one commit in the licks kernel which is always a nice kind of little humble
+  brag when people accuse
+196: me of being one of the mac people who doesn't know anything about linux um so
+  yeah i guess i uh also
+202: ended up in london at the same sort of time as max i worked for a startup called
+  mendeley uh down there at the
+208: time and i was kind of trying to wrestle with mac ports to make it do what i
+  wanted to and not install
+215: so many dependencies and stuff and then max was a friend of a friend of mine
+  i think we showed fred
+221: emmett maybe in common max um and he told me about this guy max who was doing
+  this thing called homebrew
+228: and then i went and looked at it and i was like oh it's written in this weird
+  ruby thing which i
+233: hadn't really had any experience over the time um and yeah i basically just ended
+  up getting involved
+239: like bit by bit like later on i guess the same year that humbrew got created
+  i think max created it in
+244: may and then i think i started getting involved in like september or something
+  like that and was like
+249: a maintainer before the end of the year um and yeah and i guess i've never managed
+  to give up since so
+257: still working on it to this day excellent yeah so you both mentioned linux i
+  have a question
+262: what was your first linux distribution
+267: ah susa susa was mine i'm not sure what the first was for me it was maybe maybe
+  fedora technically in
+276: terms of like the first i ever installed but the one that held the the warmest
+  part in my heart in
+281: that era was gentoo uh just for like everything being built from source and i
+  had this old pentium 233
+291: basically my parents old machine that they were going to like throw out which
+  by what year was it
+297: like 2004 or 5 was pretty long in the tooth and i remember like getting an ubuntu
+  install like sorry
+303: i gentoo install where i wanted the base system to work like the machine had
+  to compile continuously for
+309: about two days to like get the machine set up and it was such a glorious waste
+  of my time but i felt like
+315: i sort of learned some stuff which ended up useful in the homebrew days through
+  doing that yeah emerge
+320: was my first my first package manager from gen so yeah that was i remember those
+  days um yeah so
+327: maybe just for uh just for clarity and and completeness what is homebrew like
+  i i don't know
+335: if you have the same definition of homebrew for both of you but like what is
+  it why are we here and why
+340: are we celebrating 15 years of its existence yeah well always my definition it's
+  probably not accurate
+347: anymore but you know um i'd say like it's the base of an awful lot of modern
+  software nowadays
+354: is is the truth of it i don't think either me or mike imagined that it would
+  become so you know enormous
+362: when uh when uh we were working on it back in 2010 or so but uh you know it's
+  just a package manager i uh
+370: i was very fond of package managers at the time and switched to mac in a fit
+  of rage one one day
+378: because uh i upgraded my linux kernel and uh my wi-fi stopped working and i was
+  stuck at home by myself
+385: mirror before smartphones so i didn't have the internet to uh help me fix it
+  so i switched to mac
+393: and then while i was there i discovered that uh the package managers weren't
+  quite as good on mac
+398: as they were on linux i was used to like trying out all the different linux distributions
+  and things
+403: so yeah i'm homebrew as a package manager but i think we took a lot of new ideas
+  and ran with them
+410: and that's part of the reason that it became so prevalent and uh it it it was
+  the right toward the
+419: right time in many ways so yeah it's the base of many people's stacks nowadays
+  uh and makes it possible
+426: to get development done what do you think mike yeah i mean the when i describe
+  homebrew to non-technical
+435: people i guess i go for like it's i basically try and get them to be like do
+  you know what an app
+440: store is and they're like yes and then if i can get them to be like do you know
+  what open source
+444: software is yes do you know what a terminal is yes well it's an app store for
+  open source software
+450: in your terminal right and that's maybe slightly reductive but like that feels
+  like that's what it
+454: has become in essence for pretty much everyone on mac like if they're installing
+  open source on their mac
+461: they're installing either the open source itself or the thing required to install
+  the open source
+465: they want if it's like npm whatever pro will be using homebrew together and yeah
+  i i think you're
+471: right about like the the time and the moment like i to me that the two things
+  that felt linked in some
+478: ways were because you know homebrew was one of the first big projects to kind
+  of come out of github
+484: and be very heavily community run and have huge numbers of community contributions
+  i remember it was like
+489: in the first few years that github would publish those reports homer was regularly
+  in the like
+493: the top charts for like most forked most contributed all this type of stuff and
+  i think
+501: that's basically what helped get it going in the direction that it went right
+  is that because it was
+506: github native before maybe any other big project ended up being that way uh i
+  think that's yeah
+513: it's a big part of it yeah like i have a small list that i've assembled over
+  the years of the reasons
+520: that i think homebrew was so successful but we can talk about that when when
+  you like john yeah sure
+524: well i think the next kind of area is just thinking about like the history and
+  how how homebrew came to
+530: be um what was i mean max this is probably mostly for you uh as you were the
+  the creator what was the
+537: the inspiration you know behind it and you also kind of mentioned like that it's
+  gone a really long
+544: way and it's it's become much more than you ever expected i'm curious to know
+  as somebody who's had
+548: some small open source projects what did you expect like you know obviously like
+  i think it's pretty easy
+554: to say that this went way past what you expected but like you had to be motivated
+  in some way what were
+558: you hoping would happen oh i was hoping this would happen
+562: such amazing forethought yeah it's weird i had this feeling while i was building
+  it that it was going
+571: to be big and like that feeling didn't i didn't lose it and i didn't lose the
+  confidence in it and so
+576: i put my all into it and then it happened uh which was really bad for me i was
+  26 so uh i spent the
+586: next like 10 years of my career thinking that everything i touched would turn
+  to gold and uh
+592: it doesn't it doesn't usually work that way i i definitely recommend not having
+  a huge success when
+598: you're young uh but um yeah i got over that in the end but yeah like i created
+  it because i was working
+605: at lost fan at the time and i was the lead developer of our apps team and we
+  had six apps windows mac linux
+611: android o phone and the blackberry app which uh was the worst and hardest to
+  build but the unifying uh
+618: machine to build all these things on was mac because partly because of apple's
+  lock in for their
+623: platforms but partly because you know it's unix underneath so you could run all
+  the other different
+627: sdks and systems and you could emulate windows uh so uh we were using a lot of
+  open source tooling on
+635: mac and like the package manager kept like coming up as a problem like mac ports
+  was like gentle you
+640: had to compile everything from source like mike was saying uh it insisted on
+  building everything from
+646: like uh glibc upwards even though the mac came with a bunch of uh open source
+  libraries that are
+654: usually that base that you don't have to build so i used to complain about how
+  the package management
+660: solutions were holding us back at the pub after work like on a relatively frequent
+  basis to the
+665: point that one of my co-workers got fed up with me and told me to just shut up
+  and do something about
+671: it and uh i went home and i was like well it would be kind of fun to work on
+  something like that so i
+677: started you know the that was the beginning i i called on like uh all the ideas
+  i've had over the years
+685: working on different open source projects i worked on this music player called
+  america on linux for a
+690: long time and uh the issues that everyone was always having were related to auto
+  tools and getting
+697: the dependencies in place and building from source and so i wanted to build something
+  that i felt could
+704: be a solution to those kinds of problems for people trying to build out open
+  source work on open source
+709: work in open source and do development in general uh so i wanted it to be a programmable
+  package manager
+717: so like all the formulas i uh called them uh were in ruby so that you know we're
+  programmers i figured we
+724: wanted a programming language in order to like build these complex and different
+  pieces of software and
+730: i picked ruby because it was very fashionable at the time and it came with the
+  mac ruby on rails was
+737: really getting uh a lot of attention at the time uh it's one of the reasons i
+  was successful for sure
+743: picking ruby because the ruby community loved that it was written in ruby and
+  that you could use ruby
+748: in order to uh work on homebrew um and then yeah like picking github was a big
+  part of the success as
+756: well for sure like github was relatively new right i think github had come out
+  a couple of years before
+761: that and we've been using github at last fm and i saw that uh it was a great
+  place like i think the
+766: alternatives for source forward right we we've been struggling with these terrible
+  uh tools for doing
+772: open source work online for a long time so yeah i picked all these things and
+  put it out there i managed
+778: to get some attention for it with uh replying to some people on twitter you know
+  twitter used to be
+784: a better place dare i say it where it was an awful lot of tech people so you
+  could go on there and
+793: just talk to tech people and see what they were doing and talk about like new
+  tools and things and
+797: so i got the attention of simon willison probably you've heard of him with uh
+  tweet about homebrew and
+803: then i got the attention of josh peak who was working at 37 signals at the time
+807: ruby on rails uh was built by them and he tweeted out about how
+813: he was going to install homebrew on his new mac that he was getting that had
+  osx leopard and like
+819: that was the moment where it really started to take off before that you know
+  i was telling people
+824: about it they were like oh so i'll tell call me call me when like anyone else
+  is using it a typical
+828: open source start you know like when you make some open source you do have to
+  do a bunch of marketing
+834: yourself in order to uh get some attention for it so yeah i was really motivated
+  i really wanted it to
+842: succeed and yeah like those first few years it was crazy uh we were dealing with
+  a ton of uh issues
+851: pull requests well pull requests when they turned up you know when we when homebrew
+  initially was
+855: created the pull request was not a thing nobody had figured out how to uh handle
+  contributions on github
+863: at this point they had forks and you could browse the four graphs so that's what
+  we used to do right
+870: like the uh the first person that i merged some of their contributions in that
+  he didn't message me to
+876: tell me that he was building these formula i just found his contributions in
+  the ford graph and then
+882: merged them in and then message him saying hey i merged your stuff in i hope
+  that's okay because
+888: that was how we had to do it at the time you know i'm waffling here and mike
+  how about you where did
+894: you uh how did you come across homebrew and kind of what got you involved and
+  why did you why did you
+901: decide to become a contributor yeah so i mean i guess i i used to hear a lot
+  of people saying this back in
+908: the day not as many people say it now is the idea with open source of like scratching
+  your own itch
+914: right and we've just heard max explain how homebrew came to be created from his
+  scratching his own itch
+921: right and it was the same with my contributions really where i heard about homebrew
+  and i thought it
+925: was cool when i started using it but i didn't have this idea of like oh i'm gonna
+  get involved here
+933: or i'm still gonna be doing this in 15 years or any of that sort of nonsense
+  it was just like oh
+940: like it's a package manager it's missing some stuff that i want so i'm gonna
+  add some stuff
+945: right um and every time i came across something that i needed i would go and
+  submit a contribution and
+951: then eventually the package manager itself didn't do some of the stuff that i
+  wanted it to so
+955: i submitted kind of changes to that and and whatever and i think it was i don't
+  know again
+960: as i mentioned before is that this all being on github there was something about
+  it being on github
+966: that just felt so much more accessible i think in the early days um the there
+  was github and i guess
+974: before pull request there was like an irc channel like i vaguely remember like
+  you know instead of pull
+979: requests i would like dm max on irc and be like here's a commit and then max
+  would like
+985: cherry pick that commit in and push it and tell me what it was pushed and stuff
+  but yeah it just it
+989: felt like the barrier to entry was very low um but i guess i guess the other
+  thing that kind of captured
+994: my interest with homebrew which again i thought was very different and very creative
+  from the outset was
+1001: just the way that errors were handled you know most software most of the time
+  particularly relatively
+1007: immature software generally operates from the assumption that nothing will ever
+  go wrong and if it ever does go
+1013: wrong then like just throw your hands up in the air and just be like oh well
+  you know like some programmer
+1018: come along and fix this right whereas i remember right from the outset homebrew
+  was really impressively
+1026: well designed to give good error messages and even to stuff like the i've seen
+  a bunch of other tools
+1032: copy this now but like the kind of brew doctor command which again was relatively
+  early on but this idea of
+1038: being like hey like we have some ideas of stuff that could be wrong right like
+  run this command and
+1043: these are not necessarily all problems that you need to fix but like if you
+  are having problems
+1048: chances are it's going to be one of these you know um and yeah i just felt like
+  that approach just as
+1055: what it it gelled with my brain and it sucked me in and it just felt so much
+  more accessible and maybe even
+1064: scalable in hindsight than the models that a lot of other linux distros were
+  having and other package
+1072: managers on mac that felt very much more like the linux distro model we're having
+1076: yeah like it reminds me it's just that from the start i knew i didn't want to
+  do it all by myself and i had
+1084: faith in the users that if you give them the right messaging and docs and tooling
+  that they can fix their
+1092: own problems and i really wanted to encourage that so you had the brew dog to
+  come on the good error
+1097: messages um even the way like you cloned homebrew initially and that's where
+  it built and so you had
+1104: a clone and you also could immediately start contributing there wasn't any like
+  fancy build
+1110: steps or anything that was required you just opened up your editor and make
+  changes and then push them
+1115: back to github those things i just really wanted everybody to feel like they
+  could participate and
+1121: you know you've seen some projects do more of that since homebrew i think sort
+  of introduced the idea
+1128: of doing it but still i think in general like you go to a readme for most open
+  source projects and
+1133: there's no section saying hey how do you get started you know it tells you how
+  to install it
+1139: but it doesn't say how you can get involved in the project i still think it's
+  very important it's rare
+1146: so 15 years is a really long time um homebrew has been around for for a very
+  very long time i was
+1154: hoping we could do a little bit of a you know a short timeline of the major
+  milestones in the history of
+1160: homebrew so um starting from and i'll share my screen for this um let's see
+  if i can do this
+1167: starting from here uh max this is probably for you um this is the first commit
+  uh to homebrew
+1174: let me see if i can make it a little bit bigger
+1176: here we go so the first commit of homebrew um maybe you want to tell us about
+  your state of mind when
+1185: you were doing this and any other kind of interesting uh anything you'd like
+  to share
+1190: i'll leave it up to you yeah well um i still do this i don't start a project
+  with code i start with
+1197: the readme and this was something i learned while working on kde i went to a
+  kde conference and one
+1204: of the people that worked on cute which was the c plus plus toolkit that kde
+  used uh still exists i
+1211: believe yeah i did a presentation where they talked about how they didn't start
+  with code they started
+1216: by writing out what the api would be doing example code showing how they wanted
+  the final api to be
+1225: and then they build the code around that so i started doing similar things but
+  yeah here i was starting
+1230: with the remi so i spent more time on the remi initially before i started building
+  any code out
+1236: and i was like how do i want this to be how do i how do i want it to feel and
+  so yeah this this was
+1242: what i imagined it would be before i started writing any of the code and uh
+  you know you can see a bunch
+1247: of the stuff in there that i wanted like the naming theme which homebrew is
+  uh famous for which i did
+1254: because i knew that the world of package managers was so full of uh things that
+  were difficult to
+1261: describe because the terminology was terrible of what does the word package
+  even mean i don't think
+1268: anyone can really tell you the answer to that and so i wanted there to be a
+  theme that allowed people to see uh analogies and metaphors in all of the uh the
+  system and the code
+1283: uh so that it would bootstrap their ability to understand how to contribute
+  or how to use it so
+1289: yeah you can see like the slash brewery there which you can no longer create
+  that folder on macros thanks
+1296: to apple but at the time i think that was where i thought it would go eventually
+  we changed that to use
+1300: a local right because it made so many things work better it was an important
+  decision in the just works
+1308: aspect of homebrew which was important to the the way i designed it the way
+  i thought about it
+1314: yeah like uh this is this is what i wrote with the typos and bad uh grammar
+  throughout and this is where
+1323: it all this is where it all started um just on the theme of uh of homebrew i
+  think that there's something
+1329: like in that era of ruby time i feel like every ruby project had some kind of
+  an interesting theme
+1335: as well did you see that elsewhere was was it mostly like a or is that a ruby
+  thing that am i
+1341: misremembering that or is that how it was no you're probably right i i probably
+  don't remember it but i'm
+1346: sure that i was inspired to do the naming theme by other great projects and
+  they just really suited what
+1351: i wanted to do i think my reasons for doing it was slightly different i think
+  a lot of projects at the time
+1357: that had themes we're just doing it for the funsies while i was trying to make
+  it useful and then the
+1364: vast majority of open source at the time was just like terrible naming and terrible
+  if any theming
+1372: um you know it would be called what it did you know uh decrypt library dot lib
+1382: so now you know we've seen kind of where it began um in the past 15 years you
+  know if we had to
+1388: highlight maybe three or four big inflection points in the project what would
+  you say you know
+1392: maybe um were the biggest ones or the most the most significant uh to share
+1398: yeah it's a difficult one
+1404: i could i could suggest a few i think taps were the first that was one of your
+  big creations max that
+1411: was probably one of your latter like big creations on the project where you
+  just came out of nowhere
+1416: and again similarly like had this design and you're just like here's taps here's
+  what it looks like
+1421: here's how it plugs together and i think that's been like before so taps are
+  essentially like third
+1426: party repositories for homebrew if anyone who doesn't know and before we had
+  taps you could only install
+1432: stuff in homebrew that had been added to the main homebrew repository essentially
+  and i mean there were
+1437: other ways you could sort of hack around and stuff but i think taps are what
+  blew homebrew from turning
+1445: from like just a project to being like an ecosystem because then you can have
+  well anyone can now create
+1451: their packages in any way if you're a company you can have internal taps if
+  you're um you know if you're
+1457: an open source project you can have your own tap if you're and even within homebrew
+  itself like homebrew
+1461: now has a bunch of different taps and that's like homebrew cask that got merged
+  into homebrew itself
+1467: started off as a tap all the linux stuff started off as a tap like it's just
+  i think it just enabled
+1473: kind of the ecosystem to sort of flourish a bit more in that respect um i guess
+  another one i might
+1480: suggest after that would be like my uh true love and joy is like bottles the
+  binary packages that
+1486: uh because i think i implemented the first version of that and we're still using
+  more or less a pretty
+1492: similar model today um and yeah and i guess over time we kind of moved from
+  being almost from exclusively
+1500: built from source to predominantly built from source to mainly built from uh
+  binary packages as it is kind
+1505: of today yeah can you say a little bit more about what bottles are and how they
+  work
+1510: yeah i mean basically a bottle is just essentially we build everything from
+  source the way we used to
+1516: uh on user's machine but now we do it on github actions runners uh we basically
+  make a bottle which
+1525: is a complicated uh format of just a tarball of the thing that we installed
+  again i feel like i learned a lot
+1532: i learned a lot from max in this era and in general that like often there's
+  these really overtly uh
+1539: complex formats that happen on this stuff and often it's like well if you've
+  got a directory of stuff
+1544: and you want to put the directory of stuff somewhere else can we just make a
+  tarball of that directory
+1550: and extract it somewhere else is that good enough and the answer from the last
+  10 plus years or whatever
+1557: seems to be yes right and instead we could have made this complicated custom
+  binary format and
+1562: made everything three percent more efficient or whatever but then the whole
+  system becomes harder
+1567: to explain and understand and all the tooling you use is different yeah and
+  whatever and i i don't i feel
+1572: like that's for me like a big part of homebrew as well has been trying to avoid
+  that unnecessary
+1579: complexity and you know i think that's something i took from your initial design
+  max and from
+1584: us working together over the years and has inspired me in homebrew and outside
+  of homebrew as well
+1589: um yeah well it's good to hear because yeah like before that i i'd already recognized
+  how complexity
+1597: can destroy productivity and the ability to iterate and it was uh it was a key
+  thing you know one of the
+1602: things with the initial remi that we were just looking at was i wanted you to
+  be able to use the unix
+1607: tools you already knew like rm and ls to uh query the package manager i didn't
+  want it to need another
+1617: tool apart from when it was absolutely necessary and those sort of designs filtered
+  through throughout
+1623: i think in open source in general there's often a a desire to over complex things
+  um partly because
+1631: it makes us feel good hey i designed and built this really complex thing but
+  it can hinder like i think
+1637: most of the most successful open source projects are simple enough that people
+  get the gist really
+1642: quickly that inspires them to want to continue diving in and then get involved
+  and open source
+1648: lives and dies by a community like it's one of the key aspects that enables
+  it to exist and for it to
+1657: thrive so yeah and bottles yeah it was super super important it was interesting
+  at the time right because
+1663: when i built homebrew initially i got a bunch of like negative feedback from
+  people saying oh god you're
+1669: building from source i don't want to build from source just uh you should make
+  binary packages
+1674: i'm like well yeah sure but who's who's going to pay for that because at the
+  time there wasn't stuff
+1678: like github giving you free bandwidth and storage and compute in order to do
+  these things as an open
+1685: source maintainer you had to figure out who was going to pay for it and i wasn't
+  going to pay for it
+1691: yeah i mean the first version of our binary packages like the the evolution
+  essentially went from being
+1697: built on my machine to being built on a vm on my machine then we did a kickstarter
+  and then they were
+1703: built on some macs then built in a vm on those macs and then the macs ended
+  up being cloud hosted and
+1708: you know like it's yeah it's i i think it's easy to look back at those days
+  and be like why didn't
+1713: they build a binary package manager from the outset and forget that like what
+  you mentioned already max that
+1719: pull request didn't even exist like travis ci and all those systems github actions
+  none of these existed
+1724: you know even aws like you know it existed but you couldn't use it for building
+  anything on macs
+1730: uh so yeah like i mean essentially you were like right well you somehow have
+  to have build a bunch
+1735: of hardware yourself and build all this all the integrations and decide how
+  that goes with the
+1739: workflow and and all this type of stuff and and even then like i think the homebrew
+  workflow the
+1745: contribution workflow meant and means that like building binary packages is
+  trickier than if
+1751: you're like a debian and you do a release of software every so often you can
+  just be like okay
+1757: i maintainer has changed the thing we'll kick off a job the binary package is
+  done when it's done you
+1762: know like it's much more complex when you have a user who submits a thing and
+  you want it as soon as
+1767: the user merges the thing you want the binary packages to be ready for the user
+  and all this type of
+1771: stuff so yeah it's it's interesting it's been a an interesting transition but
+  a worthwhile one i think
+1777: something that i think is also kind of a milestone and you may you mentioned
+  it a little bit mike
+1781: uh is casks so as a you know occasional contributor and a heavy user of homebrew
+  i use casks all the
+1788: time and i really love the feature uh you mentioned that it was previously a
+  tap and then it got merged in
+1793: i don't actually know the history or the backstory of how that happened but
+  i think it was a pretty
+1799: important thing in the history of homebrew maybe you could share a little bit
+  about how that came to
+1802: be yeah so i'm not entirely sure i think it was i can't remember the name of
+  the guy i think it was
+1808: fins was his uh github handle but yeah someone set up this homebrew tap with
+  enormous amounts of
+1815: custom ruby code and it was probably the the homebrew tap that had the most
+  additional stuff in it with
+1821: this they came up with like a new dsl and this new concept called casks um for
+  installing like binary
+1828: packages you know google chrome one password whatever it may be um and yeah
+  and then after this project
+1834: been going on for a while like we'd kind of built closer and closer ties with
+  that project and then it
+1839: was someone i think it was a a russian google summer code student called anastasia
+  um and she basically
+1846: was involved with like merging the two repos and merging essentially all of
+  the like the actual
+1851: like underlying like code logic for casks into into homebrew and then yeah like
+  it everything was
+1859: pretty separate to begin with but then over time like casks and formula have
+  been more and more kind
+1864: of like together and then now it's i think the nice thing that casks do is that
+  it's you know it means
+1872: fewer people use them by quite a long way but it means if you want to just use
+  homebrew to install
+1877: pretty much everything on your computer you can do that now which is between
+  the mac app store and
+1883: casks and uh like humber itself and then there's the thing brew bundle which
+  lets you kind of put them
+1889: all into a brew file and kind of have a somewhat decorative format and that
+  supports installing things
+1893: from the mac app store as well so yeah so you can basically like i have essentially
+  everything
+1898: my machine is being installed through homebrew in in some shape or form and
+  it's yeah it again has it
+1905: broadened the ecosystem and wasn't was probably the biggest idea that came from
+  outside of the core team
+1912: and got merged back in and other than we can talk about this later john uh like
+  the linux sport as well
+1917: which had a similar kind of evolution yeah i have that on the on the agenda
+  so any other big milestones
+1922: that you guys wanted to talk about i just want to talk about casks for a bit
+  because uh i don't like
+1928: casks right uh i never like casks and uh it's very popular thing if you talk
+  to anyone about homebrew
+1934: they're like oh yeah the first thing i do is cask install everything on my computer
+  and then like
+1939: all the other tools as well i don't like casks uh but you know it was important
+  that it wasn't all
+1944: about what i wanted and i always made sure that was the case and so we built
+  brew like all the time and
+1952: mike was extremely instrumental in some of these pieces right i remember when
+  you merged the sub
+1956: command support that wasn't something that i was thinking of but you added that
+  so that people could
+1961: do brew dash whatever put it in the path and then that would be something you
+  could execute via brew
+1966: and uh it was just always important that we allowed the community to experiment
+  and see where they
+1973: wanted to take through and then if the community liked those things then yeah
+  we would support them
+1978: or merge them in more fully so yeah it's important as an aspect of how to manage
+  an open source project
+1984: but you allow that kind of thing i don't know exactly why i don't like them
+  but yeah just a matter of
+1991: preference i think that's fair everybody deserves their their own preference
+  um you reminded me there with
+1996: the external command stuff max it was also nice because we as you said it let
+  the community go off and do
+2004: stuff um and there were a few times that people proposed kind of fairly massive
+  changes to homebrew
+2008: which would require a lot of work and we were able to say hey we'll go off and
+  uh go off and build this
+2015: in a tap and then if that gets some sort of you know adoption then we might
+  consider emerging in later
+2022: and uh a little secret for any of the open source maintainers who might be watching
+  like a lot of the
+2026: time in my head i was just thinking like there's no way you're actually going
+  to do that but so one
+2031: of the the early successes of that i think before even casks which someone said
+  like hey like we should
+2036: have descriptions for all the formula like a nice little textual description
+  of what it is
+2041: um and it was like okay well that's going to require someone to go through and
+  add lines to 5 000
+2046: packages describing them all i was like if you go off and do that and you get
+  a description for
+2051: all the formula then we'll consider merging that back in thinking that person
+  is not going to do it
+2056: no one's ever going to do this this is fine i've essentially told them to go
+  away in a nicer way
+2060: and then you know this person reappeared in like you know four or six months
+  or something and was like
+2063: cool yeah i'm done i'm done now i've we've got descriptions for all of them
+  and then we merged it
+2068: back in and then with with a lot of these changes it's then once you got that
+  thing it's much easier to
+2074: say hey every new formula we add has to have a description now and it felt like
+  a big leveling
+2079: up for the project but you know it felt like i guess as max said earlier like
+  you have to be
+2084: um you know i think it's good having a vision of what you like and what you
+  don't and and even like
+2090: max not liking costs i think like that's a good example of like you know we
+  we all have our own
+2096: preferences and our design decisions and whatever and we can't expect them to
+  be the same but at the same
+2101: time max was not trying to ensure that casks could not be created by someone
+  else and the same with the
+2106: description stuff i thought this was not going to happen but i wanted to like
+  leave the door open
+2110: that like well if someone goes and essentially does all the work for free then
+  yeah we can we
+2115: can include descriptions why not yeah i deliberately didn't put descriptions
+  in the initial formula
+2122: and i remember like fighting people to keep them out so it's all objective everyone
+  like i have a different
+2128: description we'll end up with edit wars and this information is easy to google
+  etc but like uh
+2134: yeah it's very useful metadata for sure um
+2138: with like package x which uh i recently built right which is an attempt at something
+  new in the
+2145: package management space didn't add descriptions as well and i was like oh we
+  use ai to generate
+2150: descriptions um which mostly worked but then for some packages it was just abysmal
+  and we actually got a
+2157: lot of backlash to that so uh it's um a difficult one sometimes figuring out
+  what you want to support
+2164: because when you add something like that yeah then that means that every package
+  from then on needs
+2169: a description so you're increasing the burden but that was very minor thing
+  should have been in there
+2174: from the start probably so i kind of wanted to shift uh gears a little bit and
+  talk about apple
+2180: um so it's pretty intertwined like homebrew is pretty uh there is a linux support
+  and some other stuff but
+2188: um you know max you mentioned when you came over to the apple ecosystem that
+  there was no good package
+2195: manager you weren't very satisfied and i think that homebrew actually has really
+  really improved the
+2200: experience for developers on apple devices and apple changes relatively quickly
+  uh you know the operating
+2206: systems and whatnot like they're they're always advancing their underlying architecture
+  um so i wanted to
+2211: talk about maybe two or three things there one is the uh the move to a unix
+  like posix based
+2218: operating system right uh with mac os 10. uh the other is the constant march
+  of progress with apple
+2225: operating systems deprecating things changing the rules on the platform and
+  then also their architecture going from ppc to intel now apple silicon those have
+  all been major changes
+2233: relevant to homebrew and i was wondering if you know either you had commentary
+  about that or
+2241: experiences from you know using those things and going through them yourselves
+  yeah i'll quickly chime
+2247: in then pass to mike because i think he has much more experience in uh the various
+  important changes
+2252: especially the uh apple silicon one more recently but um i think at this point
+  honestly
+2259: apple cannot change some things about mac os because of homebrew
+2263: they they would risk um enormous problems for the global developer ecosystem
+  if they did
+2273: but yeah earlier days it was more problematic but i've been very good about
+  binary compatibility
+2279: uh in their libraries we only had a few issues um every time they do an upgrade
+2285: in general but yeah mike has uh more experience yeah i mean i guess the early
+  one is you
+2292: initially released homebrew on leopards and then it was the snow leopards i
+  think leopard had some
+2298: x64 support right and that but it was like not really and then snow leopard
+  went a bit more all in on
+2305: x86 64. like so that transition was like i think the first and a relatively
+  easy one um shout out to misty
+2315: de mayo a former homebrew maintainer plc member uh who had a thing called tiger
+  brew which like back
+2322: ported homebrew to run on like pvc chips i i believe is still kind of working
+  on those ancient apple devices
+2328: today um and then yeah i guess you mentioned john more recently the kind of
+  apple silicon transition
+2334: i i mean i think like you know it's no secret that every new version of mac
+  os tends to break some
+2340: stuff in homebrew or either mac os or xcode or whatever um but like you know
+  i i think compared
+2348: to the earlier days we definitely have a private but decent communication channel
+  with apple when stuff
+2355: really needs to be kind of addressed and particularly the apple silicon transition
+  was made much easier
+2361: by apple like proactively essentially as soon as the keynote was done where
+  they announced apple
+2366: silicon like before there was any hardware in anyone's hands they reached out
+  to us proactively
+2370: and we're saying like hey how can we get the right apple silicon in the hands
+  of the right people
+2375: in the right place and whatever um and yeah and i think it's it's funny because
+  i think there's
+2380: definitely a bunch of two-way learning that's gone on i think homebrew's learned
+  like how to identify apple
+2387: and how to work with them and figure out like what that looks like but i i think
+  apple's also like
+2392: been getting better with open source and learning that like you know sending
+  hardware to homebrew people
+2399: may involve sending it to like a this is not even a a uh fictional example but
+  like some distant scottish
+2407: island um and like you can sometimes hear the confusion the apple people's voices
+  that it's like
+2413: you're not just all in this office somewhere in the world you're like scattered
+  all around like what's
+2420: the legal entity we should attach this to oh there isn't one oh uh this is going
+  to be tricky uh but you
+2425: know in the end i think we've got something that i think work brutes or homebrew
+  has been tremendously
+2431: beneficial to apple over the years and i think you know obviously if we didn't
+  love our apple devices
+2438: like homebrew probably wouldn't exist in the first place because we would have
+  just stayed on linux
+2443: doing linuxy things with linux package managers which were good enough that
+  homebrew would probably have
+2448: not been created yeah and speaking of linux and also other platforms i know
+  that homebrew
+2455: has support for linux there's linux brew right and there's also uh what is it
+  uh the windows uh wsl
+2464: some people can use homebrew there so what's the project's position now on other
+  operating systems is
+2471: it like officially supported by the project how how do you approach that yeah
+  so linux is officially
+2477: supported with homebrew now and it's kind of fully integrated in terms of the
+  package manager itself
+2483: and all the formula and homebrew core are run on you know this specific formula
+  that might be mac only
+2490: or linux only or whatever but essentially everything we are aiming to have feature
+  parity version parity
+2496: and everything like that and we have maintainers who run exclusively on linux
+  and maintainers who run
+2500: exclusively on uh mac but mac is still our predominant uh ecosystem if it feels
+  like an apple
+2508: level uh perhaps slightly silly discussion but um there's been a lot of back
+  and forth on pull
+2515: requests and internally about like well how do we communicate that because homebrew
+  is still used way
+2520: more on mac os than on linux um so on the home page we have you know homebrew
+  the missing package manager
+2526: for mac os or linux and the or linux is parenthesized to sort of indicate that
+  we do support linux but it's
+2533: like you know not quite as popular or you can look at the numbers i think linux
+  usage is about maybe 10 or
+2540: something of mac os usage based on analytics and also like maybe interesting
+  maybe boring uh like mac os
+2548: is like predominantly people running on their actual match and like i think
+  it's like 10 20 or something
+2553: it is running on like ci environments whereas linux is like 50 actual users
+  50 ci so i think that's
+2559: again where the linux support is kind of kind of useful like even for us in
+  homebrew ourselves like
+2563: having the ability to like bump mac os packages and like run style checks and
+  all this type of stuff on
+2569: linux runners because i guess despite our conversation earlier where you know
+  back in the
+2574: day when there's no mac os versions mac os runners available even nowadays like
+  the mac os
+2581: compute per minute price is dramatically higher on any platform than the linux
+  uh compute price so
+2588: essentially if you can farm a job out to a linux system instead of a mac system
+  it makes life much
+2593: easier but again like we said earlier like the linux stuff started with a fork
+  of homebrew
+2599: called linux brew over the package manager itself and then it had its own version
+  of homebrew core
+2604: where all the formula are called linux brew core and over time the package manager
+  in uh the main
+2611: package manager repo homebrew we call it was kind of made to be more and more
+  linux compatible and
+2617: the eventually like the homebrew core became linux compatible as well and a
+  little shout out to the
+2623: past max mentioned he was working when we were in london we were both working
+  on qt applications actually
+2629: and yeah and i felt like from my cross-platform qt days i learned a lot about
+  how to make the uh
+2635: the package manager part of homebrew not just a mess of like if mac if linux
+  if mac if linux like all
+2642: over the place which is what kind of naive cross-platform porting tends to look
+  like and be very painful
+2648: to deal with max so you you had mentioned that uh you know you don't recommend
+  having a big success early
+2655: in your career uh when you're when you're young i'd love to hear from you um
+  kind of how homebrew has
+2661: impacted you professionally and what that's done to your kind of trajectory
+  as an engineer and as i know
+2668: you're an entrepreneur like what are you up to now where are they like where
+  are they now and like
+2673: how did homebrew kind of put you in that path yeah well uh homebrew definitely
+  impacted everything about
+2681: my life very much that's for sure hopefully for the better yeah well definitely
+  like um i can't talk
+2689: fondly enough about how open source has given me so many opportunities that
+  i wouldn't have otherwise
+2696: had but uh you know let's start with a personal level like suddenly i became
+  very arrogant for a
+2701: while about it because uh you know it was the biggest project on github and
+  it was on my username
+2707: slash mxcl slash homebrew um and uh you know i'd meet people and they i remember
+  one conversation
+2716: in like 2014-ish maybe 2013 and i was sitting at a bar with some other devs
+  and this guy says oh have
+2724: you heard of homebrew this package manager it's really cool and i just started
+  laughing and then
+2729: everyone else around me was like what did he ask and i said oh he asked me if
+  i'd heard of homebrew
+2734: and they were like and they talked about how i was the creator i've always been
+  somewhat humble in
+2740: that respect i don't usually bring it up because i find that you get a bit of
+  hero worship what you
+2746: probably find similarly mike and uh it changes how people act with you so i've
+  had this
+2754: interesting sort of life where um among like geeks i'm famous but among everyone
+  else fortunately i am
+2762: not i don't i don't have to be uh a celebrity in uh in most circles and uh you
+  know it's definitely
+2771: got me career opportunities and you know obviously famously didn't get into
+  google but
+2777: not getting into google got me an awful lot of other opportunities and yeah
+  i think the worst thing was
+2787: definitely that after homebrew nothing i could work on seemed successful unless
+  it had you know
+2795: a frac some some fraction at least of homebrew's success so i abandoned a lot
+  of open source projects
+2803: i probably shouldn't have because homebrew was successful very quickly and i
+  turned down a lot of
+2809: interesting startups that i could have worked on because they just didn't seem
+  cool enough
+2813: um but yeah still always done open source i've got a couple of other big projects
+  on my uh
+2820: github and uh missed out on some interesting airdrops because mike decided to
+  deprecate the
+2829: original homebrew repo at some point you owe me uh some token for that like
+  yeah um it was a couple of years ago
+2837: years ago that i founded t protocol which is what i'm doing now and uh it was
+  based on my career in
+2843: in work and open source and like the the fact that nothing but open source ever
+  really felt worth
+2850: doing to me and over the last 15 years uh open source has really gone from being
+  something that was
+2857: kind of derided you know like it you could see how open source was becoming
+  successful 15 years ago when
+2864: homebrew was created but it's still the case that if you wanted a real job then
+  no one was using open
+2869: source and they thought you were a hipster or an idiot for wanting to use it
+  so now we're like the idea
+2875: of building something without an open source base is preposterous and um yeah
+  in those 15 years i think
+2882: it all kind of took us by surprise how much open source became the bedrock of
+  all modern software
+2889: development so a couple years ago i was looking for funding solutions for open
+  source once again
+2895: and i didn't find anything that seemed like it was going to work for me i'd
+  already tried a few things
+2900: so vanity protocol to try and fix it by changing that narrative it's a crypto
+  project which obviously
+2906: a lot of people are skeptical of but we're doing very well so the idea is we're
+  trying to make open
+2914: source sustainable by giving free crypto token rewards to open source developers
+  and we have almost 1.5
+2921: million people who've signed up for our testnet so far at 15 000 open source
+  projects some of them uh
+2927: very impactful ones so yeah we're launching it properly later this year and
+  the idea is to make
+2933: it so you know like my homebrew story was that i quit my job to work on homebrew
+  full-time and if i hadn't
+2937: done that i don't think it would exist quite honestly and it's not really something
+  we can
+2944: expect the people who are building the foundation of the internet to do on a
+  regular basis we can't
+2950: rely on the software industry and all the software that we build that's so important
+  nowadays to
+2956: exist when we were expecting people to somehow try and make these sacrifices
+  i couldn't do that now
+2962: at 26 you know i was single didn't have kids it was fine but so yeah we're trying
+  to change that
+2969: t protocol makes it so that you don't think of open source as a charity which
+  is how everyone
+2975: else goes about it you're begging for donations changing into like a value ecosystem
+  where
+2980: you're you're participating in the value of open source
+2988: excellent yeah i mean i can only imagine that homebrew has had a major a major
+  impact on your
+2993: entire life and i can relate to what you were saying about you know when you
+  have a big success
+2998: it's very difficult to try to do another project and have it be successful like
+  i've i've kind of
+3004: developed this muscle of don't try to do the same thing twice um where if something
+  happens to be a
+3010: home run it's a combination of good good work you know forethought but also
+  a healthy dose of luck
+3016: and you can't expect the luck to be there every time um but yeah i definitely
+  i definitely can
+3021: relate to some of the things that you were saying right like um yeah mike how
+  about you how has homebrew
+3026: impacted your career and uh you know where are you now what are you up to these
+  days yeah i mean
+3032: similarly to max like i've had a bunch of doors that got opened probably only
+  due to homebrew right so
+3038: i started working on homebrew and ruby and you know i dabbled very briefly one
+  university course back in
+3045: the day but um you know homebrew is what kind of got me doing ruby and then
+  i've definitely found like
+3052: there was a few as homebrew became more successful uh when i changed jobs and
+  i had like homebrew maintainer
+3058: on my resume like that seemed to be the only thing that people would care about
+  and that got me through the
+3064: door and got me kind of speaking to people and i i applied for github three
+  times before i got a job
+3069: there but you know i went from essentially being a nobody who uh like just a
+  random member of the tech
+3076: industry to kind of being able to get a chat with one of the github founders
+  back in whatever it was
+3081: 2012 or 13 or um and yeah and i think that door was opened exclusively because
+  of homebrew and i think
+3088: yeah i spent 10 years at github i left there last year and i think i learned
+  a lot about making homebrew
+3093: better from github and a lot about making github better from homebrew and there's
+  probably some
+3098: stuff i'm not going to go into right now that hope that github does differently
+  as a company
+3103: uh and as a software project because of homebrew right and if homebrew didn't
+  do it first then
+3107: github probably wouldn't be doing it um but yeah nowadays i guess kind of like
+  max i i've also almost
+3114: like had a like thinking about what does this look like going forward and like
+  what what do we do here
+3122: and i co-founded workbrew with yourself john and our co-founder vanessa who's
+  not on the call and
+3129: we're basically doing i guess it's interesting how like max and i are both kind
+  of riffed off the the
+3134: homebrew idea in different directions but basically what we're doing is building
+  uh commercial support for
+3139: homebrew and what that looks like today is providing um better support for the
+  stuff that homebrew doesn't
+3145: really want to do that the volunteers are not interested in like making homebrew
+  work really
+3149: well with mdms in environments where users don't have administrators and tightly
+  integrating with kind
+3156: of security protocols cvd disclosures and stuff like that but moving forward
+  we're basically making
+3160: homebrew better for engineers using it as well and security professionals too
+  and so yeah we're basically
+3166: working on making homebrew better but also providing a kind of commercial layer
+  on top of homebrew uh
+3171: to make that better for the people who are using it i love what you guys are
+  doing and i wish you
+3177: all the success with it i think it makes a ton of sense honestly i remember
+  in um i think it was 2014
+3184: i got a call from some uh san francisco vc who was like how can we make homebrew
+  into something
+3191: commercial because they they were looking at npm right which had just just done
+  that and at the
+3196: time i was like i just don't see how we can do it because i didn't have the
+  right mindset and also
+3200: because it was just such a big open source project i didn't understand how we
+  could like say hey community
+3205: um it was open source but now it's not uh it's kind of something else so what
+  you're doing is the
+3212: right way to go about it i wish i thought of it then might have been a very
+  different world for
+3217: me and all of us but uh you know building on top adding extra services on top
+  i think it's only the
+3222: last few years that commercial open source really people figured out how to
+  do that and like i think
+3228: there's a lot of good opportunities in that space well i mean the funny thing
+  is john had been probably
+3233: from a similar sort of era trying to convince me to that this was a good idea
+  and i felt the same as you
+3238: that like well i don't really see how we can do this but for me it was like
+  two things kind of came
+3243: along so one thing was the um i guess like homebrew actually having an established
+  government structure
+3250: governance structure and its own funding and a non-profit and a board and all
+  this type of stuff
+3255: like and that gave me the separation that i feel more comfortable with where
+  it's like okay now it work
+3261: brew even if we wanted to try and somehow take over the open source project
+  we can't do that because
+3266: it's its own thing and it has voting and everything like that right so that
+  that feels a lot more
+3270: comfortable to me um but then also on on our side i guess having seen over the
+  years something i
+3276: actually learned a couple of companies before homebrew is it was this company
+  kda i used to work on again
+3280: doing qt consulting um and i was really excited because they were the biggest
+  kitty contributors in
+3285: terms of a company that was out there um and i was like great i'm gonna get
+  to work on all this cool
+3290: exciting open source stuff and get paid to do it and then i learned pretty quickly
+  like oh no no if
+3295: you're getting paid to do the open source stuff you're getting paid to do the
+  boring things right
+3299: because all the fun stuff people will be happy for free in their spare time
+  and it's and i think one
+3303: of the projects was something like uh k office the kind of open office alternative
+  and it was like
+3308: working on a compliance suite of like okay here's the like essentially 2 000
+  ways in which k office
+3315: doesn't render things the same as words just go through and like fix them all
+  right and no one
+3319: wanted to spend the readings and weekends doing that so we were paid to do that
+  right and i feel
+3324: like it's a similar model to what we're doing with workbrew essentially where
+  there's a bunch of stuff
+3329: that i've seen over the years like humber maintainers are like ah i don't really
+  like this is only that
+3334: you only use this in lockdown environments where security and compliance concerns
+  are really important
+3339: like that's not me that's not my personal laptop like why do i want to spend
+  like a day working on this
+3344: and so it doesn't get done and instead of saying no to people we can now say
+  okay well like instead of
+3351: having homebrew solve all these problems for you which only apply really to
+  companies that kind of
+3355: have these type of problems rather than individuals working at home then this
+  workbook can solve them
+3359: for you instead so yeah um so just to wrap up we have a couple a couple minutes
+  left but i i really
+3367: wanted to uh you know kind of see if there's any advice that you have for people
+  who want to be
+3373: open source you know open source developers like you um if you were to go back
+  to when you first got
+3380: involved with homebrew you know what advice would you give yourself at that
+  time now that you've got
+3385: basically 15 years behind you
+3389: well i'll go first um so i always say that the most important thing is it's
+  something you need
+3397: like in in general when you're working with you know you've got to be working
+  on something else and
+3403: then as you're working on that other thing you're like oh this this thing doesn't
+  exist or this tool
+3409: isn't what i need it to be i need it to be able to do something else and so
+  if you're going to start a
+3414: new project like it's one of those things but if it's the latter you might find
+  there's a tool that
+3420: exists and you can start contributing to that like you know that's a lot of
+  open source people got
+3425: involved that way by finding that it had to be them who made that feature and
+  uh if you have great uh
+3433: core maintainers like mike who encourage you to go do that partly because he's
+  lazy partly because he's
+3438: made sure that over the years uh the ability for you to like bolt in your own
+  functionality is easy
+3444: then uh yeah it's going to be something you're going to be passionate about
+  if you're just doing
+3448: it because you think it's going to get you a good resume then you'll find after
+  a few weeks you're not
+3453: doing it yeah i'd echo what max said like we actually have that in one of our
+  like comfort
+3460: maintainer guidelines that like if you find yourself in a situation where you're
+  no longer using homebrew
+3465: day-to-day like you're doing your day job on linux and all your personal machines
+  are on linux and you
+3470: just don't use homework there or whatever it may be then we recommend people
+  step down because at that
+3475: point not only like is it not that interesting to you but also like at that
+  point um you know you're
+3482: probably not going to do the best decisions for the project because you don't
+  care personally
+3486: and yeah like i i don't know like i think it's for me thinking back 15 years
+  like i don't know i've just
+3492: i've learned a lot along the way that i don't know if i would have learned if
+  someone told me because i'm
+3497: super stubborn like that um but yeah i guess for me the biggest transition has
+  been
+3501: just having more boundaries and being better at like dealing with people being
+  entitled or
+3508: like i no longer have like homebrew slack or notifications or whatever on my
+  personal phone
+3514: and stuff like that so it's yeah i guess that has both helped kind of let other
+  people pick up the slack
+3521: and like share the load a bit more but it also just stops random open source
+  people who are 99.9 of
+3530: the time lovely and sometimes less than lovely uh from intruding on my personal
+  life and my personal
+3537: space and when i'm having time with my wife and kids and stuff like that yeah
+  well yeah mike was always a
+3542: lot better about that than i was you know he knew how to keep the rest of his
+  life separate and i you know
+3552: that's why i burned out while uh mike kept going for sure so yeah something
+  i can learn i think
+3562: we all can um well thank you both for for joining us um this has been awesome
+  uh congratulations to both
+3569: of you also 15 years since homebrew was created and i think um thank you to
+  everybody in the community
+3576: who uses homebrew who contributes to homebrew i think that all of the you know
+  everybody who's got
+3580: commits in there whether it's you know features or documentation or really anything
+  to help out with
+3586: the project you know you deserve to celebrate as well um thank you max uh thank
+  you mike for joining uh
+3592: have a great day everybody bye bye thanks

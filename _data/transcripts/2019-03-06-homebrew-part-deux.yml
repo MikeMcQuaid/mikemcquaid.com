@@ -1,0 +1,1858 @@
+---
+0: Bandwidth for Changelog is provided by Fastly.
+2: Learn more at Fastly.com.
+4: We move fast and fix things here at Changelog because of Rollbar.
+8: Check them out at Rollbar.com.
+9: And we're hosted on Linode cloud servers.
+12: Head to linode.com slash Changelog.
+14: This episode is brought to you by DigitalOcean.
+17: DigitalOcean is the simplest cloud platform for developers and teams
+22: with products like droplets, spaces, Kubernetes, load balancers, block storage,
+27: and pre-built one-click apps.
+29: You can deploy, manage, and scale cloud applications faster
+32: and more efficiently on DigitalOcean.
+34: Whether you're running one virtual machine or 10,000,
+37: DigitalOcean makes managing your infrastructure way too easy.
+41: Get started for free with a $100 credit.
+43: Head to do.co slash Changelog.
+46: Again, do.co slash Changelog.
+49: All right, welcome back, everyone.
+58: This is the Changelog, a podcast featuring the hackers, the leaders,
+62: and the innovators of software development.
+64: I'm Alex Dekowiak, editor-in-chief here at Changelog.
+67: Mike McQuaid is back talking about Homebrew 2, supporting Linux and Windows 10,
+72: the backstory and details surrounding the security issue they faced last year
+  in 2018,
+76: their new governance model, Mike's new role,
+79: the core team meeting in person at FOSDEM this year,
+83: and what's coming next for Homebrew.
+84: Mike, we're back again, man, and it's been a while, right?
+92: It's been a few years, right?
+94: Time flies.
+95: You got Homebrew 2 out.
+96: You got some new governance stuff happening.
+99: We actually almost caught up with you, I think, July of last year around the security
+  thing.
+104: So there's lots to cover, but where do you think we should begin?
+107: Should we begin with the security thing, or should we begin with the latest updates
+  to Homebrew?
+111: Yeah, let's start on the downer and then finish with the upper.
+115: Let's go there then.
+116: So we actually wanted to kind of news hack it,
+119: but it just didn't work out to get both you and the security researcher on the
+  show,
+123: but you're here instead, so tell us what happened.
+126: Yeah, so basically we got a security disclosure through our HackerOne.
+130: It's actually been a really nice setup since we kind of moved to that.
+133: Previously, we had just, you know, oh, we'll create an issue or send us an email
+  or whatever,
+137: and people suggested that we kind of get set up on HackerOne,
+139: and it's kind of a responsible disclosure platform thing,
+142: and it's free for open source, and that's kind of worked pretty well for us.
+145: So yeah, basically late July last year, a researcher identified that Jenkins,
+151: which is what we've used for Homebrew CI and building our binary packages,
+155: had been leaking a token.
+157: Unfortunately, that token actually gave him push access to some repos.
+161: So that was obviously relatively terrifying.
+165: We managed to, obviously, the bonuses of good disclosure is that, you know,
+169: within a few hours, we were able to revoke the creds.
+172: We were able to replace them and sanitize Anthony and Jenkins,
+175: so this shouldn't happen in the future,
+176: and also basically checked to see with the old credentials,
+180: like what was possible and what wasn't.
+182: And thankfully, like it actually wasn't as bad as initially feared,
+186: because although it has to have kind of write access,
+189: that particular credential, it didn't have actual like push access,
+192: the given repos, and we were also able to verify with GitHub's supports help
+197: and some auditing ourselves that it hadn't been used by anyone
+200: during the period in which the scopes were elevated and which it had write access.
+204: So basically, one of those ones were, you know, scary times,
+208: but thankfully kind of all resolved.
+210: So we kind of wrote it all up on our blog,
+212: tried to let people know what happened, what the implications were,
+215: and like what we were going to do moving forward,
+217: and tried to move on since then and haven't had any other big slip-ups similarly
+  since then,
+223: The fellow's name was Eric Holmes, right?
+225: That's the one, yeah.
+226: That's the one.
+227: We linked this up around the time of happening to ChangeLog News,
+231: and the last question I think is kind of interesting,
+234: and I'm kind of curious what you think about this.
+235: He says,
+236: if I can gain access to commit in 30 minutes,
+239: what could a nation state with dedicated resources achieve against a team of
+  17 volunteers?
+244: Yeah.
+245: I mean, it's a great question, to be honest.
+247: And, you know, I don't mean to scare people with this stuff,
+250: but I mean, I'm very much of the belief that
+253: unless you are a very high-level security professional
+256: who has deep knowledge in this stuff,
+259: if you're going against a nation state,
+261: like it's more or less, you know, as they say, game over, man.
+264: I'm, yeah, it's that side of things is scary.
+268: But I think the thing with Homebrew, at least,
+271: is that it has been designed such that,
+274: and we kind of said this even at the time when we were kind of debating it as
+  maintainers,
+278: is that with stuff like this, you can,
+280: there's vulnerabilities which can be introduced silently
+283: and then you'd never really notice them and never really catch them.
+287: And then there's vulnerabilities that you would notice.
+289: And because we have everything built on top of Git
+291: and because our CDN is immutable after 30 days
+295: and because we have, like, I guess, a two-level kind of hashing structure,
+301: even with our binary packages,
+302: where we maintain the hashes for those packages
+305: and the packages are maintained elsewhere on separate infrastructure,
+309: that it means that the chances of someone like a nation state being able to compromise
+  Homebrew,
+314: I'm not basically a, you know,
+316: if you have one of the relatively big superpowers trying to do something like
+  that,
+320: the chance that they could compromise Homebrew,
+322: I feel it would be relatively high if they put their mind to it.
+325: But the chance that they could do so without any maintainers or the community
+  noticing,
+329: that's something I'm not convinced about.
+332: I feel like we would notice and we would be able to kind of spot that that had
+  happened
+336: and disclose that information and stuff like that.
+338: Because I guess the other flip side of the open source community with stuff like
+  this
+342: is because we don't have, you know,
+344: a relationship as volunteers with the government of countries that may want to
+  do things like this,
+348: we would not have any qualms in going posting on our blog
+352: and pointing fingers at directly whom we believe has done something
+356: and when they did it and why we think they did it and all that type of thing.
+359: And I guess companies sometimes have a little bit more conflict there
+363: because obviously there's commercial interests involved and blah, blah, blah.
+367: It's an interesting thought experiment and you just kind of wonder, you know,
+370: with open source software, it's the gift and the curse, right?
+373: On the gift side, well, there's a lot more eyes on it.
+376: The code is there.
+378: You know, we use modern SCMs.
+380: And so like you said, any sort of things going into the software coming out,
+383: they're all in version control.
+385: They're all publicly there.
+386: There's lots of, I mean, there's 17 maintainers and there's your gift.
+389: But the curse is that it's all open source, right?
+391: And so there's, as a bad actor, there's a whole lot less poking at a black box
+397: that you have to do because you aren't dealing with the final product.
+402: You're dealing with the source code, you know, depending on what the project
+  is.
+405: And so it's just one of these things where, yeah, I mean, he got it done in 30
+  minutes.
+410: That was really the thing that I think made this particular incident
+414: just more interesting than other ones is because it was like, wow,
+418: he set out to do it and 30 minutes later he had it.
+421: And that's not much effort, right?
+423: Yeah.
+424: And I think the interesting thing from our perspective is that
+427: others may well draw different conclusions,
+429: but our perspective would probably be that it was an example of our weakness
+  being exploited,
+436: which is that, I guess, like other open source projects,
+438: most of us would rather be writing code than doing system administration.
+443: So as a result, like our, we have like a Jenkins instance.
+446: And I mean, shout out to anyone working on Jenkins here.
+449: They've been, you know, it's great software that we've used for a very long time,
+452: but compared to what we're increasingly used to with, you know, say Travis CI
+  and Azure Pipelines,
+458: which is what we use now.
+459: And, you know, a lot of these cloud tools were effectively keeping everything
+  up to date
+463: and keeping the configuration sane is not something you need to worry about yourself.
+467: Whereas any of these sort of open source projects where you're installing the
+  software yourself,
+471: you're maintaining on that system, you know, getting the balance right between
+  applying all the security updates in Jenkins
+477: and then all the plugins, which then change behavior between versions.
+481: So this was one of these annoying cases where it was an intersection between
+  plugins,
+485: where one plugin, which had previously, you know, filtered out the tokens, was
+  updated,
+489: and then that responsibility was delegated to another plugin,
+492: which hadn't been configured to do it correctly and all this type of thing.
+496: And it's kind of tricky because it slips through the cracks.
+498: And our longer term solution that we're kind of working towards now is basically
+  just get rid of any infrastructure
+503: we have to maintain ourselves.
+504: I mean, in an ideal world, we would all be on, you know, Travis and EC2 and Azure
+  Pipelines,
+511: and that would be the end of the day.
+512: But unfortunately, again, the complexity of our project is that we have to build
+  binary packages on macOS,
+519: and there is not a freely available macOS hosting platform for building stuff
+  at the scale that we need yet.
+528: We're getting optimistic that there will be in future.
+531: We've had some really good conversations with Microsoft about Azure Pipelines.
+536: But right now, as of today, you know, we still need to maintain our own infrastructure,
+539: which is, in this case, you know, the configuration of that infrastructure is
+  the weak point.
+543: So that's my number one goal on my list of stuff to do this year is to get us
+  entirely onto other people's infrastructure for this stuff.
+552: But again, I guess, like, it's one of those ones where I will do it by the end
+  of the year.
+557: I'm fairly confident, but I can't really be bothered.
+560: And one of the tricky ones in Homebrew where if I don't do it, chances are pretty
+  low that anyone else is going to step up and do this work.
+568: In a more general sense, taking Homebrew specifically off the table and just
+  thinking about open source security.
+574: The trouble is, and, you know, we say it a lot on the show, and by no means,
+  you know, a lot of people say that it's true,
+580: but it's like from the security standpoint, you know, you have to bet a thousand
+  pretty much, right?
+585: You have to get, like, let me say it this way.
+587: You only have to mess up one thing in order to have a threat vector.
+591: And then that thing has to just be found, right?
+594: Like, it's easier to find one hole in an armor than it is to, like, make an armor
+  that's completely indestructible, has no holes.
+599: And for open source, like you said, we'd rather be writing code than doing infrastructure.
+603: It also can be, like, not your area of expertise, you know?
+607: And maybe you're good at this thing, which made Homebrew successful.
+611: Maybe you're not so good at that thing.
+612: Maybe somebody else has more experience.
+614: But even with the experience, people, mistakes are made.
+616: So, for example, we've been cutting over some of our infrastructure here at changelog.com,
+621: and all of our source code is open source, and we're on Concourse CI, and we're
+  switching over to CircleCI.
+627: I won't tell all the details of that experience, but I'll just tell you that
+  we've rotated all of our keys lately
+632: because mistakes, you know, are made.
+635: And it's just kind of the unfortunate state of the world.
+638: But the question becomes, like, on the large, you know, how do we engage in a
+  battle as a community against bad actors,
+649: whether it's nation states or security researchers, you know, what do we do that's
+  sustainable?
+655: I know we've been working on lots of tooling, you know, building and auditing
+  into our package managers, for instance, that kind of thing.
+661: But do you put any thought into this beyond Homebrew's yard?
+666: Yeah, I mean, I think so.
+668: I think there's been a few things through Homebrew that I've kind of learned
+  that I think are more widely applicable.
+673: I guess the first one is back to this, you know, the security disclosure on our
+  blog and on HackerOne
+679: and kind of working with the researcher to kind of have him publish his results.
+682: I mean, of course, you know, one of the first things you try and learn when you're
+  getting more senior as an engineer is, you know, you are not your code.
+689: And if your code has problems, that doesn't mean your worth as an individual
+  goes down.
+693: But, you know, but the first thing when you get a vulnerability like this is
+  you want it to not be true.
+698: And you want, you know, despite everything that you know and believe about responsible
+  disclosure,
+702: you just want to hide the problem and have it go away, you know?
+705: It's like an ego thing.
+707: And again, I don't think there's anything wrong with people admitting that that's,
+  you know,
+711: it's a pretty natural reaction for you to have, you know, if you may.
+714: You don't want that to be the case.
+716: Exactly.
+717: But I think, again, like that's one of the big things I think the open source
+  community in general is good at,
+722: is stepping up and being responsible and disclosing this stuff.
+726: Like, because in this case, you know, the level of this vulnerability here,
+730: like I'm sure that happened to a hundred companies around the world this year,
+736: like almost an identical problem.
+737: And are they going to write on their company blog that they disclose this?
+740: Well, some companies will, and, you know, hat tip to them, but most won't.
+744: And that's a problem.
+745: I guess the other thing is that kind of somewhat ties on to what you were saying
+  earlier is that,
+751: you know, you need to just accept with some of the stuff that you're not going
+  to have
+755: the time and the resources for the open source projects that you would like to.
+758: You know, again, if HomeRoo was a commercial company, you know,
+762: I wouldn't hire me to do half the stuff that I'm doing because I'm not qualified.
+768: And I know there's better people to do that.
+770: And even on the coding end, you know, like if, you know, if me at work was to
+  review my code quality
+778: that I, you know, have on Homebrew, then I would probably be, you know, leaving
+  lots of requested
+783: changes all over the place.
+784: Because at the end of the day, I don't have the time and the resources to do
+  things to as high a standard
+791: in open source always as I do when, you know, when we're getting issues that
+  are affecting,
+795: you know, whatever, like millions of people potentially, the onus is on fixing
+  it right now.
+801: And when you don't have lots of very smart coworkers around you who can help
+  bounce ideas off
+805: and it's just down to you, then it's like, well, you're not going to do it as
+  well.
+808: And I guess the final thing I thought, which again was a side effect in this
+  case, but
+813: is sometimes you can avoid some security issues by just not having all your eggs
+  in one basket.
+818: Like it's, for example, if GitHub, we have our binary packages hosted on Bintray
+  and we also
+825: download source packages from the original like sources that they, you know,
+  whatever the
+831: hosting company is for the original software.
+833: And it would have been and was tempting in the earlier days to say, right, let's
+  just double
+839: down on GitHub, use all of their hosting options and everything like that.
+842: And if we'd done that in this case, then that's when you lose one token and all
+  of a sudden
+846: they have the keys to everything in your castle.
+848: Whereas in this case, you know, they, you know, even if you got into Jenkins,
+  you wouldn't
+854: have access to published binary packages.
+856: You wouldn't have access to push to various repos.
+859: Like, you know, things are separated between individuals.
+862: And then there's actually even between individuals within the project, you know,
+  you would have
+867: to compromise a handful of specific maintainers to be able to get access to everything
+  because
+873: most maintainers are not granted access that they don't need.
+875: I guess that would be a security thing that we've done for a while, which I guess
+  I would
+880: encourage other open source projects to do is that it's tough.
+883: But when someone doesn't need, you know, if you've got someone in your project
+  who maybe
+887: was a big figurehead in the early days or whatever, and they haven't worked on
+  the project
+890: for several years, they should not have access to push to your repositories,
+  in my opinion.
+896: And it really stings, again, both sides to go and have to have that conversation
+  about like, maybe you don't need the access here.
+903: But again, I feel like that's the kind of responsibility side of things where
+  if you, if you're not willing to revoke
+909: people's tokens, then you're increasing the number of laptops that need to be
+  increasing or decreasing.
+914: One or the other.
+915: Basically, yeah, you have a bunch of laptops in the wild.
+917: If someone steals that and it's not encrypted, then you are giving people access
+  to push to those repos.
+923: And again, it depends on your release model and your verification model and things
+  like that, like how big a deal that would be.
+928: But certainly for some projects, that would be a big deal.
+930: Well, the good thing about this security incident, though, is it was best case
+  scenario, right?
+934: It was a security researcher.
+936: White hat hacker.
+937: You know, and you were able to, even though it was shameful, you were able to
+  disclose it quite well because, you know, in the end, no packages were compromised
+947: and no actions actually required by the incident.
+950: So it was a researcher and not a bad actor.
+952: Yep.
+953: That's at least one, you know, wipe the brow because it could have been bad.
+958: I think that's a nice thing with the open source community in general as well
+  is that we, you know, if you go out your way to do things properly on the security
+  side, then you generally, you know, even the kind of gray hats in the middle are
+  not going to get a lot of kudos from going and really making idiots of an open source
+  project who are trying to do the right thing with this stuff.
+977: You know, whereas all of a sudden they've, this is a case where, again, get the
+  ego involved and all of a sudden they've,
+983: we kind of try and make out to the security researcher that, you know, he made
+  a mistake and we change things from underneath them.
+989: And, you know, and he writes a blog post and we get into a, he said, he said,
+  she said type thing on Twitter about, you know, calling each other names.
+996: Then all of a sudden that's when you can see potentially in future security researchers
+  being like, well, you know, these folks at homebrew think they're so great.
+1004: We're going to take them down a peg or two.
+1005: So I think, you know, there's a certain amount of humility that needs to be
+  involved there when you're dealing with people who know a lot more about a subject
+  area in this case, you know, security than you do, you know, and being kind of grateful
+  that those people are willing to kind of go the right way and, and help you out
+  there rather than try and, you know, make fools of you.
+1023: Did you end up having like a personal conversation with this person or did you
+  end up just like black on white email texting?
+1031: Like what was the, what was the kind of crossover there?
+1033: Yeah, no, it was just through, so we just chatted with them through, um, hacker
+  one through the, uh, through our kind of security disclosure tool.
+1042: Um, and that's kind of the main way we have the conversation there.
+1045: And I think it maybe went to kind of our personal emails kind of chatting there
+  as well.
+1048: Cause we've wanted to kind of coordinate the blog posts and all that type of
+  thing.
+1052: So, uh, the other fun, I guess, aside with open source as well, is that like
+  this, this all happened during, uh, my, um, paternity leave.
+1061: GitHub is very generous in that you get five months paid paternity leave.
+1065: And so I was off and my wife had gone back to work and I was with my, off with
+  my first and, uh, I was his kind of sole care provider at that time for a three
+  month period.
+1075: And yeah, and this happened more or less slap bang in the middle of it.
+1077: So like I put him down for a nap and was like frantically trying to sort of
+  write this stuff up and, you know, sort those things out and being like, please,
+  please, we man just stay asleep.
+1089: That's funny.
+1090: So, and I guess that's again, congrats by the way.
+1092: That's terrible though.
+1093: Thank you very much.
+1094: Yeah.
+1095: That's terrible.
+1096: Congrats.
+1097: You know, on the kid, of course.
+1099: And that's terrible to have to deal with that during paternity leave, you know?
+1102: Well, the question, did he stay asleep the whole time?
+1104: Yeah.
+1105: I mean, he, yeah, he, he's a good sleeper and we've been very lucky on that
+  front, but yeah, but
+1109: like, um, yeah, it's, it's kind of, again, it's, it's nice because the security
+  researcher, I feel like with the kind of delays around the blog post and stuff like
+  that,
+1119: that, um, you know, we didn't publish the blog post quite as quickly as we would
+  have liked to because of stuff like this.
+1124: And I feel like he was fairly understanding when I was like, yo, I'm on paternity
+  leave, please, like, give me a chance to write this up and stuff.
+1132: Um, but yeah, but again, that's the flip side of open source projects, you know,
+  is that people who are involved with, you know, we, this is the 10th calendar year
+  I've been involved with Homebrew, you know, and people go from being, you know,
+  young singletons living by themselves with plenty of free time to, you know, balancing
+  kind of family life.
+1148: And multiple children and all that type of stuff.
+1150: And, you know, it's good because, you know, you get new people on board who
+  are younger and more energetic and have more free time than you do.
+1158: But at the same time, it's the flip side of, well, that's why you don't maybe
+  have the time to do everything as well as you could.
+1165: And that's why, in my opinion as well, like I'm even more increasingly now,
+  like pushing on, no, we can't kind of have more systems and more apps that we're
+  going to have to maintain.
+1174: We want to be able to use other people's infrastructure.
+1177: So we're not worrying about having to manually run anything, you know, to keep,
+  keep the lights on and in Homebrew's case.
+1184: This hacker one site is cool.
+1187: And I think it's a, it's a, it's a necessary thing to really bring together
+  two disparate communities.
+1192: I mean, when you talk about security researchers and open source developers,
+  in my experience, and you guys can tell me yours, there doesn't seem to be too much
+  overlap.
+1202: There's a few people who kind of play in both pools, but it seems like there's
+  a somewhat strict divide there in those two communities and really to all of our
+  disbenefit.
+1214: That's not even a word, but you know, to our harm, I guess there's to say, because
+  there's a lot that we have to offer in terms of open source developers to security
+  researchers and vice versa.
+1223: And so anywhere that we can create places that we can come together and collaborate
+  and they can, you know, hack on our code and we can fix things as, as they find
+  problems.
+1233: Those are things that are necessary.
+1235: Just thinking about some of the stuff you're saying, what happens at GitHub,
+  there's a lot of best practices.
+1240: You know, you're, you're mentioning principle of least power and defense in
+  depth.
+1243: There's a lot of things that we can do as developers that really mitigates the
+  problem, you know, similar to like, well, if I get hacked, at least they don't have
+  root access.
+1252: Like there's no, you know, God mode immediately.
+1255: So we can do things that help mitigate when there are breaches.
+1258: But if we don't have those things taught to us or explained to us or reiterated
+  or example to us, you know, we just don't know what to do, how to do it well.
+1267: And so it's cool that they offer this free for open source.
+1270: And maybe think of, you know, proprietary companies and the advantage that they
+  have is that they can actually offer cash for bugs, you know, or cash for vulnerabilities.
+1279: And as open source people, it's like, well, we're, you know, we can't even get
+  any cash to, to buy a sandwich, let alone to fund some security audits.
+1287: Yeah, no, I mean, that's very true.
+1289: I completely agree.
+1290: And the other tricky thing, which, you know, doesn't come across on the public
+  side is, you know, the signal to noise ratio on this stuff is, you know, it makes
+  GitHub issues look bad in some ways.
+1300: Because you get so many people who are going and more or less, presumably copying
+  and pasting the same report onto 20 projects.
+1307: Just, you know, you find a project that uses Jenkins and then you, you know,
+  copy and do the same sort of inverted commas, exploit or whatever about something
+  that's not actually an issue.
+1318: And, you know, there's various people saying that they've like, you know, owned
+  our GitHub pages site and stuff like that.
+1323: And it's like, well, it's a static site.
+1324: So I'm not convinced you have actually, because there's nothing dynamic on that
+  page whatsoever.
+1328: So unless, you know, you've somehow got access to GitHub servers, in which case
+  they will probably pay you for that bounty.
+1334: So, yeah.
+1335: So it's, it's tricky kind of wading through all that stuff.
+1338: It's a lot of noise.
+1339: Yeah.
+1340: Just for the times where, you know, someone discloses something and you're like,
+  oh, this is actually, you know, a legitimate problem.
+1346: And we should deal with this now.
+1348: But yeah, but again, that's a hard problem to solve.
+1351: Yeah, it is.
+1352: It's to be fair, like hacker one seems to have a good sort of reputational system
+  under underlying it.
+1357: So you definitely don't see the same kind of bad reports more than one.
+1360: And you can actually, I guess, to your, your dark side showing if you get a
+  really kind of crappy report from someone, then you can kind of flag it as basically
+  being sufficiently negative that they take kind of a reputational hit in the system
+  and stuff like that.
+1374: But, you know, you, you still feel like you're kind of, I guess, doing moderation
+  slash being a recapture type situation.
+1383: So what's the advice then for maintainers out there that might find themselves
+  in a similar situation?
+1389: Should they go to hacker one and get an account?
+1391: What's the, you know, what's your recommendation here?
+1394: Yeah.
+1395: I think I would still recommend going to hacker one and getting an account because
+  it just, it's a workflow that I think makes more sense to security professionals
+  really.
+1403: I guess it's in the same respect as like people might say, where should I create
+  my open source project now?
+1409: And I would say GitHub and they might say, oh, well, I hear you get a lot of
+  issues or drive-bys or whatever.
+1414: And it's like, yeah, that's, that's the case.
+1416: But at the same time, it's still the place where it's happening and the place
+  that makes the most sense.
+1420: And as far as I can tell, like hacker one is the same, same sort of deal where
+  it's, you know, it's not all rosy, but it's, it's definitely better than anything
+  else I've found out there.
+1429: And it's, it seems to be, in our case, at least it seems to have really encouraged,
+  really responsible disclosure from people who know what they're doing, who, as you
+  said, wouldn't perhaps otherwise get involved.
+1438: So I feel like that's a sunny upland for us.
+1441: I just want to highlight this note on your hacker one page.
+1445: We'll link it in the show notes, hacker one.com slash homebrew in the exclusion
+  section.
+1450: This just made me chuckle.
+1451: While researching, we ask that you refrain from, and one of them is social engineering,
+  including phishing of homebrew maintainers or contributors.
+1460: It's just hilarious that you have to actually say that.
+1463: Yeah, so I, well, I think that was actually one of their templates is they have
+  like a template of suggested exclusions.
+1470: But yeah, but no, like, or I copied and pasted that from other servers or whatever.
+1475: But yeah, like, I guess it's, it's, it's the same thing.
+1478: And I guess that's, that's definitely one where I feel like open source projects
+  kind of maybe do warrant a little bit more sympathy.
+1485: Like, you know, if you, if you get in this situation where you're calling up
+  open source maintainers at home for a social engineering attack, it's like, come
+  on, just.
+1493: No break, let them have their evenings.
+1495: Hack our code, don't hack us.
+1497: Yeah, or at least socially engineer them during work time.
+1499: This episode is brought to you by Git Prime.
+1509: They just released a 52 page beautiful field guide called 20 Patterns.
+1513: This field guide is a collection of work patterns Git Prime has observed while
+  working with hundreds of software teams.
+1518: And their hope is that you'll use this field guide to get a better feel for
+  how your team works,
+1522: to recognize achievement, to spot bottlenecks, and also to debug your development
+  processes with data.
+1528: You'll learn about long running PRs, flaky product ownership, scope creep, knowledge
+  silos, and so much more.
+1534: Check the show notes for a link to download this field guide or learn more at
+  gitprime.com slash changelog.
+1539: That's G-I-T-P-R-I-M-E dot com slash changelog.
+1560: So, Mike, the big Homebrew 2.0 started this month.
+1564: Shot up the charts and changelog news to number one quickly.
+1567: Everybody was super excited.
+1569: Of course, the huge announcement is the official support for Linux and Windows
+  10.
+1574: A little bit of an asterisk by the Windows support.
+1577: We'll talk about that.
+1578: But tell us about Homebrew 2 and the big release.
+1581: How was it received?
+1583: Yeah, so it's been really exciting.
+1584: It seems to have been received really well.
+1586: People have been really positive about it.
+1588: And it's a nice kind of like buzz in the community since doing so as well.
+1593: It's been a kind of funny thing.
+1595: It's been, you know, the difference, the distance between 1.0 and 2.0 has been,
+  I think it was
+1600: two and a half years or something.
+1602: And then like 1.0 and original Homebrew was about, you know, seven years.
+1607: So it's definitely a slightly faster iteration.
+1610: But it feels like it's a kind of good balance between there was some kind of
+  deprecations
+1616: and big changes we wanted to make that we've been kind of holding off on for
+  a while.
+1619: But then also some kind of big kind of features in there at the same time, which,
+  like you mentioned,
+1624: the kind of Linux stuff being a notable example.
+1627: So yeah, so that's been quite cool.
+1629: So there's been another project that's been running for quite a while now that
+  was called
+1633: Linux Brew that was basically just a full-on fork of Homebrew to run on Linux.
+1638: And we have like the Homebrew project is sort of, you know, we've kind of had
+  a little
+1645: bit of back and forth and been kind of collaborating with those folks a little
+  bit for a while,
+1648: but maintaining our own independent forks.
+1650: And it's maybe about a year ago we sort of started thinking like, well, maybe
+  we can
+1654: actually bring these projects together because the code's getting more similar
+  and things
+1658: like that.
+1659: And I'd kind of started working a few years ago about trying to almost do a
+  kind of proper
+1664: cross-platform port based on, I guess, cross-platform work I've kind of done
+  previously in my
+1669: career and things like that to try and build nice abstraction layers so you
+  don't just end
+1672: up with like if OS Linux, if OS Mac, like all of your code.
+1676: And so yeah, so basically we did that and we kind of got all the Linux code
+  back into Homebrew
+1682: kind of done in a nice and a properly abstracted fashion.
+1685: And we'd actually been using running Homebrew on Linux for some of our CI stuff,
+  you know,
+1690: stuff like uploading packages and generating our kind of package browser data
+  and stuff like
+1696: that for a little while now.
+1697: So yeah, it kind of segued in nicely and it was fairly smooth and it's been
+  a nice kind
+1702: of transition and selling point for Homebrew, I think.
+1705: So if you were on a recent version of Homebrew, would it auto upgrade you to
+  2.0?
+1711: Because I saw the news and I'm like, ooh, I want to go get it.
+1714: And then I did a, I don't know what I did, brew-b or I already had it.
+1719: It was the long story short.
+1720: So that's the sad thing that people end up with is that Homebrew, so our version
+  numbers in
+1726: some ways are just like notifying people of what has changed underneath you
+  while you
+1731: It's already there.
+1733: Yeah, exactly.
+1734: So we, when you run, like there's the brew update command, which will put you
+  on the newer
+1739: But as of, well, since 1.0 actually, we've been running that automatically when
+  you run
+1743: various commands like brew install, brew upgrade and things like that.
+1747: So you just get put on the newest version.
+1748: So if I guess like the slight downside to that is when people see, you know,
+  like, oh, I don't
+1754: like to look at some of this stuff on 2.0, I'll stick on 1.9 and it's like,
+  well, sorry,
+1757: you can't.
+1758: You're already on 2.0.
+1759: There's no going back.
+1760: So yeah, I mean.
+1762: There's no consumer choice here.
+1763: We know what's best for you.
+1765: And that's not the case for me at all.
+1767: I'm actually, I don't know if this says something about me or not, but I'm on
+  Homebrew
+1770: 1.8.6.
+1771: Oh, really?
+1772: Oh, this says a lot about you.
+1773: Well, yeah.
+1774: You might have disabled the auto-updater at some point.
+1776: That's a thing you can do.
+1778: Is that in the config then to do that?
+1780: Yeah.
+1781: So you set an environment variable and it's documented in the man page and then
+  you have
+1785: to run brute updates manually.
+1787: So yeah, I mean, that's, I guess that sort of segues nicely that a lot of the
+  things that
+1793: some of the changes we've made now and a lot of the kind of things that we've
+  changed in
+1798: the last few years have been things which you could do before, but we're always
+  just a
+1802: bit clunky.
+1803: So another big thing we kind of made in 2.0, which people have been kind of
+  asking slash
+1808: complaining slash begging for years is we run kind of brew cleanup automatically.
+1812: So that was basically a command that goes and like cleans out like old versions
+  that you're
+1818: not using anymore and kind of your cache and stuff like that.
+1820: And, you know, every, like literally it felt like every week we would have someone
+  post
+1824: on Twitter and be like, oh yeah, I discovered this new command.
+1826: And I like, you know, it freed up like 25 gig of space on my desk.
+1830: And like every time I read that, I kind of winced a bit because I feel like,
+  you know,
+1833: there's not a lot of software or at least a lot of software that I think is
+  great where
+1838: you need to discover some hidden little setting to make it not slowly eat up
+  your entire disk.
+1844: So yeah, so we've kind of changed that now.
+1846: And I guess like the update stuff, you know, by default now we just do that
+  for you automatically.
+1852: We run it every 30 days.
+1853: We do like a full cleanup and then we do like the package that you've installed
+  at install
+1857: time.
+1858: But again, you can turn that off as well.
+1860: So whenever we kind of change stuff like that, we do try and make it so it's
+  still possible
+1864: to kind of sit and maintain the kind of previous workflow you had.
+1868: But I'm a big believer in, I guess, being on an Apple platform in general.
+1874: I'm a big believer that the defaults should be really good.
+1877: You should focus the defaults on the most sensible behavior for the majority.
+1882: And if that means occasionally kind of having to break or alter backwards compatibility,
+  then
+1888: that's worth it for the silent majority of people who do not want to have to
+  read the
+1893: documentation to have the tool work the way they expect it should work.
+1897: And as I say, yeah, provide opt out.
+1900: So the people who kind of would rather it stuck around the old way, they can
+  go and read the
+1904: man page, settle a setting, read the release notes, whatever, and then they
+  get that.
+1909: And but yeah, but people don't always necessarily see it that way.
+1914: I think that's definitely the sensible way of doing it.
+1917: And I appreciate the opt out because as somebody who enjoys running brew cleanup
+  every once
+1922: in a while and just clearing up space, you know, it feels like you just cleaned
+  your room or
+1926: something, you know, having it not have such an impact might, you know, hurt
+  my psyche.
+1931: So I might go, I might go turn that off so I can run it myself.
+1934: But I'm starting to have flashbacks of our previous conversations.
+1937: So I think we actually talked about brew update running automatically on our
+  last call with
+1942: you a couple of years back and maybe I feel like maybe Adam, we should go back
+  and listen
+1948: to that because you might've actually turned it off while we were talking about
+  it on that
+1952: Cause I think you remember talking about being able to opt out of that back
+  then.
+1955: I was Googling while we're talking here too.
+1957: I'm going to read something that Mike had actually said in, it looks like October,
+  2016
+1961: is documented in the man page.
+1962: And instead of opting out, he recommends, Mike, you might remember saying this,
+  you recommend
+1967: setting the time period between checks to a higher value instead of opting out.
+1972: So I do that myself.
+1973: So by default, if you don't run, if you basically run brew install, it'll run
+  brew update every
+1978: 60 seconds effectively.
+1981: If what, and that doesn't mean it will, you know, do updates.
+1984: It means that it will check and see if there's any updates on GitHub.
+1987: And, and obviously some people will find that that can slow things down or whatever.
+1991: But again, we have, we want to have the default for the people who don't read
+  the docs and
+1996: don't want to tweak things really, really low.
+1998: Because that brew update change, for example, back in 1.0, like dramatically
+  reduced the
+2002: number of support requests we would get where there was, where the response
+  is, we fixed
+2007: that 10 minutes ago, run brew update.
+2009: And so now we don't get those issues anymore, basically.
+2012: And the people who want to disable it can still disable it.
+2015: But yeah, but I personally have that set to, I can't remember what it is.
+2018: It's like, you know, a few hours or something like that.
+2021: So it's not running all the time and it just runs kind of periodically, but
+  that's kind of
+2026: And then I still, if I'm doing development, sometimes I'll just, you know, set
+  the environment
+2030: variable temporarily in a shell and then I can go and know that it's never going
+  to run.
+2034: Let me just heap a little praise on you and the homebrew community, because
+  as we talk
+2039: about this, I'm just now thinking about it in time spans.
+2042: And I have been a happy homebrew user for years now.
+2046: I don't even know how many years.
+2047: And I will just say that it's one of the only tools that I rarely think about
+  in terms of,
+2054: I don't know, effort.
+2055: It's just like, I use it.
+2057: It works.
+2058: I enjoy running brew cleanup.
+2059: It updates itself.
+2062: It's been like a rock in my life.
+2064: Like, I just haven't had any, like, I don't know, homebrew is acting up again.
+2067: Like, I can't even think of a time.
+2068: I have some issues once in a while with like upgrading Postgres specifically,
+  but that's
+2073: a Postgres thing and not really a homebrew thing.
+2075: And in fact, whoever is working on that formula has improved it lately so that
+  they help you,
+2079: you know, they hold your hand through the data migration more than they used
+  to, which
+2083: I appreciate because I don't do those migrations often enough to have those
+  things memorized.
+2086: But aside from that, which I, again, is a Postgres thing, it's pretty much just
+  works.
+2092: Is that your experience, Adam?
+2093: I mean, I feel like, I feel like a lot of people have that experience and it's
+  nice having
+2098: some software that just works because a lot of software just doesn't work that
+  well.
+2101: I want to echo what you're saying too, because I feel the same way.
+2105: I mean, so much so that whenever I start a new machine, I'm using a version,
+  my own forked
+2110: version of ThoughtBot's laptop project on GitHub and just because I have different
+  needs than they do.
+2116: But I mean, it's basically just brew installs, you know, some versions of homebrew
+  being involved.
+2122: And if it weren't for that, then it'd be a lot of manual bash.
+2126: Especially with Cask, right?
+2127: Yeah.
+2128: You do all your installs, all your apps install through Cask now.
+2130: Yeah.
+2131: There's a couple of apps that I for sure install every single machine.
+2134: So I just do that between the Mac Apple Store.
+2138: I think it's mass, I believe is the command.
+2140: Mac App Store, yeah.
+2142: So I mean, between homebrew itself, Cask and mass, it's pretty seamless to just
+  start a new
+2150: machine up.
+2151: And literally, like, I just run a command and minutes later, the machine's ready.
+2155: Yeah.
+2156: Well, I may make your life even better now because I'm going to do a shout out
+  to another
+2161: project that I created, which was, it's a little project called Strap that replaced
+  the
+2167: boxing project at GitHub.
+2168: So basically, it's the same sort of thing you were talking about there for setting
+  up your
+2173: And so it's really kind of minimal, I guess, like the kind of laptop script.
+2177: It's like basically just a small bash script.
+2179: But it will generate your GitHub tokens for you and stuff as well.
+2183: But the cool thing about Strap, I guess, in comparison to the laptop script
+  or kind of
+2189: box and stuff like that, is that it doesn't actually install really any software
+  for you.
+2194: It just installs stuff that you can use to install other software.
+2197: So it installs like Homebrew for you and the Xcode command line tools and kind
+  of enables
+2204: like full disk encryption.
+2206: But then I was thinking about it and I was like, OK, well, I want to have some
+  level of
+2209: user customization.
+2210: And what's a cool way of doing that?
+2214: So like the next step beyond that is because it sets up your GitHub tokens and
+  you kind
+2219: of get it going through GitHub and it goes and looks for if you have a repo
+  called, say,
+2226: github.com slash Mike McQuaid slash dot files, then it will clone that automatically
+  for you.
+2230: And then if you have a script slash setup file in that repo, it will run that
+  automatically
+2235: And then if you have a, have you, if you guys come across Homebrew bundle as
+  well, that's
+2240: the other thing that kind of ties into this ecosystem.
+2242: So, so that's the other effectively half of this system.
+2246: So it will then, if you have a brew file in your dot files repository or a Homebrew
+  brew
+2252: file repository, then it will run Homebrew bundle on your brew file as well.
+2257: And what does Homebrew bundle do so that you can use that independently of strap.
+2260: This is a separate project.
+2261: That's kind of part of the kind of Homebrew ecosystem.
+2264: And what that lets you do, it's basically a ripoff of a gem file and kind of
+  bundler,
+2269: which was originally created by Andrew Nesbitt, this thing, Homebrew bundle.
+2273: It was called Broodler originally.
+2275: But it basically, what it lets you do is specify a gem file like syntax kind
+  of Ruby, but without
+2283: the versions basically, because we can't kind of pin everything to versions.
+2286: And you can have it automatically install all your Homebrew taps, which is kind
+  of third
+2290: party repositories, all your Homebrew packages.
+2292: It can set start services for you if you want them to as well.
+2296: It can also install all your Homebrew casks.
+2299: So things like Google Chrome, Java, Firefox, et cetera.
+2302: And it can also install everything from the Mac app store for you.
+2304: So say you're kind of one password and things like that.
+2306: So for me, when I, I have this kind of set up in my dot files repo on GitHub,
+  so I can just
+2312: run a single like strap script and it will go and do all this stuff for me.
+2316: Automatically on my, on my laptop when I run a single script, basically.
+2319: And the nice thing is that stuff is all, I'm able to kind of share the files
+  I use and it's
+2324: all kind of open source as well.
+2325: So people can see like what my, what my setup is and my brew file and things
+  like that.
+2331: And because I'm incredibly, sorry, in fact, this is, this is a good kind of
+  geek cred extension
+2336: to that.
+2337: So I was kind of looking forward to running this again because I had some issues
+  with my
+2342: MacBook Pro and Apple were replacing the keyboard.
+2345: So they gave me a learner laptop and they said, when you get your laptop back,
+  it's going
+2348: And then they gave it back to me and it wasn't wiped.
+2351: And I was actually like so disappointed that I wasn't going to do this again.
+2354: I voluntarily wiped my work laptop just to kind of go through the whole, I was
+  like, right,
+2360: I'll do my, you know, like back in the days of windows where you had to wipe
+  it every few
+2365: Yeah.
+2366: I was like, yeah, I'm just going to have a fresh install and have a clean run.
+2370: Cause I'd gone and like tweaked all my, all my scripts to be even more kind
+  of smooth
+2375: and polished.
+2376: And so I made, I made a little script as well that like pulls all my, so it'll
+  pull like
+2380: my SSH keys out of one password and stuff and then like dump them in the right
+  place
+2385: on disk and stuff like that.
+2386: So I need to enter my one password like once and then it pulls out all my SSH
+  keys and my
+2390: GPG keys and my kind of bin tray and GitHub tokens and things like that.
+2394: And it's cool.
+2395: Cause again, the script is all open source, but it's all pulling like private
+  encrypted
+2399: credentials.
+2400: Yeah.
+2401: It doesn't matter if you have access to everything in the script.
+2403: So yeah.
+2404: So that's my, my, my happy place is just automating things completely unnecessarily.
+2409: I definitely spend more time on the script.
+2411: Well, I was going to just say that because I, first of all, this is super cool
+  and a total
+2416: geek cred on this.
+2417: But the reason why I've never used these, even cause Adam's talked about ThoughtBots,
+  what's
+2423: Bootstrap or laptop?
+2424: Laptop.
+2425: And I looked at Boxing.
+2428: I just feel like it's kind of a Yagney thing where it's like, you're basically
+  putting
+2433: a lot of work into automating something that you do like maybe once every few
+  years, maybe
+2438: I thought the same thing though, until, uh, you know, you have a few machines
+  or you get
+2445: a new machine, you know, not long after you prepare to do this again.
+2448: And so when you go on the, you go on the annual update scheme with, no, I mean,
+  I think I've
+2455: probably had three laptops in the last six years.
+2457: Maybe it's, maybe it's less than that.
+2459: I feel like it's not that much, not that often of a new machine, but I've gone
+  from laptop
+2463: to desktop though.
+2464: Cause I have slightly different needs than you do.
+2466: So, you know, where I have to do more audio stuff and video stuff.
+2469: So I tend to need a more higher power machine.
+2472: So having this iMac and then also laptop makes me need to set up more often
+  than I would
+2479: say, you know, twice as much, you know, twice as much as you do.
+2481: Twice as much.
+2482: That's true.
+2483: So Mike, tell us why I'm looking at strap and we'll definitely link this up.
+2486: We'll probably log this on change.
+2487: Now that we found it.
+2488: It's good.
+2489: Why is there a, you're logging it right now?
+2491: No, I'm not.
+2492: Why is there a deploy to Heroku button for a command line script?
+2496: Yeah.
+2497: I haven't, I'm just perusing the readme.
+2499: So clue me in here.
+2500: Can you just run this from a website kind of thing?
+2502: So basically the, the Heroku thing works for, remember I said earlier that it
+  will set up
+2509: your GitHub tokens for you.
+2510: So that's basically so it can do that.
+2512: So the script, it's just a script, but this is something I stole from Boxing,
+  which is
+2516: the, um, when you download that bootstrap script, it gets you to log into GitHub
+  so it can then
+2523: generate tokens so it can set up all your GitHub access for you.
+2527: So basically when you run that script, that gives the script the ability to
+  talk to GitHub.
+2531: And it also means that you don't need to do the whole initial like, basically
+  you log into
+2536: GitHub once through your browser and then it sets up all your kind of, after
+  that you can
+2540: do a Git clone of a private repo and it will kind of work as long as the strap
+  application
+2545: kind of has access.
+2546: So that's, I guess, to answer the question of like, why you, I mean, I, I love,
+  I'm one
+2552: of those people who I, I love spending an hour writing a script to yeah.
+2556: Do make a five minute task less boring.
+2559: But like the flip side, well, this was, it was actually, I ended up kind of
+  maintaining
+2564: some of the internal software they use at GitHub to go and, um, like set up
+  new developers
+2570: machines.
+2571: And this was basically way more sense.
+2573: Yeah.
+2574: So this was the motivation for this.
+2575: And since we've moved to this kind of new system, it seems to be, um, saving
+  a lot of
+2579: people time.
+2580: And again, the homebrew bundle thing, it's actually got a few different use
+  cases.
+2583: So one is the, I want to set up all the software on my machine, but then there's
+  also the, the
+2589: kind of classic one that always bugged me was, uh, in the read me of a project
+  that says,
+2593: okay, so before you try and set up the server, you need to brew install X, Y,
+  and Z.
+2598: And I always thought that that was kind of, I kind of, my attitude is like put
+  stuff into
+2602: code if you can, rather than documentation.
+2604: So instead of that, now the little boot scrap script, instead of saying run
+  brew install
+2611: whatever you can run brew bundle in that repository, once you've checked it
+  out, and then it will
+2616: know to set up, say my SQL elastic search, start those services, um, if they're
+  not already
+2621: running and if they are running, then it kind of verifies that they are, that
+  they are and
+2625: So I guess I see it as well as being like a project bootstrap tool as well for
+  dependencies
+2631: that are on the Mac app store or in homebrew cask or in, um, in homebrew itself.
+2637: We could definitely, we could definitely use that.
+2639: The, the laptop project uses the bundle command as well.
+2643: It, it uses brew bundle dash dash file, and this is all in a, in a bash script.
+2648: Yeah.
+2649: And then it embeds it in it.
+2650: So it's, it's still using that same kind of concept that you're talking about,
+  Mike.
+2654: And that's the thing that makes me happy about this.
+2656: Cause again, that's when I worked on, uh, when I was working on boxing, boxing
+  was very
+2661: much kind of more of a kind of monolithic system.
+2663: And the thing that makes me happy with the way that we kind of built this solution
+  that
+2668: replaced this at GitHub is, you know, it is kind of, in my opinion, the more
+  Unixy, uh,
+2673: way of doing things in that you build a bunch of tools, which all interoperate
+  nicely and
+2678: you create a system from combining those tools.
+2681: But it means if anyone says like the laptop project that, oh, well, one part
+  of this tool
+2685: chain looks neutral to us and the other parts don't, then they can still get
+  all the benefits
+2689: of that one part of the tool chain and they can still kind of be part of that
+  ecosystem.
+2693: And I feel like that, you know, is makes things better for everyone really.
+2697: When you have kind of segmentable tools that combine together rather than having
+  like one
+2702: big monolithic system that you can't really swap bits in and out of.
+2711: So this episode is brought to you by Raygun Raygun recently launched their application
+  performance
+2726: monitoring service APM, as it's called.
+2728: It was built with a developer and DevOps in mind, and they are leading with
+  first class support
+2734: for .NET apps and also available as an Azure app service.
+2739: They have plans to support .NET Core, followed by Java and Ruby in the very
+  near future, and
+2744: they've done a ton of competitive research between the current APM providers
+  out there and where
+2748: they excel is the level of detail they're surfacing.
+2751: New Relic and AppDynamics, for example, are more business oriented, where Raygun
+  has been
+2757: built with developers and DevOps in mind.
+2760: The level of detail they're providing in traces allows you to actively solve
+  problems and dramatically
+2765: boost your team's efficiency when diagnosing problems.
+2768: Deep dive into root cause with automatic link back to source for an unbeatable
+  issue resolution
+2773: workflow.
+2774: This is awesome.
+2775: Check it out.
+2776: Learn more and get started at Raygun.com/APM.
+2778: So, Mike, we mentioned the support for Windows and Linux, and I said there's
+  an asterisk by the Windows
+2779: support.
+2780: Mostly because you had a few people out there saying this isn't real Windows
+  support.
+2785: Um, because it's Windows subsystem for Linux.
+2786: Can you tell us what that means?
+2788: You know, are there things that are running out there that are running out there
+  that are
+2792: running out there that are running out there?
+2793: Yeah.
+2794: So, Mike, we mentioned the support for Windows and Linux, and I said there's
+  an asterisk
+2804: by the Windows support.
+2805: Mostly because you had a few people out there saying this isn't real Windows
+  support.
+2809: Um, because it's Windows subsystem for Linux.
+2812: Can you tell us what that means?
+2813: You know, are there things missing?
+2815: Is it, you know, do you, do you consider it official Windows support or, or
+  what's your
+2820: perspective on that?
+2821: So that was, that kind of came from the Linux proof folks, basically, who did
+  a bit of work
+2826: to kind of get that stuff working.
+2828: But it mostly kind of worked out of the box.
+2830: So if you're unfamiliar, Windows 10 ships with a thing that's called Windows
+  subsystem
+2835: for Linux.
+2836: I don't believe it's installed by default.
+2837: You can enable it.
+2838: It's kind of a developer tool thing.
+2839: And basically it gives you a full Ubuntu environment, uh, on your Windows machine.
+2844: And the really cool thing about it is it's not like, you know, transparently
+  running a
+2848: VM in the background, but it's actually running native Linux binaries through,
+  uh, I can't
+2853: remember exactly how it works under the hood, but it's some, some sort of like
+  kernel Cisco,
+2858: uh, mapping.
+2859: Um, I guess in, in a vague way, it seems to be a little bit like wine.
+2863: If any of you familiar with that.
+2864: Um, but in, in reverse and at the kernel level, I believe.
+2868: And it's easier for Microsoft to do that, obviously, because they can see what
+  the
+2872: Linux Cisco interface is because it's all open source.
+2875: And they've been involved with, uh, Linux development in the last few years
+  and stuff
+2878: like that.
+2879: Um, so yeah, so it's basically a way of running native windows, Linux stuff
+  on your Windows
+2884: machine.
+2885: Um, so as a result, you can run Linux brew under that.
+2889: Um, and then when Linux brew joined homebrew, then you can run homebrew under
+  that as well.
+2893: So it's one of our kind of officially supported platforms more or less because
+  it's just a
+2898: relatively simple, um, way of being able to kind of run homebrew on a windows
+  system.
+2903: Uh, and in terms of, yeah, I would agree.
+2906: It's not, I used to do kind of proper, some native windows development in the
+  past.
+2910: And it's certainly not that it's not a native windows package manager for that.
+2915: You have kind of things like you get and chocolatey and things like that.
+2918: Um, but if you kind of want to be able to kind of dabble in things that are
+  in the homebrew
+2923: ecosystem, uh, and try them out on a windows machine, uh, without having to
+  spin up a Linux
+2929: VM or a Mac VM or whatever, then it's a way of doing that.
+2932: So does it have a completely separate formula?
+2935: I'm assuming the formula have to work differently.
+2937: Yeah.
+2938: So the formula are separate between Linux and, uh, Mac for homebrew anyway.
+2944: So there's a, um, repository homebrew, homebrew core, which is all the homebrew,
+  uh, is all
+2950: the homebrew packages.
+2951: And then there's a repository homebrew Linux brew core.
+2954: Now, as of, I think two days ago, it used to be Linux brew homebrew core.
+2958: So like flip some stuff around.
+2960: Um, yeah, so that basically has all the Linux packages separately.
+2964: And the reasoning for that is that it's on the formula level, which is the,
+  our name for
+2969: the package description files.
+2970: It's a lot harder to do that stuff.
+2972: I talked about earlier with kind of making things nice and clean and having
+  separation.
+2976: You end up with having a lot of, if Mac, if Linux, um, and basically like it's
+  as a result,
+2981: those have kind of evolved a little bit more separately.
+2984: So on windows, it ends up uses using the Linux, um, under the windows, windows
+  subsystem for
+2990: Linux, it ends up using the Linux, uh, versions of the formula for a package.
+2994: Gotcha.
+2995: So there aren't, there's effectively two pieces of software.
+2998: There's not separate windows ones.
+2999: There's homebrew and Linux brew, but they're all under one parent at this point,
+  but there
+3004: aren't three.
+3005: It's not as if you separately went out and implemented windows.
+3007: It just is coming along quote unquote for free because of the windows subsystem
+  for Linux.
+3012: Exactly.
+3013: And I think there were a few tweaks that kind of make it run a little bit better,
+  but yeah,
+3017: it more or less came for free.
+3018: So have you seen a lot of a pickup from the Linux and the windows side or there,
+  are there,
+3024: are there, are there issues and bug reports coming in that are new to homebrew
+  too?
+3030: Or was it already happening with Linux brew?
+3033: And so it just kind of a, a merging of these two projects.
+3036: Yeah.
+3037: So I guess I noticed a few more Linux issues than I used to because it used
+  to be separate
+3041: repositories.
+3042: And now for the package manager part, at least it's all the same repository
+  now.
+3045: Um, but yeah, I mean, they kind of, their analytics on the Linux side of things,
+  they've seen
+3050: a big uptick, uh, since homebrew and Linux brew kind of joined together in that
+  way.
+3056: So that's kind of been cool.
+3057: And it's, it's been, it's been interesting in general, just seeing and people
+  kind of learning,
+3062: like, why would you use Linux brew and stuff like that?
+3064: Which is in some ways, that's a question where that's the one you, you tend
+  to get the most
+3068: with the, the Linux support is, well, why do you do this?
+3071: And why would you not just use app get?
+3072: Um, which is a valid question because I still, despite being the homebrew project
+  leader,
+3077: consider, uh, app get to be a superior package manager in very many ways.
+3081: Um, and basically the reasoning is the original motivation of the, a lot of
+  the people who
+3087: work on Linux brew actually is because they, if you have access to the package
+  manager on
+3092: a Linux system, then great.
+3093: And a lot of people are thinking kind of from the developer perspective of,
+  you know, I'm a
+3097: dev, I have my own system.
+3098: I set out myself, I'm running Linux on my system, you know, like I don't have
+  a workplace
+3103: who is, you know, not letting me install things through the package manager,
+  but some people
+3108: do have that.
+3109: And a noticeable group is, you know, people who are running on big Linux supercomputing
+3114: clusters.
+3115: They have access to run stuff on that system, but they often do not have access
+  to root on
+3119: that system or the package manager on that system.
+3121: So the way they kind of generally have to build their own software is they just
+  build stuff
+3126: in their home directory by themselves, um, without really any support.
+3130: And Linux brew has allowed some of those folks to be able to have an actual
+  package manager
+3134: that they can use and they can just install stuff in their home directory.
+3138: Or if they want to use Linux brews binary packages, then they can.
+3142: I've been informed.
+3143: This is an, a lot easier ask.
+3145: They can say, Hey, can you set up a new user on that system?
+3147: It doesn't need to be root, uh, a new user called Linux brew.
+3150: And then all the binary packages are kind of built, um, so that they can be
+  used on their
+3155: home Linux brew.
+3156: Um, and then the system administrator can kind of set that up and they can go
+  and then benefit
+3160: from some of the binary factors as well.
+3162: Hmm.
+3163: What about the brew file with the bundle?
+3165: Is that something that's only on the Mac side?
+3167: I assume there's definitely like the cask stuff and the other stuff wouldn't
+  be available
+3171: on the Linux side, but would you at least be able to have a project with a brew
+  file?
+3176: That's, you know, lowest common denominator so that somebody on Linux and somebody
+  on Mac
+3180: could both use the same brew file and get their setups going.
+3183: Yeah.
+3184: I mean, I think you could, as you say, it would have to be lowest common denominator
+  because
+3187: there's some stuff that doesn't work on the next side.
+3190: It would effectively be just setting up homebrew third party repositories, taps
+  and installing
+3195: homebrew packages formula.
+3196: But yeah, it's not officially supported by us in homebrew bundle, but I would
+  imagine it would
+3200: probably works, I guess, thinking of the way the code behaves.
+3204: Okay.
+3205: So what about the team?
+3206: So this Linux Brew seemed like it was its own deal and now it's part of homebrew.
+3210: So is there a merging of teams and communities or these people that were already
+  involved
+3214: with the homebrew community in the first place?
+3216: Yeah.
+3217: So, I mean, there's, I guess, two Linux Brew maintainers came across specifically
+  to homebrew
+3222: as kind of part of the, well, I guess, somewhat pre the merge.
+3226: There's two people who are like our main maintainers, Mishka Popov and Sean
+  Jackman.
+3232: But then we have a few other kind of maintainers who are kind of in and out
+  of Linux land and
+3236: stuff as well.
+3238: And so, yeah, so it's been good, actually.
+3240: I feel like it's injected a lot of energy into the project because Linux Brew
+  probably
+3244: has a disproportionate number of, I guess, like the Linux ecosystem in general,
+  I would
+3248: say a disproportionate number of contributors and, in our case, maintainers
+  as well for the
+3254: size of the ecosystems.
+3256: So, yeah.
+3257: So it's been great having more people get involved with the project and more
+  people who
+3260: have been running their own independent open source project in Linux Brew's
+  case for quite
+3265: a few years in the homebrew wider ecosystem.
+3268: So they kind of come into homebrew with the understanding of what it's like
+  to run a project and triage
+3275: issues and, you know, interact with other maintainers and stuff like that.
+3278: So, yeah, no, they've been invaluable.
+3279: Well, going a little further, there's been some changes to governance.
+3282: There's been a first ever in-person meetup paid by Patreon donations.
+3287: Take us down the road of like this very first in-person meetup and what's kind
+  of come down
+3291: the pipe in terms of governance and your roles even changed a bit, right?
+3296: Yeah, yeah, no, it has.
+3297: So we've been kind of talking in homebrew for a little while about how best
+  to kind of govern
+3302: the project.
+3303: So I guess in a brief kind of history through, it was originally kind of Max
+  Howell, the original
+3308: kind of creator, and he got some other maintainers on board, such as myself.
+3312: And then he dropped away from the project.
+3314: And then there was kind of a goal to sort of just run it all like, I guess,
+  as a complete
+3319: flat hierarchy for a while.
+3321: But as is the case with companies as well, like generally, you kind of need
+  a little bit
+3324: more structure than that we found.
+3326: So I sort of somewhat unilaterally declared myself lead maintainer after checking
+  with other
+3331: people that would be fine a few years ago.
+3334: And then kind of we've, you know, there's been a few, and if you kind of troll
+  through the
+3339: homebrew issue trackers, you can kind of see some of it.
+3341: There's been a little bit of tension with that on occasion because, you know,
+  people don't
+3346: necessarily agree with, you know, understandably that you have someone who's
+  in a position of
+3351: authority with no clear way of removing them if they stop working on the project
+  in future
+3357: or start to abuse their authority or whatever.
+3359: So we kind of talked for a while about, you know, in future, trying to have
+  some better
+3362: sort of governance model and maybe looking at some of the older, more senior
+  open source
+3368: projects than us and seeing how they do some of this stuff.
+3371: And then I guess as a result of that, again, as you mentioned, we've kind of
+  had a reasonable
+3376: amount of money coming in through Patreon now.
+3378: And we're part of Software Freedom Conservancy and I've had some donations through
+  there.
+3382: So we kind of thought, well, like something which we can do with that money
+  is that would
+3387: be kind of valuable is have a bunch of homebrew maintainers kind of come together
+  and meet
+3391: up.
+3392: And 14 of us kind of all came to Brussels around the time of FOSDEM because
+  it's a kind
+3397: of big open source conference that is free to attend as well.
+3401: So we got there and then we had the day after FOSDEM was over.
+3405: We basically just rented a meeting room in a hotel and all kind of got together
+  and, you
+3409: know, had lunch and dinner and had a basically kind of what you guys called
+  it when the not
+3416: to be too grandiose when the founding fathers all met together to come in the
+  plot.
+3421: Yeah.
+3422: Yeah.
+3423: So, yeah.
+3424: So we ended up not necessarily knowing what we were going to talk about before,
+  but it ended
+3429: up being mostly about kind of governance of the project.
+3432: And yeah, and it was super valuable.
+3434: I think we kind of managed to etch out kind of in that meeting, the sort of
+  the outlinings
+3439: of a structure for the project.
+3442: Shout out to John Chang specifically, who had kind of written up a lot of stuff
+  and kind
+3447: of come into the meeting with, you know, a really, really decent draft of what
+  to do.
+3451: And then we kind of iterated on that a little bit during the day and then iterated
+  on it
+3455: more kind of in private.
+3457: And then we opened a pull request on homebrew on our kind of main repository
+  to kind of solicit
+3462: contributions on that as well.
+3464: And then, yeah, after a week of that being open, we kind of merged that through.
+3467: So what that actually means is that we now have a bit more structure than we
+  had before.
+3471: We have a lead maintainer role has gone away and been replaced with a project
+  leader, which
+3477: maybe sounds a little bit like two things that are exactly the same.
+3481: But the difference is the project leader role.
+3484: I was elected into that position and stood for election.
+3487: And I will be if I want to, I will stand again next year.
+3492: And then there will be another election.
+3493: And anyone else who stands will have a platform if they wanted to.
+3498: And then we can see effectively who gets elected by basically by the members
+  to be in that position.
+3505: So we have a governance document that explains kind of how this all works.
+3507: Now we have a project leadership committee and a technical steering committee
+  of which I'm currently on all three.
+3513: But again, the nice thing is in future that's changing.
+3516: So I cannot be on all three.
+3519: And so not me specifically, but you basically cannot have a role that is on
+  all three places.
+3525: And we're also having this idea of members of Homebrew as well, where if you
+  have someone who isn't a maintainer, maybe isn't involved as much with the code
+  side of Homebrew or has been involved with Homebrew for quite a few years, then
+  they can get kind of nominated and join as a member.
+3538: And then they can kind of vote on some of these kind of elections in the future
+  and get involved with the project on the administrative side without necessarily
+  needing to or wanting to get involved with it on the technical side.
+3548: Have you laid any of this out in documentation by any means?
+3552: I know I've seen the latest to a document.
+3555: So there is governance.
+3556: Yeah.
+3557: So if you check out the docs.brew.sh site, then right at the bottom of that
+  page, there's a Homebrew governance document, which kind of lays all this out.
+3564: It's kind of vaguely legalese language.
+3567: It's fairly readable, but it's not, you know, it's not great kind of super fun
+  reading, but it does explain kind of how this stuff all works and how people are
+  elected and not and how often.
+3577: And how often these meetings happen and stuff like that.
+3580: So that's kind of worth the read of your if you're interested in this stuff.
+3584: And it's nice as well, because it's as well as being like bringing some elections
+  into things and policy and stuff, which is, again, nice for me kind of to be, you
+  know, I think it's nice for me and it's nice for the community to have me actually
+  be kind of elect the role kind of and have the majority of people agree that, you
+  know, obviously they think that I'm doing a good job.
+3605: And they kind of support me doing that for the next year.
+3608: But it's also kind of, as I said, with putting limitations on what people can
+  do, it's going to be end up reducing our bus factor as well.
+3617: Sorry for increasing our bus factor.
+3620: I can never remember which way around that is.
+3623: But basically, it's going to make it much easier for us in future to have things
+  not be too centralized on an individual because we have these committees, we have
+  a leadership position, and it's clearly defined what the roles of each of them are
+  and the responsibilities are and that you can't basically be responsible for everything.
+3639: And I feel that that's going to be a really positive thing in future.
+3640: And it's also, as we mentioned earlier, I think this happening at the same time
+  as the kind of Linux merge has brought in a bunch more people who have kind of been
+  enthusiastic and have been helped and got involved with that process.
+3654: So there are people in the technical committee and the project leadership committee
+  who have come from that Linux brew merger.
+3659: So that's kind of been a nice positive thing from that as well.
+3663: Maybe an interesting takeaway here too is, I guess, now having an annual general
+  meeting, which puts a little bit more pressure on the need for, I guess, finances,
+  which is good for Patreon, that you've got that.
+3674: But then you also mentioned software, Freedom Conservancy.
+3678: I'm just kind of curious what your thoughts are on funding this project and
+  how you all look at, you know, attaining funding and maintaining that and the needs
+  for funds to do things like this.
+3690: Yeah, that's a good question.
+3691: And I think this has been, you know, our funding has got to the level that we've
+  been able to afford to pay for flights for people to kind of come to stuff like
+  this.
+3700: So, you know, we have people coming from Canada, people coming from India to
+  this meeting and that's been kind of really, really great.
+3706: But then obviously the amount of funds we get limits or permits what we're able
+  to do with the project.
+3715: So it would be great to have kind of a future where we could hire potentially
+  people to work on aspects of homebrew, maybe the infrastructure stuff we've mentioned
+  before, full or part time.
+3724: But at the moment, we still very much have, you know, an amount of money that
+  pays for flights once a year.
+3731: But we don't have an amount of money that pays anywhere near kind of a reasonable
+  salary for someone with money left over as well.
+3737: So, yeah, so kind of increasing our funding is kind of a goal for the future.
+3742: And hopefully as well, the more we're able to be transparent about what we've
+  spent the money on and how that's kind of all broken down, the more we'll be able
+  to solicit more funds and know that people know that it's not just going to a black
+  hole.
+3757: It's going to these specific things.
+3758: And there's a there's going to be a blog post incoming at some point in the
+  future where we'll write up what we did at this meeting, who met, who was there,
+  what we talked about.
+3769: We've got all the minutes and stuff like that.
+3771: And I also want to detail in that blog post, like how much we spent and why
+  we felt that that was a good use of money as well, because we don't we don't have
+  the exact breakdown of everything now.
+3781: So it's kind of still waiting and kind of working with software from Conservancy
+  to kind of get that information.
+3785: But again, that's the nice thing about open source is you can afford to be more
+  transparent about this stuff than you you would be as a business.
+3792: And also then it might be in future that there's opportunities where I've spoken
+  to people at large tech companies before who've said, you know, if you just want
+  us to give you X amount of money, particularly in something like Patreon, that's
+  very hard for us to do.
+3805: Whereas if you want us to kind of pay for flights for 10 people, that's actually
+  really easy for us to do.
+3810: So this stuff may also open doors in future for us being able to ask for more
+  specific financial commitments or donations from companies in a way that makes it
+  easier for them to give money to us rather than just, you know, something like,
+  you know, I know if you're, as I say, if you're a massive tech company, getting
+  a line item approved from finance or whatever to sign up to Patreon with a corporate
+  credit card and give a certain amount every month is, you know, it's not easy.
+3837: That's that's a system that is built around the assumption that most of the
+  donations will come from individuals from the goodness of their own heart.
+3843: And while that is great, and I'm all for that, I think we need to the open source
+  of sustainability stuff.
+3848: We need to try and figure out ways of making it easy for the big tech companies
+  to give to you because, you know, they get they get villainized to a certain extent.
+3857: And some of that is legitimate, I think, but then some of it is just like, you
+  know, you're not making it easy for them to give you money.
+3863: And you need to figure out, as I guess the charitable sector has kind of worked
+  out for quite a while that, you know, it's as much about meeting them where they're
+  at and making it as easy as physically possible for them to give you what you want,
+  rather than saying, you know, this is how I accept money.
+3877: And you need to kind of meet me where I am.
+3880: How's that play out then for an entity?
+3881: Does homebrew have a legal entity?
+3884: You know, is this patron connected to a person?
+3888: What's the state of things there?
+3890: Yeah, good question.
+3891: Yeah, so that's what the Software Freedom Conservancy basically is.
+3894: So they are a umbrella organization that provides a 501c3 in the US, which to
+  those of us who aren't in the US, that basically is a US charitable organization
+  that means organizations can donate to them tax free.
+3909: They also provide legal services where homebrew to get sued as an organization,
+  say, and they provide a certain amount of kind of just being a legal entity that
+  can own things and have bank accounts and such like.
+3924: So that's basically our Patreon money and all our previous kind of money from
+  our Kickstarter and stuff that has gone to Homebrew Freedom Conservancy, who goes
+  and kind of manages all our funds on our behalf.
+3935: And in some ways they work like a little company for us, which is great.
+3939: So, for example, with the way we have all the kind of homebrew money in a bank
+  account and we have a sum of how much we have and people have, you know, able to
+  donate to the Software Freedom Conservancy.
+3949: And that goes straight to us if they kind of say that that's for homebrew.
+3953: But at the same time, when we book flights, we kind of, you know, we don't just
+  book all the flights on homebrew's credit card.
+3959: We can go and they have kind of an expense policy and you go and reimburse that
+  way.
+3964: And it's kind of it sounds like it would be nicer to put things on a credit
+  card.
+3967: But as the person who would probably be having to book that, I'm glad that there
+  is more kind of responsible oversight with this stuff.
+3974: And the nice thing with this Freedom Conservancy is that they don't really specify
+  anything about the technical running of your project beyond the fact that you need
+  to have some sort of leadership committee.
+3983: So they basically let you run the project how you like.
+3986: And then they focus more on the kind of legal and financial side, which is great
+  for us and for me, because that's the side of things that we're just doing the copyright
+  and stuff like that then.
+3996: Yeah.
+3997: Yeah, we don't do copyright assignment or anything like that in homebrew.
+4000: And because, yeah, I don't know why we don't or why we do.
+4006: But that that ship I've sailed a long time ago.
+4009: OK.
+4010: Well, switching gears slightly, I'm recalling the last time you were here a
+  couple of years back, we were talking about you recently added analytic tracking
+  to homebrew with opt out.
+4020: And it was a bit of a controversy.
+4021: So we discussed that last time.
+4023: And I remember on that call us saying it would be cool if you opened up the
+  data for the community to see since it's, you know, our data, I guess, in the first
+  place.
+4032: And since then, you've done that, which is awesome.
+4036: We'll link up some of the analytics in the show notes.
+4039: I thought it would be fun here.
+4041: Have either of you looked at the install stats recently in terms of formula
+  installed, Adam or Mike?
+4049: Yes.
+4050: I look at them pretty recently.
+4052: Oh, you're killing me.
+4053: Yeah.
+4054: Like, Adam, you just looked at it before the call.
+4056: I guess prep.
+4057: It's part of this.
+4058: All right.
+4059: It ruins my game.
+4060: I was going to have us guess why I can still guess.
+4062: Come on.
+4063: Let's play the game.
+4064: OK, let's play the game.
+4065: So 90 day install events.
+4068: OK, so we'll take turns.
+4070: Mike and then Adam.
+4071: Mike might have these memorized.
+4072: Maybe this is like on a dashboard above your bed or something at home, but hopefully
+  not.
+4077: Top installed formula over the last 90 days.
+4081: Try to hit in the top 20.
+4083: But try to hit number one.
+4084: What do you think?
+4085: What's the most installed packages?
+4086: I'm going to be pedantic because I know how the analytics work to start with.
+4089: So are we going for install events or install on request events?
+4093: Install events.
+4094: What's the difference?
+4095: So the difference between that.
+4096: Should I go the other way?
+4097: No, no.
+4098: I guess it's interesting the difference because if people are looking at these,
+  it might help
+4102: to explain.
+4103: So the install events is if I install a package and it pulls in a dependency,
+  then the package
+4108: and the dependency are both install events, whereas only the package I specifically
+  request
+4113: is an install and request event.
+4115: Oh, OK.
+4116: So let's do them both.
+4117: We got time.
+4118: So let's start with the overall install formula, install, overall install events.
+4122: So this means either you asked for it or it's a dependency, which means, you
+  know, it's infrastructure.
+4127: So that will change the results for sure.
+4129: But what do you think some of the top packages here or formula?
+4132: You get to guess one and then Adam gets to guess one.
+4134: We'll do a family feud style.
+4136: OK, well, I'll guess the easiest one for us, which is.
+4138: Survey says.
+4139: Open SSL.
+4140: Open SSL.
+4142: So you.
+4143: Yeah, you got number one.
+4144: So sorry, Adam, but you already lost.
+4145: Oh, geez.
+4146: Not fair.
+4147: He runs this project.
+4148: OK, but you know, you can still hit up there number high.
+4150: So what do you think Adam?
+4151: I'm going to base mine based on our most popular page on changelaw.com.
+4155: I think you know what that is.
+4156: So the changelaw installing node.
+4158: So I would I would assume that node is probably the top somewhere.
+4161: Oh, that's right.
+4162: Yes.
+4163: Node is number five.
+4164: So very good.
+4166: Let's go one more time each and we'll switch.
+4168: Then we'll switch to the other events.
+4169: So, Mike, give us another one.
+4171: Try to hit in the top five.
+4173: Try to hit number two.
+4174: Python.
+4175: Python.
+4176: Close.
+4177: Number two still on the board.
+4178: So we have open SSL first.
+4180: Python third.
+4181: Node fifth.
+4182: So Adam, you could squeeze in there a number two if you can think of this.
+4185: I'm going with get.
+4186: Get.
+4187: Oh, I got to scroll way down to 15.
+4189: The correct answer was, as you should know, SQLite number two with 1.5, 1.35
+  million install events in the last 90 days.
+4199: Now let's go to formula install on request events and we might have very similar
+  responses.
+4206: In fact, I won't make you guys guess.
+4208: I will tell you that it's the same packages, but they've kind of been moved
+  around.
+4212: So node is number one.
+4213: Python number two.
+4214: Sneaking up there.
+4215: Number three.
+4216: W get followed by get.
+4218: And then fifth is yarn.
+4220: And so we see these are user facing tools.
+4222: Open us the cells a little further.
+4223: Yeah.
+4224: Trickles down to nine because most people are using that as a dependency, but
+  I'm not most, but often.
+4229: All right.
+4230: Fun game.
+4231: Very cool.
+4232: Check those out.
+4233: I didn't know this was out here until recently.
+4234: Has this been out and available for a long time, Mike?
+4236: Uh, it's been, yeah, it's been available for, I don't know, maybe if I like
+  it.
+4240: I know how long it's been.
+4241: Cause I remember building it when my, when my wife was heavily pregnant and
+  we were on our
+4246: last vacation before my son was born.
+4248: And I felt, you know, I have to do this now because this is my last chance ever.
+4251: Um, yeah, so that, that was about, so you know exactly how old it is then.
+4255: Yeah, exactly.
+4256: Uh, yeah, no.
+4257: So about, about a year, um, in any form and probably about, you know, half a
+  year and it's
+4262: about a year and it's current form probably.
+4264: Um, but yeah, no, so it's great actually.
+4266: I mean, it's been nice to kind of get that done because as you said, you know,
+  and that's
+4270: what I hope for is make this stuff, um, open and we sort of live by that as
+  well in that.
+4275: So because this is pulling data from Google analytics, you need analytics, Google
+  analytics,
+4280: API key to access that data.
+4282: Uh, and me and the other maintainers don't even have an API key on our machines
+  anymore.
+4288: So we, when we are consuming analytics data, we're consuming entirely the same
+  public data
+4292: that everyone else does.
+4293: Um, and there's actually APIs on that site as well that you can pull this data
+  programmatically,
+4298: which has been handy for people because both the analytics data, I don't know
+  if the APIs
+4302: are used so much for that, but for the formula data, for example, you can query
+  information
+4306: about a formula without having access to a Mac system.
+4309: So, and it's all, and the worst slash best part of this all is it's actually
+  all on GitHub
+4315: pages.
+4316: So like you can hammer it as much as you like, and you're not going to cost
+  us any money.
+4319: Um, and if you want to see pain in the world of codes, if you look at what it
+  looks like
+4325: to build a JSON API on top of GitHub pages, then you will know great sadness.
+4331: Yeah.
+4332: I might go read that later.
+4333: Cause I, I like to know great sadness every once in a while, especially when
+  I don't have
+4336: to write the great sadness.
+4337: I just enjoy the results.
+4339: Yeah.
+4340: We know homebrew two is fresh and it's new, but, uh, we have to ask you what's
+  in the future.
+4346: Is there anything, anything that's not out so far or anything that's a fun plan
+  that's
+4351: coming up that you can tease or mention?
+4354: Yeah.
+4355: It's funny.
+4356: So that there's no really big things that I can think of.
+4358: Like homebrew two for me was a funny experience because that was kind of the
+  end of my, my list
+4363: of like things that I thought were really important that I wanted to kind of
+  get built before.
+4368: Uh, so from my perspective, there's not the stuff I would like to see, but again,
+  this is
+4372: kind of a bit more fun because it's dependent on the kind of community stepping
+  up.
+4376: It has been talks for a few years about, uh, being able to show licensing information
+  for
+4380: homebrew packages.
+4381: So you can query what to license each individual packages.
+4384: You could maybe say, I deliberately don't want to install.
+4387: I know this, some commercial, uh, organizations would find it useful to say,
+  I just don't want
+4392: to allow say a GPL V three stuff to be installed at all.
+4396: Um, so yeah, we have someone who's sort of started finally a community effort
+  to kind
+4400: of build up a groupings of all that kind of licensing information for packages.
+4404: And then when that reaches, um, kind of complete enough state, then we're going
+  to go and we'll
+4411: merge that back into homebrew itself.
+4412: And this was the process that we kind of took for descriptions, adding them
+  to packages back
+4416: when we did that, where we said, okay, if someone can go and effectively build
+  up all the metadata,
+4420: when that's done, we'll then merge it back into the project.
+4423: Um, and yeah.
+4424: So we've got a guy who we tweeted about this the other day.
+4428: Um, and you can go and see there's an open help wanted issue in the homebrew
+  brew repository
+4433: as well.
+4434: Who's building this stuff up.
+4435: So that would be a cool thing both to watch and also to get involved with.
+4438: I'll make sure we get that link for the show notes then.
+4440: So the listeners can check that out.
+4442: Uh, Mike, you know what?
+4443: It's, it's always good catching up with you.
+4444: And, and, uh, I think it's funny too, how you can earmark when things happened
+  with homebrew
+4451: based on life events.
+4452: I think that's, that's a true sign of, you know, the life of a maintainer, you
+  know?
+4457: And so as someone who uses the code that you've worked so hard to, to slave
+  over all these
+4463: years and put this much effort into and, you know, all this stuff, I'm just
+  so appreciative
+4468: of that because you make my life so much easier as a Mac user and getting my
+  system up and running
+4473: as, as we talked about in the show.
+4474: So I appreciate that.
+4476: And I'm glad that, uh, even though you're on vacation, you can still, uh, put
+  out a good
+4481: feature, which is appreciated.
+4483: Well, thank you very much.
+4484: And the nice thing about it for me is that, you know, believe it or not, it's
+  still fun
+4488: for me to work on homebrew.
+4489: Uh, and that's, that's the thing is that it's still something in my free time
+  that, you know,
+4494: maybe not as much as I used to both because of maybe homebrew growing up a little
+  bit, but
+4500: also because my life getting busier.
+4502: But you know, there's definitely times where I'm at a weekend and my wife's
+  out with my
+4506: kid for a little while and I've got free time to myself and I'm like, what do
+  I feel like
+4509: doing the most right now?
+4510: Well, I feel like, you know, working on homebrew and that's the nice thing that
+  I'm able to
+4514: do that.
+4515: And it's fun for me and get to kind of give back and have other people have
+  something
+4519: useful at the end of it as well.
+4521: Well, Mike, we thank you very much for homebrew and the rest of the team that
+  makes it
+4524: happen.
+4525: And also for your time.
+4526: Thank you.
+4527: Thank you guys.
+4528: Great job.
+4531: All right.
+4532: Thank you for tuning into this episode of the change log.
+4534: Hey, guess what?
+4535: We have discussions on every single episode now.
+4537: So head to change log.com to discuss this episode.
+4541: And if you want to help us grow this show, reach more listeners and influence
+  more developers,
+4547: do us a favor and give us a rating or review in iTunes or Apple podcasts.
+4551: If you use overcast, give us a star.
+4553: If you tweet, put a link.
+4555: If you make lists of your favorite podcasts, include us in it.
+4559: And of course, thank you to our sponsors, the ocean hit prime and Reagan.
+4564: Also, thanks to fastly, our bandwidth partner, roll bar, our monitoring service
+  and Linode,
+4570: our cloud server of choice.
+4572: This episode is hosted by myself, Adam Stachowiak and Jared Santo.
+4576: And our music is done by break master cylinder.
+4579: If you want to hear more episodes like this, subscribe to our master feed at
+  change log.com
+4585: slash master, or go into your podcast app and search for change log master.
+4590: You'll find it.
+4591: Thank you for tuning in this week.
+4592: We'll see you again soon.
+4605: Practical AI is a show hosted by Daniel Whitenack and Chris Benson
+4608: about making artificial intelligence, practical, productive, and accessible
+  to everyone.
+4612: You'll hear from AI influencers and practitioners,
+4615: and they'll keep you up to date with the latest news and resources.
+4618: So you can cut through all the hype.
+4620: As you were at the Thanksgiving table with your friends and family, were you
+  talking about the fear of AI?
+4625: Well, I wasn't at the Thanksgiving table because my wife has forbidden me from
+  doing so.
+4630: It's off limits for me, lest I drive her insane, because I never stop.
+4635: New episodes premiere every Monday.
+4637: Find this show at changelaw.com/practicalAI, or wherever you listen to podcasts.
+4641: The only other thing I would want to pull into the show, or not even the show,
+  maybe just an after show.
+4648: I almost thought about this during, but I forgot until just like right there
+  at the end was what keeps you motivated?
+4653: You know, like, yeah, there's so much work that goes into this.
+4656: Like, you know, you're on paternity leave having to write up this incident report.
+4660: I mean, that's sort of like one variation of motivation because you kind of
+  have to at that point.
+4666: You've got some responsibility, but like, no one's making you make homebrew
+  better.
+4671: And it's not like you're getting paid to do it.
+4673: You know what I mean?
+4674: Yeah, I guess that.
+4675: I mean, I think the thing for me is that it's actually kind of the opposite
+  from what you said, bizarrely, where I wrote a blog post about this a little while
+  ago.
+4682: Unfortunately, it's got a slightly flame-baity title because my brief stint
+  in kind of the marketing organization at my company pointed out to me that, you
+  know, flame bait is a good way of getting your links shared more.
+4694: And it was called open source maintainers owe you nothing.
+4698: And basically that was like, that's what keeps me motivated really is the fact
+  that like, I don't act, I know, and I have strongly internalized the fact that I
+  don't own anyone anything, you know, and the licenses that open source software
+  is under state that quite clearly that if I release buggy codes, which destroys
+  your computer, blows up your house, whatever, like that's, you've disclaimed all
+  warranties on that.
+4724: And you've basically said that that's not in any way my fault or my obligation
+  to deal with that in the license that you agree to when you use any open source
+  software.
+4733: And so I think that kind of helps me a lot, actually, because, you know, most
+  of the time people are decent, but there have been times in homebrew's history where
+  I've closed a legitimate bug because the person who has reported it is unable to
+  like maintain a conversation in a way that isn't extremely rude and extremely toxic.
+4749: And I can't do that at work.
+4751: I mean, thankfully, I don't have a deal with customers type role at my work
+  anyway.
+4755: But, you know, if you're in a workplace and you're being paid by someone, you
+  can't just decide, well, no, actually, I'm going to, you know, stop talking to this
+  paying customer anymore unless you're kind of the one running the business, which
+  I am not.
+4766: Whereas in open source, I can decide to do that.
+4768: I can decide at any point, right, well, I just, you know, opt out of this conversation.
+4773: I'm done here.
+4774: I'm moving on.
+4775: I'm going to do something else.
+4776: And I think particularly nowadays, it's kind of helpful to be.
+4779: And I think that's really been brought home with like having a family and kind
+  of being aware of like my mood and things like that.
+4787: And my wife's really good at kind of pointing out if I'm particularly kind of
+  happy or sad or whatever.
+4791: And I try and sort of like double down on that.
+4794: But I think it's been helpful with that because I have homebrew issues which
+  kind of need to be fixed.
+4798: You know, they're not urgent priority, but they're relatively high priority
+  that have sat on fixed for three or four months because I don't want to fix them.
+4804: And, you know, if someone else thinks that they're a big enough problem, then
+  they'll fix them and I'll happily help them figure out how to fix them.
+4811: But I don't have to.
+4812: And they don't affect me.
+4813: So I'm not going to.
+4814: And again, that's for me, in some ways, the interesting thing about introducing
+  more money into open source is, again, if homebrew was my full time gig and I was
+  being paid full time to do that, then all of a sudden that would change.
+4826: And I would feel a sense of obligation that I would have to work on those things
+  and I would have to fix these things.
+4831: Particularly if the people who were individuals or companies who were paying
+  me were pointing out that these were the problems that they were experiencing.
+4838: Whereas the nice thing is I can say, well, actually, that one doesn't look very
+  fun, so I'm not going to bother.

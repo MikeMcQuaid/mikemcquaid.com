@@ -1,0 +1,1763 @@
+---
+0: This week's episode of the MacAdmin's podcast is brought to you by Kanji.
+3: If you've ever enforced a security framework across your Apple fleet,
+8: you know that it can be extremely tedious. Kanji makes this a lot easier.
+14: Most MDM solutions give you the tools to help you manually achieve general security
+  compliance.
+21: But with Kanji's device management solution, the scripts, controls,
+26: and settings needed to achieve compliance are already built in and organized into
+  templates
+32: so you can get going on day one. To quote a customer, Kanji has helped us achieve
+  much
+39: higher compliance with much better results, all while delivering a better experience
+  for both
+45: end users and admins. Check them out at kanji.io slash macadmins. That's K-A-N-D-J-I
+  dot I-O
+56: slash macadmins or join the Kanji channel on the MacAdmin Slack to say hi and
+  see what they're
+62: up to. Thanks again to Kanji for sponsoring this episode of the MacAdmin's podcast.
+79: Hello and welcome to the MacAdmin's podcast. I'm your host today, Marcus Ransom.
+  And Charles,
+85: how are you going?
+86: I am well. It's a stunning weekend. I got so much done. Joel and I started writing
+  this weird
+94: project for the Vision Pro. I blame Joel for my lack of spare time these days.
+99: So you've got your Vision Pro replacement back. Have you managed to break this
+  one?
+106: I have not broken a second. I did print a Vision Pro holder to keep me from breaking
+  anything.
+115: So crossing fingers.
+117: There we go.
+119: And how are you, Marcus?
+120: Well, I'm fine. I've been traveling for a week along with, well, not along with,
+  but alongside
+129: about a couple of hundred thousand Taylor Swift fans going to and from Melbourne
+  and Sydney,
+135: which, you know, so the airport was full of lots of people exchanging beads.
+140: Access to hotels in Sydney where I was staying was challenging. So I've been
+  dealing with a hotel
+148: where the access card to my room would spontaneously stop working, taps falling
+  off, interesting odors,
+157: those sorts of things. So, you know, it's good to be home.
+161: I don't remember the weird odors when I took my kid to see Taylor Swift. I do
+  remember
+166: some weird odors, like when I went to see the Black Crows, but I'm guessing they
+  were very
+172: different odors. I don't know.
+173: Probably, probably. You know, I, yeah, exactly. Hotel odors, going to see band
+  odors, very
+181: different things. Usually don't spend too much time.
+185: But we have great guests today, right?
+186: We do. Let's talk about interesting things. So we've got the team from Workbrew
+  here joining
+191: us to discuss the challenges Mac admins face with Homebrew at their companies.
+  So we're going
+195: to talk about ways to cut down on IT busy work while also getting ahead with
+  your engineering and
+200: security teams, an uncompromising approach to engineering productivity and security
+  posture.
+205: So along the way, we're going to touch upon maintaining Homebrew open source
+  project and
+210: their approach to building a business around open source. So welcome to the podcast,
+  everyone.
+215: Thanks for having us.
+216: Thanks. Hey.
+218: Well, what we might do first is how about we get you to introduce yourselves
+  and let us
+224: know how you met and what got you to where you are now starting a startup.
+228: Yeah. So I guess I can go first. So my name is Mike McQuaid. I'm the CTO of Workbrew.
+236: And outside of that, I'm the project leader of Homebrew, the macOS and Linux
+  package manager
+242: for open source, which I've been working on for 15 years. I'm based in not so
+  sunny Edinburgh
+248: in Scotland. And I left GitHub where I spent a decade finishing as a principal
+  engineer last
+255: year to go and join John and Vanessa, my co-founders, to start Workbrew, our
+  exciting startup doing
+264: some interesting commercial stuff in the Homebrew space.
+266: Hi. So my name is John Britton. I like to call myself a software developer, but
+  really I focus
+273: mostly on developer tools and helping people become better developers. So I got
+  my start in this space.
+280: My first startup that I worked at was a publishing company where I worked with
+  Vanessa. I was a software
+286: engineer there and we worked in building college textbooks for people in like
+  a customized way that
+293: was also open source. Following that, I joined Twilio and I was a developer evangelist
+  there.
+301: That was an excellent introduction to kind of the Silicon Valley startup scene.
+  And then after that,
+308: I joined GitHub to lead the GitHub education program. So while I was there, I
+  created the GitHub
+314: Student Developer Pack, which is a bunch of developer tools for students, built
+  GitHub Classroom, and later
+321: went on to lead all of developer marketing for GitHub up through the Microsoft
+  acquisition. While I was at
+326: GitHub, I worked with Mike and Vanessa very closely. And yeah, in 2019, I left
+  to kind of go out on my own.
+333: And a few years later, they both joined me and now we're working on Workbrew.
+336: Love it. So I was just looking through my personal blog and I think the first
+  time that I wrote an article
+345: that included installing something with homebrew was 2011. And that was a long
+  time ago.
+355: So I guess package management to me was always a nightmare and homebrew definitely
+  made it easier.
+366: Do you guys want to take us through what homebrew is for listeners who maybe
+  haven't used it?
+371: Yeah, sure. I'll start with like a little bit of history, I guess. You mentioned
+  2011. So
+377: homebrew was created originally in 2009 by a guy called Max Howell, who was,
+  happened to be
+385: working for a little start of Lost FM. That probably brings back some memories
+  of
+388: what was all the rage in those days. Scrabbling. Sure. Less, less of the rage
+  nowadays. But yeah,
+397: so he had played around with various Linux and Mac package managers and sort
+  of got some inspiration
+403: from various places, but didn't really like anything that he landed on Mac OS,
+  I guess, which would
+408: have been Mac OS X. I appreciate the audience of this podcast probably likes
+  the level of pedantry that
+414: we homebrew maintainers also like. I thought it was called Mac OS X. I don't
+  think like.
+418: Yeah, true, true. Yeah. Mac OS X. Thank you.
+421: If you're going to be correct. Yeah. If you're going to be a pedant about it,
+  like it's better
+424: get it right. But yeah, so he decided to create his own thing, which ended up
+  being called homebrew.
+431: It was, if you could read the read me of, from his initial commit where he talks
+  about the
+438: beer theme and also that he consumed beer while he was creating the original
+  beer theme, which
+444: is part of the inspiration. So yeah. So what, one of the interesting things he
+  did
+448: with homebrew back in the day, it was kind of created, like GitHub was relatively
+  early
+453: in those days as well. And like, I think like pull requests, which are kind of
+  people's primary
+458: interaction with GitHub nowadays didn't exist when homebrew was first published
+  on GitHub.
+463: And Mac's had the idea of like, unlike the way most package managers work of
+  instead of
+468: he maintaining himself or like appointing maintainers for every package or groups
+  of packages that
+474: essentially it would be a bit more of a free for all. And he would kind of moderate,
+  um, what was coming
+478: in. So I guess I sort of knew Max through a friend of friend in London and I
+  kind of heard about this
+486: project like fairly early on and I kind of played around with it and it sort
+  of matched my sort of
+491: ideas for how package management should be on Mac OS, which, uh, essentially
+  was use as much stuff from the
+499: system as you can and try and make things fast and nicely optimized and care
+  about nice error messages
+506: and yada, yada, yada, all this type of stuff. Um, so yeah, so I started working
+  on it in 2009
+511: as well, uh, about maybe six months after the project kind of originally was
+  created. I think I was
+516: maintained at number three or something like that. And for my sins, I've stuck
+  around that. I'm still
+522: doing this stuff 15 years later. And I guess for those of you who don't know
+  what homebrew is and
+528: have never heard of it in any way or used it in any way, I guess the way I tend
+  to describe it is
+532: it's essentially like an app store for your terminal for open source software
+  primarily, although it's
+538: kind of slightly grown in scope since then so that it will also run on Linux
+  nowadays. And it can also
+542: be used to install, uh, like binary software that's like proprietary software,
+  let's say like Google
+548: Chrome or whatever you can install with a brew install Google Chrome.
+551: Love it. And I feel like, so I've, I still use, um, that Ruby command that was
+  posted
+563: gobs of years ago, um, that curls it down from GitHub and runs the install. Is
+  that,
+569: is that the way that you would say is kind of the right-ish way to install it?
+574: That's still the primary installation method. I think lots of very angry people
+  on the internet
+579: for a very long time have, would strongly disagree with the implication that
+  it's the right way
+584: because people don't like that. But I, I, again, I think homebrew is one of the
+  first places to do
+588: the, like curl this, the script of the internet and, you know, pipe that into
+  your terminal approach,
+594: which is now a really easy way to install a bunch of software. But yeah, nowadays
+  homebrew also has
+600: like a macOS like package that, um, and workbrew has our own enhanced version
+  of that, which we'll,
+606: I'm sure we'll get onto later as well.
+607: Oh, for sure. Um, yeah, I, I guess the objections that people might have is that
+  someone could be
+616: masquerading the DNS and you can be installing something else, you know, or,
+  or what have you.
+621: But I, I get that. I, I hadn't even thought about that until you just said it.
+625: But there, but there's good, you know, if someone's doing security properly,
+  there's ways to
+631: ensure that that's not happening and, you know, um, put steps in place, uh, which,
+  which is generally
+640: what brings us to the, um, the challenges that Mac admins have with homebrew.
+  Um, most Mac admins will,
+648: will either use homebrew themselves or have used homebrew, whether it be for,
+  you know, personal
+654: machines or machines that they're developing on. But when it comes to using and
+  managing homebrew in
+659: an organization, so this is something that, you know, can best be described as
+  a little bit chaotic for
+665: someone who's trying to have complete control and, um, consistency about a system,
+  um, letting
+671: developers have access to something that can, you know, add an update software
+  outside of that
+677: management tool can be a bit problematic. So, you know, what have you observed
+  from Mac admins, uh,
+684: trying to use homebrew in their organizations and how they've gotten around that?
+688: I think there's the way Mac admins tend to kind of want to package and consume
+694: software, like often, you know, PKG files and turning software that doesn't work
+  that way into
+701: that format. And the way homebrew kind of deals with this stuff to kind of consume
+  PKG files,
+707: like in some ways it's kind of looking through the same telescope from different
+  ends. Like I think
+712: the, the ends are generally the same, but the problem is, is that again, when
+  you get into kind
+718: of Mac admin land, like the way you're kind of generally used to doing things
+  as you have something on the
+724: machine, you know, some MDM provider say that's pushing PKG files down, which
+  are run as root.
+730: But then I don't know if this is something that you Marcus or yourself, Charles
+  have experienced
+736: personally, but the, the issue comes when you want to then run homebrew that
+  way because homebrew
+740: refuses to be run as root. Um, and if you, uh, it's, it's funny because if you
+  want to know like a
+745: little backstory behind that, like if we, I've always wondered.
+750: Yeah. So the reason why is, uh, so homebrew relies on the Mac OS sandbox as the,
+  basically the sandbox
+758: that is used by like the app store and stuff as like somewhat of a kind of security
+  measure to stop
+764: kind of when you install packages, then be able to just have full access to your
+  system. And the issue
+770: there is that the, at least last time I checked, the Mac OS sandbox is severely
+  limited or, and or
+776: completely broken if you run it as root. So like that was the reasoning for there
+  is that it's
+781: again, like a bunch of stuff in homebrew, it, it could be maybe explained a little
+  bit better, but
+786: essentially like we don't let people do it because it's extremely dangerous and
+  they run the risk of
+792: on Linux. It's even worse because you don't have a sandbox there at all. So you're,
+  if you're
+797: installing software from source on Linux with a default homebrew configuration,
+  like any make file
+802: could just write or remove any file anywhere on your system at any time, uh,
+  which is a little bit
+808: scary. And again, like bring back to your question, I guess this is the, the
+  Mac admin
+812: perspective is like, you don't really like the idea of like random software running
+  random things
+817: as roots or as the user with unconstrained access to all their files and everything
+  like that on the
+824: system. Especially when you compare that to the, the general security principle
+  of using a least
+831: privileged user. So, you know, we won't allow users to be administrators on their
+  machines so that they
+836: can't install software, um, modify, um, things on the machine, whereas, you know,
+  which is the way,
+844: you know, you're doing things in homebrew where you're not using the root user
+  yet. You're giving
+849: the users the ability to install and update all of these binaries, which, you
+  know, is, as you're
+855: saying along the way that Apple have designed the operating system to allow users
+  to have the
+860: functionality that they need and get the most out of their machine without compromising
+  the operating
+866: system or getting in the way and preventing things from running every time they
+  have an update. So
+871: it's, it's a real challenge when most of our management tools are designed to
+  stop people
+878: doing things the wrong way. Um, and here comes a tool that does things the right
+  way. And so many of
+884: those guardrails then become challenging because somebody has read the instruction
+  manuals in a way,
+891: yeah. But also, I mean, it's not like this idea is super, um, new. It's just,
+  I always felt like
+901: homebrew had more of an atomic operation than like a pip or for Python or a CPAN
+  or any of the other
+910: package managers that I used because it could drop things from, you know, Ruby
+  gems or just all kinds
+917: of different tools into one central place. And then all of a sudden I have a
+  binary that can run that,
+924: that has all the dependencies just built. And, you know, coming from an era where
+  we were trying to run
+929: Linux on a desktop, you know, and life sucked, just trying to get a CD to burn
+  of all those.
+936: I remember those days quite well running Linux on the desktop. I started with,
+  uh, I started with
+945: Gentoo on my desktop and, uh, they had a package manager emerge. And at the time
+  everything was
+951: source built. And so installing KDE was like a three day prospect. Um, so that
+  was kind of a nightmare.
+957: I learned, I learned how to depend on a package manager. It was just a very,
+  very slow and
+962: arduous process to, you know, be able to get all those benefits. And when Mac,
+  when I kind of like
+966: made the transition onto using a Mac computer and, you know, Apple released OS
+  10, which was Unix based,
+972: it was very obvious to me that the package manager was missing, right? It was
+  like, oh my God,
+977: how do I survive on this system? And I'm sure you've probably heard of Mac ports.
+  And so I used
+983: Mac ports in the early days. And for me, like it was very similar to using emerge.
+  It was, you know,
+988: get all the sources, build everything locally. And like a lot of the times something
+  was not
+992: configured correctly and it would not build and you'd have a terrible time. And
+  so when I finally,
+998: uh, I don't know, discovered homebrew for myself, it was, uh, like a total transition,
+  uh, from,
+1006: you know, using what felt like an incomplete operating system to something that
+  was more
+1011: like what I expected as a developer. Um, and yeah, just, uh, got into it, got
+  started using
+1019: it like, uh, pretty much for everything, like, uh, leaning on all that stuff.
+  But like, yeah,
+1023: like you were saying running, running, uh, running Linux on the desktop was
+  just a different,
+1029: a different era. Yeah. And I thought it was never going to happen until, uh,
+  Chrome OS,
+1035: I guess, you know, and then I'm like, Oh, someone finally did those right. So
+  I mean,
+1042: maybe Ubuntu kind of, but not whatever, no shade. I mean, I feel like, I feel
+  like using Mac OS with
+1048: homebrew is like a nice middle ground. It's like, you've got all the niceties
+  of a Unix operating
+1053: system, command line access. You can run everything just like it runs on your
+  Linux boxes and you have
+1058: a package manager, but you also have a system with drivers that work and you
+  know, displays and network
+1063: cards that work right out of the box. Yeah. In a pre-rootless, uh, context,
+  I agree. I think
+1070: the sandbox and the kind of breaking of all the POSIX compliance stuff started
+  to shift that a little
+1076: bit and make it more of a closed ecosystem, but you can still do anything under
+  the hood,
+1080: so this week's episode of the Mac happens podcast is brought to you by collide.
+  You've probably heard
+1089: us talk about collide before, but have you heard that collide was just acquired
+  by one password?
+1095: That's pretty big news since these two companies are leading the industry in
+  creating security solutions
+1101: that put users first. For over a year, collide device trust has helped companies
+  with Okta
+1108: ensure that only known and secure devices can access their data. And that's
+  what they're still doing,
+1114: but now as a part of one password. So if you've got Okta and you've been meaning
+  to check out collide,
+1121: Collide now is a great time. Collide comes with a library of pre-built device
+  posture checks,
+1128: and you can even write your own custom checks for just about anything you can
+  think of. Plus you can
+1134: use Collide on device without MDM like your Linux fleet, contractor devices,
+  and every BYOD phone and laptop
+1143: in your company. Now that Collide is part of one password, we're only going
+  to get better. Check out
+1150: Collide at collide.com/macadminspodcast to learn more and watch the demo today.
+  That's K-O-L-I-D-E.com/macadminspodcast.
+1165: Thanks to Collide for sponsoring this episode of the Mac admins podcast.
+1168: So here you are a developer. And I mean, I think from many of the Mac admins
+  that I talked to,
+1177: they're like, let's try to figure out how to block, you know, CPAN, PIP, BRU,
+  etc. Simply because
+1184: that's a threat in a large environment where potentially that might be seen
+  as the root of a
+1193: supply chain attack or something like that. So did you find that Homebrew was
+  getting feature requests
+1200: or PRs that were sitting there trying to make it more compliant for Mac admins,
+  I guess?
+1207: Yeah, there's two parts that I think are interesting. So one is the PRs and
+  the other is like the supply
+1213: chain stuff. And so on the PRs, like, yeah, like this is something we've seen
+  on and off for kind of,
+1220: I guess probably 10 years, particularly like in the early days, Homebrew was
+  very much geared towards
+1225: engineers only really used by engineers and like, you know, random end users
+  didn't really have any
+1231: interest in it. And also, I guess, even like the state of MDM and like actually
+  looking after people's
+1237: endpoints was less mature and the communities who are more into Homebrew were
+  less likely to be in
+1245: higher compliance environments like that, right? Like, and yeah, so that there
+  ended up being and still continues
+1252: to be a bunch of requests of can Homebrew do this? Can Homebrew do that? Like,
+  it would be nice if
+1257: it was more compliant with the way my organization works. And the issue that
+  Homebrew's kind of experienced is
+1265: like the volunteers, because it is still a almost exclusively volunteer run
+  project. I guess I'm
+1271: probably the one exception to that rule at this point. And they don't want to
+  do a lot of that,
+1276: right? Like again, particularly like enterprise IT compliance, right? Like there's
+  a reason people
+1283: get paid to do that rather than spending their evenings and weekends, you know,
+  like Charles,
+1289: you were talking about your Vision Pro and stuff like that, right? There's a
+  reason why you're probably
+1293: playing with that in your evenings and weekends rather than being like, oh,
+  you know, I would really
+1297: love to read a SAML white paper this weekend because that's the most exciting
+  part of my life, right?
+1303: Um, so yeah, so we have this interesting impasse effectively where people who
+  are in the situation
+1310: of having to manage a fleet of Macs for their day job, like, and they have very
+  real meaningful
+1316: problems they're experiencing due to Homebrew. And then you have the people
+  who are actually running
+1320: Homebrew who are like, I don't experience these problems and I'm not particularly
+  inclined to fix
+1324: these problems, right? Um, so this is, yeah, like, this is the interesting thing
+  that I guess I learned
+1330: about open source. Like I previously worked at a consulting company back when
+  I was a KDE developer,
+1336: partly because I was like, hey, they hire more KDE developers than anyone else.
+  Like,
+1341: this seems like the greatest opportunity, right? Like I can go and work in open
+  source and get paid to do
+1345: it. Like, isn't that the dream? And then I learned pretty quickly in that job
+  at this consulting company
+1350: that like, actually the open source work you get paid to do is a lot less fun
+  than the open source
+1356: work that the volunteers do for fun in their free time, because that's the stuff
+  that like, it's not
+1360: getting done and someone needs to get it done. So someone pays someone else
+  to get it done, right?
+1365: Like, and this is a, uh, you know, it's, it's maybe, uh, less of a pitch to
+  work on this stuff,
+1372: but it is fun, honest. Um, but like, I think that's where we've ended up with
+  this sort of interesting
+1378: conflict where, because there's no commercial relationships or money passing
+  hands or that
+1383: incentivization to do this stuff, it ends up not happening. And the last, just
+  to jump on your other
+1389: point, I think the other interesting thing is like from a supply chain perspective
+  that like,
+1393: we, we have these words like package managers, right? That mean kind of radically
+  different
+1397: things depending on the context. So I guess the example is you use like, uh,
+  PyPy or NPM or RubyGems.
+1403: So the interesting thing with these ecosystems, um, where supply chain attacks
+  are like a, a pretty
+1410: big problem is because anyone could upload anything at any time, basically.
+  Right. So I can just,
+1416: no one is essentially vetting my work. If I have a popular package and I want
+  to push a new version,
+1421: like no one's checking that version before I push it. And no one's checking
+  that that version
+1426: matches what is on my GitHub or whatever, although there's a little bit of work
+  happening with this
+1430: stuff now. Whereas in Homebrew's case, it sort of get, often gets conflated
+  with those tools because
+1436: it feels like it's part of the same ecosystem. But every change that goes into
+  Homebrew, a human looks at
+1441: that change and says, one of the Homebrew integers, it says, yes, this looks
+  okay.
+1446: And it gets merged in before it happens. So we have a lot of automation that
+  goes on
+1451: and we have a lot of external contributions that go on and stuff like that.
+  But ultimately there's
+1455: 30 people, probably fewer than 30 people in any given repository who have to
+  say, okay, this looks
+1462: okay. And like that gets checked. And again, those people, yeah. And those people
+  are audited and if they
+1470: are inactive for too long and they get their permissions get revoked and all
+  this type of stuff.
+1474: So yeah. So there, there is a higher threshold for this stuff than, than the
+  perspective is, but
+1480: still, you still have these problems of like, okay, the security supply chain
+  may be less problematic,
+1486: but the features are not there. The features that we need as Mac admins.
+1491: I was speaking to somebody who was a Mac admin, um, just the other day and they
+  quoted back to me,
+1497: you know, there are 17 different tools in my organization that people within
+  the company can
+1502: use to install other things. Um, all different package managers, whether it's
+  language specific
+1507: package managers or system, you know, system installers or things like that.
+  And what was
+1512: interesting about when they quoted me that was that they also said that, you
+  know, in the case of
+1516: homebrew, homebrew runs on the endpoint and rather than like, you know, in our
+  code base and running
+1522: on, uh, like RCI devices or in our production deployments or whatnot. And given
+  the fact that
+1528: homebrew runs on the endpoint, the tool that they lean on the most has been
+  like their MDM or their, um,
+1533: other kind of endpoint scanning tools to make sure that that stuff is safe.
+  And there's not really a
+1539: great story for how to do that with homebrew. Every person I've talked to has
+  their own different
+1543: way that they've kind of like custom built or like, you probably have seen these
+  gists where there's
+1547: like, you know, a couple hundred lines of scripts that people have been commenting
+  on for the past
+1552: five years and keep getting reused. So yeah, it's definitely something that
+  people are feeling and
+1557: talking about. But, um, like Mike said, it's not quite, uh, an interest for
+  the open source
+1564: maintainers to want to work on.
+1565: And that's fair. I mean, I think the point about developers writing tool for
+  develop tools for
+1571: developers and having fun doing it because it solves their specific need. I
+  mean, if I was using
+1578: homebrew to do a task, to get something ready to deploy to devices that I didn't
+  want homebrew on,
+1584: then I might just make a package out of what homebrew made by snapshotting the
+  machine before and after,
+1591: and then deploying whatever changed in the middle. However, if you're working
+  with a large team of
+1598: developers who are constantly asking for things, you can't keep up by compiling
+  everything they need
+1604: on their behalf and then going back. So I think that's where something like
+  workbrew kind of comes
+1612: into play in my mind. Um, but I don't know. So go ahead, Marcus.
+1617: Before we get into workbrew, I just thought, given that we've got three people
+  who have
+1622: been involved in homebrew here, we've discussed how many different ways there
+  are of doing things
+1627: and there's always different opinions. So I thought we thought it'd be great
+  to get you to explain
+1633: how homebrew works and whether between the three of you, there's a consistent
+  view as to how homebrew
+1637: works. So like most open source tools, we're going to get three very different
+  opinions as to how
+1642: homebrew works. So do we want to maybe get down to brass tacks and have you
+  explain for, for some,
+1649: for somebody who hasn't used homebrew or for somebody who is using homebrew
+  to,
+1654: to explain from, from a nuts and bolts point of view, how it works?
+1658: So I think for all, all three of us, it's our, our interactions are all going
+  to be,
+1664: are going to be quite different from like how we've been involved in the project.
+  So like Mike,
+1668: you know, he's been involved for 15 years. He's a, you know, the project leader
+  and, and, and does a
+1673: ton of, you know, every single day I see him working on pull requests and working
+  on features for,
+1677: for homebrew. But, um, you know, in my experience, I'm more of a user, right?
+  Um, my, my experience
+1683: with homebrew has been, uh, I set up my machine. I use one of Mike's open source
+  projects called
+1687: strap, uh, to kind of write a bunch of bootstrapping scripts for my machine,
+  set up my dot files.
+1694: Homebrew is part of that, install all the packages that I want to have. And
+  maybe here or there,
+1698: there's a couple of packages that don't exist. So I've contributed packages.
+  And then, uh, you know,
+1703: maybe there's something that doesn't exist in the brew command. And I've like
+  made one or two
+1708: contributions to the actual command line tool. And, you know, I'm just a normal
+  user for,
+1714: for all intents and purposes. Like I just, uh, you know, use it just like a
+  normal developer.
+1718: Um, I think Vanessa's interaction has also been like quite different. So maybe
+  you want to say,
+1723: let's talk about that.
+1724: Yeah, we just got back from FOSDEM. I don't know if you all remember developer
+  conferences. Uh,
+1731: that was really, that was quite fun. And we also, we also had a chance to attend
+  the homebrew, uh, AGM.
+1738: What does AGM stand for again, Mike?
+1740: Annual general meeting.
+1741: Annual general meeting where they get everyone together. If you're involved
+  with open source
+1746: projects, you're probably familiar with this drill where you go over the sort
+  of annual business before
+1752: the people who do the work. And, uh, Mike's been involved with this, as I think
+  he said, for 15
+1758: years, he could have a teenager that is his, his, this open source project.
+  Uh, and when we worked
+1765: together at GitHub, uh, something that he always appreciated, I think about
+  our interactions,
+1770: he taught me get like over a series of zoom calls. Uh, and that was also, you
+  know, my introduction
+1779: to the world of, of homebrew and, uh, and Mike's role in it. Uh, and then, but,
+  but he was always
+1787: like, Vanessa, you just make things go like the, you, you make things happen.
+  And so that's, I felt
+1793: amazing that he, you know, gifted his time and now he wanted some more of my
+  time back. And so he asked
+1800: me to run, uh, for the product, for the PLC, uh, product leadership committee,
+  project leadership
+1805: committee. And now I'm helping, I'm actually on a few different nonprofit boards
+  here in Philadelphia,
+1812: helping them get their governance, right, get their goals, right, helping the
+  trains run on time.
+1818: And so now I am doing that as a leader at homebrew.
+1823: I love it. And then your explanation of how it works, Mike.
+1828: Well, Mike, Mike might actually be able to talk to you about the actual nuts
+  and bolts of
+1832: how it works rather than how we're involved in it.
+1834: Yeah. So, I mean, I guess like there's the technical side and the social side,
+  like,
+1840: are you interested in, in, in one more than the other or, uh, both?
+1844: I mean, whatever you want. Um, there is a future question that we can bring
+  forward of like,
+1849: hey, what's a cask?
+1850: Yeah, sure. Okay. Well, so I'll, I'll try and touch on that as well. Right.
+  Uh,
+1855: so like social side, I think I mentioned before, like homebrew is, um, about
+  30 maintainers right now,
+1862: um, of people who work mainly in evenings and weekends. Like we, we've got a
+  financial situation
+1869: such that, I guess I like to call it the open source, uh, curse of having enough
+  money,
+1874: way too much money for stickers and not enough money to pay any individual really.
+1879: Yeah. So like we, we've started doing like stipends so we can kind of compensate
+  people
+1887: a little bit for their work and stuff like that. But I mean, it's, you know,
+  it's one of those
+1891: things where if you start, particularly those of us who do quite a lot of work
+  on homebrew,
+1895: if you start trying to add up and do market rates and things like that, um,
+  then it starts to get,
+1900: I don't know if either of you have, uh, Vanessa has also written a book. I wrote
+  a very boring book
+1904: about Git about a decade ago. And I remember what a previous boss who talked
+  me into, you know,
+1909: writing a technical book. I remember he once said, um, don't ever at any point,
+  uh, try and calculate
+1915: how much time you've spent on it and how much money you make, because it will
+  just make you very,
+1920: they're not related. It will make you very, very sad.
+1922: Perhaps an inverse relationship to those two things.
+1926: Exactly. So it's similar kind of vibes in homebrew where people are doing it
+  for the love,
+1931: not for the, you know, very small amounts of money they get. Um, we've got a
+  team distributed
+1937: throughout the world. You know, we've got people in Australia, Shetland islands
+  of Scotland in,
+1942: you know, basically pretty much every continent in the world, I think, except,
+  you know, Antarctica.
+1948: And, uh, yeah, like we collaborate mainly over GitHub and a little bit, we've
+  got our private
+1953: space in Slack and stuff like that. And that team's kind of slowly grown from
+  one person, um,
+1959: in 2009 to like 30 or so of us. Now it's been like 50 maintainers in total over
+  that time.
+1964: Then we have a wider group of like about 10,000 people who've contributed at
+  least like one pull
+1970: request at one point to something in homebrew. Um, in the earlier days of GitHub,
+  like homebrew was
+1975: like one of the most like forked and contributed to projects. Um, and then we've
+  got, we reckon like
+1980: tens of millions of users, however, uh, which some of those are, are bots. Um,
+  but you know,
+1986: bots are just as important as humans to us who are maintainers. So we try and
+  make their lives easy
+1991: to have feelings too. Exactly. Almost, almost more important in the automation
+  world, right?
+1996: Yeah. Let's be, let's be kind because eventually they're going to be ruling
+  over us all. So we want
+2002: to make sure we're, we're kind in the game.
+2003: That's why I keep telling the kid to be nice to A-L-E-X-A, but yeah. Yeah. So
+  on the technical
+2012: side, homebrew is built mainly in Ruby. Um, again, that was a language that
+  max liked to work in that
+2019: was kind of available on Mac OS 10 in the kind of early days. Like nowadays,
+  homebrew ships its own
+2024: Ruby because the Mac OS version is too old and all that type of stuff. It has
+  smatterings of bash and
+2031: Swift here and there. And obviously we kind of have to play around with Apple
+  technologies to do stuff
+2036: like building the PKG installer and all this type of stuff. And then essentially
+  the way most people
+2043: interact with homebrew most of the time is just installing some software. So
+  to do that, you would
+2047: type, you know, if you want to install the W get the like open source downloader,
+  you would type brew
+2052: install W get, and then it will like download the binary package that we, that
+  homebrew kind of
+2058: architecture is built for you. It would pull it down to your machine, extract
+  it and get it ready
+2063: to go in like, you know, under a minute basically. Um, so originally homebrew
+  was all built from source
+2068: on your machine. I guess like John mentioned earlier, like gen two and emerge
+  and stuff like that. And,
+2074: you know, back in the good old days of Intel max, your, your fans would be like
+  spinning frantically,
+2080: something like some sort of space shuttle takeoff for a few minutes, uh, while
+  your software was built.
+2084: And then at the end, everyone would have essentially the same artifact. So it
+  was a huge amount of waste
+2089: of time, resources, electricity, heating, space shuttle sound effects, et cetera.
+  Um, so eventually we
+2095: moved, we introduced these things called bottles, which are, um, like binary
+  packages for homebrew,
+2101: essentially. So pre-compiled stuff that you can download. Um, and the instructions
+  to install
+2107: the package that kind of would be programmed by people in this nice little Ruby
+  domain specific
+2112: language were called formula. Um, so formula produced bottles, which were then
+  downloaded.
+2118: So later on, there was this other project coming to the casks. You mentioned
+  Charles,
+2121: um, where there was this kind of adjacent project to homebrew called homebrew
+  cask,
+2127: which thought, Hey, homebrew is nice, but like homebrew is just all installing
+  open source software
+2131: built from source, whatever. But like, wouldn't it be nice if you could install
+  Google Chrome
+2136: by doing brew install Google Chrome. Um, so they had their own little command.
+  It was like brew cask
+2140: install Google Chrome. But I think five or six years ago, um, we sort of, the
+  two projects were merged by
+2147: a Google summer of code student that kind of worked with us. And yeah. And then
+  nowadays, essentially the
+2152: interfaces are the same. So you can type just brew install Google dash Chrome,
+  and then that will install
+2157: Chrome down on your machine and effectively produce the same output as if you'd
+  installed it yourself,
+2163: download it off the website, double click the installer, click through all the
+  buttons, whatever.
+2167: Like it's, that's when I guess with the cask stuff world, this is when we're
+  getting a lot more
+2172: overlap with the kind of Mac admins world, because often we are taking the same
+  pkg files that you
+2177: might have previously been deploying via your MDM tool of choice. And then we're
+  using those same
+2183: pkg files and installing them in the same way. So I think there's, this is where
+  they're kind of
+2188: probably comes the most overlap and the most opportunity for kind of combining
+  efforts,
+2192: but also I would imagine I've never been a Mac Avenue myself, the most potential
+  cause for
+2197: frustration that no, they should be, they should really should be getting this
+  pkg file through our
+2201: way of doing things and not through the Humber way of doing things.
+2204: Except when you're managing machines that developers use. And then it's like
+  trying to manage machines that
+2210: graphic artists use and being like, no, we have to install all your Photoshop
+  plugins or, um, video editors and we
+2219: have to install all your, you know, uh, plugins for the various video editing
+  tools. Like, it's just a nightmare.
+2231: Are your employees practicing safe SaaS? Find out with nudge security. Their
+  patented approach to
+2236: SaaS discovery gives you a full inventory of all apps ever introduced by anyone
+  in your org in minutes,
+2242: no agents, browser plugins, or network proxies required. The best part, you
+  don't even have to know what
+2247: apps you're looking for. After a quick one-time setup with your email provider,
+  nudge security
+2252: discovers and categorizes every SaaS and cloud account, giving you a full inventory
+  of who has access to
+2257: what. You'll see which accounts have MFA enabled, which apps are enrolled in
+  SSO, and an inventory of
+2263: OAuth grants to help you identify risky scopes and revoke grants if needed.
+  Nudge security also includes
+2269: playbooks to automate tedious time-consuming tasks like conducting user access
+  reviews, off-boarding
+2275: employees, orchestrating SSO onboarding, and more. Start a free 14-day trial
+  today at nudgesecurity.com/macadmins.
+2284: So fonts sort of ended up with the joys of font management tools to overcome
+  that. And I guess
+2293: that probably then brings us to work brew with the idea of, well, rather than
+  making this go away and
+2300: saying, all right, no homebrew, which is what we see in some regulated industries,
+  which can make it
+2306: incredibly frustrating for the developers who are used to working that way,
+  frustrating for the Mac admin,
+2312: who now has a list of 400,000 items they need to manage and deploy on the endpoint
+  for the users.
+2319: So, you know, do you want to go through work brew for us and talk about, you
+  know,
+2324: how you're trying to, you know, make things more organization friendly?
+2329: Um, so you mentioned fonts, you should check out homebrew fonts. And then the
+  other thing on homebrew
+2333: that I was going to suggest that Mike might want to mention is brew files, because
+  brew files are a
+2338: super under, like underutilized feature in homebrew. Um, so I don't know, uh,
+  Mike, if you want to say
+2344: anything about that at all.
+2345: Yeah, I guess I could mention that. So brew files, uh, are inspired off this,
+  this package, uh,
+2352: sorry, this repository that's part of homebrew called homebrew bundle. Um, and
+  that lets you have
+2357: a command called brew bundle, which runs a brew file that was sort of inspired
+  by like gem files,
+2362: essentially. Um, for those of you who've kind of played at the Ruby ecosystem,
+  if you haven't,
+2366: it's, if you're in, in NPM land, if you've played with that, it's like package.json
+  files. If you've
+2370: not used either of those things, essentially it's a list of packages. So it's
+  a, it's a way of
+2375: interacting with homebrew and using homebrew, but in a kind of different way.
+  So instead of like
+2379: manually running a bunch of commands or having a script that runs this command
+  and this command,
+2383: this command, instead in a brew file, you can say, well, I want these formula.
+  I want these casks.
+2388: I want say, you know, Postgres if like the database, if you want to have that
+  installed,
+2393: I also want that to be started up like as like a daemon running in the background.
+  Um,
+2398: and various things like that, that you can effectively specify. You can also
+  install stuff
+2403: from the Mac app store and stuff like that. And it basically allows you to specify
+  that in this brew
+2408: file, like in a declarative format. So you can, instead of like having a script
+  that individually
+2413: runs a bunch of commands, brew bundle lets you say, okay, just what I want is
+  everything
+2419: in this file to be set up how I say it will. And you can run brew bundle or
+  brew bundle check
+2425: to say like, Hey, is everything in place there? And that's a very, very quick
+  operation to do.
+2430: And then the, this is nice for kind of, I guess, two ways, like John mentioned
+  this project strap
+2436: I work on. Um, it's my kind of the, probably the only, uh, personal open source
+  project I've ever made
+2441: that has had any sort of, um, repute, I guess. Um, so what that leans on is
+  using this idea of you
+2448: have a brew file of everything you want installed on your machine, like a global
+  brew file, we would call
+2452: it. And then I can say, here's all my formula or my casks or my Mac app store
+  stuff. And then basically,
+2459: like I want, when I provision a new machine or even just when I'm, you know,
+  doing updates and
+2464: restoring myself to a consistent state, here's all the stuff I want you to install.
+  And I can kind of
+2469: commit that file in a repository. That's if you want to go look, I guess we
+  could put it in the show
+2473: notes. You can see like my brew file in my dot files repository that kind of
+  contains Mike's canonical
+2479: list of stuff that he has installed in his machine right now. But you can also,
+  and we use this a lot
+2484: more extensively at GitHub. You could also, if you're kind of working on a bunch
+  of different projects,
+2489: have like one brew file per project. So you could say, okay, well, this Python
+  project uses Postgres,
+2494: it needs Python, it needs wget maybe. And then we also have in the same company,
+  a Ruby project that
+2499: needs this tool and this tool and this tool. And again, there's some overlap
+  with the kind of Mac
+2505: admin space here, because I'm sure, again, you see this world where when organizations
+  grow and
+2512: particularly developers are sometimes very pernickety about what stuff is or
+  is not on
+2516: their machines, right? You don't want to install all of the Ruby stuff for the
+  Python people,
+2521: and you don't want to install the Python stuff for the Ruby people. So it's
+  kind of nice when
+2524: you can segment these kind of groups. And like doing that per project or repository
+  with brew files was
+2530: a nice little way of doing that.
+2531: And I guess if you can do all that stuff in a declarative fashion, if it's just
+  a JSON file,
+2539: basically, does that make building the agent for work brew a lot easier? Because
+  now you've got this
+2547: kind of declarative framework to just plug in and, you know, you send a command
+  with the agent and you
+2552: say, do that, do a thing. And then all the compilation is done on the client
+  side. And now it's not
+2560: something you have to go through in too much depth, maybe with a separate work
+  to build or something.
+2567: Yeah. I mean, the way homebrew works in this way does make things a lot nicer
+  in the work brew space.
+2574: And I guess you mentioned the work brew agent. So that's a nice, I guess, segue
+  to like the way that
+2580: we're building work brew. So we have some big ideas for what we're doing in
+  the future. But right now,
+2586: like the kind of the stuff that we have in private beta essentially is built
+  up of these kind of three
+2593: components, which combined we kind of call work brew. So one is the installer.
+  So I mentioned earlier,
+2599: homebrew has its own like PKG installer, which has essentially worked pretty
+  similar to the kind of
+2606: the download things off the internet package, where the disadvantages are that
+  it needs kind of an
+2613: internet connection, just like fully set up homebrew along the way. You need
+  to have a user that's
+2617: already set up on the machine that is being run with and stuff like that. So
+  it kind of knows to put
+2624: the right stuff in the right place. Whereas the work brew installer is used
+  to set up both homebrew and
+2628: work brew. And it runs homebrew as like a separate work brew user. And as a
+  result, it doesn't need
+2635: you to have provisioned any user on the machine already. So I guess that's one
+  advantage from
+2639: the outset is that if you're doing like a first provisioning of a machine, like
+  all the kind of
+2644: automated stuff where you, you know, it's integrated based on your serial number
+  and pulls everything
+2649: down and sets up the machine for the new hire, exactly how you as the Mac admin
+  would like it to be.
+2654: You can have work brews install and set everything up that way. So like that's,
+  that's, I guess,
+2659: a nice starting point. And it's also designed such that that installation process,
+  you have a fully
+2663: working homebrew after then, which doesn't need to immediately then fetch something
+  from the internet.
+2668: So the work brew installer, as well as installing homebrew, installs this thing
+  we call the work brew agent
+2677: on the machine. So this kind of provides two roles essentially. So one is, it
+  makes that I mentioned
+2683: like homebrew is now running as a separate work brew user on the machine. Like
+  my goal is, I guess,
+2690: from a developer experience perspective is always to kind of try and make things
+  absolutely transparent
+2694: and seamless as possible. So the agent kind of does some sort of essentially
+  like proxying and managing
+2701: of, of homebrew such that you can just run brew. It's actually running work
+  brew instead of running
+2706: homebrew, but it passes everything through and everything looks exactly the
+  same as normal homebrew,
+2711: except when you install stuff, instead of seeing a little beer mug, you see
+  a little coffee cup now
+2715: instead. But other than that, it's kind of managing all that. But then it also
+  runs as a daemon in the
+2720: background, which is basically monitoring what you have installed on your machine.
+  And then
+2726: periodically it reports that up to what we call the work brew console, which
+  is essentially our cloud
+2731: centralized like location that's used for kind of managing and reporting that
+  back.
+2735: So there's kind of two way relationship there between the work brew agent and
+  the work brew console.
+2739: So the work brew agent is periodically sending information to the console saying,
+2744: what packages do you have on your machine? What versions are those packages
+  at?
+2748: So that we then on the work brew console can say, okay, well, Charles has this
+  package installed.
+2754: It's actually really outdated. And we might happen to know that like this version
+  of this package
+2761: has a security vulnerability. So we can then go and say, okay, well, Charles
+  needs to update that stat.
+2767: So previously, like prior to work brew land, that might look like you,
+2772: if you even had a way of figuring out that Charles had this outdated thing,
+  I've seen some
+2778: very pretty horrendous scripts that people have had to try and run through their
+  MDM provider to work
+2783: around the fact that homebrew refuses to be run as root and all this type of
+  stuff to get this
+2787: information back and try and scrape it out of homebrew's JSON, whereas we provide
+  a nice, easy web interface
+2793: instead. So you might have at that point, then you then have to have another
+  hacky script that you
+2798: might've used to then go and try and upgrade something on, on Charles' machine.
+  Whereas because we have this
+2803: two way agent relationship, you can then just say, okay, just upgrade this from
+  the console
+2807: on Charles' machine. Tell me when it's done, show me the logs, show me whether
+  it passed or failed.
+2812: And then you have this kind of ability to essentially just make sure that Charles'
+  homebrew installation
+2818: is set up the way that we want it to be. It's configured the way we want it
+  to be.
+2821: It's, we can run the commands that we need to run when we need to run them.
+  And we're kind of able to
+2826: kind of monitor and make sure that kind of, if there's any old versions or vulnerable
+  versions,
+2830: or even just software, we don't want to be running on Charles' machine. We can
+  kind of see that. And then
+2836: you as the Mac admin can then take whatever actions you want to mainly through
+  the Workbook console itself.
+2840: Love it. Yeah. There's probably plenty of people who think I shouldn't run any
+  software on anything ever
+2846: again. Including Apple when they shut down your Vision Pro almost immediately.
+  That's what happened,
+2853: right? Oh yeah. I, I went to do my first spatial capture and it just never recovered.
+  It just stayed.
+2861: And I think I'm doing a thing, but I'm not. And you reboot and factory, nevermind.
+  Moving on from that.
+2868: I'm getting over the trauma as we speak, mostly because I have the device back
+  in my grubby hands
+2873: and I'm compiling code for it again. By the way, physics. Oh my God. Any kid
+  who ever says,
+2880: I'm never going to use this when they come home from geometry. Yeah, right.
+  You've never tried
+2886: right. Augmented reality code. But moving on from that. This week's episode
+  of the Mac admins podcast
+2895: is brought to you by SIT. Hello Mac admins. Let's talk about the backbone of
+  efficient IT operations,
+2903: understanding how your systems and processes work together. Our sponsor SIT
+  brings you a game
+2910: changing solution, unified IT infrastructure. Picture this, a world where your
+  IT systems seamlessly
+2918: connect, empowering you to optimize and streamline operations, ultimately reducing
+  downtime and boosting
+2924: efficiency. SIT's unified IT infrastructure offers a panoramic asset inventory
+  view, allowing you to track
+2933: and manage your assets effortlessly. Monitor your SaaS applications with ease
+  and get a comprehensive usage
+2940: view, ensuring everything runs like a well-oiled machine. But here's the real
+  magic. By integrating your
+2947: IT infrastructure, SIT provides invaluable insights for internal service improvements.
+  It's like having
+2954: a crystal clear roadmap for enhancing your IT ecosystem. Ready to unify your
+  IT operations? Dive into SIT. Visit SIT.io.
+2965: That's S-I-I-T.io to explore how SIT can transform your IT infrastructure. Thanks
+  again to SIT for sponsoring this
+2976: episode of the Mac admins podcast.
+2977: So I don't know how you know how many outdated packages I have on my home boxes,
+  but let's talk
+2985: about policies from the console. So I have a developer who has an outdated version
+  of a formula
+2993: with a known security vulnerability or something like that. You mentioned that
+  there are certain
+2999: steps that you can take. I guess, what other restrictions can I apply and what
+  kind of
+3006: remediations can I put in place, if that makes sense? Because you might not
+  want to just say,
+3012: oh, and install the latest version of this library or something because
+3017: it's a developer that might break my bills. I don't know.
+3020: Consistency is a goal, I guess.
+3024: So you said something that was really interesting a little bit earlier, which
+  is, you know,
+3027: developers are special in some kind of way, kind of like how the creative folks
+  are or,
+3033: you know, the video editors or the people using Adobe's tools. And that's right.
+  Like they do have
+3040: different needs than the other personas kind of at your company. And something
+  that we've uncovered
+3045: from talking to lots of different like Mac admins and talking to lots of different
+  developers and
+3049: also talking to a lot of different security people is that as an organization
+  grows and adds more and
+3055: more and more endpoints where homebrew is installed, all three of those personas
+  have needs that come up.
+3060: You know, from the security perspective, it's how do I mitigate the exposure
+  to a critical
+3065: security vulnerability that was just announced? How do I quickly lock that down?
+  From a developer's
+3069: perspective, it's, you know, how do I get my machine up and running on the first
+  day of work
+3073: or when I start working on a new project really quickly without having to deal
+  with some kind
+3078: of a policy of asking for the ability to install something that I need to do
+  my job? And from the
+3084: IT person's perspective, it's, you know, how do I make sure that I'm providing
+  a great service,
+3088: a great level of service to everybody in the company while also like making
+  sure I tick all the boxes,
+3092: right? And so this is something we spent a lot of time talking about and thinking
+  about.
+3096: And I think Mike has a really good perspective on this as well, which is that
+  we always want to be,
+3102: you know, improving the lives of all of these different stakeholders while never,
+  you know,
+3106: compromising on how the existing, like how users are already accustomed to using
+  homebrew and what
+3112: they expect out of homebrew. So I just wanted to kind of like get ahead of the
+  conversation you were
+3117: saying about like policies and whatnot with our philosophy of, you know, how
+  we approach this. And so,
+3122: you know, there's a lot of different things that we can do to solve the problems
+  that you're
+3126: trying to solve. And, you know, for example, if something goes out of date,
+  you know, Marcus
+3132: was saying, but we can't just change the version out from under them, they might
+  be reliant on that,
+3136: right? So I think that there's definitely different kind of postures that organizations
+  can take,
+3142: and we want to support the ability for different organizations that have different
+  needs to take
+3147: a different posture. So maybe, Mike, I think you wanted to continue a little
+  bit more about,
+3153: you know, the practicality of like how to do some of that stuff.
+3156: Yeah. So essentially what we have today, like we're, as I mentioned before,
+  we're in private
+3163: beta and we're kind of working with some kind of customers we have right now,
+  and we're actively
+3167: looking for more of this sounds interesting to you to kind of collaborate with
+  us as design partners.
+3172: But basically, like we, an example of a policy that we have right now is the
+  ability to say,
+3180: and this is in our kind of little demo on our website, say, hey, we don't want
+  to let you
+3184: install anything with these licenses. So this is something, again, I've kind
+  of heard in Homebrew
+3189: for a very long time, is that there's some companies that just do not like,
+  say like,
+3194: HEPL v3, right? It's a license. That's, you know, it's not one of those podcasts
+  where we can
+3199: unfortunately nerd out on the open source licensing for too long. But the TLDR
+  essentially is that it's
+3205: a license that is very hard to comply with. And a license where if you accidentally
+  use that in
+3214: your proprietary software project, like, you're potentially in trouble, right?
+  So some organizations
+3221: have found it easier to just say, hey, like, we just don't want anyone to install
+  using this license
+3226: ever, right? So with Workgroup, you can just say that, like, you can configure
+  that essentially for
+3231: your organization. Like, you say, yeah, just forbid this license. And then when
+  people try and install
+3236: using that license, it will say, no, sorry, you can't do that. And that, to
+  me, like, that's an example
+3242: of something where the licenses are relatively, like, minimal enough that AGPL
+  v3 that there's,
+3249: you know, it's fairly reasonable to just say, okay, well, you just can't do
+  this. But then when
+3255: you get beyond that, we essentially, we're building out a lot of flexibility
+  here right now. And we
+3260: haven't, we're essentially figuring out with individual customers what their
+  individual policies
+3265: want to be. And as John mentioned, that's going to kind of differ. But we're
+  trying to make sure that
+3270: as we do that, that, like, any policy is essentially, as John mentioned, not
+  stopping people from doing
+3276: their job, but at the same time, meaning that you can kind of get the compliance
+  needs you want.
+3282: And the worst case scenario, I think, for everyone, which again, is what we're
+  trying to address,
+3286: is I'm sure the developers hate it if you just say as an organization, hey,
+  we just ban Homebrew,
+3292: we just don't let you use this, right? And I'm sure as, like, Mac admins, like,
+  you don't want to be
+3297: doing that as well, right? Like, that's, I can only imagine that's a sort of
+  last resort that makes
+3302: you not feel great when you're having to say, hey, people want to use this software,
+  but we just can't
+3307: let them at all. It's, like, not a good outcome. So to us, like, we're trying
+  to deliver the best we can
+3314: to both of those groups at the same time, basically. Like, I think we have an
+  offering, even right now,
+3319: that makes the life's better for IT admins and security people and engineering
+  people. And I've been
+3327: very determined since day one that we do not build anything that looks like
+  a, you know, crippled
+3335: version of Homebrew, because that's what's, you know, required. Because ultimately,
+  people won't want
+3340: to use that. So that doesn't, again, serve the interests of the IT admins or
+  the security people
+3345: either, because it's, you know, it's not the same as maybe banning Homebrew
+  entirely, but it's not
+3351: great. So, like, we're building, trying to build something where, right now,
+  we're building essentially
+3356: Workbrew to have feature parity with Homebrew for an engineer. But as time goes
+  on, we expect Workbrew
+3361: will be a better version of Homebrew for the engineer as well, and that they
+  would actively rather be using
+3366: this, and the IT admin would rather be using this, and the security department
+  in your company would
+3371: rather you be using this as well. So rather than saying we don't allow you to
+  use Homebrew in this
+3377: organisation, it's like, this is how we implement Homebrew in this organisation.
+  If there's anything
+3384: that's not giving you what you need on your machine, here's where we put in
+  the internal feature requests
+3389: or requests for, for things that you need to be able to do on, on your machine.
+  And this is what our,
+3395: you know, approval process is to get, get those things on your machine.
+3398: Exactly.
+3399: Yeah. And for, for an example, I'm sure you've seen engineering teams where
+  when you first,
+3405: you know, you first set up the project, there's a checklist, maybe there's like,
+  you know,
+3409: a read me document, it's one or two pages, and it says, first make sure you
+  have brew installed,
+3413: then install these 15 packages, you know, then make sure you like start these
+  services and do this
+3418: and that and the other thing. And the kind of like better world for the engineer
+  is that stuff's just
+3425: automated. It just works. And the better world for the IT administrator is that
+  stuff's always up to
+3430: date and working with, you know, the code bases that they're working on. And
+  if there's a security
+3436: vulnerability, you know, the security team gets a notice and you know how many
+  endpoints are
+3441: affected, who hasn't updated yet, you can nag them, or you can, for example,
+  you know,
+3446: I had a customer that I spoke to that rather than enforcing the policy of
+3450: blocking something from happening on their machine, or stopping them from installing
+  something,
+3457: or even updating software for them, instead, their preference is to send out
+  an alert to that
+3462: end user and say, hey, you're on X version, you need to be on Y version as soon
+  as possible.
+3467: If it's not done within 48 hours, you'll be blocked from our VPN, right? And
+  so that's like
+3473: a different kind of enforcement mechanism than saying, you just can't do this
+  thing. Instead,
+3479: it's like, hey, this is very important. As an organization, we take security
+  very seriously.
+3483: We take our, you know, compliance very seriously. Please do the things that
+  you need to do to have
+3487: good practices. And if you don't, it's not that you're not going to be able
+  to access your machine,
+3493: but you're not going to be able to access production. You're not going to be
+  able to access any of these
+3496: machines that have highly sensitive information on them. Um, because that's,
+  you know, and they
+3501: give you the out, you know, they give you the out upfront to say, please fix
+  this now.
+3504: So something you mentioned just then, which, which really resonated with me
+  is the idea of sort of
+3510: automating that configuration and setup of developer machines. There's been
+  so many scenarios where
+3516: I've been working with organizations, they're going from hand-built machines
+  to using MDM for
+3522: zero touch enrollment, and everything's great until we get to the developers.
+  And then I get handed that
+3528: read me file you mentioned there, and they're going, oh, can you automate this
+  to build it? So,
+3532: you know, it's quite often a set of seemingly manual processes, although they
+  may be leveraging some
+3539: automation tools. So you go through and build out orchestration for that to
+  be able to be
+3544: automatically set up on the machine. And then you go and get them to start testing
+  it. And they're like,
+3548: oh, that's out of date. Um, that was what, that was what it was two weeks ago
+  when we gave you that
+3554: file. Now it's something else. And you go through and update it and then find
+  that it's changed again.
+3558: So this idea of being able to decouple the building and configuration and securing
+  of the machine
+3564: in general from the setting up of that developer environment with things specific
+  for that
+3570: even team. Because that's also when you discover that, great, that read me file
+  was only for this
+3574: team here. They forgot to tell you that, you know, because it's all about them.
+  And then there's the
+3580: team next door that doesn't have a read me file. They use a whole other different
+  way of provisioning
+3584: their team. So that way to be able to get that granular configuration and, you
+  know, have that managed and
+3592: updated by people who have that deep knowledge of what those particular teams
+  need in conjunction with
+3598: security, operations, those sorts of things is, you know, a really exciting
+  prospect for those of us who
+3605: have tried to make that a better experience with tools that maybe weren't designed
+  properly around that.
+3612: I've heard this story a bunch of times in talking to different like IT admins,
+  Mac admins, and the
+3619: story of my zero touch deployment doesn't work with Homebrew is like super common.
+  Like you have to
+3625: have the account already set up. You can't do it during, you know, the enrollment
+  phase. You have to wait
+3630: until it's done, which leads to that manual, which is five pages of steps that
+  you have to do manually.
+3634: Now with Workbrew, our goal is to say zero touch deployment is totally possible.
+  You get Workbrew installed,
+3640: the agents there, and then imagine you have an engineering team, or you have
+  five different engineering teams, and
+3645: they have certain dependencies that they need installed. They can self-manage
+  that via Workbrew for the entire
+3650: team. So, for example, a, you know, a lead engineer on a project might say,
+  "What we need in this situation is
+3658: different than it used to be last week." And they go and they make the change,
+  and then that's shared out
+3663: automatically with everybody on their team, right? This is definitely something
+  that's possible, you know, for us in
+3669: the future. Right now, our main focus area is like on the Mac admins needs.
+  So not serve the Mac admins
+3677: needs without, you know, hurting the experience for the other folks involved.
+  And then kind of as we
+3683: continue down this path, it's things like we were just talking about, like helping
+  with better development
+3688: environment set up and, you know, doing different things around security, vulnerability
+  scanning,
+3693: or CVE detection, or detection and remediation and things like that. So yeah,
+  definitely.
+3699: Yeah.
+3701: Correct me if I'm wrong. I can get, because I think I've done this, a dump of
+  all the licenses used from
+3710: stuff that's been installed by Homebrew on a machine, right?
+3713: That's a thing. Yeah. So you've already got all that in JSON, and you've got
+  this declarative
+3721: environment. And so now you can just build a policy engine by doing a little
+  regex on those things.
+3727: And so if people have other policies they want, then that's just a matter of,
+  let's do some more of that. And, or let's
+3737: build a framework where you can just insert your own fields and allow for, you
+  know, globbing or whatever in there. Right?
+3745: Well, yeah. And of course, this is the beauty of the relationship we have as
+  well, in that building some of these features,
+3751: like you mentioned, like what's in the JSON and what's not. And this is all,
+  you know, publicly exposed stuff where
+3759: in theory, Charles, you could, you know, just bang out your own script to do
+  a similar thing to the workroom console
+3767: does or whatever. But I guess what we've been finding, I guess, I don't know
+  how Charles and Marcus and John
+3775: and Vanessa are going to groan because they've heard this, me make this metaphor
+  about a billion times at this point.
+3780: But, uh, like how much you've played with like modern Lego. Right. Whereas when
+  I was younger,
+3785: it felt like Lego was a lot more kind of modular and there was like, you know,
+  like a bunch of different bricks,
+3792: a bunch of different components. You bought a thing and you could like rebuild
+  it in different ways.
+3796: But like the Lego my six year old plays with essentially has two worlds, right?
+  It either has the, you go to the Lego store
+3803: and you buy a box of like 500 bricks and then you just build those bricks into
+  whatever monstrosity you want.
+3809: Or there's like the hyper customized, like this is a Velociraptor.
+3814: And this is the only piece of Lego that has this particular Velociraptor claw
+  or whatever.
+3818: And I guess like I see what we're doing with work for the open source project
+  in some ways, um, as being comparable, I guess we've
+3827: already banged on the Linux desktop here a little bit. So I'll, I'll bring out
+  my favorite Linux desktop quote, which was, uh, Linux on the desktop is only free
+  if your time is worth nothing.
+3837: Um, I remember that from back in the day. And there's a similar one here. I
+  think where like, yeah, I mean, sure.
+3846: Like in your organization, could you build all this from scratch using the open
+  source project and all the open data that's available? Like, yeah.
+3852: Yeah. And I also hope your time is worth nothing because that's going to take
+  you forever.
+3857: And you're going to have to kind of, you know, you probably don't have the level
+  of expertise with the open source project to be able to do that.
+3863: Whereas even while we've been building work brew, this is the nice kind of collaborative
+  aspect I have for my CTO hat.
+3870: And my project leader hat is, you know, there's some stuff sometimes where we're
+  like, Oh, to solve this policy problem, we need to have more stuff in the JSON that
+  homebrew outputs.
+3880: And it's like, well, I can then just make a PR to homebrew and then say, Hey,
+  other homebrew maintainers, does it seem reasonable that we had this JSON field?
+3888: And they were like, sure, let's add this in. Right. But it's like, but are,
+  you know, in your organization, are you going to do that?
+3894: Are you going to have the confidence and know how to do that? Whatever. Like,
+  maybe, like maybe.
+3899: Yeah. I wouldn't want to do that, but I also wouldn't want to maintain my own
+  separate agent.
+3905: If I can pay someone else to have that sovereign agent and console provided
+  that they're SOC 2 compliant or whatever other things that, that I need my organization
+  to comply with, you know, so.
+3920: Also brings in the concept that I love Rich Troughton's term of this, the lottery
+  bus, rather than saying someone getting hit by a bus, they get hit by the lottery
+  bus.
+3928: So you have that person in your organization who would love nothing more than
+  to spend that time building out all of that information.
+3936: And I've been in this position before where somebody has moved on to another
+  role or they've won the lottery or whatever, and then you're presented with their
+  code.
+3944: And it's like, this is your job to maintain this and you're reading it and going,
+  I'm not smart enough to be able to do this.
+3951: And I don't have the patience to become smart enough to be able to do this.
+3955: So, you know, having an organization that is going to be looking after that
+  for you so that you're not at risk of either having someone who can't move on to
+  more productive things to be doing with their time or that person no longer being
+  there and then being caught between a rock and a hard place.
+3975: Totally.
+3976: So let's talk security.
+3979: So have you put anything into Workbrew to try and make it more secure than regular
+  Homebrew to give that functionality to the organizations that are using it?
+3989: Was there anything you've found that was missing in Homebrew?
+3992: Yeah, so I mean, the biggest thing, as I mentioned before, is like that Workbrew
+  is run by it in its own separate user.
+3999: And so, you know, as I said, Homebrew relies a certain amount on the macOS sandbox
+  and stuff like that.
+4005: But there's a degree of just separation there, which is essentially that this
+  stuff is not we've never seen a lot of stuff exploited out there in the wild.
+4017: But there's ways in which the Homebrew security model had a certain degree of
+  trust of the code being run as the same user, which we wanted to go a step beyond
+  that with Workbrew.
+4028: It serves two purposes in some ways where both you have the multi-user system
+  perspective, you have the ability to kind of provision that Workbrew user on boot
+  before the user may have even chosen their username.
+4039: But you also have the separation of saying Workbrew is running over here in
+  its own little user and it's not able to just like read and write arbitrary files
+  from, you know, my documents folder or my iCloud library or whatever it may be.
+4056: And that that that separation is a little bit more clean and better.
+4060: And as I said, that that's the one like the way it actually works that we consider
+  to be more secure.
+4066: But then there's also just the kind of the increased security posture of in
+  Homebrew, for example, like you can disable auto updates.
+4073: And then if you say, hey, which packages are outdated that relies on your like
+  local essentially store of which packages are up to date and not up to date being
+  itself up to date.
+4086: So you can end up in slightly confusing user configurations where it's like,
+  hey, well, we have Homebrew says all my packages are up to date and there's nothing
+  to worry about.
+4096: But actually, we know in Workbrew land that like because we pull directly from
+  Homebrew sources itself that like, OK, well, you say that version one point two
+  is the newest on your machine.
+4109: But we know one point three was already released and we know that there's a
+  critical vulnerability or whatever.
+4114: So like we know that not only do you need to upgrade that package, but you also
+  need to upgrade your like definitions on that machine of what the packages are.
+4122: So essentially, we have a lower level of trust in the data on any given machine
+  and instead like a centralized approach where we can tell like what's outdated and
+  what's not.
+4133: No, I'd also add to that that the security posture of an organization is different
+  than the security posture of an individual.
+4139: And from organization to organization, that's also different.
+4143: So I don't really think about it as how is Workbrew more secure than Homebrew.
+4147: It's when you use Homebrew at work, how are the security needs different than
+  they are for an individual user?
+4153: And how can we make sure that we're serving them correctly?
+4156: And depending on the organization, that posture can look very different.
+4160: So I talked to some companies where the head of security is like, we really
+  trust our engineers.
+4165: We never want to be blocking for them.
+4167: We give them root access on their machines.
+4169: We teach them how to do things in a secure way and we rely on them to report
+  and have auditing and things like that.
+4175: And then there are other places maybe in a highly regulated industry.
+4178: Let's say, for example, a financial institution where they, by regulation, cannot
+  just give the keys to the castle to their developers.
+4187: Things have to be super tight and locked down.
+4189: And so our position is to make those different security postures viable depending
+  on what the organization needs.
+4197: And most of those challenges arise not just out of using Homebrew, but using
+  Homebrew across many endpoints at the same time and having to have compliance and
+  security across all of the endpoints.
+4209: Having one machine that's got three pieces of vulnerable software is one thing,
+  but having a thousand machines where only one of them has three pieces of software
+  that are vulnerable is a whole different story from a risk perspective.
+4224: And having that visibility over the machines to not just assume everybody is
+  at the same degree of vulnerability and to be able to then make decisions on how
+  much effort are we going to put in?
+4238: Is this something where we need to spin up a task force to track and resolve
+  this?
+4243: Or do we just need to send someone a Slack message and say, can you please connect
+  your machine to the internet so we can actually make sure it's up to date?
+4253: And, oh, that's right.
+4255: That person's actually on leave and their machine's off in a cupboard.
+4258: So that's the mitigation of the risk.
+4262: So we're going to be able to know what's going on there.
+4265: Another mitigation, I guess, is integration with MDM or other DevSecOps, DevOps,
+  InfoSec, whatever other acronym or shortened term we can insert here for all the
+  people who love those.
+4282: But working with MDM providers, I would say, is part of that.
+4285: So if the world is just an endpoint with a whole bunch of more JSON or XML away,
+  how are you all thinking about working with MDM providers or any of those other
+  types of tools that we mentioned?
+4300: Yeah, so we're building the workflow console, particularly to be kind of pretty
+  tightly integrated with MDM providers and SSO providers as well, because that's
+  obviously the two seem to go hand in hand at this point.
+4315: In terms of specific companies, I don't want to mention who we're picking first.
+4322: But essentially, if you were to list the top five MDM providers, we're actively
+  building for one or two of them right now.
+4329: And we essentially will, within the year, I would imagine, build support for
+  essentially everyone.
+4335: But yeah, again, this is what we're actively kind of working with our design
+  partners are like early private beta customers on is we're prioritizing the MDM
+  solutions that they use.
+4347: And if you're chomping at the bit to get involved with Homebrew and you really,
+  really want to see your MDM solution built sooner rather than later, then that would
+  be a good reason for you to reach out to us.
+4358: And we will do that.
+4360: Yeah, and I think that the strategy here is that as a company, we know that
+  there are a lot of different tools that the different personas involved in this
+  space are using.
+4373: And to start, our main area of focus is eliminating the needs to do custom things
+  for Homebrew across your fleet.
+4383: So that might be you have a vulnerability scanner.
+4386: How do you make sure that vulnerability scanner is scanning all the packages
+  installed by Homebrew?
+4389: Well, use Workbrew.
+4391: You have an MDM tool that you use for zero-touch deployment and you want to
+  deploy Homebrew and that doesn't work? Use Workbrew.
+4397: You know, you have some kind of engineering productivity tool that helps engineers
+  get up to speed faster.
+4405: Like we want to integrate with that with Workbrew, right?
+4409: Like every different, you know, touch point in the organization, we want to
+  make sure that there's an easy story for, you know, how to make your life easier
+  without having to write your own glue code, without having to, you know, go and
+  depend on some gist that someone else put together and it just works.
+4423: So something that's, you know, my brain started spinning around thinking of
+  all the possibilities here and usually when we're trying to build automation and
+  build security and consistency, I like to put myself in the hands of the user and
+  go, all right, well, what's the user going to try and do here that may break this?
+4441: So one of the things that came to mind is what happens if you're running Workbrew
+  and you've got an engineer that's got, you know, the ability to install software
+  and they go and install Homebrew on their machine?
+4453: What happens if you try and run the two of them together?
+4455: Well, so essentially the two of them are run together right now.
+4459: That's, I guess there's two parts to this.
+4461: So one is if Workbrew uses Homebrew in the default location.
+4466: So Homebrew essentially insists on being owned by your typically like your kind
+  of admin user on the machine that's running.
+4476: So mic user on my machine.
+4478: So essentially the only difference in Workbrew land is that there's still Homebrew,
+  the open source project, but it's now owned by the Workbrew user instead of the
+  mic user.
+4487: And then when I run brew, it's running Workbrew, which then just passes through
+  to that Workbrew user essentially like and nicely handles all the permissions there.
+4497: But the other part of that, I guess, with what you mentioned is, well, what
+  if, because you can technically install Homebrew anywhere.
+4505: So what if that user was to go and install some random version of Homebrew somewhere
+  random on their machine?
+4511: So that's something, again, that we've kind of built into Homebrew.
+4515: It's kind of not really enforceable in Homebrew without Workbrew, but we now
+  have the ability to kind of set some of these policies at like a system wide level.
+4523: So if you install any Homebrew anywhere in the system, you can set this policy
+  and effectively restrict any Homebrew installation that any user has installed and
+  not just a one specific installation that the user has manually configured as per
+  your organization readme or whatever, like we might have mentioned earlier.
+4544: It's like you've come across this problem before.
+4547: So a related question that I've heard people ask is the other way around.
+4551: What happens if you install Workbrew, but they already have Homebrew installed?
+4554: So we often talk about this idea of like zero touch deployment and provisioning
+  the machines.
+4558: But also you have, you know, 1500 machines out in production right now with
+  Homebrew installed on them, and each one of them has 100 packages installed via
+  Homebrew.
+4566: What happens when you do the deployment?
+4567: Well, what's great about it is with the Workbrew installer, it effectively just
+  upgrades their permissions to the point where it's under a Workbrew user, but all
+  of their installed packages continue to work.
+4576: All of their installed, like it's as if it had been Workbrew from day one.
+4581: Awesome.
+4582: No, that's, that's fantastic.
+4584: So let's talk about the future a little bit.
+4586: So since you're building on top of Homebrew and actively involved as possible,
+  how are you thinking about the Workbrew relationship with the open source project
+  ongoing?
+4595: So we basically tried to make sure that we have extremely high levels of trust
+  for the open source project from the early stages, essentially.
+4607: So before we even kind of make Workbrew the company, I reached out to a bunch
+  of Homebrew maintainers and the kind of folks on leadership there and said like,
+  hey, we're going to tell you a bunch of stuff or we tell our potential customers,
+  like, and we're going to trust you to like, do us the right thing and not immediately
+  screenshot this and put this on the internet.
+4629: And if you do that, then we're going to be able to have a long, nice, very trustworthy
+  relationship.
+4634: And so far that that approach, I think, from both sides has gone really well.
+4639: Like, so we, through extending that trust, and I guess through some of the people
+  in our community seeing other projects that have not extended that trust and it's
+  gone badly, we've kind of built a really nice culture where we are able to kind
+  of have very frank and open discussions with the Homebrew maintainers in more private
+  spaces,
+4661: because both parties can be franker in those situations.
+4666: But we also have a nice kind of situation now where we have people like Vanessa,
+  who's deeply involved with Workbrew, but also has recently been elected to the Homebrew
+  PLC.
+4677: So that's kind of partly an acknowledgement as well that like, there's a kind
+  of growing relationship between these two organizations.
+4683: And also I think just the fairly strict separation we've gone for with the naming
+  and stuff like that.
+4688: Like we're not selling Homebrew enterprise or whatever, right?
+4692: We're selling a separate product that is called Workbrew that is very heavily
+  integrated with and commercializing some of the ecosystem around Homebrew, but not
+  Homebrew itself.
+4704: We're not trying to take Homebrew and saying, you know, you need to pay money
+  for this or whatever.
+4710: And also, I guess like our plan from day one, and I stand by this, and this
+  is one of the reasons why I'm so excited about Workbrew is that in five or 10 years,
+  if you've never heard of Workbrew, which if we are successful, like we would like
+  to be, that will hopefully be unlikely.
+4725: But if you work in tech, you love Homebrew, you never hear of Workbrew, you
+  will look back at like this sort of time as an inflection point in which Homebrew
+  gets way better for everyone in the next kind of five or 10 years, right?
+4740: And I think that is enabled by a lot of things.
+4744: You mentioned the relationship with the open source project, like Homebrew has
+  its own governance structures in place.
+4749: Homebrew has elections.
+4750: It has its own bank accounts through Open Collective.
+4753: It has all these kind of policies on how the project is run.
+4756: It has like essentially this kind of really quite mature governing nonprofit
+  structure at this point.
+4763: So the nice thing about that is both parties are kind of protected through that.
+4767: So Workbrew has had to be set up as an external organization of its own thing
+  because we couldn't just hijack Homebrew even though we wanted to, which we wouldn't
+  and didn't.
+4779: But it also means that the open source project kind of has the ability to decide
+  how it wants to kind of have its relationship with Workbrew and how we're going
+  to grow that with time.
+4788: But essentially, like, you know, my view with this stuff is it's natural with
+  various things where people have seen this stuff maybe go wrong in the past with
+  open source software and companies.
+4800: It's natural for people to maybe be a little bit afraid or a little bit suspicious
+  on both ends.
+4804: But if trust is something I believe is like earned rather than just given.
+4809: And I think we have earned a lot of trust from the open source community already
+  around Homebrew.
+4814: And we continue to prioritize earning that trust and building that and showing
+  that we are the best possible people to be doing this with the community and with
+  our customers.
+4825: I've seen it go right plenty, especially when you have a motif.
+4831: Let's call it a motif.
+4832: I'm not sure what other better word to use where Homebrew has like this beer
+  iconography and Workbrew has this coffee iconography.
+4842: I mean, you couldn't have made this up.
+4844: You literally did make it up.
+4846: But I love that kind of symmetry between this, like, coffee's for work, beers
+  for home.
+4855: You know, that works very well for me in my head.
+4858: So you mentioned beta.
+4859: What can we expect from Workbrew in the coming weeks and months?
+4863: So I mentioned before we're in private beta right now.
+4868: So what essentially that means is we're working with a small group of companies
+  we call design partners.
+4873: So essentially they are people who are coming on board with the expectation
+  that Workbrew is not done yet.
+4879: We're not 1.0.
+4881: We're not public.
+4882: And so they're kind of working with us to provide lots of feedback for us while
+  we build something that is more in keeping with our needs.
+4890: And maybe, you know, if we had a roadmap of things, if they say this thing which
+  is on your roadmap is really, really important to us.
+4898: And we really want this ASAP, then we look at our roadmap and we adjust it according
+  to their needs.
+4903: So if that's something that interests anyone listening to this, then please
+  come and talk to us about that at workbrew.com/macadmins.
+4911: That's the best way to kind of reach out to us there.
+4913: But we're expecting if that, you know, if you want to kind of wait and see a
+  little bit more, we're expecting that we will have a public beta or maybe even a
+  full public launch at some point later in this year.
+4926: And you can kind of follow along.
+4928: We'll be kind of making sure that we kind of announce and keep people posted
+  in our various kind of internet profiles and in the Mac admins community on Slack
+  as well.
+4937: We've been kind of keeping people up to date in there because we've got a Workbrew
+  channel in there in which people seem to be quite interested.
+4943: And yeah, and also if you fancy going in there at any time and just, you know,
+  at mentioning me or John or Vanessa and asking us random questions about Workbrew,
+  then that's a good place to do that as well.
+4954: Thank you all so much for coming on, talking about what you're working on, talking
+  about private betas.
+4961: I'm in one right now with some software I'm working on.
+4963: It can be incredibly infuriating when you don't know exactly what you're allowed
+  to say or don't want to over promise for the future or any of that.
+4971: So thank you so much.
+4973: And also thank you for the background on all the homebrew stuff and the contributions
+  to all the homebrew stuff, because that has been incredibly useful to me over the
+  years.
+4986: I mean, I went from spending sometimes a day or two to get some of these packages
+  installed, like Libi mobile device, I think was an early one that I used homebrew
+  and I got it done in like five minutes.
+4998: Like, oh, my God, I just got a whole day's worth of work done in like five minutes.
+5003: That's crazy.
+5004: So thank you for all of that.
+5007: We just want to say a huge thank you to all of our wonderful Patreon backers
+  who make sure that these episodes go out every week.
+5015: Weldon Dodd, thank you.
+5016: William Smith, thank you.
+5017: Justin Holt, thank you.
+5019: Daniel McLaughlin, thank you.
+5021: Chad Swarthout, thank you.
+5022: Tim Sutton, thank you.
+5023: Steven Weinstein, thank you.
+5025: Command Control Power, thanks, guys.
+5027: Sebastian Nash, thank you.
+5030: Will O'Neill, thank you.
+5031: Joe Sfara, Nate Sinall, thank you.
+5034: Tobias Linder from AnyKey, Adam Berg, Hamlin Crewson, Stu McDonald, Jeffrey
+  Compton, Anoush Dorville from Advisory, thank you.
+5042: Bill Stites, thank you.
+5043: Melvin Vives, thank you.
+5045: Mike Boylan, Rick Goody, Michael Tsai, thank you.
+5048: Adam Selby, Dwayne Moss, Pax, Julian Reddick, and Tim Camps.
+5053: Thank you all so much for your wonderful sponsorship of the Mac Admins Podcast.
+5060: We happen to have a bonus question.
+5063: So, Marcus, do you want to ask it, or do you want me?
+5066: Yeah, I'll ask the bonus question.
+5069: So, what's the silliest thing you've ever had to write a package for?
+5074: So, we can have some time to think.
+5076: But does anyone want to go first?
+5078: Yeah, I'll start.
+5080: It's a sort of slight dodge of the question in that it's technically an error
+  message.
+5085: But if you type brew install updog into homebrew, then it implies error what's
+  updog.
+5097: So, there's actually a specific code to handle that particular case that was
+  reviewed and approved, I believe, by myself and some other people back in the day.
+5106: That's awesome.
+5108: And I'm guessing that got reviewed very quickly.
+5110: Oh, yeah.
+5111: That was a must-have feature.
+5113: Definitely a feature.
+5116: I don't know if it's silly, but most of the packages, like the silly packages
+  that I've contributed, are probably against homebrew's policy.
+5127: Because similar to Wikipedia, I think there's a policy that says, like, on Wikipedia,
+  don't edit your own Wikipedia page.
+5132: And on homebrew, it's like, don't publish your own packages.
+5135: So, I have, like, a handful of desktop apps that I built with Electron over
+  the years that I've, like, sent PRs to, you know, homebrew Cask.
+5143: Maybe it was before Cask was merged into Brew and maybe they didn't have that
+  policy.
+5147: I'm going to go with that.
+5148: But, yeah, I've done a handful of different desktop apps that I've written and
+  distributed through homebrew in that way.
+5156: Love it.
+5157: And I don't think I've written a package, but I think that means Mike is going
+  to make me in the coming days.
+5162: Fair enough.
+5163: How about you, Marcus?
+5165: You've got to have something good.
+5167: You used to.
+5168: Yeah.
+5169: Oh, no, I've done dreadful things.
+5171: You know, there was the silly one.
+5174: There was the getting, which I'm sure as people developing or working with developers,
+  the security in air quotes software that usually slows everything down to the point
+  where developers can't work.
+5187: So we decided to create a piece of software that would, which was really just
+  a package that would massively automate that process.
+5194: So it was just a launch demon that shut the machine down, which gave the same
+  experience of running those kind of security tools without having to wait for it
+  to kernel panic and shut down.
+5205: I just did it straight away.
+5206: But the worst package I've had to write or the silliest package I've had to
+  write because of choices that a developer made was for some USB microscope software
+  that required licensing, despite the fact you needed this expensive microscope to
+  be able to use the software.
+5226: And the developer was applying the license file in ways that I could not work
+  out how to automate.
+5235: So, you know, the process we normally find where you can just, you know, dump
+  a license file somewhere in the operating system and it will detect it or you can
+  work out what that license file is after you manually write it and put it in there.
+5247: I could not work out what they were doing here.
+5248: And so in the end, I created a package that would open up a text file with that
+  license key in it, open up the licensing window and a prompt to tell the user copy
+  and paste this into there and then clean it up and walk away and solve the next
+  problem.
+5267: I mean, it's a lot faster than installing Selenium and then using Selenium or
+  something like that.
+5274: Exactly.
+5275: And the other thing that made me laugh was this was also not a license file
+  that updated every year or anything like that.
+5280: So I'm guessing that school is potentially still using the package I created,
+  which scares me on a whole other level.
+5288: But what about you, Charles?
+5290: What's the silliest thing you've written a package for?
+5293: Um, I would say, uh, to disable natural scrolling or to, uh, remember when Apple
+  switched from you scroll up to you scroll down, you know, trying to mirror the way
+  the iPhone worked.
+5307: Um, I, I was, uh, a Luddite, uh, and I refused to scroll the opposite direction,
+  uh, for a few years.
+5318: I have since corrected the error of my voice.
+5322: So my friends at Apple cannot scoff at me, but I was slow to adopt the new modality.
+5328: So I, I literally used one of my colleagues machines last week and they had
+  it set to the old slash incorrect way of scrolling.
+5339: And, and, and I judged them.
+5341: I judged them.
+5342: I judged them as a result of that.
+5344: Just, just turn your magic trackpad upside down and then.
+5349: Exactly.
+5350: Or if you're not using a magic trackpad, just turn the computer upside down
+  and do it that way.
+5360: Love it.
+5361: Well, thank you so much for, for joining us here on the podcast.
+5365: We're, we're really, um, excited with what you're creating and can't wait to
+  see it where it gets to and what sort of, um, things you're going to be able to
+  do to make life a lot easier, not just for Mac admins, but for developers wanting
+  to be able to get that functionality of homebrew in their organization.
+5381: So if people want to hear more about what you're doing, where can they find
+  you on the internet?
+5386: The best, the best place to find us is workbrew.com.
+5389: And for folks listening to this podcast, head to workbrew.com slash Mac admins,
+  where we'll have a bunch of additional information specifically for this audience.
+5396: Awesome.
+5397: And we'll put that link in the show notes.
+5399: Uh, thank you to our sponsors.
+5402: Sorry, James, I'll get you to put the latest sponsor list in here.
+5405: With your dulcet tones.
+5407: Yes.
+5408: Thanks to our sponsors this week.
+5410: That's Kanji, Collide, Sit, Nudge Security, and our awesome Patreon backers.
+5418: And we'll see you next time.
+5420: See you next time.
+5421: The Mac admins podcast is a production of Mac admins podcast, LLC.
+5429: Our producer is Tom Bridge.
+5431: Our sound editor and mixing engineer is James Smith.
+5434: Our theme music was produced by Adam Kudiga the first time he opened GarageBand.
+5438: Sponsorship for the Mac admins podcast is provided by the macadmins.org Slack,
+  where you can join thousands of Mac admins in a free Slack instance.
+5446: Visit macadmins.org.
+5448: And also by Technolutionary LLC.
+5450: Technically, we can help.
+5452: For more information about this podcast and other broadcasts like it, please
+  visit podcast.macadmins.org.
+5458: Since we've converted this podcast to APFS, the funny metadata joke is at the
+  end.

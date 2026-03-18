@@ -1,0 +1,1017 @@
+---
+0: Welcome back to the Open Source Startup Podcast. I'm Robbie, one of your co-hosts
+  and joined
+9: as always by Tim Chen, my awesome co-host from Essence VC. And today we are super
+  excited
+15: to not have one but two guests with us. We have John and Mike here who are the
+  co-founders
+20: of Workbrew, which is a company that provides missing features and support for
+  companies
+24: using Homebrew. And I'm sure many folks in our audience are going to know what
+  Homebrew
+29: is. It's a very, very widely adopted package manager, but we're thrilled to have
+  them on
+34: and hear about the Homebrew and Workbrew story. So welcome, Mike. Welcome, John.
+37: Thanks for having us.
+38: Awesome. So Mike, we're going to start with you and go all the way back to the
+  founding and
+43: creation of Homebrew. So why don't you talk to us a bit about where that idea
+  for a project
+48: Yeah. So I think Homebrew started kind of early-ish 2009. There was a guy called
+  Max Howell working
+56: for Last.fm. It's a nice blast from the past reference. I don't know how many
+  Last.fm users
+61: there are out there anymore. So he was working Last.fm doing kind of package management
+  stuff
+66: on Mac, played around with various tools, wasn't really happy with any of them.
+  And yeah, he
+71: decided one night to kind of just try and build his own thing. So he kind of wrote
+  a sort of
+77: manifesto. I think the first commit to the repo was like the readme about like
+  what he was
+82: making and why he was making it and what the idea was behind it. And then he just
+  started
+87: kind of building away by himself on GitHub. One of the, I guess, the interesting
+  early
+91: approaches that Homebrew did that was a little bit different was most package
+  managers were
+95: like, you know, get a bunch of people together and we'll kind of split up and
+  divide the
+99: responsibility. Cause you know, this is like maybe two years after GitHub was
+  founded and
+104: Max was a GitHub user. So he was like, okay, well let's get the community to
+  get involved
+108: from day one. Right. So I can be a bit more his words, but we don't mind lazy
+  about having
+113: to do everything himself. So maybe like six months later, I I'd been kind of
+  dabbling
+118: around with my own package management problems and kind of hacked some stuff
+  around with existing
+125: stuff. And I couldn't really equally find anything that worked the way I wanted
+  it to.
+128: And I heard about this Homebrew thing, like Max was a friend of friends in London
+  where I
+133: was working at the time as well for another startup over there. And yeah, I basically
+  just
+137: started kind of adding some stuff to Homebrew and just never really stopped.
+  And yeah,
+142: the project's kind of grown over that time. I guess I was the third person to
+  kind of get
+146: involved as a maintainer. I'm the only one left of that kind of early crew. And
+  yeah,
+151: we've now got like 30 maintainers and many thousands of packages and thousands
+  of contributors
+157: and all that good stuff.
+158: Yeah. That's amazing. I think Max was actually on our podcast before talking
+  about tea.
+162: So we definitely had our own fun talking about Homebrew. So you joined a little
+  later as
+168: contributor and now become a maintainer, right?
+171: I don't think people understand what is maintaining a package manager really
+  feels like. What do
+176: you do? Because I'm actually, I'm personally curious, like, what do you do that
+  much these
+180: days? Because there's going to be the packages and a bunch of vendors or users
+  contributing
+185: side. And there's also the core system side, right? Like, what do you spend most
+  of your time on these
+190: days to maintain Homebrew?
+191: Yeah. I mean, me personally, nowadays, I mainly spend my time on the code side,
+  I guess, on
+197: everything except the packages themselves. Like I get pulled in sometimes when
+  there's some
+202: something contentious or whatever. But day to day, like most of the packaging
+  stuff gets handled by
+206: other people. In my earlier days, I did a bit of everything. And it's kind of,
+  if anyone's interested
+211: in getting involved with a package manager, the fun thing about it is you can
+  go from writing like
+215: a couple of lines of C++ to a couple lines of Haskell to a couple lines of Go,
+  like all within a few
+219: hours of each other, because you're just having to kind of dip your toe into
+  many different pools.
+223: But yeah, but for me, like nowadays, a lot of it is just code review and investigating
+  kind of what
+230: the other maintainers, what some kind of new contributors or whoever are wanting
+  to do in
+234: Homebrew, any new bugs in Homebrew, like triaging those, like trying to figure
+  out what do we want to
+240: be building in the next one, six, 12 months, and then like talking with a bunch
+  of the maintainers
+244: in Slack. I guess I feel like I sort of wear that out of, if Homebrew was a company,
+249: which is not of like sort of a combo between CEO, CTO, head of product, and security
+  guards.
+257: And so, you know, whenever we're looking at a very widely adopted popular open
+  source projects,
+263: I'm always curious, like now we can look back why Homebrew is actually that popular,
+  right?
+268: You know, back in the day, I probably have no clue. But in your opinion, what
+  made Homebrew
+273: the default thing? Because there's a Mac force before, there are some other things
+  happen,
+277: come here and goes, but Homebrew definitely is the one that stays. And everybody
+  has no mistake now,
+282: brew install is by default there, which is truly amazing. It's not an Apple thing
+  at all, right?
+288: This is pretty much a community contributed project that made it become like
+  the standard.
+292: What do you think is like the secret of Homebrew or things that got right that
+  made it become
+298: the default thing?
+299: Yeah, I mean, that's a great question. I think, as you say, like this stuff is
+  often
+303: more obvious in hindsight, I think, than it was at the time. So one big thing,
+  I think I sort of
+310: alluded to a little bit before, which was like going all in on GitHub. And we've
+  still continued to do
+314: that to this day. We use a lot of GitHub infrastructure. You know, John and I
+  used to
+318: work there. Like it's definitely something where even if I didn't work there
+  and before I worked
+323: there, I was still very much like, okay, like it makes sense to kind of do this.
+  And I guess really
+327: leading into the idea of, which was very innovative in 2009, seems less so now,
+  but the idea that
+333: the best way of maintaining something at really high scale is not to have a small
+  number of people
+340: doing a lot of work, but an awful lot of people doing small amounts of work and
+  that things work
+345: well. That way you can kind of fan things out and have a contribution model.
+  And the maintainers are
+350: operating more like kind of shepherds than the people who are expected to do
+  the bulk of work by
+355: themselves. And I think the other thing is just like usability. I think there's,
+  you know, Mac ports,
+361: and I don't want to talk ill of the other projects, but I think I definitely
+  feel like with Homebrew,
+368: it has always tried to embody that Apple ethos of trying to be really, really
+  usable and try to
+375: really care about what the interface looks like. Don't support things if you
+  can't support them well,
+380: make error messages really clear for people, make it really clear what needs
+  to be done if rather than
+386: telling a user to do something, if you can just do it for them automatically,
+  sensible defaults, like
+391: all this type of stuff. I think like that's what has contributed most to Homebrew
+  success. And in many
+397: of those cases, those changes to get things more usable or a little bit nicer
+  or trimming down options
+403: have been, there's been a vocal minority who've been very unhappy about them
+  along the way. But I
+407: actually think like, that's partly why it's been successful is being willing
+  to embrace usability over
+412: necessarily making the maybe very loud power users sometimes the happiest.
+417: Yeah, I think adding on to the like choosing to do a lot of things, you know,
+  fully embrace GitHub.
+421: Also, Homebrew is a project, I'm a contributor, you know, I've been using Homebrew
+  since the very early
+426: days. And whenever something I don't like doesn't work correctly, or there's
+  not a package that I need,
+431: the ease of contributing is just like, so, so easy. And the way that the project
+  is managed,
+437: as a newcomer to the project, getting up to speed, everything is super well documented,
+442: there's kind of guardrails in place that are automated, things like telling you
+  that you're
+447: doing something wrong, and enforcing a rule is done by a bot rather than by a
+  human, right? So the
+451: human comes along and tells you, hey, let me help you out. But the bot saying,
+  sorry, you can't do it
+455: that way, figure out a new way. And I just think from a contribution perspective,
+  the project,
+459: the fact that it's like formula are written, you know, the packages are written
+  in like a DSL,
+463: it's really easy to understand, it just makes it way more approachable than,
+  you know, other really
+468: complicated projects.
+469: And it's amazing that the project's been around for so long, and still has that
+  usability, because
+474: usually over time, things complicate themselves. And it's hard to remain, you
+  know, simple and very
+480: user friendly. I'm curious, so this is a question for either or both of you,
+  the project's been around for
+486: so long. Company is quite new. Why start Workbrew when you did? Like, what were
+  kind of the signals
+492: that said, okay, like now is when we should start this company?
+494: So I think that the first time we had an idea for doing something like this was
+  back in like 2012.
+500: So Mike and I worked together at GitHub for a number of years. And I always said,
+  like, you know,
+507: Homebrew is a great project. I think there's a really big opportunity here. But
+  just the timing
+510: wasn't right among the people who were involved. You know, we were working at
+  GitHub during a really
+515: high growth phase, doing a lot of really interesting stuff. And in 2019, after
+  I left the company,
+520: I knew I wanted to be an entrepreneur and start a new company and had been working.
+  And as soon
+526: as I left, I kind of reached out to Mike and was like, hey, Mike, you should
+  come join me and we
+530: should start a company together. And that took a few years, but eventually it
+  came through to him.
+533: He decided, you know, to leave GitHub. And when we started working together,
+  we weren't actually
+538: working on Workbrew. And we had this really, like, very pivotal conversation
+  where Mike said to me,
+545: he's like, you know, we should really be focused on things that we're good at
+  and play to our
+548: strengths. And I just reminded him, I said, you know, we could always do, you
+  know, features for
+553: Homebrew for this open source project for the enterprise, like we should work
+  on that. And that's
+557: when we decided to start. So that wasn't all that long ago, but it's been an
+  idea kind of in the back
+561: of our minds for a very long time. And I think that the other story that relates
+  to our experience,
+568: both having worked at GitHub in the past and kind of what we're doing with Workbrew
+  is there was an
+573: internal kind of meme at GitHub called Remember Chatboxes. And it's basically
+  this idea that over
+580: time, software gets more complicated. People ask for more features. And you kind
+  of alluded to this
+584: with Homebrew being really simple and easy to use. And that's because in Homebrew
+  world, they're
+588: really, really focused on the most common standard experience, making sure that
+  people have a really
+593: good out-of-the-box experience. But when it comes to enterprise software, it's
+  not our job to tell a
+598: big company with 20,000, 100,000 employees how they should run their development
+  and run their stuff.
+603: And they need checkboxes. They need customization. They need different kinds
+  of compliance, all kinds of
+608: features like that. And so it kind of like fits really well in saying like, yeah,
+  there's this thing out
+613: there. Everybody loves it. But there are some situations where big companies
+  need something a
+618: little more customized, a little more flexible for them. And that's where we
+  come in with the
+622: business. You know, that's the fun thing about starting a company is that I think
+  John was
+626: convinced this was a good idea, as he said, back from 2012. Like, whereas I wasn't
+  convinced this
+631: was a good idea, even when he eventually said that. And then I went and had dinner
+  with my kids.
+636: And I was like, the only reason that convinced me it was a good idea is I was
+  like, yeah, we should be
+639: playing to our strengths. And I was like, yeah. I mean, based on what I said
+  to John,
+643: if I actually believe what I said, he's completely right. Right. But even if,
+  you know, before I came
+649: and joined him, he was like, hey, Mike, let's go and do the homebrew. It's almost,
+  it's the funny
+653: thing that like, sometimes you have to be like in the right place to like hear
+  that stuff. And I think
+658: also for me, it was the, I guess I always wanted homebrew to be in the right
+  place as well. Like
+663: there was some kind of minor controversy a few years ago about people feeling
+  like I had too much power
+668: in the project. And I was maybe approaching sort of BFDL sort of status and that.
+  And then now we have
+674: like a kind of governance model and leadership committee and elections and all
+  this type of
+679: stuff. And I feel much more comfortable kind of starting a company around homebrew
+  now than I did
+684: before, because, you know, even if I decided tomorrow, like my evil master plan
+  is to somehow try and
+690: take homebrew away and make everyone pay for homebrew. I don't have the power
+  to do that,
+695: you know? And there was a point where I maybe did. And in some ways like that
+  kind of scared me a bit
+700: because like I, it would make some things easier, but it would make the homebrew
+  project much more
+705: at risk. And I guess we've seen a lot of stuff with open source recently where
+  you have had that more,
+710: I guess, blurred line between the commercial organization and the open source
+  project. And there's been a few
+716: stories in the news recently about maybe the community, not always being terribly
+  happy about how that
+720: ends up. Yeah. Just given the nature of the project, you are very, I guess, dependent
+  and also you want
+726: to almost mass contribution to your project. So I think there's definitely sensitivity
+  when it comes
+732: to like, hey, here's a company behind it, right? But I guess you're not even
+  saying this is behind it.
+736: This is almost like a company that's working primarily with it, right? That's
+  probably almost
+742: like one way to kind of key it. I think that's really an interesting perspective
+  to take is it's not
+746: that we're behind it. I mean, we fully support homebrew and want to do everything
+  we can
+750: to make the project better for everybody that uses it. But I like to think of
+  it as we're
+754: complimentary to the project. All of these situations with like other companies
+  doing
+757: open source and then you see like maybe they change their open source licensing
+  or they like
+762: none of that stuff is possible in our situation. And we have no interest in that,
+  but we sell
+766: a product. You know, we make enterprise software and we sell it for money and
+  it's complimentary
+771: to homebrew. It's not part of homebrew. It's not a fork of homebrew. All of our
+  customers use the
+776: exact same open source homebrew that everybody else does. And if we have something
+  that needs to get
+780: support in homebrew, you know, we make an open source contribution to homebrew
+  and it will get
+784: accepted if it's something that's beneficial to the entire community. Right.
+  And so that's,
+788: it's really like a complimentary situation rather than a fork or any, any other
+  kind of model.
+793: Yeah. So there was a nice example in the last week, in fact, where there was
+  some stuff where
+797: like some parts of homebrew that workbrew relies on more heavily than your typical
+  user might.
+803: And some stuff was really slow and that was really annoying me. So I made it
+  like, you know,
+808: like 50 times faster because it was annoying me how slow it was. But the thing
+  is, is that's
+813: something where everyone who uses homebrew now, who uses that command and that
+  flow can benefit from
+819: that thing being 50 times faster. And so I think there's this nice kind of symbiotic
+  relationship
+824: where as workbrew gets better and as workbrew has to make homebrew better for
+  our own benefit,
+829: then it also makes homebrew better for everyone. And in some ways, again, I feel
+  like I kind of got
+834: good practice at this at GitHub, where there was times where, you know, homebrew
+  was very widely
+839: used inside of GitHub right from the very early days and homebrew relied very
+  heavily on GitHub itself.
+844: So there was this nice kind of balance where there's a few API calls in the GitHub
+  API and
+849: features on GitHub that were added primarily for homebrew and are now used by
+  many other places.
+854: But then also vice versa, there's various times where like GitHub was migrating
+  to rely on homebrew
+860: more heavily. And I would spend a bit of my time at work kind of making homebrew
+  kind of work better
+866: in a way that worked for GitHub, but then worked for other places. So I don't
+  know. I feel like
+869: there's always a little bit of this kind of balancing act that you have to be
+  kind of careful,
+873: but I feel like I'm used to that by now from kind of having that had this split
+  for a fairly while.
+879: So I want to talk a bit about who workbrew is built for and how you made that
+  decision,
+883: because I imagine just with the number of homebrew users, there are different
+  product
+887: directions you could go into. And it sounds like you landed on enterprise, but
+  even the
+891: definition of enterprise is kind of all over the place these days. So how did
+  you determine who the
+896: user was going to be for workbrew? And like, what was kind of the iteration process?
+  Like,
+902: was it always kind of the direction you're on now? Or did you try a few different
+  things?
+905: We did a lot of research. We looked at all kinds of issues in the homebrew issue
+  tracker. We talked to
+909: people, we looked for problems. And one of the problems that came up over and
+  over again was
+915: homebrew is widely used. And it's often used in companies where they're engineers
+  on Macs,
+921: and they use it for their developer environments. They use it for consistent
+  setup process,
+926: getting people onboarded more quickly. There's a lot of different use cases why
+  companies are using
+929: homebrew. But as you add more endpoints, more end user devices into the system,
+  the problem becomes
+936: more multifaceted and there are more considerations. And so what we found was
+  that in environments where
+943: there's maybe a dozen or so Macs with homebrew, it's pretty easy to just manage
+  that individually.
+948: But in environments where you have hundreds to thousands or tens of thousands
+  of devices,
+953: sure, each end user can manage those things. But those types of organizations
+  are often regulated.
+958: They might have security requirements, you know, have to be compliant with like
+  SOC 2 or ISO.
+963: They might have additional kind of regulation around the type of industry they're
+  in, whether it's
+968: healthcare or financial. And they might have some kind of restrictions on the
+  way that end users
+974: can use their devices. And so we found that the people who are responsible for
+  solving those problems
+979: tend to be IT managers. You know, people who are in the IT department who often
+  will be dealing with
+985: things like MDM tooling or other kind of on-device security detection, things
+  like that.
+991: And so when we set out to build Workbrew, we really set out to try to solve some
+  of their problems.
+996: And we talked about this a little bit before the recording, but the idea of there's
+  kind of like
+1001: deployment, getting Homebrew onto the devices. There's like analytics and management,
+  and then there's also
+1006: like a security component to this. And so the main kind of key person in that
+  whole situation is the
+1012: IT manager. They're the ones who kind of like choose the tool, deploy the tool
+  into production,
+1016: are responsible for running it. And they have stakeholders in both engineering
+  and the security
+1020: departments. So that's how we kind of got to this customer profile. But I think
+  that over time,
+1027: like you were saying, there are a lot of different paths we could go with a
+  lot of, you know,
+1030: different values we can add for the different kind of personas. It's just that
+  this IT management
+1037: situation is very, very urgent for people. It's something we hear over and over
+  again. There's no
+1041: solution on the market for them right now. And what it means is that big companies,
+  you know,
+1046: like Fortune 500 companies are out there building their own tooling that's in
+  the direction of what we're
+1051: building at Workbrew, but it's far inferior. They don't have the staff to maintain
+  it. And it
+1057: doesn't have the same kind of synergy with the Homebrew open source project
+  where we can
+1062: lean on all the experience that Mike has from being a maintainer and a contributor
+  for such a long time.
+1066: So that's how we ended up where we are now.
+1068: So I'm curious because Homebrew, given it's like a 2009 project, I know it's
+  been maintained over time,
+1073: but definitely has like a long history at this point. Now you're trying to build
+  a product around it.
+1079: I would imagine it may not be the easiest thing on earth. You can just stick
+  one project, you know,
+1085: controls our Homebrew. So let me talk about what does the product do today?
+  And then very curious
+1091: about what kind of things you have to do to make sure a product can work on
+  top of Homebrew. Because
+1095: that doesn't seem like the most obvious thing right now. Did you have to fork
+  Homebrew, for example?
+1101: Or did you have to do some kind of crazy modifications to it to be able to support
+  anything? Like,
+1105: maybe talk about some of that. Yeah.
+1106: I think that like a good way to answer this is just to kind of talk about the
+  architecture
+1110: of Workbrew and like how it actually works. We talked a little bit before about
+  the idea of
+1114: it being complimentary to Homebrew. So what we've built is essentially a control
+  center. You know,
+1120: I hear this phrasing all the time from people when I'm talking to them about,
+  you know,
+1123: the problems they're facing with Homebrew. And they say they're trying to get
+  their hands around
+1126: Homebrew at their organization. What does that mean? That means they have no
+  idea who has it installed.
+1130: They have no idea what packages are installed on their machines. They have no
+  idea what's out of
+1134: date. What might be a security vulnerability? Are they compliant with the certifications
+  that they
+1138: need? That's kind of the idea of like, I need to get my hands around this. And
+  so what we've built is
+1143: effectively an installer, a way to deploy Homebrew at scale zero touch. So if
+  you're in an organization
+1150: where you use something like Apple Business Manager and an MDM tool, you can
+  now take a brand new Mac out of
+1155: the box, turn it on for the first time. When it connects to the network, it
+  will have Workbrew installed,
+1159: right? Then kind of the next thing is analytics and, you know, observability,
+  knowing what's
+1166: installed across your fleet, having some kind of way to make sure that that's
+  within, you know,
+1171: whatever your operating guidelines are. And then getting alerts around security
+  vulnerabilities. We had
+1176: just a couple of weeks ago, a month ago, the XZ vulnerability. We had tons of
+  people reach out
+1181: to us and say, we've got 10,000 Macs with Homebrew installed. How do I make
+  sure that XZ is up to
+1185: date on all of those machines? So this is definitely a problem that's related
+  to a wide scale issue.
+1191: So anyways, we have this kind of installer that makes the deployment much easier.
+1195: The next thing is kind of an agent. The installer puts this on the machine,
+1199: lets your machine kind of check in with Workbrew and provide, you know, diagnostics,
+  analytics,
+1204: but it also provides for the IT manager to help keep your machine up to date.
+  Install packages
+1210: that might be important for a team so they have an environment ready to go on
+  day one. And then
+1214: lastly, there's the console, which is kind of a dashboard where you can log
+  in, view your entire
+1218: fleet, manage it in groups and things like that. But what's interesting, you
+  asked, is this a fork
+1223: of Homebrew? And like, that's decidedly no, right? We are not a fork of Homebrew.
+  You're using exactly the
+1229: same open source project as everyone else. And another question I get a lot
+  is, what if we have
+1233: a fleet, you know, we have 10,000 devices with Homebrew already installed and
+  each of those people
+1237: has a bunch of packages installed and we want to get Workbrew, what happens
+  to those existing
+1241: Homebrew installations? Well, because they're literally the exact same Homebrew
+  that we use,
+1245: upgrading is effectively installing Workbrew, flipping a couple of bits here
+  and there, and then you're
+1251: able to keep all the packages you have on your machine installed, use the existing
+  Homebrew
+1255: installation, but get all of the kind of enterprise like fleet level features
+  right away.
+1260: When you talk about the product value for Workbrew really being around scale
+  and around enterprise
+1265: use cases, so that's going to be applicable to some parts of the Homebrew community,
+  not all.
+1271: How do you think about or how have you gone to market alongside Homebrew? Like,
+  do you
+1276: leverage the community or like message to the community? Do you do independent
+  product marketing?
+1281: Like, how do you kind of grow with the community and let folks know that there's
+  kind of another
+1286: option here if they want to manage at scale? Like, how does that go to market
+  work?
+1289: I mean, John talked earlier about the, I guess our initial persona we're going
+  off to as the kind
+1294: of Mac admin, but definitely in the longer term, we're also looking at engineers
+  and security teams
+1299: and stuff like that as well. And we've kind of had the principle for this stuff
+  that any feature or
+1304: functionality we add in Workbrew makes life better for at least one of those
+  three demographics,
+1310: and does not make life worse for any of the demographics. So I love the questions
+  you had,
+1314: Tim, about, you know, are you running a forked version of Homebrew or do we
+  need some crazy
+1318: modifications or whatever? And the nice thing about that is that using Workbrew
+  feels exactly the same
+1324: as using Homebrew, essentially. There is some stuff going on under the hood
+  that means it's actually,
+1329: even if you're just using it on your machine, it's a lot more secure than Homebrew.
+  There's a much
+1334: smaller attack surface and much kind of better separation and stuff like that.
+  And the performance
+1339: basically feels exactly the same. But yeah, we have ideas in the future, I guess,
+  partly based on my
+1345: experiences of maintaining Homebrew, but also kind of working in many teams
+  across places like GitHub of
+1350: Homebrew works really well as John used to talk about, like single player and
+  multiplayer. So Homebrew works
+1356: really well as a single player tool. If you're just installing stuff in your
+  machine and you pull
+1360: down a version of a package and you want to upgrade it or whatever, then that
+  works fine. But as soon
+1365: as you start to work on developer teams of, you know, maybe even five to ten
+  people, let alone a kind of
+1370: developer orgs of 100, 1000, 10,000 people, you know, you get everyone to install
+  something using
+1375: Homebrew and run a command. And it turns out those people now have, because
+  they installed at different
+1381: times, five different versions of the thing installed. And when they run the
+  command, they will get five
+1386: different behaviors. So like, this is the type of thing that for your average
+  Homebrew user, if you're
+1390: just like a hobbyist and you're playing around in your evening and you don't
+  really care what versions
+1393: things are, that doesn't matter. But if you're doing like serious professional
+  software development,
+1397: like that really matters. Like it matters if your team cannot get mapped on
+  a single kind of locked in
+1404: version of the software they're using. And even just, I have to hat tip to John,
+  like the name,
+1409: the conversation we had where John pitched the idea, he pitched the name Workbrew
+  at almost exactly the
+1415: same time. And I think for me, I like the kind of differentiation where this,
+  we don't see Workbrew as
+1421: almost like a competitor to Homebrew, but it's more like one is single player,
+  the other is multiplayer.
+1426: One is free software, the other is paid software. One is for use at home, the
+  other is for use at work.
+1431: Right. And over time, I think as we keep adding offerings for IT people, for
+  engineers, for security
+1439: people, like I think Workbrew is going to become the dominant way of using Homebrew
+  at work, because
+1444: our offering is just going to be so much more, I guess, easy for teams to use
+  in a more consistent way than
+1450: Homebrew is today. Yeah. And on the second part, regarding like go to market
+  and what we've done
+1454: so far, part of it has been just engaging with community about the problems
+  that they face.
+1459: We could come up with a list of, you know, 15 or 20 different problems that
+  these type of IT admins
+1465: are trying to solve with Homebrew. Things like, you know, I have a fleet of
+  a thousand machines,
+1469: how do I make sure all the right packages are installed on day one? In order
+  to do that,
+1473: they have to write a bunch of custom scripts, deploy them through the MDM tool,
+  or use another open source
+1478: project like one of Mike's projects called Strap to set the machine up on the
+  first run.
+1482: But doing that is labor intensive. They have a lot of custom code and there's
+  no kind of standardized
+1488: way to do it. And what we've done is just kind of talk to people about these
+  various problems and,
+1493: you know, give them solutions. We had a kind of a online like webinar conversation
+  with a handful
+1498: of potential customers. And we went through all these different problems and
+  just gave them the solution.
+1502: You know, here's, here's a way to solve the problem. Like we had one problem
+  that comes up a lot,
+1506: which is we work in a regulated industry, let's say a bank, and our end users
+  are not
+1511: allowed to have admin privileges on their device. As a developer, that sounds
+  terrible to me. I want
+1515: admin privileges on my device, but like when you work at a bank, you're not
+  allowed, right?
+1519: And so the way to solve that problem, when it comes to using Homebrew, it's
+  like,
+1522: you need to have admin privileges to run Homebrew. When it comes to solving
+  that problem,
+1525: there is a way to do it. And there are a bunch of different privilege escalation
+  tools. So what you can do is
+1531: have Homebrew installed, your end user doesn't have admin privileges, they click
+  a button in this
+1536: privilege escalation tool, and they ask for admin privileges, it gets approved.
+  And for a temporary
+1540: period, they can install stuff with Homebrew, and then they get removed from
+  the admin group,
+1544: like after the time limits up, and they have to have an audit log for each one
+  of these things.
+1548: And that's kind of a painful experience, but it's a workaround and you can do
+  it. And so what we've
+1552: been doing in terms of like go to market is just showing people what the solutions
+  out there are
+1555: for those things, but then also giving them a much better alternative, which
+  is to use Workbrew,
+1559: which out of the box works in that situation. You know, you can have end users
+  installing
+1564: packages on their machines without having admin privileges on the device. You
+  know,
+1567: you can have zero touch deployment without having to write any custom code.
+  And so that's really been
+1573: the main activity we've been doing. And then there's also a relatively established
+  community of people
+1580: that self identify as they're called themselves Mac admins. So IT administrators
+  who work on predominantly
+1586: Mac fleets. And, you know, there's like a conference, there's a podcast, there's,
+  you know,
+1591: an open source foundation, there's a Slack channel. And we just try to, you
+  know, participate in those
+1595: kinds of events and those kinds of communities in a really genuine way and answer
+  questions about
+1600: Homebrew. When they ask about how to solve something that's not in scope for
+  Homebrew, we give them
+1605: alternatives and then, you know, show them the way with Workbrew.
+1607: Maybe going back a little bit. I'm very curious how you landed to this product
+  because
+1612: Homebrew has such a massive user base. You can spend your whole lifetime talking
+  to everybody
+1618: and figure out what they need. And I'm sure it's not going to be easy. There's
+  too many signals,
+1623: potentially. What are the kind of the areas you was contemplating about what
+  to start with? And what
+1629: was the process for you to even talk to? Like, did you have to segment into
+  like small, large companies
+1634: and Mac admins, non-Mac admins? Like, what are the possibilities here? And then
+  say, okay,
+1639: this might be a better route to take. I'm just curious how that process went
+  for you guys.
+1643: Well, so the nice thing with Homebrew is because it's a still essentially entirely
+  volunteer run
+1649: project. You know, there's like a small stipend, but like that doesn't go about
+  covering anyone
+1654: anywhere approaching like market level wages. I mean, probably not even market
+  level wages to,
+1659: you know, work in a grocery store, to be honest, but you know, it gives people
+  some compensation,
+1663: but as a result, things only get done if a maintainer or contributor want them
+  to get done.
+1667: So we've had a long tail of, I guess, particularly maybe over the last, maybe
+  more of the last five
+1673: or 10 years than the whole 15 years of the project where Homebrew is being used
+  super widely in a lot
+1678: of big companies. And, you know, every so often you get someone in one of those
+  big companies
+1683: who Homebrew doesn't play nicely with the way they do things. I guess John sort
+  of alluded to that
+1688: earlier. And they come to Homebrew and they say, "Hey, Homebrew, like we're
+  a big, serious,
+1693: important company, right? So you have to change the way you're doing things
+  because, you know,
+1698: we're doing it the right way and you're doing the wrong way and go about that."
+  And previously,
+1702: people would, you know, there was one particularly grumpy Homebrew retainer,
+  I think he was called
+1707: Mike McQuaid or something, who would regularly tell people like, "No, you can't
+  have this and you can't
+1712: tell us what to do. We're all volunteers. Nah, nah, nah, nah." So the nice thing
+  is when we kind of went to
+1717: looking at this stuff, we had a very long tail of lots of almost entirely public
+  conversations where
+1724: often myself or other Homebrew maintainers had said, "Hey, like we don't have
+  the time or energy or
+1730: inclination or whatever to build this stuff." And we had people in big companies
+  often citing the names of
+1736: their companies to try and get these features developed saying like, "Hey, we
+  need this thing.
+1741: Like, why wouldn't you do this thing?" So that kind of gave us a really nice
+  opportunity to begin with
+1745: for painstorming. And I remember the first few weeks after us having this idea,
+  me just like trolling
+1750: through the Homebrew issue tracker and discussion boards and stuff like that,
+  and just generating lists
+1755: upon lists of like, here's people asking for stuff, right? And what are the
+  themes that are coming out
+1761: of this? And what seems like the sort of lowest hanging fruit that could be
+  like a viable MVP
+1766: that solves an actual real problem for real people today, that there's no real
+  good solution out
+1772: there, right? And in some cases as well, like there's some parts of what we
+  built with Workbrew where
+1777: if you go searching around GitHub, like there's abandoned projects that haven't
+  been touched in eight
+1782: years that tried to solve some of these problems. But the problem is partly
+  in the macOS ecosystem as
+1787: well, that things are forever changing. So if you sign up to do one of these
+  things,
+1792: you're sort of signing up to do it forever. So it's very hard to keep something
+  that works
+1798: well on Macs, works well with Homebrew, and keep that going indefinitely without
+  being sufficiently
+1805: plugged into either Apple or Homebrew itself. And we are lucky enough to be
+  plugged into Homebrew itself.
+1811: Yeah. So I think that's what helped from the beginning with us not having to
+  just guess or
+1816: interview thousands of Homebrew users on what they need because we could see
+  this stuff. And again,
+1822: even with that, like the kind of interview process, I think the thing that I've
+  learned through,
+1826: I guess, doing essentially product management on Homebrew for an awfully long
+  time is I have,
+1831: I guess, a line on product management in the, it doesn't sound very nice, but
+  humor me,
+1835: users are like babies and they can tell you that there's something wrong, but
+  they can't tell you
+1840: what they need. And I find that's often the case, again, with these problems
+  where you go and read
+1845: what people ask for, that we're not building exactly what they said they wanted
+  implemented. Because
+1850: often if you ask engineering centric people, they jump straight to a solution,
+  but we're being like,
+1855: okay, what is the shared problem all of these people have? And what's the best
+  solution to their
+1860: problem? Even if they don't know about it yet. So yeah, I feel like that's how
+  we've got to where
+1864: we are with what we built. Yeah. Another like kind of component of that, Mike
+  said the low-hanging
+1869: fruit, you know, when we look at those lists of possible things we could build,
+  everything we've
+1872: built so far as a prerequisite, you know, no matter which direction we go on
+  any of those, you know,
+1877: many, many opportunities of features or potential products we could build fundamentally
+  having a fleet
+1884: management idea of all of the devices within your organization is kind of a
+  prerequisite to any of those
+1889: things. And so that combined with the fact that people are asking for automate
+  deployment,
+1896: do things like have default packages installed, make sure that I know about
+  security vulnerabilities.
+1901: I mean, they're all like pretty straightforward in a lot of ways.
+1904: So I'm curious because we have a lot of founders on this podcast that for the
+  most part have only had
+1910: projects that have been around for a couple of years. This is probably one of
+  the longest standing
+1915: projects that a company is built around. And I'm curious, what's hard about
+  that? Because I
+1921: mentioned on like the plus side, you have a lot of like users already, you have
+  kind of this like
+1927: group that you can build products for. But on the flip side, like there might
+  already be like set
+1931: user expectations or competitors. Like what's hard about building the kind of
+  company that you're
+1935: building right now? I think probably like a sense of momentum or inertia, right?
+  As you, I guess you
+1941: touched upon a few things there where I think people have a certain idea of
+  how homebrew is and how
+1947: homebrew works. And I think with the problems as well, like it's funny, John
+  will probably remember,
+1952: we've had a few discovery calls where we've said to people, okay, so like what
+  problems are you
+1957: experiencing in your business with homebrew? And they say, no, but it turns
+  out what they actually mean
+1962: when you dig in, because there's been times we've had those and you can see
+  like John starts sweating,
+1967: whatever. And I say like, we've come to terms. Yeah. Have you ever had this
+  thing happen? And
+1972: they're like, yeah, you know, like, so I guess like a classic example might
+  be like, have you
+1977: ever had the situation where like, you know, homebrew pushes the version upgrade,
+  a bunch of your team
+1981: upgrades, and then it breaks all your libraries? Like they're like, yeah, like
+  they're like, yeah,
+1985: that happens at least three or four times a year. And it's like, how much engineer
+  time would you say
+1989: that cost you? And it's like, well, probably like about a week to two weeks
+  per engineer per year.
+1994: And it's like, that sounds like, and how many engineers you have using homebrew?
+  Like, oh,
+1997: a thousand. That sounds like quite a big problem. But like in their head, because
+  homebrew has been
+2003: around for so long, because homebrew works the way it's always worked in their
+  head, they're just like,
+2007: this is just a thing. This is like a tax you pay for using an open source project
+  like homebrew,
+2012: and you just have to deal with this forever. And maybe they tried Nix or Mac
+  ports or something
+2017: like that, and that just had its own problems. And then they came back to homebrew.
+  So like the idea
+2021: that like someone could actually fix this so that it never happens again, and
+  those week or two weeks
+2027: of engineering time of year don't happen, that's much harder for them to like
+  come up with by themselves.
+2033: And sometimes people really need poked and be, and the funny thing is like,
+  there's some stuff on our
+2038: roadmap where if we shared it publicly today, we'd probably get like laughed
+  out the room because
+2043: people are like, there's no way you're ever going to do that. That's way too
+  hard. Right. And I guess
+2047: I actually know, like, it's actually not that hard. This is doable stuff, but
+  sometimes people's like
+2053: imagination is, does not stretch big enough to encompass like, what are the
+  easy things and what are the
+2058: hard things. And I guess another strength that you sort of alluded to Robbie
+  is, you know, we've hired
+2063: some people already from the homebrew community who are like staggeringly intelligent,
+  talented
+2069: engineers and know like macOS and like Apple internals and how to make macOS
+  do absurd things that I had
+2078: no idea it could do that open all these doors for us to do things. And actually,
+  you know, like a lot of the
+2085: stuff that they maybe don't know as well, like, you know, we're built on a rail
+  stack and they're the
+2089: people we've heard so far, like new to rails, but it's like, but that's kind
+  of the easy bit, right?
+2093: Like doing kind of crud logic is easy, but like doing all the kind of complicated
+  wrangling across
+2099: OSs and like POSIX layers and whatever is all the kind of gnarly hard stuff.
+  So yeah, hopefully that
+2106: answers your question.
+2107: Yeah. And when it comes to that tax too, you know, another one of the reasons
+  why the people,
+2111: you know, the users kind of like have come to terms with it is like the alternative
+  of not
+2115: using homebrew at all is like just a non-starter, right? I've talked to a number
+  of customers where
+2119: they're like, yeah, we have an ISO security requirement, but if we actually
+  enforce the
+2124: ISO security requirement, that means our engineers can't use homebrew. And that's
+  just not an option.
+2128: We won't do that. So it ends up with them either talking to us or saying we're
+  going to devote an
+2134: entire engineering team to this for the next year and a half to like make our
+  own internal solution,
+2138: which I know of a handful of companies that have done that. So yeah, it's, it's
+  definitely a
+2143: mindset shift of like, you know, homebrew has been around for a long time. It's
+  kind of like,
+2148: it's part of the ecosystem. People know it and are used to it and that's a benefit,
+2152: but it also has this kind of, well, they know it for what it is, not for what
+  else you could do with
+2156: it or, you know, what we might be able to add as well.
+2159: Cool. So jumping to another side of questions here, you've been working at homebrew
+  for so long
+2163: and joining me working at GitHub, you've seen a lot of developers in this ecosystem
+  pretty familiar
+2167: with. What are biggest challenges you didn't anticipate? And now you learn almost
+  like surprises,
+2174: like, oh wow, this is actually harder than I thought, or I didn't even think
+  of this will be
+2178: a big problem. What are those kinds of challenges you face, you know, starting
+  this company so far?
+2183: I mean, one of the reasons I left GitHub in the end and, you know, I joined
+  when we were like
+2188: 200-ish people and left. And even then that was the second biggest company I'd
+  ever worked for.
+2193: So for me at workbrew, it's when I came, we're doing a completely greenfield
+  code base,
+2199: all this type of thing. And, you know, between that and co-pilot and all these
+  tools we have
+2203: nowadays, I can move so fast and I can get things done like staggeringly quickly.
+  But then every so
+2209: often you run into a wall of like, oh, I have to like get verified with like
+  Apple Business Manager
+2216: or like DUNS or some MVM tool or whatever. And it's like, it's so hard to have
+  something where like,
+2223: I guess there was, you know, some products that we've integrated in and building
+  the integration
+2227: entirely took two hours, but getting like all the paperwork done so that I could
+  play with the
+2233: integration took like two months. Yeah. This is like, it's maybe not even hard
+  as a founder. It's
+2238: just hard for my soul having to deal with things that just take so long. And
+  it just feels so
+2244: unnecessary that it must take so long, but I get it. These big boy and girl
+  companies can't be
+2249: startups forever. Yeah. From my perspective, the biggest challenge is like doing
+  things you've never
+2254: done before. I'm an engineer by background. And I'm also, I've done like a lot
+  of like go to market
+2259: on developer tools. But as far as a founder goes, you know, I've not really
+  done sales and being an
+2265: enterprise product, I have a lot of sales conversations. And so I mostly take
+  them from
+2270: kind of the founder sales approach of just being helpful, trying to understand
+  their problems.
+2274: And what I found really interesting about that is this is an entire career path
+  that tons of people
+2280: are very, very talented in and spend many, many years, more years than I've
+  spent as an engineer
+2285: or as a marketer, you know, honing those skills. And as a new founder, it's
+  like, you have to do it.
+2290: So one of the things that's been really valuable for me is working with, you
+  know, a former salesperson
+2295: from GitHub, who I knew really well, and who can kind of like go through the
+  deal process with me,
+2299: talk to me about like, kind of this particular company that you're talking to,
+  I've sold to,
+2304: you know, a multimillion dollar deal before, these are the people you need to
+  talk to how to do it.
+2309: And it's like, there's just a ton and ton of new stuff that we have to learn
+  all the time.
+2313: And I think that's true for all three of us doing things that are outside of
+  our comfort zone.
+2317: I actually have an addition there as well, where I think it's the sense of responsibility.
+2321: Like I had a conversation, I'm hopefully she wouldn't mind me sharing this with
+  my wife a while ago.
+2325: And she was like, hey, like, are you actually happy at work through?
+2328: Because you seem to kind of come to me with like so many more problems than
+  when you were at GitHub.
+2333: And I realized like, yeah, I am happier, but the difference is every problem
+  I had at GitHub,
+2337: like particularly by the end, it's like 99% of those are outside of my control.
+2341: Some, my bosses, bosses, bosses, bosses, boss, or someone at Microsoft decided
+  that like,
+2346: this thing is not happening anymore.
+2348: And I can't talk to them.
+2350: I can't influence them.
+2351: Whereas with the start, with, you know, the three of us are now with employees
+  or whatever.
+2355: It's like, everything is my problem, right?
+2358: Like everything is, it might not be on my plate necessarily to solve every problem,
+2363: but like I have influence over everything.
+2365: And like that's simultaneously liberating and incredibly terrifying at the same
+  time.
+2371: And it means that, you know, there's a lot more conversation with my wife where
+  I'm like,
+2374: what should I do?
+2375: And she's like, I don't know.
+2376: And I'm like, well, I don't know.
+2377: I kind of have to decide because I don't have any adults anymore to decide for
+  me.
+2382: I feel similarly.
+2384: So final question for each of you, what's one piece of advice you'd have for
+  an open source
+2390: founder that is earlier on than you?
+2393: I guess from my perspective, you know, I'll go back actually to when I started
+  the company.
+2398: So I started this company in 2019 when I left GitHub shortly thereafter.
+2402: And I was a solo founder doing something totally different.
+2406: And I've been through, you know, a number of different pivots.
+2408: It wasn't necessarily open source, but it was always kind of engineering related.
+2412: And I think my biggest lesson was like, don't go it alone.
+2415: Ever since having Vanessa and Mike join, I feel like I've been much happier,
+  had a lot more clarity.
+2420: You know, when things are confusing or I don't know what to do,
+2424: it's very easy to just like, you know, talk to my co-founders and work with
+  them.
+2428: And so I think it's like a very, very special kind of person who could be a
+  solo founder.
+2431: I thought I was one of them, but I'm definitely not.
+2433: I would recommend, you know, don't go it alone, whether it's having co-founders
+2436: or just like a really good network of advisors, people like deeply involved
+  in your business,
+2441: having other people involved in your open source project, obviously, as well.
+2444: But, you know, that was like the single biggest inflection point for me and
+  being a founder.
+2449: I'm going to focus on the open source side of the open source founder, I guess.
+2453: And I think it's particularly relevant right now.
+2456: As I said, there's been all this stuff in the news, but I think it's worth paying
+  attention to that stuff.
+2462: Not necessarily worth paying attention to the naysayers and, you know,
+2466: the Hacker News crowd who are not always the most positive bunch.
+2470: But the thing that is worth paying attention to is I think we're all, when you
+  start a company,
+2475: a product of the moment you're in, right?
+2478: And you can't look at what worked five years ago or 10 years ago or sometimes
+  even one year ago
+2483: and try and replicate that model and get the same success.
+2486: You have to be influenced by them and learn the lessons from the greats and
+  your kind of peers
+2491: in the industry.
+2492: But it doesn't work to go and say, well, this model worked for Red Hat or GitHub
+  or whoever,
+2499: and I'm going to just follow this model with a letter and do things that way.
+2502: Because we're in a different world now.
+2504: And like some of these places paved the path in a good way.
+2507: And some of them, I don't know what the opposite of paving the path is,
+2510: but, you know, maybe blew up the path along the way and you can't go that way
+  anymore.
+2514: So, yeah, I guess for me, it's been really helpful to kind of read and learn
+  and soak
+2521: up as much information as I can about what other open source companies have
+  done and are doing
+2527: and are planning on doing and just kind of learn from that and combine that
+  with what my co-founders
+2533: think, what my peers think, and try and pave our own way.
+2536: And hopefully it works.
+2537: Awesome.
+2539: Well, this conversation has been fantastic.
+2541: We so appreciate both of you joining us.
+2543: I think our audience is going to take a lot away from this.
+2545: Thanks for having us.
+2546: Yeah, it's been great.

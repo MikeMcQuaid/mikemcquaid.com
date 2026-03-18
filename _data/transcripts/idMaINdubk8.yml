@@ -1,0 +1,999 @@
+---
+0: Welcome to The Bug Mind, audio only edition.
+3: I'm Lorenzo, and you may know me as Calcet, and I'm your host.
+7: I've worked many years in open source and have been seeing a therapist for almost
+  as long.
+11: In The Bug Mind, I talk with other people in tech about their own mental health
+  stories,
+16: hoping that sharing our experiences can help you deal with your own challenges.
+20: Get ready, we're diving deep.
+23: Hey Mike, it's great to have you here. Welcome.
+28: Thanks for having me.
+30: Yeah, I'm so happy that you're here.
+33: You're literally one of my personal heroes when it comes to open source,
+37: so I'm super grateful that you've decided to do this with me.
+40: Before we dive into deep, because I'm already so excited,
+44: can you tell us a bit more about what you do in tech for someone that doesn't
+  know who you are,
+50: which probably are very few people, but just for them. For my mom, probably.
+54: Sure thing. So I guess I'll maybe start with what I'm doing right now and then
+  work backwards.
+60: So right now I am CTO and co-founder of a startup called Workbrew,
+64: who is doing kind of commercialization in the homebrew space.
+68: What our product offering is right now is providing MDM support, commercial enterprise
+  level support and general kind of features that kind of big companies need around
+  using homebrew.
+80: If you know what homebrew is already, then great.
+83: If you don't, it's an open source package manager for predominantly macOS, but
+  also for Linux.
+88: I've worked on homebrew for 15 years.
+90: I'm the project leader, which means, I guess, kind of tech lead and figurehead
+  in some ways, but it's also an elected position.
+97: And I am also, I guess, I've worked as a maintainer doing bits and pieces on homebrew
+  for that entire time.
+105: And homebrew was 15 earlier this week.
+108: So it's a nice little celebration.
+111: Happy birthday, homebrew.
+112: Yeah, happy birthday to homebrew.
+113: So before I was working at Workbrew, I worked at GitHub for 10 years, where I
+  left as a principal engineer.
+120: I worked on all sorts of things.
+122: Like I built the archiving repos feature.
+124: That was my kind of idea.
+125: And then the GitHub sponsors worked on that, the merge queue, all sorts of like
+  little bits and pieces over the years.
+132: Before that, worked at a few other kind of random startups and companies and
+  stuff and did the kind of, you know, I guess, most stereotypical slash traditional
+  route into tech of doing a computer science.
+142: And business degree back in the day.
+144: Awesome.
+146: And, you know, you mentioned being an open source maintainer.
+150: And this is what we want to talk about today.
+152: We're both open source maintainers.
+154: This month is May, as you were saying earlier.
+157: And it's both Mental Health Month, Mental Health Awareness Month, and GitHub's
+  maintainers month.
+164: So it felt like a nice coincidence to have these two months collide and have
+  the two of us talking about, you know, not only our experience in open source, but
+  also like the mental health aspect of it.
+177: Because I think that open source maintainers in particular, like they're very
+  prone to burnout.
+184: They're very prone to isolation.
+186: And, you know, I think we've both had our fair share of experiences that have
+  been stressful or, you know, challenging.
+195: And I would love for people to basically, you know, learn from our experience
+  and create for themselves maybe an healthier approach towards open source.
+206: And, you know, that's actually where I wanted to start about.
+212: So let's say you would start today doing open source, right, with your previous
+  experiences, but like everything else is like the real world doesn't know about
+  it.
+223: You're kind of like reincarnated in a younger version of you.
+225: Like, how would you set up your relationship to open source?
+229: That's a great question.
+230: I think the main thing I would say is boundaries.
+234: So the boundaries are kind of all over the place.
+237: So some of it's boundaries with myself, some of it's boundaries with other people,
+  some of it's boundaries with work, all that type of thing.
+244: But I guess I might spell out some specifics of what that might look like.
+248: So nowadays, what I have is all my Homebrew GitHub notifications, for example,
+  go to a separate email account, which is, you know, my mikeatbrew.sh address.
+260: And what that means for me is I can check them separately.
+264: I can add or remove them to my phone.
+267: I can add or remove them to any computer or device.
+269: Separately, I can log in.
+271: And I have that separation between what's going on in my kind of day-to-day,
+  what's going on in my work, and what's going on in Homebrew stuff.
+279: So, for example, I don't have Homebrew emails on my phone.
+281: Similarly with Slack.
+283: Homebrew has a Slack for maintainers to talk with each other.
+286: I don't have that on my phone either, unless I'm going on, like, a trip where
+  I'm with Homebrew maintainers all the time and all that type of stuff.
+293: So, basically, what this ends up meaning is I can be a lot more intentional about
+  the time I spend and when I'm almost, like, ready for that energy in my life and
+  thinking about Homebrew stuff, getting involved with Homebrew stuff, replying to
+  Homebrew stuff.
+308: And in my case, it's kind of in more of a leadership role nowadays than I necessarily
+  always have been.
+315: It also gives other people space to be, like, if someone's like, oh, this is
+  on fire, then it's not like Mike jumps in straight away and fixes it.
+323: You know, sometimes, depending on when you ask, depending on the week, it may
+  be if you ask that at 5.31 p.m. on a Friday, then Mike is not going to respond until
+  8.30 a.m. or later on a Monday, even on, like, almost like a normal working week,
+  because I want to spend my weekend with my wife and kids and all that type of stuff.
+346: And I think it's a very strong strategy, like, creating this separation.
+353: It's basically the same.
+354: I do a similar thing for React Native.
+356: Basically, I'm even, in a way, more extreme when it comes to email.
+360: Like, I literally have disabled GitHub sending me emails of any shape or form.
+365: So, in that sense, like, what I do is I'm very intentional, like, subscribing
+  to certain issues, subscribing to certain repositories.
+374: And, you know, like, I only interact with GitHub when I'm on GitHub.
+379: So, there is that, you know, step of intentionality that you create.
+384: Like, oh, I'm not passively receiving everything constantly, but I'm like, okay,
+  if now I have time to, you know, spend an hour looking at through GitHub notifications
+  and replying to people, I'm going to open GitHub, and that's the time where I'm
+  going to do that, right?
+400: So, I think that's super important in general.
+403: And it's also, in the broader mental health community, there's these, like, the
+  theory of the spoons, in a way.
+413: Have you heard of it?
+414: Yeah.
+415: Yeah, it's basically that, right?
+417: You have a certain set of spoons that you can use every day for your tasks.
+422: So, acknowledging yourself, you know, you're like, okay, today I have only three
+  spoons, today I have seven spoons.
+429: Like, knowing, like, that you, your battery has a limit, and be like, okay, being
+  intentional, I'm going to use two spoons for GitHub today.
+437: It's, I think it's one of the, yeah, it's a very healthy strategy, I find.
+442: And, why do you think it's necessary?
+447: Like, kind of like, you know, flipping the question on its head, like, what's
+  going on in open source for maybe someone that is not as involved as, like, that,
+  you know, you kind of need to create these.
+458: You kind of need to create this healthier relationship.
+461: Yeah.
+463: So, I think it's, for me, again, like, my patterns with open source have somewhat
+  mirrored my patterns with work.
+473: They've been maybe slightly kind of time lagged compared to my patterns with
+  work.
+476: But, you know, when I was young and enthusiastic and working for a kind of working
+  all hours startup, which is not, you know, I work hard right now on my startup,
+  but I'm not working as many hours as I did when I was 25, because I have other commitments.
+491: But there was that sense of being switched on and being engaged 24-7 and being
+  responsive 24-7 and that being a desirable thing that resulted in better quality
+  software and, you know, more whatever, like, for employees or employers or whatever.
+509: Whereas, I think I realized on the work side first that, like, I actually think
+  that results in, in the long term, like, worse software, worse teams, worse happiness
+  for everyone involved compared to if you separate things.
+523: And I like that one used before, intentionality.
+524: I feel like that's a really big thing where it's just important to kind of think
+  about when you're spending that time and energy.
+530: So, for me, from, you know, a relatively early stage at GitHub, when I worked
+  there, I'm based in Scotland, and most of my coworkers, most of the time I was at
+  GitHub, were in the US.
+543: So, what would happen is if I just had Slack on my phone, then my evening would
+  just be ping, ping, ping, ping, ping, ping, right?
+549: So, Slack was the first to go, and then, particularly because once I was on on-call
+  rotations, it's like, well, if someone really needs me, they can page me, right?
+556: So, it's, if it's critical, I'll do it that way.
+560: And then, you know, email went similarly that I didn't put work email on my phone
+  unless I was on a work trip or whatever, and frankly, I just, like, wanted the distraction
+  because I was away from my family and stuff.
+569: But open source kind of maybe took a little bit longer for me to internalize
+  the same attitudes, but I do actually think in lots of ways,
+579: frankly, almost everyone would be better probably making open source a bit more
+  like work.
+584: I mean, for some people, maybe yourself, Lorenzo, I'm actually not sure right
+  now, like,
+589: like React Native is maybe a big part of or your primary day job purpose, right?
+596: If you're an open source person in that situation, I think you should treat it
+  100% as work, right?
+601: And evenings and weekends and holidays and whatever, you should entirely disconnect
+  as most people would agree would be sensible for work.
+608: I think people find that harder when they're doing open source because there's
+  less of an expectation there.
+613: But I think even if you're a volunteer or a hobbyist, I think it's still valuable
+  to almost be like, right, I work on this, you know, 9 to 5 on Friday or whatever
+  it may be, right?
+623: That's, I appreciate that's harder for people whose employers maybe say, right,
+  you cannot spend even two minutes on open source during your work day.
+632: But again, I would, in my case, I probably had at most a couple of years at GitHub
+  where it was deemed officially acceptable for me to spend any time on homebrew.
+648: And I probably had a couple of months every three or four years where I worked
+  on a homebrew related project.
+655: But the rest of that time, it was like, you know, essentially, as long as I'm
+  getting my work done, no one cares.
+663: But equally, if I, if they were aware quite how much time I spent on homebrew
+  during working hours, someone would probably be like, hey, like, that's too much.
+671: But I got my work done.
+673: I got good performance reviews.
+674: So ultimately, that's not their problem.
+677: And it's easier for me to balance things that way.
+680: Things are a bit more blurred now because I'm doing a startup that is directly
+  attached to homebrew, which involves, you know, sometimes building homebrew features
+  for my day job, effectively.
+691: But even before that, like, even in GitHub, I was probably doing the majority
+  of my homebrew stuff is like within working hours in a working capacity.
+700: And I also even think like open source, again, in terms of boundaries, like open
+  source interpersonal relationships can sometimes be quite, I guess, non-work.
+712: Like, you know, either work in appropriate conversation, either people speaking
+  to each other in a way that would get one of them fired in a workplace, like people
+  being unreasonable, unwilling and unable to do things that would be a very basic
+  expectation of a junior engineer in a workspace, a workplace even.
+730: And I think all of this stuff, you know, it's, it has its place.
+735: And for some people, sometimes it makes open source better.
+738: But I'm not convinced that actually, you know, certainly if you're a project
+  at like homebrew's level of scale, I think indulging people who want to behave in
+  a way that would get them almost instantly fired in most workplaces is not a good
+  idea.
+751: Like you shouldn't, like that people have the freedom to decide to when to show
+  up, what to do, what not to do on an open source project.
+759: I'm the leader of homebrew, but I can't make anyone do anything on the project.
+763: I can sort of stop people doing things, but I can't make people do things.
+768: And to me, like that's, that's the side that makes it better and more enjoyable
+  than work.
+773: Like, it shouldn't be that we're like, oh, well, we can all do whatever and behave
+  in kind of very weird, inappropriate ways.
+780: Not saying this is the case in homebrew, but has been some isolated cases in
+  the past where there has been that.
+785: And it's taken me too long to be like, hey, actually, you know what, like this
+  wouldn't be acceptable in a workplace.
+789: It's not acceptable here.
+790: Like change it or move on.
+792: Yeah.
+793: There's so much to unpacking what you just said.
+796: I think I want to try to separate a few threads.
+800: So first off, so yes, at the moment, I think that like your current role and
+  my current role at Microsoft mirror each other quite well in the sense that the
+  project that we help maintain in the open source and that started as something separate
+  from work has become an intrinsic part of our work.
+818: And if I were to give someone as a suggestion, I would say that's probably one
+  of the healthier ways to approach open source that you were saying, because at that
+  point it's like, okay, this is work.
+828: When I'm not working, I'm not connected to that.
+832: And that feeds into the second thing that you kind of like mentioned, which is
+  like open source by its inherent nature.
+838: It's kind of like on 24 seven, you know, when you're maybe, you know, you're
+  in Scotland, it means that maybe during the time you're sleeping, someone is using
+  homebrew in some other parts of the world and they're opening an issue.
+851: And maybe it's something urgent and important for them, but you're, you know,
+  in Scotland, you're sleeping, it's the middle of the night.
+857: So having this aspect of the open source being always up, always running, always
+  someone doing something, I think that that's like one of the traps that a lot of
+  people fall into.
+870: Because like, well, I just received this email, it's like, you know, 11pm, but
+  this person really needs my help.
+876: Sometimes people just like feel this overwhelming sense of responsibility, which
+  is where like, you know, having boundaries, I think it's very important.
+888: And kind of going down this route for a second, um, and mentioning what is probably
+  like the most, uh, the most impactful blog post I've read in many years.
+900: I wanted to touch a second on, you know, one of the articles you wrote, I think
+  in 2017 or even earlier than that, which was called, um, maintainers owe you nothing.
+911: Like, uh, to quickly give a backstory, I was just starting out as a maintainer.
+916: I was like, um, yeah, 2017 around then.
+919: And basically I started, I, it wasn't part of my daily job.
+923: So I was doing it on the side and I was doing it a lot, like many, many hours
+  every weekend.
+928: And in less than three months, I basically burned out.
+931: And then I found your blog post that basically says, well, you know, like it's
+  open source and open source project.
+937: I'll have a license and this license says the software is provided as is, uh,
+  without warranty guarantees, et cetera, et cetera.
+944: And, you know, you through that blog post explaining that that's kind of the
+  contract that you create with your consumers.
+952: Um, like that should set your expectations for yourself and also for your community
+  to kind of like, if you use it, it's not my responsibility, how it goes.
+965: And yeah, I don't know.
+967: I, I still think that's one of the most important things that all the maintainers
+  should learn.
+971: Uh, how did you, what, let's start from the beginning.
+976: How did you decide to write that?
+977: What motivated you to go there?
+980: Uh, I can't quite remember.
+983: I think it was, I mean, obviously I'd been involved with Homebrew for a while
+  at that point.
+988: And I'd had a bunch of conversations with maintainers kind of over the years
+  and I realized that I guess at this point I'd been working on Homebrew for five
+  plus years.
+1001: And in contrast to many of the people around me in Homebrew and many other projects,
+  I had never burned out, right?
+1008: Like I had never both in the perspective of like, and I still say that today,
+  but I I've had 15 years.
+1014: I've never burned out of Homebrew.
+1015: I have there been times when Homebrew has been more enjoyable and less enjoyable
+  for sure.
+1020: But probably in 15 years, I don't think there has been a, a month in which I've
+  not done something related to Homebrew in that time.
+1028: Um, and, and also I, but the thing is, I've not felt the obligation either to
+  do that.
+1036: Like I've, I've done it and I've continued to do it and I continue to do it
+  because I want to and because I enjoy it.
+1042: And I also interesting, I didn't realize this at the time, but if you, uh, if
+  you Google my name, you find my website and stuff like that.
+1051: But if you Google Mike McQuaid asshole, uh, you will find various people on,
+  uh, mainly Reddit, I think.
+1058: But I think, you know, there's a couple of people in Hacker News who don't,
+  oh no, exactly.
+1062: Well, I think, I think there's an important point in that though.
+1065: Cause I think what is interesting is that, um, you, what you need to set yourself
+  up for expectations wise, and this is a good, maybe lesson for life, not just open
+  source is that if you have healthy boundaries and if you are doing things like,
+  as I say, want to be an open source maintainer, working on the same project for
+  15 years and not get burned out.
+1086: Some people are not going to like that, right?
+1088: Some people are going to call you an asshole.
+1089: Some people are going to call you selfish.
+1091: Some people are going to call you the one who's entitled or lazy or a bad engineer
+  or whatever it may be.
+1097: But the thing is, is that that those two things go together.
+1102: And if you are chasing people's praise, then you are going to be the one who,
+  as you say, is answering the email at 11 o'clock at night.
+1112: The issue, this person desperately needs my help.
+1114: I need to drop everything and help them because I owe this person stuff.
+1117: It's like, actually you don't, right?
+1119: Like, as the blog post goes into the details of and as open source licenses
+  state, you don't know anyone anything.
+1125: Like, literally, if you dig into what the licenses say, it's actually quite
+  surprising where the licenses literally say, if I break things on purpose on your
+  computer, that is, in using the software, you waive me of all liability and responsibility.
+1140: Now, whether that would stand up in court, if you actually did that on purpose,
+  remains to be seen.
+1145: But, like, that is what the licenses state.
+1147: The licenses state, like, if you want to use this software, you agree to all
+  these terms in using the software.
+1153: Right.
+1154: So, if you don't like it, that's fine.
+1156: And now you can't use it.
+1157: Right.
+1158: So, I think there's the letter of the law with this stuff.
+1163: And then there's, like, the popular conception, which is like, well, actually,
+  you know, and even in responses to this blog post, I've seen people like, well,
+  you know, okay, technically, open source maintainers don't owe you anything.
+1174: But, like, you know, really, they should, if there's an urgent thing that needs
+  fixed, like, they should fix that because they put this out into the world and they
+  have that degree of responsibility.
+1181: And I just, I reject that.
+1183: Like, I don't think that applies to people who are volunteers.
+1187: By all means, hold billion dollar corporations to that standard.
+1190: By all means, hold companies that you are paying and have a support contract
+  with to that standard.
+1195: But some random person who has received either none or through GitHub sponsors
+  probably, like, you know, 100x below market rate level compensation for their open
+  source work, it's, that person owes you nothing.
+1208: And you are, particularly if you're a large organization or corporation, if
+  you expect that person to jump when you need them to, like, you're actually very
+  foolish.
+1217: Like, you are being very irresponsible and silly to put the back of your organization
+  on the back of that one individual.
+1224: So, I think that's where it came from, basically.
+1226: The blog post, it just, it felt like something that I had internalized quite
+  a while before and a lot of people needed to hear.
+1233: And as I sort of predicted when I wrote it, like, a lot of maintainers really
+  liked it, resonated with them heavily.
+1240: I've got a lot of public and private feedback and I still see random people
+  posting it and sending it to other maintainers on Twitter or Mastodon or whatever
+  to this day.
+1250: And an awful lot of open source users who have never been a maintainer find
+  it incredibly offensive.
+1256: And I think, the thing is, I don't think you could do it without, I don't think
+  you could do one of those things without the other, basically.
+1266: Yeah, it's, I guess, in a way, it created this polarization because some people
+  have a perception that open source is supposed to be something.
+1275: And if someone tells them, okay, here's the line, they're like, well, that's
+  not my line.
+1280: So they kind of like, get offended.
+1282: And it's, I think that it's, I'm so happy, by the way, to hear that you never
+  had a burnout.
+1290: I had one and a half, like the first one was before I found out your blog post.
+1295: The second one was kind of like, for work-related reasons back then.
+1300: But it's, I think that it's very unique in a sense, like how your ability to
+  create these boundaries allowed you to survive this long in a way.
+1317: Literally, I think last week or two weeks ago, there was a maintainer that,
+  like, out of the blue, like, literally archived their projects because they received
+  an email that was absolutely, like, vile.
+1330: Like, it was just, like, full of insults and everything.
+1332: And they, and what they did was, you know, name and shame.
+1336: They literally screenshotted the email and put it in the readme.
+1339: Like, well, the project is not being maintained anymore because of this.
+1342: And especially now, not only this type of behavior sadly still exists in open
+  source, and we should call it out as something that people should not do.
+1351: Let's be clear.
+1352: People should not behave like that in open source.
+1354: Like, you're not entitled to anything.
+1355: But also, we've learned that, for example, for the XY, XZ attack, basically
+  what happened was that the actor basically social engineered to get the maintainer
+1371: because they were in a vulnerable position, like, a person working on their
+  own, working on a side project.
+1375: Like, they managed to barely, basically, as far as I understood, like, bully
+  them out of the project.
+1381: So, if anything, right now, it's even more important that, you know, what you're
+  stating in the blog post is, like, basically, we need all the open source maintainers
+  to kind of, like, create those barriers in their mind.
+1395: Like, create this level of, like, extra skin around their body to kind of, like,
+  make sure that they don't get overwhelmed.
+1404: Especially, like, you also brought up Reddit, and I still think that we're entering
+  now a phase where people sometimes, I don't know if that's also your experience,
+1416: but some people act in GitHub, in the GitHub issues, literally as if it was
+  Reddit, like, and that's incredible to me.
+1429: And, you know, you mentioned, like, the role of, like, being a lead in a big
+  project and, like, you know, telling people,
+1438: okay, if you behave this way, you're not welcome here.
+1440: Open source projects have code of conducts and similar things.
+1445: How do you think, does these things help in your experience with, like, how
+  your community uses your project?
+1453: I think so.
+1456: So, for me, code of conducts have gone back and forth, I think.
+1463: And I think my view is they're helpful, but not as helpful as people might think
+  they are, and only helpful when they're not tokenistic, right?
+1471: Like, so, if you're just, like, oh, well, you know, GitHub tells me to add a
+  code of conduct, so I'm going to add a code of conduct,
+1477: and then you don't enforce it or even really read it, and you just use someone
+  else's copy-pasted thing that you don't really think about.
+1484: I don't think that's, I don't think that really achieves anything, right?
+1488: Because you're not actually making it a better or safer space.
+1492: We took a code of conduct, I think, from before it was that popular or widely
+  done on GitHub repos.
+1501: We were one of the kind of earlier projects to kind of have a code of conduct,
+1505: and we avoided some of the kind of drama around whether code of conducts are
+  good or bad, I think, as a result of that,
+1510: because we were, you know, we got in there before, and we, I think, we based
+  it off Python's, maybe, like, in-person event code of conduct.
+1518: But the big thing with us on code of conduct is it's, like, essentially, it's,
+  we have a very, very low, again,
+1526: things people don't like about homebrew, things people don't like about me,
+1529: we have a very low tolerance to banning people, particularly people who have
+  never contributed to the project, right?
+1534: Like, if, essentially, my rule on almost any open source interaction, right,
+  is, if it's going south on homebrew,
+1542: is, if I consider your behavior to be inappropriate, whether or not you agree
+  or not, that's, you know, in some ways irrelevant, right?
+1550: Like, if I consider your behavior to be inappropriate, I will publicly state
+  on GitHub,
+1555: providing I don't have any sort of private means of contacting you, which I
+  normally don't.
+1560: I will publicly state on GitHub, like, essentially, this is out of order, like,
+  please read our code of conduct and adjust your behavior.
+1566: Nine times out of 10, maybe 95 times out of 100, that person will then apologize,
+  sometimes with a very bad apology,
+1574: but, like, at least they're trying, right?
+1577: They will apologize, they will adjust their behavior, and then we're fine moving
+  forwards.
+1580: The other proportion of the time, people get argumentative or defensive or say,
+1585: no, actually, I don't have to behave that way, or, actually, Mike McQuaid,
+1589: your behavior is worse than my behavior, whatever.
+1591: My experience has been, and it's up to people, what they do on their different
+  projects,
+1596: as soon as things go that way, that is never recovered, right?
+1600: Like, a person who, when called out on bad behavior, and again, another open
+  source to real world tip,
+1605: if you have friends, family members, whatever, who, if you say,
+1610: hey, you've upset me or hurt me or whatever, if their response is generally,
+  like,
+1613: anything other than, sorry, and then they can go and say their piece afterwards,
+1619: like, then, that's not great.
+1621: But yeah, in open source, my response now is, like, if that person basically
+  doubles down on their behavior,
+1626: or doesn't apologize, and doesn't even try and do, like, a shitty, I'm sorry
+  you feel that way.
+1632: I was about to say the same thing.
+1634: Sorry you feel that way is, like, a bad apology, but, like, sometimes people
+  are actually trying to apologize.
+1642: They just have never got very good at apologizing, right?
+1644: And, like, you know, I take that as, like, and then, for me, I'm then, like,
+  okay, like, thank you for the apology.
+1651: We're all good, right?
+1652: Whereas the other people, I will almost certainly immediately ban them from
+  the project.
+1657: If they are someone for whom we haven't seen positive contributions or whatever
+  before, they will get banned forever, basically, straight away, right?
+1664: And that means they can't submit issues, pull requests, discussion comments.
+1668: Essentially, for the homebrew organization on GitHub, they have no access to
+  that ever again.
+1672: And, again, for me, that's, this is the benefit of the code of conduct, because
+  the code of conduct sets quite clear expectations on what behavior is inappropriate
+  and inappropriate.
+1682: And, again, some people don't get even asked for, to apologize.
+1686: So, if you jump in with, like, an ethnic slur or, like, a, you know, sexist
+  or transphobic slur or whatever, then, like, you just get banned straight away.
+1695: There's not even a conversation there.
+1697: There's no, particularly, you know, as I say, if you're someone who we've had
+  no interaction with before, and you decide, yeah, my first contribution to the homebrew
+  issue tracker is going to be posting, like, garbage like that, then it's like, well,
+  no, like, fuck it.
+1709: Like, it's not even worth the emotional energy trying to deal with and fix those
+  people.
+1713: But, in some way, that leads me to, like, a, just a wider point on this stuff,
+  which is, I think, another funny thing with hierarchy and open source.
+1724: And I do think it's good that there's a lot more encouragement than there used
+  to be to try and get design resources, docs resources, whatever, involved in projects,
+  getting people contributing and stuff like that.
+1733: But, fundamentally, in a software project, maintainers who are working on code,
+  they are the most important thing on that project.
+1742: Because if they do not get involved, if all the maintainers who write all the
+  code, review the PRs, do the releases, if they all go away or they stop replying
+  to their notifications, that project is now dead.
+1752: That project does not exist anymore.
+1753: That software is now unmaintained.
+1756: So, at the end of the day, like, actually, and again, the other funny opposite
+  end of the spectrum is, if you are a software company selling things to people for
+  money or, you know, selling people's eyeballs, if you're an advertising-funded company,
+  your users are your customers and they're important to the success of your business.
+1772: In open source, a user who never files an issue report that actually ends up,
+  you know, being a reproducible bug that is fixed for other people or whatever, never
+  files a PR, whatever, they just use the software, they provide no value to the open
+  source project, right?
+1788: So, with those people, the minute they are in a situation where they are ruining
+  the day of maintainers and sapping the motivation of maintainers to work on that
+  project, those people need to be, their communication needs to be stopped immediately.
+1801: Because those people actually, and I'm not exaggerating, those are the people
+  who are at the biggest risk of killing open source software, are entitled people
+  who are rude and who make maintainers be like, you know, I guess the 11 o'clock
+  email example, right?
+1814: Like, there might be a maintainer who's spending their evening having a great
+  time working on some code and an issue comes in and then they're just like, oh,
+  fuck this.
+1821: I don't want to spend the rest of my evening doing this.
+1824: I'm going to go and have an early night or have a drink or watch some TV or
+  whatever instead because this person has now just made my evening not fun.
+1830: Like, that time that that maintainer would have spent has been stolen by the
+  person being rude or entitled or horrible or whatever.
+1839: So, like, those people have no value in open source and we should just silence
+  them as quickly and as effectively as we can.
+1847: So, like, I think that maybe, you know, it's more likely that the people listening
+  to this are also, like, not maintainers.
+1856: So, just to explain it to them, I think, I don't know about you, but I think
+  at some point you kind of, like, get quite adjusted to recognizing how someone is
+  communicating and figuring out, okay, this is probably a person that wants to still
+  be helpful.
+1873: They'll just have, you know, a bit of a more direct style of communication and
+  instead, like, recognizing that versus someone that is actually just trying to be
+  provocative, toxic, or, you know, as you were saying, like, detrimental to the project.
+1889: So, and not just that, the GitHub interface will tell you, like, if this person
+  has ever contributed to your project.
+1896: And if you've worked on a project for a long time, sometimes you start recognizing
+  the usernames and the avatars.
+1902: So, you know, I'm not saying you should fear the maintainers, but, like, don't
+  think the maintainers are stupid.
+1908: Yeah.
+1909: That's, I guess, what I wanted to say.
+1910: It's just, like, they are humans.
+1912: Yeah.
+1913: Given your caveat that most people listening to this are not open source maintainers
+  themselves, I guess the two things I would state there is, one, as I mentioned before,
+  when I talk about, like, silencing these people or whatever as quickly as possible,
+1923: I mean the people who, when they're asked to apologize, do not apologize, right?
+1928: If your communication is, I have very direct communication style, and if someone
+  is like, Mike, you're being a dick or whatever, then I will almost, almost always
+  be like, I'm sorry.
+1938: Like, I'm sorry.
+1940: And then try and adjust my behavior and communication going forward.
+1943: So, like, but, and the second thing is, like a lot of things in life, right?
+1946: Like, I heard a good line a while ago, like, you know, if you're worrying about
+  whether or not you're a good parent, you're probably a good parent.
+1953: It's, you know, the bad parents are the ones who are not worrying about whether
+  or not they're good, right?
+1958: It's the same thing where if you heard what I said before and you're like, oh,
+  no, maybe I'm this person, maybe I'm the one who's, like, a toxic open source contributor
+  I never realized until now, you're not, right?
+1966: Like, the people who are like that, because I've had the misfortune sometimes
+  to meet a couple of them in person, like, they are completely oblivious and completely
+  convinced that they are in the right and the open source projects are in the wrong,
+  right?
+1977: So, if you have that, if you heard me say this before and you're now getting
+  a nagging sense of, like, oh, that's maybe not, that's me.
+1982: It's not you.
+1983: I'm not talking about you.
+1984: Like, I'm talking about the people who will hear this and think that's definitely
+  not me.
+1988: Yeah, and also, like, to kind of, like, hammer down, like, if you're worried
+  about this, you're probably not one of them.
+1995: I think after a certain point, you also recognize when English is not their
+  first language.
+2002: Maybe for me it's also easier because I'm also a person that doesn't have English
+  as first language.
+2006: So, at some point, you recognize if someone is inadvertently being, you know,
+  abrasive just because maybe what they did was literally put in Google Translate
+  their phrase, copy-pasted it, and Translate just went for it.
+2021: So, you know, yeah, it's that bit of the second interactions where it's really
+  telling if there's intentionality.
+2030: Yeah, and, yeah, I mean, okay, so we've talked about the bad aspect of the community,
+  you know, and how that can really weigh down on a maintainer and, like, literally
+  destroy their mental health, especially if they don't have, you know, these good
+  level of separation and boundaries.
+2047: Maybe, you know, just to kind of, like, lift the spirits a bit, like, how do
+  you see the role of the community around an open source project?
+2058: You mentioned, you know, that the software engineers, the people that are actually
+  working on the project themselves are the very important people because they are
+  the ones bringing the project forward.
+2066: Like, in Direct Native, I've seen, like, how the power of the community and
+  creating a good community and healthy community around the project is really what,
+  you know, maximizes the impact and, you know, the success of the project.
+2081: So, what do you think about that?
+2082: How do you find that your relationship with the community works?
+2085: Yeah, I mean, I've heard, like, there's been a bunch of successful communities
+  I've been part of.
+2091: Some open source, some not.
+2093: But, like, one of the rules that I think is nicest with, like, if you want to
+  be a good member of a community or if you want to have a community mainly full of
+  good people, it's you should be aiming to help others as much, if not ideally more
+  than you are yourself being helped.
+2113: If you are just, the only time you ever interact with a homebrew is your tracker
+  is to ask a question and then your question gets answered, then you never do anything
+  ever again.
+2120: Like, that's fine.
+2121: Like, that's not, I'm not saying, like, that's terrible.
+2123: But I'm saying if you have a community that is entirely of that nature, then,
+  like, that is not great.
+2130: And even on that, you know, if you ask a question and you get help and, you
+  know, even just stuff like saying, thank you, homebrew's great, you rock, like,
+  those messages are surprisingly rare.
+2142: And if someone just shows a bit of gratitude, then it does, it's the opposite
+  of what I said before of, like, you know, ruining maintainer's evening.
+2149: Like, sometimes that can sort of make a maintainer's day of being like, oh,
+  great, this person was really nice and helpful.
+2154: But, yeah, but that's the thing is I've talked, it's a little bit, like, maybe
+  of a random tangent, but, like, I've talked before and I wrote a blog post about
+  this thing I called the mentorship diamond, where, you know, when I was principal
+  engineer at GitHub, like, an increasing proportion of my job as I got promoted was
+  doing mentorship, right?
+2172: And not just mentoring, but, like, mentoring other people on how to mentor and
+  all this type of stuff.
+2178: And the idea of, like, the diamond is that, like, every person has, and in some
+  ways I stole this from when I used to be religious, I forget the religious version,
+  but essentially, like, every person should ideally have, like, people above them
+  that you can receive mentorship from, people below them that you can give mentorship
+  to, and then peers who you can almost, like, sort of have a kind of mutual kind
+  of mentor-mentee relationship depending on what you're talking about or, like, support
+  each other and whatever, right?
+2202: And I think the same thing goes for open source.
+2204: It's, like, if you've, you know, used Homebrew for a year, say, right, and you've
+  never had any issues, you never had any problems on the issue tracker, there's still
+  probably questions that people ask in the Homebrew discussion forum that you could
+  answer, right?
+2214: So it's, I think the community is getting the idea that, like, no one is not
+  knowledgeable enough to help, and it's about motivation and time investment and
+  how much do you want to do stuff.
+2229: Because, again, like, a relatively common practice that we have in Homebrew
+  is, like, we have essentially, like, three types of issues that maybe get opened.
+2237: So one might be, like, yeah, we should definitely do this, one of the maintainers
+  is probably going to jump on this, and whether it's a bug or a feature or whatever,
+  like, yeah, like, essentially, great idea, someone will do this, like, well done.
+2250: And then at the other end, we have a, like, no one is going to do this, right,
+  even if someone makes a perfect pull request for this, we do not want Homebrew to
+  do this thing.
+2259: And then there's the middle ground, which is, in some ways, the most interesting,
+  where we're, like, none of the maintainers are probably going to do this right now.
+2266: But if you want to do this, then we will accept this, right?
+2270: Like, we would accept that functionality.
+2272: And, again, that's when I think the community stuff gets more interesting, because,
+  like, we try and essentially then we're sort of doing a bit of a nudge to be like,
+  hey, like, you're a user, you want a thing, like, nudge, nudge, you too could become
+  a contributor.
+2285: And that's what often people say, you know, oh, well, I've never written any
+  Ruby before, so I couldn't possibly do any of this.
+2290: And my response is often, like, I hadn't written any Ruby before, before I started
+  contributing to Homebrew.
+2295: And now I've been doing it professionally for 15 years, and I speak at Ruby
+  conferences and whatever, right?
+2300: Like, it's one of those things where, like, your willingness to kind of, like,
+  walk that way goes a very long way.
+2309: And also, like, even your willingness to kind of open a PR that's completely
+  broken, but, like, at least you've tried, and then maintainers will get involved
+  and help you out and all that type of thing.
+2318: So I think that's what I see with almost, like, the community side is that I
+  want to see, like, people trying to help, and then that, in turn, attracts help
+  from others and, like, people get together and do that.
+2331: Whereas when people are being more extractive, they just want to get out, they're
+  probably being solved, and then they're going to go away and have to talk to you
+  ever again.
+2338: Like, that's fine.
+2339: Like, that happens.
+2340: That's probably even the majority of people in the community, and that's okay.
+2343: But, like, that's not really what we want to be encouraging or rewarding, and
+  that's not really the top of my priorities to kind of help those type of people,
+  basically.
+2351: Yeah.
+2352: You, to talk to our audience, like, don't be the person with opening issue,
+  saying that they have a problem, and then a week later, write a comment, oh, never
+  mind, solved, and don't explain how you solved it.
+2366: Like, that's the very minimal.
+2368: Like, you at least want to contribute that small piece back of, like, hey, I
+  fixed this this way, you know?
+2374: And I get a lot of people asking me, like, how they can get started in open
+  source and, you know, how to do, how to become a maintainer, how to be part of a
+  project.
+2384: And as you were just saying, like, it's just about showing up, being willing
+  to collaborate with others, and, you know, don't be scared to try things out that
+  you've never tried yourself.
+2395: Like, your project, even React Native is, like, by, is inerity nature, you know,
+  it's JavaScript, Kotlin, Java, Objective-C, Swift, like, there's the layer, and
+  then there are all these layers below.
+2409: So it's, like, seven or eight technologies that are just working in a massive
+  concert.
+2415: Like, there's no way someone knows all of all of them, you know?
+2419: So you cannot expect, like, oh, if I want to become a maintainer of that project,
+  I need to be good in everything.
+2424: It's like, no one, even of the existing maintainers, is that good.
+2428: So, yeah, talking about that, and kind of, like, going back to you, in a way,
+  like, you mentioned, you know, you've been doing it for 15 years, you've been doing
+  it because you like what you do.
+2442: Like, if you had to, I guess, explain how motivation works for you, how does
+  that look like?
+2452: Like, how can you do something for 15 years?
+2454: I find that, for me, thinking to do something for 15 years is incredibly exhausting.
+2461: Like, how do you find that motivation?
+2463: Well, I mean, I guess I would say that it's, you know, aside from my marriage
+  and some of my closest friendships, you know, it's the, I haven't done anything
+  for 15 years as long as home room in my life other than that, right?
+2477: But I think for me, it's, I don't know, I, again, like, maybe my, my marriage
+  is a kind of a good example, like, without getting into too many details, you know,
+  we, we met when we were both young and whatever.
+2488: And it, it wasn't one of these things where we were like, you know, where, when
+  we started going out, like, oh, we're going to get, like, instantly, like, we're
+  going to get married and have kids and, you know, whatever.
+2500: It was just like, I like this person, they like me, we have a good time, and
+  we kept having a good time.
+2507: And, you know, in my case, over 20 years later, we're still having a good time,
+  right?
+2512: And it's kind of the same thing with homebrew, with me in some ways, where it's
+  like, I just started getting involved because I was like, I need this tool to do
+  some stuff it doesn't currently do.
+2521: And I want to do it, and doing that is fun, right?
+2526: So doing homebrew stuff is still fun.
+2529: I still find it engages me in a way that is enjoyable.
+2533: And particularly when, when I have had kind of day jobs in the past, like, there
+  is a refreshing, I find, like, my homebrew contributions have been balanced out
+  by essentially, like, how, how much autonomy I have in whatever day job I'm doing.
+2549: Like, like, how much control I have over what I'm doing, when I'm working, like,
+  how I write my code, whatever.
+2554: Because in open source, you have, like, at the absolute minimum, like, a lot
+  more autonomy generally than a typical day job.
+2563: And I think that's the thing for me, it's just, I mean, every time I sit down
+  and do homebrew stuff, it's, you know, if someone was to literally say, like, you
+  know, why are you doing this?
+2575: You know, I'd be like, well, because homebrew's fun.
+2577: And if it, you know, is it frustrating sometimes when I can't get a bloody test
+  to pass?
+2585: Yes, of course.
+2586: But, like, it's still kind of worth it overall in, like, kind of bigger picture
+  thing.
+2592: And I think, I don't know, like, I guess I'm funny, I'm still, like, a big gamer,
+  I play, you know, a reasonable amount of computer games and stuff like that.
+2599: But, like, it's funny, because there's certain games that just, like, they hit
+  my brain in the same way as, like, like, a friend got me into, I think it was, like,
+  Factorio or something like that.
+2607: Oh, Factorio, yeah.
+2609: Yeah, like, kind of logic-y based ones.
+2611: And it's funny, because eventually they, like, hit my brain in a way that I
+  was like, oh, this is, like, the same as programming, right?
+2616: Nice.
+2617: The difference is, like, in a funny way, for me, it's actually, like, not nice,
+  because I'm, like, this is just the same amount of fun, no more or no less than
+  homebrew.
+2627: But when I do homebrew, particularly nowadays, it's, like, literally millions
+  of people benefit from the stuff I do, right?
+2633: So, it's, like, when it's fun for me and it's beneficial to lots of people,
+  then that's a kind of a nice sweet spot.
+2640: And, again, you know, I mentioned before all the haters and stuff like that.
+2643: It's, like, at the end of the day, like, you know, I wouldn't say I'm an arrogant
+  guy, but I'm definitely a guy who's, like, has sufficient self-confidence.
+2651: And, like, you know, when I get some person being, like, oh, you should run
+  your project this way or, like, you're terrible at this or whatever.
+2657: It's, like, well, you know, I was principal engineer at GitHub.
+2659: Like, I've been running the homebrew for a while.
+2661: Homebrew's got quite a lot of users.
+2663: Like, the thing I don't say, but I do think, is, like, what have you done, right?
+2668: And most of the time, the people who are the quickest to criticize, the answer
+  is nothing.
+2673: Like, they've not done anything of any real note or whatever, right?
+2677: And that's fine.
+2678: I'm not saying they should have done, but it is saying, like, I'm not going
+  to let that person define my self-worth, right?
+2682: Like, if John Carmack or someone who, you know, some other person that I grew
+  up, like, idolizing, right?
+2690: Like, if he, like, met me at a conference and was, like, oh, by the way, Mike,
+  I've been following your career closely.
+2695: Turns out you're actually worth this piece of shit, right?
+2698: Like, that would probably hit me a little bit harder, right?
+2701: Like, even then, I still think I'd be, like, well, actually, you know what?
+2704: Like, I have a happy life.
+2706: I'm balanced.
+2707: But, like, I think that's the thing.
+2709: I think it's, at the end of the day, I guess, the shorter answer to a lot of
+  this stuff would be most of my motivation for most of my stuff in my life is intrinsic.
+2719: Like, I don't do it for external validation.
+2724: Or when I, or when my intrinsic motivation involves other people, it's knowing
+  that other people are benefiting from what I'm doing, even if they don't say thank
+  you to me.
+2734: It's, like, every time I see someone type a home root command into a terminal,
+  like, them typing that command, like, I hear a little, you know, you're welcome.
+2743: Thank you.
+2744: Or, like, you know, and I have a little, like, mental, like, yeah, you're welcome.
+2748: Like, and to some people that would seem maybe very, I mean, particularly British
+  or Scottish people, like, that would seem maybe very arrogant or self-involved or
+  whatever.
+2757: But I think for me, it's, like, that's how I get through it, right?
+2762: So it's, like, and, again, to jump way back to what you were saying about burnout,
+  it's, like, at the end of the day, the best thing for you as an open source maintainer
+  is to not get burned out, right?
+2771: Like, if you work on a project, particularly if you're a solo maintainer, right,
+  like, what your community and your users want is they want you to be around.
+2778: Like, you're still doing this in 10 years, right?
+2779: Like, and if you answering a issue at 11 p.m. makes, every time you do that,
+  you're probably making it a little bit less likely that you're going to be around
+  in a few years.
+2789: Like, that's actually, they don't know that they don't want you to do that,
+  but they actually kind of don't want you to do that, right?
+2798: It's kind of self-defeating for their own interests, like, them being, like,
+  this is very important and you need to not sleep enough tonight to fix this thing.
+2805: Yeah.
+2806: Yeah, there's, you know, the shortened goals and the long-term sustainability
+  of the project, in a way, at a play when you take those decisions.
+2817: And there's, I loved your answer also because, kind of, like, reframe it in
+  a certain way.
+2824: Like, there's, you know, control over what you do.
+2827: You see, you know, a result out of your direct actions and you also, and that's
+  all, like, around a good core of, you know, knowing yourself and being able to,
+  you say, okay, this thing is outside of me.
+2843: Like, even if John Carmack said to me that I'm not good at my thing, I can individually,
+  like, by myself, identify the things that are good for my life and the things that
+  I'm good at.
+2855: And the spy team, I would still have, like, this good core internally.
+2860: And I think this is very important and it's not, like, necessarily an innate
+  skill, like, being able to recognize why you like something.
+2868: Even, you know, having, like, this, you know, this strong core internally to
+  kind of, like, make sure you don't weave too much.
+2878: Some time ago, you also wrote a blog post about therapy and, you know, finding
+  a therapist.
+2885: Is that something that helped with that?
+2887: Do you think that, how would you help someone, you know, create this core and,
+  like, this level of, you know, awareness and knowing your limits and knowing what
+  works and doesn't work for you?
+2897: Yeah, I mean, I think therapy for me has been very helpful.
+2901: Like, I started therapy for the first time during COVID.
+2904: And, yeah, I think it was just, you know, obviously that was a tough time for,
+  you know, literally the majority of the world.
+2912: So, but, yeah, like, I think it was something I found very helpful in kind of
+  figuring stuff out.
+2918: And also, like, for me, it was, like, having kids and being, like, aware.
+2922: So, A, I'm not going to go into, like, details really here.
+2926: But, like, you know, I had some aspects of my upbringing were pretty tough.
+2931: And there's, like, pros and cons from that.
+2933: Like, one of the cons, which I wanted to address in therapy, is, like, hey,
+  like, how do I stop these?
+2940: This is me using current therapeutic language.
+2943: I didn't, I wouldn't have put it this way at the beginning.
+2945: But essentially, like, how do I stop myself using these kind of coping mechanisms
+  that maybe in the past have been very helpful, but right now are not helping me,
+  right?
+2954: But the flip side of that is, like, I have, you know, as the result of kind
+  of a difficult past, like, essentially my life gets better every year, right?
+2963: And has done pretty much since my school days.
+2967: And for me, like, I came into open source with probably a, well, almost certainly
+  a dramatically thicker skin than average, right?
+2977: Like, I don't get, people have sent me some truly horrendous emails and, like,
+  I'm able to kind of, even before therapy, found myself able to laugh them off more
+  often than not.
+2989: Because I'm just, like, you know, this person thinks, like, essentially, like,
+  this person thinks that they're going to really succeed and hurt me by saying this
+  stuff.
+2996: They don't know me.
+2997: Like, I don't care.
+2998: They're a moron.
+3000: Whatever.
+3001: But, yeah, but I guess I have found therapy particularly useful in the last
+  few years of identifying, like, what do I need?
+3009: What should I be doing with my time?
+3011: What should I have in my life?
+3015: And, yeah, and I just, it's something I've just found very, like, particularly
+  as, like, life gets more full and stressful and difficult.
+3025: It's, it just really helps to have that space where I have someone kind of to
+  talk to and figure out, like, what should I be doing?
+3034: Like, what do I think in a very, like, non-judgmental, like, centered around
+  my values rather than the other person kind of trying to project their values on
+  me and stuff like that.
+3046: And as you mentioned, the kind of blog post I wrote, like, if anyone listening
+  to this thinks, oh, like, therapy is something that kind of I might try or is helpful,
+  or I would say even more so if someone listening to this has had essentially anyone
+  in their life who have done therapy be like, hey, by the way, it would probably
+  be helpful for you.
+3066: You'd probably benefit from doing therapy.
+3068: Then I'd strongly encourage you to investigate that.
+3072: And the blog post I wrote was essentially, I stole it off some other people
+  who told it to me, which was, like, a step-by-step guide of, like, okay, I want
+  to get a therapist.
+3080: Like, how do I do that?
+3082: Like, and it's basically just, like, here's where you go.
+3084: Here's the things you select.
+3085: Here's my recommend process of, like, speaking to a few people and whatever.
+3091: And I've mentioned boundaries quite a few times here.
+3094: The other really nice thing with therapists is you can do stuff, like, almost,
+  like, interview a few and get a feel of, like, who do you gel the most with?
+3101: And, like, therapists are generally, like, you know, boss-level people when
+  it comes to, like, personal boundaries.
+3108: So, like, don't worry about asking the therapist for something that you're,
+  like, you know, or maybe they won't be okay with doing this or maybe this is kind
+  of taking advantage of them, whatever.
+3118: Because my experience is, like, in general, like, most therapists are the people
+  who will not let you take advantage of them.
+3125: Like, they're exceptionally good at not doing stuff like that.
+3128: So, basically, like, you know, it's something I'd very heavily recommend at
+  least investigating.
+3136: If it's something you can do and afford and you have the resources to kind of
+  find a therapist and get help and whatever.
+3144: And the bar for kind of how, like, how many issues you need to have or whatever
+  is dramatically lower than you would probably think.
+3153: Yeah.
+3154: You don't need, like, a big traumatic event to start therapy.
+3157: Like, you can just get started today.
+3161: And, you know, there's, well, also, I did, I also did write a blog post about
+  finding a therapist.
+3168: So, you can read both of ours.
+3169: But, basically, they said the same thing started.
+3171: And kind of, like, parroting back the questions you were saying at the start
+  about, you know, being a good parent.
+3177: Like, if you ask yourself if you need to go to therapy, you should probably
+  go to therapy.
+3181: And there was one more thing I wanted to chat for a second about.
+3188: But it went away from my mind.
+3191: And I can feel the muscles in my face.
+3193: I'm not used to smile and be positive and happy for this long, usually.
+3198: So, I can feel them, like, why are these muscles all tense?
+3202: You're not supposed to be smiling.
+3204: So, I think this is probably, like, around a good time where we can start to
+  close this conversation.
+3211: And to close it off, kind of, I usually ask everyone the same question.
+3215: So, Mike, if there was, like, one key learning that you would, like, you know,
+  a person listening to our conversation,
+3220: maybe an open source maintainer, maybe just someone that uses open source,
+3224: like, what's the one key learning they should take from you and, like, apply
+  to their life?
+3230: I think, for me, the key learning would be boundaries are really important and
+  valuable.
+3236: But, and I maybe didn't say this as directly before now,
+3240: boundaries are also a thing that you have to be willing to enforce yourself.
+3244: It's not enough to just tell other people your boundaries and then throw up
+  your hands and be like,
+3249: oh, they stepped all over my boundaries.
+3250: No, it's your job to figure out not just what your boundaries are,
+3253: but how you will respond if others do not respect those boundaries.
+3258: And, I guess, the final piece is a really good person to figure out.
+3262: If you can't figure out what your boundaries are or should be,
+3264: and you can't figure out how to enforce those boundaries in an appropriate fashion,
+3269: then a therapist is a really good person to do that with.
+3272: And, I guess, as a flip side, because it's not really being mentioned,
+3275: stuff like Reddit is, like, you know, there's all these places on Reddit where
+  you can ask for advice.
+3280: Do not use Reddit to help inform your boundaries.
+3283: Because, generally, if you ask Reddit, like, oh, like, you know, this person
+  I'm best friends with
+3289: and have been for 20 years, him and I had a minor falling out,
+3292: Reddit will tell you to, like, excommunicate that person and never speak to
+  them ever again.
+3295: So, like, yeah.
+3297: Go, don't see a Reddit person.
+3299: Go see a real therapist.
+3302: And, that will probably be something that is helpful for you.
+3304: Not everyone can afford a therapist, but if you're someone working in tech on
+  a kind of tech worker salary,
+3309: I'm not saying that, like, you necessarily have the money,
+3312: but I think you probably, if you shuffle things around enough and you feel like
+  it would be beneficial,
+3317: you can probably find a way of affording it.
+3319: And, it's probably something that you will find will be well worth the money
+  and very justifiable for you.
+3325: Awesome.
+3327: Perfect.
+3328: And, to kind of close it off, and also because it came back to me, like,
+3332: I think that if there's one fear rouged with all the things that Mike said and
+  I said is that
+3337: you're really always the same person.
+3339: You cannot, like, the boundaries doesn't mean that, oh, when I'm in work mode,
+  I'm a work person.
+3344: And, when I'm in my personal life, I'm in my personal life.
+3346: The things between the two worlds will actually influence each other.
+3350: So, as we were saying earlier, you know, the email at 11 p.m., like, that's
+  your personal life.
+3356: But, if you get that work email, it will ruin your personal life evening, right?
+3359: So, that's why boundaries are important.
+3361: And, how you enforce them are important.
+3363: Because, you really need to remember that you're just one person dealing with
+  all these things all the time.
+3368: So, yeah, I think this is a great point to finish up.
+3372: Mike, thank you so much again.
+3373: This has been so great.
+3375: I'm so grateful that you decided to do this with me.
+3377: Thanks for inviting me, Lorenzo.
+3379: I've had a good time as well.
+3383: And, that's it for this episode.
+3385: One more shout out to Mike for showing up and sharing their experiences.
+3388: Since you are here, it would mean a lot to me if you could help this project
+  out.
+3392: Leave a review or share it on socials.
+3394: If you want to check out the video, head over to YouTube, to subscribe.
+3398: You can find me on all socials at Kelset.
+3400: And, the project is at TheBuyMind Everywhere.
+3403: More details are in the description.
+3405: And, if you want to reach out, if you have any feedback or nominations for guests,
+  use those channels.
+3411: I hope you have a great rest of your week
+3413: and please remember to take care of yourself.

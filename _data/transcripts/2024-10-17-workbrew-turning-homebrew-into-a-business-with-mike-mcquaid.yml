@@ -1,0 +1,884 @@
+---
+0: Oh hey, how are you? Great to hear. Here, come in. Make yourself comfortable. Like
+  a
+12: drink? Sure. There you go. Welcome to the Tech Lounge. Shall we begin? Hello everybody
+24: and welcome to another Tech Lounge. I hope you are all sitting comfortably because
+  today's
+31: interview is a good one. This interview formed the basis of an article I published
+  on the
+38: Next Web a few months ago with Mike McQuaid, maintainer of Homebrew and now one
+  of the co-founders
+45: of Workbrew. A lot of people who use macOS will have heard of Homebrew and the
+  article
+52: was very popular. So I am looking forward to seeing what people think of this
+  interview
+58: too. So let's just jump right in. Before we begin, there's just a few people at
+  the door
+67: with some things to say that won't take very long. If you'd rather not hear these
+  interruptions,
+73: then please support the show. You can find details in the episode and show notes.
+79: So, Mike, how are you today?
+85: Yeah, doing great, thanks. How are you, Chris?
+87: Good. I can see a guitar amp behind you. This is exciting too.
+90: Yeah, it's a bass guitar amp. I have a few guitars hiding behind me, unfortunately.
+96: I'm actually mostly a drummer. I have an electric drum kit, like just there.
+101: Oh, very cool. Yeah. I'm minor sadly, mostly for show nowadays, since I had kids.
+  I had
+106: visions of my kids being virtuosic musicians at a young age and they have no
+  interest in
+112: learning music so far.
+113: Yeah, my dad tried to do the same because my dad was a professional and I didn't
+  get interested
+117: until I was a teenager and realized there were benefits to playing music, shall
+  we say, as
+124: a young teen. So I found my own motivation. Anyway, so you represent two organizations,
+  one organization,
+136: one company, both with a similar ending, homebrew and workbrew. I think we should,
+  let's begin
+142: with homebrew. And let's, for those, I mean, in certain sectors it's very well
+  known, but
+148: for those who don't know what it is, what is it? And I think a more important
+  question
+153: might be, why is it as well?
+155: Sure. So I guess my highest level description of homebrew tends to be for people
+  who aren't
+162: even in tech and have no idea really about computers is it's, I first asked them,
+  have
+168: you heard of open source software? And if they haven't, I tend to give up. But
+  assuming
+172: you have heard of open source software, which I imagine is most of the listeners
+  to this,
+175: then homebrew is basically an app store for open source software. So it's a way
+  for primarily
+182: developers, but a bunch of other people to install open source software primarily
+  on their
+186: Macs. But it also supports Linux now. It also installs a bunch of non-open source
+  now. And
+192: yeah, but that's the simplest one-liner, I think.
+194: Yeah. I mean, for any Linux people listening, it's a package manager as well,
+  sort of, I suppose.
+200: But yeah, you are, like, I've used it for a very long time. And I, I would say
+  it's probably
+204: about 50-50 at this point that I'm also using it for the non-open just because
+  of the convenience.
+209: Yeah.
+210: Just to have everything in one place as much as possible is kind of nice because
+  that doesn't
+215: really exist on Mac. It may surprise some people to hear this, but it's not really
+  a thing.
+223: And it's, you were not the original maintainer or creator, were you, I think,
+  from memory?
+227: No.
+228: So the original creator was a guy called Max Howell.
+231: So he created it, I guess, 15 years ago, last May. And I sort of knew of Max.
+  He was a
+240: friend of, a friend. We both worked at startups in London. He was at Last.fm,
+  which if you were
+245: in tech in that particular era.
+247: Yeah, scrubbling. Lots of scrubbling. And yeah, I was in a sort of similar startup
+  in London
+252: called Mendeley. And yeah, and basically he, he used some other package managers
+  on Max and
+259: he didn't like them. And he came up with Homebrew. And I found Homebrew fairly
+  early on. I think
+263: I got involved, you know, probably less than six months after it was created.
+  Started contributing,
+268: no real expectations of doing anything. And then now have been maintaining it
+  for 15 years
+272: and contributed to the package manager itself, at least probably more than anyone
+  else.
+277: You've been maintaining it for 15 years?
+279: 15 years.
+280: So the project is older than 15 years?
+282: So the project is 15 years. Sorry. I go by calendar years and things. So the
+  project turned
+288: 15 a couple of months ago. And this is my 15th year. I guess my official 15 year
+  anniversary
+294: would be like September or something.
+295: Yeah. Which is relatively, relatively old, long and mature in terms of sort of
+  modern open
+302: source. That's, yeah, I guess.
+304: Yeah, I guess so.
+305: Yeah. And actually on a, on a side thing, I feel like didn't, didn't Max then
+  go on to
+310: do CocoaPods? Or have I got that mixed up?
+313: So he worked later, he went and joined Apple at a later point in his career and
+  he worked
+318: on the Swift package manager, which was, I don't really know that ecosystem super
+  well,
+322: but I think that was sort of a somewhat related version of, like the official
+  version of Cocoa
+327: Pops or something, but just for Swift.
+328: And when did the Linux version begin?
+333: Yeah. So that's, I can't remember the exact years off the top of my head, but
+  there was
+337: a guy called Sean Jackman, I think, who started it originally. He started like
+  a fork of Homebrew
+343: basically because he worked in bioinformatics. And the problem they had was they
+  had these
+348: big, you know, supercomputers that they were allowed to compile software on,
+  but they didn't
+352: get root. So they couldn't use the system package manager. And he figured out
+  like, oh yeah,
+356: if I sort of like hack Homebrew this way and that way, then I can use it to install
+  some
+359: stuff in my home directory. And yeah. And basically like over time, we sort of
+  like built up relations
+365: with, with them. And then eventually the package managers merged and then the
+  package repositories
+370: merged as well. So now Homebrew like officially supports Mac analytics.
+375: Ah, okay. So it's the same. So, okay. I have to be careful here. So for, for,
+  for people
+380: who don't know with, with Homebrew, most things are called a formula. So you
+  have the same
+384: formulas for all, all combinations these days.
+388: Yeah. Yeah. So the same formula is used to install stuff on Mac and Linux. I
+  mean, there's
+393: some formula that only work on Linux and some formula that only work on Macs,
+  but generally
+397: most of them work on Macs.
+398: And I know there have also been various decisions along the way in regards to
+  the open, the non-open,
+404: the compiled, the non-compiled. Tell me a little bit of that journey. And, and
+  I feel like there's
+410: been most recently this journey to reconsolidate as much as no, sort of. Yeah,
+  maybe let's, let's,
+416: let's tell me the journey anyway.
+417: Sure. So Homebrew started off as what we would call like a from source package
+  manager, which
+423: basically meant that if you've used in the Linux world, I guess something like
+  Gen2, or
+428: I think even that's lesser nowadays, but certainly, so it would download the
+  source code of the
+433: package and then it would fire up a compiler and turn away and then spit out
+  in the end
+437: some binaries, you call them on your machine. And it's while it started off like
+  that, like
+444: that was a very time consuming for users because some, you know, software would
+  take minutes
+449: to install some software would take hours to install and, and B for us as maintainers,
+  it
+455: was very error prone because there are a lot more things that can go wrong with
+  compilation
+459: than not. Yep. So I remember Max initially kind of mentioned to me like, Hey,
+  you know,
+464: it'd be worth playing around with this. And, and I created, so Homebrew has a
+  beer theme overall
+469: and maybe clue from the name. So I created what I called bottles. So bottles
+  are poured onto
+475: your, your system. And, uh, yeah. And basically like that started off just being
+  a few of the
+480: most expensive packages to build being built on my machine, then evolved to a
+  VM. And then
+485: we did a Kickstarter and whatever it was 2012 or 14 or something like that to
+  get some of
+491: our own hardware. And then over time, eventually, um, we were building more and
+  more things and
+497: then decided to kind of build basically everything on all our supported operating
+  systems. Um, and we
+503: sort of flipped and sort of gradually from a from source package manager to a
+  binary package
+508: manager. So you now, if you like brew install, whatever you will download our
+  prebuilt version
+513: of whatever the open source software is, um, and that will be installed on your
+  machine and
+517: that saves you time. It saves the world, probably some energy use or greenhouse
+  emissions or whatever
+523: you want to say. Um, and yeah, and it's, it's also like way easier to support
+  because stuff
+528: can still go wrong, but like the, the amount of stuff that goes wrong is, is
+  dramatically reduced
+533: in that environment. And I guess the second part of your question. Um, so again,
+  similarly, I can't
+538: remember the years with this, there was another, not really fork of homebrew,
+  but almost like a sort
+543: of companion project to homebrew called homebrew casks. So homebrew casks or
+  homebrew was doing
+549: to install open source software. And they thought, Hey, like, wouldn't it be
+  nice to have something a bit
+552: like this that I could use to install, I don't Google Chrome, one password, whatever.
+  Right. Um,
+557: so instead of downloading open source software, and then either in the old days
+  building on your
+563: machine or nowadays building on our servers and then distributing that you just
+  download with
+569: homebrew cask, the, the pre-compiled binaries from say Google or one password
+  or whomever. Um,
+576: and then those are installed. And then I think again, maybe 2016, something around
+  those
+580: eras, um, the two projects merged. It was mainly the work of a Google Summer
+  of Code student called
+585: Anastasia. Um, and she worked, uh, really hard to get that done. And yeah. And
+  then nowadays,
+591: if you write brew install, then it behaves pretty similar, like most of the time
+  identically for
+597: packages, sorry, for formula, which are the things that are built from source
+  and for casks, which are
+602: these, what we call these kind of binary packages. Yep. It's actually interesting.
+  My other series of
+607: interviews at the moment, uh, this week is around immutable operating systems
+  and you can kind of
+612: fake it a little bit with homebrew and you have this bundle thing as well. Yep.
+  Of course the Mac
+618: isn't really designed like this though. And, and bundle we get you so far and
+  maybe it doesn't work
+625: completely because most of the application developers are not expecting you to
+  do this. So, uh, yeah,
+631: but it's, um, it's, um, it's interesting. You can kind of basically end up with
+  a bit of a, uh, kind of a
+637: config file of your applications. Um, and there are other projects that sort
+  of relate, but they're not
+643: quite as, um, as well maintained as homebrew or not as big, I suppose, um, for
+  preferences and Mac app
+652: store and stuff like that. But you know, it's, it's, it's probably a very small
+  group of Mac users who
+657: really actually want to do this. Yeah. So, so to dig a little deeper in case
+  you are someone who
+664: that's piqued your interest, yeah, there's a promo project called homebrew bundle
+  or if you like
+668: brew bundle. So that pulls things from a brew file, which looks a little bit
+  like a gem file.
+672: If you've ever written any Ruby or, you know, Python requirements.txt or npm
+  like package.json.
+679: And that basically says, here are the, the packages I want to install from homebrew,
+  homebrew cask, or as
+684: you said, mentioned the Mac app store, or I think the other thing is like VS
+  code extensions.
+688: And basically pull those down and install them. So that's a nice way of like
+  having one file for
+695: either everything on your machine. So like, you know, setting up a new machine
+  is dramatically quicker
+699: that way. Or alternatively, like you can also use it on like a project by project
+  basis where you say
+705: this project needs, because again, a common thing in software projects is you
+  might having
+709: to read me, okay, before you run gem install or whatever bundle install, you
+  have to install
+714: Postgres and Redis and whatever your dependencies are. So this provides a nice
+  way of doing that
+720: programmatically. And then you can like test that in CI and all this other thing.
+  And you mentioned
+724: before about the immutability. And when we talk a little bit about work brew
+  later on, like
+729: people, if they're interested in that, they should watch this space because this
+  is something that
+733: I'm actively finding what I'm doing in the future.
+735: It's good I'm talking to you. I wasn't necessarily going to talk to you on that
+  side, but we can
+739: mix it up a bit. And just, you mentioned Ruby files. Obviously, if you consider
+  the time when
+745: homebrew started, Ruby was, I don't really want to get into the department of
+  saying more or less
+752: popular, but it was maybe more commonly chosen as an option. And it's perfectly
+  reasonable for what it
+760: does in homebrew. But has there been any thought about changing that at some
+  point? Because,
+765: you know, programmers like to go with the new shiny and a lot of them don't think
+  Ruby is the new shiny.
+770: Yeah.
+771: Well, so from a personal basis, I personally still love Ruby.
+775: Again, stuff at work brew that we'll talk about later, like I, all of our web
+  application stack
+780: is built in Ruby on Rails because I still think that's the, one of the best ways
+  of kind of getting
+785: started with a web application nowadays. But yeah, and there's always regular
+  conversation
+790: about, oh, you know, should home Ruby move to another language? But the problem
+  is the kind of
+794: formula that I mentioned before and tasks. So we would call them like a DSL,
+  which stands for
+800: domain specific language. So it's basically like, if you go and look at a formula
+  file, if you say,
+804: have, you know, used a Linux package manager before, you could probably look
+  at that and without
+809: anyone explaining to you what's going on, have a reasonable understanding through
+  a combination
+814: of the DSL being quite good and Ruby itself being quite expressive. You could
+  look at that and be
+818: like, okay, I understand what's going on here. If it's downloading this from
+  this place, it depends
+821: on this. It's then going to run these instructions, et cetera, et cetera. So
+  the tricky thing with
+826: homebrew is if you want it to move to another language, then that Ruby based
+  DSL is essentially
+831: supporting that in another language means supporting Ruby. So you're going to
+  have to have some Ruby
+837: somewhere to shell out there, or you're going to have to do a homebrew, you know,
+  homebrew is higher
+842: than v2 at this point, but like a massive breaking change versus homebrew where
+  you break everything
+846: that exists already and move to like a new way of doing things. And in my experience,
+  when you do
+851: that in an open source project, more times than not, you kill the project because
+  people just
+856: don't want to migrate, make a fork. So yeah. So would we choose Ruby if we were
+  building homebrew
+861: from scratch today? Probably not. Is it going to migrate away from Ruby? Also
+  probably not.
+865: Yeah. And there's, yeah, we do more and more. The main, to be honest, the main
+  problem with Ruby is
+870: just performance. So, and that's not a Ruby problem per se. It's more like how
+  we use it and
+875: the competitors of like Swift and Go and whatever for CLI applications are just
+  faster. They don't
+880: have to boot up a VM. But yeah, so essentially we're just trying to make homebrew
+  faster instead of
+886: trying to rewrite it in another language that could potentially be faster.
+890: And there is a tremendous amount of tooling. That's the thing behind the scenes.
+  Most people will just
+894: encounter one bit, but if you ever contribute and things like that, there's a
+  lot of other tools
+898: that are all part of this ecosystem as well, I guess. So yeah. Yeah. And, and
+  on that, before
+903: we kind of, I think this is a bridge question into workbrew. The project, I think,
+  I don't know
+910: about any more, but certainly at periods of time was one of the biggest open
+  source projects,
+914: however you measure that, uh, out there. Um, and so firstly, yeah. What is that
+  like? Yeah.
+924: I know there have been challenges here, there and everywhere, um, throughout
+  the project history,
+930: but yeah. What is that like? And this very much leads into workbrew in a second,
+  but what is that like?
+936: Yeah. So, I mean, it's nice in some ways. Um, it's, it's funny. I had, uh, uh,
+  opportune timing
+943: because, um, I worked from home in Scotland, in Edinburgh and over here, like
+  tech's not nearly as
+950: big as it is in the U S and stuff. But I had a, a young lad come up to me in
+  the gym today and be
+955: like, Oh, are you, are you the homebrew guy? Like, like, and he was like, Oh,
+  I can't believe like a
+960: tech celebrity goes to my gym, which me being Scottish makes me like cringe unbearably.
+  Someone's
+965: a flattery in public like that. Um, but yeah, so it's very, that part of it is
+  strange, but nice,
+972: frankly. Like it's nice when I work on homebrew to know that like lots of people
+  use this and that
+977: me spending my time on this stuff has a positive impact on other people. And
+  people seem to generally
+983: feel favorably to it and enjoy using it and have good experiences. So yeah, that
+  feels great. And,
+989: um, I still enjoy it, which is nice. I guess the, the flip slash slightly darker
+  side to that is,
+996: you know, like being a large project, you get a lot of, um, hate from people
+  like either people who
+1003: are just frustrated because they hit a bug or because you changed something
+  and they didn't
+1007: read the release notes and now something that their work's broken or just people
+  who, uh, frankly,
+1012: there's a lot of entitled, uh, noisy whiners in open source who contribute very
+  little and
+1020: like to shout at people, make them feel bad. And my, one of my problems slash
+  strengths is I have
+1027: very little time for those people. And I just insta block them or like lock
+  their issues,
+1033: close their issues. I won't fix, I won't go on my way to spend my time fixing
+  problems that are,
+1039: you know, the people who are asking them or asking them in a, you know, borderline
+  abusive way.
+1044: And I'm also super protective of my maintainers and I don't want them to be
+  treated that way
+1049: either. Uh, so I guess that's the flip side of it, but you know, I, I guess
+  I talked to another
+1053: podcast recently about like open source and mental health. Exactly. And this
+  year as well, I think
+1058: you had a talk. Yeah. Yeah. So I, you know, this stuff comes up and I think
+  for me, like I've,
+1062: I would say I've never been burned out in the 15 years that I've worked on homebrew.
+  I've probably
+1066: not had more than a week or two weeks at most where I've not worked on homebrew
+  in that time.
+1073: And that's not because I feel compelled to it's because I enjoy doing it and
+  I still enjoy working
+1078: on it and I still value the people who use it and maintain it and stuff like
+  that. And yeah.
+1086: Yeah. Now, so this brings us to an interesting point. I may have been naive
+  here because when
+1091: I saw the, the, the work brew kind of announcements over the past sort of six
+  to 12 months, and
+1097: then I noticed, I think before that you were working at GitHub, I think.
+1100: Yeah. Yep. Yeah. So I spent a decade at GitHub and this actually surprised me.
+  So this is kind
+1105: of, you know, a project of homebrew size and there are contributions and things.
+  You've already
+1111: mentioned a lot of infrastructure costs and I imagine they are pretty high.
+  I was,
+1115: actually surprised and maybe I'm naive here to see that that was the case, that
+  you were
+1120: working somewhere all that time, that there wasn't enough in the bank to pay
+  one person,
+1127: which took me by surprise. And it's somewhat damning of, I think the nature
+  of something
+1133: like homebrew as well, because he's largely a consumer open source project,
+  not like something
+1137: you could build a startup on, you know, traditionally.
+1139: Yeah. So it's interesting. Like there's, there's pros and cons in some ways
+  of that. So yeah,
+1143: I guess it's funny because again, when I was at GitHub, the assumption most
+  people have
+1147: is that my primary job there was working at homebrew. And that was literally
+  never the
+1151: case. Like at, at most I spent, I think on maybe two occasions in 10 years,
+  I spent two
+1158: to three months where my primary project was something where GitHub needed homebrew
+  to do
+1163: something, homebrew needed something. So I was like, okay, cool. Can I spend
+  some time on
+1166: this? Um, but yeah, but most of the time that wasn't the case. And I just did
+  it in my,
+1170: I guess, you know, I did some of it during working hours, but you know, when
+  you work
+1174: from home for an American company, like what is a working hour or not a working
+  hour, you
+1178: know, it's a little bit, a bit nebulous. Right. And I think GitHub benefited
+  from stuff
+1183: I learned on homebrew, homebrew benefit from stuff I had on GitHub and GitHub
+  were very heavy
+1187: users of homebrew and GitHub, you know, paid my salary and also pay a lot of
+  those expensive
+1192: infrastructure costs that you mentioned are born by GitHub. Yeah. So yeah. Like,
+  I mean,
+1197: I don't, I guess like, you know, maybe I'm a, an older generation of open source
+  kind of guy,
+1201: but like personally, I don't see it as, uh, necessarily like a bad thing that
+  the project
+1207: didn't have enough money to pay me to work on it full time because I'm actually
+  not sure
+1211: I would have wanted that. Yeah. And like we're in the interesting middle ground
+  as a project
+1215: where we have essentially, I guess the way I frame it is like too much for stickers,
+  not
+1220: enough for a salary. Right. Well, we could pay someone a salary, but we couldn't
+  look and say,
+1226: okay, well, we can definitely pay someone a market rate ish salary for like
+  years at a time. Um,
+1231: without there being potential difficulties in that. So, yeah. So explain, I
+  think, uh, again,
+1239: probably the same question we began with, what is work brew and why is work
+  brew? Why now? I think
+1245: is maybe another question to add to that. Yeah. So work brew is essentially,
+  we're building a
+1252: commercial company on top of homebrew. So a pattern I'd seen again and again
+  over the years working on
+1258: homebrew is that you get big organizations with more compliance requirements,
+  particularly who may
+1264: have requirements to use stuff like MDM tools. They might have requirements
+  that their users don't have
+1268: admin access. They might have requirements around vulnerability mitigations
+  or like SLAs or security
+1274: reviews and things like that. And these were just things that homebrew, uh,
+  either couldn't do or
+1279: the homebrew maintainers who volunteers didn't have any interest in doing. Yeah.
+  So it always seemed to
+1285: me like there was a little bit of a commercial opportunity there and the time
+  felt right for
+1290: me and my co-founders, uh, formerly of GitHub to kind of enter the space and
+  say, okay, well,
+1296: the project's in a good place in terms of having like a decent governance structure
+  and stability and
+1301: good community, goodwill. And we're in a decent place in terms of like, it seems
+  like a, a ripe kind
+1308: of time to, to kind of try and go into this space and try and make homebrew
+  better in this way for
+1313: kind of enterprise customers. So, yeah, so that's, that's sort of where, uh,
+  aligned and
+1318: what workbrew looks like today. We're in private beta. We're going to go into
+  public beta very
+1322: shortly. And basically right now we're, uh, a like fleet management tool essentially
+  for homebrew
+1327: that kind of glues into your MDM tools. So you can run any homebrew command
+  and configure homebrew
+1332: on across all of the machines in your fleet, uh, in the same way, basically.
+  And we have a slightly
+1339: security enhanced version of homebrew where we're running things as a different
+  user in like a different
+1344: sandbox and stuff like that. And, but for the end user, it essentially feels
+  exactly the same as
+1348: as using homebrew normally where you just, you still run brew commands in a
+  terminal and
+1351: you get things working the same way.
+1353: It's an interesting idea because yeah, that macOS sort of has a handful of these
+  somewhat,
+1359: um, there's a couple of the commercial MDM tools. I have used some of them being
+  employed by also
+1366: American companies at a distance in the past. Uh, and also I've also worked
+  at companies that had
+1371: like a weird assemblage of like a puppet scripts and things to do something
+  similar. But there's always,
+1376: it's MacOS and Apple have periodically had their own solutions with profiles
+  and things which
+1380: kind of come and go in terms of their enthusiasm for them. But there's never
+  really been anything
+1387: that cohesive that you would get on, on windows. And it's actually interesting
+  that you, you know,
+1392: I would say a lot of developer focused companies, it's highly likely that the
+  engineers on Mac are using
+1397: homebrew anyway. So, so it's an interesting play.
+1401: Well, and there's an interesting other place where the, um, that almost like
+  the cart and the horse
+1408: being flipped here where there are some companies where due to their compliance
+  requirements, they
+1413: can't have developers using Macs. Right. And they've contacted us saying like,
+  Hey, we have all these
+1417: developers who want to use Macs. Our compliance requirements mean like ISO 2701
+  or whatever that they, uh,
+1423: they have to have software be approved before it can be installed on their machines
+  and stuff like that.
+1428: And that means that they can't use homebrew. Like does workbrew have a solution
+  to that?
+1432: And we're able to say, yeah, we do have a solution to that. So the, the interesting
+  thing that I didn't
+1437: really think about when I was getting into this is it's not just upping the
+  security profile for the
+1442: people who are using homebrew in these bigger companies, but also enabling more
+  people to use
+1446: homebrew who want to and maybe use it at home when they're hobby projects, but
+  aren't able to use it at
+1450: work yet. Yeah. Yeah. Yeah. Just on the subject of the MDMs, like a lot of the
+  ones I've used tend to
+1457: to have their own kind of app store that you install from. Um, so how have you
+  found integrating with
+1462: those? Like, are they open to integration or are you kind of almost seen as
+  like a competitor to
+1467: their own internal tools? No, no, I don't think we're competing with those MDM
+  tools. So they're,
+1472: they're like in their app stores are, um, I mean, I can't speak for all of them,
+  but the ones we've
+1477: been in contact with seem to be happy with us kind of wanting to integrate with
+  them. And it feels like
+1482: it's win-win there because we're kind of solving different problems in some
+  ways. Like,
+1485: you know, there's some overlap. You could obviously use homebrew to install
+  some of your
+1488: software there, but generally the way people are using MDM tools, they're leaning
+  on their MDM
+1493: tool to do more of this stuff and homebrew to do less of this stuff. But there's
+  some kind of
+1498: nice blurred lines there and they'll allow us to kind of be value add where
+  you can use us and an MDM
+1503: tool and kind of get more value out of using both than you would out of just
+  using us separately.
+1507: Yeah. Um, and, uh, you, we, we, you kind of hinted at it, but this like immutability
+  idea,
+1514: I think that relates to the rollout, I guess, you know, um, something comes
+  pre-installed that on
+1521: boot runs through a bunch of brew scripts to install and set up.
+1525: Yeah, exactly. So right now we're primarily focused on building something for
+  kind of security and
+1531: IT professionals where essentially the, I have partly working in, I worked on
+  internal and
+1536: external developer tools almost my entire time at GitHub. And I've worked on
+  homebrew obviously for
+1540: a while. So I have like a very high bar for myself and my company and everything
+  like that for
+1545: developer experience. So for me, like using homebrew should feel just as good,
+  if not better, uh, when
+1551: you're using it under workbrew as when you're using it without workbrew. So
+  like that essentially for
+1555: developers, the experience should be the same. And then we're building something
+  where for security and
+1559: it professionals, it's like dramatically better because workbrew does, sorry,
+  homebrew does not
+1563: play nicely with these MDM tools out of the box and workbrew does. Um, and we
+  have very decent
+1569: integration, but yeah, over time we're building more and more in the kind of
+  developer space as well.
+1574: So we don't have anything kind of ready for announcement or release yet there,
+  but we definitely,
+1580: I worked on some of these problems at, uh, GitHub and like a common complaint
+  that people have with
+1586: homebrew, for example, is because it's a, what you call a rolling release package
+1589: manager, which essentially means homebrew will always try and be on the latest
+  version of
+1592: everything that it's not compatible with how most companies work. Most companies
+  want to have
+1598: everyone on the team be at least, you know, even if they're very upgrade happy,
+  they want to be able
+1602: to say, okay, well, let's upgrade everything for everyone on the team at the
+  same time.
+1606: And homebrew with brew files doesn't really let you do that yet. Um, and that's
+  on the workbrew side,
+1611: like that's probably our biggest developer centric problem that we're solving
+  is we don't, as I say,
+1617: we don't have anything ready for that now, but like the, the problem that we
+  are aware is there
+1621: and that we are, we have some early plans working on that is to essentially
+  build something where
+1626: you're able to kind of lock things down in that way so that you are able to
+  protect versions like that.
+1631: Interesting on that, because I noticed you, you listed on a feature list, like
+  a, the console and you
+1636: mentioned the kind of security and auditing that kind of thing. Um, does this
+  go as far because I
+1641: don't think core homebrew has this concept either, but introducing things like,
+  you know, CVEs and
+1647: vulnerabilities detected in packages, and that will also be a feature in homebrew?
+1650: Yes. So that's, that's a feature we're building in workbrew. So you're right
+  to say that there,
+1655: there are some sources out there that provide, if you go looking, you can figure
+  out kind of
+1660: what CVs are in what homebrew packages, but there's an awful lot of false positives
+  and false negatives
+1665: in there. Um, and one of the advantages we have at workbrew is we're building
+  this in a way that, um,
+1671: because we have homebrew maintainers, for example, who work for us, that people
+  can really benefit and
+1676: the community will be able to benefit from essentially us using this information.
+  But
+1681: then our customers have a flow to be able to say, okay, this thing is right
+  now outdated and very
+1687: shortly if you have a CVE and then you can press literally one button to update
+  that package over
+1692: your entire fleet of devices and monitor which devices are on which versions
+  and stuff like that.
+1695: So, um, not that in any way I would will us another heartbleed or other like
+  horrible vulnerabilities
+1702: where people have to upgrade everything at once, but we will inevitably get
+1706: to another one of those cases. And, um, my experience has been in the past,
+  that's when
+1711: poor Mac admins who themselves may not even use homebrew are put in a situation
+  where they have
+1717: to like hack together some script like yesterday to upgrade all their devices
+  and then they find
+1722: homebrew doesn't want to play nicely with their MDM provider and whatever. And
+  instead work in those
+1726: situations for our workbrew customers, it's like, okay, well, you go into the
+  console, you click one
+1729: button and then in 15 minutes, assuming the devices are on, they'll be updated
+  to the latest version.
+1734: So it makes, it makes people's lives a lot easier in those situations.
+1737: Yeah. I'm interested to know how that kind of relationship works because homebrew
+  has generally
+1741: been a user, uh, initializes, whereas in this case you kind of have to have
+  some sort of agent
+1746: saying, Hey, initialize, you know, so it's a different dynamic as well.
+1750: Yeah. Um, and are you planning a Linux version? Does it not make sense for workbrew?
+1754: No, I mean, we're, we have our, uh, our eyes and ears open with this stuff.
+  I mean,
+1759: as you would expect for a kind of relatively early stage startup, we have lots
+  of plans,
+1764: but then the plans are, um, very heavily influenced by what our customers are
+  interested in.
+1771: And yeah, we're going to have, uh, we definitely have some customers who are
+  interested in us
+1776: having more support on Linux and we have essentially internal internally. Most
+  of this stuff is already
+1783: working for Linux, but we just haven't packaged it up nicely and made it an
+  official kind of thing that
+1788: we claim to support. We're definitely seeing most of the demand is on the Mac
+  side right now, but
+1793: on Linux and you know, who knows maybe one day on windows, then we have the
+  potential to kind of
+1799: support more of these things. One day homebrew and chocolatey will merge. That
+  would be cool.
+1803: Who knows? Stranger things have happened. Um, and, uh, if you don't mind me
+  asking,
+1810: like what is the, what has been the kind of the, the, the less tech side of
+  things? Did you receive
+1816: funding? Was it bootstrapped? Uh, how's that side of things going?
+1820: Yeah. So we're, we're not ready to kind of announce things fully on that side.
+  Um, but
+1825: basically, yeah, we, we're kind of, um, yeah, we're just building, building
+  the company, how we
+1830: kind of think is best at the moment. If, you know, if you're the type of person
+  who
+1834: goes digging on the internet, you can probably find out more than I'm telling
+  you now. But, uh,
+1840: yeah, for now we will announce more in future, but for now we're sort of doing
+  that stuff.
+1846: And, uh, I feel like some people might ask as well, because, you know, this
+  sort of relationship
+1851: you've had, um, as you mentioned earlier is a more old school open source journey
+  where,
+1857: uh, you worked on something for a long time for the, the main motivation to
+  make something good.
+1862: And then later kind of thought, hmm, maybe I can monetize this. Whereas a lot
+  of modern startups
+1867: kind of look the other way with open source. Um, so the other question would
+  be,
+1872: do you anticipate, and then maybe it's too early to say anything from work brew
+  actually
+1876: rolling back into homebrew? Oh, I mean, already there's been many things actually
+  that have gone
+1882: into, into homebrew. So when you use workbrew and you run brew install on your
+  machine, you're not
+1887: running a fork of homebrew, you're running homebrew itself. So there's a certain
+  amount of functionality
+1892: that is just necessary that it goes into homebrew. But, uh, the nice way, I
+  mean, as you said,
+1897: well, I have been involved with open source for a while. I maybe have a little
+  bit more of an old
+1901: school ethos, but, um, one of our biggest principles as a company, um, and this
+  comes from my CEO,
+1908: John Britton, who says this one time, and I couldn't agree more is not to give
+  away things today that
+1913: you're going to have to take back tomorrow. Right. So, um, there is, there's
+  a, there's parts of work
+1918: brew that in future, they may that today you have to pay and in future might
+  be free or open source
+1924: or whatever, who knows. Um, but right now we're making sure that the stuff we
+  do do is like tightly
+1931: separated. And again, similarly, like everything in homebrew is open source,
+  right. And we'll open,
+1936: homebrew will be an open source, probably primarily volunteer run community
+  run project forever. And, um,
+1942: work group will probably be a for profit commercial enterprise, um, forever.
+1948: At least it's nice and clear, I suppose.
+1950: Yeah. And the separation there, because I mean, like without naming two specific
+  names,
+1954: obviously we've seen a lot of churn in the last few years of, um, various companies
+  who made licensing
+1960: decisions five or 10 years ago, which have now changed quite dramatically and
+  had generated quite
+1967: a lot of community backlash. And you know, I, I'm very sensitive to that. And
+  I am a little bit of a
+1973: open source purist in the, I still consider, you know, the open source, um,
+  initiatives definition of
+1979: open source to be what open source means. And if you don't comply with them,
+  then you can be another
+1984: thing, but I think you're probably not open source. Um, and if you go looking
+  again, sniffing around
+1989: work group stuff, you will see that we've generated a lot of open source contributions
+  to homebrew,
+1994: but we as a product ourselves are not open source. Um, and for me that, you
+  know,
+1999: there's, there's pros and cons of doing things different ways, but I think that
+  we're doing
+2004: things in a way I feel that is most respectful to the community, um, and most
+  respectful to the
+2009: maintainers of homebrew and the people who've got it to where it is today, where
+  we say we have these
+2013: separate entities and work group and homebrew are very good friends, but right
+  now at least they are
+2018: separate entities and they live in different houses and I'm the CTO and co-founder
+  of work group and
+2025: I'm the project leader of homebrew. So like that helps to avoid the falling
+  out between those two things.
+2030: But even then, like me being a project leader on homebrew, that's an elected
+  position. I stand for an election
+2035: every year and get elected by, um, the maintainers and other kind of wider scale
+  community people.
+2042: So yeah, it's, I think there's a nice, uh, separation there. And it's, it's
+  funny, even the, the people who kind of
+2048: are homebrew maintainers and work with us on workbrew, you know, one of the
+  things I say
+2053: is that, you know, I, when we're working on workbrew, I'm your boss now, but
+  when we work on homebrew,
+2058: I'm still not your boss, right? Like if you think I'm saying something and it's
+  a bad idea, you tell me it's a bad idea,
+2063: right? Like that's things don't change there. Cause I think that's how open
+  source works the best.
+2068: And if anything, I was very inspired by early GitHub that behaved a lot. Like,
+  you know,
+2073: there was some minor dysfunctions, but you know, it behaved a lot like working
+  in open source
+2077: community and an open source project where there was not as there was not a
+  focus on hierarchy and
+2082: I've been here longer. I know more, whatever. But instead it was a kind of fairly
+  open marketplace
+2087: of these types of discussions. And I felt like that made the product a lot better.
+  And I think that's
+2090: the case for homebrew as well.
+2091: One final question, if you just have a couple of minutes, um, just sort of more
+  on the, the, the European side.
+2098: Um, you mentioned obviously where you are already, there are a handful of, uh,
+  I think reasonably
+2104: moderately well-known open source projects around the kind of Glasgow Edinburgh
+  area.
+2109: Um, what's, so yeah, what's it like in open source in Scotland in that, I don't
+  know if Scotland refers
+2118: to that area in a particular way, but in that, in that, uh, in, in that part
+  of the world, what's it like?
+2123: Well, so in Scotland we would call like the Glasgow Edinburgh area, the central
+  belt because you almost
+2127: like have a belt of almost continuous towns and transport and whatever between
+  the two. But yeah,
+2132: it's funny because, you know, it's such an international world nowadays that,
+  I mean,
+2138: those open source projects, the funny thing is you probably have a much better
+  idea of what projects
+2142: are in Edinburgh, Glasgow than I do. And half the time, you know, I'll be at
+  some conference and chatting
+2147: with someone and I'll have known their work on open source for a while. And
+  then we're like, oh,
+2152: turns out we live like five minutes down the road from each other. And I had
+  no idea because, you know,
+2157: I'm going by, you know, in a funny way, like, you know, GitHub feels, GitHub.com
+  feels more like
+2163: the place I live when I'm doing open source than, than Edinburgh in Scotland.
+  That just happens to be
+2168: the place where my, my body inhabits meat space, you know?
+2170: Okay. Yeah. Um, yeah, I, I must admit we have been to Edinburgh and Glasgow,
+  and I think I prefer
+2178: Glasgow just because it's a bit bigger and a bit more lively, but...
+2181: Oh, well, I'm glad you said that at the end of the conversation because, you
+  know, I don't know if
+2185: we can be friends now.
+2186: Both are very nice, but you know, Edinburgh, I'm going to sound a bit odd here
+  because I don't
+2190: live there, but Edinburgh was like more tourist and Glasgow felt more like,
+  it's also way bigger.
+2194: I didn't realize how much bigger it was.
+2196: Yeah, that's probably fair. I mean, Edinburgh is definitely more of a tourist
+  city, but you know,
+2200: as a, well, I've lived in Edinburgh most of my life. I was raised here and grew
+  up here and
+2205: whatever. So there's, unfortunately I'm bound by my, uh, geography that I can
+2211: never admit that Glasgow is better for essentially anything, except maybe like
+  music.
+2215: Also a huge, and I'm going to use the American term just to make it easier for
+  people to know
+2219: what I'm talking about, but I'm a huge Scotch fan. So, so that, okay, is, is
+  there anyway.
+2225: Single malt whiskey.
+2227: Yeah, pretty much, pretty much. There's actually a very nice bar, I remember,
+  in Edinburgh that
+2232: I took my friends to when we were passing through last year after a, after a,
+  um, a space site trip,
+2239: actually. So, and I can never remember the name of it, but I know where it is.
+2242: So good. Awesome. Well, Mike, um, keep things going because I know a lot of
+  people rely on,
+2251: on the project, uh, and probably a lot of listeners. So yeah. And good luck
+  with, with work brew. And I
+2258: look forward to seeing what these announcements may be that you alluded to.
+  So awesome.
+2263: You will see. Thank you very much. Keeping it all a bit mysterious for now.
+  Thanks Chris. Have a good
+2267: And rather appropriately and excitingly, I can now see that these announcements
+  did result in something.
+2278: There is now a beta self-service tier for work brew. They've also changed the,
+  the logo and the look
+2288: a little bit. There is a free tier, a pro tier and enterprise tier. So things
+  did eventuate into
+2296: months. So sometimes it can pay to wait before you release something. That's
+  going to be my
+2301: justification and excuse. Anyway, news from me. Well, I have a couple of new
+  videos up on YouTube,
+2307: including a roundup of text editors and IDs for Mac OS. Also the first part
+  of my new drumming video
+2315: series. And there's some other things I'm still undergoing a few bits of change.
+  Sort of November
+2322: is going to be where I launch a few new things and things will maybe get more
+  interesting. I don't know
+2326: who says. And I will also be on the road a little bit in November. I'm not doing
+  quite as much as in
+2334: September, but I'll be back at Web Summit. If any of you happen to be there,
+  I always end up meeting a
+2339: lot of people there. And I'll also be at an event in Cambridge and Lincoln of
+  all places in the UK,
+2346: private events. But if you happen to be around in those places and want to have
+  a chat, then do let
+2351: me know as always much more over at kristenchiller.com. I have been Kristen
+  Chiller. Thank you for joining me in
+2358: the Tech Lounge and take care, everybody. So that was it. That was our guest
+  today. Thank you very
+2364: much for joining me in the Tech Lounge. I have been Christian Chiller. If you
+  want to know more about
+2369: Tech Lounge, head on over to kristenchiller.com or please tell your friends
+  about us. It's quiet and
+2376: cozy in here, but the more listeners, the merrier. You can find more at kristenchiller.com/podcast
+  or
+2382: in the show notes or episode notes, wherever you found this podcast. Thank you
+  very much for joining
+2388: me and you're most welcome next time.
+2418: Thank you.

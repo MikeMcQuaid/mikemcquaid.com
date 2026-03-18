@@ -1,0 +1,929 @@
+---
+0: Hello and welcome to Sustain, the podcast where we talk about software sustainability
+15: for the long haul. Who are we? Where did we come from? Where are we going? It
+  is just
+20: me today. I am Richard Littauer. Hello, everyone.
+24: And our guest today, my guest today is the illustrious Mike McQuaid. Mike is calling
+31: from his home in Edinburgh. I'm calling from my apartment in Edinburgh that I'm
+  staying
+36: in right now. So this is kind of weird. We could have met in the same room. Mike,
+  how
+40: are you doing in general? Are you okay meeting like over a mile distance like
+  this?
+45: Yeah. Yeah, I'm good. It also feels weird, but then it occurred to me, I don't
+  think I've
+48: ever actually done a podcast in person. So in a funny way, that would be more
+  strange
+53: disturbing. It would be very weird. Yeah. Yeah. Well, hopefully one day that will
+  happen
+60: again. Now that COVID appears to be less of an issue and freak out as it was two
+  years
+65: ago, we are getting better at it, although it is still around. It's still a problem.
+  But
+69: this is not the COVID podcast. This is the podcast where we focus on open source
+  sustainability.
+73: So Mike, you've been around in the space for a long time. Right now, you are a
+  principal
+80: engineer at GitHub. You are the homebrew project leader.
+83: Maybe you can set me some context. What is homebrew just to start?
+87: So homebrew is a package manager for originally macOS and now for Linux as well.
+  So its original
+97: goal was just a means to be able to install open source software on your Mac.
+  I think the
+102: original tagline was the missing package manager for macOS because various people
+  talk about
+107: how compared to Linux, say, at least for a Unix system, macOS does not really
+  ship with a proper
+113: package manager. So yeah, and it's evolved over time, as I mentioned, to do things
+  such as supporting
+118: Linux and supporting installing binary packages like Chrome and various other
+  bells and whistles
+124: and as the ECOS system has got wider and the user base has grown.
+128: So to be clear, this isn't a package manager for a particular language like NPM.
+  This is much rather a package manager where in on your
+136: terminal in OS X, you can just download programs very easy. You don't have to
+  worry about dependencies or which thing you're getting. It just gets the ones you
+  want.
+144: Indeed. And we're a somewhat weird package manager in that we sit somewhere between
+  the two. So normally people would classify, as you say, like language package managers,
+  NPM and PIP, whatever it may be. And then system package managers like AppGet or
+  Pac-Man or whatever it may be. And we're kind of pretending to be a system package
+  manager, but we don't actually affect the system.
+169: We're all in our own little bubble. And that has pros and cons. The pros being
+  for us as maintainers at least is there's only so badly we can break your system
+  compared to on a Linux package manager where you can stop it booting. We can't stop
+  your machine from booting. Thank goodness. But then on the flip side, we still are
+  responsible for a lot of the stuff on the system. And we still have to, when Apple
+  rolled their happy updates every year, have to fix and work away around all the
+  breakage rather than be able to control that tightly ourselves.
+199: It sounds like a massive amount of work. Now, what you've been saying also has
+  a couple of things hidden inside of it. You mentioned that you didn't know the original
+  tagline. I think it was the packet manager for OSX, like you said, or something.
+  I don't remember it either. But you don't remember because you didn't create Homebrew
+  in the beginning, although you are the lead maintainer, one of the lead maintainers
+  now. Can you tell me a bit about how that happened?
+220: Yeah. So it was originally created by Max Howell. So he was an engineer working
+  at, I think, Last.fm in London at the time. And I think he was whining about package
+  managers in the pub, I believe. And someone told him, if you know so much, why don't
+  you go create a package manager?
+239: Yeah. So he did. And because he was a lover of beer, it has a kind of beer sort
+  of theme around the package manager, hence Homebrew.
+249: Yeah. And I think Max had been working on it for maybe six, nine months or something.
+  When I first discovered this, we had sort of mutual friends in common. We were both
+  in this sort of London tag scene at the time. And I had been writing a thing for
+  Mac ports to sort of try and hack it into doing what Homebrew does, i.e. like not
+  building all the system dependencies.
+270: So I just wrote sort of shims that pretended like some dependencies were installed
+  on Mac ports. And yeah. And then Homebrew came along and that seemed like a better
+  fit for what I was doing. So yeah, I've worked on it ever since, since I guess 2009,
+  I think.
+285: And then Max was involved with the project for a few years, left the project
+  a bit later on, still in sort of sporadic private conversation with Max and stuff
+  like that. He's still been involved in the kind of package manager space of the
+  years. He was involved with the creation of the Swift package manager and now is
+  doing some Web3 thing called T that I don't fully understand, but that's his latest
+  package manager thing that he's working on.
+311: Really loves brewing things. I have had several conversations. I had one this
+  week and back with someone who's like, why is there money going to a single homebrew?
+  Are we paying brewers or something? Yeah. So I like the name. I think it's great.
+  Thank you for giving us that context.
+325: Now you are the homebrew project leader at GitHub, which strikes me as weird
+  because GitHub, as we all know, is primarily a web app. It's where you push stuff
+  and it's a big repository of software.
+341: Why do they need an OS X related package manager? And how did that happen?
+346: Yeah. So that's interesting because people always tend to assume the two roles
+  are more entwined than they actually are. So we were chatting internally about some
+  GitHub open source stuff recently.
+358: I mentioned that there's only been two of the eight years in which I've been
+  at GitHub where any part of my job has involved writing stuff for homebrew. So those
+  sort of live in separate, but somewhat overlapping domains in that homebrew is a
+  very heavy user of GitHub.
+377: It was perhaps one of the first kind of GitHub native open source projects that
+  really leaned into the kind of GitHub contribution model before GitHub was as big
+  a thing for open source as it is today.
+388: And on the flip side, GitHub has always been a fairly, not universally, but a
+  fairly kind of Mac centric development environment place.
+397: So there was sort of some alignment between the two, but it's, yeah, my job at
+  GitHub is not, and has never been essentially, you know, maintaining homebrew while
+  I'm there or making homebrew work great for GitHub or whatever.
+410: Like there's a few times that there's some overlap there and a few times that
+  I'll spend work time on homebrew stuff or whatever.
+417: But yeah, just they're somewhat separate rules.
+420: Okay. That's really interesting. I guess a question I would have to follow up
+  on that is, did you have to convince your higher ups to let you work on homebrew
+  as open source during company time?
+430: Or do you just sort of do that just in the interest of what you're already doing?
+433: Or is there some way that you can help maybe other developers think about how
+  to pitch?
+437: I already knew this open source work is relevant to the company. Here's how you
+  can sustain me and also help the company's interest.
+443: I think that's really interesting because it's something where in the last few
+  years with coronavirus, people have probably more able to relate.
+452: But so one of the other things in my kind of career that has sort of somewhat
+  mirrored my open source work is I've been involved with some sort of open source
+  since university, basically.
+462: But with homebrew, almost, I think pretty much the whole time I've worked on
+  homebrew, I've also worked remotely.
+469: I've not worked in an office since 2009. Again, I think the same year that I
+  started working on homebrew.
+476: And particularly the last probably nine or 10 years, I've been working for US-based
+  companies from Edinburgh.
+482: And if you know anything about time zones, then you'd know that those time zones
+  are not the same.
+486: And as a result of, I guess, distributed time zones and remote working, I have
+  not had a relationship with someone who can come and look at my screen and see what
+  I'm working on or judge my productivity by how many hours in the day my posterior
+  is sat on a particular chair for a pretty long time.
+507: So as a result, it's kind of been sort of at my discretion to spend my time how
+  I think is appropriate.
+513: And yeah, as a result, I have basically the entire time I've been at both those
+  companies spent some proportion of my work time on homebrew.
+521: If that sum became 100% and I was meant to be doing other projects, then that
+  would become a problem.
+527: And equally, if that became 0% for me for long periods of a time, because I felt
+  any pressure to do so, that would probably also be a problem for me personally.
+536: And it would be when I would start looking for other jobs.
+539: But yeah, there has been short windows of time in which that has been like 100%.
+543: So I guess relatively recently, like homebrew's binary packages, basically our
+  pre-compiled packages, so you don't need to build them on your own machine, were
+  hosted by Bintray.
+552: And Bintray, with relatively short notice, said that they were shutting down,
+  which would have stopped all our binary package twisting.
+558: I proud of some feelers to various companies, including GitHub, about a potential
+  solution there.
+564: And it just so happened that kind of the GitHub packages team were like, yeah,
+  you could do this on GitHub packages.
+570: So that involves me spending a reasonable amount of time and work time to migrate
+  homebrew over, partly from the perspective of we use homebrew internally, this would
+  be good for us to use homebrew internally.
+580: But also, like, we use GitHub packages, and we're trying to have more adoption
+  of this.
+585: And if you genuinely think it's a good fit for homebrew, and you want to use
+  that, then that would be good for us as well.
+592: And we can sort of, you know, work internally on some modifications to make that
+  look as nice as it can.
+598: But again, the funny blurred lines here is that, again, there's sometimes misunderstandings
+  on both sides of the aisle where some people on homebrew's side may think and have,
+  in fact, accused me of in the past of, well, you only think we should use GitHub
+  packages because you're employed by GitHub, and they're telling you to think that.
+614: And equally on the GitHub side of, like, well, homebrew needs to do this, and
+  I could tell you this because I work at this department in GitHub, and neither of
+  those fly terribly well.
+623: It's strange having a split brain like that, but I do try and fairly firmly separate
+  what I think is best for homebrew and what I think is best for GitHub, and try and
+  balance those two things.
+635: And again, if I ever had a situation at work where I felt that I was being forced
+  by GitHub or any other employer to do what was not right for homebrew, then I would
+  probably leave that job.
+645: Interesting.
+646: I think the main takeaway I'm taking away from this is it's not always clean
+  cut where open source and work relate, and sometimes one just needs to choose what
+  the priorities are.
+658: Now, it sounds to me like you're particularly good at making those sorts of judgments
+  in your head, which is excellent.
+663: I am particularly bad at them, probably just because that's who I am as a person,
+  but also just something I've realized over time.
+669: I tend to focus myopically on one thing and forget everything else, and I wake
+  up and my house is on fire.
+674: So it's good that your house hasn't burned down.
+677: I would like to talk about how you do that effectively through boundary setting,
+  which is one of the things you have on your blog.
+683: But before we get to that, I think there's a bigger question, which is more important,
+  which is homebrew sustainability and what your role is at homebrew.
+691: Because if you were to dedicate all of your time to it, it would suck up all
+  the time available.
+695: That's how open source projects work.
+697: But you've decided not to do that and to have another career that just pays you
+  the normal money that you need to survive.
+703: So what I'm curious is how you've taken homebrew from being a project where you
+  sort of joined in with Max and you figured out how it would work to a project where
+  you could actually dive in and out with an understanding that it wouldn't suck up
+  everything.
+716: So can you help me explain about homebrew's sustainability journey in that sense?
+721: So I think there's two sides to the sustainability conversation, and I'm glad
+  that you sort of touched upon either both of them, if not slightly more emphasized
+  what I consider to be the more important side.
+734: So I guess there's, in any open source project, too many conversations I've seen
+  about sustainability focus on money.
+740: And ultimately, money can sometimes be turned into time from humans, but not
+  always, and not always the right time from the right humans.
+752: And I think homebrew's financial improvements, which I've been involved with
+  as well, have been very useful.
+758: And it would be hard for us to run the project exactly as we do today if all
+  our funding dropped up.
+764: But I think you're right to focus on almost like the people side of things.
+767: So let's start with that.
+768: So yeah, when I started working on homebrew, I think there was me and Max and
+  one other maintainer or so.
+775: And like the kind of number of maintainers has sort of fluctuated, but slowly
+  grown over the years where it's went from single digits, probably two, three, four
+  years in, probably gone to double digits and sort of maintained sort of low to medium
+  double digits.
+791: And yeah, I see that kind of almost like funnel of people as being an important
+  part of our sustainability.
+800: So it feels to me like just a fact of life that in open source, some people are
+  going to get involved, maybe very intentionally for a short period of time and then
+  wander off.
+812: Either their life segment has changed, or in some cases, they just, they had
+  a particular problem they really cared about and they fixed that problem and then
+  they move on.
+819: But also you have the people who've been around the project a little bit longer
+  may well understand certain things about the project that newer, more enthusiastic
+  and more time rich people may not.
+831: So we've tried to kind of balance that by, we try and have always tried to look
+  out for almost like who would be a good maintainer, like who is kind of providing
+  more value to the project than they're kind of withdrawing.
+844: And not withdrawing in terms of usage, but withdrawing in terms of they don't
+  need loads of handholding and they're able to work independently or maybe even like
+  help others and give them a bit of handholding.
+855: So generally those people are good candidates for maintainers.
+857: And then we also look at pipelines, like we've had a fair few maintainers come
+  in through programs like Google Summer of Code and Outreachy and major league hacking
+  and stuff like that.
+867: And yeah, and then we also try, I guess the other side of that is, I just did
+  it yesterday.
+872: I have effectively a yearly task to look at our list of maintainers, look at
+  who has commit access to wall and re-ask, even though it can be a little bit awkward,
+  who still needs commit access to the project.
+883: Because a project like us, like anyone with commit access is security risk is
+  too strong, but if they are not using that kind of access, then that needs to be
+  kind of reconsidered.
+893: So, yeah, I think just kind of nurturing that group of people and trying to kind
+  of grow that kind of community within a community over those years has been helpful.
+905: And then I guess I've seen myself move in a kind of mentorship of contributors
+  to kind of more nowadays kind of mentoring other maintainers and trying to help
+  our maintainers get better at what they do.
+919: Because one of the advantages I have, I guess, with what I said before, with
+  the kind of split brain stuff, is that I've learned a hell of a lot about how to
+  make Homebrew better from working at GitHub.
+928: And things, concepts like feature flagging, for example, were alien to me before
+  I'd worked at GitHub.
+934: I maybe read about them, but I hadn't really seen their value.
+937: And then that's something now that we can do, you make use of in Homebrew.
+941: And I've almost been able to sort of filter that out to other people as well.
+945: Feature flagging, I will look that up.
+947: I like the way you're framing this less is about, well, this is how we went out
+  and then we got money from this person.
+953: And much more, no, it's all about the people involved and all about the mentorship.
+956: And you're right about this prolifically on your blog.
+959: Well, maybe not prolifically, but very adequately.
+961: So in a sense that you don't put out new articles every single day.
+966: There are people who do that.
+967: So the mentorship diamond is something you talk about, how to start mentoring.
+970: You also famously, for me, because I reference it all the time, mostly on this
+  podcast,
+976: wrote a thing called Stop Mentoring First-Time Contributors, where you basically
+  said,
+980: first-time contributors may not stick around.
+982: And wasting your time on them is actually wasting your time, right?
+986: Because if you don't know they're going to stick around, spending all that time,
+  it's just going to end up with burnout.
+990: Open source feels like an endless support war.
+993: How do you win that war?
+994: You set boundaries and say, this is where I'm going to advance my time and so
+  on.
+997: Or you could not use a martial metaphor.
+999: I guess one of the questions I have for you, now that I have you here on the
+  line and your actual attention,
+1004: is how do you hold those conversations with people by, say, removing keys?
+1009: Like, who needs access?
+1010: And how do you talk to people about whether or not they're maybe a good candidate
+  to be a mentor or so on?
+1015: Like, how do you emotionally hold time with all the different contributors on
+  the project to be able to say,
+1022: this person is here, this person is here, here's what I see for you and so on?
+1025: Because I imagine your view of where someone is will not always align with their
+  view of what someone is.
+1031: I mean, I think commit access is the first one where I think it's normally relatively
+  easy and clear cut,
+1038: because it's, you know, I just look at the kind of contribution graph metrics,
+1041: the private repo contributor metrics for the last year,
+1045: and then that shows me who is committed and who hasn't.
+1048: And if you haven't committed to any repos ever in the last year,
+1050: like, even if you feel like you should have commit access,
+1053: I think, I guess, if I'm being more self-analytical,
+1057: I think you could answer the question of how do you hold time for that
+1060: and handle the kind of major emotional side of this stuff.
+1062: Maybe not as well as I could.
+1064: I'm a fairly terse individual, at least in written form.
+1068: People, including at work, definitely tend to like me more when they have met
+  me in person
+1073: and they understand that apparently I'm quite a grumpy prose writer.
+1077: My GitHub avatar for a long time looked quite grumpy,
+1080: which probably contributed a little bit to that.
+1082: But yeah, so I probably don't dedicate as much time and energy as I could slash
+  should maybe
+1089: with trying to kind of manage the emotional side of that.
+1093: Like, I just sent out some messages yesterday,
+1094: like, people know that the commit access was going to get cut off.
+1097: And yeah, I was basically just like, thanks for your work on Homebrew.
+1100: You have used in the last year, cutting it off.
+1102: We can add it back in the future if we need to.
+1104: And that was that, really.
+1105: And I think, I guess, to touch on what you've said before about boundaries,
+1108: which I think in some ways, perhaps that's why.
+1111: Because I know that I do not have infinite time or emotional energy or whatever.
+1117: And it would be nice for people if I could spend a lot more time like individually
+  hand
+1124: curating those conversations.
+1126: But I don't have time.
+1127: And it has to happen.
+1128: And ultimately, I think it's more important to the project that people who have
+  commit access
+1136: are the ones who need to have it than it is that I maybe don't do that as often
+  or at all.
+1142: But maybe some people feel better and happier until one of their tokens gets
+  leaked and Homebrew gets hacked.
+1149: Fair.
+1150: I think you may be giving yourself not as much credit.
+1152: You did say, thank you for your time.
+1153: That's something I haven't always gotten friends.
+1155: I've been removed from organizations on GitHub just because someone's like,
+1158: it's not working anymore.
+1159: All I get is an email notification saying, you're no longer a member of this
+  organization,
+1163: which, frankly, hurt a lot.
+1165: Several times it's happened because it's like, I really valued being part of
+  that organization.
+1169: Now it's gone.
+1170: Oh, no, I'm sad.
+1171: It's okay to be sad.
+1172: But that's just something I felt.
+1173: So the fact that you said thanks is already a step in the right direction.
+1176: Overcommunicate.
+1177: Here's what's going on.
+1178: I think that works pretty well.
+1179: As far as being terse, you're actually not very terse.
+1182: You have a blog post up that says saying no is important.
+1185: And saying no, actually, I think has an unnecessary word there.
+1189: There's a famous story of a Spartan general who wrote back to the city of Sparta
+  saying the
+1195: city was taken.
+1196: And they gave him a fine, a literal fine in drachmas for being two troleks.
+1202: He should have just said taken.
+1204: So in this case, you could have just said no.
+1207: What's interesting to me about this, though, besides the random brief reference,
+  good job,
+1211: Richard, is you mentioned Brene Brown's podcast and one of her books talking
+  about the BRAVING
+1216: acronym.
+1217: Would you mind giving me a brief summary of how that applies to your work on
+  open source?
+1222: I would say that I'm an expert on Brene Brown's material because particularly
+  the book that
+1228: this is from, I have not read yet, at least.
+1231: But yeah, so she talks about the elements of kind of trust, which have that
+  acronym BRAVING,
+1236: which stand for boundaries, reliability, accountability, vault, integrity, non-judgment,
+1242: and generosity.
+1243: So the ones, I could go through all of them, but I'm not going to because it's
+  not that type
+1249: of podcast.
+1250: And she would say infinitely better than I would.
+1252: But the ones that kind of jerk out to me are like boundaries, reliability, and
+  integrity.
+1257: So for me, when I look at people who are not very good at saying no, and this
+  applies everywhere
+1265: from kind of personal level and personal friendships to inside a company, to
+  inside an open source
+1271: project, they are people who often cannot maintain boundaries adequately.
+1277: So as a result, their reliability, integrity suffer because what happens is
+  if you say yes
+1286: to everything all the time, you cannot do everything all the time.
+1289: So eventually that yes turns into a last minute no.
+1293: So I've at work kind of described it often as like front loading the disappointment.
+1300: So I try and take this at work on open source in my personal life, whatever,
+  is that people
+1305: can sometimes find me somewhat, I don't know, brusque or whatever, because they
+  will ask me
+1310: to do a thing or read a thing or be somewhere at a certain time.
+1315: And what's generally considered to be socially acceptable is to say yes, or
+  maybe and not do
+1321: it.
+1322: And they are very surprised to hear me say, no, sorry, I'm not going to do this.
+1326: And I could provide more details about why I'm not going to.
+1329: And I think in open source, this is so important.
+1332: I think boundaries are the most important part of open source sustainability
+  because at the
+1336: end of the day, again, there's a lot of talk about money or mentorship or the
+  number of people
+1341: But at the end of the day, to me, in open source, you should be only working
+  on stuff that you
+1348: want to be working on.
+1349: And the minute it feels like it's overall, at least not a pleasant thing for
+  you to be
+1357: doing anymore, and it is making your life worse, you should get out as soon
+  as possible.
+1362: And part of not getting to that point in my experience is maintaining boundaries.
+1369: So one of the personal rules I have for myself is I don't fix bugs for people
+  who are being
+1375: rude or unkind.
+1376: There's been times where people have submitted an issue on homebrew and it's
+  a legitimate
+1380: issue.
+1381: And normally I would fix that, but they have reported that issue in such an
+  abrasive or
+1387: rude manner.
+1388: I don't want to reward that behavior.
+1390: And sure, if 10 other people come in and say, hey, we're affected by this too,
+  please fix
+1394: this or whatever, I'm not going to step in and refuse to fix that.
+1396: But if there's only a single person who has reported that, I don't want to reward
+  bad behavior.
+1402: And for me, I need working on open source to be a pleasant experience because
+  it is fundamentally
+1408: optional to me.
+1409: So if I start going and dealing with these people and dealing with kind of verbal
+  abuse, just
+1414: because I think that's what's right for the project, I've enabled that verbal
+  abuse.
+1418: And I've allowed that into my life.
+1420: Whereas if I just step away and reject that, in some cases, I'll just step away
+  and another
+1425: maintainer can get involved and they can fix that if they want.
+1427: If it's kind of borderline rather than clearly egregious behavior.
+1431: And yeah, and for me, that's made it a lot better.
+1434: And even on stuff that I particularly as the project has grown, stuff that I
+  just don't
+1438: really want to do.
+1439: Like there's some issues that come up or some particular types of work in the
+  project.
+1443: And I'm like, someone else is going to do this.
+1445: I don't want to.
+1446: So I'm not going to.
+1447: And I feel like in a healthy open source project, most things will get done.
+1452: Like there will be some balance of people's time availability and their skills
+  and willingness
+1457: to do things that things will get done.
+1459: And if there's things that consistently no one wants to do and can't get done,
+  then you
+1464: probably as a project need to find a way to make that not a thing that your
+  project has
+1468: And if that means killing features or closing issues on GitHub or having like
+  the mailing list
+1474: be something that the maintainers aren't on, so be it.
+1477: What I really like about this conversation is that I feel like it's revelatory,
+  largely
+1483: because I grew up in a house without boundaries.
+1484: So it's really interesting to hear someone else say very clearly, I have boundaries.
+1488: And it's helping me recast some of the experiences I've had with open source
+  maintainers where
+1491: I've experienced them as kind of emotionless automatons.
+1495: And if I rethink that as, no, they're just maybe particularly good at setting
+  boundaries around
+1501: what they will and will not do.
+1502: It's much easier for me to see them as full humans and to see the process as
+  being part
+1507: of actually a sustainable workflow.
+1508: So I'm actually really excited about that.
+1510: And thank you.
+1511: One thing that's interesting is what came to mind while you were talking.
+1515: Bruce Lee's quote, which is, you put water into a cup, it will become the cup.
+1519: You put water into glass, it will become the glass.
+1521: But water can flow or it can crash.
+1523: Be water, my friend.
+1524: It doesn't seem like your boundaries have a lot of room for grace or forgiveness,
+  which
+1530: I would equate with flowing.
+1531: I think hard boundaries often crash.
+1534: They hurt.
+1535: So I'm just curious where the room is in your open source workflow for grace.
+1541: For me, it's interesting.
+1544: So I'm sort of somewhat post-Christianity nowadays, but I was a fairly religious
+  chap for a few
+1551: And yeah, for me, I can't remember whether it was forgiveness or grace or something
+  like
+1557: that, but it's one of those ones where I remember hearing some minister talk
+  about...
+1561: Empathy also works in the modern, secular part.
+1564: You don't have to go with grace.
+1565: No, but I mean, I think it was a particular word that in the Greek was kind
+  of translated
+1570: as being something, a sign that someone turns around that does a 180 and walks
+  in the direction.
+1578: And to me, like that's where empathy, forgiveness, grace, whatever you want
+  to call it, exists
+1583: with open source.
+1584: And I've seen plenty of people who behaved inappropriately in open source projects,
+  including my own.
+1590: And as long as it's not been hilariously egregious, which I put in the realm
+  of like jumping straight to
+1598: legal threats or, you know, assault against people's protected characteristics
+  verbally or
+1603: otherwise, or whatever it may be.
+1605: As long as it's just kind of borderline, ah, you're being a bit of a unpleasant
+  person here.
+1611: Generally, what I've found leaves things open for grace and is also a really
+  nice heuristic is
+1620: those people in those situations, if you give them a bit of a nudge and say
+  like,
+1624: that's not cool, don't do that, please.
+1626: Then the toxic people explode.
+1630: They say, how dare you?
+1632: This is outrageous.
+1633: They tend to double down on insults or refuse to apologize, or if they do apologize,
+  it's
+1638: in the, I'm sorry that you are such an idiot that you felt that way type apologies.
+1645: Whereas a lot of the time, a lot of people, and I would say most people do that
+  and they're
+1649: like, you know what?
+1650: I was a bit of a jerk there.
+1652: I was angry.
+1653: You might not get the best apology in the world, but you do genuinely see a
+  change of
+1658: behavior from those types of people in those types of situations.
+1660: And that for me is where like that sort of balances with boundaries in that
+  I don't tend
+1667: to almost like put you immediately into a kind of bad actor bucket.
+1670: But yeah, I do tend to kind of try and have that little nudge to be like, let's
+  find out
+1676: when you've done something bad or inappropriate or whatever, can you have enough
+1682: introspection to go and say, yeah, sorry, that's my problem.
+1687: And for me, as soon as someone says sorry in that way, like I'm straight back
+  to kind
+1691: of love bombing and I'm happy to say, thank you.
+1694: I didn't handle this interaction as well as I could have done, whatever it may
+  be.
+1698: But when that question doubles down, I guess I used to spend a lot of time either
+  just having
+1703: a lot of back and forth to those people or trying to reform them or whatever
+  it may be.
+1706: But I guess over time, I've just found, you know what, those people don't change.
+1710: People who want to kind of get in a fight about whether their behavior was appropriate
+  or not.
+1715: Again, kind of inside and outside open source.
+1718: If me saying, hey, sorry, what you said there wasn't very nice and you were
+  hurtful to my
+1724: feelings or someone else's feelings, if the default response of that person
+  is not sorry or I can do
+1731: better or whatever it may be, generally they're not a person that I want to
+  work with super closely.
+1736: And I think one of the biggest learning experiences for me with my years at
+  open source has been
+1742: those boundaries should be set at the same level, whether that person is a newbie
+  user who's come
+1751: to your project, maybe with some entitlement issues, who's never interacted
+  with the open source
+1755: maintainer before, or if that person is a prolific open source maintainer themselves.
+1758: I don't care anymore.
+1760: If someone on the Homebrew project themselves are being abusive to users or
+  maintainers or whatever
+1767: it may be, then they need to adjust their behavior or they need to find another
+  project.
+1772: And in some cases for us as a project, there's been times where I've asked people
+  to consider
+1777: I've genuinely asked myself that this could kill the project.
+1780: I'm really concerned how we're going to be able to survive this person leaving.
+1784: But every time that's happened, almost flowers blooming from ash or something
+  like that,
+1791: you see a bunch of people who were kind of basically had merged into the background
+1796: because of that person's behavior, who then reemerge and are like, hey, you
+  know what?
+1800: Now that this person's gone and they're going to stop treating me like crap,
+  then I'm happy
+1805: to kind of get more involved in this project again.
+1807: And people step up and they get involved and the project survives.
+1810: And in my opinion, even more importantly than the project surviving, the project
+  becomes more
+1816: of a place where people know that you have to treat each other with a certain
+  amount of
+1819: kindness and respect.
+1820: And if you can't do that, you're not welcome here because yeah, people don't
+  want to work
+1824: an open source if they're going to get abused from anyone.
+1826: It doesn't matter what their position is or qualifications or whatever.
+1829: So there's a quote here, the crisis that we are in the midst of the day, whether
+  ecological,
+1834: political, or societal, I'm going to add, or open source, except for the fact
+  that we
+1837: treat the earth and one another as less than sacred.
+1840: This is from John Philip Newell's Sacred Earth, Sacred Soul, Celtic wisdom for
+  reawaiting
+1845: to our souls, to what our souls know.
+1847: I went to a talk on this like last week in Edinburgh.
+1849: I'm bringing you up now because hilariously, this is turning into the Richard
+  Littauer slash
+1853: Mike McQuaid spirituality hour.
+1855: So thank you all for listening.
+1856: I really liked that.
+1858: That was awesome.
+1859: I think to stop us going down the well all the way into how to treat each other
+  and ourselves
+1864: with sacredness.
+1865: Let's step back a bit.
+1866: So you were also on the GitHub sponsors team.
+1869: And you mentioned earlier that money is not the only thing in open source.
+1874: So I'm curious, how did it happen then that you got involved with GitHub sponsors,
+  which
+1878: seems to me a way of recognizing the sacred and divine and human in every single
+  open source
+1883: maintainer by paying them for their efforts?
+1885: I guess I'll start with a caveat that sadly shouldn't be necessary, probably
+  is that like,
+1890: I'm not one who normally believes in saying my views are my views and not the
+  views of my
+1894: employer, but I would say on GitHub sponsors and stuff, this is definitely the
+  case.
+1899: I work on sponsors anymore and I'm not part of that team anymore.
+1904: Just for no negative reasons, just moving around the organization as I do.
+1908: And yeah, and I think they're doing great work.
+1910: I think GitHub sponsors is and has been a really valuable contribution to the
+  open source ecosystem
+1917: because it provides a way, at least for open source maintainers on GitHub, which
+  is a really
+1922: significant proportion of them, a really easy way to start accepting money.
+1927: And we tried to make it pretty easy and as pain-free as possible.
+1931: And I was the initial kind of team of like four engineers and an engineering
+  manager and a designer
+1939: and product manager.
+1940: I was the most involved with open source of those folks.
+1944: So I felt like I was sort of advocating for the interests of maintainers often.
+1948: And yeah, we've tried to provide that model where people can receive funds in
+  different ways and
+1954: use it in different ways to support that.
+1955: Like if you want, as Homebrew does, if you want all your money to kind of go
+  to your central
+1960: project and maintainers don't really receive the bulk of the sponsorship, at
+  least not directly,
+1965: then you can do that.
+1967: If you want to have a project where individual maintainers are where you're
+  pointing your funds,
+1972: you can do that.
+1973: If you want to do kind of quid pro quo tiers and stuff like that, you can do
+  that.
+1978: If you want to just do, again, like Homebrew does, kind of like, give us this
+  money and
+1982: trust that we'll do the right thing with it.
+1984: And you're not really getting anything directly in return for that.
+1988: Then that's an option as well.
+1989: What I really like about GitHub sponsors and why I'm proud to have worked on
+  it is it's,
+1994: it feels like it's bringing some money into the ecosystem that wasn't there
+  before.
+1998: And through making it easy for both individuals to accept that money, but also
+  for companies
+2006: to kind of give that money as well.
+2008: I think it's had, it's not been like a zero sum game.
+2011: Like I don't feel like we kind of partner with Open Collective who are one of
+  our fiscal
+2015: So you could get paid through GitHub sponsors, which goes into your Open Collective
+  and stuff
+2020: like that.
+2021: And I really don't feel that like we're taking money away from, that was previously
+2025: going through Open Collective or Patreon or whatever it may be.
+2029: Like it does feel like there's some kind of new money in the system.
+2032: And from that perspective, I think it's really good.
+2034: And I'm kind of happy with it and pleased to have worked on it.
+2038: I guess to touch upon your kind of original point, I definitely don't think
+  that's the
+2043: be all and end all.
+2044: I think projects like Homebrew that I've been involved with a lot of the kind
+  of efforts
+2049: over the years to kind of get this money and think about what we spend the money
+  on and
+2053: Figuring out what you spend the money on is itself a non-trivial problem because
+  I'm lucky
+2059: enough to work for a company that pays me well.
+2061: And Homebrew does not think, at least I haven't checked recently, but I'm pretty
+  sure Homebrew
+2067: does not, if we were to handle taxes and our expenses or whatever, have enough
+  to, for example,
+2073: pay me to work on it full time.
+2074: So we might be able to pay some other people to work on it full time.
+2078: But if the goal was, while me and all the maintainers are going to go and quit
+  our jobs
+2083: and work on Homebrew, we don't have nearly enough money for that.
+2086: So there's that interesting kind of trade-off of like, well, we've got too much
+  to spend
+2091: on stickers, but not enough to spend on people full time.
+2095: And certainly not enough to feel comfortable saying to people, hey, you can
+  just quit your
+2099: job and we'll pay you and we'll do all your health insurance for you and everything
+  like
+2102: that if they're in the States.
+2103: So yeah, so it's been an interesting kind of discovery process of thinking like,
+  well,
+2108: what do we spend our money on and how and on who?
+2111: And we're still in a kind of experimental stage there.
+2114: And that's where I think Gelb Sponsors has been great for enabling that, but
+  it's not the
+2119: Gelb Sponsors or Open Collective or any method of making money is not just the
+  answer
+2124: to sustainability. Because if you have a project with more than one person who
+  is wanting to
+2129: work for market rate salaries and is in a relatively prosperous country, it's
+  really hard to make
+2136: enough money to pay that person to work on it full time. And the people who
+  are doing that
+2140: are doing a lot of work to maintain that funnel. And that's not work that everyone
+  wants to do.
+2149: And that's not work that everyone is great at. And it has trade-offs. And I
+  think it's good to see
+2155: that stuff grow. But at the same time, I'm glad to see the community has not
+  jumped to the conclusion
+2162: that Github is, sorry, Github Sponsors is all or nothing, that it either is
+  the solution to open
+2167: source sustainability, nor is it a problem for open source sustainability.
+2171: So when it works for Open Collective,
+2173: I totally get where you're coming from and how that's working. Although not
+  working for Open
+2176: Source Collective, which is slightly different. I really got to figure out where
+  I work.
+2179: You've also written more about this again on your blog about open source economics
+  and about the
+2183: fact that money isn't everything. You have to figure out where your time is
+  allocated and then how you're
+2186: going to spend the money you have. I'm glad you mentioned the sticker problem.
+  You have enough for stickers,
+2190: then what? What's next? Homeroot doesn't have enough money to employ you unless
+  you're willing to work
+2194: for $15,000 a year, which I'm pretty sure you're not because that doesn't work
+  in our modern Western
+2199: economies and where we're both calling from. Github Sponsors emphasizes individual
+  action towards
+2206: individual projects. It doesn't emphasize a systemic wide approach to figuring
+  out how do we,
+2211: as a collective tech world, pay for open source maintainers collectively. Even
+  the Open Collective has
+2218: it right there in the title. It's still individual companies, people at those
+  companies or individual
+2223: people spreading the wealth among them. So I'm curious what you think about
+  the next step of
+2227: sustainability might be in terms of actually helping open source maintainers
+  from a non-individualistic
+2231: approach. Yeah, I think that's really interesting. I mean, we've been touching
+  upon that a little bit
+2236: at Github so we can recommend on the page that sort of allows you to discover
+  new sponsors. We can use your
+2244: dependency graph, I think, to sort of point to like things you depend on that
+  are responsible and stuff
+2249: like that. But as soon as you start to get into the data-driven side, you realize
+  that like my
+2254: dependency graph, it's very easy to point out NPM modules or Ruby gems, whatever.
+  How does GitHub detect
+2259: that I use Linux or on my, you know, you could maybe detect Kubernetes or various
+  other things.
+2267: There's basically a lot of parts of the open source stack that are kind of undetectable.
+  So how do you
+2274: decide what that stuff gets and how do you stop all the money going to the projects
+  that are more
+2280: easily detectable and less? And all I can say is that I know people in GitHub
+  are working and thinking
+2286: about how best to address this. But at the same time, I don't think this is
+  a thing for GitHub to
+2291: solely fix. And I also personally, and this is very much on the personal level
+  outside of Homebrew or
+2298: even GitHub, I think there's something a little bit sad about some of the current
+  narrative that almost
+2303: like an unpaid open source maintainer is an exploited open source maintainer.
+  Because I think we need to be
+2308: careful about having an ecosystem that is not perfect, flawed in lots of ways,
+  and saying what we need for
+2317: this is to just pay everyone X amount of money and then the solutions will go
+  away. Because I guess I remember
+2323: the kind of bad old days where in big companies, it was pretty hard to use open
+  source and internally, like
+2331: even to just consume an open source project and use that, even when the licenses
+  were all completely
+2336: okay and very liberal and whatever, that was difficult because companies were
+  very skittish about
+2341: this and we got over that. And I worry if we get into a world where if you are
+  a large company who
+2348: uses an open source project and you don't allocate large amounts of financial
+  resources to that open
+2355: source project, you are somehow exploitative. But we end up in a world where
+  we start to discourage
+2361: those companies from using open source anymore. And then we end up in a world
+  where we start to
+2365: fragment the ecosystem between places that are okay for you to use them without
+  paying and places that
+2370: are not. And we, again, pre-open source software, we've had a pretty good way
+  for a pretty long time of
+2376: letting people pay for software. And I guess to me, the sustainability side
+  is not how do we pay every
+2387: open source maintainer an upper end salary for what they're doing? Because I'm
+  also not necessarily
+2394: convinced that open source maintainers will all be allocated efficiently in
+  that process.
+2401: Ironically, considering that the same folks who tend to consider open source
+  maintainers to be
+2406: exploited are often critical of capitalism and free markets, I think it's interesting
+  that their proposed
+2414: solution relies very heavily on capitalism, free markets to effectively just,
+  well, if we just pay
+2420: everyone enough, then all the problems go away. And I guess I debate that, I
+  guess, again, more not to get
+2428: into our sort of philosophical, spiritual bent again, but I debate how many
+  of these problems can be solved
+2434: by just throwing money at them, as opposed to finding ways that people are able
+  to set boundaries more effectively.
+2440: For example, this blog post that kind of go around that suggests that all open
+  source maintainers should
+2445: have a way for companies to easily pay them their time. But in my case, I don't
+  want to do that. I like my
+2451: life. There are companies who come to me sometimes and say, "Hey, we'll pay
+  you X if you can come and do
+2457: this on homebrew for us." And I'm like, "Well, I have two small children. I
+  have hobbies. I have a job. I like those
+2464: things and the marginal value of you giving me a bit more money to do a bit
+  more stuff." That doesn't
+2471: work for me. And I can understand the frustration on the commercial side at
+  the same time that it may
+2478: well be that that applies to every homebrew maintainer and that there is no
+  one they can pay to do this
+2482: thing that they want to do. And maybe they just need to do that themselves or
+  hire someone to make that their job
+2488: or whatever the means may be. But I'm personally reluctant to have the idea
+  of all open source
+2493: maintainers, all open source projects need to somehow become consultants and
+  provide this
+2498: like two-way transfer of money and resources and time and knowledge and whatever.
+2503: Mike, I feel like I'm listening to the Scottish fisherman equivalent, you know,
+2507: the old man sitting at the table playing cards and American says you should
+  go out and fish more
+2511: and then get a fleet of ships and keep doing it. Then like, well, then what?
+  Then you can retire
+2515: and play cards like what we're doing at now. Why would you bother? That was
+  very
+2518: condensed version because we are running out of time, which is very, very unfortunate.
+2522: This has been a massive pleasure for me. Thank you so much for coming on. There's
+  a couple of
+2527: things left before we do wrap up. Obviously, we didn't get to all the good stuff
+  because there's
+2532: so much more we could always talk about. We got to a lot of good stuff, though.
+  Where can people
+2536: find you on the web to hear more about what you have to say and think when you
+  have the time
+2541: and ability to do so? So my website, mikemcquade.com has various sort of
+2548: articles I've written and I post my new thinkings there and talks and stuff
+  like that. There's like
+2554: a mailing list if you're interested in getting these things. And I'm sort of
+  very sporadically
+2560: on Twitter. I try and only talk about open source on Twitter. So that's mikemcquade
+  as well. And then,
+2566: I guess you can find me on GitHub or just in Edinburgh and at Fosden and hopefully
+  increasing
+2571: numbers of meatspace things in the future, because I like seeing people in person
+  now that I can.
+2579: Yeah. Well, darn, lost opportunity, but hopefully not in the future. So excellent.
+  Thank you so much for that.
+2583: Now's the point where we get to give back to other people. So Spotlight is about
+  highlighting projects
+2588: for places or open source packages, which have really made our lives easier,
+  which we think just
+2593: need a little bit more love. My spotlight today is based in Edinburgh. It's
+  the Forest Cafe. I was a huge
+2601: reporter of the Forest Cafe when I used to go there when I was a student here,
+  which is one of the reasons
+2605: why I'm here again. I used to live in this city. It's really, really nice. Forest
+  Cafe is a art and social
+2611: space. It's basically a nonprofit. And it's just really great to be able to
+  go somewhere and actually
+2616: exist outside of economies of cash, which is why I thought of it for today's
+  Spotlight. For me,
+2620: this was a home where I could go and trade services for things, hang out, I
+  could work in the kitchen,
+2626: I could get really nice beans on toast, and it's just made me feel like a better
+  person. So the Forest
+2631: Cafe is great and they have since moved from where they were, but they are still
+  around to go check them
+2635: out if you are in Edinburgh. Mike, what is your Spotlight today? I think my
+  spotlight for the day is
+2641: a software project. I will be very surprised if no one has mentioned this before,
+  but it's called
+2646: RIPGREP. It is a search tool that is written in Rust. If you have done a global
+  search in VS Code,
+2654: you have also used this because it was embedded. So I've been on a long running
+  quest to find tools
+2659: that are good at searching for things in my terminal. I started with GREP, I
+  then found ACK,
+2664: then I found, I think it was the SilverSearcher, and then I have evolved into
+  RIPGREP, which seemed to
+2670: be the fastest and or nicest UI. Yeah, it's basically just very good at finding
+  things
+2676: quickly from the terminal or in VS Code and it's written in Rust and it seems
+  very fast and it's
+2682: very lovely and the maintainer seems like a cool dude too. Excellent. As a long-time
+  user
+2688: of the SilverSearcher or AG, I will probably now look into RIPGREP. So thank
+  you so much for that
+2693: suggestion. Mike, thank you so much. It has been a real pleasure. Listeners,
+  I hope you enjoyed this
+2699: podcast. I hope you enjoyed hearing what we had to say. If you have any comments
+  of any sort for me or
+2704: for Mike, feel free to send them to either Mike or podcast@sustainoss.org where
+  I will get all the
+2710: comments and fold them into the next show and so forth. If you have any suggestions
+  for people who
+2715: should be on the show, please suggest them there. You can also rate us on Apple
+  Podcasts or Spotify,
+2720: and you can join us on Twitter @sustainoss or you can go on our discourse, which
+  is
+2725: discourse.sustainoss.org to drop links and have further conversations about
+  software sustainability.
+2730: We're always looking to have more nuanced conversations. So if you feel like
+  we should
+2735: have gotten somewhere, but we didn't, I in particular want to hear from you.
+  Mike, thank you so much.
+2740: It's been a real pleasure and best of luck with everything. Thanks, Richard.
+  Enjoy.

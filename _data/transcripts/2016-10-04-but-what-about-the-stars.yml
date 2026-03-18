@@ -1,0 +1,851 @@
+---
+0: you're listening to the ruby on rails podcast i'm kyle daigle i'm the host feels
+  kind of weird to
+17: say that i'm the host of the ruby on rails podcast uh this is the first episode
+  without
+22: um the previous co-host sean so we're going to give this new format a shot i brought
+  on mike
+28: mcquade he's one of the maintainers of homebrew uh we had a chat around how homebrew
+  works and how he
+34: got involved and the biggest problems that he's had with homebrew uh it should
+  be pretty great to
+39: listen to that'll be coming up next otherwise i'm gonna try this new format i
+  want to bring people
+47: on every week and not really interview as much as try and emulate and have a conversation
+  with them
+52: about what they're doing why they're doing it why i think it's interesting a little
+  bit of
+58: completely random stuff since most of these people that i'm bringing on i know
+  uh but i'd love
+63: to hear your feedback around whether you think it's actually working whether you
+  think it's cool
+67: uh if you want someone to come on the podcast that hasn't been on the podcast
+  in a while i'd love to
+73: hear from you you can reach out to me at twitter my handle there is k daigle or
+  you can shoot me an
+80: email kyle at digitalworkbox.com and we can shout about ways to make this interesting
+  over the next
+88: couple months as we get going this episode of the ruby on rails podcast is brought
+  to you by
+93: braintree payments why make payment integration more difficult than it has to
+  be braintree's powerful
+99: full stack payment platform allows you to accept nearly any type of payment from
+  any device with just
+104: one integration it's flexible to your system's needs and supports most programming
+  languages
+109: so whether you're using java ruby or python you'll always have a range of server
+  side and client side
+115: sdks available braintree makes payments and your job a whole lot easier learn
+  more at
+121: braintree payments dot com slash rails podcast that's braintree payments dot
+  com slash rails podcast
+129: and now let's have a chat with mike mcquade one of the maintainers of the homebrew
+  package management
+135: what's the weather like mike uh kind of it can't make up its mind really it's
+  like alternates between
+155: being freezing and far too hot in the same day alternates between raining and
+  being fine yeah
+163: everything's weird now is that like the season or is that just always i think
+  it's a combination of
+170: the season climate change and me just being pathetic grumpy yeah yeah quite possibly
+177: oh man that's awesome well uh thanks for being my first uh willing victim of
+  uh being a co-host guest
+186: host on this new nouveau version of the ruby on rails podcast that's my pleasure
+  but i mean
+193: it's not starting well because i was hoping to immediately make the victim joke
+  and then you've
+198: already stolen it so see see i'm telling you yeah well now when you message me
+  after listening to
+204: listening to an episode uh it'll be about you someone will message you i heard
+  i heard you on the podcast
+209: mike and i really didn't like this one this one thing you did yeah that's i mean
+  i'm used to i get
+215: that a lot so you know i just have a filter set up so i only receive positive
+  praise and which filters out
+222: like 99 of my email but you know i can imagine your facebook has to be very uh
+  rainbows and unicorns
+231: then well i mean like my facebook's mostly i mean i've said this for a while
+  it's like twitter's for
+236: arguing with people you don't know and facebook's for arguing with people you
+  do know so facebook's a
+241: relatively close-knit group of people who i know well enough to just like tell
+  them they're terrible
+246: because of their political opinions or whatever yeah i don't know i don't i don't
+  really use facebook
+252: i don't really get it anymore i mean i have an account and i like i like people's
+  stuff but
+258: if you go to look at my like timeline or whatever it's probably like
+261: nine months ago i put something in yeah i don't really post much anymore i feel
+  like
+267: both facebook and twitter i i guess i got burned out on the like you post an
+  opinion that's slightly
+274: controversial and everyone jumps on you and you know like i i guess that's probably
+  just the internet
+280: and i should have really learned that earlier than now that that's what happens
+  yeah i learned that the
+286: hard way when i started hosting uh the podcast just every everything i say gets
+  cemented in stone and
+292: then it's like kyle doesn't like go or kyle hates rails or whatever yeah well
+  i mean those are both true
+301: so i don't know why you would wow thanks oh man uh so for those uh who don't
+  know you mike who are you
+309: what do you do so i am two or more people uh i my main hat while my job at least
+  is working at github
+319: i work as an engineer and formerly on the same team as kyle and my other hat
+  is i am the lead
+327: maintainer of homebrew which is a package manager for max that if you haven't
+  got a mac you have no
+333: idea what it is and then you might try it and think that it's awful compared
+  to other package managers
+337: so uh i don't know how homebrew started
+342: so it basically it was started by a guy called max uh and he initially had ideas
+  about having a package
+351: manager that would do some smart things and i mean and most of his initial idea
+  was around it being
+356: beer themed i think more than any sort of technical implementation i just you
+  know i'm not sure whether
+361: the whether the drive was that there wasn't any package managers that met his
+  needs or just that there
+367: wasn't any package managers that like had enough puns in them yeah exactly like
+  the the pun to
+373: the pun to packages ratio was too low so he uh created this package manager called
+  homebrew
+380: at the time the main probably package manager on max was um mac ports and the
+  main early a couple of the early
+390: differentiators were it installed into user local it uh built like optimized
+  packages for you
+396: so like configure them specifically for your machine and it what's the other
+  big thing oh yeah and the other
+404: big thing is that it doesn't basically build the universe um it uses its the
+  system dependencies when
+411: it can so like or sx ships like or mac os now um ships like outdated versions
+  of a bunch of libraries
+418: and mac ports view was okay well we're going to bundle and like install the new
+  versions and the homebrew
+425: was like well we're going to rely on the system as much as possible just because
+  you know you probably
+430: don't actually care that much and you trust apple to have like at least security
+  updates for things
+436: like lib xml even if the the bugs are annoying so if i'm a new rails uh engineer
+  how would i have
+445: probably used homebrew up to this point so you've probably used homebrew to like
+  install stuff that's
+451: not ruby and so i mean some people install ruby with homebrew and that's that's
+  fine but like
+457: within rails land people are typically using it for doing stuff like installing
+  my sql installing
+462: postgres installing redis memcached basically like the the big ones that get
+  a lot of installs are all
+469: the things that kind of your your software might need that aren't in the rails
+  and gem ecosystem
+476: um so you may also use it to install like native libraries that your gems rely
+  on in some cases as well
+482: and so basically if it if it's written in c or c plus plus chances are you're
+  installing it with
+488: homebrew and if it's written in ruby i guess then chances are you're installing
+  it with ruby gems
+493: instead and mac ports is like still around yeah yeah i mean they're still they're
+  still going
+499: like pretty strong i think they've got a different ethos and a few things like
+  yeah like what i'm
+505: curious and i'm not looking to create a war or hate or anything it's funny because
+  there was previously
+511: a bit of a war because um the the homebrew website for a long time said um mac
+  ports driving you to
+518: drink try homebrew oh wow get t-shirts made for that yeah and then uh and i had
+  one with one of the kind
+528: of relatively active mac ports maintainers i had like a twitter spat with them
+  for a while um where
+533: i would like post shit about mac ports and then they would get upset and like
+  argue with me and then
+539: i would argue with them and and then it's funny because like most things in open
+  source you know
+543: like both of us probably really disliked or hated each other or whatever and
+  then we actually met
+547: at a conference we were both at and got on really well and we're just like now
+  you're now you're
+551: best friends yeah yeah and we're just both like you know that's silly and you
+  know so i guess the
+557: main modern ethos i think are things like yeah the pre all the stuff we kind
+  of talked about previously
+563: um and also like mac ports i think always needs x code and the way they kind
+  of tend to package
+570: stuff is a bit different they have a slightly different maybe patching philosophy
+  so homebrew's
+575: patching philosophy which i guess originated from mine patching philosophy is
+  like avoid patching
+580: software whenever possible a little history lesson for anyone who doesn't maybe
+  remember but um debian
+587: back in the day and you know i would have made the same mistake so it's not pointing
+  any fingers at
+591: anyone they patched something in open ssl and because valgrind which is a like
+  c profiler thing and
+599: pointed out that they were using some unallocated memory so they thought okay
+  that's bad well i'll
+604: comment out that line or whatever in a patch but turns out the unallocated memory
+  which is almost always a
+608: bad idea to read from in this case was being used for entropy data so when you
+  took that out you took
+613: out a fairly major source of entropy so yeah so debian and i think the debian
+  derivatives like
+618: ubuntu shipped a massively less secure version of open ssl for a few years and
+  because all this
+625: entropy data was getting stripped out by a patch that someone had just applied
+  and my view as a package
+630: manager is that i don't know what's best for your software so don't make me try
+  and patch it because if we
+637: go down that route i will probably end up breaking it and then your users will
+  not blame your users will
+644: blame you probably for my mistakes and then no one's happy yeah so that's one
+  of the things that i wanted
+651: to talk about because i've always found like really interesting with uh homebrew
+  or any time you're
+657: building on top of something else you know uh where like so say i'm just a normal
+  schmo and i go like
+664: brew install whatever uh and it like doesn't work and so now i don't know if
+  it's homebrew's fault or
+671: the package's fault like the the thing i'm trying to install so i rush over to
+  you know github.com
+676: uh to to leave you an issue comment uh saying you know this is broken it's horrible
+  and so i'm curious like
+685: loaded question but what is it like running this as an open source project
+689: yeah i mean it's i mean from that perspective it's actually not too bad like
+  people generally
+695: understand that like we and we as homebrew are quite good at quite quickly figuring
+  out whether
+703: stuff is our fault or someone else's fault and if it's someone else's fault then
+  often we'll just flat
+708: out close the issue and just be like you know like someone else needs to figure
+  this out because yeah
+712: we can't figure this out um but yeah so it's kind of tricky because obviously
+  you could in theory pour
+720: an almost infinite amount of time that every time your user reports a bug you
+  could go and be like oh
+725: okay it's my responsibility to go and fix that in the upstream project but that
+  just doesn't scale at
+731: all we have i think i can't remember how many off the top of my head 12 to 14
+  maintainers now and on a
+736: given day there's probably sub five that are active um so yeah i mean it doesn't
+  scale to try and have
+743: that many people managing you know thousands of packages we have like i think
+  over three thousand
+748: um and yeah if every time any one of those broke we had to go and like manually
+  submit
+754: fixes then it doesn't really work so what we tend to do is we
+758: we kind of lean on people's ability to care about stuff like one of the one of
+  the things dangerous
+765: yeah it works reasonably well actually because so i heard a terrible but sadly
+  true uh relationship
+773: um i was gonna say advice but it's definitely not advice i guess relationship
+  anecdote which is that
+779: the person who cares the least wins the relationship i like if you and your partner
+  it's it's it's awful but
+786: in this i'll segue into why it works in this case but so i guess in the anecdote
+  it's almost stuff like
+792: if both of you are like neither of you want to do the washing up the person who
+  like gets bothered
+799: first by the amount of washing up piled up by the sink or the smell or the animals
+  living in the washing
+804: up like that person will eventually cave and then do the washing up and then
+  the other person like wins
+810: and obviously that's not a recipe for a good marriage um but in this but it is
+  for an open
+816: source project apparently yes exactly no so so the the way that kind of ends
+  up working with something
+823: like homebrew is that um because we have so many people we rely more on others
+  to kind of say you
+830: know there's some bug in my sequel i mean if it's a really popular package like
+  my sequel and it's broken
+834: for like everyone and the fix is like relatively trivial for homebrew maintainers
+  like say something
+839: in the build system or whatever but relatively hard for like random people then
+  yeah we'll jump
+844: on it and fix it but say it's a relatively obscure package that doesn't get installed
+  by a lot of
+847: people and you and your company or whatever really really need this package then
+  generally we'll be
+853: like okay we'll give you help along the way to kind of fix this we'll point you
+  to the right place
+857: and what to do and give you the benefits of our experience but like you are the
+  person if you care
+862: about this package working and it's broken and it's like broken your workflow
+  you need to be
+866: like responsible for getting involved and actually trying to at least work on
+  getting it fixed rather
+873: than just like filing an issue and be like right broken you need to fix it now
+  because again like that
+878: that works if you're my boss and you're paying me money and it's like broken
+  need to be fixed or
+884: implication get a new job and i'm like okay yeah that's fine i like my job and
+  i like money in a
+889: house and things like that more than i like you know having to suffer through
+  this crappy bug but
+896: if that's like an open source project as i said it doesn't really scale to just
+  be like oh okay yeah
+901: no i'm gonna go off and altruistically help every single person because then
+  i have like no one has any
+906: time to actually work on things that are maybe more important and higher priority
+  so i'm curious about
+911: this because i was talking in i forget what episode it was but another episode
+  around money and open
+917: source i'm curious how what you think about that so i mean like so just at github
+  for example right
+925: i mean we rely on homebrew basically to to bootstrap computers and when you start
+  a project
+930: uh well we rely on the resource of homebrew to you know install the packages
+  we need and everything else
+936: like that and so and i know you do have hard costs i mean you i believe right
+  yeah so i mean our funny
+943: thing is we have again i try and run homebrew's finances relatively like my own
+  personal finances
+949: in the poor layer yeah exactly and i just spend all the money on cars yeah cars
+  of beer yeah um that's
+958: why it's called homebrew exactly like you're you're mainly just pure paying for
+  my beer tab
+963: but yeah no so i tend to try and basically try and emphasize fixed costs over
+  like variable costs um
+974: i i would rather pay like whatever a hundred bucks for something and then it's
+  a one-off purchase rather
+981: than like subscribe to something that's going to cost me like 10 bucks a month
+  because the problem is homebrew
+986: we the only money we've ever got basically has been either out of the pockets
+  of maintainers or we ran
+990: a kickstarter a couple years ago where we got i think uh fifteen thousand dollars
+  or something
+997: something in pounds i can't remember what it was in dollars um so yeah so basically
+  since then we spent
+1002: like immediately basically three quarters of that money on mac minis because
+  at the time we had no
+1007: hardware for ci so we we bought a bunch of mac minis and then we had like some
+  money in the bank just
+1013: for stuff like vmware upgrades and stuff like that but our our monthly recurring
+  revenue is zero so i'm
+1020: unwilling to sign up for anything which requires monthly recurring revenue of
+  more than zero i almost
+1026: everything so that ends up being a massive pain and thankfully our size is big
+  enough that we have a
+1034: a couple of nice sponsors and you know shout out to positive internet to one
+  password to you see i've
+1041: got my own sponsors i'm on this wait a minute i've got got my own uh stop this
+  man
+1047: yeah so we've got we've got a few people who basically i've just gone to them
+  and be like hey
+1053: like can we use your stuff and they're like sure how much are you going to pay
+  us and i'm like
+1057: nothing but we'll put something on our readme on on github uh and yeah and sometimes
+  well more often
+1064: than not they go haha no uh but then yeah we we've got like the the stuff that
+  we do have are kind of
+1070: fixed sorry our regular outgoing costs are basically paid for by those people
+  and so that's something
+1078: that's not going to work forever like i i personally want to go on kind of a
+  better fundraising drive
+1082: uh now that we've released kind of 1.0 and things are a bit more kind of stable
+  um but yeah but
+1089: basically the money side of things is hard there's a lot of people talking and
+  thinking about this stuff
+1093: right now but it it certainly doesn't solve itself and it's i think particularly
+  hard if you're a
+1100: open source project that's used by a lot of places but you're not anyone's core
+  infrastructure and you
+1105: don't have any of your maintainers who are like wanting to make it their full-time
+  job like it like i've
+1111: worked on open source projects in the past where there's a kind of fairly natural
+  solution to this
+1115: problem which is that one or more of the maintainers are like okay well i'll
+  make my full-time or at
+1120: least part-time gig like doing consulting on homebrew and then like we can kind
+  of the project can make
+1125: money through like building this kind of commercial ecosystem around it whereas
+  with homebrew because
+1131: it's like a mac package manager and we are used by some pretty big companies
+  and stuff like that but
+1136: it's kind of harder to extract revenue in that way and so yeah so it we just
+  shoot ads down just
+1145: when i go brew install you know ruby or whatever just have it be like hey have
+  you heard of casper
+1151: casper is the number one that sounds like a brain tree you know brain tree is
+  the easiest way to
+1156: do billing on your website just boom i don't think anyone would mind no i'm
+  sure people wouldn't at all
+1162: like and it would also start a whole new market in terminal based ads you would
+  be you would be the
+1169: beginning oh man that's funny so you mentioned uh 1.0 uh tell me a little bit
+  about it and why
+1177: why does it matter like why does i'm curious from an open source project perspective
+  like why is 1.0
+1183: important to you yeah it's funny i can't remember what the mathematical term
+  is but like that's where we
+1188: were getting with our version numbers where you know when you go from like 0.9
+  to 0.99 to 0.9999
+1194: you know and never quite and it feels like that's what we've been like with
+  version numbers and that
+1199: in the past they've been fairly haphazard and we've just kind of bumped them
+  fairly randomly to try and
+1204: be like okay yeah we've added some stuff that seems kind of important and it's
+  not broken so
+1209: let's kind of bump the version number um so with 1.0 i guess i maybe started
+  thinking about it
+1217: i'm not sure how long ago maybe like three to six months ago i just thought
+  like okay well we've
+1221: been kind of doing this for a while and we've got we've pushed we wanted to
+  push through a few kind
+1226: of relatively big architectural changes but also signify to people like okay
+  we're pushing these
+1232: changes through we realize this may kind of break some of your stuff to be fair
+  if you just run brew
+1237: install and stuff like that it's not going to break your stuff it's more like
+  scripts maybe around the
+1241: kind of ecosystem so i kind of thought okay well what's the best way of doing
+  that well one of them
+1247: is we kind of move to semantic versioning and we actually start trying to commit
+  to having a more
+1254: stable base so i guess that the very early beginnings of that were we've kind
+  of felt pain for quite a
+1260: while in that the package management and the kind of formulae what we call like
+  the package definitions
+1266: we're always in the same repository so if you wanted like the latest version
+  of mysql whatever
+1271: you unbrew update and you get an updated package manager and updated like package
+  repository but
+1277: the problem is is if we break something in the package manager for you then
+  like you need to
+1282: basically pick between into having the latest mysql and having a broken package
+  manager or like having
+1288: a working package manager and like the latest mysql and to be fair like we didn't
+  break it that often
+1293: enough for that to be a really massive problem but it's still like it's still
+  annoying kind of having
+1299: those two things tied together so the first thing we did is we kind of split
+  that into two repositories
+1305: like we've got like homebrew slash brew and homebrews like home that being the
+  homebrew organization on
+1310: githubs and brew being the name of the repository and then like homebrew core
+  which is like where all the
+1315: packages are so like that that kind of helped to be able to start doing these
+  things in separate
+1323: repositories one of the big casualties of that unfortunately was we've like
+  our star count dropped
+1328: down and really like oh no why even do open source exactly why why bother if
+  you don't have the stars
+1336: so but you know it's been creeping up again so that's okay um but yeah so like
+  that that was a
+1342: pretty big deal like being able to split them and then eventually kind of for
+  1.0 we now have like tags
+1348: and where when you run brew update and you're kind of a what we have like defined
+  by code as being like a
+1354: normal user using our kind of secret metrics and then you get updated to kind
+  of just the latest tag
+1361: for the package manager instead of like whatever the last commit was so we basically
+  have like a subset
+1367: of people who are kind of on the rolling release like certainly all the homebrew
+  maintainers and like
+1371: regular contributors to homebrew who are kind of getting like every change as
+  it gets pushed out
+1376: but then now other people are on kind of a stable release path and then that's
+  made it a lot easier
+1380: for us if we kind of introduce bugs or whatever that we catch them a lot quicker
+  um and it stops
+1386: most of these bugs from kind of hitting people on who are on the tag releases
+  so previously there
+1392: weren't uh release channels everything was just yeah mainline or whatever exactly
+  everything was just
+1397: the master branch interesting all right well that makes sense then i mean it
+  normally when we're
+1402: talking about web stuff here um everyone basically has a staging environment
+  or something where that
+1408: they can give a give a go to before they bring the entire site down and so has
+  it been working well
+1413: for you since you uh shipped yeah i think so i mean one of the toughest things
+  obviously inevitably
+1418: the bugs when you want to release 1.0 and tag it and start updating people to
+  tags at the same time
+1425: what are the most obvious bugs you're going to have to start with well there's
+  going to be bugs with how you
+1429: update people to tags because that's like code that's completely untested before
+  you like have the tag
+1434: commit so yeah so there was a few bugs around that and there's we've been kind
+  of our our release
+1440: iterations have been kind of getting like i think we had a couple of release
+  like a couple of point
+1444: releases in the first you know week or so and then now we're more about a week
+  apart and we could
+1449: probably get further apart still um so yeah so i think it's been working pretty
+  well for us it's been
+1455: it's been a nice change and i think it it just allows us to have you know to
+  in some ways be a
+1460: little bit more haphazard on the master branch and a little bit more careful
+  with how and when we're
+1465: doing tags which is kind of nice well it's it's how it kind of should be really
+1469: so all right so you have your 1.0 this project's been going around for a while
+  now
+1477: what's like what is the hardest part of this i mean it's like for example some
+  things that i've seen
+1484: over the over the the years of watching uh this project and recently you working
+  uh on it like
+1492: getting analytics in was like a big thing for the community like there's got
+  to be a bunch of times
+1498: where you all do something and the community just kind of explodes either rightfully
+  so or not but
+1503: is that one of the most like taxing difficult parts of this project or or what
+  is yeah i think so
+1510: i think it's you know we have a user base probably more well no i i guess to
+  be fair most large widely
+1517: used open source projects have this um not unusual problem and i i mean to be
+  honest most software where
+1523: if you're if you're doing a good job you don't hear from the vast majority of
+  your users the vast
+1528: majority of the time so if even like 0.1 of your users decide that they're really
+  furious about
+1535: something then all of a sudden it seems like the sky is falling and everyone
+  hates you and everyone
+1540: thinks you're terrible and stuff like that so that that's kind of a hard thing
+  to do you have to have
+1546: a certain amount of a thick skin at least at the moment i think hopefully we
+  will look back at open
+1551: source and kind of you know 10 years if not less than that and say that that's
+  more of a solved
+1557: problem that we don't we figured out a way to just stop people just like exploding
+  about things
+1564: um but i think i think that's the thing is that you need to the analytics was
+  a good example i think you
+1571: were like there firsthand and i kind of showed you some of the conversation
+  well i mean because the
+1577: funny thing the analytics was on it uh so if people don't know if people don't
+  know what we're talking
+1583: about can you give a quick uh yeah sure so in i guess march or so uh we added
+  analytics that again
+1590: was something we've been kind of talking about for a little while um and it's
+  basically came down to
+1596: being we had fairly big problems with prioritization so again as i mentioned
+  earlier you have like almost
+1602: an infinite amount of time you can spend on homebrew kind of work on packages
+  and i i mentioned earlier
+1606: like you know picking an important package and not important package and stuff
+  like that but if you
+1611: have no installation numbers which we didn't because it's all on on your local
+  desk then how do you
+1618: know to prioritize say my sql and postgres break on the same day how do i know
+  which has more users and
+1624: which i should prioritize i mean well we both work with github right so this
+  is we're legally obligated
+1632: to answer my sql exactly um but yeah so like that that's a slightly silly example
+  but particularly
+1640: when it's slightly more niche software it's kind of it's really hard to get
+  a sense of how many people
+1644: use this like there's a lot of software my sql open ssl lib xml that you kind
+  of see on everyone's
+1650: machines and you know like okay that's really widely used but then there's a
+  bunch of other stuff that
+1655: particularly you know if you're in the ruby community or the node community
+  or whatever like i
+1659: i'm in the ruby community mainly and i'm mainly living in the ruby ecosystem
+  there's not a lot of
+1664: kind of node.js stuff that goes on at github so it would be very easy for me
+  to draw the conclusion
+1669: that some of this some of the kind of related node packages are not that valuable
+  just because i don't
+1674: see people using that whereas i do see people using the ruby stuff so basically
+  we wanted a more
+1679: objective measure than just oh i've you know this feels popular this feels not
+  or equally like
+1684: more people complain about this less people complain about that so we we introduced
+  analytics and there
+1690: are as anonymized as we can possibly make them you know there's a uuid which
+  is generated just randomly
+1697: on your machine kind of just so we can get like user accounts um but yeah basically
+  we we kind of
+1703: shipped this and there was some you know other maintainers were a little bit
+  more realistic that
+1710: there were going to be a bit more fallout than i was i was like you know nah
+  it's going to be fine
+1715: and then we shipped it and it blew up on hacker news while i was on a transatlantic
+  flight uh like
+1723: which was helpful um and yeah so i you know basically as kind of happens a few
+  times and stuff like that
+1731: and homebrew i you know i was the main driver of the the change so i i kind
+  of you know basically
+1737: pretty much got back into my hotel room and then like binge worked on a bunch
+  of features and stuff
+1742: like that to try and make it more amenable to people and more obvious with what
+  was going on and
+1746: all this type of thing um but yeah and that's mostly died down now like i i
+  mean we still get periodic
+1752: kind of haters around this stuff but i think the thing is is that most people
+  understand
+1758: who have used analytics through you know their workplace that it's really really
+  useful and it
+1763: tells you a lot about your users and it helps you to make the software better
+  you know we're not we're
+1769: not as some emailers have said trying to spy on you like the nsa like they already
+  have that taken
+1775: care of exactly no exactly like and we don't you know even if we wanted to sell
+  all the data like i
+1784: we've designed it in such a way that it would be useless and we couldn't sell
+  it because you can't
+1788: take anything from it or know anything about the individual other than they
+  installed these three
+1792: packages so like it's is that kyle yeah i i well i mean the one exception is
+  kyle specifically we have
+1802: like the only the only installer of this really obscure pokemon library yeah
+  kyle is that you
+1809: yeah pokemon go cheats for for free oh man stories to tell my friends stories
+  to tell
+1815: so yeah i mean is that it is it is it just a community that like you know i
+  mean it's so i i
+1822: would ask you like why do you keep working on it but that kind of seems like
+  mildly self-answering
+1827: and so i i kind of want to poke it just like you know oh no that's it's a valid
+  question because
+1831: i i do ask myself that periodically i think part of it is so i'm the you know
+  there's been various
+1838: other maintainers including the creator max who've kind of come and gone to
+  homebrew over the years
+1842: and i'm the person who's been working on the longest and i do ask myself like
+  why that is
+1847: um and i think part of it is just i'm an incredibly stubborn person and particularly
+  when i can confirm
+1854: yeah exactly kyle knows um yeah and particularly around like it's funny the
+  times i would be the
+1860: most tempted to quit around stuff like you know when the analytics things like
+  that blew up then
+1865: like the stubborn part of me is like no i will not let them win like i will
+  not let them i'm gonna
+1871: analytic harder yeah exactly um but yeah i think that's part of it and part
+  of it is just you know it's
+1878: really widely used software um it's a thing that solves a bunch of problems
+  for a bunch of people
+1884: and makes their lives easier and it's something that i have a tremendous amount
+  of domain knowledge
+1890: over the years which is just really satisfying you know it's my day job at github
+  is satisfying but
+1896: the nature of github and the business that it's in is that we're having to solve
+  a bunch of problems in
+1901: some cases that you know certainly we as individuals have never solved before
+  and sometimes solve certain
+1906: problems that no one's tried to solve before and because of homebrew we have
+  to solve all these
+1911: problems exactly like so i i need to make keep homer going to keep my co-workers
+  at github working hard
+1917: employed yeah yeah um so yeah and i think that's the thing is that it's really
+  satisfying with homebrew
+1924: with the number of users we have and with the kind of relatively small team
+  we have and like
+1931: the kind of influence i have on the project that i can go in and in like 15
+  20 minutes make something
+1935: which like saves a lot of people a lot of time and that that level of kind of
+  effort to reward is i
+1943: think what's most satisfying when you've worked on something this long is that
+  it is just really cool
+1948: to have someone submit an issue and have them be like oh this seems like a long
+  shot and a lot of
+1953: work or whatever and you can look at it and be like oh that's actually pretty
+  easy and bang it out in
+1957: like half an hour and then like have that on the user's machine in like under
+  a day and then like
+1964: just the the kind of joy that results from people when you're able to do stuff
+  like that is just really
+1968: satisfying was homebrew your first like big open source project that you were
+  a part of
+1974: uh it's it's certainly been the it's been the first one i've been a really like
+  major driver in i guess
+1982: like i previously worked on kde in a past life and that's a a linux desktop
+  environment and like all
+1990: the kind of gooey look and feel stuff and the future yeah exactly that it's
+  you know 2017 this year
+1998: the year of linux on the desktop um and uh yeah no i worked on that for a while
+  like i used to be a
+2004: big hardcore uh desktop linux guy um in fact funnily enough yesterday i i've
+  got my email going back
+2009: i think about 11 years and i i thought yesterday would be fun to read through
+  some of my oldest emails
+2015: and then some of them were uh bug reports i'd filed to like a linux package
+  manager
+2020: like 11 years ago and i was like oh this is going to be interesting reading
+  because i will see like
+2026: how how annoyed would i be at like me as a user now and thankfully like i was
+  great so everything was
+2033: fine um but yeah i i was kind of involved with katie kind of involved with a
+  couple of like random
+2039: open source projects here and there one of the nice things about doing stuff
+  like homebrew and having
+2044: a suitably lower attention span is that i've kind of contributed like a couple
+  of
+2049: to commit to like loads of projects like maybe kind of 20 or 30 different projects
+  over the years
+2054: sometimes you know randomly just fixing readmes and sometimes you know just
+  fixing little little
+2060: things that have bothered me and stuff like that and i think that's one of the
+  reasons why i've been
+2065: you know before i worked at github such a big fan of github because you know
+  i worked on kde back in
+2071: the day when what you would do is you had a mailing list and it was all in subversion
+  so what you would
+2076: do is you'd make your commit locally and you couldn't commit it obviously because
+  this is subversion
+2082: and i don't have access to the subversion repository it's just read only so
+  i make my commit i do my work
+2087: locally i run svndiff and then i email that to a mailing list and then by the
+  time someone else is like
+2092: oh yeah like there's a merge conflict now then i need to then go and like svn
+  up and then like fix
+2099: my commit locally and send that again and hope that it gets merged by someone
+  else before there's
+2104: another merge conflict and yeah and just that whole experience like it was kind
+  of state of the art at
+2109: the time but like in comparison now it's just so unbelievably painful um and
+  the other big thing
+2115: was that every single project back then had a slightly different way of doing
+  things it might
+2120: be a mailing list on this one it might be a bug tracker on that one and it might
+  be cvs or subversion
+2125: or power force or whatever and it's yeah it's it's so great now that we're we
+  have me i think bizarrely
+2134: there's a lot of things people would credit github for but for me the biggest
+  thing i would credit them
+2138: for is um it's for standardizing the process of submitting a change to an open
+  source project i
+2145: think that's what has made it much much easier for a random person to submit
+  to open source when like
+2152: 10 years ago they would have given up at the first or second or fifth hurdle
+  and so then this begs the
+2160: final question if i was a schmo and i was interested in helping out with homebrew
+  or adding my package
+2167: to homebrew what's the easiest way to to do that you see this this shows your
+  lack of preparation kyle
+2174: because actually homebrew is at several steps ahead of you here because in our
+  readme we actually have
+2180: that it's basically like a thing you can do straight away having commands that
+  you already have installed
+2186: on your machine and stuff like that so we have a thing called brew audit and
+  that's basically our
+2190: kind of style checker thing it's a little bit like rubocop and we're trying
+  to we're going to actually
+2195: try and move some of those checks to be a rubocop plugin at some point that's
+  on my to-do list
+2200: um but yeah basically you can run this and it goes and runs through all the
+  kind of stuff you've got
+2205: installed and stuff you don't have installed and kind of checks for little style
+  violations
+2210: and there's always like a few because we're whenever we add a new rule we we
+  don't go through
+2214: and like fix every occurrence because it's an almost like a nice entry-level
+  kind of task for people and also
+2220: like it's like not always the most interesting thing to do uh so but it's called
+  crowdsourcing
+2229: exactly so we we crowdsource our style violations uh getting fixed but no i
+  and i found like that's a
+2234: really good way to kind of get used to the homebrew contribution process because
+  often these things
+2239: you can go and make like a one-line change sometimes like a you know a couple
+  of characters change and then
+2244: submit that up and then you can see kind of how our process works and then when
+  you've done that a couple of
+2248: times you can go and get used to the flow and then kind of maybe start making
+  some more advanced changes
+2254: and things like that and another really common thing people do is just submitting
+  updates to
+2259: packages we have again another command called i think brew bump formula pr which
+  is like okay
+2264: i've got my sql 5.7.0 and 5.7.2 got released um so i'm going to submit a pull
+  request that just like
+2272: changes the version assuming everything else stays the same so that is basically
+  a little tool that
+2277: lets you kind of do that and actually submits the pull request for you although
+  i would say i need
+2281: to add the caveat that if that's my sql then probably 10 people have already
+  submitted that pull request
+2286: so like is it like uh is it like uh you know an internet forum thing where everyone's
+  like i'm
+2291: the first one i did it first post yeah yeah we do have a little bit of that
+  um in that you know it's
+2298: i think people well and it's good i mean i i don't actually begrudge that because
+  often if it's something
+2303: like my sql you know several people notice kind of around the same time and
+  they check for prs at the
+2308: same time and submit prs at the same time and you know it's like one button
+  press to close that
+2313: and i would far rather we got duplicates than people didn't submit at all um
+  but yeah but i think there
+2318: is a certain amount of satisfaction in in you know like knowing that's the cool
+  thing about a project
+2323: like homebrew right we've had i think over 6 000 different contributors over
+  the years like we used
+2328: to be i'm not sure we are anymore but we used to be kind of up there as kind
+  of one of the most um
+2333: contributed to projects and it's kind of nice knowing that like oh okay like
+  everyone got my sql
+2338: 5.7.1 like due to me like i submitted that upgrade and you know there was some
+  stuff under the hood
+2343: that kind of all happened but that happened as a result of my work uh so yeah
+  like it's i think it's
+2349: a cool project to kind of contribute to obviously i'm biased but yeah i would
+  recommend getting involved
+2354: and and you can always as well if you if you hit anything that's confusing you
+  can always reach out to
+2359: me personally and i try and always help people who are kind of struggling with
+  this stuff and on like
+2364: twitter or email or whatever i'm sure kyle will link that awesome yeah so how
+  do people get in
+2369: touch with you how do they follow along if they were like wow this is this mike
+  mcquade he's pretty
+2374: he's pretty cool i want to i want to hear more from him i laugh because i don't
+  know if that's
+2381: what happens but if it were if it were true uh yeah no so i i guess i'm on twitter
+  at mike mcquade
+2389: um no one will know how to spell that but it will be linked somewhere i will
+  link it yeah yeah you will
+2394: link it and make sure to get the the q capitalized and that's a very important
+  thing for me in my life
+2400: and it's funny that's actually as an aside that's my way of trolling like not
+  necessarily even
+2407: programmers but their managers or whatever it's like literally every single
+  time i receive a letter that
+2414: has mike mcquade and like it's like the q is lowercase i i know being a programmer
+  you know i
+2421: know almost invariably that's probably because their record stores like surnames
+  as all in lowercase or
+2428: whatever or all uppercase and then just like run some capitalization thing afterwards
+  but i will
+2433: always complain like i even though i know like 99.9 of the time that complaint
+  is utterly futile and
+2440: pointless i just do it anyway because that's the type of individual i am
+2444: so if you want more of that i will link to it yeah if you want that that level
+  of
+2451: pointless pedantry in your life then yeah then you can follow me on twitter
+  and i will not do that and
+2458: just occasionally post interesting links oh that's that's awesome okay well
+  mike you've made it to the
+2465: end of uh round one and i didn't i really don't think you bring or you didn't
+  bring your a game
+2469: of uh your usual sass for me yeah well i mean i i try the thing is with the
+  sass is you know
+2477: kyle's a very delicate individual and i constantly worry that me having to constantly
+  correct his
+2485: spelling and grammar yeah at some point push him over the edge and you know
+  and at that point you know
+2492: i'm just i'm concerned about github's future graph ql interface if that happens
+  and you know if that
+2497: means that on a day-to-day basis i need to you know read messages and slack
+  that look like they're
+2503: written by a a five-year-old then so be it that's that's the sacrifice that
+  i i bear well awesome i was
+2512: worried when sean left that no one was going to give me a hard time but i i
+  have no doubt that i'll be able to
+2516: find enough co-hosts to come on for a week and just keep me honest slap you
+  around the face with a fish
+2524: or something exactly oh man no no more fish we're good all right thanks mike
+2539: one down one episode in the can uh very excited uh that was great that was a
+  great conversation with
+2546: mike uh if you don't use homebrew yet definitely give it a shot if you're new
+  to software development
+2551: you might not have a reason quite yet to use it but go to go google homebrew
+  and you'll see it right
+2556: there you can install packages way easier and if you install all of your packages
+  through homebrew it's a
+2561: a lot easier to get everything set up um thanks again to mike for joining me
+  on the podcast this
+2570: week uh we'll see you all next week with another episode of the ruby on rails
+  podcast you can find
+2576: me on twitter and github at k daigle until next week see ya
+2591: you

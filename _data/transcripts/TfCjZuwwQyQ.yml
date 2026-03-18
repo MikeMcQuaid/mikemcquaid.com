@@ -1,0 +1,886 @@
+---
+0: if you want to release a new version of your package or whatever we yes we have
+  lots of
+4: automate update tooling or whatever that might pick that up but the process of
+  like actually
+9: getting that out to users one of our humans is always looking at that and saying
+  yes this looks
+15: fine welcome to screaming in the cloud i'm cory quinn and today's guest is one
+  of those
+26: he or at least his work needs no introduction to most of us mike mcquade is the
+  project leader
+33: for homebrew if you have not been become acquainted with homebrew you either have
+  been living under a
+40: rock for 15 years or alternately you probably don't touch mac os which is like
+  living under a rock for
+47: the last 15 years mike thank you for joining me thanks for having me here cory
+  this episode is
+53: sponsored in part by my day job duck bill do you have a horrifying aws bill that
+  can mean a lot of
+60: things predicting what it's going to be determining what it should be negotiating
+  your next long-term
+67: contract with aws or just figuring out why it increasingly resembles a phone number
+  but nobody
+74: seems to quite know why that is to learn more visit duckbillhq.com remember you
+  can't duck the duck bill
+83: bill bill which my ceo reliably informs me is absolutely not our slogan and i
+  feel like i just
+90: misstated already off to a great start because i've always used homebrew on a
+  mac but apparently it
+96: supports linux as well uh as as a first party target operating system am i misunderstanding
+  something
+103: here no it's yeah it's been doing that for a wee while a lot of people are surprised
+  both that that
+110: happens and then generally the next reaction is why would you do such a thing
+  like linux has a lot of
+116: perfectly functional package managers why would you bring your no it doesn't
+  it has things like apt and yum
+121: and that would start replaced by dnf there's there's always a thing like uh it's
+  like thomas jefferson
+127: once said that the tree of liberty must be refreshed with the blood of patriots
+  and it feels like
+132: generationally we need to refresh package management with a new version to supplant
+  the old one in linux
+138: distros every distribution i can think of has gone through this entire process
+  and it shows no sign of
+145: stopping but what's the linux story for homebrew so the linux story for homebrew
+  i guess it started out
+150: with being a bunch of people in bioinformatics labs who were like uh i don't
+  have root so i can't use
+156: the system package manager and if i sort of like fiddle with homebrew enough
+  then i can use it to install
+162: shit in my home directory and then like hey presto fast forward a while and a
+  non-trivial number of
+169: people who use it and the kind of cross-platform nature is kind of appealing
+  for some people because
+175: you can have the same package manager commands on mac and linux and ci and development
+  perhaps and
+181: whatever and all that good stuff and then more recently we've actually seen like
+  there's a couple
+186: of linux distros that do the whole like immutable root file system thing and
+  then they use homebrew
+192: uh and flatpak as their kind of primary package manager basically and so that's
+  that's been interesting
+198: seeing those like homebrew being mentioned on the front page of a linux distro
+  that's a
+204: new development yeah for me it came back for a very simple starting point of
+  once upon a time back in the
+212: day a thursday i believe was the day but that's neither here nor there and i
+  wanted to i was trying to copy
+218: and paste a command off of stack overflow which was a best practice as is for
+  many of us and wget wasn't
+225: installed on a mac and huh what's the best way to get this installed so first
+  i went down the primrose
+230: path for a couple of years of playing around with mac ports because i am an old
+  dsd saw and i don't
+236: believe that homebrew really existed back in those very early days but it was
+  just night and day once i
+241: first encountered it uh and it had all the hallmarks of a terrible decision let's
+  be honest here oh i just
+248: copy and paste this curl bash equivalent though we didn't call it back then into
+  my terminal it'll just do
+253: all the magic things it needs to do and set it up from a security perspective
+  it was something of a
+258: nightmare oh it'll just install the latest version of everything so what you
+  run today and the new
+263: developer runs next week are going to be not exactly the same thing but it worked
+  and i started using it
+270: extensively i became a i started doing some of the packaging for a few things
+  back in the day for
+275: homebrew i'm running my own tap now with a couple of things that have now gotten
+  enough traction that i
+280: probably should try submitting them to core and see what happens but everything
+  i've ever really wanted
+286: what lives inside of homebrew and when i redid a laptop for the first time in
+  a few years a month ago
+292: suddenly all the stuff that i installed that were that was graphic utilities
+  live within casks which
+297: used to be its own separate thing and now seems to have more or less merged into
+  mainline what's the
+301: history there yeah so casks were again you've probably clicked on if you haven't
+  already been familiar
+307: with homebrew before this podcast that we like our beer metaphors over here uh
+  this was partly because
+312: max the creator of homebrew uh conceived it while under the influence uh after
+  being in a pub in london
+319: whining about package management and having his friends tell him presumably also
+  under the influence
+324: well if you're so smart why don't you make your own package manager and turns
+  out thank god usually
+328: those drunken belligerent conversations turn into and that's how i built a database
+  engine so at least
+333: this one's novel yeah exactly exactly so casks were uh again you're seeing a
+  bit of a running theme here
+339: like also a kind of side offshoot of homebrew where some people were like okay
+  homebrew installs all
+345: your nice open source stuff uh but what if you could use it to just like download
+  google chrome and put
+351: that on your machine or one password or any of these other things right yeah
+  so basically like they were
+355: running their thing it got a bit of traction we noticed in the main project and
+  we like brought those
+361: people over and merge the two projects essentially so that's been one of the
+  nice things with the
+364: homebrew ecosystem is that over the years essentially when people do cool stuff
+  that are
+370: like broadly in the ecosystem we try and like bring them into the fold and make
+  it all official and part
+376: of our main thing which is a nice approach it's i've also found what i was looking
+  at the submission
+382: requirements recently that if you have auto updating nonsense uh claude code
+  is a good example of this
+388: uh it doesn't really belong in homebrew core that's what casks are for i guess
+  how do you view doing an
+394: installation dance like that where at any given moment what is being installed
+  on your system is
+400: not going to be what it was 10 minutes ago yeah i mean that's the fun of i guess
+  homebrew package
+406: management you alluded to that earlier right we've always been i guess what you
+  would call in package
+410: management nerd land aka my life a rolling release package manager and what you
+  mean by that is like
+417: we whenever we get the newest version of stuff if it doesn't break humbrew itself
+  we generally just
+423: foist that upon people right so in casks as you say there's some more extreme
+  stuff where the cask
+429: itself can update auto update so humbrew doesn't necessarily even know the version
+  of the cask that you
+434: have installed at this time but that we found that works a little bit better
+  than you know a lot of tools
+440: like maybe claude code or google chrome or whatever nowadays that end up shipping
+  their own auto update
+445: engine and it's like there are four releases a day in some cases yeah and we
+  could try and fight that
+450: but again like i mean the homebrew in many ways like keeps after me in terms
+  of like i'm exceptionally
+456: lazy right so it's like if there was some so say like debian right debian is
+  a beautiful morally pure
+463: distro and on a lot of this stuff they're like well if there's like the kindest
+  way you could
+468: have found to put that if they're like got an auto update or they're like yeah
+  we'll patch out that
+472: auto updater and we'll just keep patching it out forever or whatever whereas
+  i'm just like ah that
+478: sounds like a lot of work like that's what if if that's what the software project
+  is trying to do
+483: let's try and find a place in our ecosystem that we can slot in and they can
+  do things the way they
+489: want to do it and we can do things the way we want to do it and users can end
+  up
+492: ultimately moderately happy yeah i prefer being able to do it through cask just
+  because that way
+498: i don't have to crawl across half the internet to find stuff that i care about
+  the only time i've
+503: run into trouble with it has been oh there's this thing that i want to install
+  forgot i got it from
+507: the mac app store and that's where the license is tied to it so okay now i have
+  to keep a separate
+512: exception list for that but oh well too bad so sad if you didn't know about this
+  already i'm gonna i'm
+518: gonna transform your life here cory right so they're hit me with it please i'm
+  about to redo this
+522: machine so tell me oh yeah oh yeah it's coming it's coming prepare yourself so
+  homebrew has this thing
+528: called homebrew bundle which uses brew files right and it's loosely based off
+  gem files in the ruby
+534: ecosystem order so what you can do in there is you can specify your taps your
+  formula which are things
+540: that built from source supply by homebrew your casks your mac app store apps
+  uh recently your go
+547: clis if you've got them your visual studio code plugins someone was proposing
+  adding cargo the rust
+554: package manager support in there as well so that file lets you basically be like
+  okay you can dump
+560: everything you have installed to that file and you can install everything on
+  that file um and so you
+564: could have like a global wide thing i keep mine in my dot files and then i also
+  have a little mini
+569: open source project the most successful thing i've created by myself called strap
+  which is basically
+574: like the idea when you get a new computer you run this one script installs homebrew
+  it looks on your
+579: github if it finds your dot files repo it pulls that down if there's a brew files
+  inside it it installs
+584: from the brew file so you basically have like one command you can just run to
+  basically like install all my
+589: stuff and get my all the software on my computer released back to where it was
+  before
+594: right so hopefully this is gonna make your new build experience that bit more
+  pleasurable than it
+600: currently yes and the counterpoint that i find here because i built a bunch of
+  these things before
+605: this machine has been around for a while uh let me just for example run this
+  now brew list pipe to wc-l
+613: i have 365 which is a suspicious number of packages installed on this thing so
+  part of me like a lot of that is
+621: stuff i needed for weird one-offs that i no longer need i honestly on my laptop
+  i have about i don't know
+628: 15 to 20 percent of that where it's i just because i just recently did that one
+  and it'll eventually
+633: grow in time but i don't necessarily want to have all those things reinstalled
+  part of the reason to
+637: do a fresh install is to get away from the legacy cruft i have something like
+  four different ways of
+643: managing nvm on this system which is kind of a problem i want to start standardizing
+  around
+647: which is the one that i've found that i like the most these days for python it's
+  strictly uv system
+654: wide and so on and so forth asdf get rid of it because its ergonomics are terrible
+  i can never
+659: remember which command parameter goes where and they're positionally dependent
+  which is just
+664: wonderful simply wonderful i have opinions and i'm belligerent and i refuse to
+  learn new things
+669: i am the worst engineer you've ever met it's great but also a typical one yes
+  i wish i could say that
+676: that uh rant was not representative of the typical home brewery user but you
+  you will fit in well with
+682: our community of people who do not like it when we change their shit i guess
+  on that so while i'm
+689: evangelizing the why brew files will change your life right so if you run brew
+  bungle dump which dumps all
+694: your things out one thing at least of that list of 365 is that it will only output
+  the things that
+701: you have intentionally installed so anything that was not its dependencies a
+  lot of dependency exactly
+705: unless you also intentionally install the dependency in which case that it will
+  remember and know to do
+711: that as well so the little workflow i have after that like sounds like you have
+  a you know a world of
+716: craziness to unpack but maybe on this new build if you're doing it from scratch
+  then what i do is i have
+721: my brew file i keep that in my dot files directory which is a github repository
+  and a locally checked
+727: out git repo and then what i do is i just install my stuff and then every so
+  often i run brew bundle dump
+732: dash dash global and then i get my brew file in my dot files repo is like being
+  nicely replaced and
+740: because it's a git repo i don't care that it's been replaced and then i look
+  through the diff i do a
+743: little local review in my local git gui of choice fork which i would recommend
+  very nice little git gui
+749: and then i'm basically like which of these do i want to keep which ways do i
+  want to delete right
+753: so i stage it i commit the stuff that i want to keep and then i maybe get rid
+  of the changes i don't
+758: want to keep and then after that i can then run brew bundle cleanup which will
+  then use that brew file
+763: and then uninstall everything that is not present in that brew file so then i
+  can get myself from a world
+769: into a world of chaos into a world of order and serene package management calm
+  i like this quite a
+776: bit yeah honestly it's going through and like uh doing the dump on this okay
+  i've got a whole lot
+781: of lines to delete in this like rust when the hell am i going to need rust well
+  the next time i grab
+786: something opinionated off of github but until then i can enjoy not having to
+  build a conference talk as a
+792: prerequisite for writing code you know basic stuff in life i've also seen homebrew
+  itself over the years has changed
+798: significantly where just even the process behind it it auto updates now which
+  i think is great your analytics
+804: i think have been handled in the most user respectable way possible the the fact
+  itself updates only
+810: intermittently not every time you do stuff that's phenomenal it seems to have
+  parallelized itself a lot
+815: better than it once did as far as downloads and installs go like someone has
+  put some thought into this
+820: there's an entire there clearly is some sort of dag involved yes there definitely
+  is the occasional
+826: thought that happens uh that results in a change uh several of the changes you
+  mentioned are things
+833: that people still besmirch my name across the internet for for ramming home again
+  against the
+838: interests of the users but the problem is with things like open source right
+  is homebrew has we
+843: guesstimate about 10 million users from like analytics analysis stuff where like
+  we don't have
+849: like we have opt-in uh sorry opt-out analytics not opt-in again another course
+  of contention but you
+855: you can sort of infer that the vast majority of people opt out uh based on the
+  download numbers from
+861: github's packages uh versus the numbers we get for analytics so that's our rough
+  guesstimate so
+868: for those 10 million people based upon the sheer number of developers in the
+  world most yeah maybe it may
+874: maybe that's maybe that is on the lower end but uh the number of people who essentially
+  service their
+878: requests for those people are 30 maintainers right so when when you are dealing
+  with that level of scale
+885: a all glory to the internet and open source for making that sort of scale even
+  flipping possible
+891: but also you end up having to make nasty little compromises sometimes like say
+  the auto update
+897: thing right lots of people really hate that but what it stopped was 95 of issues
+  being this thing
+905: is broken run brew update does it still happen oh no it's fixed now right and
+  there's only so many
+911: times you can uh respond to that and not write an auto updater before your brain
+  just turns to pulp
+917: and my brain was starting to turn to pulp update bugs are the worst because how
+  do you fix them
+921: well yeah that that's the other beauty yeah is when when you break the auto updater
+  which i have done
+926: once that is a whole new world of pain as well where it's like but i i did everything
+  you said i ran the
+932: updates uh yes but the updater is broken so you can't run the updater because
+  the updater won't update
+938: the updates uh and neither will the auto update update the updaters to run the
+  updates you have to run
+942: another update to update this so now whatever my mom with that her nothing was
+  working
+947: in her browser anymore turned out it fell off the google chrome update path like
+  four years
+952: beforehand and sadness yes and and this is why like i break out in hives anytime
+  anyone
+957: submits a pull request changing that auto updater file because i'm just like
+  are you sure are you
+962: sure you really want to do this do you really want to roll the dice and be the
+  person that breaks
+966: the auto updater because i've been that person and it sucks yeah but uh suddenly
+  on the plus side
+971: once you do that everyone knows your name one way to become famous or infamous
+  i guess yes
+977: it's do you find that people tend to pin particular brew releases i'm sorry package
+  releases inside of
+984: brew like oh always install this particular version of this package yes sometimes
+  so we we have like a
+990: pin command that lets you do that but like the usability around that is kind
+  of like meh
+994: only time i've ever used it has been in highly prescriptive here's how to install
+  a dev
+998: environment in old school stuff before the advent of docker there's a bit of
+  that and also like
+1004: what we recommend nowadays is like there's we provide version packages for some
+  stuff so if that's
+1011: available so say like it used to just be there was just postgres right and if
+  postgres got a new
+1016: major version update and you wanted to sell an older version of postgres sucks
+  to be you right like
+1022: and then we had a slightly more middle ground now where it's like okay now we
+  have postgres i forget
+1026: the versioning scheme off the top of my head but whatever it is postgres 18
+  postgres at 18 postgres
+1032: at 17 postgres at 16 right and you can choose to jump your way between those
+  different packages
+1037: right and for a lot of people for just installing postgres is the latest stable
+  it depends i think
+1042: postgres is a special case because we're still dealing with some issues there
+  but in general yeah in
+1048: situations where it's like i need this exact version i need postgres not 18
+  and not 18.1 and postgres
+1054: 18.1.3 because that was the best version ever it's a particularly fine vintage
+  that year then what
+1060: we recommend in that situation is like there's a command called brew extract
+  which then pulls uh
+1066: postgres out of our repositories and then gives it in your own little github
+  repository for a very
+1072: specific version and you have ultimate control over that and you can choose
+  what to do and then you can
+1077: live in happy stable land so that that's generally what we recommend it's a
+  little bit more work but
+1081: we do provide a bunch of helper commands and whatever as you may notice again
+  there's like a brew command
+1087: to do just about everything right so like even within homebrew itself the way
+  we run the project like
+1093: we give our maintainers who are remain active 300 bucks a month uh if they are
+  like regularly
+1100: contributing to homebrew which probably contributes about as much money probably
+  less than your average
+1105: like paper boy or girl gets when they're 12 years old going around the neighborhood
+  i think that's the
+1110: going rate for open source maintainer nowadays so yeah not a lot of money but
+  like we have to have a way
+1116: of figuring out oh if someone was on away for three months like do they earn
+  that or not so we have a
+1120: command brew contributions which looks at the contributions of the various maintainers
+  in that
+1125: timestamp right so essentially almost all of our tooling by default is public
+  right and that little
+1131: tool i use to figure out who gets 300 bucks in a given month or quarter or whatever
+  right anyone can
+1137: use that and you can run that tool and in fact there was a bunch of brew i yelled
+  at just now saying
+1142: your token needs the read org scope to access this api there you go what a beautiful
+  error message
+1148: if i didn't say so myself at least tells me i don't have access to a thing which
+  is great
+1152: uh brew doctor spits out three pages of nonsense because i've had this machine
+  for too long which
+1157: tells me that if ever i need to report a bug against homebrew i've got some
+  housekeeping to do first
+1162: because everyone will blame this like unbrewed files in certain places from
+  all the various things
+1167: i've used apparently post grisqueal 14 is now deprecated huzzah some installed
+  kegs have no
+1173: formula which that's novel i don't know where those came from a bunch of casks
+  are deprecated etc etc etc
+1180: like this is what happens with five years of cruft yep effectively you've had
+  your yearly health check
+1185: and the doctor said how the hell are you still alive man your blood type is
+  chunky yes
+1190: yeah it's not going super well here it's so great it's time to wind up basically
+  rebuilding things
+1196: from scratch but that's that is the nature of the beast on some level i've also
+  found historically
+1201: that having a bunch of deprecated stuff or packages you didn't you installed
+  then removed
+1205: in some district some package managers can lead to security issues apparently
+  for a while on one of my
+1210: test boxes that i use as a dev box it used it set up a postgrisqueal user with
+  a password postgrisqueal
+1215: then i uninstalled the package the users hung out so suddenly i had a problem
+  there nice yes yeah yeah
+1222: i felt real smart after that one i've also found that you folks are quick to
+  update where the day of
+1228: a new mac os release suddenly i'll get error messages that i'm not i haven't
+  out installed the latest
+1232: version of xcode it's like well that's great it's been out for 20 minutes the
+  mirrors themselves do not
+1238: have it yet but it's already telling me that you need to update your stuff if
+  you want to be supported
+1243: it seems to have backed off from that jumping the gun mentality last few releases
+  so someone's paying
+1248: attention this episode is sponsored by my own company duck bill having trouble
+  with your aws bill
+1256: perhaps it's time to renegotiate a contract with them maybe you're just wondering
+  how to predict
+1261: what's going on in the wide world of aws well that's where duck bill comes in
+  to help remember
+1268: you can't duck the duck bill bill which i am reliably informed by my business
+  partner
+1274: is absolutely not our motto to learn more visit duckbillhq.com we try to be
+  like aggressively chill
+1284: right so because we're a bleeding edge package manager we tend to attract the
+  users who have that
+1289: so generally there's like a little almost like internal homebrew bingo about
+  like how soon after
+1295: the next mac os release gets announced and till until apple says the developer
+  beta is coming until
+1301: someone opens an issue on homebrew saying this doesn't work yet right like i
+  think we've literally
+1306: had about 20 minutes after the keynote ends someone's like yeah why is that
+  why is this not working it's
+1311: like because we haven't downloaded it yet you dummies like chill your boots
+  like but yeah so we we tend to
+1319: do a little bit of that ourselves where i guess we're maybe unlike some software
+  where what we try and
+1324: do is we're like we're gonna warn you about anything that might be a problem
+  right and like if you're not
+1330: getting any warnings from homebrew at all like you know that you have been a
+  good little boy that day
+1336: right and or have not properly installed homebrew or not properly installed
+  homebrew indeed but yeah
+1341: so like our kind of like brew doctor command i feel like we were one of the
+  first things to do that
+1347: like what we're trying to do is provide it was the first time i encountered
+  it back then most other
+1350: things called it pre-flight yeah exactly so we just try and provide a lot of
+  pointers for like look
+1356: if something's broken and someone's not particularly in the early days of homebrew
+  it's like maybe no
+1360: one's awake to help you right and you want to get this fixed in the next 12
+  hours so
+1364: here's some stuff you can try right like i mean i used to be a uh part of the
+  cent os project this
+1370: was back when i was free node network staff irc was the way that i encountered
+  a lot of the stuff
+1374: and got support for it and there's one thing that i learned and that is people
+  are freaking terrible
+1379: at asking for help in ways that make sense so having a doctor command that will
+  identify all the issues
+1386: with it and it's almost it's close cousin to a diag uh spit out where it's like
+  okay what version of
+1392: mac os oh wow i didn't realize numbers went that low what else is going on with
+  this system that
+1397: otherwise i'd have to tease out of people over a period of hours as they start
+  trying to figure
+1403: out how their system was put together yeah it's funny so like github has homebrew
+  is one of the
+1409: first users of like the github issue templates right where you have like mandatory
+  information you have
+1413: to fill in but part of the reason i think github even has them is because when
+  i was a github
+1419: employee i whined about wanting those templates so incessantly that i feel eventually
+  someone just
+1424: gave up and was like right mike if it will make you shut up we'll build these
+  stupid issue templates
+1429: and no one's going to use them and then turns out everyone uses them but anyway
+  so like terrific gen ai
+1433: use case too uh that's exactly what i was going to say yeah like so we we found
+  we found them great
+1439: for that because so our and again our issue template was basically based off
+  and i used to have like a
+1445: text expanded shortcut literally for co-workers when people would basically
+  ask me for help in a very
+1450: unhelpful way and be like okay what did you do what did you think was going
+  to happen what actually
+1455: happened tell me what i can run to see the same thing on my machine right and
+  if you could do those
+1460: four things then like hey we've got a great bug report and also as you say like
+  for gen ai if you
+1466: could say the same thing like a lot of the time like copilot will like one shot
+  though if it's
+1472: completely 100 reproducible and it's well explained in the issue like copilot
+  can go okay run this
+1477: command got this output change some code run this command until it gets the
+  right output and then
+1482: ta-da here you go there's a pr and the code quality might be garbage but like
+1486: often it it gets a decent amount of the way there if it has a good template
+  part of that is the stuff
+1492: you never see because i used to do that by hand a friend ran ask me better.com
+  which asked those
+1497: exact questions there was no real submit button on it but by the time that you
+  wrote that out and came
+1501: up with a repro case you realized you were the one that forgot a comma or something
+  weird had happened
+1506: and oh i misread the documentation like the best requests for help that i've
+  ever written are the
+1511: ones i never submitted anywhere because it solved my problem going through that
+  process 100%
+1515: and that's that's a big part of the goal as well like and ironically the people
+  that find those
+1520: flows to be overly prescriptive are often the same people who if they slow down
+  and read the flow
+1527: they might have avoided having that issue in the first place what's the security
+  posture on this
+1532: stuff look like i mean i know that at this point enough people use homebrew
+  that if i can compromise
+1536: the wget package for example suddenly everyone's going to run the code that
+  i want them to run
+1541: what are the safeguards on this i know that uh pi pi pi pi pi pi however they
+  pronounce it i get yelled
+1547: at if i say the wrong one but i can't remember which is which uh they have an
+  entire security team
+1551: that looks at this pp right yeah that's what i'm gonna go with that i'm sure
+  that mike fiedler who
+1555: runs that will not punch me in the mouth the next time yeah so like we're lucky
+  in homebrew land in
+1561: that our trust model is very different to pi pi pp whatever we call it npm ruby
+  gems etc right so
+1569: those package managers fundamentally have a trust model of we will trust people
+  to do some verification
+1576: of the people whose stuff they download right and we will not be a gatekeeper
+  middleman whatever
+1582: unless it's like gratuitously obvious that this is malware or whatever right
+  there i'm sure some of
+1588: those folks would say that's a gratuitous simplification and i'm being very
+  mean and unfair
+1591: or whatever but oh well that's that's me whereas in homebrew every single change
+  that happens in
+1596: homebrew a human homebrew maintainer has to verify that reviews the code and
+  says this looks okay right
+1603: so if you want to release a new version of your package or whatever we yes we
+  have lots of automate
+1608: update tooling or whatever that might pick that up but the process of like actually
+  getting that out to
+1614: users one of our humans is always looking at that and saying yes this looks
+  fine right and same deal
+1621: with the way we kind of build packages and things like that like we operate
+  our ci like we were pretty
+1627: early to the party of having essentially binary packages built from users pull
+  requests on gilb and
+1634: then just deployed straight out to users right with again with human intervention
+  but like as a result of
+1640: that we have built everything with a trust model that essentially you can't
+  trust anything ever right
+1645: and all of our ci workflows essentially treat even the code they're running
+  most of the time as like
+1652: untrusted input right so we generate you know for example when we generate a
+  binary package we then
+1658: generate json that describes the binary package and then later we read the json
+  because you can't embed
+1664: arbitrary executable code in the json like you can in the ruby files yeah exactly
+  challenge accepted anyone
+1672: but yeah so like that's what we try and do so like our our trust model and we
+  are lucky enough
+1678: careful enough whatever it may be to touch wood have not had any major attacker
+  driven security vulnerabilities
+1685: i guess if you go through the humbrew blog you can see we've disclosed things
+  in the past
+1689: i think our worst one was based on a jenkins misconfiguration which was it called
+  jenkins
+1695: yeah well so that's one of the reasons why we don't use jenkins anymore because
+  jenkins misconfiguration
+1700: was uh rather easy to achieve i would say but yeah like generally we i think
+  we've had a fairly
+1707: good track record on this stuff and obviously as i think homebrew may have been
+  the first project to
+1713: create the curl to bash pattern right so people are going to hate us forever
+  for that but i think
+1719: in terms of actually user experience security problems as opposed to just people
+  in the security
+1726: community shouting at us and calling us morons security problems i think we're
+  doing all right
+1731: i do want to ask uh before we call this an episode about your approach to open
+  source i mean the triggering
+1737: event that's oh yeah i should really talk to you about this uh was a linkedin
+  shit post that i did
+1741: uh somewhat recently about the experience i had when i did a brew install terraform
+  and it's a great this
+1747: is an old version because the new versions are not open source licensed sspl
+  is not open source or busl
+1753: whatever the hell they're using and i thought that was a terrific position to
+  take some people are whiny
+1758: about it and i honestly don't care about them because if why don't you do volunteer
+  work for an ibm
+1764: subsidiary is one of the dumbest things i can think of to ask you yeah so i
+  mean our our view on this
+1771: is so what we say in homebrew is we have homebrew core which was our kind of
+  original package manager
+1777: like open source stuff we did and at some point we're like okay we say we only
+  package open source
+1783: stuff in here what do we actually mean when we say that the nicest definition
+  we came across was the
+1788: debian free software guidelines right and they are not as it might sound like
+  if you're not someone
+1794: deeply versed with open source or free software whatever essentially everything
+  within their description is
+1798: open source and it's a nice clear definition of things right and there we have
+  a body called the
+1805: osi who we also look to for the advice who were the one essentially the body
+  that came up with the
+1811: term open source back in the day and i have the controversial viewpoint that
+  words mean things and
+1816: it's a good idea to make words continue to mean things such as don't say literally
+  when you don't mean
+1823: literally and i will die on that figuratively is the word you're grasping for
+  and exactly yes so with
+1828: open source we have rules on this stuff and when various companies lately have
+  decided to i guess
+1836: hatchet corpse projects as example one maybe redis maybe elastic search maybe
+  mongodb when they as
+1843: vc-backed businesses decide that their business model is not well suited by
+  their current open source
+1849: license that they have just happened to rely on to get a enormous amount of
+  adoption over the last
+1853: decade right and they decide that they're going to change that and relicense
+  everyone's contributions
+1858: over that period because they were foresighted enough to require everyone to
+  sign over their copyright
+1864: which allows them to do that instantly homebrew various other projects do not
+  do that then what
+1869: that means is that they can do as you described in that linkedin post a rug
+  pull and everyone's left
+1875: going well wait a minute is this open source anymore and the companies much
+  to my chagrin will say yeah
+1880: oh yes yes this is this is totally so we're just it's just open source but uh
+  if you want to make
+1884: any money then you need to give us all your all of your money but i mean other
+  than that it's completely
+1888: open source right like it's fine but again as i say when words mean things it's
+  like well in open
+1893: source you don't get to do that right and i had a lovely conversation i will
+  not volunteer for your
+1897: for-profit enterprise because i won't let people volunteer for mine uh when
+  i contribute to open
+1902: source it is open source to which i am contributing honestly sometimes to that
+  project's detriment
+1908: because i'm terrible at it but you know i it's not for lack of caring and it's
+  not for lack of
+1913: philosophical purity it's there's a there's a sense that there are things i
+  will volunteer my time and
+1917: energy for and there are things i will do with a hope of making money out of
+  it and i try not to cross
+1922: those streams yep and i i think that's very wise right like i i was on a podcast
+  recently with
+1929: friend justin searls and i was kind of cross posted to the changelog in which
+  i said like open source is
+1934: not a career right like open source is not a business model open source is also
+  not a career
+1939: right and i think we have seen a bunch of people conflate these ideas that you
+  need to pay all open
+1946: source maintainers a market rate tomorrow otherwise it will not be sustainable
+  and similarly with
+1950: companies a company should be able to just release open source software not
+  charge anyone any money
+1955: forever and then like when they get upset that that is not a viable business
+  model they can change their
+1961: license and point at the big cloud vendors and say like wow they're they're
+  stealing our stuff and
+1966: it's like well they're stealing your stuff because you said it could be taken
+  that's what that's what
+1970: your license says back when there's a new york times article about amazon strip
+  mining open source like
+1975: that that's not accurate to my mind they are doing nothing wrong you can talk
+  about whether they should be
+1981: contributing back but that's one of those uh appealing to our better angels
+  that is not one of those if
+1987: they have an obligation to do so now i mean amazon does not do philanthropy
+  let's be honest with
+1993: ourselves they're amazon they don't know what that word means but so okay the
+  problem that these
+1998: companies made is early on and i i have some sympathy for it was in 2010 or
+  so well we wrote the code
+2003: clearly we'll be the best ones to run it as a service that didn't pan out now
+  you have people
+2008: starting open source based companies and they want all the benefits of open
+  source without any of the
+2013: drawbacks like oh should never have launched that project with an open source
+  license yeah but no
+2018: one would have used it if you hadn't so what's the story and the way i like
+  to deal with this instead
+2022: right is again blog post i wrote a long time ago a lot of people don't like
+  me for it but a bunch of
+2027: open source maintainers do so worth it uh that i titled open source maintainers
+  owe you nothing and if you
+2031: read any open source license it essentially says hey look if you use my open
+  source and it breaks your
+2036: computer on purpose then sorry you've agreed in using it that you waive me of
+  all responsibility
+2042: for that so tough luck right and to me the way if you say you know say amazon
+  right amazon's strip
+2048: money on my own source they're using this stuff well what you can do is just
+  if anyone who's an amazon
+2052: employee ever submits an issue in your project you can go close and say i don't
+  want to fix that
+2057: your company has lots of resources they can do what they want with their open
+  source project i'm not
+2061: going to help them right you can choose to not accept issues you can choose
+  to not accept pull requests
+2065: you can choose to not respond to anyone from amazon on your issue tracker ever
+  again if that's what you
+2069: want to do and you as an open source maintainer have the right to do whatever
+  the hell you want
+2074: and that's this is the beauty of it right and i think this is the problem job
+  i've got to take the
+2079: other side of it where most of the stuff i write these days i used to open source
+  all of it because
+2082: why wouldn't i i'm sorry but this way to wind up running a command simultaneously
+  on 15 nodes at once
+2088: uh in every aws region that's not a competitive differentiator that's just something
+  i want to
+2093: exist so other people can use it these days i'll write quick one-offs and i
+  just i'll keep it in a
+2097: private repo rather than open sourcing it just because i don't want to hear
+  it from people yeah yeah
+2101: because the level of entitlement is often crazy and this is a yolo coded thing
+  in half an hour or so i
+2107: just want it to work great i know that you have other use cases for it go with
+  god have fun but i don't
+2112: want to hear about it i don't care vibe code it yourself yeah and my code should
+  mostly be told
+2116: it's a cautionary tale the thing is as well as often the people are the most
+  entitled about it
+2120: ironically are often the people who are the most reliant on your free gift for
+  them to do their job i
+2127: remember one time we upgraded a version of ffmpeg or changed the codec or something
+  in homebrew right
+2132: and someone said like i'm running my entire business off this and you people
+  have just broken my entire
+2138: business like have you no shame and i was basically like sir have you no staging
+  environment like you
+2144: have learned a lesson today about relying on other people's software given freely
+  if you're literally
+2151: running brew update and brew upgrade and that hoses your entire company this
+  is what we call a you
+2157: problem sir and not a me problem i didn't tell you to do that you decided to
+  do that and now your
+2163: stuff's broken like right if you're running latest or any other bleeding edge
+  package manager in
+2167: production it's just a matter of time yeah and in some ways again this this
+  comes back to what you're
+2171: saying about the you know well we built it we should be the best to run it in
+  production it's like well
+2176: no like you've demonstrated your ability of being very good at running a database
+  open source project
+2182: you did not demonstrate your ability to provide a multi-region multi-culture
+  like massively scalable
+2189: cloud provider right which is essentially what if you're offering a hosted database
+  provider
+2195: in 2025 that's what you're doing right and chances are aws is probably quite
+  good at that they probably
+2202: have quite a lot of people who are quite good at that and again like sorry folks
+  this is capitalism i
+2208: don't feel bad that you as a company trying to make lots of money picked a fight
+  with another company
+2212: who are also trying to make lots of money and you didn't win like you don't
+  get more sympathy because
+2216: your code happens to be open source right oh for me it's there's a reason this
+  entire conversation
+2220: for the last half hour has been about what we do on developer workstations i
+  have asked you none of
+2225: the normal questions i would if you were building a package manager aimed at
+  you know production
+2230: environments because i have a whole different laundry list of this the closest
+  i run into this is as i
+2236: mentioned earlier well the next developer we hire is going to have slightly
+  different versions of
+2240: everything in their environment theoretically i really do hope that the people
+  are updating their
+2245: packages on a consistent basis which brings me to my last question for you here
+  have you ever given
+2250: thought to having brew auto update on a schedule both itself as well as the
+  packages that have been
+2258: installed from it yeah so there's actually again a nice little external command
+  for this which was
+2263: briefly in the humbrew ecosystem and then we decided it operated better independently
+  elsewhere
+2268: uh by then it's not your problem sort of yeah by a lovely chap called dom who
+  used to be a homebrew
+2273: maintainer and it's called homebrew auto update if you search for that and yeah
+  you could basically
+2278: have that as a cron job that basically every night just in the background will
+  just bulk upgrade
+2284: everything on your machine right and if that's how you want to do it then that's
+  how you can do it
+2289: right again another happy middle ground on there which i quite liked is if you
+  say using something
+2294: like brew bundle uh like i mentioned before then you can have brew bundle by
+  default will upgrade all
+2299: your packages so if you have a project say with your co-workers at work right
+  say you are relying on
+2305: mysql and rust and javascript being installed in this like particular project
+  right you can have a brew
+2314: file in your repo root that has those packages in them and then if someone runs
+  it then it'll upgrade
+2320: everything and then okay you might have someone else on the team who's in an
+  inconsistent state
+2324: but then they they can just run the same command and they will get to the same
+  state so that the
+2328: state is based on time rather than by based on a lock file but you can still
+  get some degree of
+2333: consistency there and also what you could do which is what i tend to do in those
+  situations if you want
+2337: to be like a step ahead say people are not running upgrade relatively often
+  or you're you have an
+2342: onboarding flow or whatever and you don't want it to break you can set up a
+  github actions job with
+2346: a mac os runner that just runs that every night and then when it fails it opens
+  an issue or sends
+2351: someone an email or whatever and then you know oh like something in homebrew
+  got upgraded and now we
+2356: need to go fix that right and you can deal with that when you choose to rather
+  than just like being
+2360: like oh some particular developer ran a particular thing at a particular time
+  no like come on people
+2365: like we we have ways of solving these types of problems with reproducible environments
+  which you
+2369: can do with github actions ta-da problem solved it's it's a fantastic tool i
+  want to thank you for
+2375: spending as much time as you do on getting it to work if people want to learn
+  more where's the best
+2379: place for them to go uh more about homebrew you can go to brew.sh um our lovely
+  domain if you are
+2385: interested in the code or contributing then that will also take you to the homebrew
+  github repo which
+2389: tells you all about getting involved if people want to see more about me and
+  my ramblings on open
+2395: source and other things then they can go to my website at mike mcquade.com which
+  links out to
+2399: all my other internet presences and we will of course put links to all of this
+  in the show notes
+2404: thank you so much for taking the time to speak with me i appreciate it thank
+  you for having me cory a
+2409: delight mike mcquade project leader at homebrew i'm cloud economist cory quinn
+  and this is screaming
+2414: in the cloud if you've enjoyed this podcast please leave a five-star review
+  on your podcast platform of
+2419: choice whereas if you hated this podcast episode please leave a five-star review
+  on your podcast
+2424: platform of choice along with an entitled whiny comment that we'll never see
+  because that platform
+2429: wound up having their entire stuff go down because someone ran a brew install
+  without any idea of
+2435: pinning or the fact that this is not how one should run production as a responsible
+  grown-up

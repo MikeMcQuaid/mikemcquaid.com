@@ -1,0 +1,1099 @@
+---
+0: welcome to the manifest a podcast all about package management i'm alex pounds
+  and i'm
+15: andrew nesbitt and together we're going to explore the technical details of package
+  management the
+19: stories of the people behind projects and the communities around them too today
+  we're joined
+23: by mike mcquade the lead maintainer of homebrew mike welcome to the manifest thanks
+  very much for
+29: having me so to get started what is homebrew so homebrew is a package manager
+  for macs primarily
+38: we might talk more about other things later on it's been around for i guess i
+  think coming up to
+43: eight or nine years now it's the main way of i think for many people many developers
+  at least
+49: installing developer tools like server daemons various other command line primarily
+  applications
+56: on their macs and you want to tell us a bit about your background mike i always
+  feel a bit boring
+62: talking about my background considering it's the kind of fairly typical as a child
+  i liked computers
+67: then i did computer science at university and then since then i have worked on
+  computering that that's
+74: sort of my story went to enbury university graduated 10 years ago i've had a variety
+  of jobs and homebrew
+80: sort of changed my career path i guess a little bit uh because before that i was
+  primarily kind of
+85: writing c and c plus plus uh started writing ruby for homebrew and then kind of
+  fell in love with it as a
+90: language and i've been kind of writing that professionally mostly since and nowadays
+  i'm working at github
+96: on their open source team oh wow so you you actually ended up teaching yourself
+  ruby to kind of be able
+103: to contribute to homebrew yeah pretty much it's funny because in some ways like
+  this is what i always say
+108: to people with open source like stuff uh i was a maintainer of homebrew for probably
+  maybe a year
+115: before i would say i even started teaching myself ruby and before that it was
+  more or less i would
+121: change stuff until it seemed like i mean i guess like all developers are familiar
+  when you are familiar
+128: with one language and you were learning another one like the the very very early
+  days you're like okay
+132: i understand how programming works but i i don't really understand how this language
+  works but i can
+138: sort of try and fiddle with things and try and figure it out through mostly almost
+  trial and error and
+144: a mental model of how things probably work and so yeah so that that was the way
+  i i kind of first
+150: wrote ruby was to do that for homebrew because homebrew was written in ruby and
+  i hadn't really ever
+155: touched it before and you mentioned that you fell in love with ruby what was
+  it about ruby that you
+160: fell in love with i mean obviously stuff like the performance is horrible uh
+  in ruby compared to
+165: c plus plus that i was working with uh previously but i think it's just the kind
+  of readability of
+170: the language the way it feels like you can write very elegant solutions to a
+  lot of problems in a way
+176: that is also very readable just i guess that sort of expressiveness but then
+  at the same level
+181: all the kind of meta programming that you can do as well which is when obviously
+  you start to veer a
+186: little bit away from readability but you can end up avoiding writing enormous
+  quantities of boilerplate
+191: code through some of the kind of runtime introspection that ruby gives you which
+  with my previous experience
+197: mostly with c and c plus plus even with uh cute which is the kind of toolkit
+  i mainly worked with which
+203: provides some sort of runtime introspection stuff you couldn't do probably a
+  tenth of the stuff you were
+208: able to do with ruby and that always kind of excited me and still excites me
+  today would you say there was
+213: a lot of metaprogramming side of homebrew um you could argue that one of homebrew's
+  most successful
+219: features is the formula which is effectively the description of how you can install
+  a piece of
+227: software and if you read the formula for something like wget it's pretty obvious
+  what commands homebrew
+234: is running to build this software where it's downloading things from where it's
+  putting things
+238: stuff like that and i think that like dsl is something that ruby made that process
+  much easier
+246: because at the same time as being able to write the code in ruby and interpret
+  this dsl with ruby like
+252: you can do effectively everything you can do with ruby within them and that gives
+  you a lot more power
+256: than building some new language from scratch that you use just for your description
+  files
+261: before we get too far into the details of things like the formulas and exactly
+  what gives homebrew its
+266: strength maybe we should like take a a step back and have you tell us a little
+  bit about why would
+271: somebody use homebrew and also like what made homebrew be created in the first
+  place because mac
+277: ports was a similar bit of software yeah good question uh so i i've been trying
+  for years to get my sort
+283: of pithy what is homebrew and why should i care down the kind of almost one i
+  have for less technical
+290: people is homebrew is effectively a package manager for your terminal uh that
+  relies on people knowing
+297: what the terminal is but essentially anything that you might run in there anything
+  that you might
+301: interact with primarily in the terminal be that a command line application say
+  vim you wanted a newer
+308: version than the version that uh max come with say it's you know my sequel for
+  some kind of web
+313: application you're running or whatever or a newer version of ruby and those are
+  things that you would
+318: all install with homebrew as you type brew install and then whatever the command
+  is most of the time
+324: it's in there and it will install and work and be on your machine in a fairly
+  easy fashion without a
+329: package manager of course you can manually download the source code for such
+  things and build them
+334: yourselves and manually download the source code for any dependencies but this
+  is pain and redundancy so
+340: most people do not want to do things that way in terms of mac ports anecdotally
+  homebrew appears to
+347: be used by more people nowadays than any other mac command line package manager
+  and previously that crown
+353: was held by mac ports and mac ports was something that i ended up using a fair
+  amount personally i know
+360: max howell the original creator of homebrew uh also did as well and basically
+  i ended up about a year
+367: after he had created homebrew reaching the same sort of frustrations with mac
+  ports and wanting to kind
+373: of work on something differently and so my initial dabblings with mac ports interestingly
+  were i tried to
+381: effectively kind of build something a bit like homebrew on top of mac ports and
+  so something which annoyed
+387: with me with mac ports is that they duplicated stuff which is already provided
+  by the system so
+392: on macs you get lib xml for example apple has their own version of that mac ports
+  would build its own
+399: version because they didn't want to use apple's version this seemed redundant
+  to me my solution was i would
+405: just hack around with mac ports so it thought lib xml was installed when it actually
+  wasn't and that
+410: tricked it into using the system version but this approach wasn't terribly sustainable
+  long term so
+415: eventually then i stumbled upon homebrew read a little bit about it and it appeared
+  like it was doing
+421: things in the way that i thought things should be done so what was the advantage
+  of using the system
+427: provided libraries over creating their own beyond the redundancy yeah i mean
+  mainly it's just that's
+433: provided for you why build stuff and install stuff that you don't need to um
+  like the particularly back
+440: then when both mac ports and homebrew were primarily from source package managers
+  you weren't building
+445: things once on some server and distributing to everyone everyone was building
+  that individually on
+450: their machines something like git for example had no dependencies in homebrew
+  but at the time four or
+455: five in mac ports and that takes significantly longer to install the same software
+  with mac ports than it
+462: did to homebrew mac ports was just installing more stuff that it didn't need
+  to install technically
+466: they would argue that they keep better update with bug fix releases security
+  releases etc we argue if
+473: you're using a mac anyway if you don't trust apple's security and bug triaging
+  process then
+479: you kind of have bigger problems at that point i remember a lot of people switching
+  from uh
+486: mac ports to homebrew driven a lot by image magic at least in the the ruby and
+  rails world
+492: just waiting hours for mac ports to install r magic uh and image magic was incredibly
+  painful when homebrew
+501: came along and kind of tried to reduce the amount of different things that get
+  built every time you
+505: needed to update it was like a breath of fresh air yeah i mean i think that's
+  what stuff like this tends
+510: to come down to for end users right is it's just this has saved me time and therefore
+  word spreads that
+517: okay well this this operation that you have to do once a day once a week once
+  a month whatever is
+522: you know three or four times faster with this software and then people move do
+  you think it is
+527: that speed which was the the main driver of people adopting homebrew uh i think
+  it was a combination of
+534: two things i think it partly the speed and in general like the feature set and
+  various other things being
+540: perhaps slightly easier or improved again i'm not up to date enough on mac ports
+  to know how many of
+546: these things still apply today i think the biggest thing homebrew had going for
+  it both then and now
+553: was it was a fairly early github project and max very smartly built it such that
+  the github kind of
+561: contribution workflow was how you made all updates to homebrew effectively as
+  a contributor so right from
+568: the outset like max kind of decided that he was gonna not try and single-handedly
+  keep every single
+575: package up to date and and instead kind of rely on a community of people to kind
+  of keep things up to
+581: date and make bug fixes and stuff like that i mean obviously that happens with
+  bigger more established
+586: package managers but the way they tend to handle things is you know say in debbie
+  and you have
+591: a piece of software where that has a maintainer um and that maintainer is the
+  one who's responsible for
+598: keeping that software up to date for merging bug fixes for kind of deciding whether
+  or not and
+603: changes should be made to that software or not if some other people submit them
+  but in general that's
+607: kind of that person's responsibility whereas in homebrew there was the kind of
+  fairly radical shift
+612: taken there where it's no one's responsibility and therefore it's everyone's
+  responsibility so if
+618: you're using a piece of software and that and it doesn't ever get updated in
+  homebrew well you can
+622: submit a pull request to update it and instead of almost trying to kind of find
+  people who are willing
+628: to go through the arduous process of doing that we've tried and still continue
+  to try to make it
+633: easier and easier and easier for people to kind of submit updates submit fixes
+  create new packages
+638: and basically just improve that contribution workflow and i think with the rise
+  of homebrew and the rise of
+645: github being sort of somewhat side by side i think it's kind of helped that if
+  you know how to submit
+651: a pull request to github you know how to update a package on homebrew i think
+  homebrew is probably
+656: the first of the package managers to use github like that as a database essentially
+  so if we try and
+662: take off your github employee hat for a moment do you think that potentially
+  creates a point of
+667: weakness for homebrew in kind of the long term i don't think so because i think
+  i guess the thing
+675: that's more interesting than the github side of things is the git side of things
+  so if there was
+681: some sort of future where everyone had moved from github to whatever then i would
+  imagine homebrew's
+689: contribution workflow would still look very similar the way most of these platforms
+  tend to kind of
+696: handle user contributions now is quite similar and i think the beauty of git
+  being a decentralized
+702: version control system is that it would actually be relatively easy for us to
+  kind of move homebrew
+707: to something else that kind of allowed this sort of contribution workflow that
+  would be possible for
+712: us to do that but i guess almost the homebrew ethos of why build your own lib
+  xml if your mac
+719: provides it it's kind of similar with with this stuff as well it's almost like
+  why build your own network
+724: protocol for doing updates when you can sort of abuse git to to do the same thing
+  particularly when
+731: your contributors are going to have to use git to contribute to the project anyway
+  so the way that
+737: people can add any package update any package doesn't necessarily need any kind
+  of involvement from the
+743: maintainer of the actual source code that that package is installing do you get
+  many people kind of
+748: resistant to the fact that anyone can add an update someone else's packages some
+  people suddenly struggle
+755: with the mental model you you do get people who i guess submit packages the first
+  time and there's
+761: sometimes you know submitting a package that they maybe help maintain what we
+  call the upstream and
+767: package manager world i they write the original software and then they're being
+  like well i'll also help
+772: write like homebrew's formula for that to install that there's the assumption
+  that they kind of get a
+780: certain amount of veto power and they get to kind of dictate well actually no
+  i don't think this should
+784: be the case so i think this should have this feature or whatever and quite often
+  they're quite surprised
+789: to learn that that isn't the case particularly when if someone else submits your
+  software and then you
+796: turn around in a few years later and say i don't think this software should be
+  in homebrew please
+801: remove it well then we tend to look then at our analytics and if you know if
+  we've got a thousand
+807: people installing that software a day well we're not going to pull the rug under
+  them from under them so
+811: we try and resolve the issues they have but we're certainly not willing to just
+  pull things because
+817: other people ask us to do so and i think that's fairly commonplace in package
+  managers to be honest but
+823: i think that sometimes presents some confusion i guess one thing i've been curious
+  about with people
+830: getting essentially annoyed that you have packaged their software is that there
+  is some software out
+835: there which is either it's available commercially but is also open source and
+  you're what you're paying
+842: for essentially is a pre-built binary like i know crossover office used to have
+  that on linux and i know
+848: there are other things which are a little bit like donationware there's a thing
+  called cyberduck which
+853: i think you can compile it yourself for free or you can get a binary for pay
+  so i always presumed i guess
+858: that like software like that might get a bit annoyed if you made it so like you
+  type one command and it
+863: installs i mean we've not really run into stuff like that and we do generally
+  try to take those types of
+870: things on board and but again arguably like it's it's not our responsibility
+  to enforce your preferences
+880: like we with open source licensing we have lots of ways of in a legal form that
+  you can say well
+887: actually no you can't like build my software from source or whatever and i think
+  that's the thing
+893: that's tricky with this stuff is that you get you get more and more people who
+  almost want
+897: all the benefits of open source but then to avoid some of the downsides like
+  well actually i want to
+903: have this project be open source but then i want to be able to run a business
+  on top of it without
+908: other people kind of almost to use this software without my help and it's while
+  i feel for those
+913: people from the sustainability perspective at the same time i don't think it's
+  homebrew's responsibility
+918: in those cases to say to our users who want to do that we're not going to allow
+  you to do that
+923: and particularly because the way we've set up homebrew nowadays we have what
+  we call taps which
+929: are effectively third-party homebrew repositories so anyone can just make a homebrew
+  repository and put
+935: stuff in there if we refuse to package it or we remove it or they don't like
+  the way we package it
+941: ultimately even if we refuse to package some of this stuff then other people
+  would probably do so
+947: anyway so apart from things like that commercial sensitivity what kind of things
+  would cause the
+953: homebrew project to refuse to package something we tend to be a little bit more
+  conservative about
+958: some software we package in terms of we basically hate patches right so a fairly
+  common package manager
+965: thing is the upstream software does something for whatever particular reason
+  and then the downstream
+971: package manager says well i don't like the way that's done so i'm going to write
+  a small patch to
+976: modify that software so it works better with our package manager now this in
+  general i think is
+984: not too much of a problem it's not that big a deal in a small number of cases
+  it becomes a massive
+990: problem and a massive deal so the example and i hate to bring it up because again
+  it's it's a mistake
+994: i could have easily made myself but in the debian project they had an issue with
+  this where
+1000: open ssl was patched in such a way to basically avoid a valgrind warning about
+  reading from
+1007: uninitialized memory but read that reading from uninitialized memory turns out
+  to be a source of
+1012: entropy so this is something where 99.9 percent of the time any software doing
+  this is doing the wrong
+1017: thing in open ssl's case it was doing the right thing as a result of patching
+  out the source of entropy
+1023: effectively they they reduced the cryptographic effectiveness of open ssl on
+  any debian or debian
+1033: derivative system so that includes abuntu so that this was a while ago now but
+  that was something i
+1038: remember reading at the time and thinking well firstly it sucks to be that open
+  source maintainer i would
+1043: really feel bad if i was them right now but then on the flip side like this
+  is why patches are generally
+1048: not a great idea because what what you're doing is you're saying intentionally
+  or not i know better
+1054: than the upstream software writer how their software should behave so i'm going
+  to write a patch which
+1061: modifies their software that they've spent hundreds thousands whatever of hours
+  writing to make it
+1068: behave in a slightly different way and in general i think they're dangerous
+  so that's an example of
+1073: something homebrew might not patch is something which needs to require extensive
+  patching to work
+1078: inside of homebrew on max things like that we're not really interested in like
+  having those types of
+1085: projects that can't be made really to work with homebrew without substantial
+  modifications because
+1091: ultimately those modifications should be going back to the original software
+  and if the original software
+1095: is saying nope i have no interest in supporting max or whatever then there's
+  no point almost fighting a
+1101: losing battle there so i noticed there's a linux fork of homebrew uh have you
+  had any involvement with
+1109: that or has that been a hands-off kind of thing uh it's been mostly a hands-off
+  kind of thing i i've
+1114: tried to make things a little bit easier for them on occasion and i've done
+  some bits and pieces on
+1120: occasion to try and like do that porting but i've not been involved much with
+  there's almost two sides
+1127: one side interests me the other side doesn't so it's called linux brew and it's
+  basically a way for
+1133: people to be able to use homebrew on linux that that feels like a weird thing
+  and most people like
+1138: why would you want to use homebrew on a system where where you have a package
+  manager say if you're on
+1144: debian apt-get which in my humble opinion is a vastly superior package manager
+  to homebrew why would you
+1150: want to use homebrew on linux the argument for that is one of the neat side
+  effects of homebrew is that
+1157: you can actually run homebrew as a non-root unprivileged user and you can install
+  homebrew in
+1162: any location so this is useful for people who have access to linux machines
+  but they do not have access
+1168: to the package manager so i believe scientific computing labs this is relatively
+  common where
+1173: you are a scientist and you have access to these linux clusters but you don't
+  have access to install
+1179: software on them with app get so if you want to have a newer version of them
+  on that machine or
+1184: whatever then that's when using linux brew could be kind of useful to you as
+  for this the stuff that
+1190: interests me versus the stuff that doesn't so the actual day-to-day running
+  of that package manager
+1195: like trying to make the homebrew formula work on linux and stuff like that like
+  i find not interesting
+1202: because i don't use linux it's a great server operating system but i don't use
+  it on any of my
+1206: desktops for example whereas the actual like making the homebrew package manager
+  code itself like cross
+1213: platform that's the bit i find a bit more interesting so i've kind of worked
+  in the past to try and add
+1218: like a generic kind of os compatibility layer and abstract away some of the
+  kind of mac specific
+1224: stuff and keep our test suite running on linux and stuff like that and that
+  ends up being kind of
+1230: useful for us as well because mac ci like travis ci is great it's really good
+  that they provide free
+1236: mac ci but it's significantly slower than the linux ci so having like those
+  linux ci builds is useful
+1242: for getting like rapid feedback on like our test suite and stuff like that and
+  is there formulas
+1249: that are shared between the two package managers or is it just the core code
+  this is when it gets to a
+1254: slightly ideological point of contention in that all of the formulas are shared
+  uh but if i was dictator
+1261: of the universe i would forbid such heresy uh because i think that the kind
+  of abstraction layer stuff i
+1268: added to homebrew like homebrew brew which is our kind of repository that's
+  the actual package
+1272: manager it's basically was a layer to use kind of o instead of having if linux
+  this if mac this if
+1283: linux this if mac this all over the place the problem is in formula that problem
+  hasn't really
+1288: been solved so if you want to have a formula that works on linux and mac you
+  just end up having if
+1293: linux if mac if linux if mac like all over the shop my humble opinion would
+  be that linux should be
+1299: maintaining their own separate formula rather than kind of fork from homebrews
+  but i believe currently
+1304: they do fork from homebrews which means that some of those formula work on linux
+  and some of them
+1310: don't if you were dictator of the universe would you have any other kind of
+  hallowed principles
+1315: uh no my principles would be purely about package management and nothing else
+  freedom for all men women
+1321: and animals except for package management in which there would be a dictatorial
+  regime i guess
+1326: right so what would the package management dictatorial regime what would be
+  the the principles
+1330: so i guess yeah like the avoid patching upstream software when possible like
+  a big dream of mine
+1338: would be seeing all package managers sharing some sort of core like dependency
+  resolution logic and stuff
+1345: like that and some sort of underlying library to basically abstract away the
+  stuff which every package
+1350: manager re-implements from scratch in homebrews case for example stuff like
+  dependency resolution is
+1356: the code there is hideous i hate working on it it makes me really sad and it
+  makes me even sadder
+1364: knowing that app gets code lies just a hair's breadth away and does all this
+  stuff perfectly and has for
+1370: like 25 years you know you mentioned before actually that you have a lot of
+  admiration for app get and you
+1376: consider it to be a a better system than homebrew overall what is it about apt
+  get that you feel is
+1382: so fantastic so i used to be like a desktop linux guy back in the day i kind
+  of started using it
+1389: stereotypically when i was studying cs at uni and then kind of for a while afterwards
+  until the demands
+1396: in my time became too great that's not to say that linux on the desktop is not
+  good but if you're a kind of
+1401: natural tinkerer fiddler type like me then the amount of knobs you can twiddle
+  just means that
+1409: my system was continuously broken but i think app get is just it's just a really
+  robust package manager
+1414: it's used by many different linux distros at this point the ui is the only part
+  of it i have less than
+1421: perfect experiences with like it's really fast the dependency resolution is
+  really smart it stores a lot
+1428: it can do an awful lot of things and it just carves everything up in beautiful
+  ways and i'm yet to
+1435: really see anything in homebrew that i don't feel could almost be like app get
+  behind the scenes i i
+1442: kind of joke with some of the homebrew maintainers that if i had infinite time
+  what i would do is more
+1447: or less get homebrew's command line interface and the kind of formula kind of
+  package dsl and then just
+1453: make that a wrapper on top of app get and use app get for everything else would
+  that be feasible would
+1458: it be easy or i guess not easy would it be feasible to graft app get on top
+  of a mac os system so there
+1465: was uh the package manager think i think it's still under active development
+  but i don't know if it's used
+1471: extensively nowadays so that is using app get um on max to do package management
+  so it's it's possible
+1478: app get i think i think you can actually install app get within homebrew uh
+  bizarrely in a sort of
+1484: inception-y weird way again it comes back to the almost like the two sides of
+  package management where
+1490: you you have the actual implementation of the package manager itself then you
+  have the kind of
+1494: getting all the packages keeping them up to date dependency resolution where
+  do you download them
+1499: from where do you upload them to what do your ci look like and all that type
+  of stuff
+1503: um and that that's the side i just feel like app get handles really nicely i
+1508: if i had six months to a year i feel like i could probably re-implement homebrew
+  in that way
+1514: and kind of almost do myself out of the job in a lot of ways but sadly i do
+  not have that time just yet
+1521: it seems to be a case that homebrew especially actually keeps that local git
+  repository around and
+1528: and uses it for syncing right as opposed to it being just a standalone piece
+  of software you're
+1533: essentially just plopping a the whole kind of development environment into a
+  hidden folder
+1540: somewhere and exposing that uh via adding it to the path right yeah so if you
+  install homebrew in the
+1547: default location uh user local homebrew like the contents of that folder is
+  exactly as what you
+1553: would get if you do git clone github.com slash homebrew slash brew um and then
+  there's within the tap
+1560: folder which is again a sub folder of that homebrew folder you get like the
+  homebrew core repository which
+1566: is all our kind of package description files so you work at github is github
+  paying you to work on
+1572: homebrew full-time is that your full-time job that is not my full-time job uh
+  my full-time job at github
+1578: is working on the kind of broad mission of making github better for open source
+  software trying to make
+1584: things better for maintainers in various ways i am given some time by github
+  in my current role to work
+1592: on homebrew uh so that's kind of like a sort of balance that i have set but
+  no it's not something
+1597: they pay me to work on full-time but i guess you get a pretty good perspective
+  on things being both a
+1603: maintainer of a popular open source project and packaging many other popular
+  open source projects
+1608: to know what kind of things the various maintainers would find useful yeah i
+  think so i think it's i
+1615: think that's a nice thing is that as more and more open source has kind of moved
+  on to github
+1619: and homebrew being so tied into github in so many different ways like yeah you
+  do get a real sense of
+1627: kind of how these different projects are working and what their workflow looks
+  like and what their
+1632: contribution patterns look like and how their maintainers interact with upstream
+  projects and
+1637: downstream projects and use libraries and all these type of things so yeah like
+  i feel like it it does
+1642: help you to kind of learn how to make github better for open source but also
+  how to make homebrew better
+1647: on like a day-to-day basis just seeing how this ecosystem is developing by itself
+  so you are homebrew's
+1655: lead maintainer but you have a lot of help from other people right oh yeah yeah
+  loads of help like i mean
+1660: i could definitely couldn't run homebrew by myself uh so one of the main people
+  recently so we
+1667: announced that we have kind of a lead maintainer now effectively for our formula
+  repository as well
+1672: homebrew core so that person is doing in terms of hours in the day like way
+  more than i am their
+1679: username on github is i love zfs and they they work unsurprisingly on the zfs
+  on osx project as well
+1686: i i kind of joke often that i'm not entirely sure that they're not a bot that's
+  just got very good
+1693: at like natural language processing because the sheer amount they contribute
+  to homebrew is kind of
+1697: staggering so in terms of your day-to-day on homebrew what kind of takes up
+  your time how do you spend
+1703: your time so i'm mainly focusing now on like the package manager itself so i
+  keep an eye on what's
+1710: happening with the the kind of formula updates and stuff like that but that
+  i mostly kind of skim
+1715: through that stuff whereas what i i'm trying to do kind of day-to-day is triaging
+  new issues and prs
+1722: that come in on like homebrew the package manager itself and then just have
+  it working through like
+1727: a backlog that i have sort of maintained in my email client and such things
+  that are currently broken
+1733: things that need improved things that i find annoying or i've been at conferences
+  and heard
+1738: multiple people kind of complain about homebrew working in a certain way so
+  i try and just balance
+1743: that sort of triage bug fixing review and feature development it tends to go
+  in that order as well
+1749: where feature development is almost like the the treat i get when my my homebrew
+  folder and my email
+1755: client is is empty and all the prs have been reviewed and stuff like that so
+  in that day-to-day
+1762: what could be a nice surprise and what would be a a horrible surprise i mean
+  to me still like any pr
+1771: that comes from someone and is like high quality off the bat is always a nice
+  surprise so when i wake
+1777: up on my my mocks and either when it's fixing a bug or to be honest when it's
+  a new feature that is
+1783: something that we want when someone has just done the research read the docs
+  submit the pr the pr is green
+1791: they follow all the style guidelines like they uh all our test pass and stuff
+  like that and then if
+1797: there's any tiny little nits that need addressed they are quick to respond to
+  feedback and they kind
+1803: of this sounds a little like self-entitled but they defer to the authority of
+  the maintainers and by
+1810: that it's not that i think the maintainers know more than they do about programming
+  or anything like
+1815: that it's just that we probably do know more about homebrew than they do so
+  it's arguments about
+1821: why homebrew is a certain way are a little bit of a waste of time so i guess
+  that that flips onto the
+1827: other side where the stuff that is not pleasant to deal with is just people
+  demanding endless rehashes
+1834: of decisions that have been made and well documented in the past people resurrecting
+  old issues saying i have
+1842: this issue when they don't have the issue people submitting issues and stuff
+  like that but they
+1846: they don't read the issue template and they don't provide the information we
+  need to help them
+1850: and then we ask them for the information they never apply these these are the
+  types of the things that
+1854: kind of tend to grind you down a little bit and i guess at the most extreme
+  end when you have
+1860: released something in homebrew which is particularly contentious and you start
+  getting
+1864: hate mail and people calling you a nazi and all these type of things
+1869: i guess homebrew is kind of in a position where you might get slightly more
+  people who are i guess
+1876: not developers less technically inclined because it's not like a programming
+  package manager it is for
+1882: that user software so as well as the developers who use the day-to-day you get
+  a whole bunch of users
+1886: yeah i think so i mean i think that's definitely something that's changed over
+  time
+1891: is that like homebrew used to be very very developer centric whereas now i still
+  feel like
+1896: the majority of our users are probably people who are either currently working
+  as or aspiring to work
+1902: as developers at some point but we do have more and more users who have you
+  know they go to some
+1909: site and they want to install some piece of software and then the software says
+  well step one install
+1914: homebrew step two run brew install blah but this is literally the first time
+  they've ever run the
+1919: the terminal on their mac and there's confusion around stuff like that a really
+  basic example that
+1924: keeps coming up again and again and again which is annoyingly not something
+  we can even particularly
+1929: work around you know how like any password prompt on your mac like when you
+  type in characters
+1934: it makes those like round blobs for each character you type in but if you do
+  a pseudo prompt in your
+1941: terminal and it asks you for your password when you type in characters nothing
+  so it looks like it's
+1947: just not reading from your keyboard at all if you've not used the terminal before
+  so this is a really
+1951: common thing that our installer requires people to enter their password and
+  they say oh but it won't
+1956: accept my password and what they mean by that is i type my password and nothing
+  happens because they
+1962: aren't familiar with terminal text entry and stuff like that and and while we
+  could add a little
+1968: thing saying we were about to prompt you for things this will not show you your
+  password at that point
+1973: it feels like a little bit of a slippery slope where it's how much handholding
+  do we provide for
+1978: people who if this is literally the first time they ever use the terminal then
+  the the number of
+1983: guardrails we have to work on there it starts to outweigh i think the usefulness
+  of them
+1989: you alluded to the whole analytics debacle that you ran into was that last year
+  uh yeah yeah i think last
+1998: year did you want to touch on that slightly yeah so uh there's this repeated
+  pattern in homebrew of
+2005: like laziness that i think i continued and propagated which is if someone else
+  has done something for you
+2011: then why re-duplicate their their work if it's not necessary so laziness is
+  a virtue in this case right
+2017: yes well hopefully people may agree or disagree on that i'll leave that to the
+  the audience to decide
+2023: so one of the things we do is if you download wget for example uh and if you
+  were building that from
+2029: source then that will download it from the main wget website so as a consequence
+  of that we don't have
+2037: any way of knowing how many people have downloaded wget now some people would
+  say why do you even care
+2042: about that mind you're a business whatever it's like well that that's an argument
+  and that's valid
+2047: but the problem is is when i'm staring at say 100 open issues or i need to kind
+  of refactor some stuff
+2053: and i have a thousand packages to choose between which do i prioritize highest
+  which do i you know jump
+2060: on and fix first so for a while we've kind of thought about like what's the
+  best way of doing that
+2066: and the more i've kind of worked in my professional career these problems just
+  don't really exist in
+2072: the kind of professional software space because almost every piece of software
+  has a reasonable
+2077: amount of analytics nowadays where you kind of get some insights into what your
+  users are doing not
+2083: because as some people might say you want to spy on your users or sell their
+  information or anything
+2087: like that but like literally because you uh so you can focus on making the stuff
+  better that people use
+2092: and either remove or just ignore the stuff that people aren't using so for us
+  this culminated in
+2100: implementing a way of doing this and using google analytics so when you install
+  stuff in homebrew by
+2106: default it will send a anonymous notification to google analytics basically
+  saying i have requested an
+2114: and then that has allowed us to prioritize and figure out what are people using
+  what software is working and
+2125: broken for most people what software is really really popular what software
+  is never installed by anyone
+2131: ever and can be removed if it breaks so the problem was when we released this
+  there was a fair amount of
+2138: backlash from people the backlash appeared to revolve around a few different
+  things so one of them was
+2144: that the analytics were opt out rather than opt in my viewpoint on that was
+  that from a pseudo
+2151: well a semi-scientific perspective if you're going to opt in then you're not
+  really looking at the
+2158: analytics of people who use homebrew you're looking at the analytics of the
+  type of people who use
+2162: homebrew and would opt in to analytics which is a very small subset and b that
+  small subset may well
+2169: be biased towards certain ways of using homebrew so i felt an opt out was a
+  better way of gathering
+2176: better data from people and the second i think main issue is that this was going
+  to google analytics
+2183: rather than some other platform and that's something that i take on board i
+  mean i tried to not put my eggs
+2189: in one basket as far as tech companies go so as a result i did like seriously
+  spend a decent amount
+2195: of time investigating other alternatives but the problem is no one provides
+  anywhere near the same
+2201: sort of free tier that google analytics does no one provides the same sort of
+  level of performance
+2204: and tooling and stuff like that and it's just not doable for us to just set
+  up our own server to kind
+2210: of manage the the amount of traffic we we get through things like this i mean
+  if you include bots
+2216: homebrew's getting like something around i think a million like monthly active
+  users so at that point
+2223: it's pretty hard to just say oh well we're going to spin up new infrastructure
+  to manage all this for
+2227: the analytics who pays for that how does that get done and i guess the third
+  category is there's people
+2232: who just don't like analytics full stop and think that you know all the big
+  software makers are spying
+2238: on them and now homebrew's spying on them too and we're going to sell all the
+  information for
+2241: money i mean they're entitled to think that but i've personally never made a
+  penny's worth of money
+2246: directly from homebrew so while that might be a nice idea it certainly wasn't
+  one i've ever managed
+2252: to come up with a good way of doing as a result of this uh it kind of blew up
+  on multiple occasions
+2257: uh as a result you get a lot of issues and comments and personal emails saying
+  that i'm working for the
+2264: cia or effectively a nazi or hitler or whatever and stuff like that and it's
+  kind of interesting
+2269: with that stuff because i can actually laugh about most of that stuff uh because
+  more or less anyone
+2275: who would say those things to me is by my definition at least uh a blethering
+  moron and i i just don't
+2282: even entertain the viewpoints of people who jump immediately to kind of calling
+  me names but the
+2287: disturbing thing about the whole incident is i had a really good conversation
+  actually when this all
+2291: kicked off which helpfully occurred while i was mid-atlantic on a uh a flight
+  from from the uk to
+2298: the us and i was talking with some of my co-workers and particularly in fact
+  my uh my women co-workers
+2305: said see this is why i never want to contribute to open source because this
+  type of both entitlement and
+2313: like massively negative behavior is considered almost like part of the ecosystem
+  and like it sucks and we
+2322: try and do what we can to get rid of it but i don't think anyone has any expectations
+  that we're ever
+2327: going to eliminate this type of behavior like completely and eliminate it such
+  that if you were to repeat
+2333: this incident you would not receive a single poisonous email or comment or whatever
+  um and yeah i think
+2340: that's it's a lot of a much wider question but i think it's a big thing that
+  we as an open source
+2345: community need to figure out like how are we going to deal with the fact that
+  there's a bunch of people
+2350: who don't want to contribute to open source because they just don't want to
+  get shouted at for stuff
+2354: they work on in their free time i guess even if it doesn't affect you directly
+  and you're lucky enough
+2359: to have that kind of strong constitution where the abuse doesn't get under your
+  skin it's still not
+2364: behavior that you really want to see or encourage in the broader homebrew community
+  yeah yeah exactly and
+2370: and this is why we had relatively early on the code of conduct with stuff like
+  this and again like i
+2376: i i have no interest in allowing people freedom of speech on homebrew's issue
+  tracker the internet is
+2383: full of ways if you have a particular thing you want to say about a particular
+  topic including homebrew
+2387: the internet is full of ways of publishing your viewpoint uh but i don't feel
+  i as a homebrew
+2393: maintainer should not have to wake up and read message after message of bile
+  so as a result i'm
+2400: fairly quick with stuff like this to say right if we get any more comments in
+  this thread on this topic
+2406: you're just going to be banned immediately and you're going to get blocked from
+  homebrew and then you
+2410: can never submit another issue here ever again and that tends to have a relatively
+  kind of positive
+2415: effect um and again it's kind of useful nowadays with githubs uh you you can
+  see from people's
+2422: comments and things whether people have contributed to your project before for
+  example or not
+2426: um and perhaps unsurprising fact is that the people who are the most vitriolic
+  and abusive are the
+2433: people who have almost no experience in open source have never contributed to
+  your project have often
+2438: never contributed to any open source project before these are not people you're
+  going to convert to
+2443: being great contributors and great maintainers so i just think it's it's often
+  easier in many cases to
+2448: just block these people and move on i've heard of people who have had success
+  using bots to manage some
+2455: of those kind of aspects of community especially with anonymous users potentially
+  even kind of getting
+2461: better reactions where a bot tells you your issue is not valid for whatever
+  reason have you
+2468: tried experimenting kind of automating any parts of community interaction yeah
+  so we we've we try and
+2475: do as much as possible with kind of bots and ci and scripts and stuff like that
+  and again it's one of
+2480: those ones where if i had infinite time the the level of bots driven automation
+  on the project i would
+2487: go to would be disgusting quite frankly um but one of the main insights i had
+  fairly on with kind of
+2494: experimented with bots is people tend to respond much better to positivity from
+  a human and negativity from
+2501: a bot and by negativity i don't mean name calling whatever i mean if your ci
+  build fails or your your
+2508: bot says okay rubocop says that you've used three spaces here and you should
+  have actually used two
+2515: if a human says those things you tend to think oh what a pedant like oh can
+  you not just merge it and ignore
+2520: this one little change whereas most people seem to get if the ci bill goes red
+  and if rubocop says what
+2527: to do then that makes the process much better for everyone everyone knows what
+  the expectations are there
+2534: and uh in the community management side of things we've sort of been experimenting
+  with like stale
+2540: this thing called probot stale which my co-worker brandon keepers wrote that
+  basically just does sort of
+2546: similar things with issues where it basically says right if an issue's not got
+  like an in-progress pr
+2551: attached to it if no one's commented on it for a while i will assume eventually
+  that it's stale and just
+2556: close it because with some of this stuff at least the the squeaky wheels get
+  the grease and
+2562: ultimately if if one person's complained about a problem that no one can reproduce
+  we would love
+2567: to be able to kind of fix it but like again if we've not fixed that within like
+  a couple of weeks
+2572: then chances are we're probably never going to fix that at all like on purpose
+  at least so it's better
+2578: that that issue just gets closed and while bots have been starting to close
+  those issues people seem
+2584: to be a little bit more understanding that again like i'm not closing this issue
+  because i hate you or
+2589: whatever i'm closing this issue just this issue is being closed by a bot because
+  it meets this
+2594: particular pattern and stuff like that a final thing we've been experimenting
+  with a bit more
+2598: recently as well which i i'm increasingly excited by is uh using rubicop to
+  do more of our kind of
+2604: style checks and as a result of that allowing more homebrew specific style checks
+  to be if you have an
+2610: editor with rubicop integration then it will like pop up in your editor saying
+  okay here's the kind of
+2617: almost like violations in the homebrew file you're working on right now and
+  i think that for me is
+2622: even better in terms of feedback because then you're not having a command that
+  people need to manually run
+2626: you're not waiting for them to see a ci build or whatever but they can get that
+  feedback immediately
+2631: in editor so that while they're developing stuff they can see okay here are
+  what the problems are and
+2636: here's what i need to fix before i even commit a file rather than it pushing
+  it along and i think that's
+2643: something that would be cool to see more of the open source community experiment
+  with as well is this
+2646: idea of like how do you push those feedback loops to be as tight as possible
+  and as close to the user
+2652: as possible so you mentioned reproducibility there uh not in the same context
+  that i'm about to bring
+2659: up but one of my bugbears with a lot of different package managers is they don't
+  have the ability to
+2665: kind of reproduce the state that someone else's dependency tree exists on say
+  your co-worker's
+2672: computer and homebrew has been ignorant of this problem in the way that most
+  other system level
+2678: package managers have they won't generate a lock file or some kind of snapshot
+  of how you successfully
+2684: managed to install that dependency tree is there any plans to add the features
+  to make that available
+2690: in the future well so again harking to debian they've got i think they're sort
+  of pioneering
+2697: the kind of reproducible builds where their end goal is for reproducible builds
+  of not just
+2703: dependency trees but like binary packages as well such that i can rebuild a
+  binary package on my machine
+2709: and that i will get a bit for bit identical result so i can basically verify
+  that that package hasn't
+2716: been tampered with this comes down to one of those things where if i had infinite
+  time i would put a
+2721: lot of it into stuff like this i think the closest thing we get for reproducibility
+  right now is because
+2727: our formula repo is all the versions are pinned at any given git revision so
+  you could check out a
+2737: particular git revision and then guarantee that all the dependencies are going
+  to be exactly the same
+2741: version there in terms of stuff like lock files we don't have that that's something
+  that feels like it lives
+2749: sort of a level above homebrew and i guess that's sort of segues nicely into
+  in fact something that
+2755: andrew made which was like a project called broodler originally we now call
+  it brew bundle which is
+2761: basically a sort of bundler for homebrew where you have like a brew file which
+  can specify various
+2769: like homebrew packages that should be installed and it's basically just a way
+  of in a more declarative
+2775: fashion saying okay rather than run brew install this brew install this brew
+  install this you specify
+2780: these are the the the piece of software i want to be installed and get brew
+  bundle now to install that
+2786: software and basically verify that like everything is installed that you need
+  to be installed for
+2790: a given project say again with that that also doesn't have lock files for the
+  log file stuff for that
+2797: comes down to i guess a homebrew constraint in terms of the time and resources
+  we have with homebrew that
+2803: the problem is when you start to make dependencies more flexible so if you say
+  this software it needs
+2810: ruby 2.1 and up then if you get an issue filed where someone says okay this
+  doesn't work on ruby 2.16
+2817: and someone else says well it works on 2.17 and someone else says well it works
+  on 2.15
+2822: you need to go digging to figure out why it doesn't work on 2.16 and in homer's
+  case our solution to
+2829: this problem is we say well we only ever support you installing our software
+  with the latest version
+2835: of the entire dependency tree so if you want to have like an older version that
+  you want to keep
+2840: around for a long time then you make a dedicated formula that manages that so
+  say my sequel there's
+2846: like a my sequel at 5.6 formula which lets you stick around on that older version
+  of my sequel
+2852: and that's a way around requiring the latest versions for everything when that
+  may not match
+2857: whatever your your server might be using i get the feeling that a lot of people
+  kind of turning to
+2864: using docker as a on their development machines as kind of a a band-aid over
+  the top of the situation
+2870: of system level dependencies where they basically can wrap it all up and hide
+  it in a docker image
+2876: which then is system agnostic because docker runs on windows mac and linux but
+  is actually
+2882: just you're running linux everywhere yeah i'm definitely seeing a movement in
+  that direction
+2888: as well like where more and more people are kind of wanting to do things this
+  way i mean i haven't
+2893: done a huge amount myself so i'm speaking mostly from a position of ignorance
+  but my experience when i
+2898: worked on projects that have done this or something similar in the past has
+  been that the the development
+2904: experience is never quite as nice as having a my sequel server that's just running
+  on my actual
+2910: machine and i can query the ports and run brute upgrade to get a newer version
+  and things like that
+2915: this kind of comes down to as well another version another thing which makes
+  me a little bit
+2920: tetchy in our industry which is reproducibility is good and it's very important
+  the problem is
+2927: there's a bunch of tools which i assume that reproducibility is the most important
+  thing and as a result
+2935: assume that using lock files in the same versions every time are very important
+  and what i've seen
+2942: the result of this in practice tends to be a lot of people install some new
+  gem and then whatever the
+2949: tooling they use locks it all to the same version and then what happens is in
+  the the nice future
+2956: or present reality where everyone's doing what they should be doing then they
+  will monitor that gem and
+2963: then when the security updates release they will then update the gem in their
+  gem file and make sure
+2967: the security updates are done and stuff like that whereas what tends to happen
+  most of the time is
+2971: that gem never gets updated ever again unless another gem requires it to be
+  updated so they can have
+2977: security vulnerabilities and no one ever notices and no one ever updates and
+  no one ever cares
+2982: this is one of the reasons why i've resisted this stuff in homebrew because
+  particularly i mean it's bad
+2988: with a random ruby gem it's incredibly bad if you're dealing with something
+  like my sequel and you get
+2994: people who say i want to be able to pin to version 5.6.21 or whatever and the
+  latest version is 5.6.27
+3001: okay there's bugs that have been fixed between those differences but a lot of
+  the time there's also
+3007: security vulnerabilities that were fixed and if you're going to run a server
+  which is going to be
+3012: accessible over the network pinning intentionally to a version which has known
+  security vulnerabilities is
+3018: a very very bad idea in my opinion and as a package manager runner like i will
+  rage against the dying of
+3025: the light in trying to stop you from doing that and i appreciate that with you
+  know production software
+3030: that idealism gets trotted on in the favor of kind of pragmatism and actually
+  being able to test on the
+3037: same versions and things like that but i do generally feel that with the docker
+  world you're seeing
+3043: similar things like that happening where the people who are doing it properly
+  are making sure that all
+3047: their system dependencies are kept up to date whereas you do see a lot of docker
+  images being thrown
+3053: around where people are not paying any attention to the security vulnerabilities
+  that are being
+3057: filed and fixed in in their images sometimes and then as a result they are pleasantly
+  being happy
+3064: with the uh reproducibility of it all while ignoring the security consequences
+  that come from that
+3069: yeah i agree the the reproducibility aspect of docker itself tends to actually
+  be more like a freeze dry
+3076: we'll just put this in the freezer and we can always take it out and reproduce
+  it the problem is that as
+3081: soon as you take it out of the freezer two months later you've now picked up
+  a load of potential
+3087: security vulnerabilities that like if you regenerate the docker image from the
+  docker file you get a
+3093: completely different set of dependencies inside of that system so you haven't
+  really got
+3098: reproducibility at the uh kind of the top level you've just generated an image
+  that will continue to run
+3105: anywhere at least in the short term yeah and i i've not really seen i i think
+  you'd need much smarter
+3112: minds than i to figure out how you balance that kind of reproducibility versus
+  security aspects it's not
+3118: really clear i've seen various solutions and some of them just rely on i guess
+  pragmatism where i've seen
+3124: people who have when you deploy a server say it just effectively does a security
+  release update of all
+3132: of the software on that system and then if stuff starts blowing up then you
+  know that you need to
+3137: to fix that but again if you get to even kind of github scale let alone larger
+  it doesn't really work to
+3144: just deploy things and have them explode and so i don't know because at the
+  end of the day it's up to
+3152: users what software they run and don't run so it's as long as you're providing
+  as much information
+3157: as you can on hereby dragons then it's up to them to not get eaten so in terms
+  of community and
+3165: governance like how can somebody get involved with homebrew uh i think generally
+  the best way i guess
+3171: the the automatic pedantry and style checks that i have described earlier on
+  if you push everything to
+3179: maximum pedantry there's basically issues all over the place with loads of our
+  uh formula so that's
+3186: generally a really good place to start is that you can run brew audit strict
+  which basically says
+3192: maximum pedantry effectively and then like make a modification fix one of those
+  little warnings and
+3198: then submit that and then basically as you submit more and more stuff we will
+  notice you more and more
+3204: and set the bar a little bit higher and higher each time for that and then eventually
+  you get asked to
+3210: be a maintainer if you've made a significant number of non-trivial contributions
+  over a reasonable period
+3218: of time or in general if you are saving us more work than you're causing us
+  where's the best place
+3224: online for someone to find out more about homebrew and getting involved in it
+  i think our two main places
+3230: would be our website which is brew.sh and our github repository which is linked
+  from the website as well
+3236: great well thank you so much for coming on and joining us for this chat it's
+  been really interesting
+3243: to learn more about homebrew and the people who are behind it and some of the
+  issues and the things
+3248: that you try to balance over the years if somebody wants to learn more about
+  you personally where should
+3254: they go for that uh probably my website mike mcquade.com or my twitter which
+  is mike mcquade
+3260: and you won't be able to spell it so i'm sure it'll be written down somewhere
+  yeah we'll drop that in
+3265: the show notes thank you very much uh again to mike and that's everything for
+  this episode from me
+3272: and from andrew way nice thank you for listening goodbye
+3277: you

@@ -1,0 +1,1030 @@
+---
+0: Welcome to the Staff Engine podcast, where we interview software engineers who
+  have progressed
+15: beyond the career level into staff levels and beyond. We're interested in the
+  areas of work
+20: that set staff plus level engineers apart from other individual contributors.
+  Things like setting
+25: technical direction, mentorship and sponsorship, providing engineering perspective
+  to the org,
+29: etc. My name is David Noel-Romas and I'm joined by my co-host Alex Kessinger.
+  We're both staff plus
+35: engineers who have been working in software for over a decade. Alex, please tell
+  us a bit about
+39: today's guest. Our guest today is Mike McQuade. He is a staff engineer at GitHub.
+  Additionally,
+44: he's a project leader for the Homebrew project, which is a package manager for
+  Macs. This interview
+49: was a lot of fun. I got a kick out of what the GitHub monolith is called, and
+  on top of that,
+53: I enjoyed hearing about Mike's work. I think others will enjoy it as well. Let's
+  get into it.
+58: 'Mike McQuade: Well, Mike, it is a pleasure to meet you. Thank you so much for
+  taking the time'
+67: today. If we could start by having you tell us kind of in your own words, who
+  you are and what you do.
+73: 'Mike McQuade: Sure thing. So I work as my day job as a staff engineer in the
+  communities team in GitHub. And yeah, I''ve been'
+85: at GitHub for about seven years and I've been a staff engineer, I guess about
+  six months now. And then my
+90: related hat outside of work is I'm the project leader for Homebrew, a Mac package
+  manager as well.
+97: 'Mike McQuade: Awesome. At GitHub, is there a typical set of expectations for
+  a staff engineer or does'
+105: 'everyone sort of do it a little bit differently? Mike McQuade: I think probably
+  a bit of both.'
+111: 'Mike McQuade: So there''s a set of expectations in terms of what is required
+  for you to hit a benchmark to hit that promotion.'
+120: 'Mike McQuade: So I guess a base level of expectation across various different
+  kind of metrics. So in my case,'
+128: 'Mike McQuade: it was something that we''ve been sort of talking about these
+  metrics for a few years and stuff'
+133: like that. And there were some that I've probably been meeting for five years.
+  And then there's some that
+138: were the ones that I was struggling with, which I kind of had to get up to par
+  in order to get
+144: 'Mike McQuade: promoted. So I think it''s for me, it''s a combination as well
+  of whether you have'
+151: 'Mike McQuade: those attributes and whether your manager feels that you have
+  those attributes and'
+154: 'Mike McQuade: actually being able to demonstrate them and say in the last, whatever,
+  six, 12 months,'
+158: 'Mike McQuade: here''s a demonstration of say something like mentoring or project
+  management type work or'
+165: 'Mike McQuade: whatever, like being able to actually point to work and say, okay,
+  I did this and it demonstrated'
+170: 'Mike McQuade: that I was effective and other people kind of respected my work
+  on that rather than just'
+175: 'Mike McQuade: three years ago, I did this, therefore I can do it. So, you know,
+  that''s fine.'
+179: 'Mike McQuade: Cool. Do you, do you feel like there''s a good definition of the
+  difference between'
+184: 'Mike McQuade: someone who''s like just about to be staff plus and someone who
+  is staff plus or like'
+189: 'Mike McQuade: what are the typical deltas between whatever is less experienced
+  than a staff and a staff'
+194: 'Mike McQuade: at GitHub?'
+195: 'Mike McQuade: Yeah. So for us, the leveling goes senior, staff, principal, distinguished
+  and I guess'
+203: 'Mike McQuade: I''ll focus on senior to staff because that''s what I know. I
+  can talk a little bit about'
+207: 'Mike McQuade: senior to principal, but then our distinguished engineers have
+  been'
+211: 'Mike McQuade: imagined like a lot of places sort of unicorns in some respect
+  where I think our internal'
+217: 'Mike McQuade: benchmarks talk about, you know, you need to make industry wide
+  impact. So as much of a flow'
+222: 'Mike McQuade: you can follow to to get that. But I think for us that the jump
+  from a senior to a staff'
+228: 'Mike McQuade: looks, I guess, a fair amount like Will has talked about in the
+  book where you''re taking a step'
+236: 'Mike McQuade: out from beyond what you might already be doing as a senior. You
+  know, we would expect a senior to be'
+241: 'Mike McQuade: doing a certain amount of work like mentorship, review, splitting
+  up projects, being able to lead projects, stuff like that.'
+250: 'Mike McQuade: Whereas for our staff, we really want to feel that like you not
+  only'
+256: 'Mike McQuade: do all those things and can do those things, but you are pretty
+  excellent at'
+260: 'Mike McQuade: the majority, if not all of them. And also, I guess, when your
+  work starts to step outside,'
+268: 'Mike McQuade: primarily contributing through code. So we have a bunch of senior
+  engineers who,'
+274: 'Mike McQuade: you know, spend a lot of time doing things like glue work. I imagine
+  a fair number of the'
+279: 'Mike McQuade: people listening to this will have either read that blog post
+  or heard that talk, so I won''t'
+285: 'Mike McQuade: redefine that. So we see a lot of people doing that type of work,
+  but it''s pretty rare that we'
+290: 'Mike McQuade: have senior engineers where that''s the majority of their role
+  is doing stuff like that.'
+295: 'Mike McQuade: You know, most of them, particularly, I guess, in the part of
+  the company where I''m at,'
+298: 'Mike McQuade: where we''re primarily doing user-centric feature development.'
+302: 'Mike McQuade: Those user-centric features that you build are probably going
+  to be the majority of your'
+308: 'Mike McQuade: of your output, even if they''re not necessarily always the majority
+  of your time,'
+313: 'Mike McQuade: that''s what you''re going to be judged upon. And we see the people
+  who kind of move into'
+318: 'Mike McQuade: staff is when you are going a bit above and beyond on that stuff.
+  So you''re not just...'
+323: 'Mike McQuade: There''s perfectly great seniors that I work with that will work
+  with a PM or a designer,'
+330: 'Mike McQuade: sorry, PM being product manager, designer on the team, their engineering
+  manager,'
+334: 'Mike McQuade: whatever. They''ll take work, they''ll deliver it on time to a
+  high quality, and that''s that.'
+340: 'Mike McQuade: Whereas the staff folks, it''s always tends to be the people who
+  are going a little bit'
+345: 'Mike McQuade: above and beyond. So I guess to think of someone else on my team
+  who just got promoted'
+349: 'Mike McQuade: literally in the last week. So they''re someone who, for example,
+  you know, they were tasked with'
+354: 'Mike McQuade: doing a migration for... Github Sponsors was the stuff that we
+  worked on together.'
+360: 'Mike McQuade: So Github Sponsors used to share a lot of the back end with Github
+  Marketplace,'
+364: 'Mike McQuade: which enabled us to get something out the door pretty quickly,
+  but we wanted to sort of'
+367: 'Mike McQuade: split them out. So she was sort of assigned with doing that. And
+  instead of just doing'
+373: 'Mike McQuade: the work, cranking out some code, whatever, basically went and
+  split out the work, made a plan'
+380: 'Mike McQuade: for the next six to 12 months of how this process was going to
+  work, and then went off on maternity'
+385: 'Mike McQuade: leave for some of that time and came back and effectively her
+  plan had been executed more'
+390: 'Mike McQuade: or less to the letter while she was away, and everything was just
+  smoothly running while she was out.'
+395: 'Mike McQuade: And to me, that''s the type of thing that I... that''s not an
+  example that everyone does, but'
+402: 'Mike McQuade: those are the types of things that I look around the company,
+  I see people who are kind of crossing'
+406: 'Mike McQuade: that threshold starting to do when they''re doing those type of
+  tasks that are really impactful'
+412: 'Mike McQuade: on a bunch of other engineers work, beyond just writing code.'
+415: 'Mike McQuade: Cool. And when you were promoted, was there a particular initiative
+  or a project that you worked on'
+422: 'Mike McQuade: that sort of took you past the finish line?'
+424: 'Mike McQuade: Yeah, I think so. So for me, it was probably two projects that
+  sort of were pretty'
+431: 'Mike McQuade: closely linked. So we have in GitHub, the main application we
+  refer to as kind of GitHub,'
+437: 'Mike McQuade: GitHub, which is a big Rails monolith. So GitHub, GitHub, because
+  it''s under the GitHub'
+442: 'Mike McQuade: organization on GitHub, and it''s the repository called GitHub.
+  It''s, I think, the oldest'
+448: 'Mike McQuade: repository there. And it''s, you know, what the... it''s cool
+  going back through the full history'
+453: 'Mike McQuade: and seeing the founders kind of when they originally started the
+  company'
+457: 'Mike McQuade: and the project and stuff like that.'
+458: 'Mike McQuade: Yeah.'
+459: 'Mike McQuade: But obviously, over however many years it''s been now, I guess,
+  11 or 12 or whatever'
+465: 'Mike McQuade: years that GitHub has been around, that''s kind of grown and are
+  certainly one of'
+469: 'Mike McQuade: the highest traffic sort of Rails monoliths there are, if not
+  maybe the highest'
+473: 'Mike McQuade: traffic, I don''t know. But yeah. And when you''re clicking around
+  the site, you know,'
+477: 'Mike McQuade: if we release a new feature, if it''s something like GitHub Actions,
+  say, there''s going'
+482: 'Mike McQuade: to be a lot of that stuff that is outside the monolith and you
+  can spin up new'
+486: 'Mike McQuade: microservices pretty easily. But, you know, say you want something
+  like on a pull request,'
+490: 'Mike McQuade: you want to have your reviews handled differently or whatever
+  it may be like that.'
+495: 'Mike McQuade: That feature is probably 99, 100% of that code is going to be
+  written inside the monolith.'
+500: 'Mike McQuade: So we have hundreds of engineers who are making changes and doing,
+  you know, their work'
+508: 'Mike McQuade: probably primarily in that monolith. So two problems that have
+  been building up over'
+514: 'Mike McQuade: time that are sort of related. One was we had an on-call rotation
+  for the monolith,'
+519: 'Mike McQuade: you know, started with a probably reasonable number of people
+  when I think I was'
+524: 'Mike McQuade: initially on the infrastructure team when they started that. And
+  it was just the idea of'
+527: 'Mike McQuade: getting more application engineers to sort of take responsibility
+  for the application code'
+531: 'Mike McQuade: side of things rather than, you know, ops people being woken up
+  when it''s clearly an'
+535: 'Mike McQuade: application problem. And, you know, it started off with maybe
+  20, 30 people. And that rotation'
+540: 'Mike McQuade: had grown to the point where it was probably more like 150 people
+  by the end.'
+544: 'Mike McQuade: So you have people who are on-call effectively twice a year for'
+547: 'Mike McQuade: the entire site and everything that''s not a microservice'
+552: 'Mike McQuade: that can go wrong is essentially for them to sort of monitor and
+  watch.'
+558: 'Mike McQuade: And I think that obviously anyone who''s been on-call or dealt
+  with that situation'
+564: 'Mike McQuade: could probably start to immediately cycle through the many things
+  that can and will go wrong'
+568: 'Mike McQuade: in that situation. And yeah, and I would actually say it held
+  up pretty well'
+573: 'Mike McQuade: for a pretty decent amount of time. But I think the work that
+  was going into it was'
+578: 'Mike McQuade: quite unevenly distributed because you would have some people
+  who really knew that'
+580: 'Mike McQuade: what they were doing, who would help out all the time, even when
+  they''re not on-call.'
+584: 'Mike McQuade: And then some people who would be on-call and just, you know,
+  spent the shift'
+587: 'Mike McQuade: hoping that they weren''t going to get paged. And if they did,
+  you know, they knew how to handle'
+593: 'Mike McQuade: things reasonably well. But there certainly wasn''t that level
+  of, in'
+598: 'Mike McQuade: my opinion, the ideal, which is that when I get on-paged, it''s
+  for something that I''m'
+602: 'Mike McQuade: closely related to, perhaps even ideally something that I''m actually
+  working on.'
+606: 'Mike McQuade: So that presented us with a problem that, okay, well, what we
+  want to do'
+611: 'Mike McQuade: is effectively split this up so that every team that''s working
+  on them on the monolith has'
+617: 'Mike McQuade: their own on-call rotation. But then that presented a comparable
+  side-by-side problem,'
+625: 'Mike McQuade: which was, okay, who owns what code in the monolith? So we have,
+  I''m sure a lot of folks'
+632: 'Mike McQuade: have used kind of the code owners feature on GitHub where you
+  can make certain'
+636: 'Mike McQuade: files or whatever owned by certain teams. And then we had our
+  own thing which sort'
+642: 'Mike McQuade: predated that called areas of responsibility, which was sort of
+  a more declarative'
+647: 'Mike McQuade: thing that you could annotate your Rails models and things like
+  that. Sorry, Rails controllers.'
+652: 'Mike McQuade: And the problem was is that these had both been around for a while.
+  They disagreed with each'
+657: 'Mike McQuade: other in certain ways. They weren''t very heavily linted. And
+  whenever you had a company'
+663: 'Mike McQuade: reorg and a team used to own this and now owns this, those cases
+  weren''t always updated.'
+669: 'Mike McQuade: So we ended up with a problem there of how to assign that ownership
+  and get that'
+675: 'Mike McQuade: information correct and stop a certain degree of backsliding.
+  So we introduced a thing which'
+680: 'Mike McQuade: is unlikely to be publicly shipped because it''s'
+682: 'Mike McQuade: pretty special snowflake territory for like how vast a monolith
+  is and stuff like that.'
+689: 'Mike McQuade: And a thing called service owners, which is effectively a bit
+  like code owners,'
+693: 'Mike McQuade: but splits the code base along the lines of services rather than'
+699: 'Mike McQuade: things being owned by teams. So effectively it moves what was
+  a one to one mapping to a'
+703: 'Mike McQuade: like a one to one to one mapping. So you have instead of a file
+  being owned by a team,'
+710: 'Mike McQuade: a file is now owned by a service and a service is maintained by
+  a team.'
+714: 'Mike McQuade: And that has allowed us to kind of sort out the ownership and
+  make the linting a lot'
+720: 'Mike McQuade: stricter. So you can''t have teams that accidentally own, sorry,
+  multiple teams accidentally'
+725: 'Mike McQuade: in the same file, whatever. But then that also allowed us to comment
+  out all our'
+728: 'Mike McQuade: on-call stuff as well. So things like exceptions, background jobs
+  failing,'
+735: 'Mike McQuade: a lot of our logging, all this stuff''s now annotated with the
+  service and then the service'
+742: 'Mike McQuade: from that you can look up the relative team and then effectively
+  page the right people.'
+747: 'Mike McQuade: So I, I sort of was involved with the initial conception of that.
+  And then I probably'
+752: 'Mike McQuade: did, you know, a lot of maybe the majority of the sort of implementation
+  side'
+757: 'Mike McQuade: and sort of ship that to completion at the same time as sort of
+  splitting out'
+761: 'Mike McQuade: the on-call rotations and developing a bunch of training and stuff
+  like that'
+765: 'Mike McQuade: alongside that to kind of trying to ease people into the new process
+  and'
+769: 'Mike McQuade: good ways of doing on-call and things. So, yeah, so for me, I
+  think that''s,'
+773: 'Mike McQuade: that was the sort of project that I, um, that very much felt like
+  a sort of staff'
+778: 'Mike McQuade: project that I think got me the promotion.'
+780: 'Mike McQuade: Interesting. I want to circle back to sort of the service owners
+  thing and to sort of'
+785: 'Mike McQuade: project execution in general, but something that you mentioned
+  earlier, you mentioned'
+791: 'Mike McQuade: that, you know, you oversee the homebrew project. We''ve noticed
+  a pattern where a lot of'
+797: 'Mike McQuade: staff engineers we talked to are also pretty heavily involved
+  with open source'
+801: 'Mike McQuade: or have previous experience as a founder or as an early employee
+  at a startup.'
+807: 'Mike McQuade: Anyway, I''m curious to what extent you think your experience
+  in open source has influenced'
+813: 'Mike McQuade: your sort of day to day work and especially if you think there
+  are aspects of'
+818: 'Mike McQuade: the staff engineer role that that sort of stem from your experience
+  in open source.'
+823: 'Mike McQuade: Yeah, no, I think so. And I mean, the early stage startup stuff
+  as well. I wouldn''t'
+827: 'Mike McQuade: have thought about that necessarily, but that feels related too.
+  So I think the thing that'
+833: 'Mike McQuade: I see on both of them, I guess the biggest thing from open source
+  is at least in GitHub,'
+839: 'Mike McQuade: staff engineers and principal engineers do not have direct reports.
+  So as we live in the'
+846: 'Mike McQuade: in the org chart and some staff engineers report to directors
+  instead of engineering managers'
+851: 'Mike McQuade: and principal engineers report to VPs instead of directors. But
+  because you don''t have'
+856: 'Mike McQuade: that reporting relationship, you don''t so much have the ability
+  to order people around,'
+863: 'Mike McQuade: essentially. Probably the most formal power you have is the ability
+  to say no to things'
+869: 'Mike McQuade: and sort of shoot down proposals or require changes to be met.
+  But if I want someone'
+877: 'Mike McQuade: to do something for me, I can''t go and tell them. In terms of
+  how the organization'
+883: 'Mike McQuade: is technically run, that''s down to their manager or product manager
+  or whatever to'
+887: 'Mike McQuade: decide. And in a lot of ways, that''s very similar to open source,
+  where on homebrew,'
+892: 'Mike McQuade: I can''t ever tell anyone what to do, or I can try, but they won''t
+  necessarily do it.'
+898: 'Mike McQuade: So I feel in both cases, you can have someone who has effectively
+  no hard power,'
+904: 'Mike McQuade: but quite a lot of soft power. So with homebrew, I''ve been working
+  on the project for,'
+911: 'Mike McQuade: I think 11 years now. I''m almost losing count at this point.'
+914: 'Mike McQuade: And most of the maintainers who are around today, I''ve been involved
+  with kind of'
+920: 'Mike McQuade: proposing that they join the project and helping them on board
+  and stuff like that.'
+924: 'Mike McQuade: So I think there''s a certain amount of kind of trust there that
+  they know that I''m not'
+929: 'Mike McQuade: going to just, you know, bark orders at them. But at the same
+  time, if I do sort of say,'
+934: 'Mike McQuade: hey, please, can we do this? Or I really strongly object to this.
+  Like a lot of the time,'
+939: 'Mike McQuade: that''s enough for people. It''s not always. And there''s definitely
+  times even in the last'
+943: 'Mike McQuade: year where I''ve been quite frustrated that I don''t have more
+  hard power and I can''t just'
+948: 'Mike McQuade: say no to things and I lose arguments. But I mean, that''s probably
+  a sign that it''s'
+953: 'Mike McQuade: healthy and that the process is working well, that I''m not just
+  getting to boss people around.'
+958: 'Mike McQuade: And I guess similarly, the early stage startup, I think the other
+  thing that comes from both'
+963: 'Mike McQuade: open source and that angle. I was the first employee at a company
+  called Mendeley'
+968: 'Mike McQuade: a few years ago. And I feel like there''s a, to talk about, I
+  guess, Will''s archetypes,'
+973: 'Mike McQuade: where I kind of see myself along the lines of like a solver with
+  the work that I do in GitHub.'
+980: 'Mike McQuade: And I think there''s definitely an open source and early stage
+  startup approach of being like,'
+985: 'Mike McQuade: if you have a problem and it technically belongs to another team,
+  do you just, you know,'
+991: 'Mike McQuade: say to that team, hey, I want/need you to do this? Or do you go
+  and basically see the'
+998: 'Mike McQuade: problem through to completion yourself, which may or may not involve
+  the other team doing'
+1002: 'Mike McQuade: it or not, but it''s kind of taking ownership of some of these
+  problems. And it''s definitely something'
+1007: 'Mike McQuade: you see the more junior an engineer is, the more they may feel
+  slightly, I don''t know,'
+1014: 'Mike McQuade: helpless or frozen or whatever, if something is very much outside
+  of the responsibility'
+1020: 'Mike McQuade: of them or their team.'
+1021: 'Mike McQuade: Especially in a bigger org, right? It''s really tempting to look
+  at a problem as a junior'
+1025: 'Mike McQuade: engineer in a bigger org and say, oh yeah, that''s a problem,
+  but it''s not my problem.'
+1028: 'Mike McQuade: It reminds me in many ways that it''s very similar with open
+  source. And I guess,'
+1032: 'Mike McQuade: obviously unsurprisingly in GitHub, you know, almost all of the
+  stuff we do, including'
+1036: 'Mike McQuade: a lot of even configuration, you know, if I want to be added
+  or removed credentials'
+1041: 'Mike McQuade: for a service, that''s a pull request on a repository that gets
+  a review and a merge'
+1046: 'Mike McQuade: and stuff like that. And so it''s quite easy for me to look at
+  that and see the part of my brain'
+1055: 'Mike McQuade: goes, oh, this is open source. I know this. And say, okay, well,
+  if I''m making a deploy'
+1061: 'Mike McQuade: and there''s a message in there that''s output that I''m like,
+  that''s wrong,'
+1065: 'Mike McQuade: or that''s really confusing, or why doesn''t that link to the
+  document that'
+1068: 'Mike McQuade: someone asked me about? I can just go and create a pull request
+  and'
+1072: 'Mike McQuade: you know, try and make it better. And it may be that that''s
+  not'
+1077: 'Mike McQuade: always the best thing to do, or it may be that that'
+1081: 'Mike McQuade: will tread on toes or that the other team will kind of have a
+  different direction'
+1085: 'Mike McQuade: they want to go from my pull request. But again, that''s that''s
+  similar with open source.'
+1089: 'Mike McQuade: You know, it''s not every PR I submit is one that I would expect
+  necessarily to be merged.'
+1095: 'Mike McQuade: But the idea of doing that rather than, I guess, the open source
+  consumer or maybe,'
+1101: 'Mike McQuade: as you say, big corporation approach of, well, I''ll just go
+  and ask the other team to do it.'
+1108: 'Mike McQuade: You know, it doesn''t always pay off how it should, because it
+  may well be important to you,'
+1114: 'Mike McQuade: but it''s quite possibly not important to them. And if you''re
+  willing to do the the groundwork'
+1119: 'Mike McQuade: or the coding work or the testing work or or any part of the
+  work really to facilitate that,'
+1123: 'Mike McQuade: then you may well find that that that team, that maintainer,
+  that project, that company is'
+1128: 'Mike McQuade: dramatically more receptive to doing what you would like them
+  to do.'
+1132: 'Mike McQuade: You know, it''s making it easy for them to to do the right thing.'
+1134: 'Mike McQuade: That makes sense. And it''s actually a good segue to the next
+  thing I wanted to ask you,'
+1138: 'Mike McQuade: which is basically how do you decide what to work on?'
+1141: 'Mike McQuade: Yeah, so this is something that gets kind of a lot of conversation
+  and thought,'
+1149: 'Mike McQuade: and I''m still I''m still figuring this out. And so thankfully,
+  I''m lucky enough to have'
+1153: 'Mike McQuade: kind of some good mentors at the company who''ve been doing this
+  stuff better and longer'
+1158: 'Mike McQuade: than I have. But what I try to do in my case, it maybe sounds
+  a little bit,'
+1164: 'Mike McQuade: I don''t know, hubristic, but I think because I''ve been around
+  the GitHub for a while,'
+1169: 'Mike McQuade: and again, because I worked on stuff like homebrew for a while,
+  I have sometimes more'
+1174: 'Mike McQuade: historical context, more relationships and more, I guess, awareness
+  of how other things are done.'
+1179: 'Mike McQuade: So what I''m trying to do is solve problems that have maximal
+  impact that can only'
+1188: 'Mike McQuade: be done by me. And that sometimes means writing the code, sometimes
+  it means writing'
+1193: 'Mike McQuade: a proposal or an issue or mentoring people or whatever it may
+  be. But certainly, I guess,'
+1199: 'Mike McQuade: a guidance for the code that I do write, I try to have that,
+  because I guess there''s that'
+1204: 'Mike McQuade: classic staff engineer thing of, you know, are you writing code
+  anymore? Are you writing'
+1208: 'Mike McQuade: as much as you used to? And in my case, yeah, I''m definitely
+  writing less than I used to,'
+1213: 'Mike McQuade: but I''m still writing a, you know, probably a non-trivial amount,
+  but I''m trying to'
+1217: 'Mike McQuade: keep it focused on every pull request, commit, whatever I make.
+  It''s, if I was to create'
+1223: 'Mike McQuade: an issue for this instead and completely wrote up what needed
+  to be done here, would this'
+1228: 'Mike McQuade: get done in a sort of reasonable timeframe by someone else? And
+  if the answer is yes, then'
+1234: 'Mike McQuade: I shouldn''t be writing that code. And if the answer is no, then
+  I guess the next question is,'
+1240: 'Mike McQuade: is this actually important and worth doing? Or is it, you know,
+  me fiddling around with something'
+1245: 'Mike McQuade: that I find indulgent and fun rather than is really impactful.
+  But you know, I''m human,'
+1251: 'Mike McQuade: I''ll allow myself to do that every so often. But that''s the
+  stuff I''m trying to do,'
+1255: 'Mike McQuade: at least, is trying to focus on things where I feel like the
+  way the organization is set up'
+1261: 'Mike McQuade: right now, it''s not going to get done otherwise. And then I
+  guess the remaining parts of my work,'
+1265: 'Mike McQuade: I try and have a, I''ve tried to sort of set, I was when I initially
+  was staff, kind of was on'
+1271: 'Mike McQuade: a feature team and was doing sort of some of this type of work,
+  like on top of that work.'
+1275: 'Mike McQuade: But I find that didn''t really scale terribly well. And I, I
+  think I just felt like I'
+1282: 'Mike McQuade: was a blocker on that team because I would get assigned work
+  to do, and then other stuff'
+1287: 'Mike McQuade: would keep pulling me away from that. And I just felt like I
+  was very unproductive and'
+1291: 'Mike McQuade: holding other people up. So instead we''ve sort of moved more
+  to a model where I''m'
+1295: 'Mike McQuade: encouraging basically any engineer on the team can come to me
+  at any point and say,'
+1302: 'Mike McQuade: hey, Mike, I want you to review this. I want you to help me with
+  this, whatever.'
+1305: 'Mike McQuade: And that''s, I guess, the sort of push. And then the pull side
+  is I have'
+1310: 'Mike McQuade: weekly meetings with my director, at least one other IC with
+  my manager, people like that.'
+1316: 'Mike McQuade: And from them, I''m trying to almost like extract from them anything
+  useful I can do to help.'
+1322: 'Mike McQuade: So I''m looking for things where they have a gripe or whatever,
+  or think or say,'
+1328: 'Mike McQuade: hey, like, what would you think about this idea? And trying,
+  when I think it''s,'
+1333: 'Mike McQuade: when it''s something I know that they care about, trying to almost
+  like go and often jump'
+1337: 'Mike McQuade: in, solve the problem before they''ve even had a chance to sort
+  of think about it. So idea'
+1342: 'Mike McQuade: I liked that a previous manager before I was staff, actually,
+  when he was talking about'
+1346: 'Mike McQuade: like what he wanted me to sort of grow into is he was talking
+  about like giving me a box'
+1352: 'Mike McQuade: of files rather than a file, just like almost like, right, here''s
+  all the stuff I need'
+1357: 'Mike McQuade: to deal with right now. You figure out what''s important, go
+  off and do it and come back to me when it''s done.'
+1362: 'Mike McQuade: And I don''t, I will hopefully not have to give you dramatically
+  as much guidance as I would'
+1368: 'Mike McQuade: have to give to a senior or lower engineer. And I find like that''s
+  the type of work'
+1374: 'Mike McQuade: I find that''s really rewarding is when my director or something
+  which has been bugging'
+1379: 'Mike McQuade: her or whatever. And I can just go and say, right, I''ve done
+  it without there needing'
+1383: 'Mike McQuade: to be a conversation or back and forth or, okay, I''ll add this
+  to my roadmap and get to'
+1388: 'Mike McQuade: it in a month or whatever it may be.'
+1389: 'Mike McQuade: That''s interesting. So I think I hear what'
+1392: 'Mike McQuade: you''re saying is sort of like the work that you choose to do
+  is something that'
+1396: 'Mike McQuade: you''re uniquely situated to do, but also highly impactful.'
+1399: 'Mike McQuade: And it does sound like you''re getting sort of like organizational
+  signal sometimes'
+1404: 'Mike McQuade: that like this work is highly impactful. Are there any other
+  tools that you use to make'
+1409: 'Mike McQuade: sure that the work that you''re doing is impactful to the organization
+  as a whole?'
+1413: 'Mike McQuade: Yeah, no, that''s a good question. I mean, for me, so the stuff
+  I''ve been doing most recently'
+1420: 'Mike McQuade: it''s somewhat obviously impactful in that it''s very measurable
+  work. So I''m improving some'
+1428: 'Mike McQuade: parts of our local developer experience that all of the people
+  working on the monolith have'
+1435: 'Mike McQuade: to run some of this stuff 10 times a day and I''m shaving like
+  minutes off the time.'
+1442: 'Mike McQuade: And that''s the stuff where impactfulness, you know, you can
+  pretty much do a back of the'
+1446: 'Mike McQuade: the napkin calculations of how much time and probably even how
+  much money you''re saving'
+1451: 'Mike McQuade: the company when you improve stuff like that. Beyond that, I
+  find it slightly harder.'
+1457: 'Mike McQuade: So certainly the stuff I was mentioning with almost like helping
+  my director and stuff like'
+1461: 'Mike McQuade: that, I find those are the things that I struggle with a little
+  bit more to articulate the value'
+1467: 'Mike McQuade: directly beyond just like this person is my boss, they want this
+  done, so I''m going to do this to help them.'
+1474: 'Mike McQuade: But I guess, I mean, even the performance work, I guess, like
+  the way I came'
+1478: 'Mike McQuade: about discovering that work is looking at, you know, a few years
+  ago, I would have maybe'
+1483: 'Mike McQuade: been a bit more cynical about stuff like our OKRs, whereas, you
+  know, I looked at our CEO''s OKRs,'
+1488: 'Mike McQuade: our department''s OKRs and got thinking maybe a little bit more
+  abstractly, like what does it mean to do this?'
+1494: 'Mike McQuade: So one of ours was talking about we''re doing a lot of performance
+  work on GitHub at the moment to try and make the site as a whole,'
+1500: 'Mike McQuade: like a lot faster, basically, and cut some of those edges.'
+1504: 'Mike McQuade: And that kind of got me thinking about like, well, you know,
+  we''re doing this effort on the site.'
+1507: 'Mike McQuade: And but if you read the OKR describing this, it''s not just external
+  facing stuff.'
+1512: 'Mike McQuade: We''re trying to be like high performance in general.'
+1515: 'Mike McQuade: So what does that look like when you look through the lens of
+  empowering engineers on our team'
+1520: 'Mike McQuade: to be have higher performance tooling and things like that?'
+1523: 'Mike McQuade: So I can''t necessarily speak to what that''s going to turn into
+  in the future,'
+1528: 'Mike McQuade: because I''m not really sure. And this has been the first probably
+  big thing I''ve'
+1531: 'Mike McQuade: picked up since my kind of role has changed and I''ve left my
+  feature team.'
+1536: 'Mike McQuade: But yeah, I guess I would I would like to have something which
+  is I can demonstrate'
+1541: 'Mike McQuade: a measurable impact effectively.'
+1543: 'Mike McQuade: That''s really cool. You mentioned that you you''ve done sort
+  of infrastructure work.'
+1548: 'Mike McQuade: And then earlier you were talking about how you improve the on
+  call experience for the monolith.'
+1554: 'Mike McQuade: And I feel like you''ve talked about like performance and sometimes
+  those things because'
+1558: 'Mike McQuade: I think many engineers see the innate value in that kind of work,
+  but it''s not always necessarily'
+1565: 'Mike McQuade: explicitly visible to the whole product experience.'
+1569: 'Mike McQuade: You know, do you or does GitHub have like a framework for understanding'
+1575: 'Mike McQuade: the impact of that sort of work that''s less than visible in
+  maybe the product experience?'
+1580: 'Mike McQuade: So for us, the performance work right now is being like that
+  has actually been'
+1586: 'Mike McQuade: signaled pretty much from the top that this is really important
+  and this is a high priority'
+1592: 'Mike McQuade: for us as a as a kind of engineering or even as a company right
+  now. So I think'
+1596: 'Mike McQuade: I think that''s helped. And I think from that perspective, you
+  know, I''ve never had direct reports,'
+1603: 'Mike McQuade: let alone kind of being VP, C-suite, whatever. But I think having
+  in this case a sort of a CEO and the VP of engineering,'
+1612: 'Mike McQuade: who are both still fairly deeply technical and have a deeply
+  technical background,'
+1617: 'Mike McQuade: I think that has helped with this type of work in that they''re
+  not just expecting,'
+1623: 'Mike McQuade: you know, features to get cranked out the door and not really
+  kind of consider things like on call,'
+1629: 'Mike McQuade: tech debt and performance, stuff like that. Like I think their
+  leadership has kind of helped from that perspective.'
+1636: 'Mike McQuade: But I think as a company, I think it''s something where, again,
+  hopefully it''s something that staff engineers and principals and above are sort
+  of contributing to that conversation as well.'
+1647: 'Mike McQuade: Because we can, you know, you can see sometimes flows where'
+1653: 'Mike McQuade: a product manager has spoken to users and this is what users
+  want and they work with kind of a designer to sort of spec up what''s going to get
+  built.'
+1661: 'Mike McQuade: And then the engineer kind of works in the implementation and
+  builds it. And that''s a flow that works really well when you have a really good
+  insight of what you''re building and what''s important.'
+1670: 'Mike McQuade: And as you say, like when you have those organizational priorities,
+  right? And I think the tricky thing sometimes is if'
+1679: 'Mike McQuade: you have an engineer who assumes that the product manager is
+  aware of technical debt and that they need to pay it down.'
+1686: 'Mike McQuade: And the fact that they''re not talking about it means that they
+  just must think it''s not a priority right now.'
+1690: 'Mike McQuade: I think that''s something that is a sort of interesting diversion
+  from that, which I see, I guess, some engineering managers,'
+1698: 'Mike McQuade: but certainly in GitHub, I think that''s a big part for the staff
+  engineers to play'
+1703: 'Mike McQuade: where they''re kind of coming in and saying sometimes, okay,
+  like, you know, this might look like a simple problem,'
+1708: 'Mike McQuade: but we really have to pay down some tech debt while we go along.
+  And they are the ones who are sort of speaking to the product managers,'
+1715: 'Mike McQuade: speaking to engineering managers or whatever, and sort of articulating
+  those concerns'
+1719: 'Mike McQuade: from more junior engineers who may sometimes like know that there''s
+  tech debt and it''s a problem that needs to be solved,'
+1726: 'Mike McQuade: but they may sometimes struggle to explain that in a sort of
+  business centric framing rather than like,'
+1732: 'Mike McQuade: you know, just this code is crappy. It needs to be improved.
+  It''s the staff engineers can actually articulate like, well,'
+1739: 'Mike McQuade: you know that feature that we just built that took longer than
+  you thought it should have taken for us to do that?'
+1744: 'Mike McQuade: Yeah, we think it''s taken longer than it should have done too.
+  And the reason why is because of X and we need to fix X before we pick up something
+  else like this.'
+1751: 'Mike McQuade: And when you see people, senior engineers, staff engineers, whoever
+  really speaking to product'
+1758: 'Mike McQuade: managers or whoever on those terms, then obviously it''s a smooth
+  process. You know,'
+1762: 'Mike McQuade: the product managers want this stuff and they care about this
+  stuff being prioritized and dealt'
+1768: 'Mike McQuade: with too. It''s just sometimes there''s sometimes assumptions
+  made that one person''s focus is'
+1776: 'Mike McQuade: the same as another person''s focus. And that''s, I think, the
+  staff folks I know in the'
+1781: 'Mike McQuade: company at least are the ones who are much better at sort of
+  cross pollinating those ideas'
+1787: 'Mike McQuade: and making sure everyone''s on the same page.'
+1788: 'Mike McQuade: Yeah, that makes sense. And I think it addresses a lot of sort
+  of like how to'
+1795: 'Mike McQuade: how staff engineers can interface sort of upward in their org.
+  One of the things that I''ve'
+1800: 'Mike McQuade: seen staff engineers do as well is act as sort of the mediator
+  sometimes between teams'
+1807: 'Mike McQuade: that sit, you know, quote unquote below them in the org. So sometimes
+  there''s like different'
+1812: 'Mike McQuade: teams that are, you know, maybe they''re planning projects that
+  overlap and the staff engineer'
+1816: 'Mike McQuade: is helping them sort of find alignment in those projects, or
+  maybe they have a difference'
+1819: 'Mike McQuade: on how something should be implemented in the staff engineer
+  sort of helps them find common ground.'
+1823: 'Mike McQuade: Have you seen that pattern as well? And if so, do you have any
+  thoughts on sort of the,'
+1829: 'Mike McQuade: you know, how staff engineers could be effective in their role?'
+1832: 'Mike McQuade: Well, this is the first one I have to be completely honest and
+  say I haven''t seen that pattern'
+1836: 'Mike McQuade: at all, actually, because we have so the the part of the org
+  I''m in, we have, I guess,'
+1841: 'Mike McQuade: three teams technically that are sort of underneath us, but they
+  have been up.'
+1847: 'Mike McQuade: I mean, a lot of this is down to our director. Our director has
+  done such a good job of building'
+1851: 'Mike McQuade: those teams to feel like they''re one big team and that they''re
+  one, you know,'
+1855: 'Mike McQuade: it''s called the communities organization. So the fact, you know,
+  there''s an obvious'
+1858: 'Mike McQuade: part of them being a community of teams there. But yeah, I think
+  they''ve done that'
+1863: 'Mike McQuade: in such a way that I don''t think I''ve ever seen those teams
+  be kind of oppositional'
+1868: 'Mike McQuade: to each other at all. I feel like I would be the first one to
+  jump in and try and'
+1871: 'Mike McQuade: smooth things over and have people get on okay if that wasn''t
+  the case. But it''s not'
+1877: 'Mike McQuade: something I''ve actually seen myself.'
+1879: 'Mike McQuade: That''s fantastic. In that case, you mentioned a minute ago,
+  OKR. So it sounds like that''s'
+1885: 'Mike McQuade: that''s a process that GitHub uses to sort of set objectives
+  throughout the org.'
+1889: 'Mike McQuade: How do you work with your team to set objectives for sort of
+  your group?'
+1894: 'Mike McQuade: Yeah. So from us, there''s, I guess, different'
+1898: 'Mike McQuade: OKRs come from slightly different directions. So we have, you
+  know, the company-wide'
+1904: 'Mike McQuade: ones and team-wide ones and even kind of in some cases ones that
+  tie directly to kind of'
+1910: 'Mike McQuade: products that were, I guess, products within GitHub itself. Obviously
+  GitHub itself is'
+1915: 'Mike McQuade: one product, but say something like GitHub sponsors, which has
+  been something I''ve spent a lot'
+1920: 'Mike McQuade: of my time working on. So there may well be OKRs that specifically
+  relate to that.'
+1924: 'Mike McQuade: So generally those are kind of someone is the directly responsible
+  individual who is'
+1931: 'Mike McQuade: kind of going to come up with the drafts for them and kind of
+  push the process through'
+1936: 'Mike McQuade: And generally someone''s kind of drafting these up.'
+1939: 'Mike McQuade: And then we tend to have a fairly open discussion, sometimes
+  in meetings,'
+1944: 'Mike McQuade: sometimes in Google Docs, sometimes on pull requests, on markdown
+  files, on kind of what'
+1949: 'Mike McQuade: people think about those, what people think about both the OKRs
+  themselves and how they'
+1953: 'Mike McQuade: kind of map to, I imagine, like most orgs, we tend to have ones
+  where'
+1957: 'Mike McQuade: the CEO has their OKRs. And then as you go down the hierarchy,
+  effectively,'
+1962: 'Mike McQuade: they look like more granular versions of what the company-wide
+  or CEO-wide OKRs are.'
+1971: 'Mike McQuade: So, you know, we''ll have discussion about how much we think
+  they fit and how much'
+1975: 'Mike McQuade: these things are the things that we think are best able to impact
+  those goals.'
+1980: 'Mike McQuade: And then obviously there''s the sort of debate about numbers
+  as well. I forget what our'
+1984: 'Mike McQuade: internal definition is, but it''s along the lines of, you know,
+  you shouldn''t be'
+1989: 'Mike McQuade: unambiguously smashing all the numbers in all your OKRs. If that''s
+  the case,'
+1994: 'Mike McQuade: then it''s a sign that maybe they''re not quite as ambitious
+  as they could be or should be.'
+1998: 'Mike McQuade: But yeah, it''s a fairly, I would say, a pretty collaborative
+  process.'
+2001: 'Mike McQuade: sort of all around. And we try and have it be in such a way that'
+2005: 'Mike McQuade: the most junior engineers in the team are able to have just as
+  much voice and input'
+2010: 'Mike McQuade: on those as folks who have been around for a long time and maybe
+  a bit more senior.'
+2016: 'Mike McQuade: That''s interesting to hear.'
+2018: 'Mike McQuade: Something that occurred to me as we were talking about sort of
+  like cross-functional'
+2022: 'Mike McQuade: partnerships you''re mentioning like a product manager.'
+2025: 'Mike McQuade: I wonder if you could speak to this if like, is it a unique experience
+  working at GitHub'
+2030: 'Mike McQuade: also being an open source project maintainer?'
+2034: 'Mike McQuade: So you''re literally using the product that you''re building.'
+2036: 'Mike McQuade: And I''m curious, does that impact the sort of conversations
+  that you have with your product team?'
+2042: 'Mike McQuade: Yeah. In fact, this is something that came up. We''ve got a book
+  club for the Staff Eng book'
+2050: 'Mike McQuade: happening at the moment. And this is something that came up yesterday,
+  actually,'
+2052: 'Mike McQuade: is that pretty much every engineer at GitHub is able to provide
+  some sort of,'
+2060: 'Mike McQuade: you know, pretty well informed input into the product. Because
+  not, I guess, from outside'
+2064: 'Mike McQuade: the company, you would look at open source as well as being obviously,
+  I guess, in my case,'
+2070: 'Mike McQuade: I was probably using GitHub on a daily basis for three years
+  or so before I ever kind of applied'
+2076: 'Mike McQuade: to join the company, which took me three times instantly. And
+  at the company, your average'
+2081: 'Mike McQuade: engineer is doing the same thing. You know, we have everything
+  on GitHub is on GitHub.'
+2087: 'Mike McQuade: You know, we''ve in probably in the last couple of years, we''ve
+  started using some tools'
+2091: 'Mike McQuade: like kind of Google Docs a little bit more. But certainly when
+  I started, everything was'
+2096: 'Mike McQuade: an issue, was a PR. Like it''s the main default place for information
+  to live on GitHub is on GitHub,'
+2104: 'Mike McQuade: certainly for engineers and people inside the engineering org.
+  And again, similarly, the default way of'
+2111: 'Mike McQuade: doing things on basically every repo is making a pull request
+  and reviewing it that way, even if I''m'
+2117: 'Mike McQuade: updating documentation and it''s an actual typo, like it would
+  be very rare for me to just push'
+2122: 'Mike McQuade: a commit because then you don''t have that almost notification
+  and conversation and stuff like that.'
+2126: 'Mike McQuade: So I think, yeah, as a result, obviously we have a lot of people
+  in the company who are'
+2132: 'Mike McQuade: very, very opinionated, justifiably so, on how the product should
+  work and what things'
+2138: 'Mike McQuade: it does that we like and what things it does that we don''t like.
+  And when it''s kind of interesting because there''s some features, I won''t'
+2144: 'Mike McQuade: point out the specific ones, but there''s some features that
+  we''ve had to build'
+2147: 'Mike McQuade: a few years ago or whatever for various kind of contractual compliance
+  reasons.'
+2154: 'Mike McQuade: And then we have to eventually comply with some of these same
+  standards, particularly post acquisition by Microsoft.'
+2160: 'Mike McQuade: And people find them, some of them really annoying, some of the
+  kind of behaviors which were previously enabled or maybe more socially enforced
+  and are now technically enforced.'
+2173: 'Mike McQuade: And people find it quite annoying. And that''s both a pro and
+  a con, because I guess our management team, their attitude is, which I actually
+  thoroughly agree with, in that like, well, that''s good.'
+2186: 'Mike McQuade: Because probably everyone has to deal with these compliance requirements
+  on GitHub finds it annoying.'
+2190: 'Mike McQuade: So let''s find a way of making the entire product better for
+  people in these cases, rather than saying, okay, well, we''ll just turn this off
+  for us.'
+2200: 'Mike McQuade: So we''ll hack around it or whatever, because we don''t like
+  this feature.'
+2203: 'Mike McQuade: Let''s say, okay, let''s make this feature kind of better. How
+  can we, how can we avoid this, this pain for, for other people?'
+2211: 'Mike McQuade: And yeah, I do think that that, to go back to your original question,
+  Alex, like, I do think that that informs the conversation with product a lot, because
+  when you''re talking about'
+2220: 'Mike McQuade: particularly stuff around pull requests, GitHub actions, GitHub
+  sponsors, whatever, then we have people who have a lot of experience and a lot of
+  opinions.'
+2228: 'Mike McQuade: And it''s, it''s nice to see the vast majority of engineers at
+  the company, I would say, would be pretty comfortable expressing those opinions
+  on how they think the parts of the product that they''re using should be working.'
+2240: 'Mike McQuade: But then on the flip side, there''s the slight, it''s, it''s
+  not unrelated to kind of the open source analogy we were saying'
+2247: 'Mike McQuade: before, where if you''re on the the pull request team at GitHub,
+  or we don''t have a dedicated pull request team, but the team that maintains'
+2255: 'Mike McQuade: pull requests at GitHub, then it''s a little bit more painful
+  for you working on something which people use every day. And people are making probably
+  thousands of pull requests'
+2267: 'Mike McQuade: inside the company, maybe, maybe even tens of thousands on a
+  daily basis. And if you slightly move their cheese, then'
+2275: 'Mike McQuade: you hear about it a lot quicker than someone who''s, you know,
+  working on some enterprise SAML feature or whatever that'
+2282: 'Mike McQuade: you may well end up touching eventually, but it''s not so integral
+  to their workflow. But then again,'
+2289: 'Mike McQuade: the flip side of that is, I think that does make us conservative
+  on the things that are used'
+2294: 'Mike McQuade: very, very heavily, which is probably a good thing because, you
+  know, it''s as much as it''s important'
+2300: 'Mike McQuade: for us, we have millions of users who are using GitHub every
+  day who don''t want their cheese moved either.'
+2306: 'Mike McQuade: So if we''re going to do that, then we have to do it in a good
+  way and for a very good reason,'
+2311: 'Mike McQuade: that they''re going to be eventually happy for.'
+2313: 'Mike McQuade: Earlier, you were talking about how sponsorship and mentoring,
+  it sounded like it was'
+2320: 'Mike McQuade: a part of your role. And I was curious what your approach to
+  sponsoring and mentoring was.'
+2326: 'Mike McQuade: Yeah, great question. So I think my approach is mainly around,
+  I guess, two ways I look at it.'
+2336: 'Mike McQuade: So I try and have, if there''s someone I''m kind of working with
+  at the moment,'
+2341: 'Mike McQuade: relatively focused weekly meeting where it''s just one on one
+  with just me and them'
+2347: 'Mike McQuade: to try and I guess almost work with them in a sort of manager
+  like relationship to talk about'
+2353: 'Mike McQuade: whatever their goals are and see what we can do to work towards
+  that on a given week.'
+2359: 'Mike McQuade: I actually end up doing a lot of pairing just because time zones
+  mainly because my team is mainly in mid and west coast of the US and I''m in the
+  UK. So I don''t have a ton of time zone overlap with people.'
+2372: 'Mike McQuade: But what I try and do is I try and have that chat for sort of
+  focus time and then encourage them to sort of think about what they''re going to
+  bring to me and bring things to me to for throughout the week, but then also try
+  and stalk them a little bit as well. So I try and keep an eye on what they''re up
+  to.'
+2388: 'Mike McQuade: Try and jump in and help them out if I can try and just generally
+  support them wherever I can.'
+2393: 'Mike McQuade: And then the big part of the role, I think, as well, has been
+  getting people towards promotion. So I most of the people I''ve been mentoring have
+  been people who are on the cusp of moving from one level to another, maybe becoming
+  a senior engineer or becoming a staff engineer, for example. And I''m kind of either
+  they''ve been pointing to me or I''ve been pointing to them.'
+2410: 'Mike McQuade: So that we can kind of work together on that kind of process.
+  So hopefully they can get promoted. And yeah, I''m sure as those of you who''ve
+  worked for big companies will know, you know, a certain amount of that is here''s
+  how to become a better engineer. And a certain amount of that is like, okay, here''s
+  how you need to play the game in some ways. If you want to kind of get through that
+  promotion process and get promoted.'
+2415: 'Mike McQuade: The other side of the mentorship. The other side of the mentorship
+  equation for me as well is when those people are hopefully trying to get promoted.'
+2421: 'Mike McQuade: So that we can kind of work together on that kind of process.
+  So hopefully they can get promoted.'
+2424: 'Mike McQuade: And yeah, I start, I''m sure as those of you who''ve known worked
+  for big companies will know, you know, a certain amount of that is here''s how to
+  become a better engineer. And a certain amount of that is like, okay, here''s how
+  you need to play the game in some ways, if you want to kind of get through that
+  that promotion process and get promoted.'
+2440: 'Mike McQuade: The other side of the mentorship equation for me as well is when
+  those people are hopefully going up for promotion, then we have obviously a relatively
+  big company formal process for making that happen. And hopefully at that stage as
+  well, like I''ve worked with them enough and I''ve given them enough feedback and
+  suggest that what they have to do that they''ve actually done that. And I''ve seen
+  them do that. And then I can go and actively advocate for them as part of the promotion
+  process as well.'
+2468: 'Mike McQuade: And I think particularly the higher level people are coming,
+  then we value obviously staff engineers feedback on someone who''s getting it promoted
+  to a staff engineer more than we might value a junior engineers feedback or sorry,
+  a more junior engineer. We don''t technically have junior engineers.'
+2488: 'Mike McQuade: So I think that''s the way I''ve gone about mentorship myself,
+  but it''s something that I''m relatively new to, I guess, the formal process of
+  doing it.'
+2497: 'Mike McQuade: I''ve informally done outside of work mentorship for a long time
+  through, you know, Google Summer of Code and homebrew maintainers and all these
+  types of folks. But yeah, the more formal process is slightly newer to me. So I''m
+  sure I still have a lot to learn there as well.'
+2512: 'Mike McQuade: Is there, you mentioned sort of like the folks that you mentor
+  and it sounds like they''re not necessarily folks that are on your team. So I''m
+  curious if there''s a process that you use for sort of choosing the folks that you
+  work with.'
+2523: 'Mike McQuade: Yeah. So right now there''s like everyone until very recently
+  has been people within my org. So I''m generally happy to sort of do like one offs
+  with anyone else.'
+2536: 'Mike McQuade: But I generally try and restrict my recurring meetings with people
+  outside my org just because it''s easy to get a little bit overwhelmed.'
+2545: 'Mike McQuade: Is it folks that come to you or their managers come to you or
+  you reach out to them or sort of how does that work?'
+2549: 'Mike McQuade: Yeah. So the mentors within my team, it''s been, yeah, like it''s
+  been a sort of discussion sort of mutual between their managers and me. And then
+  I go and offer them, you know, no one''s ever forced to kind of take mentorship,
+  but I can offer them and say, hey, like I can help you out in this way.'
+2569: 'Mike McQuade: And something I found helpful in that way as well, because sometimes
+  people can be a little bit not resistant, but not from because they don''t want
+  to be helped.'
+2579: 'Mike McQuade: They''re resistant because they''re like, oh, but you''re important
+  and your time is so valuable. I don''t want to waste your time helping me. And then
+  what I found this helpful to point out is say like, well, I guess, particularly
+  when I was going for the staff promotion, I was like, well, I need to demonstrate
+  my ability to successfully mentor people to become senior engineers.'
+2596: 'Mike McQuade: So you''re actually doing me a favor. If you, if you let me do
+  this and you let me work with you and if you get promoted, that''s going to reflect
+  well on me and help me get promoted as well. So it''s a win-win here.'
+2607: 'Mike McQuade: And I find like whenever I''ve sold it like that, people are
+  dramatically more willing to, to sort of engage with the process once they see that
+  it''s benefiting me as well.'
+2615: 'Mike McQuade: Right, right. That makes sense.'
+2617: 'Mike McQuade: But yeah, but I have kind of taken on people like outside of
+  my org as well. And I guess in those cases, I''m sort of looking for,'
+2626: 'Mike McQuade: I guess almost like what I was saying with the code stuff before,
+  like why me? Like what is it specific about me that seems to kind of provide value
+  to that person?'
+2635: 'Mike McQuade: And then, you know, the one person who I''m mentoring in that
+  way right now, I guess the answer is I have a preexisting relationship with them.'
+2642: 'Mike McQuade: I referred them to kind of join GitHub and they sort of will
+  probably speak a bit more candidly to me.'
+2649: 'Mike McQuade: Um, and also perhaps accept more candor in return than someone
+  who, you know, they''ve not, because they''ve not been at the company a super long
+  time.'
+2657: 'Mike McQuade: Um, and they maybe haven''t quite built up that kind of trust
+  and relationship with, with other people.'
+2662: 'Mike McQuade: But I guess for me, all mentoring is a, or has been at least
+  like a, a relatively short term thing.'
+2669: 'Mike McQuade: So I''m like everyone I''m sort of mentoring, I''m sort of trying
+  to reevaluate every like six months.'
+2674: 'Mike McQuade: So they still getting a lot of value out of this.'
+2676: 'Mike McQuade: And if they''re not, then can sort of offer them either to just
+  do it less regularly, you know, maybe go from weekly to fortnightly or monthly or
+  whatever.'
+2685: 'Mike McQuade: Or you can say, okay, well, let''s do this one offs when you
+  need it.'
+2689: 'Mike McQuade: Or, you know, if they feel like they really still need it, then
+  we can kind of continue to do that.'
+2694: 'Mike McQuade: But I''m trying to make sure, you know, get that balance of providing
+  the most value to whoever I can provide it to.'
+2699: 'Mike McQuade: Of course.'
+2701: 'Mike McQuade: So we''re almost at time.'
+2703: 'Mike McQuade: I have two more questions I want to cover.'
+2705: 'Mike McQuade: So maybe lightning round.'
+2706: 'Mike McQuade: What are some resources, books, blogs, people, et cetera, that
+  you''ve learned from and that have sort of helped you in your, in your journey as
+  a staff engineer?'
+2713: 'Mike McQuade: Yeah.'
+2714: 'Mike McQuade: So I guess the main one would be relatively obvious, like the
+  staff engineer, like staffenge.com site.'
+2721: 'Mike McQuade: I mean, I would say for me, that''s been 90% of my sort of thinking
+  around this stuff has been that.'
+2728: 'Mike McQuade: And then beyond that, it''s been just probably individual conversations
+  with people in and outside the company about how they do things and how they work
+  and stuff like that.'
+2738: 'Mike McQuade: But I guess as we touched on before as well, for me, another
+  big part of it has been the, you know, open source experience and also perhaps the
+  sort of the mentorship side of open source as well.'
+2748: 'Mike McQuade: Stuff like programs like major league hacking and Google Summer
+  of Code and outreaching and things like that, where you can sort of have a more,
+  certainly on the mentorship side, a more formal sort of mentorship relationship
+  with someone for a short time period.'
+2762: 'Mike McQuade: I think that''s been really useful in sort of teaching me some
+  of these skills too.'
+2766: 'Mike McQuade: Cool.'
+2767: 'Mike McQuade: So our last question, hopefully this is a fun question.'
+2771: 'Mike McQuade: And we''ve asked everyone, you know, how much time do you spend
+  coding still?'
+2775: 'Mike McQuade: I don''t know.'
+2776: 'Mike McQuade: I would say maybe up to, on a good week, probably up to about
+  50, 60% of my time.'
+2784: 'Mike McQuade: And on a bad week, maybe like 20% of my time.'
+2788: 'Mike McQuade: I think for me, the nice fallback is that I can always find code
+  to justify writing on homebrew.'
+2794: 'Mike McQuade: So even if I know I can''t justify any like GitHub code right
+  now, I know that this homebrew''s got a backlog that''s longer than anything I''ve
+  ever seen in my life.'
+2806: 'Mike McQuade: So I can always pick something up, work on something and, you
+  know, ship that in quite a satisfying way, even if I can''t necessarily do that
+  with my work stuff.'
+2815: 'Mike McQuade: Cool.'
+2816: 'Mike McQuade: Well, that''s a pretty good, pretty good outlet to have.'
+2819: 'Mike McQuade: Yeah, it''s good.'
+2821: 'Mike McQuade: I like it.'
+2822: 'Mike McQuade: Cool.'
+2824: 'Mike McQuade: Thanks so much for taking the time.'
+2825: 'Mike McQuade: It''s really been a pleasure.'
+2826: 'Mike McQuade: Yeah.'
+2827: 'Mike McQuade: Pleasure guys.'
+2828: 'Mike McQuade: This was really fun to talk.'
+2829: 'Mike McQuade: That''s it.'
+2832: 'Mike McQuade: Thanks so much for listening to Staff Inge.'
+2834: 'Mike McQuade: If you enjoyed today''s show, please consider adding a review
+  on iTunes, Spotify or your podcatcher of choice.'
+2839: 'Mike McQuade: It helps others find the show.'
+2840: 'Mike McQuade: It is a really useful signal to us that folks are finding value
+  in this so that we keep doing it.'
+2844: 'Mike McQuade: You can find the notes from today''s episode at our website,
+  podcast.staffing.com.'
+2849: 'Mike McQuade: The website also has our contact info.'
+2851: 'Mike McQuade: Please don''t be shy.'

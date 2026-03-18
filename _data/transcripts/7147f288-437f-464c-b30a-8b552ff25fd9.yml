@@ -1,0 +1,651 @@
+---
+0: Hey, Neha, how are you?
+1: I'm good.
+2: Hey, Mike, how are you?
+3: Yeah, doing great, thanks.
+5: Yeah, so another week, another podcast.
+9: Since the last one, I remember Neha and I had talked about having some sort of
+  management GitHub repo thing a few months ago.
+19: So we thought a good starting point for that could be around just building some
+  notes on the podcast.
+26: And given that we've both talked about AI already, like I leaned on some AI fairly
+  heavily to kind of generate a first version of this.
+32: So at gethub.com slash minimum-viable-management slash minimum-viable-management,
+  or if you find like the website for this podcast, then it's linked from there as
+  well.
+43: We've just got like a little GitHub repository with topics kind of broken down
+  and issues are open and stuff like that.
+50: So you can submit suggestions for additional topics to be added in there or from
+  the podcast.
+54: And then basically each week, I will update that based on the transcript.
+57: Again, maybe some AI learnings there that essentially what I do is I use that
+  to generate a bunch of stuff.
+62: And then I read it through to make sure I agree with it all.
+65: And then I change the bits I don't agree with so that they actually reflect my
+  understanding and reality and whatever.
+72: Well, tactically speaking, right, like I think what's really interesting and helpful
+  about this repo is it's got these like tidbits about our shared opinions on management
+  or like whatever the topics that we covered in the podcast.
+85: You can kind of see like a different file for each one.
+87: And so it gives you a very easy launching point to like have conversations with
+  your teams, to have conversations with each other, or even open up a pull request
+  or an issue to say, here's something I have more of a question on and we can interact
+  with you there.
+101: Either async or we'll bring it up in the next podcast.
+103: So it's like it's a good placeholder for a conversation if you want to have it
+  with us or with each other.
+109: You don't have to have it with us.
+110: So, yeah.
+111: And also like us leaning into some of the values we talked about on the podcast
+  and trying to put it into practice in real life and all that as well.
+118: Yeah.
+119: So onto the first like topic of the week.
+121: So, Neha, like something I thought you were really good at GitHub and I guess
+  I've experienced at kind of jobs more recently is how you can build psychological
+  safety in frightened teams.
+135: If you've got an engineering team who justifiably or unjustifiably is like felt
+  worried, maybe they've had some bad management, maybe they've had people leave the
+  company, maybe they've had people be fired or pipped or whatever it may be.
+147: Like, how do you make those people feel safe so they could do work, so they can
+  do good work and basically not feel frightened anymore and be effective?
+157: So, first of all, if there is like a team that's like not psychologically safe,
+  I have to be able to recognize the signs.
+165: It's not that hard, right?
+166: Like you go and you have a meeting, you ask a question, no one answers, right?
+169: You go and you post something in Slack, no one responds, right?
+172: And then if you really want to take it the next level, you like say something
+  that's like pretty much wrong and then no one corrects you, right?
+181: Like not a psychologically safe team.
+183: So it's important for me to kind of understand the tangles of how we got there.
+189: Chances are it's not just like one thing that got us there.
+193: It's like a multitude of things.
+195: And so I feel like I have this like ball of yarn that I'm like trying to figure
+  out the different pieces to say if I can see if I can untangle different things.
+203: And it's like different every time.
+204: But things that help across the board are stability.
+209: So I think like especially if we took the example of AI right now, AI is something
+  where like things are constantly coming in.
+217: There's change that's constantly happening.
+218: Companies are constantly adjusting.
+220: There's a lot of competition.
+221: This is all outside of our control.
+224: And so if there is a lot of change that's happening and the team doesn't feel
+  safe, I need to provide a place of safety.
+232: I need to give them something to start with and build a foundation on so we can
+  get to psychological safety and that stability and consistency.
+240: As a leader, I can't tell people like, I don't know, just trust me.
+244: Like that doesn't fucking work, right?
+245: And not only does it not work, but like if you tell people to like trust me by
+  default, they're going to get extremely pissed off.
+252: So I need to provide stability.
+255: And I usually do that if I'm coming into a brand new team.
+258: It's like, okay, cool.
+259: I'm going to like go and put myself out there and like put my values out there
+  and then find a way to prove the consistency in what I say with what I do.
+268: And I have to tie the two things together.
+270: That's usually with comps, right?
+271: So I like I'll post weekly and say, here's what I learned on the team.
+275: Here are my biggest questions.
+276: Thank you to these people who helped me, right?
+279: And so I'm trying to show people, okay, cool.
+281: I'm observing.
+282: I'm thinking.
+283: I'm talking to you.
+284: And you're seeing a reflection of my values that I've told you up front.
+290: So that's like, that's not even going to fix the psychological safety.
+293: It's just going to give a foundation to build that trust on, right?
+297: And then the next most important thing is to make people feel comfortable with
+  talking and talking back and like having conversation, right?
+306: And so depending on how bad it is, right, I could just like have if there's anyone
+  who's willing to disagree with me, I handle it with grace.
+315: I handle it openly.
+316: And I like show that the argument can get us to a better place.
+321: I'm willing to compromise.
+322: I can do something about it.
+324: But if that's like not possible, then I will find one person in private who has
+  been willing to argue with me in private and say, would you be willing to reenact
+  this argument in public with me?
+336: And so that's like a subversive technique.
+337: But it's like, look, I think a lot of conversations that happen in DMs could
+  happen in the open and like everyone would have benefit from them.
+343: Like I need to show people that they are safe with having hard conversations.
+349: And if they only do it in DMs, then only one person has changed their mind.
+353: So I need to find people who are willing to kind of do that in public and like
+  maybe let more people come in.
+359: And like anyone who contributes, I'm going to go DM them and say, thank you so
+  much for putting yourself out there.
+364: I know how hard that was, right?
+366: But this is really important.
+367: This is what I want.
+368: I want a safer team.
+369: I want to have good conversations.
+371: And so thank you so much for contributing to that, right?
+373: I'm putting my intentions out there.
+375: I'm telling them what I want.
+376: I'm telling them why.
+378: And then I'm trying to respond gracefully.
+380: I'm not perfect, right?
+381: Anyone who like makes me feel stupid, of course, I'm going to get like up in
+  my feels.
+385: But I'm a leader.
+387: I need to put that aside.
+388: I need to go for a walk and then I need to come back and then I need to respond
+  with grace.
+391: What about you?
+393: Yeah, I really like a lot of those ideas.
+395: Like I think particularly the one of like reenacting a private argument in public.
+400: We've done that before.
+401: Yeah.
+402: Yeah, we've done that before.
+403: But I guess I never thought of putting myself on the other side of that.
+406: And I like that.
+407: I also liked, I guess, the parts of that I've leaned into being around, I guess,
+  like public, private stuff.
+416: I feel like some of that depends on like the culture because some cultures are
+  just like everything defaults to being like very, very private.
+423: So the one I try to get is like a starting point is like, again, for example,
+  like everything was pretty public by default.
+430: Like, okay, there was stuff in DMs and private channels, but like people were
+  not that afraid to have arguments in public.
+435: Whereas that's not always universal.
+437: So I guess like at least like a middle ground I try and get is I and I try and
+  push other like senior people and leaders and whatever to be like, look, at least
+  start saying all the nice things in public.
+448: Like when you send me a DM saying like this person on your team did a great job
+  on X, I'm like, cool.
+454: Now go to their team channel and then say that there so they can see in front
+  of everyone else.
+460: It's like, oh, great job.
+462: And, and again, maybe like a reverse of that is similarly, like if you want to
+  chew them out about something like, well, I mean, obviously ideally don't, but like
+  if you need to have a hard conversation with that person and you default to doing
+  that publicly, maybe depending on where the culture is at right now, maybe that's
+  a thing to do privately.
+480: Right. Like maybe you need to, to do that.
+482: I also think again, like something I've maybe found is like sometimes again,
+  doing that through the org chart.
+490: Like it's funny because again, like often there's kind of, you know, you, you
+  know me again, but I like hated bureaucracy and like being overly deferential to
+  the org chart and whatever.
+499: But again, I think like sometimes like the trust by default stuff you said earlier,
+  I think is a big thing as well.
+505: Right. Because I think when you're asked to do that, like by someone who's just
+  got there and they're more senior than you and they're better paid than you and
+  all this type of stuff, then you can, a lot of people can just be a bit like, well,
+  fuck you.
+518: Right. Like it's easy for you to say that. Cause that would make your life and
+  job very easy. Like, so of course. Right. But no, I don't trust you. Who are you?
+  Weird new person. Right.
+529: And I think like the variation of that can be like, well, if you don't trust
+  me, go tell your manager. And if you don't trust your manager, go tell HR, but like
+  start with just finding someone you can trust that you can tell some of this to,
+  because if you can't tell anyone, or if you just, I guess we talked about this previously.
+547: Like if you just want to complain to people on your team, that's fine, but it
+  may well be that none of those people can do anything to help. Right.
+553: Well, okay. So I have a question for you because like you are someone who is,
+  you know, known when we work together as like very forward with your opinions and
+  very like not afraid to speak your mind.
+566: And yet you were also someone who promoted psychological safety. And so my question
+  for you is like, how do you balance the two? Right. Like I think it's, I think a
+  lot of people think that in order to promote psychological safety, you have to be
+  like very soft and very compromising and like decision by committee and all of that
+  stuff.
+587: And like, you've taken the opposite approach and you've been very successful
+  at it. So like, how do you balance those two things?
+592: Yeah. Uh, with difficulty, but I guess what I've found is what, what I found
+  helpful is the idea of being like, okay, like how much am I willing to compromise
+  on something?
+605: So like, I guess the different extremes you have on one extreme, someone who
+  just says whatever they think, whatever pops into their heads, regardless of kind
+  of human feelings or consequences or whatever.
+616: Right. Like, and they're just like, well, you know, it needs to be said it's
+  true, whatever. Right.
+622: And then at the other end of the spectrum, you have someone who's like, well,
+  this person, my team should probably hear some difficult feedback, but they're going
+  to feel bad and I don't want to hurt their feelings.
+631: So I'm not going to give them the feedback. Right. And so to me, like what it's
+  about, it's being like, okay, what needs to be said first? Like what needs to happen?
+  And does it need to be said? Right. It might be that I'm like, you know, like, no,
+  there's just been a semicolon there, but does it matter? Like, no, probably not.
+647: And also like, maybe I've been pretty harsh on this person recently. Like, can
+  I hold back on this thing? Okay. But if it does need to be said that I'm like, how
+  can I be as nice as possible about it? Right.
+659: And how can I do that in a way that kind of balances everyone's feelings and
+  emotions, but also like time. Right. Because again, like there's a bunch of stuff.
+  Sometimes it's like, okay, ideally I jump on a Zoom call and we talk about your
+  dog for 15 minutes before I deliver this, but like that doesn't scale. Right.
+675: No.
+677: And I think that's the thing, just trying to be like that. And also trying to
+  just not be a hypocrite about it. Right. Like we've got a saying in Scotland, we
+  talk about people who can dish it, but can't take it.
+688: Yeah.
+689: And we've all met those people, right. Who want to give the tough feedback, but
+  then when it's given back, they're like, how dare you? Like, and I think that's
+  the thing. Like some of that I find just like doing a bunch of, you know, not getting
+  too squishy, like work on myself and therapy and whatever.
+705: So that sometimes when someone says something, I can be like, wow, that makes
+  me feel really bad. But being like, well, it actually makes me feel really bad for
+  reasons completely unrelated to this person at work. So I'm going to suck that up.
+  I'm going to think about it later.
+717: And right now I'm going to say, you know, thanks for the question. Even if the
+  question makes me feel crap and makes me look shit, because that's how we need to,
+  you know, because that's what I would want from them. So I need to be able to respond
+  in kind.
+728: I mean, so I heard two themes from you, like one is like pick your battles. And
+  then the other one is a role model responding to feedback really well. I think like
+  the other thing that I've personally observed for you is that like you, and I try
+  to do this as well.
+744: Giving constructive feedback is an act of love, right? Like it flattering people
+  all the time, exclusive, like, right. If it's extremely psychologically unsafe,
+  you have to like go with positive publicly and like constructive privately.
+760: And like the goal is to eventually get to a point where we can do both openly,
+  right. But avoiding the hard conversations is toxic, right. And so and I think that
+  the way that you balance it, that I've observed you balance it personally, is that
+  you're willing to give that constructive feedback, you're willing to take it, and
+  then you're in the trenches, right? Like, I, I think what we're skirting around
+  is the people who always give opinions about constructive feedback or negative feedback,
+  to be honest.
+790: Who aren't in the trenches, who aren't in the trenches. They're not writing code.
+  They're like coming in and they don't understand what's going on. You do your research,
+  you are like opening peers alongside them, right. And then it's a lot easier to
+  build that trusting relationship. And I think for you, you're choosing almost like
+  the harder path, but the more correct path along being like, okay, cool. I know
+  that I have to fix this area. I need to turn the ship around. So I'm going to have
+  to go get in the trenches. I'm going to have to build that trust with other people
+  to the point
+820: that I can start helping shape them up and I can start improving things. Because
+  if I just come in overnight, and this is the same thing with leadership or a principal
+  engineer or anything, right? You just come in and you're like, everything you're
+  doing is wrong. Ain't nobody want to hear that right now, right? Like, who are you
+  to come in and say that? Even for me as a leader, I have to figure out a few things
+  that I can improve and say like, let me make your life better before I make your
+  life temporarily difficult by telling you that you need to change something, right?
+  Because if you just tell people that they need to change everything, it's all this
+  work.
+850: Right. Like when you get to like VP, CTO, et cetera, no one is going to bother
+  building trust with you and doing all that shit. Like you have to, that's what the
+  money is for. You have to take that right away. And people might come in and they
+  might tell you everything that's going wrong. But when it comes to like managing
+  directors, managing managers, managing ICs, like you have to do a little bit more
+  work because they're actually writing the code that like makes the company run.
+  So you have to do a little bit more work, right?
+873: Yeah. And I think that's the thing that you touched upon that I really like with
+  that as well is like the idea of like effort, right? Again, like a principle I've
+  sort of taken from open source, which is maybe a little bit contentious, is like
+  in open source, this is saying lesser nowadays, but almost like the person that
+  does the work decides, right?
+888: So don't try to either like micromanage or on the flip side, I think it can go
+  in a helpful way where if you're saying like, Hey, this thing needs to change or
+  you need to change or whatever.
+898: And the person's like, I don't know what to do. I don't know how to do that.
+  Like, can you help me? Then in my mind, any almost like feedback like that should
+  come with the assumption that if that person says I need help, you're going to say,
+  cool, like I, in giving you this feedback, I signed up to help you do this. Right.
+  And it might be that you can't do all the work. It might be that that just means
+  like you need to zoom a little bit closer in.
+922: It might be that you collaborate on the work together, whatever it may be. But
+  I think, again, I think that that's something I found kind of helps build trust,
+  right? Is when you're able to, when people are able to see that you're not doing,
+  like just dropping in, here's some opinions I have, and then bye-bye, I'll see you
+  in a month and give you more opinions. And between now and then I'm going to completely
+  ignore what you're doing, you know?
+947: Yeah, I think that this gets really hard in remote environments. Because like,
+  if you're in person, you can kind of pick up on all these context clues to like,
+  see that this person's a real human. And like, they're actually interested and willing
+  to help you out. But then in a remote setting, you all you have are your messages.
+  And especially if you're in different time zones, you wake up, someone's like written
+  a very long code review comment. And then they're already asleep by the time you're
+  reading it.
+974: And so it gets very difficult. But I feel like I, you know, having worked at
+  GitHub, where it was very async, and it was very remote, I've gotten to see a few
+  things that like allow you to show that humanity. And like one is like taking extra
+  time to explain what you're coming from, where, why. And so that means longer messages
+  to read when you wake up in the morning, and you have to like get used to that.
+  But it's like out of care, and it's out of love. And then I think the other one
+  you kind of mentioned before, it depends on the time and place, and it doesn't always
+  scale. But you have to take time to get to know people.
+1004: And you have to take time to show people who you are, right. As a leader, right,
+  when I was managing a team of 140, and then it kept on growing, I can't get to know
+  everyone individually. But I can put myself out there, I can put my values out there.
+  And it's like very important to have those AMAs where anyone can ask any question,
+  and you can even help them find a question that they want.
+1026: That shows my humanity that shows my interpretation. And it's like very hard
+  to be human and leadership. I've been told that I do that really well. But it's
+  not easy at all. Every single time I'm writing something, I'm trying to think about
+  how to make it less jargony and more human and more like, I have filters in my head,
+  right? Is it in line with my values? Is this something that like people can kind
+  of understand where I'm coming from and why?
+1055: And have I taken the time to like, truly articulate how I feel? Or am I just
+  reacting to something? And that all takes extra time and effort. But I think it's
+  worthwhile, because then people will actually trust you.
+1065: Yeah, and I think that's, I think the being true to your values part is important.
+  Something I've seen a lot of people do is they try and almost like role play who
+  they think they should be. And they maybe role play a kind of like, kinder, squishier,
+  empathetic person. And I don't think that necessarily works very well. Like, you
+  know, being British, like, you know, where we learn at a young age to get good at
+  apologizing, because it's so common in the culture here.
+1091: But I also think like that, probably provided a helpful counterbalance is that
+  like, I'm sure, equally at GitHub, you probably saw me being very direct with a
+  lot of people at the times, but also, you probably saw me apologize to a lot of
+  people all the time.
+1101: Because, you know, in my mind, I'm like, that's, that's the flip side of this
+  stuff. And like, also, but this is the thing, though, is like, I think you need
+  to be genuine. And I think part of, ironically, I think some people fail at being
+  human leadership, because they're trying really hard to be someone they're not,
+  rather than just being like, I'm going to be who I am.
+1122: And when that, say, upsets people, I'm just going to say, I'm sorry, I upset
+  you, like, and take ownership and responsibility for that. And hopefully, you actually
+  mean it as well. And you do, you are someone who doesn't like upsetting other people.
+  And that I would say that's the case, most of the time, like most people don't want
+  to, if you can get the same outcome, and in one situation, someone is not upset,
+  and the other one, someone is upset.
+1146: I think most people who are not sociopaths are going to pick the version with
+  the same outcome where the person is not upset. And in my mind, like a lot of that's
+  just been learning to get good at apologizing. And also that stuff about, as you
+  said, taking a bit more time for writing, like I remember, I think Keevy, a early
+  GitHub engineer who I worked alongside for a bit, like incredible engineers still
+  find a lot of wisdom in the stuff that she said, which was a GitHub, but she wrote
+  a really early GitHub blog post that was talking about this with pull requests,
+  basically, with just like, how to leave stuff like that.
+1176: Like, emojis in the comments, right? GitHub was very big on their emojis. And
+  just like the difference between saying like, hey, could you change this code, like
+  tomorrow when you get the chance, you know, with no context versus with like a little
+  like praying hands or heart or like fingers crossed or whatever, like it just, it
+  automatically humanizes this stuff a little bit more, right? And I think that type
+  of stuff when you don't have, I guess you mentioned the remote environments, like
+  when you don't have the ability to see the person's face and body language, all
+  this type of stuff.
+1206: You know, I've also just found, you know, listening to people when they say
+  that, right? So I often, my written form, I remember being told by a coworker who
+  liked and respected me that like, you write like an asshole, right? Like you sound
+  like you're angry a lot of the time, right? And I guess I try and improve that with
+  the emojis or whatever. I often will write a message, read it back, and then immediately
+  like go and tap onto the beginning of the message, like something nice.
+1235: Right. But also I think some of it's just like, I guess a concept listeners
+  may or may not be aware of, of like the human read me that I remember you kind of
+  brought in at like a GitHub when we were there. And I brought in every other place
+  I've worked since of just like this idea of like documenting, like, hey, this is
+  the thing I do. People have made me aware of it. I try not to do it, but I do it.
+  If you think I seem like I'm really angry or grumpy with you right now, like, A,
+  I'm probably not.
+1264: And B, if unsure, ask me and I'll tell you. And I promise.
+1267: And this is how you can call me out on it, right? So like, yeah. And if you
+  say this phrase, totally fine. And I'll respond, well, promise. Right?
+1275: Yeah. So to zoom out a little bit, like, so the kind of human read me kind of
+  concept, like, what is it? Why did you like it and bring it in at GitHub? And tell
+  someone who may not have heard of that before.
+1287: Yeah. So the human read me or we call the human user guide, the hug, which I
+  didn't invent, like, I can have at all. I mean, like, it's a well known concept.
+  And I saw a lot of other people start to use it as well. But what I tried to do
+  for our department, right? When I was director was, okay, cool. Let's have everyone
+  write one.
+1306: And especially I wanted me, my leadership team, and the highest level engineers
+  to write them.
+1314: And so it was like, there was a few reasons why I did that. One, it was like,
+  we had come together and formed a team during COVID. And so even though GitHub is
+  a remote company, we were still used to meeting each other like once a year in person.
+  And like, we lost that. And so that was like very critical part of us getting to
+  know each other.
+1333: So I needed to find a different way for people to get to know each other. And
+  like people were getting tired of like Zooms and hangouts and stuff. They weren't
+  having like the deep level conversations that they needed to. Number two was that
+  we grew from 14 to 47 in two and a half years. So every single time someone new
+  came in, they got the chance to go and read the human user guides of the people
+  on their team that they'd be working with.
+1357: And on our team, we switched what we were doing pretty frequently. And so you
+  might be paired with different people that you never work with. And I wanted people
+  to like have this self-serve repository to be like, here's who you're going to work
+  with. Let me like learn a little bit of a little bit about them. And it included
+  just as you said, like, here's something that I keep on doing that I'm working on.
+  Here's like, how you can give me feedback. Here's how I like to give feedback. Right.
+1384: And so it's like all of these things are like extra helpful tidbits. Right.
+  And so I just wanted people to have a way to self-serve and feel like they have
+  a leg up instead of there being a disadvantage to newer people on the team versus
+  older people. People have been on the team for a long time. Like, I want to level
+  the playing field. And I like want it so that the barrier to entry, the barrier
+  to like have good productive conversations is lowered. So that was very strategic.
+1412: And I didn't even, you know, I didn't even introduce it. Honestly, I gave it
+  to an IC individual who's kind of interested and I had them champion it. And I was
+  coaching them from the back to be like, okay, cool. Here's how you can introduce
+  it. Here's how you can like own this. And like, if you can accomplish this change
+  in our culture, we will give you credit in terms of like a higher rating at the
+  end of the year. Right. But it's not introducing it. It has to be the impact. Right.
+1435: Yeah. I like the whole like round trip of that as well, where, you know, you're
+  able to meta use human rebates to kind of build team cohesion by getting someone
+  else to do it as well.
+1447: But it feels like that, that seems back to what you were saying earlier about
+  like working effectively across time zones and remotely and all this type of stuff
+  where, again, I like to kind of look at a lot of companies that do kind of remote
+  working by the ones or cross time zone working by the ones that were doing it before
+  COVID and the ones that only started after COVID.
+1466: And like a lot of the time, the places that only started after COVID, unless
+  there's some like brand new remote first startup or, and then often maybe even then,
+  are like quite horrible.
+1478: The remote working stuff compared to the companies who did it for a really long
+  time.
+1481: I think like human readme is just an example, but I mean, a wider one I've found
+  is just like writing, right?
+1487: Like it's writing is inherently more helpful when you're cross time zones than
+  having everyone be on a meeting together, right?
+1495: If once you get really big and I guess when get up, you know, there was times
+  where I was on teams when there was people in Australia, Japan, Europe, America,
+  right?
+1505: Like maybe even Hawaii all at the same time.
+1507: And it's basically like, if you try and schedule a meeting, it's a terrible
+  time in the middle of the night for someone is like, that's like guaranteed rights.
+1515: In those cases, it's like, well, does it need to be a meeting?
+1518: Can you not have one?
+1519: And could this be at least the input to the meeting or the output for the meeting?
+1523: Could it be written collaboration that people could kind of deal with at different
+  times and places and whatever?
+1528: And yeah, like, do you have any thoughts for other like, you know, really high
+  value things for cross time zone, remote working, whatever it might be?
+1537: I think that like something that I've been circling my head around, and I don't
+  have a full opinion.
+1543: I'm actually curious what you think is that this is both true for in person
+  and remotely.
+1549: Like if it's all about the work only, that does not make for like a good culture
+  and it does not make for like easy conversations.
+1557: There needs to be an element of like silliness and fun.
+1560: And like I, in my limited experience, I feel like there's a correlation between
+  like making a little bit of time for silliness and having a little bit of fun and
+  like, you know, sharing the bird catcher that you have in your backyard or whatever
+  in a public channel and being able to talk about those things.
+1580: I think that there's a correlation between that and like having teams that like
+  work well together.
+1586: And like, I'm curious because like you've gotten to talk to a lot of different
+  companies over the last like two years.
+1592: Do you see like any sort of correlation between teams that like work well together
+  and like making time for like silliness and fun?
+1598: Yeah, I think, I don't know.
+1599: I guess I've seen different things in different companies and cultures or whatever.
+1603: Like I think even, you know, this might be our first time mentioning it.
+1606: Like people may have noticed that Neha speaks with an American accent and I
+  speak with a somewhat Scottish accent, right?
+1614: Like I wonder in some ways whether this is like more of a US, UK thing or whatever,
+  because I definitely feel like over here, fewer people seem to seem to almost like
+  need to get that social component from their work.
+1629: Because a lot more people get it from spare time and friends and family and
+  whatever, right?
+1634: So I feel like it's less of a thing culturally here.
+1637: But again, I don't know if that's, you know, I've yet to do a randomized control
+  trial, experimenting properly on this stuff.
+1644: Because I think, I guess the flip side is, you know, and I think sometimes GitHub,
+  certain individuals or teams or whatever straight in this direction where people
+  spend hours trying to find the perfect meme to get lots of likes.
+1656: And you sort of social media-fy like the water coolers at work.
+1660: And it's like, where's the, where's the like happy middle ground between then?
+1665: But I guess like a value I've always held highly is like, I guess that of humor
+  and trying to, I mean, again, probably something you saw me do too often at GitHub
+  is even before I was a dad, I was a big fan of the dad jokes.
+1678: And just like making crappy puns all the time about things and not being, you
+  know, unprofessional about it.
+1685: But like, you know, just, I feel like it, humor can be like a social lubricant,
+  right?
+1691: And it makes people get on a little bit better, even if they're just laughing
+  at you, right?
+1695: Like that's another thing, particularly in leadership.
+1697: Like it's fun to sort of, again, not in an unprofessional way, but sometimes
+  just like give people the opportunity to like have a little chuckle when you make
+  a mistake, right?
+1705: Like, and be self-deprecating or whatever it may be.
+1708: I think what it is actually is like not taking yourself too seriously, right?
+1712: Like maybe that's like the fundamental core.
+1715: And so it could be manifested in like being silly or like making jokes or whatever,
+  but it's like not taking yourself too seriously.
+1721: And like that means that like, you know, there's like strong opinions loosely
+  held.
+1726: Like you can laugh about making mistakes together.
+1729: I think that that's like a pretty critical component.
+1731: And like when it comes to being remote, the way that you do that is like usually
+  through the Slack channel or through like some form of writing, right?
+1738: And so I think that might be like a more common piece and like 100%, like I
+  don't think that people should be required to, you know, go to happy hours or to
+  like attend all of these things outside of work, right?
+1753: Like work is work and like pretending that you're a family when in reality you're
+  working for like a capitalistic like corporation, I think is like maybe a false
+  sense of security.
+1765: And so like I never want to over-index on something like that, but it is important
+  just like not to take yourself too seriously.
+1770: Otherwise, that's like, that's a very easy recipe for burnout, right?
+1774: Yeah.
+1775: Yeah, no, I agree with that.
+1777: I like that kind of zoomed out cultural version because I think, I guess particularly
+  in leadership, right?
+1782: Like as you say, the not taking yourself too seriously has a lot of ways of
+  looking at it, right?
+1788: And it naturally implies a certain amount of humility that is generally useful.
+1793: And zoom right back to what we talked about at the beginning helps both psychological
+  safety, make people feel human, all that good stuff.
+1799: So I, Laura Hogan used to be my career coach, still kind of is honestly.
+1802: And I remember like at one point I was just getting into a point where everything
+  was making me upset.
+1806: I'm just like, I was having a pretty bad time at work.
+1809: And like she had me write down on a sticky note, have fun with it.
+1813: And like I had that on my bottom right corner of my monitor for at least a year.
+1820: I'm just like trying to have more fun with things.
+1822: Interestingly, like, you know, sometimes I have like petty antics and it's like,
+  okay, cool.
+1827: I have to figure out like one that's constructive, one that's not, but it's
+  okay to have a little bit more fun at work.
+1831: Right. And that got me out of just like hating everything and being a negative,
+  awful person to the people around me to like becoming okay and like finding a lightness
+  about like things that work.
+1843: And if I'm going to create psychological safety, I need to be in a place where
+  I'm good.
+1848: Right. Like that comes back to like what you were saying about therapy.
+1850: And it also comes back to like what we were saying about knowing what your values
+  are.
+1853: If you don't know what your values are, which it's okay to learn more and more
+  about those over time.
+1858: But if you don't know what your values are, you have no core to start like being
+  human in front of other people and like building that foundation for other people.
+1864: You need to know who you are.
+1865: Right. And like that's, that's a lifelong journey.
+1869: But if you don't take the time for it, then you can't build a foundation.
+1873: A hundred percent. I wouldn't agree more.
+1875: Yeah, we had to, I guess we're getting towards the end, but we had another kind
+  of personal YouTube ask us a question.
+1883: Like we, we had to go at like paraphrasing it for brevity beforehand.
+1887: Like, do you want to give that a go?
+1889: Yeah. So we got a question from Neveni and I kind of rephrased the question
+  to being like, okay, cool.
+1896: As an IC, when and where does it make sense for me to provide my input into
+  influencing decisions at my team or company?
+1902: And do you have any stories or examples that can kind of depict this about like
+  this, this concept of I'm input to an overall decision, but I need to like be very
+  strategic about how I do that.
+1912: Yeah. Like to me, the, I guess from the IC perspective, I think it comes back
+  maybe to what some of what I was saying earlier today, where if you can, if you
+  feel that in giving your input, if the person turned around and was, and your manager
+  or whatever agreed and was like, cool, you help do what you've just said.
+1932: Right. If you feel like that would be exciting or even possible for you to do
+  that, then I think those are the best times to give input, right?
+1941: Like the best situations when I feel like I've been most useful or I've seen
+  others be most useful is when they're, they have the expertise or even sometimes
+  just the enthusiasm to be like, Hey, like, I think I have a way of making this better.
+1954: Let me help do whatever. And I guess, similarly to what we said earlier, I think
+  the times when it doesn't work so well is when you almost just like want to make
+  your voice heard or, you know, I guess the worst examples I've seen have been when
+  people have been told, Oh, for a promotion perspective, you need to make sure you
+  kind of, you know, are giving more input on things.
+1973: So then every time there's like a architectural review or whatever, you're someone
+  who has to give a comment just because you're going to use that to build your promotion.
+1981: Like that's terrible unless you feel like you actually have something to add.
+1984: So I think that's the thing, I guess maybe as a puristic asking yourself if
+  this thing I say, if no one hears this, does it seem a good possibility that this
+  project will be worse or fail or whatever?
+1998: Right. And if you think it's like indifferent to you giving the input, then
+  maybe you don't give it at all.
+2004: What do you think?
+2005: I think that one of my biggest pet thieves is like when we are, you know, in
+  a meeting or something, we're talking about a proposal and then the next four voices
+  are people just saying, I agree.
+2016: And then repeating all the points.
+2017: I'm like, I don't need four summarizers.
+2019: Right. Like that is a huge waste of time.
+2021: It drives me nuts.
+2022: And in fact, in my head, I'm like, all right, this person doesn't have a unique
+  thought.
+2026: Like 100 percent, the question that I think like is really important to ask
+  yourself is, do I have information that isn't being taken into account?
+2034: And like I would for sure optimize for I have information that if we don't take
+  this into account, it's going to get worse.
+2041: I think it's also OK for this to be something that's like positively reinforcing,
+  just like people below you in the org chart, people above you in the org chart are
+  going to repeat things that like they're positively reinforced by.
+2055: But like you can't just be like, good job or like, I agree, like most useless
+  statement ever.
+2061: Right. It has to be like, hey, this is going to help the team because of A,
+  B and C and those A, B and C.
+2067: If that's not something that your manager knows or the room knows, that's new
+  information that's not being taken into account.
+2074: You're informing people. You're helping them make better decisions.
+2077: And so it's like, do I have information that isn't being taken into account?
+2080: Do I have a unique perspective? Right.
+2083: Like maybe everyone who's spoken so far is in leadership.
+2086: You're an IC who's on the team.
+2088: So you're like, hey, from the team's perspective, from me as an individual,
+  this is what I am seeing.
+2093: Right. That's helpful information to be taken into account, especially if it's
+  going to impact the outcome and change it.
+2099: And like, yeah, that's kind of the other part is, is this going to disrupt the
+  flow in a good way or a bad way?
+2104: Right. Like sometimes you have information and like if you provide that information
+  now, we're going to start over, but we might end up in the exact same place.
+2113: The question is, how important is this information? And is it worth starting
+  over? Right.
+2117: And so, of course, as an IC, you're not going to be able to predict all of this.
+2121: Like you're getting used to this. You're getting new. Right.
+2123: And so talking to your manager, talking to a peer and being like, hey, I kind
+  of want to say something.
+2128: Do we think this is going to be helpful? Is a great way to dip your toes in.
+2132: And then I think like the last thing, like a small, if you wanted like a small
+  bite size way to kind of play with this a little bit more.
+2138: Every single time someone in management who I feel like is putting a genuine
+  effort into building trust with the team and doing something that they haven't been
+  doing historically.
+2149: They put out something in writing and I like it. I'm going to message them and
+  I'm going to say, hey, I really liked your post.
+2155: Here's what it made me think about. And like I've observed that other people
+  are talking about these three things.
+2161: And I think it's a positive impact on the team. Right. It's not good post. Right.
+  Fucking useless.
+2166: But like if you can contextualize it, you can help them understand how their
+  actions are impacting the team probably in a way that they want to.
+2174: And they're going to do it again. And like our job is to influence upward as
+  well and train them to customize their words so that the team continues to be productive.
+2187: And like we can all do our best work together. Right. And so you can impact
+  that even just by providing positive feedback in a very strategic way.
+2195: Love it. Awesome. Thank you, Neha.
+2197: Thank you.
+2198: As usual.
+2199: Yeah.
+2200: Always fun.
+2201: Well, thank you everyone who's watched or listened or whatever to this.
+2206: And yeah, we'll see you in the next one.
+2208: If you've got questions, thoughts, comments, put them on the various social
+  platforms or whatever that you might have seen this on.
+2214: Or email me at mike at mikemcquay.com and we can talk about it in another episode.
+2218: Yeah.
+2219: See you.

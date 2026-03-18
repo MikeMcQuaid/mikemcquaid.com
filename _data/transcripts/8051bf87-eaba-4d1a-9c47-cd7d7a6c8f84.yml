@@ -1,0 +1,656 @@
+---
+0: Hello Neha and hello to everyone listening. Apologies, it's been a wee while since
+  our last
+5: podcast. Neha and I both seems to have some form of the plague. If you could hear
+  us discussing
+11: before this podcast, it was basically the exorcist going on. We will try to avoid
+  any
+16: disgusting noises during this podcast, but if any leak out, then our apologies.
+  The AI editing
+23: tool has failed us. How are you today, Neha? A lot better than I was for the last
+  10 days.
+29: Being sick. So I'm just glad we can kind of resume this. It's been a while. So
+  it's good
+35: to see you. Yeah, good to see you too. So yeah, do you want to talk about our
+  topic today?
+39: Yeah. So Sid Shunker gave us a question in our repo. So we've got a repo, you
+  can file issues.
+47: And so we got a really like a plethora of questions and they kind of all revolve
+  around
+52: EMs and directors and how they can collaborate with product and design folks.
+  So this is like
+58: going beyond engineering and how we collaborate better and like what it looks
+  like when it's
+62: good and when it's not. And so I was thinking about how to start. And originally
+  I was like,
+67: oh, what does good look like? But no one cares about what good looks like, right?
+  Let's talk
+71: about the bad stuff. So I think we should talk about like what healthy tension
+  looks like with
+76: product and design. So I'm curious to see here what your thoughts are first.
+80: Yeah. So like, I guess my take, like a lot of things is that the, when people
+  have an idea
+88: of, I don't know what you would call it, toxic positivity or like, oh, if we're
+  all just
+92: sufficiently aligned, then we'll all agree all the time. Like to me, that kind
+  of misrepresents
+99: the likely relationship between engineering and product and design. And in some
+  ways, like,
+104: you know, there's the old stereotype about like sales and engineers, right? And
+  I think
+108: that's a more healthy, maybe extreme example to look at where essentially what
+  makes a salesperson's
+113: life really easy is to just promise the customer whatever you need to, to make
+  the deal happen
+119: and then sign the deal and then go to engineering and be like, hey, here's all
+  the stuff you have
+122: to build. Right. And engineering hates that. But also like what makes engineering
+  life easy
+128: and sales life hard is for engineers to just say, hey, we've decided the room
+  out for the
+132: next five years. It doesn't matter the size of the sale of the customer. We're
+  not building
+136: anything that we don't already think is a good idea. Sorry. Like, right. And
+  I think almost
+141: like acknowledging the stereotype is helpful, even if it's not true, because
+  it's, it represents
+146: that like probably engineering are going to pull in that direction. Probably
+  sales are going
+151: to pull in that direction and that you have to have some sort of healthy, constructive
+155: disagreement and meet in the middle. Right. And it's less the case, I think,
+  but with like
+159: engineering and product and design, there's often the same sort of healthy tension,
+  right?
+164: Like engineering are often thinking about things like tech debt. How can the
+  code be smooth?
+168: How can we all be like developing things faster and better? And how can I have
+  a really elegant
+174: solution that like the code is beautiful and everyone weeps with joy when they
+  sees it?
+179: Like products are again, you know, best case scenario products are thinking directly
+  from the
+183: user's perspective and like, well, you know, this has to be kind of a bit kludgy
+  or require
+188: a lot of codes or not paying down tech debt, as long as the user gets what they
+  want, then
+191: it's great. And then design again, depending on what your designer's background
+  are, that
+195: could be anything from, you know, as long as it works great for the user and
+  their experience
+199: is great, or I guess not naming any companies, but there's been companies who
+  were criticized
+203: recently for as long as it looks really pretty and like marketing copy, like
+  there might even
+209: be printed marks and copy, then great. It doesn't matter if it's like a unusable
+  mess that's buggy
+215: and whatever, right? So I guess that's the extreme version of each position,
+  right?
+220: But like, where, where's the reality? Where's like, what do you actually see
+  happening day to
+226: I think I want to break it down also because it becomes a lot easier if you think
+  about the
+231: tension of the different personas that we're trying to optimize for. So you mentioned
+  two of
+236: them. Well, actually you mentioned all three indirectly. So one is the user and
+  like the
+241: user is the easiest one to think about, right? And so, you know, the user kind
+  of makes the
+245: requests. We do like, uh, you know, usability testing and stuff. And so that
+  kind of comes
+251: back into our, um, backlog and, you know, a user does feast with their eyes first.
+  So it
+259: does need to look good, right? To a certain extent, but then it also needs to
+  work. So that's
+263: like the first one. And that would be great if we just did what the user wanted,
+  but like
+266: we also still have to like stay afloat as a business and we have to make money.
+  And that
+270: is a business. So the business is a persona number two. And that's like what
+  you were saying
+274: around like customer needs and like what actually drives revenue. And like a
+  lot of times that
+279: comes in from sales. The third persona that like, I remember when I worked at
+  Pivotal, uh,
+284: I was working with someone named Eric and he was helping me realize that the
+  third persona
+288: is the technology, right? Um, when, if you really had to split it between like
+  design product
+296: and engineering, which is like not how you're supposed to do it, but if you had
+  to, and everyone
+300: was backed into a corner and they had to rep one persona design would represent
+  the user product
+305: would represent the business. And then engineering would represent the technology.
+  And I do not
+310: believe in siloed roles, but I do believe in making sure that all three of those
+  personas are
+317: represented in a conversation. So I remember when, um, I was working with like
+  a startup that was trying
+326: to build their MVP and they were like, okay, cool. So like, we're going to have
+  it so that you can type
+331: any question in and then it's going to like give a response. Um, and I'm like,
+  okay, well you need to
+337: map that on the other, other side, especially since we don't have AI technology.
+  This was like
+341: literally 10 years ago. Um, you know, and so it'd probably be easier if you already
+  know what the
+347: mappings are to use like a dropdown and they're like, no, no, no, I don't want
+  to use a dropdown.
+352: I want to use like radio buttons or maybe it was vice versa or something. You're
+  like, that's
+356: literally the same thing on the underside, right? Like I literally, that's how
+  you map it and like how you
+360: choose to display it. It doesn't matter. And that's like an engineering perspective,
+  right? You're
+365: thinking about the technology, you're thinking about how it's going to grow.
+  And then you're trying to
+369: make sure that when you're building it, it's going to build in a way that's going
+  to grow with the
+373: business. So you need to be curious about the business. You need to be curious
+  about what the
+378: user needs are. And then you have to figure out how to like build this weird
+  machine in a way that's
+383: like extensible. The other part is that like, just like you said, Mike, if any
+  one of those sides
+391: representing the user, the business or the technology goes too wild, you fall
+  over, right?
+397: Like we've seen it so many times. Well, I mean, like, obviously as engineers,
+  we have like our
+402: chips on our shoulder and we're like, okay, well, we've seen it so many times
+  where people are like,
+405: I don't care. Just build it. Right. And you're like, I can build it. Like I can
+  build it.
+410: Now it's going to fall over afterwards. If you exceed this many users, if you
+  try to optimize for this
+418: many things, then it doesn't work anymore because we have to like architect it
+  differently and it takes
+422: longer. And we're always just talking about like cost and cycle or like scope
+  and time to build.
+429: Right. And you have to have that healthy tension. Right. Because as an engineer,
+  I've over optimized
+436: for wanting to represent the technology. And I need someone to argue back and
+  be like, no, we still
+441: like have a business to run. And you're like, but I want to do this refactor
+  right now. And they're
+444: like, can it wait like two weeks and eventually you should come with up with
+  some sort of compromise.
+449: So tension, good. Arguments, good. But like any one side going too crazy or not
+  being able to resolve
+458: those arguments and then that causing a delay in starting to build something
+  bad. Right. And so I
+465: feel like that's kind of like what I think around tension. And I feel like the
+  biggest telltale phrase
+471: that like drives me nuts is like when someone asks us right as engineers, can't
+  you just X, Y, Z? And
+479: then actually to like come down on the engineering side, our instinct at this
+  point, because we've had
+485: this conversation so many times and we haven't seen it resolved well, is we just
+  say no. And like you
+491: can't just say no. No is like not a rich conversation. That's not a way to resolve
+  tension. And like we need
+497: to be better about like saying no. And like Mike, you and I have had this conversation
+  before. So like
+501: what can you say instead of no? Right. If someone's like, can't you just right.
+  And how do you have
+505: that conversation? Yeah. I remember we talked about this when we've started working
+  together. And I
+509: think it's obviously come up a few times on this podcast. I'm like very good
+  at saying no, but you
+514: know, people don't like to hear it. And also like, I think the important thing
+  is it may be because
+520: you're saying no, because you have assumed that like all of these things are
+  the case,
+525: or you're like based on the current program roadmap or whatever it may be. So
+  yeah, I guess
+530: assumptions are in your head, right? Exactly. So like getting them out there,
+  like even if
+535: the no is there, it's no, but because ABCD, whatever. Right. But also sometimes
+  I guess you
+541: coach me on this of saying like, well, we could do this if we did this or when
+  we do this or unless
+547: we do this or whatever. Right. So like right now, kind of, you know, I'm the
+  person who
+552: maybe owns the roadmap the most of the organization I'm at and product and engineering
+  reporting
+557: to me. And like generally the way I have those conversations now is like, okay,
+  like we have
+562: for our roadmap items, we have customers attached, ARR attached, date attached,
+  right? Like the
+568: dates, the ordering, everything like that is flexible. But if you're saying,
+  okay, we need
+573: this for a 1k ARR customer, right? And it needs to happen tomorrow and it's going
+  to take a month
+579: and that's delaying work that we need in a couple of weeks for like a 300k like
+  ARR customer,
+586: then it's like, it makes it very easy once you almost can just spell it out.
+  And it's kind
+591: of obvious to anyone in the conversation, like why you would do one thing and
+  not the other
+595: or whatever. Right. And so I think that's part of it. It's just like getting
+  more information
+599: out there and discussing it. I also think sometimes it's the power dynamics involved
+  are
+605: interesting because like, I think I remember saying a lot, you know, various
+  previous jobs
+611: is to engineers is when they were like, well, the product engineer, sorry, product
+  manager
+615: told me to do that. And I'd say, well, okay, you look in the org chart between
+  you and the
+619: CEO and tell me where the product engineer is in there. They're not right. So
+  that means
+624: that they are not your boss. They do not get to tell you what to do. It means
+  that you,
+629: they are a peer who you are collaborating with. Right. And even if they're quite
+  a lot more
+634: senior in the product organization than you are in the engineering organization,
+  that's fine.
+638: Like bring it to a more senior engineering leader and it's their job to kind
+  of help you figure
+642: that stuff out. And I think, you know, that can go in both directions, right.
+  Where I, you
+647: sometimes can get a bit of learned helplessness from product or engineering or
+  design, right.
+652: where they're just like, well, this side owns this persona or tech debt or whatever.
+  And I can't
+660: possibly make them do what they don't want to do. So I'm not going to try. Right.
+  Whereas it works way
+666: better if you can just be like, okay, I'm going to state some assumptions. I'm
+  going to try and make
+669: some convincing arguments. I might even kind of escalate or, you know, to use
+  a dirty word,
+675: play politics or whatever to try and get us some movement or navigation on this.
+  Right. Because again,
+680: ideally there is going to be that healthy tension. But if one side just completely
+  capitulates,
+685: then you're actually not doing the best thing probably by the business or the
+  customer or whatever.
+689: If you're not, if either you're a hundred percent advocating for them without
+  enough information
+695: or zero percent advocating for them because like, you know, engineering holds
+  all the keys or whatever it
+698: may be. Yeah. I mean, like I get this, the form that it comes to me as is like
+  product or, um,
+707: engineering. And I, I keep on saying product, I think like design, I'm kind of
+  like including in the
+712: umbrella a little bit, honestly, like we don't, I've, I have not experienced
+  a lot of tension between
+717: engineering and design historically. So usually it's between product and engineering,
+  hence us using them
+722: so much as the example. Um, I usually get it as product saying engineering is
+  being unreasonable.
+727: They're saying no to everything. And they're saying that's impossible. And they're
+  not giving
+731: me anything to work with or vice versa. Engineering is saying product is not
+  listening to me. I'm saying
+737: no. And like, they say build it anyway. And so as a leader, just like you said,
+  Mike, right? Like
+742: they need to bring it to someone that's us, the managers. And so like, first
+  I have to verify,
+747: like, okay, is what engineering is saying, is it true? Are they, is it actually
+  impossible to do what
+754: they need to do? And then I need to look at the levers, right? The levers are
+  always scope, time,
+760: and staffing and quality, right? So it's like, what can we compromise on? And
+  like, my job is to figure
+767: out how to quantify that or phrase that in a way that would get product to consider
+  if it's true,
+774: if the claim is true. Sometimes engineering is padding the numbers. Sometimes
+  engineering is just
+780: like not revealing an assumption that needs to be like brought to surface. And
+  sometimes engineering
+785: has a quality level that they're like, well, the last time we did this, we had
+  200 customers on board
+790: immediately. And it fell over. I'm going to say no, right? And you're like, okay,
+  cool. Well,
+795: I'm going to go work with product and say, let's only roll on 10 customers in
+  the first two months,
+800: and then we can roll on another hundred, right? And so then we can grow with
+  the product, right?
+805: And you're trying to just like stage things in a way that would work in a, in
+  a, in like a logical
+810: progression so that like engineering building time matches like what the demand
+  is. And so my job is to
+818: figure out what the levers are. And just like, as you said, the words are, if,
+  when, unless,
+825: right? These are the conditional words that you use. And then you try to see
+  what like product would be
+829: willing to accept. And ultimately, um, a lot of time, our job is to go back to
+  engineering and say,
+839: I know you hate this. This is where we've landed as a decision. And they're like,
+  but we're building
+844: it wrong. Right. And you're like, well, and I think, um, uh, I don't know if
+  Derek will like me
+851: calling him out, but he uses this phrase. That's what the money is for. And I've
+  kind of like adapted
+855: that and saying like, we'll pay you to build it wrong and then we'll pay you
+  to build it right.
+859: Right. So it's like either way, like ultimately the decision is not in your hands.
+  You've given input
+865: into a decision. And now your job is given the decision that's come without compromising
+  your
+872: work hours and without compromising, like what you're responsible for, because
+  you report to
+877: engineering and the org chart, like build it to the best that you can. And if
+  it doesn't work,
+883: it doesn't work. Right. Like one of the phrases that pivotal was like, you know,
+887: the goal is to build it quickly. Right. So it's like, well, if you're going to
+  do it right,
+890: build it quickly, but also like, sometimes it's better to just go and do it wrong
+  as quickly as
+895: possible and then get the results and then be able to talk about those results
+  and do something about
+899: it afterwards. So I think that like knowing what your levers are, which are scope,
+  time, staffing,
+907: which is like the biggest one that I feel like is generally negotiable to be
+  like,
+910: like we could build it faster if we got this engineer or we could build it faster
+  if like
+914: we increase headcount by a little bit, even just temporarily for two weeks or
+  we reduce and then
+919: we go back and then we go back up and then finally quality. Right. And even quality
+  can be like fewer
+925: customers at a time. Right. Let's like do a beta and then let's do an alpha.
+  Right. And that's where
+930: I've seen like the most leeway where product is like, okay, cool. I don't like
+  it, but we can announce
+936: it as a wait list and we can delay by one week to let people off the wait list.
+  And let's just like
+942: communicate it that way. And it's all about that, like that back and forth and
+  helping them understand
+947: the why and making sure it's fucking believable. Because if you don't do your
+  own research and you
+953: don't actually understand what the numbers are, you're going to look real stupid
+  when you like just take
+957: engineering at their word. And then later you find out that actually it was fine
+  after all that
+962: argument. So, yeah. And then you want to do it as quickly as possible. I think
+  the part of like
+967: taking people at their word or whatever is like all of the best part people,
+  design people, engineering
+973: people, and this might be most controversial for engineering people, are like
+  at least a bit
+978: multifaceted. Right. Like for me, the best of all of those people could, you
+  know, push come to shove,
+986: do at least one, if not maybe two of the other roles to some degree if they had
+  to. Right. Because,
+993: you know, I think to go back to the design example, I guess I feel like a design
+  engineering dispute,
+998: which isn't super common now, but like particularly when back in the era of when,
+  or in some organizations
+1005: where designers worked primarily in like Photoshop instead of Figma. Right.
+  And it was like, okay,
+1010: this UI needs to look exactly pixel perfect how the Photoshop looks. Right.
+  And then, you know,
+1016: you would sometimes get engineers like carving up images and embedding them
+  because that's the only
+1020: way they could get it to make it look the same. Right. Like that was the type
+  of thing where I feel
+1024: like it's, you know, we've moved past that a little bit. Right. But like, I
+  think the other thing with
+1029: being multifaceted is, you know, that word, I always get like a little bit triggered
+  when
+1035: an engineer says something is impossible because unless you're talking about
+  like building a perpetual
+1039: motion machine, right. Or solving time travel. Yeah. And MP problem, whatever.
+  Yeah, exactly. Like
+1044: there are some examples, but it's like most of the time, most of the stuff you're
+  going to be asked to do
+1049: in a software company is not impossible. It might be, as you say, impossible
+  given
+1053: team size constraints, roadmap, whatever you want to call it. Right. But if
+  you say that it's your,
+1060: you know, I haven't read it, but there's like a famous kind of negotiation book
+  that I've heard
+1064: widely recommended called like getting to yes. Right. And it should be the idea
+  of like,
+1068: how can we get to a yes here? If I assume that that person is not an idiot and
+  they're not asking
+1072: this for a completely stupid reason. Right. Then like, let's figure out how
+  we can get them what
+1079: they want. Right. And the other part of this, sometimes it's like with engineers,
+1083: like you don't need to get permission for every single little thing. Right.
+  So if,
+1089: you know, I guess I might mention this before on, on the podcast, but like I
+  had a boss in the past,
+1095: CEO of a consultant's company and he had a great attitude where it was like
+  here. And this was like,
+1100: you know, early C++ days or not early C++, but like, you know, earlier C++ days.
+  So like
+1108: automated testing wasn't quite so massively widespread as it might be now. But
+  his view
+1112: was like, we write automated tests here. Right. And you do not need the customer's
+  permission to
+1116: write an automated test. And if the customer tells you to rush something out
+  the door,
+1120: like he was like, I literally gave you permission to lie to the customer and
+  tell them they are not
+1124: going to do tests because they perceive that it's going to be quicker. And then
+  just write the tests
+1129: anyway, because actually we're here to do what's best for the customer and not
+  here to just do what the
+1135: customer tells us. Right. And I think there's a similar attitude with like engineering
+  and product
+1139: and design, whatever, sometimes where like, it may be the product manager is
+  like, no, no,
+1143: just build this in a hacky, filthy way, accumulate. We don't have time to pay
+  down tech debt. We don't
+1147: have time to write tests, whatever. But again, a good product manager who's
+  worked as an engineer,
+1152: or maybe even has, you know, done a bit of coding in the past will know that
+  that's a bad idea.
+1156: I'd probably won't say that, but it might be that they're, it might even be
+  that they just don't
+1160: acknowledge all the tech debt. And then the engineer reads that as, oh, therefore
+  I can't
+1164: fix the tech debt. It's like, well, actually you probably can go and improve
+  things as you go along.
+1169: Right. And there's, there's often a happy middle ground on this stuff. And,
+  you know,
+1173: I'm sure you and I have also both worked with engineers where if you let them
+  do whatever they
+1177: wanted, they would just spend the next five years paying down tech debt in a
+  way that
+1182: to the customer seems to have made absolutely no difference. No, no. All the
+  engineers who would
+1188: look at it would be like, oh my goodness, this is so, everything's so beautiful
+  here. It's yeah,
+1192: beautiful code, gorgeous. Gets rewritten the next year. Exactly. Exactly. Like
+  gorgeous code for five
+1197: minutes and then it's becomes legacy and everyone hates it again. But like,
+  I think that's the important
+1202: part of this stuff is it's like, look, you know, if you go and if you're told
+  to just work on a feature
+1206: and you spend 99% of your time working on tech debt, okay, like you're gonna
+  get busted and you should
+1211: get busted because like that's not really fair or respectful to your coworkers.
+  But if you're like,
+1215: okay, I want a new feature in the reports like feature or whatever, right? We
+  need new functionality there.
+1222: If you go in there and the code's a complete dumpster fire, then it's like,
+  by all means,
+1226: make it a little bit better as you go along as you build a new feature, right?
+  And no one is gonna slap you
+1232: on the wrists for that. But no, like, I think that I love the term pre factor.
+  So there's like a refactor
+1240: that's at the end, right? That like usually doesn't go over very well. You build
+  the thing and then you
+1245: like clean it up after. And then like that, those two weeks that you had reserved
+  to like clean it up,
+1249: that always gets cut off because you have to move on to the next thing. But
+  if you do the pre factor,
+1253: which is like, okay, I'm going into this area. In order to make this area of
+  code more usable,
+1260: we need to pre factor a little bit and like clean it up. So it's like easy to
+  build and then kind of
+1264: like put those in as you go along. I feel like no one's going to argue with
+  like one or two tickets
+1271: of like pre factor code as you build it out, right? And like, that's your job
+  as an engineer
+1277: is to be slick with it, right? Like your job is to take care of the code and
+  your job is to deliver
+1282: that value, right? Like you're the executor. So you got to figure out how you're
+  going to get that done
+1287: in a way that like stays under the radar. And like stays under the radar sounds
+  sneaky,
+1291: but like stays under the radar is a threshold. So you're just trying not to
+  trigger the threshold,
+1295: which is like, we're not building stuff for our customers and we're not like
+  building value for
+1299: the company. Um, you mentioned earlier, um, a little bit about like how, um,
+  every, like when you've
+1308: worked with really good designers and really good product managers, they've
+  been like multifaceted.
+1312: And I was like curious if you could kind of like paint a picture of like some
+  of the best
+1316: product managers or designers that you've worked with who were multifaceted
+  and what that looks like.
+1321: Yeah. I think it varies because I think the multi fat, it has to be almost like
+  multifaceted
+1328: and that has to be a level of humility there as well. Like I think maybe more
+  product managers,
+1333: but like product managers who are very recently ex engineers, particularly if
+  they were very senior
+1338: engineers and essentially sometimes say rarely say, but often like it comes
+  across sometimes when they're
+1344: saying like, look, if you just let me build this, it would just be easier because
+  I can do this better
+1349: than you. Right. Like that, that never builds trust or respect or whatever.
+  Right. But at the same time,
+1356: I think particularly with all the AI tooling we have today, I would question
+  a product manager or
+1362: designer in a software as a service company who had literally never written
+  a line of code in their
+1367: life. Right. Like I, you know, even directly you can now. Yeah. Yeah. Yeah,
+  exactly. Like,
+1372: I mean, even product managers, I know who would describe themselves as like
+  non-technical or whatever.
+1377: Right. Like, I don't think I know any of those who would write, feel like they
+  could never literally
+1382: write a code of a line of code ever. Right. Or say like, if there's some HTML,
+  like, and there's a typo,
+1388: like go in there and submit a pull request to edit that. Right. So like, I think
+  there's a sort of
+1394: minimum standard there beyond which it's like, look, like you're, what you said
+  earlier, right?
+1399: Is you need to be able to basically call people's bullshit sometimes, right?
+  When someone says
+1403: something that's impossible and you need to have enough knowledge to be like,
+  look, we both know
+1408: it's not actually impossible here. Right. Like we both know that we could do
+  this. Like, let's, I know,
+1413: I, I sometimes think as well about, I don't know if anyone saw the, there's
+  like the infamous Krizam
+1418: video on YouTube talking about microservices and that he just, yeah, I'll need
+  to link this to
+1423: you often, which they have, I'll try and stick it in the show notes or whatever.
+  Basically just
+1426: like an engineer explaining to a product manager why they can't build something
+  due to microservices.
+1431: And then, you know, in the end he breaks down and he's like product manager,
+  you stupid little
+1435: product manager, you know, nothing of my pain. Um, and there's like, it's, it's,
+  I feel like it's
+1440: something that product managers and engineers can both enjoy. Cause I feel like
+  most of the time
+1444: they've been on one or both sides of that conversation. And I think that's the
+  thing.
+1449: It's like, yeah, you need to, even that little line, like, you know, nothing
+  of my pain. Right.
+1453: It helps if both sides know something of the other side's pain. And again, in
+  the best product
+1457: management, like relationships, I, again, like maybe a spicy take for a podcast
+  like this, but I can't
+1463: do it. Like if you're a product manager, who's literally never talked to any
+  customers ever.
+1467: Right. You're probably not very good at your job. Right. And I think that's
+  one of the things
+1471: about if you just see it as like, I divinely know what is better and I will
+  tell the engineer
+1475: what to do and the engineer could probably figure out themselves, but I just
+  have better taste than
+1479: them. Like you're probably pretty crap at being a product manager. Whereas if
+  you're able to say
+1484: to the engineers, it's like, Hey, look, I spent 20 hours last week talking to
+  customers on zoom calls,
+1490: painstakingly write down everything that they like and don't like about given
+  features. Like,
+1494: do you want to do that? And my experience is most engineers are like, hell no.
+  And it's like, well,
+1499: cool. Like we, we each have our roles and we can figure out this stuff and you
+  know, whatever.
+1505: And same deal with designers, right? Like when a good engineer is working with
+  a great designer,
+1509: right? Like then generally the designer is like, Hey, look, I can make this
+  software really easy to use
+1515: and I can make it look really nice. And I can tell you like, again, with the
+  state of figment and
+1520: stuff like that, like often I can just like literally tell you the components
+  to use and the places to do
+1525: it. And you know, some of the CSS to copy and paste and whatever it may be like,
+  and you can
+1530: have this thing that you built that looks amazing and is really easy to use
+  and whatever, right? Do you
+1534: want that? And again, most engineers are like, hell yeah. Like that's a problem
+  that I don't care
+1539: passionately about that I've been able to have solved for me. Yeah. And that's,
+  I think like that's
+1544: when this stuff works the best, right? When, when you've got mutual respect,
+  but also a certain amount
+1548: of like a big part of that person's job, which they're good at is something
+  I really don't want
+1553: to do. Right. Yeah. I mean, like, I feel like this is where we need to put some
+  respect on their name,
+1557: right? Like a product manager probably has to interface with leadership. They
+  have to like
+1562: get all of the incoming requests and believe me, like as someone who somehow
+  sometimes had to step in
+1568: for product managers, it's messages from the CEO and the CTO and the CPO of
+  all of these new ideas,
+1574: or like the latest tweets about the project. Right. And then it's the users
+  and the user,
+1578: you know, usability tests and the user interviews. And it's like also from sales
+  and all of these
+1584: things saying like, why can't I do this? Do you understand that now that this
+  has been delayed
+1587: by two weeks that like, we might lose this deal? I don't want to have those
+  conversations. Oh, I do
+1593: now. Like once you get to a VP level, like you kind of don't get to be fully
+  protected from all of these
+1597: conversations. Do I want to have these conversations? Absolutely not. Right.
+  They are doing that for you.
+1604: That's like a hired role. And so of course they have a lot of attention. And
+  when they're coming
+1608: to you and they're saying like, Hey, is there anything you can do here? Of course,
+  our reaction
+1613: is going to be that we're annoyed. And we're like, no, I told you no twice.
+  You have to understand that
+1616: they're taking care of a bunch of stuff that you never want to do. And same
+  thing with designers,
+1620: right? They've got a design system that they're like trying to stay in accordance
+  with.
+1624: They're trying to coordinate across the board. They want to make sure that the
+  experience is
+1628: consistent across the board and they have a lot of considerations and experience
+  and things that
+1634: we've never done before. So our job is to represent the engineering side and
+  the technology. And then
+1640: those conversations come together. Right. So I feel like it works really well
+  when we respect each other's
+1646: side and when we can kind of like pinch hit for each other and understand that
+  at the end of the day,
+1654: as long as we can make sure that our team knows what's going on, that they can
+  do their best work
+1661: every single day, that they're like not burning out. Right. In terms of like
+  business needs and that
+1667: like people have like clarity around what's possible, like live another day
+  and we keep moving forward.
+1673: Yeah. I think that's it. I think you summed it up pretty well there. Well, yeah,
+  thanks for the
+1678: question, Sid. It's been nice to be able to have a more or less a whole session
+  on this. And yeah,
+1683: I feel like we've got a reasonable understanding of what the good and the bad
+  look like for this.
+1688: But yeah. So thanks everyone for listening. And we'll be with you again, hopefully
+  a little
+1693: bit sooner next time, assuming we're not plagued. Yeah, probably in the new
+  year. But yeah,
+1696: we'll see you then. Yep. Have a great time, everyone. Bye. Bye.

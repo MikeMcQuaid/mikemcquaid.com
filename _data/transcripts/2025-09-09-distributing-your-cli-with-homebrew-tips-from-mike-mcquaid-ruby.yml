@@ -1,0 +1,1781 @@
+---
+0: Hey folks, welcome back to another episode of the Ruby Rogues podcast.
+9: This week, I'm your host, Charles Maxwood, and we are talking to Mike McQuaid.
+13: Mike, you came on before we talked about homebrew and building homebrew and workbrew
+  and all
+20: the stuff you were doing at the time.
+21: Is there anything else you want people to know about by way of introduction or?
+25: Yeah, not really all the same old stuff, like I'm not kind of doing as much stuff
+  on
+30: workbrew nowadays and doing even more stuff on homebrew nowadays.
+33: So yeah, all good stuff.
+34: Nothing really has changed.
+36: Good deal.
+37: I use workbrew, or not on workbrew, I use homebrew all the time.
+40: So yeah, glad to hear it.
+42: It runs on Linux too, I think.
+44: I think I wound up using it there somewhere.
+46: Yeah, yeah.
+48: It runs on Linux and I guess because it's Linux, but we've still got a little,
+  a few tweaks there
+53: as well on like WSL, on Windows as well.
+55: So I've ended up playing around with it on my like Windows gaming machine, which
+  until
+59: recently has been unsullied by homebrew.
+62: Unsullied, I love it.
+63: Yeah, we talked quite a bit about homebrew and how it works last time.
+68: And I thought it'd be interesting because I find myself sometimes fiddling with
+  like writing
+73: scripts or things like that on my machine and then thinking, you know, it wouldn't
+  be too
+79: bad to kind of parlay this or the set of scripts into like a CLI.
+84: And so I was just curious.
+87: I don't even know where to start with that.
+90: But since you've kind of built a CLI that a lot of people use, I know you had
+  other contributors,
+94: but yeah, let's say that I'm sitting on some stuff that I think belongs in the
+  CLI.
+99: Where would you even start with something like that?
+102: Yeah, I think that's, it's a really good question because I think the, it, a
+  lot of this depends
+107: on, I guess, like a lot of stuff in tech, right?
+110: It's like, what does your scaling story look like, right?
+114: To be one of those boring people of like, if it's just something that you're
+  writing for
+119: yourself to run it once and throw it away, then, you know, thinking about like
+  the language
+124: you use, like, you just want to reach for whatever is the most familiar to you,
+  or I guess increasingly
+130: nowadays, like, whatever you think, chat GPT can one shot a reasonable approximation
+  of
+137: what you want it to do.
+138: And then you can tweak it before you run it.
+140: But yeah, so like that way more than I care to admit.
+143: I mean, it's great, because I feel like there's a lot of stuff around that where
+  there's like
+147: scripts that previously we just wouldn't have written.
+150: And then now just being like, hey, I want to pull this data from the GitHub API
+  and previously
+154: be like, oh, it's possible, but don't really want to spend like two hours on
+  this.
+158: And then it's not like, well, I'll spend 20 seconds asking chat GPT and look
+  at the output.
+164: And if it's wrong, then it doesn't matter.
+165: But yeah, so I guess that's the first thing is like, so for me personally, like
+  I tend to
+172: reach for like the smallest, dirtiest, filthiest scripts for Bash because I'm
+  pretty comfortable
+178: in Bash.
+180: There's, Bash has like a huge amount of gotchas though.
+182: So as soon as it becomes even slightly load bearing, even for you, you probably
+  want to
+188: go to like a, no offense, Bash authors, like a real language.
+192: And at that point, you know, stuff's pretty interchangeable.
+195: Like if we're on a Ruby podcast, so like Ruby is really good for like standalone,
+  single
+202: file, CLI scripts.
+204: That's what I would tend to kind of go for straight away.
+207: If you're a Python person, Python's pretty good for that type of stuff as well.
+210: I think like, you know, if people don't have familiarity with those, I'd be surprised
+  if
+215: they listen to a brewery podcast.
+216: But then, you know, I'm sure you can probably do equivalent stuff in C sharp
+  and various other,
+224: right.
+225: More obscure languages.
+226: But like, I guess that's where I would tend to go next is just be almost like,
+  okay, how
+230: can I put it in a single script?
+232: And you can do some kind of neat stuff with, most people are familiar with bundler
+  for installing
+238: dependencies.
+239: But then most people are also like, okay, like bundler, I have to do like bundling
+  stall
+243: and bundle exec and all this type of stuff.
+245: But actually, you can do some cool stuff with bundler where you can actually
+  define a gem
+249: file inside the script itself.
+253: So the first thing it does is checks all its dependencies and installs them all.
+257: So that can be, again, quite a nice way of extending some little basic scripts.
+263: Yeah, I just want to back up on that for a minute, because I ran into that somewhere.
+267: I can't remember where, but yeah, it's just its own little syntax in there, isn't
+  it?
+271: What exactly do you have to do in order to?
+273: Yeah, I can't remember the exact syntax off the top of my head.
+276: But yeah, basically, like, I mean, that's the nice thing about the state of bundler
+  and
+281: Ruby in 2025 is if you're installing an even vaguely modern Ruby, it's going
+  to come
+286: with a vaguely modern Ruby gems and bundler out of the box.
+290: And then everything essentially you can do through the CLI, you can also do through
+  the
+294: Ruby APIs instead.
+295: And that means that essentially every input that you would previously have passed
+  in as
+300: a parameter, you can pass in as a string or like your gem file, instead of reading
+  it
+305: from disk, you can like have that be like a here doc in your Ruby script or whatever
+  it
+310: Yeah, like, so that's a nice way of getting there.
+313: So like, that's what I will tend to do is have like a little bit at the top of
+  maybe one
+317: of my scripts that's like, hey, if I need this particular gem, then install this
+  gem at the
+322: And then I don't need to like carry along the script and a gem file and whatever,
+  but I
+328: can just run it wherever I need to and however I need to.
+330: Yeah, I did find that you require a bundler inline and then you do gem file do,
+  and then you
+339: basically put all your gem file stuff in there.
+341: So you do your source, which is probably rubygems.org.
+345: And then you gem whatever.
+346: And yeah, you just use your, the domain specific language for the bundler for
+  the gem file.
+352: Yeah.
+353: And off it goes.
+354: It's pretty cool.
+355: So then when your script's getting a little bit more, I guess, load bearing,
+  as we were
+360: saying as well, like that might be when you want to be like, hey, I want to have
+  some
+365: like options parsing.
+366: And like the most basic way of doing that is just, you know, you've got the argv
+  like array
+372: and you can go and say, okay, what's the first parameter, second parameter.
+374: But if you want to handle flags and switches and being passed in different orders,
+  there's like
+379: the Ruby, again, part of the standard library, there's the Ruby kind of option
+  parser library,
+384: which is pretty good, pretty easy to use.
+386: If you're still in bash land, there's like sort of a bash equivalent.
+388: But in my mind, even by the time I start getting towards like multiple argument
+  parsing, it's
+394: like, that's again, a nice sign that I probably want to go into Ruby and use
+  that kind of richer
+399: library.
+400: And there's also various gems that provide different DSLs for whatever your preferences
+  are
+405: Yeah, that makes sense.
+406: I know a lot of people also use Optimist used to be called Trollop.
+410: If you're been around for a while and it's like Optimist, it's the same thing.
+415: So do you have a preference?
+417: It's funny because I tend to, I tend to like not, I tend to use just the most
+  basic, like
+427: I'm going to pull stuff out of argv until it hurts.
+432: I think it's also because I've been around in Homebrew and Ruby and whatever,
+  like long
+436: enough.
+437: It's like, I'm aware of all of the kind of edge cases that you get there.
+441: And like, if you delete a random part of argv or if you dupe it, or if you check
+  for inclusion,
+448: like what the various gotchas are.
+450: So like, I wouldn't necessarily recommend other people do what I do.
+455: But yeah, but I guess I don't have a particular library that I prefer for this
+  stuff.
+462: And Homebrew, because for a very long time, Homebrew kind of couldn't really
+  by design use
+469: any Ruby libraries without fully vendoring them all, which was a big pain for
+  us.
+473: Like Homebrew basically built its own argument parser and stuff like that.
+477: And even today, like Homebrew, we're a little bit, I wouldn't say suspicious
+  of other libraries,
+482: but it's like the, we care, I guess this is a nice segue to the next thing you
+  might start
+487: caring about with the CLI, which is like Homebrew nowadays, we really care about
+  like the runtime
+492: and almost like how long is it going to take to essentially, you know, do the
+  thing that
+498: you want it to do.
+499: So like how long, how long until you can print a hello world once you have all
+  your libraries
+504: loaded and everything like that.
+505: And I think that's the type of thing where, like, if you have a script that you
+  run once
+510: a month and it takes 30 seconds to run, you probably don't care if it takes five
+  seconds
+514: or 30 seconds or a minute, right?
+515: Like it's, but if you have a script that you're running in your shell prompt,
+  say, and then
+519: your shell's not going to be print, your shell prompt's not getting it printed
+  until the script
+525: completes, all of a sudden you maybe don't want to require that library.
+530: You maybe want to do it by hand so that you can just boost it, or you may well
+  be getting
+534: to the words of the point, which Homebrew is not quite able to do, but some of
+  the other
+540: CLIs I've built more recently, I guess, like at Workbrew and at GitHub or whatever,
+  it's
+545: like, okay, you maybe want to reach for another language at this point.
+548: So Ruby is really good language.
+551: There's been a lot of performance authorization work that's gone into Ruby in
+  the last five
+555: or 10 years.
+556: But a lot of that comes from the Shopify's and the GitHub's who are not focused
+  on how can
+562: I make a CLI run as fast as I possibly can, but they're focused on like, how
+  can I have
+566: a long-lived Ruby process realistically running probably Rails or Sinatra or
+  whatever, which
+571: can serve as many requests as possible as quickly as possible, right?
+575: So that has more performance implications around like memory management and garbage
+  collection
+581: and jits and stuff like that.
+583: And things which rewards the longer execution of the application, which is the
+  exact opposite
+589: of what a CLI does.
+590: Unfortunately, some things like Rubicop have kind of got around that by having,
+  I forget what
+595: they call it, but there's basically a mode where you can essentially have Rubicop
+  sitting
+598: in the background and you end up sending requests to an already running process.
+603: I guess we could maybe take that approach with Homebrew one day, but we've not
+  yet.
+606: So instead, we're generally concerned about like, how can you, how can you shave
+  that time
+611: How can you require as little as possible and push some logic into maybe Bash
+  in Homebrew's
+616: case?
+617: But when you're writing like a prophecy ally, then that's, you know, that looks
+  like maybe
+621: nowadays probably the best choices would be something like Rust or Go, depending
+  on your
+625: Like Go, for example, is, if you're used to Ruby, it's a very sad language, I
+  think, to
+632: write because it's, you cannot be expressive.
+634: I'm learning Go right now, so.
+636: Yeah.
+637: I mean, so how have your experiences been with that, about like going from the
+  delights of
+642: Ruby land to Go land with the stuff?
+644: Yeah, yeah, I don't love it.
+645: I mean, I, I'm just barely getting into it, but they use it at work.
+649: So, um, yeah, backend engineer encompasses Ruby and Go.
+654: Yeah.
+655: And mostly I get away with not doing a lot of Go, but yeah, they, they kind of
+  expect and
+662: need you to, so.
+663: Yep.
+664: Yeah.
+665: It's, I don't know, I feel like there's, there's definitely been several schools
+  of languages
+669: languages where the, the underlying methodology is like, stop people from doing
+  stupid stuff.
+676: And Ruby feels like it's almost as far in the other extreme as you can do, where
+  it's
+682: like, you can, I mean, I'm sure you've reviewed some absolutely heinous Ruby
+  code of the years
+687: where people have taken metaprogramming to an absurd Goldberg level where it's
+  impossible
+694: to figure out what's going on, but that also allows you to build incredible DSLs
+  and rails
+699: and all of this stuff, right?
+701: In Go, I'm sure you have the same Charles.
+703: I just ended up feeling like, you know, this like 20 line switch statement could
+  be one
+708: line of code in Ruby, but you know, you don't let me have the, you know, you've
+  taken away
+713: the keys to this particular car.
+714: So I guess I have to write the 20 line switch statement.
+716: Yeah.
+718: I just have to say, I mean, to a certain extent, like control flow and things
+  like that, it's
+723: all the same, you know, there's some funky stuff with like variable, variable
+  assignment
+728: and functions and things like that.
+729: But yeah, it doesn't light up my soul like Ruby does.
+732: Yeah.
+733: So like Go feels in many ways to me, like a sort of much less verbose Java.
+739: And like, I wrote a bunch of Java back in the day when it was peak Java enterprise
+  beans and,
+746: you know, all of this like excessive boilerplate.
+749: And there's a lot less of the boilerplate in Go, but it still feels like there's
+  non-zero
+753: amounts.
+754: But yeah, so as I say, I would still consider reaching for Go for a CLI if you
+  really care
+759: about that like execution performance.
+762: So for example, I guess when I was at work previously, I was working on the CLI
+  there,
+770: which wrapped around homebrew CLI.
+773: So we wanted to provide as little overhead as possible.
+775: And the amount of stuff you can do in 0.1 of a second on modern hardware in Go
+  compared
+782: to Ruby is like fairly spectacular.
+783: Like in Ruby, you're really trying to make sure you avoid like any IO or significant
+  computation
+794: Just because of the virtues of it being like a natively compiled language, you
+  can just do
+800: an awful lot of stuff much faster.
+803: And like the multi-threaded story as well is like, because it's not the global
+  interpreter
+808: lock or I can't remember if that's the Ruby name, but whatever the Ruby equivalent
+  is.
+812: And you can, you can afford to just lead into the concurrency a lot harder.
+816: Yeah, that makes sense.
+817: So let's say that I want to build a CLI and I'm trying to think of like a super
+  fun example.
+824: Let's say that I'm going to, you know, I'm going to get an open AI API key and
+  I'm going
+829: to, you know, I'm going to make it talk to whatever.
+832: So, you know, maybe it'll talk to multiple services there.
+835: Right.
+836: So I'm doing stuff maybe with the podcasts, which is kind of what I'm imagining.
+840: So I, I hand off my audio or video to whisper and it bought a being, I got a
+  transcript.
+849: Right.
+851: And then maybe I hand the transcript off to the LLM and it does some stuff.
+855: A lot of this stuff.
+856: I mean, you would put on the back of like a rails app or anything else too.
+859: Right.
+860: But, you know, I want to command line interface just to make it super easy for
+  me to kind
+864: of navigate through some of this stuff.
+865: Where would you recommend I start?
+867: I mean, like for me with stuff like that tend to, in some ways, that's a kind
+  of general
+874: question about like, how do you build software?
+875: Right.
+876: And I'm sure everyone has different views, but like the way I've always liked
+  to do it
+881: is essentially just try and write the, well, I'll give my pre AI answer first.
+889: My pre AI answer is essentially just write the filthiest, hackiest code, assuming
+  that
+894: no one will ever read it to just get the core thing done.
+898: So I guess in your case, it's like, okay, I want to write a script and I would
+  point the
+902: I'm not going to do any argument.
+903: I'm just going to assume an argument has been passed.
+906: I'm going to pull out the first argument.
+908: I'm going to get the file, maybe the MP3 file or whatever from the podcast on
+  disk.
+913: I'm then going to load that into memory.
+915: I'm then going to pass that off to open AI's transcription API.
+918: I'm then going to pull down the result of that as like JSON or whatever.
+922: Then I'm going to immediately get that, not store anywhere, stick that into opening
+  AI's
+927: like MLM API, do something with that, bring that down and then print the output,
+  right?
+933: And essentially build it in such a way that there's no error handling.
+936: If anything is in any way, not the happy path, then it will fail with a completely
+  incomprehensible
+942: So like generally that's the way I like to feel out how to do things initially.
+947: And this episode is brought to you by Spreaker, the platform responsible for
+  a rapidly spreading
+952: condition known as podcast brain.
+954: Symptoms include buying microphones you don't need, explaining RSS feeds to confused
+  relatives
+959: and saying things like, sorry, I can't talk right now.
+962: I'm editing audio.
+963: If this sounds familiar, you're probably already a podcaster.
+967: The good news is Spreaker makes the whole process simple.
+970: You record your show, upload it once and Spreaker distributes it everywhere people
+  listen.
+975: Apple Podcasts, Spotify, and about a dozen apps your cousin swears are the next
+  big thing.
+980: Even better, Spreaker helps you monetize your show with ads, meaning your podcast
+984: might someday pay for, well, more microphones.
+988: Start your show today at Spreaker.com.
+991: Spreaker, because if you're going to talk to yourself for an hour, you might
+  as well publish
+996: Like I think sometimes with like CLIs and stuff like that, it can be tempting
+  to be like,
+1001: oh, I'm going to add the options first, you know, because that's if you're almost
+  like
+1005: thinking from like top to bottom, that might be how you would think about it.
+1009: But actually, like that's not really probably the thing you cared the most about.
+1013: You're trying to figure out is this thing even viable or useful or whatever.
+1018: And every minute you spend fiddling with options is a minute you're not figuring
+  that out.
+1022: Right.
+1023: Not doing the core thing.
+1025: That makes sense.
+1026: And then, so one thing that I'm looking at is, so then do you just build the
+  CLI around
+1031: it so that you can say transcribe file name?
+1034: Yeah.
+1035: Yeah, exactly.
+1036: So I, again, with this type of stuff, like I tend to go for like, keep everything
+  in one
+1042: file, like until it starts falling over.
+1045: And I would, again, to start with not even necessarily use any methods until
+  I am thinking
+1051: about making things kind of dry and, you know, I'm having to call the same thing
+  multiple
+1056: times or whatever.
+1057: So I just would tend to do that until it feels like it's getting too much.
+1062: I don't know what that is, whether that's, you know, a couple hundred lines,
+  500 lines,
+1065: a thousand lines, whatever.
+1066: Right.
+1067: And then start splitting up.
+1068: As you said, if you had commands, like say you're passing like a transcribed
+  command to do
+1072: this or like a read out loud command or, you know, start a chat command or whatever,
+  then
+1080: that might be when I'm like, okay, well, logically there's like three different
+  things this is
+1083: doing.
+1084: Probably the codes between them is not actually that similar.
+1089: So maybe these could all split out into separate files that are stored a bit
+  separately and
+1094: included separately and whatever.
+1096: And again, that's one of the pros and cons of kind of Ruby and Go.
+1102: And stuff like that, because in Ruby, okay, you've got those different files,
+  but you've
+1108: now, once you split into multiple files, like if someone else is like, oh, cool
+  scripts, how
+1112: can I use it?
+1113: Then it goes from being like, here's literally like the copy and pasted script
+  contents to
+1117: being like, you need to clone this repo.
+1119: And here's how you run it.
+1121: Yeah, exactly.
+1123: So like, okay, you could make it a gem and then they could gem install it.
+1126: But like, I'm showing my homebrew maintainer bias here, but I've, I personally,
+  I really
+1133: like Ruby gems and equivalents in other languages for like, I want a library.
+1138: I'm writing Ruby.
+1139: I want a library for Ruby.
+1141: I kind of resent it when I'm like, I want to install a tool that just happens
+  to be written
+1146: I don't actually care what language this tool is written in.
+1148: Right.
+1149: And I have to use NPM or gem or PIP or whatever to install some random CLI.
+1154: Like for me, I would always either reach for homebrew or if it's just something
+  my mate
+1158: wrote, ideally my mate just like sends me the script and I have like a dumping
+  ground repo
+1164: and I just like copy and paste that file into my repo and then I can run it
+  or modify it
+1168: as I choose in future.
+1169: Right.
+1170: So that was that.
+1171: You're, you're talking around one of the things that I was going to ask, right?
+1174: Because if it's just one file, it's like, okay, stick this in your path.
+1179: Make it executable.
+1180: Bam.
+1181: Right.
+1182: But if it's multiple files, yeah, I was trying to figure out, okay, how do you
+  package that?
+1186: And I guess, yeah, you could use something like homebrew or yeah, I agree with
+  you on
+1190: the, I mean, if it's a Ruby specific tool, like rake, I don't really have a
+  problem with
+1195: it being in Ruby gems, but yeah, like the, I've used other CLIs.
+1200: I think it's like the Heroku CLI or the Stripe CLI.
+1203: I can't remember, but one or two of those, it was like, yeah, I had to go NPM
+  install
+1207: it and I'm going, yeah, but this is not a code tool.
+1211: Yeah.
+1212: And that's, yeah, I agree with you there.
+1213: It's like, no, this, this belongs in homebrew or apt or yum or, you know, whatever,
+  whatever
+1221: your package manager is for your operating system, where it's going to pull
+  it in and say, hey,
+1225: this is a utility you're going to use for other things.
+1229: Right.
+1230: It's an application essentially that runs on top of your OS.
+1233: And as a Ruby podcast, it feels like a safe space to admit this, but yeah, like
+  I, my one
+1239: is like NPM where it's like, I, ideally I don't have Node.js on my system at
+  any given
+1245: So like when, when something says like, oh, the way to do this next step, like
+  step
+1250: one, NPM install X.
+1251: And so, well, actually there was a step zero, which was install Node.js.
+1254: Install Node.
+1255: And I, and given that this thing that you're asking me to do is nothing to do
+  with JavaScript.
+1260: Like I don't see why I have to do that.
+1263: So often I'm like, okay, I then go looking and I'm like, oh, is this, is this
+  already
+1267: in homebrew?
+1268: And if not, maybe I package it in homebrew for my own benefit and other people
+  in the future
+1272: But yeah, I've always felt that that's that.
+1276: The kind of, I think that's a, you've brought up a bigger question there about
+  almost like
+1280: And I think that's, that's a bit more kind of messy and complicated because
+  it, it ends
+1286: up being like, well, what is the distribution method?
+1288: And, and homebrew somewhat infamously, I think it might be one of the first,
+  maybe even the
+1293: first to the whole, like cold to bash installer scripts that everyone is much
+  derides, but
+1299: like, you know what, if you're installing something, exactly.
+1302: It works.
+1303: But also like, if you're trying to install something that's kind of like non-trivial,
+  like homebrew
+1307: that involves cloning a repo and you know, again, it's like the NPM install,
+  like we could
+1313: say, okay, well, step one, get clone.
+1315: And so, well, I don't have get on my machine.
+1316: It's like, okay, well you need to still get, how do I do that?
+1319: Well, it's still homebrew.
+1320: Like, you know, whoops.
+1322: I, I, I guess that's my issue.
+1324: Right.
+1325: Is I generally have node and NPM on my machine.
+1328: Right.
+1329: I'm working in rails.
+1330: You know, I need some kind of JavaScript runtime.
+1332: And so it's like, okay, this feels weird, but I'll do it.
+1335: But yeah, if it's a pip install, cause I, I never touched Python or, you know,
+  if, if it
+1341: requires go or something like that.
+1343: Now these days I'm working on go, but yeah, it's like, why do I have to install
+  a programming
+1348: language in order to get my tool when it doesn't really have anything to do
+  with the programming
+1353: language?
+1354: And so, yeah, just getting into, you know, that step, I, I guess some of these
+  come like
+1361: self-packaged or when you do the install, then it'll, you know, behind the scenes,
+  it'll
+1366: install either a standalone version of the language or give you some way of
+  building it on your
+1370: machine.
+1371: Or sometimes it's just an executable that's prebuilt that, you know, it has
+  reasonable
+1376: assumptions about what's already there.
+1379: And so, so that works.
+1381: Um, but yeah, so let's say that I am building a CLI, uh, I write it in Ruby,
+  you know?
+1390: I mean, I can tell my friend to go get clone it, right.
+1393: If they're a programmer and, you know, and then it's like, okay, here's the
+  command to
+1397: run it.
+1398: But yeah, let's say that it's something that's getting wider adoption and it
+  needs that
+1402: distribution, right?
+1403: Where it's, Hey, you know, you're going to go run this on your own machine,
+  right?
+1407: Maybe it's a fancy CLI that cleans up large files on my hard drive or something
+  like that,
+1414: It's some other utility that, that does some of these other things, you know,
+  it's helpful
+1418: and I don't need a UI for it, or at least not a complicated UI, big graphical
+  UI.
+1423: Yeah.
+1424: How do, how do I begin to package that up?
+1427: So again, probably unsurprisingly, my natural response to that is like homebrew
+  is pretty
+1432: good.
+1433: Distributing software, right?
+1434: So with homebrew, you can kind of stick it in a repo and then call like brew
+  create dash
+1441: dash Ruby, point that at the repo and then homebrew will try its best to figure
+  things out.
+1446: And, but then, you know, if it can't, you can fiddle with that and homebrew
+  can help you
+1451: And, you know, if this is a, a thing that's pretty widespread use and you're
+  packaging someone
+1457: else's software or whatever, then you could submit it to the main repository
+  and chances
+1460: are it will be accepted fairly quickly.
+1462: And then everyone can benefit that.
+1464: If not, we have this thing called, called taps, which are like third party repositories,
+  basically
+1468: that you can run a command brew tap new, which basically will create a new tap
+  for you.
+1474: You can then push that up to GitHub as a repo.
+1476: And we spit out some nice CI workflows.
+1479: So you can use those free public repo actions minutes to put them to use.
+1484: And then you could use that as your distribution method if you want instead.
+1487: And then that could be a nice way of, you know, regardless of what language
+  you write it in,
+1492: if you're doing Ruby or Python or Go or whatever, then you can distribute your
+  software that way
+1497: pretty easily.
+1498: So if there's any kind of setup or build step or anything like that, is there
+  some version
+1503: of like an install script or something that it runs or?
+1505: Yeah, yeah.
+1506: So there's like in Homebrew's Ruby formula, which is kind of like our DSL for
+  like building
+1512: and installing software, basically.
+1513: There's yeah, there's like an install method.
+1515: And basically you can, much like in normal Ruby, you can run a bunch of system
+  commands
+1519: in there.
+1520: Like we try and do a reasonable guess of like, hey, if it's a Ruby project,
+  you probably want
+1525: to run like bundle install and then, you know, stick a Ruby file in a bin directory
+  somewhere.
+1531: And that probably gets you most of the way there.
+1533: But yeah, but it's basically just like little nice DSLs that kind of help you
+  get that software
+1539: onto your machine.
+1540: And it's, I think one of the nice things about Homebrew is it's definitely of
+  most of the
+1545: packaging systems I've ever interacted with.
+1547: And from what I hear from people, it's one of the easiest to just get started
+  with like
+1552: an existing piece of software.
+1553: Because essentially you're just like, okay, run some commands, which you can
+  try yourself
+1558: and bash and then move stuff from one place to another.
+1561: And then that's you.
+1562: So, I mean, in the case of Ruby, Homebrew already runs Ruby.
+1566: But let's say that I reach for something like Go or Rust, or maybe I'm using
+  Python, right?
+1573: And so I can't assume that the person whose machine is going to get installed
+  on has, you
+1581: know, the language or language tools that I need in order to build and run it.
+1584: How do you manage that kind of a thing?
+1586: So in Homebrew, that's, we just have like a little line again with our DSL called
+  Depends
+1591: on where you can basically say, okay, I need Ruby or this particular version
+  of Ruby or
+1596: whatever it may be.
+1597: Where it gets a bit more fun.
+1598: And it installs that globally?
+1599: Yeah.
+1600: So it installs that, but Homebrew keeps track of, okay, did you ask me to install
+  it?
+1606: So say we have your OpenAI transcription thing, call it Transcribey or whatever,
+  right?
+1612: And you might install it with Bruinskull Transcribey.
+1615: This episode is brought to you by Spreaker, the platform responsible for a rapidly
+  spreading
+1619: condition known as podcast brain.
+1622: Symptoms include buying microphones you don't need, explaining RSS feeds to
+  confused relatives
+1627: and saying things like, sorry, I can't talk right now.
+1630: I'm editing audio.
+1631: So if this sounds familiar, you're probably already a podcaster.
+1635: The good news is Spreaker makes the whole process simple.
+1638: You record your show, upload it once, and Spreaker distributes it everywhere
+  people listen.
+1642: Apple Podcasts, Spotify, and about a dozen apps your cousin swears are the next
+  big thing.
+1648: Even better, Spreaker helps you monetize your show with ads, meaning your podcast
+  might someday
+1653: pay for, well, more microphones.
+1655: Start your show today at Spreaker.com.
+1658: Spreaker.
+1659: Because if you're going to talk to yourself for an hour, you might as well publish
+  it.
+1664: So that would install Ruby automatically because that's what you said.
+1668: But then in a year, you're like, ah, you know, Ruby sucks or whatever.
+1672: I'm going to rewrite this and go.
+1674: And then you switch your packaging to Go, then Homebrew knows when you ran Brewing
+  School
+1679: Transcriby, you weren't saying, hey, can I have Ruby and Transcriby?
+1683: You were just, I just care about Transcriby.
+1685: I don't care what Transcriby is written in, right?
+1687: So then if it changes in future to Go, then Homebrew then knows like, oh, well,
+  you never
+1692: We don't need Ruby anymore.
+1693: Let's give it a Ruby, right?
+1695: And again, the fun thing with Go as an example is like, and this is where it
+  gets slightly
+1700: I won't go into the details unless you're really interested of like, if you're,
+  you're
+1705: building it yourself versus if Homebrew builds it for you, but if Homebrew builds
+  it for you,
+1709: then the nice thing about Go is because Go spits out binaries, then you don't
+  even need
+1714: to install Go on your system, right?
+1715: You can probably use the binary that we have built for you.
+1718: So then you can get rid of Ruby.
+1719: You don't need Go.
+1720: We need to install Go when we're building it for you in our servers, but on
+  your system,
+1725: you don't need Go unless you're building it from source, as we would say.
+1729: Right, similar with Rust.
+1730: Yeah, exactly.
+1732: And it seems like the approach that we're taking with Ruby or Python or something
+  that's not
+1738: compiled that way, or Node is another example, right?
+1742: If it's running on any of those, the install Node or install Python or install
+  Ruby approach
+1746: works fine on Linux or Mac or in the USL.
+1752: Yeah.
+1753: WSL, whatever it is.
+1755: I am not a Windows.
+1756: I help my wife with Windows, but she's not using the Linux emulator.
+1760: But yeah, so that works fine there.
+1764: And then if you need to package it up for something like Windows, then you're
+  looking at another
+1770: tool that's going to essentially package your language, right?
+1774: It's going to put your Ruby VM in the executable so that it can run.
+1779: Yeah, so that's when it starts to get a bit more messy and different languages
+  are optimized
+1783: So again, like going right back to our original, like I'm writing a CLI.
+1788: So I think like one of the first questions I would probably have is like, what
+  are the chances
+1793: are that you're going to want to ship this to Windows users, right?
+1797: And if, unless the chance is definitely not, then Ruby and Python and even more
+  so things
+1803: like Bash are, you know, very easy to get started across Windows and, sorry,
+  across Linux and
+1810: Mac OS from the outset.
+1812: But then when you have like a Windows story, that's when it starts to get a
+  bit more messy.
+1816: Like Windows has, again, like plenty of package managers and stuff like that.
+1820: But your average Windows user is not going to be familiar with those.
+1825: And even a lot of Windows developers don't necessarily use like package management
+  as widespread as
+1833: it is in the Linux and Mac OS worlds.
+1835: So that's when I would say like the story that Go, for example, can do for you
+  is I'm less
+1841: clued up on Rust in this way.
+1842: So I might, excuse me, any Rustians who are listening that I might not know
+  quite as much
+1847: about what Rust is capable of.
+1848: But certainly I know with Go, the nice thing is you can just build a single
+  binary, which
+1853: you can then have run on a Windows machine and that will work as expected, right?
+1858: But the other nice thing with Go is it's the cross compilation stories very
+  easily is very
+1863: So even if you only have access to a Mac machine, you can build the binary on
+  your Mac
+1869: for all Mac OS versions, essentially, and Linux and Windows.
+1873: And if you don't have access to those operating systems, you can have a reasonable
+  degree of
+1880: confidence that unless you're doing kind of wacky OS specific stuff that that
+  binary will
+1884: just run fine on all three OSes.
+1886: And like that's a pretty appealing thing if you're building a CLI that you want
+  to be used
+1890: cross platform.
+1891: Yeah, that makes sense.
+1892: I'm a little curious.
+1893: Getting into running it on Mac versus Linux, like are it seems like for the
+  most part,
+1901: things just generally work the same way.
+1904: Are there meaningful differences that you need to be aware of in certain cases?
+1908: Yes.
+1909: I think most of the time you don't need to think too hard about things.
+1914: And I think it's, it's often relatively obvious when you're sort of starting
+  to get a little
+1919: bit more detailed.
+1920: So, for example, one difference would be the, I mean, you know, we're going
+  to really nerd
+1926: out on some nice OS, well, like high level OS internals here.
+1931: But, you know, like macOS and Linux run different kernels, right?
+1936: There's the Linux kernel and the macOS Darwin kernel.
+1939: And then there's the stuff in user space as well.
+1942: So like, because, yeah, like, as you mentioned, like macOS came from like a
+  BSD kernel land,
+1949: like most of the user space applications are BSD.
+1952: And on Linux, most of the user space applications might be GNU ones, right?
+1957: And Apple won't use those because of GPLv3, which is a whole other long and
+  very boring
+1963: But yeah, so basically, like, if you're calling out to various, say, like even
+  GRET, right?
+1970: GRET has arguments that will work on macOS, and they will not work on Linux
+  in the same
+1977: way, and vice versa.
+1978: So you might, if you're shelling out to GRET, you might need to have like conditional
+  logic
+1984: based on the OS you're on.
+1986: Or alternatively, instead of shelling out to GRET, you just say, okay, I'm going
+  to instead
+1990: like get all the lines, and I'm going to iterate over the lines in Ruby and
+  do things that way
+1997: So I think with like writing Ruby itself, like Ruby and Python are both generally
+  written
+2004: in such a way that like, pretty much everything you would ever try and do is
+  going to be cross
+2010: platform by default, right?
+2011: It's just various little gotchas like shelling out or, again, I can't remember
+  this still
+2017: the case in 2025.
+2018: I'm pretty sure it is.
+2019: But like, by default, Linux generally ships with a Linux issue ship with a case
+  sensitive
+2025: file system.
+2026: And macOS ships with a case insensitive file system.
+2028: So if you're doing all your development on Mac, and you have like some file
+  that you read
+2033: in from your repository or whatever, and it's uppercase A, you know, Anteater
+  with an uppercase
+2039: A versus Anteater with a lowercase A, that will work just fine on macOS if you're
+  inconsistent
+2044: between the repo data on disk and how you've written in your source codes, but
+  then on Linux
+2051: that might block, right?
+2052: So like these are types of little things that you need to care about when you're
+  doing cross
+2057: platform development.
+2058: So yeah, I'm just trying to think through the rest of it.
+2061: I'm imagining that, yeah, if I split things up into files, what it's going to
+  do is it's
+2066: going to put all of my files into one place, put the executable in the path
+  somewhere, and
+2072: then the executable is going to be aware of where the things are and just have
+  that in
+2077: the load path, essentially.
+2078: Exactly.
+2079: Now with testing, are there specific things that you do when you test?
+2087: Or do you just kind of test the internal logic and assume that your flags and
+  stuff work?
+2092: So that's a good question as well, because I think particularly if you've never
+  really written
+2097: a CLI before, you would probably think, particularly once you get to like the
+  multiple files level
+2104: of like, okay, I'm going to write a bunch of unit tests for the internals and
+  make sure
+2108: that they work.
+2109: My experience as a, you know, long-term CLI-er is that like, actually, that
+  is going to cause
+2117: you a lot of pain unless you have at least some tests that are actually shelling
+  out and
+2122: running the script externally, right?
+2125: And we, I guess, relatively recently in Humbru, which in my mind is probably
+  like 10 years
+2132: ago, but that's recent as far as I'm concerned.
+2134: So we used to have a lot of tests that were just, you know, unit tests.
+2138: And then we would just find like really core functionality would break because
+  all of the
+2144: internals, all the internal APIs were working, you know, it's the, it's the
+  tailors all this
+2149: time with like unit tests versus integration tests, right?
+2151: Of like, you can have all of your internal APIs working perfectly and are beautifully
+  tested,
+2156: but then when you fit them all together, things explode.
+2159: So as a result, like I've always found with CLIs in particular, like really
+  taking that sort
+2165: of outside-in testing approach is really nice to ensure that you're like, okay,
+  so say again,
+2172: we're talking about this open AI CLI type thing.
+2176: Like if I was writing a CI pipeline to test that, I would probably give GitHub
+  Actions
+2182: my, like either my or a test open AI key, and I would have it in CI, like actually
+  trying
+2188: to run a transcribe command on maybe like a single word or some very short amount
+  of input
+2194: data and actually making sure that as close to a real use of that application
+  is actually
+2203: being tested and working as expected because all the kind of clever, like all
+  the clever
+2208: unit tests you might have will just otherwise fall over when you need them the
+  most.
+2213: I like it.
+2214: Um, I'm going to, oh, go ahead.
+2217: I was going to say, so another thing you might find, I guess, as I've been talking
+  about like
+2221: CLI performance, cause it's sort of in front of my mind with this stuff.
+2224: So there's a guy who's written loads of really helpful little CLIs in Rust.
+2231: I forget his name off the top of my head, but we can find him, Google him later
+  or whatever.
+2234: So he's got a really nice tool he's built called Hyperfine, which is a CLI benchmarking
+2241: tool, basically.
+2242: Um, it does a bunch of other things, but that's what I've found it most useful
+  for.
+2246: So what that does is it takes this sort of outside in approach and you can say
+  like,
+2251: hey, I want you to run this command this many times and then tell me like what
+  the performance
+2256: characteristics are, or I want you to run this command and this command and
+  tell me the difference
+2261: between the two.
+2262: So quite often when I'm doing like homebrew performance work, the way I will
+  measure the
+2267: performance differences is like that command could include like checking out
+  a branch or
+2271: you can, you should specify that as like preparatory command or whatever.
+2275: So I'll say, okay, check out this branch, run this homebrew command, then check
+  out this
+2279: branch, run this homebrew command.
+2281: And then it just has a nice little display of almost like, well, when you run
+  this command,
+2285: it's 1.4 times faster on average.
+2288: And that varies by like, this episode is brought to you by Spreaker, the platform
+  responsible
+2293: for a rapidly spreading condition known as podcast brain symptoms include buying
+  microphones.
+2298: You don't need explaining RSS feeds to confused relatives and saying things
+  like, sorry, I can't
+2304: talk right now.
+2305: If this sounds familiar, you're probably already a podcaster.
+2309: The good news is Spreaker makes the whole process simple.
+2312: You record your show, upload it once and Spreaker distributes it everywhere.
+2316: People listen, Apple podcasts, Spotify, in about a dozen apps, your cousin swears
+  are the next
+2322: Even better, Spreaker helps you monetize your show with ads, meaning your podcast
+  might someday
+2327: pay for, well, more microphones.
+2330: Start your show today at Spreaker.com.
+2333: Spreaker, because if you're going to talk to yourself for an hour, you might
+  as well publish
+2338: 2% like across the iterations and it will, I think it runs at 10 times by default,
+  but you can,
+2344: you could say run this a thousand times or two times or whatever.
+2348: And there's like, as you might expect for kind of a beautiful, like proper CLI
+  nerd CLI
+2355: like this, you know, there's like so many different options to twiddle every
+  possible knob to get
+2360: it to work exactly how you want it to.
+2361: But yeah, but if you're ever in a world where you're like, I really care about
+  the performance
+2365: implications of my CLI, like that is the best tool I've ever used and works
+  basically exactly
+2371: how I want it to, because it does that inside out testing, right?
+2375: Of like actually running the actual process and then measuring the actual time
+  that like
+2382: So big shout out to Hyperfine.
+2385: And yeah, the, I found it on GitHub.
+2387: It's a David Peter and a short DP is his GitHub handle.
+2392: And yeah, yeah.
+2393: Looks like a cool tool.
+2395: Cause I wanted to switch gears a little bit.
+2398: Yeah, please.
+2399: So I was, I wound up on your blog when I was getting ready for the episode and
+  you have
+2405: an article on here and we wound up talking about AI and it seems like it's still
+  the hot
+2412: It's funny cause over the last, I don't know, three, four or five months, I've
+  really started
+2417: to use AI quite a bit.
+2419: Sometimes I use it essentially to write most of the code.
+2423: And then I have people, you know, get concerned about whether AI is going to
+  take people's jobs
+2428: and things like that, which you address in your article here.
+2431: It says open source maintainers thrive in the LLM era.
+2434: You know, you address some of that and you talk about how people are using LLMs
+  and things
+2437: like that.
+2438: I'm just wondering like what, what's your experience using LLM tools like Cursor
+  or
+2444: And then the other question I have is, and you kind of address it here is, is
+  there any hope
+2449: for the people that are freaked out that AI is going to take their programming
+  job?
+2453: So I guess I'll make sure I get to both of those.
+2457: But yeah, I guess the experience wise, I've been probably using some sort of
+  tools and
+2464: some Cursor capacity since the very early days.
+2467: So like back when Copilot was still an internal alpha at GitHub based on, I
+  think GPT two to
+2477: Yeah.
+2478: And OpenAI had publicly not really done anything except released a bunch of
+  papers.
+2482: Like I, I was asked to test it internally, essentially.
+2486: And like, I was known for being the type of person who was good.
+2490: If you wanted honest opinions of the things I was testing, because regardless
+  of the political
+2495: consequences, if you asked me to test something and I thought it was all trash,
+  I try and be
+2499: But like, I would not tell you that it was great.
+2502: I would tell you that it was not great.
+2504: But yeah.
+2505: So I remember trying this and being like, this will, because I'm sure people,
+  it's almost
+2510: hard to even remember.
+2511: But like, if you put yourself back in whatever this was, like 2021 or something
+  like that,
+2517: like, you know, if someone had described what you're able to do now with Copilot
+  or Cursor,
+2522: and they said, I built a thing that does this, you would be like, your eyes
+  would roll out
+2526: your head.
+2527: And then you'd be like, okay, like, yeah, whatever.
+2529: Like, I've seen a lot of autocomplete.
+2531: Like, it always sucks.
+2533: It just gets in the way.
+2535: It's not useful.
+2536: Like, I write Ruby now.
+2537: The autocomplete in Ruby sucks.
+2539: I don't really care and I don't really miss it anymore because I've got used
+  to it and
+2543: whatever.
+2544: This is just nothing that I care about.
+2546: Right.
+2547: And I tried it.
+2548: And like, my almost immediate reaction was like, even when it was way more limited,
+  was
+2553: like, wow, this is, this is not like radically transformative yet.
+2557: This is not incredibly workflow changing yet, but this is really good.
+2561: And this is a lot better than I expected.
+2563: And ironically, you could build a pretty damn good autocomplete without any
+2569: specific knowledge of Ruby as a language, but just using this kind of LLM technology.
+2574: And I said to the team, I was like, yeah, I assumed this would be complete garbage
+  and
+2579: it's actually good.
+2580: Well done.
+2581: Like, can I keep using this, please?
+2583: So I guess I went from that to using Copilot.
+2586: I just want to chime in.
+2587: That kind of lines up with my early experience with a lot of it where it was,
+  it was a little
+2592: beyond autocomplete and it didn't always give me what I wanted.
+2595: Like, sometimes it was like, you are assuming that I am doing something wildly,
+  drastically
+2600: different from what I'm doing.
+2601: But it was, it was right often enough to where it was like, oh, okay, I'm, I
+  definitely want
+2608: And I think that's the thing, like in the early days, particularly, um, and
+  I think maybe some
+2613: people who tried stuff out too early have over-indexed on this.
+2616: I, I think it was very personal in terms of like, what's, what's the hit rate?
+2621: Because, I mean, I find this with software engineers in general, right?
+2625: Is there some software engineers I know who will look genuine, completely genuinely
+  without
+2631: any sense of irony will express, but this only solves the customer problem 99%
+  of the time.
+2638: Therefore it's pointless 1% of the time, why would you ever do that?
+2643: And so, well, actually for most people, if this makes things a hundred times
+  faster, 99%
+2648: of the time, which I'm not saying AI does, but like in some decorative software
+  cases, things
+2653: do that's probably an enormous amount of business value for a lot of people.
+2656: Right.
+2657: But there's, we have, and I don't think it's necessarily a bad thing, but we,
+  we tend
+2661: to have a streak as a, you know, we're literally the people of zeros and ones.
+2666: So it's like, we want things to be perfect.
+2669: And when things aren't perfect, it's easy to kind of fall into the, like, well,
+  why did
+2673: Like, you know, what's the point?
+2674: Yeah.
+2675: And I, I definitely think there was only LLMs, like, um, the only copilot.
+2679: It's like the auto-completion was, you know, if that's wrong 50% of the time,
+  there's a
+2685: lot of people who just find it really, really annoying.
+2688: Whereas I'm the type of person.
+2689: But it sped me way up.
+2691: Like, whereas I, I think I'm lazy enough that I'm like, if 50% of the time I
+  can just like,
+2697: I'm, I'm a reasonably fast typer.
+2699: I was never one of those like hyper fast.
+2701: I've switched to the Vorak because it gets me an extra 10 per second, whatever,
+  like them
+2707: keyboard warrior types.
+2709: So for me, like, I'm like, oh yeah, you know, like half as much typing some
+  of the
+2713: time is well worth it for me.
+2715: And I, I can, I feel able to ignore the visual noise of it always trying to
+  prompt me to do
+2721: the wrong thing.
+2722: And some people hate that and, and I get it.
+2725: Right.
+2726: But yeah, I guess I would say if you're one of those people that hated that
+  in.
+2729: This episode is brought to you by Spreaker, the platform responsible for a rapidly
+  spreading
+2733: condition known as podcast brain.
+2735: Symptoms include buying microphones you don't need.
+2738: Explaining RSS feeds to confused relatives and saying things like, sorry, I
+  can't talk
+2743: right now.
+2744: I'm editing audio.
+2745: If this sounds familiar, you're probably already a podcaster.
+2748: The good news is Spreaker makes the whole process simple.
+2752: You record your show, upload it once and Spreaker distributes it everywhere
+  people listen.
+2756: Apple podcasts, Spotify, and about a dozen apps your cousin swears are the next
+  big thing.
+2761: Even better, Spreaker helps you monetize your show with ads, meaning your podcast
+  might
+2766: someday pay for more microphones.
+2769: Start your show today at Spreaker.com.
+2772: Spreaker.
+2773: Because if you're going to talk to yourself for an hour, you might as well publish
+  it.
+2777: You know, maybe even six to 12 months ago, like you should check back in because
+  things
+2783: are changing.
+2784: Very fast, right?
+2785: Yeah.
+2787: So kind of getting into the question that I'm asking, I'm enjoying this, right?
+2792: I'm not saying you didn't get to the point.
+2793: What I'm saying is, so like this morning, right?
+2797: Or last night, I think it was last night.
+2798: I started it and then this morning I finished it.
+2800: But, you know, I'm expanding my podcast hosting system, which also does courses
+  and summits
+2807: and coaching and podcasts and screencasts, right?
+2810: Because that's all stuff I want to offer off of the back of the podcast, right?
+2814: I was like, okay, well, I've got this multi-tenant setup going and so I need
+  people to be able
+2819: to sign up, right?
+2820: And actually pay me to use the system.
+2821: And so I said, hey, I need a signup form.
+2824: And I mean, it wrote all the views in Rails.
+2828: It wrote all the management and the admin system.
+2830: It wrote, you know, and it basically worked.
+2834: I mean, I had to tweak a couple of things because, you know, it was like, okay,
+  you know, you
+2839: got this wrong.
+2840: And then when I asked to do something else, it changed it back.
+2842: And I had to go in and say, no, actually you did it wrong the first time.
+2846: But I mean, it would have taken me a day or so to figure out, you know, to actually
+  build
+2853: it out on my own, right?
+2854: Go in and put everything together.
+2857: It's all pretty basic stuff.
+2858: But it, I mean, it just wrote it in like 20 minutes, right?
+2863: And then, and then the tweaking took me probably another 45 minutes.
+2867: And so I can see people looking at it and going, this thing is going to take
+  my job.
+2872: Yeah.
+2873: And I understand why people think that.
+2875: And I guess like, to me, it would be when someone with your level of experience,
+  Charles, is able
+2883: to do that.
+2884: And there is zero tweaking.
+2886: And like, I've done this 100 times in the last two weeks.
+2890: And never at any point have I had to change a single character.
+2894: Like, that would be when I would be more concerned about being like, well, you
+  know, maybe I, I
+2900: still think the job of being a software engineer wouldn't go away in that case.
+2904: Because I think we are even outside of programming, right?
+2910: My, it was cooking some sweet potato in the air fryer yesterday, right?
+2914: And my wife and I both use ChatGPT and I transcribed it using voice.
+2918: And she heard the way in which I speak to ChatGPT and the amount of context
+  I gave it about
+2924: like, here's some facts about my particular sweet potato and how I like it.
+2929: Here's some facts about my air fryer and whatever.
+2931: And she was like, wow, like you, you said a lot of stuff there.
+2934: Whereas I would just be like, cook sweet potato in air fryer, right?
+2938: And the prompt she would get back would be pretty poor.
+2942: And the prompt I get back is amazing, right?
+2943: So I guess some people talk about like prompt engineering or context engineering
+  or whatever.
+2947: But like, I think there's more to it than that.
+2949: And I think there's a reason why the experts in prompt engineering or context
+  engineering
+2955: don't just happen to be like international tennis players or philosophers or
+  whatever.
+2962: Like there's mostly software engineers or at least software adjacent people.
+2966: Cause like, this is still talking to computers and computers still like to be
+  talked to in a,
+2971: like LLMs like to be talked to in a different way to, you know, your CPU,
+2975: but it's still sort of an art and a craft in that way.
+2978: And like, I can definitely imagine almost the worst case scenario of when
+2983: you're going to be writing a lot less codes by hand than you ever were before.
+2986: And for some people that really bums them out and freaks them out.
+2989: But I still think that job of like,
+2992: I take customer requirements and turn them into software.
+2995: And that's still a job, right?
+2997: And that's still a hard job.
+2999: And it's still a job that someone like yourself with a lot of experience,
+3003: you are able to work with LLMs dramatically more effectively than a random person
+  who started coding two months ago.
+3009: Right?
+3010: Yeah, I agree.
+3011: There are a couple of things that you kind of talked through that I want to
+  touch on.
+3016: I mean, one of them is, yeah, you figure out what, essentially what context
+  you have to give it, right?
+3023: Yeah.
+3024: So you give it all of the information it needs so it can break it down and go,
+  okay,
+3028: this is what I'm working with.
+3032: And then, yeah, it'll give you a much better response.
+3034: One other thing that I found that just kind of comes with experience with the
+  LLMs is that,
+3039: and this came up today, like I forgot to tell it, I'm not using Devise on my
+  Rails app.
+3044: And so it actually said, right, because I told it, I was like,
+3048: you need to send an email confirmation when people sign up for the system, right?
+3053: Not just a welcome email, because I need to confirm that their email works.
+3056: And so it turned around and it said, I see that you're using Devise confirmable.
+3061: And I immediately had to get in and stop it and say, I am not using Devise,
+  right?
+3067: And then it did the right thing.
+3068: And so, you know, I had to remember that.
+3070: And so some of that with the prompt engineering, yeah, you figure out what context
+  it needs
+3074: in order to make the right decision, and then you give it to it.
+3077: And a lot of it, too, is just being thorough, right?
+3080: So that it doesn't make any assumptions.
+3083: I know we're kind of anthropomorphizing the LLM, and it's just a predictive
+  language model.
+3088: But, you know, yeah, it doesn't make any assumptions on what you want.
+3092: And so, yeah, some of it's going to just boil down to, yeah, I'm the human that's
+  giving it
+3098: a proper prompt that gives me better outputs.
+3101: But the other thing is, is that, yeah, I still find that I have to tweak it,
+  or at least I have
+3106: to verify it, right?
+3107: Even if I didn't have to touch it, I have to verify that it does the thing,
+  right?
+3110: I have to spin up my app and go and click through it, or if it's a CLI, you
+  know, I have to run
+3116: it a couple of different ways to make sure that it's still doing what I want.
+3119: And so there's that, too.
+3122: And then the last thing that I'm going to just point out is, like, I'm not seeing
+  companies
+3126: laying people off saying, well, you know, we're using the LLMs to enhance the
+  capabilities
+3133: of our programmers, and so we don't need half of them anymore.
+3136: We're not seeing that.
+3137: What we're seeing is we're seeing companies go, we can get 10 times the work
+  done, or,
+3142: you know, five times the work done, or double the work done by having the engineers
+  that
+3146: we have use the tools.
+3148: And I think that just accelerates.
+3150: And I think any company that's short-sighted enough to turn around and go, we're
+  going to
+3155: lay off half of our technical workforce, their competitors are going to come
+  in and eat them
+3160: alive.
+3161: Yeah, I think that's some people that speculate that's the case.
+3165: Some companies hint towards that being the case, but I don't think it's.
+3168: I think what you are seeing, and again, I think if we're talking about things
+  that you can be
+3172: freaked out about, is, like, there's definitely been a big drop in hiring for
+  juniors, right?
+3178: Like, there's measurable decrease in junior engineering positions.
+3182: And I think there is this outstanding question of, like, again, you and I have
+  touched upon
+3187: Like, I say in that post, one of the reasons why I talk about, like, why I think
+  open source
+3192: maintainers are well cut out for the LLM era, right?
+3195: Is that conversation you mentioned before, if you were talking about building
+  something on
+3201: an open source project, you could have equally been describing almost identically
+  some contributor
+3205: you've never worked with before, right?
+3207: It's like, oh, well, you know, I opened an issue and then overnight, some random
+  person
+3211: I never met before appeared.
+3213: They made a PR.
+3214: Like, it was mostly all right, I had to make some tweaks, and then I merged
+  it, right?
+3218: Like, and I actually think the trust and verification process looks very similar,
+  right?
+3223: For someone like yourself, with a lot of experience, someone like me with a
+  lot of experience,
+3227: particularly if you have a lot of experience with one code base you've worked
+  with for a
+3231: long period of time, like, you're able to provide probably very in-depth review
+  of a
+3237: relatively large amount of code in a very short amount of time in a way that
+  makes these tools
+3243: valuable to you, right?
+3244: If you were unable to do that, either because you lack the experience, you lack
+  the context
+3248: with the code base, you lack the programming ability yourself, then all of a
+  sudden you end
+3253: up in this precarious position where it's like, okay, either I go at 100 miles
+  an hour and,
+3257: like, if this stuff breaks, I won't know how to fix it.
+3261: And I won't know even really how to describe to the LLM, like, what's gone wrong.
+3267: Beyond just copy-pasting error messages.
+3269: And when that fails, like, I'm just, shout out, look, right?
+3272: Or I slow down and I say, okay, I just, I'm going to learn software the same
+  way everyone
+3278: learned software before LLMs, right?
+3280: And then the people that I have to kind of have a bit of the FOMO or even potentially
+  my
+3286: management chain being like, hey, all the seniors are like 25, 50% more productive
+  now.
+3292: Why aren't you?
+3294: And it's, I, I'm glad I'm not responsible for social engineering or whatever.
+3298: Cause like, I think that's a really hard question of like, what are we going
+  to do as an industry?
+3304: Because we can't just say we don't hire more juniors anymore because that's
+  not going to
+3310: But at the same time, I don't think we have a really good answer for like what
+  those juniors
+3314: should definitely do to skill up, right?
+3317: Like, yeah, it's hard.
+3319: I like, I like, I completely agree with you.
+3321: I think kind of reading between the lines on your blog post, it seems like part
+  of the
+3326: answer is having juniors or people who are at that level doing open source with
+  it, right?
+3333: Because then it's not, you don't have your boss or your company or the deadlines
+  or things
+3339: like that, where people are going, why are you taking so long?
+3343: And then the other thing is, is that if you do take the extra minute, even if
+  you're still
+3348: generating the code with AI to then ask the LLM, okay, explain to me what you
+  just did.
+3353: Yep.
+3354: Right.
+3355: You, you can start to get context for what it did and why it did it.
+3358: Now it may not be giving you the best practice, but it's giving you at least
+  some context for
+3365: what it's working with.
+3366: And in some cases it is going to be best practice or at least common practice.
+3371: So, and you're seeing that even with the LLMs now, right?
+3373: Like the kind of study mode and chat GPT and things like that, where like I
+  played with
+3378: that a little bit myself when I've been kind of.
+3380: This episode is brought to you by Spreaker, the platform responsible for a rapidly
+  spreading
+3384: condition known as podcast brain.
+3387: Symptoms include buying microphones you don't need, explaining RSS feeds to
+  confused relatives
+3392: and saying things like, sorry, I can't talk right now.
+3395: I'm editing audio.
+3396: If this sounds familiar, you're probably already a podcaster.
+3400: The good news is Spreaker makes the whole process simple.
+3403: You record your show, upload it once, and Spreaker distributes it everywhere
+  people listen.
+3407: Apple Podcasts, Spotify, and about a dozen apps your cousin swears are the next
+  big thing.
+3413: Even better, Spreaker helps you monetize your show with ads, meaning your podcast
+  might
+3417: someday pay for, well, more microphones.
+3420: Start your show today at Spreaker.com.
+3423: Spreaker.
+3424: Because if you're going to talk to yourself for an hour, you might as well publish
+  it.
+3430: Trying to learn new things that I don't want to overly lean on the LLM.
+3434: And, you know, it's kind of trying to do a bit of Socratic method stuff and
+  all this
+3438: But even with, I think it's a great place with open source where, you know,
+  there's a bunch
+3443: of talented homeroom maintainers I know who are, in some cases, haven't had
+  a tech job
+3448: yet or still in college or relatively recently out of college.
+3452: And, like, their code review abilities for typical expectations of, like, a
+  new engineer
+3456: are, like, completely off the charts.
+3458: Like, some of them are dramatically better at code review than I am, having
+  done it, you
+3463: know, probably 10 times as long as they have.
+3465: But they've had a lot of experience doing this.
+3469: And I think that might be part of the junior story is that I think we cycle,
+  we sort of had
+3475: a little bit of an attitude, I think, for a while, at least in some cultures
+  of companies
+3479: I've seen where it's like, well, okay, we'll get everyone to review a bit of
+  code.
+3483: But really, like, the more senior people are going to be more responsible for
+  doing the
+3489: more in-depth, hardcore code review of, like, gnarly stuff, right?
+3493: And that might be the culture that needs to change.
+3496: But we're actually like, okay, rather than saying to the juniors, like, hey,
+  you just
+3500: spend 95% of your time coding.
+3501: Don't worry about this code review stuff too much.
+3503: You'll figure it out as you go along.
+3505: Maybe we need to flip it around and be like, actually, you should spend 95%
+  of your time coding.
+3509: And don't worry about this coding stuff too much.
+3513: If you read enough of other people's code, you're going to figure that out,
+  right?
+3516: And maybe that's where we go.
+3519: And certainly that would be an attitude that would make you more qualified with
+  working with
+3524: LMs better, for sure.
+3525: Right.
+3527: You brought up code reviews, and that kind of reminded me of another thing,
+  since we're
+3530: talking about AI and things like that.
+3532: So yesterday, I put in a PR at work, and I asked some folks to review it.
+3536: And I got on this morning, and it still hadn't been reviewed.
+3539: Whenever people get in and they see the message, I'm sure it'll get done.
+3542: Anyway, when I checked it, GitHub asked me if I wanted Copilot to review my
+  PR.
+3547: So how do you feel about that?
+3549: Yeah.
+3550: I've actually, at Workbrew, and now at Homebrew, and some companies I've done
+  contracting with,
+3558: have enabled...
+3559: In fact, I don't know if I've done this on Homebrew, actually.
+3561: But basically, whenever I can, I enable Copilot review of PRs by default.
+3566: And I think...
+3568: Is it good?
+3569: It's sort of...
+3572: So it has definitely caught a bunch of stuff that humans have not caught on
+  my PRs.
+3578: Again, the false positive rate is pretty high.
+3581: But if what you're concerned about is like, hey, I want to make sure that someone
+  is going
+3587: to catch my typos.
+3588: Again, like another blog post I wrote a long time ago, and at this time, this
+  was whatever,
+3594: 2018 or something.
+3595: So we weren't even talking about AI and LLMs.
+3597: But I think it still kind of holds up, is I wrote about like, I called it like
+  robot
+3600: pedantry, human empathy, basically.
+3602: And what I compared in that post was like, on the one side, like people are
+  like Rubicop,
+3608: you can set to be like hyper anal, right?
+3611: And like really, really pedantic.
+3612: And people could actually be fairly tolerant of that.
+3616: I actually quite like that when it's dialed up to 11 like that.
+3619: But if you as a human give the same code review feedback as a Rubicop up to
+  11, all your
+3626: coworkers will hate you.
+3627: Yeah.
+3628: Often, even if you have agreed on these coding guidelines as a group or whatever,
+  there's
+3633: something about like that level of pedantry about like if someone typos something
+  10 times
+3638: going through and every single time being like, typo, typo, typo, typo, typo,
+  even if you
+3642: use the GitHub suggestion, so it's one click for them to fix it.
+3645: Like people don't like that.
+3647: They really hate it when humans do that to them.
+3648: But that's the expectation that robots will do that.
+3651: So that's one thing I found is like useful on that side.
+3654: But then again, like I said in that post, so part of why I wrote the post at
+  the time
+3659: is like there'd be more and more moves like automation and stuff like that,
+  which I thought
+3663: was really healthy and like CI.
+3665: But you were starting to see people being like, oh, the first time someone makes
+  a pull request
+3669: on my repo, we should congratulate that person.
+3672: So let's write a bot to congratulate them.
+3674: And I remember talking to a bunch of people and they were saying like, yeah,
+  it just, it
+3678: feels completely meaningless when a bot says, well done, good job.
+3683: You're a rock star now.
+3684: It's like, you know, it's like, I'm in some empty room by myself and, you know,
+  over the
+3689: tannoy came a robotic voice saying, you are great.
+3691: You know, it's like, whereas if a human says to you, hey, well done, like I'm
+  pumped that
+3697: you're here, like that actually has an impact.
+3699: So that's, and I think this is the same thing with, with kind of code review
+  and copilot
+3705: and these tools and whatever now is just like, you know, like copilot can give
+  you a review
+3710: where it points out your typo is more effectively than a human can, but copilot
+  can't say, wow,
+3715: that was really cool.
+3716: Like you solved this in half the lines of code I thought is possible.
+3719: Like this is a really elegant solution.
+3720: Great job.
+3722: Like, and that's again, much as like the stuff about humans and jobs and whatever,
+  right?
+3729: Like most of us are probably not going to be okay with spending 40 hours a week
+  exclusively
+3733: communicating to an LLM.
+3734: Like we want to deal with humans who say nice things that they actually mean
+  that are not in
+3739: the prompt, right?
+3740: Like, and that does have more of an impact.
+3743: And I, I, that's, I feel the same way with like code review, where it's like,
+  these are
+3747: complimentary tools and the human code review and the AI code review are sort
+  of doing different
+3751: things, but I'm glad that they're both there and I wouldn't use one to entirely
+  replace
+3755: So I guess the other question that I was asking is what AI tools are you using
+  these days?
+3760: Yeah.
+3761: So for me, I'm mainly using like cursor as my kind of in editor, like code completion
+3768: thing.
+3769: And like their agent modes kind of sporadically, but again, I use it kind of
+  in the, in editor
+3774: And I still use chat GPT mainly for stuff where I'm just like asking it things
+  where
+3779: I'm going to probably write the code myself or with a bit of help from cursor,
+  but like
+3783: I basically use that instead of Google.
+3785: And then the thing that has been interesting to me recently is, so I started,
+  everyone was
+3791: being like, all my kind of AI forward friends were like, Oh, you need to use
+  code code, code
+3796: So signed up, played around code code.
+3798: I was like, okay, this is quite good.
+3800: But I think just because I'm an open source maintainer, like there's this GitHub
+  agent PR
+3808: thing where you can now, if you have co-pilot for your organization or whatever,
+  I'm not quite
+3812: sure how the pricing and the enabling works or whatever.
+3814: But it works on Homebrew essentially.
+3816: So what you can do is you can just assign an issue to co-pilot and then it will
+  just open
+3822: a PR that's like, okay, I've tried to solve this issue for you.
+3825: Right.
+3826: And this is good that we're having this conversation today because it's fairly
+  timely because in
+3830: the last week, Homebrew had, I think eight open bugs on the main kind of package
+  manager
+3835: repo that I review everything on.
+3837: I was like, I'm just going to assign all of them to co-pilot and see what happens.
+3841: And it's similar to the thing you described earlier, right?
+3844: Where it was like, in most, in a couple of cases, it was like literally spot
+  on first
+3850: In most of the cases, it required me to do the last like 10% of the code.
+3856: And then in a couple of cases, it was like 25% of the way they are pretty broken.
+3861: I had to have quite a bit of back and forth.
+3862: I ended up kind of rewriting half of myself, but even then it sort of solved
+  the empty page
+3867: problem for me.
+3868: And I think it's just something about me as an open source container that it
+  feels good and
+3873: nice to just be like assign issue, PR, review PR, check out PR to finish it
+  off, merge PR.
+3881: And like, that's the flow instead of like this thing that lives in my terminal
+  that I need
+3885: to check and whatever.
+3887: Yeah.
+3888: I like, I like you, you brought up the empty page situation that that's a really
+  good way
+3893: of putting, right.
+3894: Cause I'll sit there and okay, how do I need to put this?
+3897: Okay.
+3898: And then I can, I kind of have an idea of how I want it to go.
+3901: And so I start kind of fiddling with it.
+3903: And instead I can just, I can prompt the AI.
+3906: This is what I'm building.
+3907: And sometimes I'll ask, you know, how should I start?
+3910: And sometimes I'll just tell it to go for it.
+3913: And I'm sure you found this as well, but like sometimes when it's, even when
+  it's completely
+3919: wrong, you probably heard that, like a camera who said this ages ago, that like
+  the quickest
+3924: way to get a stack overflow answer is to answer your own questions with the
+  wrong answer.
+3931: And then everyone will jump in and be like, no, that person's wrong.
+3935: Let me tell you how it actually is.
+3936: Sometimes I feel like the same way with the LLM stuff where I'm like, yeah,
+  sometimes it
+3940: goes off and it's does something completely fucking terrible.
+3943: And I'm like, no, that's not how you do it.
+3944: You obviously do it like this.
+3945: And I'm like, oh yeah, I figured out how to do it.
+3947: Well, what's funny is that there were, there were a couple of things that I
+  was working
+3951: on with the, cause I'm using cursor and agent mode.
+3954: The main reason is, is because my employer provides us with credits on copilot.
+3960: Yep.
+3961: On VS code, which is what I kind of gotten used to, but I don't want to use
+  works copilot
+3966: credits on my personal stuff.
+3968: And so I use cursor for my personal stuff and copilot for their stuff because
+  I'm using the
+3972: same GitHub account for both.
+3974: And so anyway, um, there've been a couple of times where I've told it to do
+  something and
+3978: it sits there and it flails, right?
+3980: It's like, yeah, I'm going to do this.
+3981: Oh, wait, I think I have a better approach.
+3984: So I'm going to delete everything I just did and do it this way.
+3986: And it'll do like two or three things.
+3987: And yeah, I'll, I'll finally just step in and say, I've been watching you.
+3991: And actually, I just want you to do it this way.
+3993: And it'll just turn around that.
+3995: Of course, it tells me I'm smart for saying that.
+3998: Right.
+3999: And then again, it's like, you're a machine, you, you know, but do it my way.
+4003: And yeah, and so just because it gets it wrong, doesn't mean that it can't get
+  it right.
+4007: If you give it just a little more direction.
+4009: And to just speculate widely, uh, for a minute, I also have a hypothesis that
+  maybe the reason
+4016: why junior hiring could be done is the people who were previously responsible
+  for mentoring
+4021: those juniors are now essentially mentoring their LLMs.
+4025: Cause like, again, that, that flow you described earlier about like with rails
+  and all they
+4031: thought I was using device and I wasn't like that again.
+4033: This episode is brought to you by Spreaker, the platform responsible for a rapidly
+  spreading
+4038: condition known as podcast brain symptoms include buying microphones.
+4042: You don't need explaining RSS feeds to confused relatives and saying things
+  like, sorry, I
+4048: I'm editing audio.
+4049: If this sounds familiar, you're probably already a podcaster.
+4053: The good news is Spreaker makes the whole process simple.
+4056: You record your show, upload it once and Spreaker distributes it everywhere.
+4060: People listen, Apple podcasts, Spotify, and about a dozen apps.
+4064: Your cousin swears are the next big thing.
+4066: Even better.
+4067: Spreaker helps you monetize your show with ads, meaning your podcast might someday
+  pay for
+4072: well, more microphones.
+4074: Start your show today at Spreaker.com.
+4077: Spreaker, because if you're going to talk to yourself for an hour, you might
+  as well publish
+4082: 10 years ago, you could have described some new talented junior person that
+  you hired, right?
+4087: And oh, wow, they, they saved me so much time.
+4090: And I had to do the last little bit to help move the line and whatever.
+4093: Like, I think the flow and also like the stuff you like and the stuff that's
+  really frustrating
+4099: and exhausting about it is kind of the same.
+4101: And I personally couldn't imagine a day where I spend half my days supervising
+  agentic AI
+4109: And then the other half doing the same thing with like junior folks who are
+  struggling in
+4115: Or the worst of both worlds, which we're seeing in open source now, which is
+  someone who is
+4120: junior, who is trying to use an AI agent to create a pull request.
+4125: And obviously you can't really prove this, but like I had a PR today where each
+  round
+4131: of review, they were responding and then they, they would paste something into
+  an issue comment
+4135: with like the slash N characters in there rather than new lines, which makes
+  it look like it
+4140: And then I would ask, I'd be like, give them a bunch of comments, but then one
+  of the comments
+4145: would be like, Hey, like you've added two extra options to the CLI.
+4149: Which one of those are you using?
+4151: Do you need both this functionality or just the functionality for one?
+4153: Because if we just say the functionality, if you only you need for one, and
+  they would
+4157: just completely ignore those questions and just turn it into more code.
+4159: And I had that AI feel that I'm sure you're familiar with Charles of just like
+  more code
+4165: every time, every time the solution is, we're just going to add more code.
+4168: Right.
+4169: And it got to the point where I was like, I'm just speaking to someone's code
+  code through
+4174: if I wanted that, I would be using code code myself.
+4177: So I couldn't prove it, but I just closed the PR because I was like, sorry,
+  feels like
+4182: I'm speaking to an AI, not human.
+4183: And I thought to myself, I'll probably just assign this issue to copilot later
+  and see
+4187: how it does.
+4188: And it's probably going to be easier than what we're doing right now.
+4191: All right.
+4192: Well, I've got to start wrapping up.
+4194: So let's go ahead and do some picks and then we'll call it good.
+4197: Before we do that, if people want to connect with you, if they have questions
+  about homebrew
+4201: or it sounds like you'll help people out for hire, at least you used to.
+4206: So if there's a place for people to hire you, I'd love to have that too.
+4210: But yeah, how do people connect with you on any of those levels?
+4214: Yeah, sure.
+4215: Best place for me is my website at mikemcquade.com.
+4218: If you go there, that's got links to all my social media.
+4220: It's got all my email.
+4222: It's got talks or articles and all this type of stuff.
+4225: Anything you might want to know about me.
+4226: That's basically the best kickoff point there.
+4229: All right.
+4230: Well, let's go ahead and do some picks.
+4231: I will get us started.
+4232: Boy, it's been a while since I've done this.
+4234: I'm trying to think of what games I've been playing lately.
+4236: Here's one that I'll do.
+4238: So I don't know if you do board games much, but...
+4243: Yeah, I do a little, not a huge amount.
+4245: Have you ever played...
+4247: Again, like a couple of times.
+4249: I've never been a DM or anything like that.
+4251: Okay.
+4252: So there's a game out there called Betrayal at House on the Hill.
+4257: And I think there's a book or a movie or something related to it.
+4263: Anyway, essentially, you take your Scooby-Doo gang into a haunted house and
+  you go explore
+4269: the house until the haunt starts.
+4271: And then you, yeah, one of you becomes the trader.
+4277: And so then it's the trader against the explorers until one of you wins, right?
+4283: And so it gives you, you know, and there are two books.
+4286: There's the trader's tome and there's the explorer's manual.
+4289: And so the explorer's manual explains to them how they win and the trader's
+  tome explains
+4294: to the trader how they win.
+4296: And the reason there are two books is because there are some things that the
+  trader has to
+4300: know that the explorers don't need to know or it will let help them win if they
+  knew.
+4307: Anyway, so it does that.
+4308: Well, there's a version of this called Betrayal at Baldur's Gate.
+4311: Baldur's Gate is, there's a video game, Baldur's Gate.
+4316: But Baldur's Gate is a D&D location.
+4320: And so if you ever look at anything that's Baldur's Gate, you'll notice it's
+  Wizards of
+4325: the Coast, which is the company that does D&D.
+4327: And so anyway, so Betrayal at Baldur's Gate is Betrayal at House on the Hill
+  with the D&D
+4335: elements from Baldur's Gate.
+4337: And so instead of exploring rooms, you're exploring areas and you have the cities,
+  like the streets,
+4346: you have indoor areas, and then you've got the catacombs underneath the city.
+4352: And so you can kind of explore or whatever you want.
+4356: And there are some differences.
+4357: But yeah, the rest of the elements are the same.
+4359: And so if you're kind of like that, it doesn't have like strong story elements.
+4364: It really is just a, you know, an explore and then, you know, fight off the
+  monsters game.
+4371: But it's fun.
+4372: And yeah, I played it with my guys group a couple weeks ago.
+4375: Board Game Geek waits it at, I have six.
+4378: So, you know, you're casual gamers.
+4381: It's mildly complicated, but not so complicated that, you know, folks that just
+  like, you know,
+4388: a casual board game among friends wouldn't just pick it up.
+4391: So I'm going to pick that up or I'm going to pick that came out in 2017.
+4396: I don't know if it's still in print.
+4398: That's the only caveat I have on that.
+4400: And then on the other picks.
+4402: Yeah.
+4403: I've really gotten into using the agent mode on Cursor.
+4409: And so I'm going to pick that as well.
+4411: Incidentally, I was just kind of goofing around and I thought, okay, well, how
+  much work would
+4417: it be to get it to essentially VibeCode, a React Native app, a podcast subscription
+  app?
+4424: And I have to say that it did pretty good.
+4426: It doesn't have all the features I want in it yet, but it's good enough to where
+  I'm starting
+4433: to think about whether or not I actually want to release the sucker onto the
+  app stores.
+4437: And so, you know, and I'm not a React Native developer by any means, though,
+  again, that's
+4443: another technology I want to pick up because we use it at work.
+4446: So anyway, so I'm going to pick that as well.
+4449: And then within React Native, I'm using Expo.
+4452: Very cool.
+4454: But yeah, Mike, what picks do you have?
+4457: Yeah, so I guess my game related pick would probably be Avowed.
+4463: So that was recommended to me by, I don't know if he's been on this pod before,
+  but certainly
+4467: legend of the Ruby community, Justin Searles.
+4469: Oh, yeah.
+4470: It's sort of like, you know, it's made by Obsidian.
+4475: It's like a kind of Bethesda-esque, like story-driven RPG.
+4480: And it's just, I don't know, like if you liked all those old school RPGs like
+  Oblivion and
+4487: Skyrim and whatever, it's got that vibe, but like lots of nice, like quality
+  of life things.
+4492: Like, so if a character ever uses a sort of bit of jargon, you can just press
+  a button
+4496: and then a glossary pops up that sort of defines the specific bit of jargon
+  they use.
+4500: And I'm like, yeah, I want this in every RPG now.
+4502: And like, you know, if you're a mage, you have a wand that casts stuff and it
+  doesn't
+4508: require mana and, you know, like lots of just like little things that have annoyed
+  me in
+4513: So yeah, I'm enjoying just exploring that.
+4516: I imagine it's one of those games I'm probably going to 100% just because like
+  the world is
+4519: interesting enough.
+4520: Yeah.
+4521: What's it called again?
+4522: It's called Avald, A-V-O-W-E-D.
+4527: And then my, I guess if you're not a gamer, like TV wise, we've been watching
+  Tokyo Vice,
+4533: which is pretty interesting about this guy who's a journalist and kind of lots
+  of stuff
+4537: like organized crime in Japan.
+4540: That's, I can't remember what network it's on or whatever, but that's been good.
+4544: It's only two seasons of that.
+4545: We're about halfway through the second season enjoying that a lot.
+4548: And then I guess on the computer land, I guess, yeah, I mentioned it already,
+  but I would
+4554: probably say the, the co-pilot agent mode where you can assign it from, assign
+  an issue
+4560: and it will then create a PR.
+4561: There's a bunch of rough edges there, but there's something about the workflow
+  that feels pretty
+4567: different to like running agents locally and has a different trust model in
+  a good way
+4571: in that like you can let it just run arbitrary commands and it's running in
+  some random doc container
+4576: and GAOPS infrastructure that you don't care about compared to your local machine.
+4580: But yeah, but for, if you're someone who lives in PRs all of the time, then
+  it might be worth
+4585: seeing if that's an agent flow that works for you more than like some terminal
+  app or some window
+4590: in your idea or whatever.
+4592: Well, thanks for coming.
+4593: This was fun.
+4594: Yeah.
+4595: Thanks for having me.
+4596: Always a fun time.
+4598: I'm going to go ahead and wrap us up.
+4600: Until next time, folks, Max out.
+4602: Max out.
+4606: Thank you.

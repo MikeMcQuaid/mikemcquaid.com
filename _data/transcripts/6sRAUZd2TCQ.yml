@@ -1,0 +1,489 @@
+---
+0: About a year ago, I started talking about whether open source was going to fail,
+  because
+9: clearly we've won. 96% of all software stacks are dependent on open source. 76%
+  of that
+16: software is open source, according to Sonatype's report last year. And the question
+  isn't whether
+22: we've won. The question is, what have we won? Have we won the war or a battle?
+  Open source
+29: is under pressure, there is a lot of friction. And across the next two panels,
+  and I'm going
+34: to apologize, nobody got the slides wrong, it was me. So we should have had Bruce
+  after
+38: the first panel. So everybody running around me is rejigging my mistake, so bear
+  with us.
+44: The first panel is going to look at the external pressures coming in an open source.
+  And the
+50: second panel is going to look at the internal friction within our communities.
+  So it's a
+56: pleasure to welcome to the stage the first three panelists, Dr. Alan Friedman,
+  who's a senior
+63: advisor and strategist at the Cybersecurity and Infrastructure Security Agency
+  in the US,
+69: CISA or CISA, I'm never sure which way to pronounce it. Sarah Novotny, director
+  of open source strategy
+75: in the Azure office of CTO at Microsoft. And Mike McCade, who's the project leader
+  and maintainer
+81: of homebrew and the CTO and co-founder of work brew.
+85: S-Bomb, S-Bomb, S-Bomb, S-Bomb.
+89: S-Bomb, S-Bomb, S-Bomb, S-Bomb, S-Bomb, S-Bomb.
+98: Now you may be thinking, why is she playing that? We've got the theme, the music's
+  British.
+104: Why would she be playing Tom Jones S-Bomb? So since the term S-Bomb was coined,
+  that song
+112: has been in my head, and now it's in yours.
+115: Well done.
+119: As I said, open source, we've won external frictions. External frictions, regulation,
+  policy,
+129: security, supply chain, and being a maintainer. Being a maintainer, external,
+  we'll get to it.
+137: Alan, you work in policy and regulatory. You work with the US government department.
+  Tell
+144: me, why are government departments across the globe suddenly looking at open
+  source?
+151: Well, as we've already established, open source won. We took over the software
+  world, and software
+158: runs every aspect of our lives. So I come from the security world. And in security,
+  when we
+165: talk about saving lives, it's important. And you get to sit up a little straighter,
+  your voice
+173: drops a couple octaves, and you get a couple extra zeros at the end of your budget.
+178: So CISA is the Cybersecurity Infrastructure Security Agency. We focus on responding
+  to threats.
+184: We are a civilian agency, responding to threats to the American government and
+  the American population,
+189: building out how we're going to respond and be resilient to future threats.
+196: And so a lot of this is saying, if the software that we're worrying about is
+  not just proprietary,
+203: if it's open source, we need to understand what are the risks, not just at the
+  technical
+209: level, but at the very core human level of how do we make sure that our trains
+  run, that
+215: our water gets delivered, that lives are safe.
+218: So, Sarah, when you look at that from the context of a major company, how are
+  you managing the
+225: interactions with these policies, with these regulations that folks like Alan
+  are starting
+230: to bring into open source?
+231: The answer is we're learning. We're always learning in this space, particularly
+  because some of
+240: the regulations aren't even fully formed at this point. Recently, there was the
+  CRA in Europe,
+247: and it speaks to compliance to standards. Oh, by the way, we're going to figure
+  those standards
+252: out. So that's all still coming. So the answer here is just like open source,
+  just like good
+259: developer conferences. It's all just-in-time delivery at the moment. We're working
+  in the US,
+265: particularly against an executive order from the US government also, saying that
+  we need to secure
+271: our supply chains in a meaningful way. All of this leads to the point that software
+  and open source
+277: specifically have won. We run the world in this way. And without understanding,
+  I love the way you framed
+285: it as risk. I gave a talk to a bunch of investment bankers at one point,
+289: who are like, how do we evaluate companies? And I said, ask them about their
+  open source dependencies.
+295: They're like, but they're proprietary software. And I'm like, ask them about
+  their open source
+300: dependencies. Do they know how many dependencies do they have? Do they know where
+  they are?
+305: Do they know which are their critical risk points? Which are the ones that have
+  existing existing
+313: CVEs against them? Are they able to articulate whether the software they have
+  or are using
+321: is even actually a risk if it has an open CVE? This is the VEX work that's happening
+  in a number of places,
+328: trying to find a way that businesses can rationalize the software that they develop
+  because Lord knows,
+337: when was the last time any of you wrote a math library? It's been a while. So
+  we need to
+344: rationalize and understand as companies where we're using open source software.
+  Not many companies can
+350: actually give you a good articulate answer in this. The larger companies I feel
+  are doing a better job and
+356: that's still trying to get our arms around an amoeba. So we're trying very hard
+  and continuing to learn the
+363: whole way that we're doing this. But that means we work with you in the communities,
+  in open source,
+369: in standards, in government to figure out how we can make sure that our software
+  is safe and secure,
+377: well documented and engages with our users in a way that they can understand.
+384: So Sarah, if that's a lot of work for a company of the scale of Microsoft, obviously
+  you have a lot
+392: of utilization. But if that's a lot of work for you, it begs the question, how
+  does a maintainer cope
+399: with the policy and the regulation that is being imposed upon them, whether it's
+  in the White House
+406: executive orders, the European Cyber Resilience Act, which Sarah just mentioned,
+  with a potential of 44
+412: standards being put in place to allow it to work? Mike, how are you going to
+  cope with that?
+418: Well, one of the nice things is because I'm a maintainer who does not live in
+  the United States or,
+425: unfortunately, the EU. Thankfully, as long as I'm happy to just not travel to
+  those places,
+431: I don't have to worry too much. But more seriously, I think there is this underlying
+  tension we have
+436: right now where there's a lot of regulations that are in place that make sense,
+  that don't really
+441: affect me too much. Software patents is the one that comes closest to being like
+  an actual day-to-day
+448: annoyance. But in the longer term, we see a need for kind of regulation around
+  software and AI. And
+455: you know, when I put my kind of citizen paying attention to politics hat on,
+  it's very easy to see
+461: why there's a move to do these things. But I think where we need to be really
+  careful is people
+466: understate in open source how much of the work is just done by volunteers in
+  their evenings and weekends.
+471: So Homebrew, the project I work on, I think most people who are doing development
+  on a Mac
+476: are likely to interact with Homebrew in some way or form. We kind of, our estimates,
+  based on our
+481: analytics, so we've got about 30 million users. We've had... How many users?
+  About 30 million.
+487: 30 million. Yeah.
+492: So this is all done. We have about 10,000 people who have contributed over the
+  years, but only 30
+499: people are kind of actually making sure that Homebrew is running. And none of
+  those people, I guess,
+505: except maybe me now, now that I've started my own business doing some of this
+  stuff, none of those
+510: people are actually paid a day job salary to do that. So what happens if we make
+  this work for those
+516: people dramatically harder through regulations? What happens if we put people
+  in a situation where
+521: they're worried about legal risk here? There's a real chance of having a chilling
+  effect where people
+525: are going to say, "Well, why would I spend my evenings and weekends working on
+  stuff that's used
+530: and relied upon by many, many people where I'm not getting paid or getting, you
+  know, tiny amounts
+536: of money for this as like a sort of donation if someone's going to turn around
+  and sue me for doing
+541: that?" So I think we need to be really careful when we're doing this stuff. Bruce
+  had some great points,
+547: I thought, in the talk earlier about we need to think carefully about what we're
+  going to do with
+552: the big players, the Google, the Microsoft, the whoever, who have big budgets,
+  who have the money
+557: to be able to comply with regulations, and what are we going to do with the small
+  players? What are we
+560: going to do with the people who sit down in their house in their evening and
+  decide to make an open
+565: source library that then many millions of people may rely on in five or ten years?
+  Because we don't want
+570: those people to decide this is too risky, I'm going to go play World of Warcraft
+  instead.
+575: Yeah, and this is a really important conversation because I spoke to a lord,
+  as you do, I spoke to a lord
+583: recently about liability and risk and he was surprised when I expressed the view
+  as a lawyer of 25 years
+591: who spent the last 15 in open source that we know that regulation applies to
+  open source software in our
+598: community. Nobody's surprised by that, regulation trumps licensing and what we
+  need is regulation that's
+606: agile, that's flexible and that recognizes the kind of people who are maintainers
+  and building these
+611: projects and building that best innovation for the rest of the world. So Mike,
+  just to finish that
+619: conversation, maintainers, something it took me a long time to work out, the
+  maintainer responsibility
+625: doesn't flow with your employer, right? It flows with the individual. No, I mean
+  a lot of the time
+630: maintainers, as I mentioned, they're doing this stuff in their evenings and weekends.
+  We have an
+635: increasing number of maintainers, which is a good thing, who are doing that nine
+  to five, Monday to
+639: Friday, being paid by their employer to maintain an open source project. So those
+  folks have obligations to
+645: their employer. Generally, most companies are not happy to just pay you for no
+  reason whatsoever. If you find
+650: one, let me know because that would be great. But most of these maintainers who
+  are doing it in their
+654: spare time, essentially, they don't really have any obligations to the community
+  that they work on.
+659: And if you look at most open source licenses, they kind of state this pretty
+  clearly, where
+664: essentially, I wrote a blog post about this a few years ago, that maintainers
+  like the title,
+669: pretty much everyone else hated it, called open source maintainers owe you nothing.
+  Because if you read
+673: through an open source license, it effectively says that there's no guarantee
+  this software will work. There's no
+679: guarantee the software will even do the things that we say it will. And even
+  if the software were to break
+683: on purpose and cause you damage, you agree in using the software that you do
+  not hurt the maintainer
+689: liable in any form. As Amanda said, when that kind of comes to regulatory frameworks,
+  there's a bit more
+696: of a blurred line there. I think if I deliberately made homebrew do something
+  in a way that was negatively
+700: impactful on people, I suspect there would be legal implications involved there,
+  even if the license says otherwise.
+707: But I think it is important to note that the bulk of people who are doing this
+  stuff,
+711: even if they do it in some of their working hours, if they're putting it out
+  in their own name,
+715: if the copyright is held by them, then it's up to them and their relationship
+  with the open source
+720: community to manage and not something that their employer can or does do for
+  them.
+725: And what the licenses generally say is that you exclude liability and some of
+  them say to the
+730: fullest extent permitted by law because the law trumps the license. And that's
+  the way that
+735: the world of regulation works. Now, I know both Sarah and Alan are desperate
+  to jump in on that.
+740: I'm going to let Alan go first because we've waited longer to hear more from
+  him.
+743: You know, one of the big challenges is how can policy makers understand
+751: the developer perspective, the maintainer perspective. And I think there are
+  a couple of
+758: lessons that we can take from the past. So again, I come to the security world
+  and in the bad old days,
+765: there was a constant fight between security researchers who would point out that
+  security
+769: was terrible and the people who sold commercial software, who use the government
+  to try to throw
+776: those people in jail. And what's pretty incredible is in the last 10 or 15 years,
+  we've solved that problem.
+785: The last couple of years at the famous Defcon hacker conference, governments
+  from all over the world
+791: have gone there to listen, to learn, and to demonstrate. We get hackers. They're
+  the immune
+797: system of the internet. And so there are ways that we can build that kind of
+  collaboration.
+802: But it's sort of still there. And there's the as is model. There's a great blog
+  post by a French
+810: developer last year, Thomas de Pierre, who said, was titled, I am not your supply
+  chain. And it really
+816: should have had an expletive in it. I am not supply chain. And I get it, and
+  totally makes sense.
+824: But there's also a pretty amazing project called Zephyr, which is a real time
+  operating system,
+830: open source. And the vision is that that should underpin some of our most important
+  systems in the
+835: world. And if we want that to be in that environment, and we want it to be that
+  important, then that
+844: community is going to have to continue the great work they're doing of making
+  sure that there's
+848: maintenance, that there's updates, that they can respond, and also respond negatively
+  to be able to
+855: communicate downstream, hey, this doesn't affect us, carry on. All of those things
+  are what downstream
+862: users of open source need. Sarah? I wanted to touch on maintainers and how they
+  intersect with
+869: corporations, because that is an open problem today. Because how many demand
+  letters have you gotten
+876: recently? Not from companies going, I need I need to, I need your s bomb now.
+  And it's like, well, I don't
+881: know you that. Yeah, we we get a few of those. I'm quite good at saying no in
+  all areas of my life.
+889: So, so we we send we corporations errantly, misunderstanding the license, misunderstanding
+  the
+896: social contracts of, of open source, send demand letters, we, we say we want
+  someone to contribute
+904: to open source. So we hire an open source developer, but then our business choices
+  change. And the hiring
+910: that person to work on open source is only as durable as the manager, or maybe
+  the VP who said,
+917: yes, you can use half your time, yes, you can work all your time on open source.
+  So we need things
+924: like different ways of conceiving about maintainer roles in corporations, because
+  being a maintainer
+932: on a critical system, open SSL was a great example in Bruce's, in Bruce's kit,
+  in talk. If we have a
+939: critical dependency, if our customers have critical dependencies on this, there
+  is good reason for
+947: us to hire a maintainer to allow that maintainer to continue to work on this.
+  And this is an uphill
+953: battle in every company I've worked in, we we have maintainers who want to work.
+  And yet, we want them
+961: to we want they want to work on open source. And we have social contracts within
+  open source. So to your
+968: point, maintainers, even if they are hired by a corporation, will maybe get their
+  job shifted
+974: slightly. And then because they're personally responsible to the open source
+  community through
+980: a social contract through a group that is larger than their company, they end
+  up working on their
+986: evenings and weekends, because maybe we didn't get as far during my day job,
+  or I maybe my work has
+992: changed. So we're still burning out open source maintainers, even when we pay
+  them to work within
+998: our larger corporations. This is an open problem. And no company can currently
+  rationalize as well about
+1006: the social contract as an individual inside open source, as in competition with
+  the corporate contract
+1012: of my employment. I think that that social contract conversation is a really
+  important one. And we're
+1019: going to delve into that a bit more in the next panel when we talk about the
+  internal frictions.
+1023: We've got about five minutes left in this panel. And we really want to try and
+  open this conversation
+1031: up. Now I told you we're convening the global open tech community here because
+  there were big discussions
+1037: to be had, big challenges to face. I didn't say we had the answers. So we are
+  working on these answers,
+1045: we want to convene the conversation and we want to convene you the conversation.
+  So
+1049: we will continue the conversation after this morning after today. And any of
+  you who want
+1053: to engage on an ongoing basis should be in touch with us, and we will bring
+  you together. But before
+1060: we wrap this external factor panel, we can take one possibly two questions if
+  the panelists are quick
+1067: in answering. Does anybody have a question for the panel? Gentleman here, and
+  then gentleman here,
+1073: assuming we can get to. Hi Amanda. I have a question. I'm actually quite worried
+  that even homebrew is not
+1082: like small people working for free. So as individual contributors and community
+  members,
+1087: how can we change that? How can we support you? We are not those big companies,
+  although we work at some
+1093: of them. So what can we do? The only thing I can think of is championing this
+  stuff inside of the
+1098: companies, recommending them to sponsor you. But that's as much as I think about
+  it.
+1104: Thank you. So as individuals, what can we do? Mike probably should come to you
+  with that first.
+1109: Yeah, thank you. I think that's what the first thing you've done already is
+  demonstrating that you
+1114: care and saying nice things. And you'd be surprised how few people in open source
+  say nice things. So
+1122: if you don't open an issue, whatever. But if you see someone today who you happen
+  to know works on an
+1128: open source project you like, tell them, hey, I like this thing. Thank you for
+  doing it. You'd be
+1133: surprised how much that helps motivate people. So that's a good start. And it's
+  free, which is even
+1138: better. Another is just setting your expectations accordingly. And Sarah had
+  some really good points
+1144: with kind of corporations that come along kind of making demands. And I think
+  there's like,
+1149: there's a spectrum here. There's a where, you know, you may not be a corporation
+  coming along and
+1155: demanding SOC 2 compliance for open source project. But you might be someone
+  who is pretty grumpy that
+1160: they've hit this bug. And, you know, you're feeling angry and triggered or whatever,
+  when you write your
+1166: issue report, and you start talking about how this open source project is a
+  piece of bleep, and the code
+1171: quality is a piece of bleep, and blah, blah, blah, blah. Don't do that. Try
+  and remember that you're
+1176: speaking mainly with people who are, as I say, often working in their evenings
+  and weekends for fun,
+1181: trying to build this stuff for you. Just try and be nice, try and be friendly,
+  try and be helpful,
+1185: do as much as you can to help yourself before you rely on other people to help
+  you. And if you do that,
+1191: then open source will be better. And it will be easier for people who are doing
+  this stuff in their
+1196: evenings and weekends to want to do it more. Alan, as somebody who's here representing
+  a government
+1200: department, we don't want to alarm you with the evening and weekend thing, right?
+  We want
+1205: to understand that there's millions and billions of dollars going into the ecosystem,
+  perhaps not all
+1210: being channeled in the right direction. And that's something we need to work
+  on. Comment from that
+1216: perspective. Sure. So you may not know this, but from a policymaker perspective,
+  you're actually quite
+1224: exotic. There's very little that makes it easier and better for me to do my
+  job in Washington than to
+1232: be able to give, begin a speech by saying, well, I spoke to a developer in London
+  and they said,
+1238: here's a cool story. So if this is something that you've thought about and you're
+  passionate about,
+1246: being able to think about your own narrative and communicate it in a way that
+  someone else who
+1253: doesn't know your world can understand why it's interesting and important is
+  very powerful. So
+1258: that's one of those human sides of things that policymakers and politicians
+  like is to be able to
+1266: say, you know, Sue over here is worried about X. So I think that's one of the
+  key things you as an
+1272: individual can do. And you can folks like open UK can help aggregate that and
+  have those narratives
+1279: percolate up. And I would remind you of what I said to you earlier that we have
+  the home office
+1284: and the department of science, innovation and technologies, AI teams who want
+  to learn more
+1289: about open source. And they will be in the AI policy zone right in the basement
+  at the very back
+1295: from one till two and two till three, both days, there's room for 40 people
+  in the consultation room,
+1301: and they want to understand from you what open source is, how it works and how
+  the whole AI
+1307: scene is being impacted. So I'm going to jump to the last question and take
+  that to Sarah,
+1313: and then we're going to wrap this panel. Gentleman at the front. The mic, please.
+  Down here.
+1325: That's okay. Thanks, Andy.
+1334: Can you hear me? Oh, can you hear?
+1335: Yep, Sammy Atabani. Question actually, regulations across different jurisdictions,
+  which are very often
+1344: very conflicting. What can we do to help? I know Amanda mentioned the AI and
+  government officials being
+1352: around, but it's really difficult to get aligned across the different jurisdictions.
+  So I'll be
+1358: interested in your thoughts on that. I don't know if everybody heard that. And
+  we're going to come to
+1361: Sarah and Alan very quickly to wrap this up. With differing laws and differing
+  standards across the globe,
+1367: what can we do to make this simpler? Sarah? Thoughts? This is something where
+  we have a unique opportunity
+1374: right now because as a community, we are seeing regulators ask us for our opinions
+  on laws.
+1383: We are seeing regulators come to us and look for engagement about how to rationalize
+  these things.
+1390: And generally governments are fairly good across the globe. Not great, fairly
+  good at rationalizing and
+1396: trying not to make conflicting laws. But our opportunity today is to participate
+  in this work to make sure
+1403: that these standards and the standard orgs that we know about, and generally,
+  as Alan said, speak your
+1410: piece. The internet is there for democratization of sharing information. So
+  write up what you think,
+1418: share it with your legislators, share it with the bodies that are convening
+  discussions about what these
+1423: standards should be. And please participate. That's the best thing we can do
+  right now.
+1428: Thank you. Alan?
+1431: Very briefly, one thing that can help is security is a giant, complex, multi-dimensional
+  idea.
+1439: And so one thing is take your area, right? Whatever it is, if it's memory safety,
+  if it's web app
+1448: security, take a pic and say, hey, here's a small thing. And then if we can
+  package it,
+1453: in a way that we can then share it with, you know, folks in Brussels, folks
+  in London, folks in
+1459: Washington, folks in Tokyo and Seoul, then that can be sort of fit into each
+  national orientation,
+1466: but we can have those common security features. Yeah. Mike, I wasn't going to
+  let you have the last
+1472: word, but I will. Cross border regulation. I don't know. This is not something
+  I think about a huge
+1482: amount. But I guess, again, I would say just to anyone here who's involved with
+  writing those regulations,
+1489: consider the little guy who may be impacted by this stuff and try to collaborate
+  as the open source
+1498: community has collaborated around the world. You know, our team on homebrew,
+  we just met together
+1503: yesterday. We have people from people who it's their first time leaving their
+  home country. And the
+1508: first time they've done that has been to come and meet the other people they've
+  been working on
+1511: with open source for a while. Like borders don't mean a whole lot to us in open
+  source land,
+1516: which is why sometimes the regulations and the differences between borders are
+  confusing.
+1520: Try and copy us a little bit more, try and work together across companies, governments,
+  countries,
+1528: etc. And then we can have something a little bit more unified. We can all be
+  happier and friendlier.
+1532: Mike, Sarah, Alan, thank you so much for joining us this morning.
+1546: Thank you.

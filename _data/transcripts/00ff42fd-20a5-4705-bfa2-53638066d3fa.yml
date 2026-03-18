@@ -1,0 +1,519 @@
+---
+0: Hello, everyone. Welcome back. Hello, Neha. How are you today?
+3: I'm good. How are you?
+4: Very good. Thank you. We have another special guest with us today. Neha, would
+  you like to introduce our special guest, David?
+11: Yes. Yes. This is David Yee. He's a VP of Engineering at New York Times. I'll
+  let him say his title.
+16: But David and I got to know each other through the lead dev circuit.
+20: And because we're both kind of involved on speaking and stuff, but really, it's
+  more of a meeting of minds.
+25: I'm really excited to have him here because we're going to transparently lay out
+  some of the conversations we've been having behind the scenes.
+32: We tend to joke that some of our conversations are like stuff that you usually
+  don't necessarily want to say on stage, but it's like about how to get things done,
+  actually.
+43: So anyway, it's really nice to have someone else out there who is willing to just
+  drop all the formalities and the, you know, the quips and whatever and just talk
+  about how to actually get things done.
+55: And so that's why I'm really excited to have David. Do you want to introduce yourself
+  with your former title or whatever on at New York Times?
+65: Yeah. Hi, I'm David. I'm also super psyched to be here. My title recently changed.
+  I'm still VP of Engineering at the New York Times.
+73: I am now the head of engineering for the new AI platforms and products mission.
+79: It's a mission that's sort of coming into coming into existence recently at the
+  New York Times.
+84: And we're building products that are sort of user-facing, reader-facing, that
+  use large language models and the platforms to make it easier for engineers to build
+  them.
+94: Yeah, this is going to be fun. It's the sort of transition from quiet conversations
+  to sort of like thinking out loud about the kinds of stuff you can't say on stage.
+103: So I'm mostly just excited to be here.
+106: Yeah, I feel like my favorite stuff that we talk about is like how to get shit
+  done.
+110: And I remember recently when we were talking, we were talking about how to get
+  shit done.
+116: When and like, why is that so hard? And why is that a full-time job?
+121: And one of the things that you were starting to talk about was that, well, to
+  be clear, like when you are trying to change something at an institution, right?
+131: It's job is to not change. And so like you're basically rolling a ball uphill
+  or what is it? A boulder, a boulder uphill.
+139: And of course, it's going to be hard. And of course, it's like not natural because
+  you're trying to introduce something unnatural to the environment.
+147: So I was curious if you've had any more thoughts around that since like we kind
+  of went really deep into it.
+152: And I feel like that's something that a lot of people need to hear about is just
+  like, OK, this is the fact of the matter.
+157: Like, of course, it's not easy because of these reasons.
+161: Yeah. So I think so. I've been at the New York just for some broader context.
+166: Like I've been at the New York Times for almost eight years.
+168: I've worked in startups. I've worked in sort of smaller media organizations.
+174: But and so just for some context, in terms of New York Times, it's roughly 500
+  engineer space.
+181: So it's smaller than some, bigger than others.
+184: But just like from the perspective of size, that's sort of one place to place
+  it.
+188: But it is also like this year, 175 years old as a as a institution since.
+194: Yeah, that's an institution.
+195: Yeah. And it's and it's what we would call its most recent incarnation.
+200: Right. Like, so that's like the New York Times preexisted, preexisted that.
+205: But like at the time of Adolf Fox bought it and turned it into the newspaper
+  that, you know, that everybody in New York reads and everybody in the world reads,
+  you know, that institution has been around for a really long time.
+216: And so, yeah, I think when you and I have talked about it and I think the context
+  that I that I give a lot of people who are starting out at the New York Times is
+  based on essentially a reflection on the first two or three years I was at the Times
+  when I was constantly like, you brought me here.
+235: Like with this sort of sort of quasi narcissistic, maybe typically narcissistic
+  engineer view of like what it's like to join an organization and say, well, you
+  brought me here to you wanted me to make more me's.
+247: You want me to change this organization. Why are you making it so hard?
+250: And I think and I think maybe it's only in the last year or two that I've come
+  to really understand that like actually the whole point to what you said, the whole
+  point is that it's hard, that there are a few different ways you can change the
+  organization.
+263: But expectations, being honest about expectations with an institution is like
+  that's my whole new thing.
+269: That's like when I talk to engineering managers joining the organization, when
+  I talk to senior leaders joining the organization is this idea that says like you
+  really are going to have to pick your fight.
+280: Because you don't you don't get to you don't get to like run roughshod over the
+  whole thing.
+285: I feel like what's really interesting is, OK, cool, that makes sense for like
+  a large institution, something that's been around for a long time.
+292: But like what happens with a small company? Because like I've recently started
+  a new company, Motif, and so that's a small company.
+299: And Mike is also at a small company. Right. And like something, you know, there
+  is something about like there may not be an institution, but you're inheriting some
+  sort of culture and some sort of like
+310: a natural way of going. And it probably is based on the leaders of the company.
+  Right. And for both Mike and I, we enter into a company and then therefore change
+  the dynamic because we are potentially changing the institution itself.
+326: Because now I guess like there is the leaders of the company before, then you
+  enter in and you become part of leadership.
+333: And then now from now on, you are influencing the leadership as well. So I was
+  curious, Mike, like, have you experienced that feeling of an institution and then
+  feeling about how it changed and, you know, people pinning their hopes on you and
+  also you feeling like how much influence you could have over this institution?
+352: Yeah, I feel it's like in some ways a blessing and a curse, right? Being the
+  new person to come in, like particularly if you're kind of coming in as a leader,
+  right? Like the classic one I always think about as an engineer is like the onboarding
+  docs or process where lots of people, I mean, generally, almost every engineer I
+  know who's coming at almost every time.
+374: There's been something in the onboarding process that makes you go like, oh,
+  why are we doing it that way? Right. And then give it a week, a month, six months,
+  a year.
+381: And then you're the person being like, no, actually, there's a really good reason
+  for that. And if you change it, then everything will fall over. Right.
+387: And I think that's, that's the thing that I find really fun, but also really
+  hard, like knowing that my gut's going to have that adverse reaction to perhaps
+  almost everything and almost being like, well, which are the ones that actually
+  stick with me?
+405: The team seems to agree and seems to actually have a basis or maybe we like tweak
+  it and things get a little bit better versus we tweak it and everything falls over
+  and everyone starts crying.
+414: So, yeah, like, I guess that's, that's been my experience.
+418: I feel like what's interesting is that like, so David and Mike, both of you kind
+  of talked about like the journey of like getting familiar with the company. Right.
+428: And so it's like, starts with like, I know everything. And then it's like, wait
+  a minute, I know nothing. Right.
+432: And then it's like, okay, can I do something about it? And like, what can I do?
+436: And then you start to experiment around, you start to like, you know, knock on
+  the different Jenga blocks and figure out what you can pull out.
+443: And then you're like, okay, I know what it takes to get it done.
+446: And then, you know, and then you like become matrix informed and you're like,
+  okay, I see the whole matrix.
+452: I see how things are interrelated. I can do anything, but what should I do and
+  at what cost? Right.
+457: And so I feel like if you've done it enough times, you know, that you're about
+  to go through that journey.
+461: I think every step of that journey is important. You can't skip a step.
+465: And I also think that that first part where you're like, wait, why is this the
+  way it is?
+470: I think it's a very precious and important step.
+474: Like, I don't think we should all impose all of our opinions on other people,
+  but I feel like hearing that if you don't have like fresh people coming in who are
+  questioning the way things are,
+485: then like essentially you're like stuck with every single inherited constraint
+  so far and like you don't notice whether constraints have changed.
+493: And so I think it's a precious step to like be like question all constraints
+  without ruining the institution and also like increasing unhappiness about constraints
+  that you can't change.
+504: So anyway, that's like kind of I was like observing both of you are talking about
+  your journeys and it's like it's a necessary part of being familiar with a company.
+513: So as you were talking, I was kind of thinking and like I don't know that I feel
+  super comfortable with this analogy, but it feels a lot like dating.
+520: And so I think there's like, oh, can I change?
+524: Like, I don't really like is that how they brush their teeth?
+527: Like, you know, is there any way I could change that or like, you know, how much
+  do I care about it?
+531: It does annoy me.
+532: Yeah.
+533: Exactly.
+534: Is this a fight that I want is a battle I want to fight?
+536: And as I thought of that, I was like, I don't think that people I don't think
+  that most workers try to think about institutions as individual people as much as
+  they should.
+549: Like, this is this is I think like what people often think about is like it's
+  the CEO or it's like the CTO or this particular leader or that particular leader
+  is just messing me up.
+562: And like you come in like certainly like I totally know exactly like how you
+  think about it, Mike, when you walk into an organization, you're like, I don't like
+  this.
+570: Whose idea was this?
+572: And like they are misguided.
+574: It's like it's like these this person, these people, but different to what I
+  think people expect at a startup.
+580: And I'm really curious what you all think about smaller companies since you're
+  both at much smaller companies, presumably than I am now.
+586: But like what I've come to learn about institutions working at a larger company
+  is like it is very much like what they it's very much like the positioning that
+  like the British royal family makes, which is it's not the queen.
+603: It's the crown and like an institution is an entity.
+608: It is an entity that has behaviors and flaws and preferences.
+612: And it is as as one of the people you're going to date in your lifetime.
+616: You know, the longer that they've been alive, the more hidebound they are about
+  changing.
+621: And so, yeah, like I think if there was anything I wish I had known eight or
+  10 years ago, whatever, it would be that to actually really consider the personality
+  of an organization as a real thing, like not as an imagined contract, but as a real
+  thing because it is.
+636: Yeah, I think that's a helpful way of framing it.
+640: I like that.
+641: I like that approach because I feel like I've seen stuff with coworkers past
+  and present.
+648: I'm sure I'll see it in the future as well, where people behave at work in a
+  completely different way to how they do anywhere else in their life.
+655: Because that's how the organization and the culture or whatever has taught them
+  to do.
+660: And I mean, sometimes you even forget there's like a particular name for this.
+664: But like sometimes I feel like you sometimes see this psychological thing where
+  literally everyone is behaving in a way that no one really likes.
+671: But everyone thinks that everyone else will freak out if they don't behave that
+  way because that's what the culture is and that's what the stage is, right?
+680: And the place I'm at right now is really interesting because it's been around
+  for like 10 plus years and it's got a very high average tenure, but it's still a
+  pretty small organization, you know, like 40, 50 people.
+691: And I find it kind of fascinating because everywhere I've been before has been
+  either this size or smaller, but much like a much newer organization or a much bigger
+  and older organization.
+703: So I feel like it's taught me a lot in that respect about kind of culture and
+  maybe like inertia and also like what you can do as the outsider when you come in
+  and those moments where you do notice that like I feel like maybe no one wants to
+  do this and everyone's just doing it because they think they have to.
+721: And then you can give them permission to be like, look, let's all try not doing
+  this for a week.
+726: If it all falls over, that's my fault.
+728: Like the CEO will tell me off and then we try it and then it doesn't fall over
+  and then everyone's happy and you're like, great, right?
+735: And then sometimes you do it and it's a disaster and everyone's unhappy, you
+  know, it's I wish I could predict in advance 100% accuracy which one would be which,
+  but try and ever, I guess.
+744: I think what you mentioned about like people being a little bit different than
+  like what they normally are like, right?
+750: And maybe not even liking who they've become, it's like must be some sort of
+  average between the institution and the individual, right?
+756: Or like some sort of compromise between the two and the longer that you've been
+  there, you have to adopt some sort of compromises to be different from who you are
+  in order to stay there and to sustain and to essentially like find an identity.
+772: And, you know, if our job is to bring in change and our job is to push us forward
+  or our job is to help the company adapt to new conditions, then like, first of all,
+  that's easiest when you're new, right?
+784: You're new, you can kind of like take the blame and you can take a few hits.
+788: And also you don't have that established reputation at the institution and like
+  that sort of brand that people expect from you.
+797: And so you can kind of jump out of that.
+798: But if you're not that, then, you know, you still have a responsibility as a
+  leader to introduce that change and to find a way to break the mold and to give
+  people a space and some place of comfortability to try something new.
+810: And I think that that comes back to what you were saying, Mike, which is like
+  taking on the risk for the team.
+816: So, OK, cool.
+817: We have to change something.
+818: Everyone else is very used to the way things are done, especially at a 10-year-old
+  company, a 20-year-old company.
+823: People who have been at the company for 10 years, 20 years, et cetera, right?
+827: They're stuck in a certain way.
+828: Everyone wants to change.
+830: You have to be the one to kind of take on that risk and give people permission
+  and find a way to introduce something different, right?
+836: Yeah, like, I guess a question for David, like, well, I mean, it's kind of wild
+  when you think of an organization that's like hundreds of years old.
+845: And obviously, the engineering organization is, I would imagine, not yet hundreds
+  of years old.
+851: I mean, have you got examples of any cultural things that you have that maybe
+  have gone way, way farther back than what you might have expected or anticipated?
+862: It's so old that it's hard to tell.
+865: I think there's probably, there's a ton, right?
+869: And like, some of them are just, some of them are just, they make a ton of sense
+  when you actually look at what the organization does and what the institute, not
+  even the organization, the institution, right?
+880: The 175-year institution values.
+882: And then you try to imagine overlaying the culture of, you know, the Silicon
+  Valley company over that.
+889: And you're like, there's some things that are just like directly opposed.
+893: So, so the two things I can think about that are really interesting.
+896: And like, I sometimes say that, so the job I had before this, which was now years
+  ago, was at Vox Media.
+903: And the New York Times is different from Vox Media because Vox Media was effectively,
+  it started essentially as a sports blog company, right?
+914: So all of SB Nation was where Vox Media started.
+917: And so SB Nation and Vox Media were essentially like a digital product organization.
+923: Like they built a CMS called Chorus, which, you know, 10 years ago was like famous
+  in the media and journalism industry for being this amazing content management system
+  that everybody wanted to have and everybody wanted to know what it was.
+938: And so they built these newsrooms, they built The Verge, they built Vox.com,
+  like all of the sort of companies, all the brands that Vox Media has or had were
+  built on top of a product organization.
+950: So you had a bunch of journalists who essentially worked for a digital product
+  organization.
+953: The New York Times is exactly the opposite.
+956: New York Times is a newsroom that is 175 years old, that has all of the history,
+  all of the mistakes, all of the pattern matching of that organization.
+966: And everybody in the world knows that newsroom and it has a digital product organization
+  built on top of it.
+972: And for years, like there was this question about, if you think about just content
+  management systems, so digital content management system, there was this question
+  of does the digital report chase the print report or does the print report chase
+  the digital report?
+989: And there was a moment at which the literally the content management system of
+  record became the digital one and not the one that was generating the print report
+  because they've used computers and content management for the print report for a
+  long time.
+1004: And so there are a couple of moments like that where where you've actually had
+  to watch the organization say the thing that moves fast, the thing that is more
+  unpredictable, the thing that is read by people by different people to the people
+  who subscribe to the newspaper is now the paper of record.
+1023: And that was that was that was a huge shift.
+1025: But the Times is deliberate, right?
+1029: So when every year they have they announced the Pulitzer Prize, this is a really
+  big thing at the New York Times and not to toot the New York Times's horn, but we
+  do frequently win Pulitzer Prizes.
+1039: And so like everybody piles into the middle of the newsroom, which is a sort
+  of big open atrium, this two floor atrium and the executive editor, Joe Kahn, stands
+  on the stairs in that atrium and announces all of the whoever has won a Pulitzer
+  Prize.
+1056: And then there's a whole litany of people who come up and talk about it, including
+  the person who's done the writing or the photography or the editing, you know, all
+  of and there's frequently dozens of people attached to any given prize.
+1067: And it is not uncommon to be in that room and hear the person receiving the
+  prize say this was this was a piece of work that was seven years in the making.
+1077: Imagine if you took seven years to deliver a meaningful software product, right?
+1084: No, it would never happen.
+1086: Like it would never 18 months.
+1089: Like we ran out of money.
+1090: It's not going to happen.
+1091: But like at the New York Times, they are willing to take the time to do two
+  things.
+1097: To be right on the facts and to do impactful reporting, sometimes on the order
+  of years.
+1103: What does that mean for, again, for the digital product organization?
+1108: It means that sometimes, like even though in journalism companies, there's a
+  split between the newsroom and the business that's really important to maintain,
+  where one side really doesn't talk to the other by design to make sure that the
+  reporting stays clear.
+1122: Every once in a while, a cultural precept crosses that boundary.
+1126: And so you can find yourself frequently debating small truths about a software
+  product or about a product that you're going to deliver to your users.
+1138: An engineer who's come in and worked at a faster moving place, as indeed I was
+  when I first got there, can sometimes say, why are we talking about this?
+1147: But it is because the institution has that behavior and culture.
+1152: So like Mike, when you're talking about it, it's like you see people behaving
+  differently.
+1155: Like you can actually track how somebody's decision-making process changes as
+  they become more adapted to and malleable to the practices of this organization
+  in that way.
+1167: And it's not bad, per se.
+1169: It really isn't.
+1171: It's just it's different to what we expect if we are engineers coming out of,
+  you know, fast-moving startups.
+1177: And there are reasons for it that you can question all day long, but ain't going
+  to change.
+1183: Well, this kind of comes into like constraints, right?
+1187: So it's like there's like real-life constraints about like how humans work,
+  about like how technology works, about how the news works.
+1194: Then there's like company constraints, right?
+1196: And then if you want to prevent yourself from burning out, you need to be realistic
+  about like what constraints there are and then like where the chances are for opportunity
+  for change, right?
+1207: And also potentially at a place that's like so polar opposite in terms of rate
+  of change, right?
+1216: You almost have to like stay tuned into like what the rate of change is in the
+  software world when you're like going, when you are trying to complement an institution
+  that's like used to a lower rate of change and you have to like stay in tune on
+  your own in order to drive that pace and to adhere to that pace.
+1233: So like how do you know which constraints to like listen to and which not to
+  and how do you identify opportunities for change if like an institution is used
+  to going slower but still kind of demands you to go faster and doesn't know how
+  to reconcile that without you?
+1252: It's like the I got into a conversation with a colleague of mine earlier this
+  week about norms because I said look we're spinning up this whole new mission so
+  it's great like you know you know forming storming norming performing right so like
+  what are we going to do like well let's just start with norming and I was like I
+  was like you can do that but like you know if you're going to do it you have to
+  be real honest about where we're starting right?
+1277: Right and the my one of my favorite trips is like to look at an organization
+  stated norms and be like okay what two are missing from this because it's like and
+  that's actually the most important the most important norms are missing I feel like
+  from the written norms or they're or they're the they're the flip side of a norm
+  right?
+1300: So it's like we are agile um we're like and this is I'm just imagining a norm
+  for a company this is we're agile right you flip it it's like okay we're reckless
+  right um or we're deliberate we're slow right and and it's not like one is true
+  and one's not true it's just there's two different interpretations of that
+1320: so the first I don't know I'm really curious what the two of you think because
+  like for my for my part I think most most organizations and certainly institutions
+  go way out of their way not to tell you and not to signal which things are movable
+  and which things are immovable
+1338: because like if everybody just knew the things that could be moved the rate
+  like there's a limited taste even for that and so I'm curious like what you two
+  have seen when you've thought about how to determine what things can be changed
+  and what things can't be changed
+1356: yeah Mike you want to go first yeah I was gonna say I can definitely relate
+  to that sense that like both the norms that are missing and also the kind of I always
+  love that saying that essentially I'm gonna paraphrase terribly but like you know
+  your biggest strength is generally your biggest weakness right and that applies
+  for like teams and cultures and organizations as well
+1377: and also just I think the nice thing that we have in engineering right is we
+  have a culture of trade-offs where so many almost maybe every choice is like look
+  there's not a right or wrong answer here there's just if you do this this is the
+  variables that are going to be good if you do this these are the variables that
+  are going to be good and I guess like something I've kind of liked to do with the
+  norms is when I see a problem or whatever and I see the cultural norms or whatever
+  is I will try and do it the way the organization states
+1406: that it's meant to be done and assume that all the stated norms are correct
+  and maybe the unstated norms are not or whatever and then when that doesn't work
+  then sometimes I'm just like well either I give up or I sort of like just try a
+  different approach right so like you know for example I'm trying to think of a good
+  one that I can actually say for example like a company that says like we like to
+  do all our communication in the public right but then in the public
+1436: people just don't say things because they don't feel comfortable doing in the
+  public and then so you then you create a private space and then people say things
+  and it's like well the stated norm perhaps or the value was like we believe in public
+  communication but then the unstated one was like and if you can't say it publicly
+  don't say it at all right whereas that's there's maybe like a higher one there where
+  it's like well actually like we would rather you said it in public but if you can't
+  it's better that you say it privately and we resolve the problems and whatever
+1466: whatever and again like I feel like sometimes when you can those unstated ones
+  that you made the point David but like when you can say them out loud and stuff
+  it's like well which is more important that we don't use private slack channels
+  or we deliver value to our customers right and that's like basically obvious in
+  every company right unless it was organization would not put it that way but like
+  often that's not the way people think about it or frame it or whatever and it sometimes
+  does take an outsider to frame it like that for people to be like yeah
+1496: like that when you put it like that when you put it like that it's kind of obvious
+  the choice we're making and it's obvious maybe things need to change or whatever
+  and then I guess my final point like Neha saw me doing this a bunch at github is
+  like sometimes I'll just be like oh the organization says not to do this and I have
+  no consensus or agreement I'm just going to do it and see what happens I'm prepared
+  for like the entire organization to jump on me and say no Mike don't do it that
+  way and then I'm like cool I learned the norm like I will undo we will return
+1525: return to you know a state of calm and then sometimes it's the other way around
+  where people like are like oh well we were just waiting for someone to kind of take
+  the first step but yeah what about you Neha like what's your
+1537: I mean I think what's interesting about what you're saying is like if you are
+  coming in and you're on a new team you're establishing a new culture or you're just
+  trying to learn the way of the ropes and there are established norms or stated norms
+  the test balloon is just trusting it and then seeing how far you get to what you're
+  actually optimizing for which is progress
+1555: or delivering value to the customer or whatever and when you don't deliver value
+  to the customer then you start to debug and then you start to learn about like what
+  is actually missing and people will kind of come out of the woodwork and be like
+  okay well if you actually want to get things done then this is what you do now as
+  a manager as you're bringing in new people if you want to help your individuals
+  your peers your manager get things done you then
+1579: attempt to help them understand okay we write this norm but like if you want
+  to get things done you can get them done faster this way and you are the cultural
+  translator of those norms but all of that goes into reinforcing the norm when it
+  comes to changing the norm right like you have a few options you can like this is
+  why especially for leaders organizational design is so important understanding
+1607: understanding what you're trying to understand what you're trying to understand
+  what you're trying to do and then understanding what is the natural gravitational
+  pull for the people that you're working with which is essentially the institution
+  of like what your team is right and understanding what the difference is if you
+  need to change it one of your options is to change around the people
+1626: AI is like AI is changing one of the things that we're used to which is the
+  rate of change of information and also how like we don't have a lot of clarity as
+  to like what we want the outcome to be because of the rate of change of technology
+  so you need people who are comfortable with ambiguity and energized by the rate
+  of change right progress needs to be something that like they get energized by
+1654: like they get energized by and stability needs to be something that they're
+  they rely on less and so by changing those uh you know by introducing new people
+  introducing fresh blood or finding the people who are most energized by that you
+  might have a chance to make a little bit more progress against the institution in
+  order to accomplish the goal and then the other piece that i've been i just started
+  thinking about especially at my current organization is if you need to introduce
+  change as a mandate from above or if you need to introduce change
+1682: change as a mandate from above or as because of the needs of the business or
+  their customer chances are you're changing a norm that is going to be uncomfortable
+  for people and that is a destabilization for engineers whose job it is to stabilize
+  a system a lot of engineers who create stability crave stability if you are going
+  to and have to destabilize
+1706: then you need to provide a different avenue for stability so that they have
+  something as you destabilize the thing that they used to derive stability from and
+  understanding what people derive stability from and how much they need in order
+  to make the progress that you need to make progress on gives you the new world of
+  like what you could try to stabilize you don't know necessarily the right answer
+  but you have options now and you have you can see the world a little bit more clearly
+  behind the
+1736: like the current set of things and what people say and more about the norms
+  and more about the norms and the institution and all those layers behind which is
+  like what we spent this entire podcast talking about is all of those layers and
+  how they like pile on top of each other so anyway that's like what you all made
+  me think about today
+1751: um and like what this conversation kind of like understanding how do you make
+  change happen if like the gravitational pull of an institution is to stay the way
+  it is right
+1761: I was thinking this week about like the job of a manager versus the job of a
+  director or a manager of managers is being like the most wonderful and difficult
+  thing about being a line manager is that you have expressed in four to ten people
+1778: the boundary line between the boundary line between the abstraction that is
+  the business and the reality that is people and uh and so exactly exactly what you're
+  talking about in terms of like the destabilization of folks on the ground is like
+  you're giving that to the people who have the least like in general the least experience
+1797: in the business and and you're asking them to hold that right that they're the
+  bonds they're the bonds between sort of like two dodge chargers that are like pulling
+  in opposite directions
+1808: you know in fifth gear right so i think that the the the thing that i so i am
+  very lucky in that like for a little while i get to manage engineers like for a
+  very little while i get to manage engineers and i and i love it it's like it's like
+  candy canes for me it's like it's perfect because i get to say the thing that i
+  never say which is on an engineering team every new person you add to that team
+  creates an entire new team right it is
+1838: a completely new team i can't do that with like 125 person engineering organization
+  my cto can't do it with a 500 person engineering organization you can't say yeah
+  we hired somebody in such and such a team so it's going to revisit all of the engineering
+  norms but you can do it on a team and like you and you can hold enough direct not
+  even transitive but direct trust with your engineers to be able to be their stability
+1865: and say the thing that isn't changing is is like our relationship my relationship
+  to you as an individual human being so you bring somebody else in it's like oh they're
+  like a senior engineer and they worked at google and whatever like what they like
+  you know or or like this person comes from a different culture and like i don't
+  know how i feel about that it's going to be weird it's like that's cool it's supposed
+  to be weird it's a new it's a new team like you know that's the whole that's the
+  whole point which has all sorts of implications for like more flexible
+1894: staffing models to your point but like i think that there's such a wonderful
+  thing about being able to express the change that we're talking about like i don't
+  think most engineering managers i certainly as an engineering manager didn't think
+  about the institution as a whole except in the ways it was indirectly its decisions
+  were indirectly passed down to me
+1913: like that abstraction again felt like people but it is the institution the only
+  people who understand the institution directly are the people who are closest to
+  the outside of it right or to the core of it depending on how you talk about it
+  which is us right the people who have some authority and enough authority to look
+  at it and be like
+1930: that norm that norm that every the reason everybody is acting this way like
+  you i have the context on that and it's just like somebody made a mistake
+1939: seven years ago and like dropped the production inventory database and now like
+  there's an audit committee
+1948: for every change every migration that comes in like and we've been doing it
+  for seven years and like everyone just forgot
+1957: but that's the institution got hurt and so there's on this giant this giant
+  entity that is
+1964: your your company there's this little boo-boo on the on the on the forearm and
+  you're like you're like it's okay
+1971: it's okay we can let's let's you know let's add a column it's gonna be okay
+  well on a positive note of
+1980: it's gonna be okay david thank you for joining us neha thank you for being here
+  and everyone thank you
+1985: for listening and we'll see you next time thank you thanks bye bye

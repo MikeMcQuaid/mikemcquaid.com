@@ -1,0 +1,1775 @@
+---
+0: I'm Mike McQuaid, and you're listening to The Changelog.
+3: Welcome back, everyone. This is The Changelog, and I'm your host, Adam Stachowiak.
+  This is
+16: episode 223, and today, Jared and I are joined by Mike McQuaid, the maintainer
+  of Homebrew.
+21: We talked about Homebrew's 1.0 release recently. We talked about a lot of the
+  changes happening.
+27: There's no more user local. Homebrew now lives at user local Homebrew to keep
+  user local cleaner.
+33: Homebrew also auto-updates now, and in the seven years of Homebrew, the community
+  has grown to nearly
+39: 6,000 unique contributors. There's also talks of Linux Brew, which is a fork of
+  Homebrew joining in
+46: lots of fun stuff happening in this package manager space for the operating systems.
+51: We have three sponsors on today's show. Rollbar, TopTile, and Linode. First sponsor
+  of the show is
+59: our friends at Rollbar. Rollbar puts errors in their place. Head to rollbar.com
+  slash changelog,
+65: get the bootstrap plan for free for 90 days. And today, I'm sharing a conversation
+  with you that
+69: I had with Paul Bigger, the founder of CircleCI, and he talked deeply about how
+  they use Rollbar
+75: and how important that tool is to their developers. Take a listen.
+80: One of the key parts about doing continuous delivery, you don't just have to test
+  your software,
+85: but you have to constantly keep track of it. You're going to be doing deploys
+  10 times a day or 20
+89: times a day, and you have to know that each deploy works. And the way to do that
+  is to have really good
+94: monitoring. And Rollbar is literally the thing that you need to do that monitoring.
+  You need to make
+102: sure that every time you deploy, you're going to get an alert if something goes
+  wrong. And that's
+107: exactly what Rollbar does for CircleCI.
+109: Oh, that's awesome. Thanks, Paul. I appreciate your time. So listeners, we have
+  a special offer for
+114: you. Go to rollbar.com slash changelog, sign up, get the bootstrap plan for free
+  for 90 days.
+121: That's 300,000 errors tracked, totally for free. Get Rollbar trying today. Head
+  over to rollbar.com
+129: slash changelog.
+139: We're back. We got a fun show lined up. Got Mike McQuaid here from Homebrew,
+  Homebrew fame.
+145: Obviously, Homebrew 1.0. Jerry, what do you think about that, man?
+148: I was excited. I think our whole community was excited. It's a big announcement
+  from a big
+155: project that many of us have relied upon for years and years. And it's awesome
+  to see anything
+161: hit that 1.0 milestone. So Mike, congratulations on the big release and welcome
+  to the changelog.
+166: Thank you very much. Thanks for having me, guys.
+169: Yeah, no, it's an exciting time, I think, for most of the Homebrew team as well,
+  because
+175: we've been sort of a bit haphazard with the version numbers. If you look at,
+  I went through
+180: and actually took the time before the release to go and tag all the old versions
+  through
+184: there. And some of them are, you know, multiple versions in the space of a week.
+  And then you
+189: have years, I think, between some versions and they're all a little bit arbitrary.
+  And
+193: now it's kind of giving us this chance to sort of become a more real software
+  project and
+198: start doing semantic versioning and start kind of thinking about how we're doing
+  our release
+202: process and try and have that stable base for people to be able to rely on.
+205: Now, Adam, you had a homebrew show back before I was a co-host of the changelog,
+  all the
+210: way back in 2010, episode 35. You want to give us a little bit of background
+  on that?
+215: I wish I could, man. I wish I could remember six years back. I can barely remember
+  last week
+220: or last month. But just based on our own show notes, me and Wynn, when Wynn was
+  part of the
+224: show and it's kind of funny because now Wynn works with Mike as manager, manager
+  of somebody's
+230: manager or something like that at GitHub. But, you know, we caught up with Max
+  Howell,
+234: talked about homebrew. I think the show was a lot more loose then. I don't think
+  we were
+238: quite as standardized as we are now where we kind of go into the history and
+  kind of go
+242: deep like this. It was a bit just more, a bit more of a wing it kind of show,
+  I guess
+246: then. But fun talking to Max. I can't remember a single thing we talked about.
+  I know we
+249: talked about at least Mac, beer and scrabbling because that's what the notes
+  say. So there
+256: you go. But you can check that out at changelaw.com slash 35 or scroll all the
+  way back or pretty
+262: far back in the list of podcasts that you have there in your listener.
+267: Yeah. So it's been a long time and definitely kind of a catch up show, but a
+  new show, an
+272: introduction, an introduction to Mike. Mike, we like to get backgrounds, origin
+  stories, kind
+277: of the roots of where you began in the programming trades. So can you tell us
+  how you got started and
+283: what got you to where you are now?
+285: Sure thing. So I guess I first got sort of interested in computers and computer
+  things being
+292: young and when my parents brought our PC home. And it was always like, I guess
+  my parents learned
+298: that they could pretty much get me to do any chore, including like mind numbing
+  spreadsheet
+303: entry if it was on the computer. And, and I was just, I don't know, I was always
+  fascinated
+308: with the things. So when the time came to go off to college, I went and studied
+  computer
+313: science. And yeah, and basically just got more into, I guess, open source while
+  I was doing
+319: that. There was our curriculum was quite kind of Unix focused. So I ended up
+  kind of using
+324: Linux on my desktop and all the fun that, that, that produced, uh, back in 2007,
+  using Gen2 to compile
+332: everything from source. So it would take like days to get my system ready in
+  24 hours.
+336: You were hardcore.
+337: Well, I mean, I don't know if it was so much hardcore as just masochistic, but
+  it was certainly,
+343: I certainly learned a wee bit along the way about, you know, how, how software
+  gets put together
+349: and how things kind of build and how they fail and stuff like that. So, um, yeah,
+  I kind
+354: of dabbled with that through uni, started doing little bits of open source programming
+  kind
+357: of by myself, like publishing stuff on my website or whatever, but not really
+  collaborating with
+363: anyone and beyond kind of university group projects. Um, until after, I guess
+  I was sort
+369: of got a bit involved with the Gen2 kind of bug tracker and stuff like that.
+  And then my summer
+374: after graduating, I did Google summer of code on the KDE project, uh, which is
+  the Linux
+380: like, I guess a desktop environment or like the kind of GUI and stuff like that.
+  Um, and yeah,
+386: and I kind of worked on that for a few years and that, that was great fun. Um,
+  and then in the
+390: end, I remember the very, so I had a job, um, where I was doing like cute, the
+  kind of toolkit
+398: it's based on, which everyone thinks is cutie, but it's actually cute, which
+  is always interesting
+402: when you refer to someone who doesn't know this as, oh, they are also a cute
+  developer
+407: and then, yeah. So there you go. Um, but yeah, so I was doing that. So part of
+  the job, a lot
+415: of clients back then, at least were wanting stuff that would run on at least
+  two out of three
+420: platforms, Windows, Mac, and Linux. So I would, I had like an environment for
+  each of those platforms.
+425: Um, so I had kind of a Mac that I kind of picked up because of that. Um, and
+  I didn't really use it
+431: for much. And then I remember one day I had some friends around and we were trying
+  to watch a dual
+435: monitor set up and I was trying to watch a DVD without tearing on my new NVIDIA
+  card or whatever.
+440: Um, and I couldn't get a DVD to play. And this was in 2008, I think, uh, you
+  know, 2008,
+447: 2009 and I couldn't get a DVD to play properly. And I was just like, that was
+  the day I realized
+452: that my, my days with desktop Linux were done. And so I, I pulled out the Mac,
+  plugged it in
+458: and then that all worked perfectly. And then sort of slightly moved my approach
+  over to the Mac,
+462: was doing some KDE on Mac stuff before I kind of gave up. Um, and then kind of
+  used Mac ports
+468: a bit. And then I ended up creating this while working on this thing called Mac
+  porch dummies,
+472: which kind of sort of led me a little bit into homebrew. Mac porch dummies was
+  a way of like,
+477: sort of pretending that a bunch of stuff was installed that was provided by OSX.
+481: And then I kind of knew Max, he was a friend of a friend. Um, and we ended up
+  kind of meeting up
+487: and going for a beer and stuff like that. And he was like, Oh yeah, you know,
+  there's this
+489: homebrew thing I've kind of made. You should check it out. It sounds like it's
+  sort of
+493: in keeping with your interest. So I guess that was about 2009. I started working
+  on homebrew.
+498: And I guess since then I've been kind of working as a maintainer and yeah, just
+  never really stopped.
+503: So that's an interesting way to go to the Mac. I guess my story was a little
+  different. I was on
+510: windows and it just was a better machine. So I just kind of went to the Mac and
+  didn't look back,
+516: but, uh, you know, moving to the Mac is that's kind of interesting story to kind
+  of get to the Mac
+520: basically.
+521: Yeah. It's, it's weird, I guess, because when I talk to a lot of people who,
+  I guess being involved
+527: with the project like homebrew, and I'm also kind of really obsessive about like
+  OSX styling. Like I,
+532: I still use text mate as my main editor just because I mean, as much as I love
+  things like
+537: Atom and sublime, they don't look like quite right.
+540: Right.
+541: And so everyone assumes I'd be one of those people who's been on a Mac since
+  I was,
+544: you know,
+545: Yeah, exactly. Like since you, what year was that? Cause I mean, you might be
+  a purist.
+550: Well, so I guess that was 2000 and yeah, 2008 or nine. I kind of,
+555: so the first Mac I had was on leopard on 10.5. Also the first version of OSX
+  that homebrew
+561: supported. So yeah, I've, I've been on a wee while at this time, but like, yeah,
+  I feel like I've,
+567: you know, the really hardcore folks are the people who had the, the OS nine machine
+  at home.
+572: Right. A little bit, a little bit sooner to the party than you, but not much.
+  In fact,
+576: my path is very similar. Only I was on Ubuntu in college, started off in windows
+  and high school,
+581: Ubuntu in college, and just got sick of, of having to deal with mostly device
+  drivers and wifi back
+588: then. Um, and the Mac was tantalizing, uh, I think it was probably 2007 and leopard
+  was also my first
+594: version. That being said, man, I'm far moved away from text mate at this point.
+  Are you at least on
+598: text mate too, or are you like real old school? Yeah, I'm on text mate too. And
+  I'm, I'm kind of
+603: scratching my own itches quite a bit more like, you know, I've, I've made a few
+  bundles for it and
+608: all this type of thing, but it just fits pretty well with, with my workflow.
+  So as I say, I try
+614: other things, but then I just, there's tiny little things that annoy me and I
+  might just be too old
+619: and far gone at this point to stuck in my ways. So give us a little bit of the
+  context around,
+624: uh, you gave us how you met Max and you started contributing to homebrew and
+  using it a lot.
+629: Um, give us the, the timeframe around Max's kind of transition out. You're now
+  lead maintainer. Of
+636: course, it's huge project with thousands of contributors. And, um, many of that
+  is because
+642: of the way that you can use to contribute formula, which has recently changed.
+  We'll talk about that
+646: soon, but help us out with the transition where you, you became the man when
+  it comes to the homebrew
+651: community and project. Well, I mean, I guess, so the lead maintainer thing is
+  quite recent. Like the,
+657: that title at least is literally just something we sort of decided shortly before
+  homebrew 1.0. Um,
+665: so Max, I guess like, like any open source project, and we try and build this
+  into the way we kind of
+672: run homebrew there's the expectation that people will kind of come in and come
+  out and stuff like
+676: that. And I think Max just ended up having a different job and was spending less
+  time on homebrew
+682: and some other people stepped up and were spending more time on homebrew. And,
+  you know, in the end,
+687: I think he just ended up sort of drifting out and other people ended up drifting
+  in. And when Max left,
+692: so he was the kind of, you know, the lead at that point. And when he left, we
+  kind of agreed that we'd
+699: sort of have a sort of democratic situation where, you know, we would decide
+  things more or less by
+706: committee and stuff like that. And I think that, and there's definitely a lot
+  of open source projects
+712: where that goes pretty far. I think where we struggled and where we felt the
+  kind of pain of that coming up
+717: recently was when, well, I was kind of contributing a lot more than other people
+  were. And when you have
+725: the idea that almost it's a democracy and everyone gets a vote, like it doesn't
+  with the way, I guess I
+732: read a thing about the governance models and the best one, you know, that meritocratic
+  is a really loaded
+738: term. And it's not, I don't think it applies in open source, but that what people
+  have described as
+745: the meritocratic governance model is almost like you have more decision-making
+  power based on doing
+751: more work basically. So, you know, and that's not commit counts or lines of code
+  changed or whatever,
+756: but basically if you're more involved, if you're spending more time in the project
+760: and you're kind of leading the direction a bit more, then you probably have a
+  bit more say.
+765: So I think the lead maintainer thing came about because I was essentially kind
+  of filling that role
+770: and, you know, to validate some other kind of complaints, I think that were made,
+775: like I was maybe sort of overruling or pushing through some things and not really
+  operating by
+781: the committee side of things. And my understanding was that people were annoyed
+  that I was doing that,
+787: whereas I think actually, like having talked about it more and come to the lead
+  maintainer thing,
+792: what was annoying people more was actually this disconnect between the reality
+  of like me kind
+799: of basically leading and other people feeling like they couldn't overrule me
+  on things.
+804: And yeah, and I guess, you know, I'm sure you've all read and heard about, you
+  know,
+811: all the stuff about implicit and explicit power structures and githubs as a company
+  has had its
+816: movement through there as well. And I think that's basically what the move has
+  been is that it's
+821: moved from being an implicit to an explicit thing. And it's just, as a result,
+  it's made a few
+827: little things a little bit easier.
+828: So there was an explicit transition then from max to you or?
+832: Well, no, I guess so. The transition was from max to, I guess, every, to all
+  of the maintainers,
+839: I think it was five or six of us at that point. And then that we grew up to,
+  I think, 13 maintainers.
+846: And then the transition from that model to being me with, with the kind of majority
+  agreeing that
+852: that that was a good move.
+853: I'm sitting here on the contributors tab, man. It's funny you say that too, that
+  it wasn't just
+859: you know, contributors in terms of code, but contributors in terms of effort
+  across the
+863: project, whether it's thought leadership, governance, whatever. I think that
+  that's something that
+869: the contributors tab doesn't really reflect very well. But one thing that I was
+  thinking
+873: about on the contributors tab is I'm looking at Jack Nagel. I'm looking at you.
+  I'm looking at Adam V.
+877: I'm looking at Max and several others that kind of line up there. I kind of wish
+  we can overlap,
+882: you know, see Mike and you and Max and Adam, see all of your graphs kind of in
+  the same timeline,
+889: because just kind of like looking at them, I can see where Max was having fits
+  and starts during a
+894: couple during 2012. And you seem to like start to get more involved in terms
+  of contributions.
+901: And then it seems like when Max dipped away and stepped off to do his own thing
+  or go to Apple or
+906: wherever his path has taken him is when you got more involved in the same thing
+  with Jack and a little bit
+912: the same thing with Adam as well. So it's kind of interesting to look at the
+  contributor graph that way.
+916: Yeah. And it's interesting as well, because as I think you were, I suspected
+  you were going to
+921: mention later on anyway, there's the, we've split into two repositories now.
+  So you've got Homebrew Brew,
+927: which is the package manager, and Homebrew Homebrew Core, which is the formulae.
+  And we kind of split
+934: the history between them as well. So you can kind of see the kind of this quite
+  a difference in
+940: contribution patterns between the two. And there's the same sort of faces in
+  there. But you know,
+944: there's someone who, and people who are very, very active in one and not really
+  in the other. And I
+950: think that was the big thing where like Max particularly was kind of always most
+  active in
+956: the package manager itself. And I guess lately I've been sort of similar. I've
+  kind of, you know,
+961: had a reasonable number of contributions to the packages, but like not nearly
+  as much as some other
+966: people. And in the last, the 1.0 release has been more of a thing around the
+  package manager rather
+972: than the packages itself. And so that's where my focus has been the last, I guess,
+  few months, certainly.
+978: So when you went into this meritocracy or voting based things, and you, you all
+  found that it
+986: wasn't moving forward at the pace or the, you know, the desired pace that you
+  guys wanted it to. And
+992: then because you were already kind of implicitly acting as a leader, or as you
+  thought, perhaps
+998: overstepping your bounds, but people actually appreciated it. Did you end up
+  just kind of like with this flat
+1004: structure where it's, you know, Mike McQuaid and then everybody else, or is
+  there underneath that
+1010: structure? Is there a group of core maintainers and then everybody else? How
+  exactly does it structure
+1015: it now?
+1016: So, I mean, we have what our kind of lingo is, and I realize it varies from
+  project to project is
+1022: what we call a maintainer is basically anyone who has commit access. And historically,
+  that's always
+1028: been based on, you get commit access to both repositories, you don't just get
+  it to one. That,
+1033: that may be something that changes in the future. We have people who are very
+  interested in just the
+1036: package manager and not the packages or vice versa. And then we have contributors,
+  which are anyone who's
+1042: ever submitted a single commit, um, to any project, basically within the homebrew
+  umbrella. And then we
+1048: have users, obviously, which goes without saying. Um, so we've, yeah, so we've
+  moved from a model of
+1054: being all the maintainers are like, at least on paper, kind of on an equal footing
+  to being, I'm, I guess,
+1061: technically in charge, but then it, the way I've had a good manager in a workplace
+  deal with this stuff in the past is that
+1069: they basically only invoke their manager status when they have to, when, so
+  they will always try
+1075: and like have a discussion and win the discussion on an equal fitting. Well,
+  not win, but you know,
+1082: convince other people of their point. And I feel like it's the same thing with
+  us now that the lead
+1088: position is mainly just there to be able to have me be able to say sometimes
+  like, okay, well, we need
+1094: someone to make a decision here. We have two sides who are kind of equal or
+  equally like there's some
+1100: stuff that is important in the direction of the project. And this is a feature
+  that other people
+1105: may not feel passionately about, but I feel that this has to go in and it's
+  important for us to have
+1109: this feature, even if the bulk of other maintainers might disagree on that front.
+  And, and maybe part of
+1116: that is because, you know, we, we do, we started gathering analytics, which
+  I don't want to get
+1121: too much into, but you know, before that, a big part of it would be, I mean,
+  I, I was the person who
+1127: did the most, I guess, talks at conferences about homebrew and stuff like that,
+  and have kind of
+1131: traveled around and met a lot of users. And there's a certain amount of stuff
+  that it doesn't, it doesn't
+1136: turn into mailing list posts. It doesn't turn into issue tracker, but you, you
+  speak to the same sort of
+1140: power users again and again, and you hear the same complaints again and again,
+  like in person.
+1144: And then some of that has sort of driven the kind of, I guess, product direction
+  of homebrew maybe a
+1150: bit more because you just realize like, okay, this isn't, people are not filing
+  issues because they're
+1155: confused about this. This is just something that they find annoying. And people
+  generally don't find
+1158: like file issues about just things that are like annoyances. They file them
+  about things that are
+1164: actively broken or whatever.
+1165: So let's touch real quick on GitHub's relationship with homebrew with regard
+  to,
+1170: you know, employing you and you're the lead maintainer. And is this this officially
+  sanctioned
+1174: work or is it, are you still doing it like completely on the side? And then
+  we'll take our first break.
+1178: And on the other side, we'll talk about, uh, the new stuff in homebrew specifically,
+1182: I will probably start with the split repositories, but how does GitHub play
+  into the mix?
+1186: Um, so I guess I've been at GitHub coming up to three years. So certainly the
+  majority of my time
+1193: working on homebrew has not been at GitHub. Um, and GitHub, similarly with my
+  previous employees,
+1198: really like they, they have, I guess, paid me to work on homebrew on occasion
+  in the, when I have
+1205: had Google summer of code students through GitHub and stuff like that, or homebrew
+  Google summer code
+1210: students, which have been blessed with GitHub. I've spent work time on that,
+  uh, in terms of like day
+1215: to day work. Like I, I don't in theory, at least work on it on GitHub's time.
+  If I'm blocked waiting for
+1222: something for like five minutes, I'm waiting for a test run to finish. I'll
+  go and fire through my homebrew
+1227: emails, triage, give a little reply, whatever. And then equally, there's something
+  that is going to,
+1233: or it's currently blowing up and will affect GitHub employees because we use
+  homebrew fairly heavily internally.
+1239: And then I'll fix that. But I don't generally do kind of the day to day kind
+  of homebrew work during
+1245: GitHub time. So that's mainly my kind of evenings, weekends, spare time, et
+  cetera.
+1249: Very good. Well, I think that sets us up. Let's take a break. And on the other
+  side,
+1254: we'll talk about what is new with Homebrew 1.0.0. We'll be right back.
+1258: I talked to Daniel Reed, head of design at TopTile about their new expansion
+  into TopTile designers,
+1267: doing for designers what they've done for developers. We talked about why TopTile
+  works for designers.
+1272: And this is what she had to say.
+1273: As a designer, the big, or as any kind of creative person, the big overarching
+  question is always like,
+1279: how can you find inspiration? And for me personally, and for a lot of creatives
+  that I've spoken to,
+1286: it's really about traveling, exploring, and being accountable for your own career.
+  And I think as
+1291: a TopTile designer or a remote designer in general, the ability to be able to
+  switch up your lifestyle,
+1298: change contexts, meet new people, have new ideas sort of infiltrated into your
+  life by
+1304: having that freedom and flexibility is something that's absolutely fundamental
+  to doing great work.
+1308: For any designer that is wanting to pursue their skills, to be accountable for
+  their life,
+1314: to have new challenges, that's the real power of TopTile, I feel. You're not
+  just stuck with one
+1320: product, one company, or even one agency, but you can choose to work on multiple
+  occasionally,
+1326: or a range of different clients. And I think that that keeps you fresh. It gets
+  you
+1331: involved in new technologies, different people, and is really fundamental for
+  being sort of switched
+1337: on as a designer. All right, that was Daniel Reed, head of design for TopTile.
+  To learn more,
+1342: go to toptile.com/designers. That's t-o-p-t-a-l.com/designers. Tell them Adam
+  from
+1349: the changelog sent you, and now back to the show.
+1354: All right, we are back celebrating, cheersing even, on Homebrew 1.0 with a lead
+  maintainer,
+1363: Mike McQuaid. See what I did there? I like that.
+1365: And Mike, we like to hear all that's fresh and new. We haven't covered Homebrew
+  for many years,
+1371: you don't have to go through the entire history of the source code, but I just
+  want to camp out on
+1377: what's new with the official 1.0 release. And there's a lot of highlights. We
+  have the separate
+1383: repos, we have the community site, we have the move out of user local, user
+  local homebrew, we have
+1390: the software conservancy, the software freedom conservancy thing. So we'll kind
+  of work our way
+1397: down through the list. But let's start with where we left off, which was that
+  you guys split the
+1402: repositories up. And one thing about the original Homebrew repository, which
+  by the way, it's still
+1409: out there, you guys have it under Brew, under legacy dash Homebrew, is it was
+  always one of the most
+1415: forked and starred and watched and contributed to, probably has the most PRs
+  perhaps of almost any
+1424: repository on GitHub, because of the reason that not just, like you said, not
+  just the package manager
+1430: itself, the source code that makes up Homebrew is in there, but also all the
+  different formulae,
+1436: which is how you, you know, the descriptions of how packages get installed and
+  uninstalled.
+1442: So when I first saw that you guys split up into different repos, I thought,
+  oh no, they had this
+1446: great star count, they had this great fork count, you know, this is kind of
+  this statistical legacy
+1451: there that now is going to be broken. But that being said, you all have set
+  up analytics over the
+1458: last year or so, that gives you better stats than just the stars and the forks
+  for actual usage.
+1464: So start off with telling us the onus behind splitting the repositories, and
+  then perhaps
+1470: give us some insight into the analytics that you guys have been tracking.
+1473: Sure thing. So I guess the main onus is, the problem with Homebrew before was,
+1479: if you wanted to get, say you wanted to get a new version of some package, you
+  run brew update to kind of
+1485: update Homebrew's kind of definitions. And that also updates the package manager.
+1489: The problem with that is, if you want the new update of something,
+1492: and we have made some change on master, which breaks something for you, then
+  there's no way you
+1499: can get the new version of OpenSSL or whatever, and not get the broken thing
+  as well.
+1504: So we've kind of had that goal for a long time to be able to separate the package
+  manager from the
+1509: packages. And I mean, that's, that's what every other package manager does.
+  And to separate those
+1514: two things out, so we can provide some degree of stability. So that was the
+  first step in the
+1520: process, which again, is kind of noted in the release notes that now we kind
+  of jump between tags.
+1525: And so you can, if you're kind of a homebrew maintainer, then you, you continue
+  to track
+1530: the master branch, but everyone else kind of jumps between 1.00, 1.01, et cetera.
+  And that gives us
+1536: time to be able to do more QA on the package manager itself, while still having
+  that rolling release
+1540: approach for the formulae. And in terms of stars and all that type of stuff,
+  like, yeah, that still
+1546: breaks my heart a little bit. I still weep for the star count, but you know,
+  it's, it's slowly getting
+1553: its way up on the new repository and stuff like that. And it is useful to be
+  able to see stuff
+1557: like GitHub's kind of contributor graph and see how that varies on the package
+  manager compared to the
+1561: packages. Cause that's interesting. And another thing on there, which is a wee
+  while off probably
+1567: still, but is we're trying to get the package manager. There's another thing
+  called Linux brew,
+1571: which is like running homebrew on Linux and stuff like that. And having the
+  package manager be
+1575: separate means that we can, we can separate out our package definitions for,
+  but still have the
+1582: package manager itself be cross platform support platforms, stuff like that.
+  And it, it generally
+1588: just provides it as a nice tool. Who knows? Maybe one day it might even be bundles
+  of Ruby gem
+1592: you can use to kind of access your, your stuff. Um, but yeah, nowadays we have,
+  as you mentioned,
+1598: the analytics that was introduced, I think it was March or so. And that basically
+  provides us with the
+1605: ability to see, we can't see any stuff about individual users. If I wanted to
+  see, okay,
+1611: this particular user, what have they done? But that's not available to us because
+  we kind of just
+1615: use it, a random UUID that people can reset at any time. Um, so we track users
+  just so we can get kind
+1621: of user accounts. Um, so I've got kind of the analytics dashboard open right
+  now. It's, you know,
+1626: it's kind of a slightly weird mapping from what it's normally used for, but
+  it basically lets us see
+1631: what commands people run like in proportion to each other, what packages people
+  are running,
+1635: what versions people are running. And the really useful stuff for us is what
+  is like the percentage
+1641: breakdown on stuff like OSX versions. So then we can prioritize the support
+  on different things. And also
+1647: what are the most popular packages that people install and what options do they
+  install them with?
+1651: So again, we can kind of prioritize options and things like that. So as a whole,
+  it basically just
+1656: provides what analytics tends to do for, for any, um, piece of software, which
+  is, it lets us inform our
+1663: future design and inform kind of what things we focus on based on the stuff
+  our users actually use,
+1669: rather than our speculation on what the users use, which is something we didn't
+  have before.
+1672: Well, GitHub stars and watchers are indicators, but they're not exactly,
+1677: I don't think, uh, those things are for maintainers. I think they're more for
+  the general public
+1682: to show some, I mean, cause I can't give you that deep of insight, like knowing
+  watchers and stars,
+1688: those are important, but it's not giving you deep enough insights that you need
+  as a maintainer these
+1692: days. Yeah, I agree. Like it's not, you know, you certainly can't have like,
+  oh, well,
+1697: we did this, we ship this new feature and we got, you know, 5% more stars. That
+  doesn't really,
+1702: that doesn't really help us. Whereas when we see, we ship this new feature and
+  our error
+1706: counts gone up from, you know, 0.01% to 0.05 or whatever, and stuff like that.
+  Like that's
+1712: more of the type of things we're concerned about. And it's particularly useful
+  when,
+1717: you know, when we can go and see if something breaks, like we, we periodically
+  go through and,
+1722: you know, do some porting or when a new version of OS X is out or whatever.
+  And it's useful to
+1727: be able to go through all of our packages and be like, okay, well, this thing's
+  broken on the new
+1732: version of OS X, but no one has actually installed this since March. So let's
+  not go and spend like
+1736: three hours trying to fix this piece of software that no one is actually using.
+  We can just remove
+1741: it instead. We call it sending it to the boneyard, which means the definition
+  is still there. If
+1747: someone wants to pick that up at a later point and pull that through, then they
+  can do that.
+1751: That's, it's a little bit easier than kind of navigating through the Git history
+  if you're not
+1754: a Git whiz. And it lets us kind of push away the kind of maintenance burden
+  of that for a wee while at
+1762: least. Well, you wouldn't think twice when delivering an application that you
+  do for work or
+1767: whatever about installing error tracking or installing monitoring or something
+  like that. So
+1771: it's almost the same case for, you know, homebrew is that you need something
+  to track
+1776: what's happening so that you can make good decisions for the future, right?
+  You wouldn't think twice.
+1781: Yeah, exactly. And I think that's, that's what it comes down to for me is I
+  have used a lot of
+1787: these tools. Well, I mean, across, I think every workplace I've been at, I've
+  used some sort of
+1792: kind of metric tracking. And again, people, I guess people sometimes think that
+  metric tracking is just
+1797: Google Analytics and like, oh, well, they don't have Google Analytics installed,
+  so they're not
+1802: tracking metrics. And so, well, actually they're probably tracking metrics on
+  the back end. And
+1806: they're not doing this because they're selling your personal information. Well,
+  I mean, some companies
+1810: are doing that because they are selling your personal information. But in homebrew's
+  case,
+1813: it was kind of disappointing to see where exactly we're not. I mean, we've specifically
+  designed it
+1819: so that we couldn't, even if we wanted to kind of get anything that would be
+  commercially viable out of
+1824: this. So the thing is, is that it's kind of disappointing when you release some
+  stuff like
+1829: the analytics, because you get some people who go and express kind of obviously
+  some sort of
+1834: solidarity with like, well, okay, I understand why you're using this. And most
+  homebrew's users are
+1838: developers. So there is that, but then there's this very vocal minority who,
+  you know, who escalates
+1845: beyond that. And it becomes, how dare you have this, how dare it be opt out
+  rather than opt in.
+1851: My reasoning, obviously for it being opt out is because you can gather better
+  data if you're
+1855: tracking the majority of people and not just the subset of people who decide
+  to opt in. They may
+1860: well have different behavior and stuff like that, which means that you're not
+  able to make as sound
+1865: decisions. But yeah. So, and that vocal minority, you know, that they got very
+  upset on some of them on
+1870: hacker news and Reddit and stuff like that, and then start sending me personal
+  emails telling me to
+1876: you know, do all sorts of things. And it's not, yeah, it's, it's not unpleasant.
+  And it is with
+1882: hindsight, it's funny. And I'm lucky enough to have a thick enough skin that
+  it, it didn't bother me too
+1888: much. But I mean, it is depressing that we still are in 2016 and have to deal
+  with stuff like this,
+1895: because I mean, if there's any of those people who, and I did say this to someone
+  who, um, who
+1900: emailed me, I mean, that, that's what kills open source. That's what drives
+  open source maintainers away
+1905: and kills successful open source projects like me. And well, I had moments,
+  but certainly some of our
+1912: other kind of major maintainers had to be talked into staying in the project
+  at all because they were,
+1917: you know, and several of my, we talk about diversity problems sometimes in open
+  source as well,
+1921: you know, several of my coworkers who aren't just, you know, young white men
+  who I talk to about the
+1927: homebrew thing is they just said, that sounds awful. I would never want to be
+  involved with a project
+1933: where I would have that abuse for something I do in my spare time to try and
+  help out other people.
+1938: And I think it is, you know, it does seem to be getting better. And we do seem
+  to be as a community
+1943: recognizing that like this behavior is not acceptable and this behavior is not
+  what we,
+1948: how we build software. Um, but you know, we don't necessarily have all the kind
+  of
+1955: toolings and institutions and everything quite figured out how to kind of stop
+  stuff like that.
+1959: When, as you say, it's you're an email or a Twitter message away from someone
+  starting to be mean.
+1965: Well, sorry that you had to go through all that, Mike. Um, in light of the change
+  and
+1970: the fact that you guys have had it running for a while, could you, would you
+  mind sharing some
+1973: stats with us like, uh, users or popular packages or what, what fruit have come
+  from these analytics?
+1979: Yeah, sure. So, I mean, I can see the kind of active users, which I guess is
+  someone who's
+1984: run a homebrew. Like, so there's, I think 2000 people who've run a homebrew
+  command in the last
+1989: 30 seconds or so. Um, there may be more than that. And then I can see kind of
+  the version
+1995: breakdown. Interestingly, there's still a lot more people running on pre 1.0
+  and the kind of active
+2001: users right now. There's like over a thousand on 0.99 and then 637 on 1.05,
+  209 on like the kind of
+2011: master, the last kind of master commit and stuff like that. And then I jumped
+  through to kind of
+2016: the most popular packages and somewhat unsurprisingly open SSL is the most popular
+  package by
+2022: far, uh, then followed by package config and which is used like, and it's one
+  of those things where no
+2027: one probably intentionally installs it, but it's a dependency for a lot of things.
+  Then libpng,
+2033: SQLite, great piece of software, node.js, free type, again, probably something
+  that not a lot of
+2038: people are installing intentionally and then git. And so, yeah, it's kind of,
+  it is valuable being
+2044: able to see these things and, and the, the dropdown is kind of quite impressive.
+  So, I mean, open SSL,
+2050: we have in homebrew itself and this tracks homebrew and our kind of third-party
+  repositories.
+2055: So, you know, maybe 4,000 different packages. So of that open SSL itself has
+  like 3.5% of all
+2062: installs of all software. And so it's quite interesting to see how quickly it
+  drops off
+2068: and, and you get below kind of 0.1% within the first, you know, 170 packages.
+2077: Yes. In light of transparency and open source, kind of the spirit of the community,
+  have you considered
+2082: making the, I don't know if you can even do that with Google Analytics, but
+  like an open dashboard
+2086: where anybody can come and just see the usages?
+2088: Yeah, you can't, unfortunately. I mean, what I have been considering is doing
+  a database dump every so
+2096: often of like the stuff that I'm kind of most interested in. Um, but yeah, I
+  mean, it's,
+2102: again, it's, this doesn't seem to be a trivial way of automating that. So it
+  needs to be me manually
+2108: going in and like clicking through every time. So yeah, I'm still, that's still
+  kind of on my list
+2113: of things to try and do to try and improve the transparency of this. And then
+  hopefully people
+2117: can see that this is not, you know, there's nothing nefarious happening here.
+2121: Yeah. Because I mean, they can see the source code at least of where the calls
+  to track are
+2126: happening in Google Analytics or calls off to Google Analytics, but it'd be
+  really cool to have,
+2130: you know, publicly available the results of that data, because then you can
+  have people draw other
+2135: insights or, uh, just enjoy it, but even yeah, remove that fear of what, what
+  y'all are tracking.
+2141: And well, and the thing that some people have asked already actually about that
+  is, um,
+2145: people who are scientists who've been asking, you know, if it would be really
+  useful for me as I've,
+2151: you know, worked on some piece of software as part of my PhD to be able to put
+  in a paper,
+2155: well, this has actually been used this many times or installed this many times
+  or whatever,
+2159: because that gives some, I don't know, I'm not a scientist, but that gives,
+  I think,
+2163: some sort of waiting or a sense of importance to the kind of work they've been
+  doing, which I can
+2169: understand. Or people who are putting the work in to maintain specific, uh,
+2173: formulas or formulae as you guys like to call them to know, like, is this worth
+  my effort? Like,
+2179: oh, I, me and six other people are using it. Uh, and I got six complaints, you
+  know, that's,
+2183: that's just the total, that's all the users as opposed to, oh, this has, you
+  know,
+2187: a lot of people are really drawing value from this. I'm going to continue to
+  maintain it.
+2190: Yeah. Yeah, exactly.
+2191: Well, one thing you mentioned is, um, updating in light of those stats, you
+  know,
+2195: not everybody's on 1.0, but, uh, just moving on to the, some of the other new
+  features
+2200: is you guys now have auto updating built in. Is that correct?
+2203: Yeah, we do. So now if you run through install, it will check for updates in
+  the background,
+2209: I think by default, once a minute. Um, when I say in the background, I don't
+  actually mean in the
+2213: background. I mean, before you run the command, it will check for updates. Um,
+  and that was actually,
+2218: that's one of my favorite features in there because it was a really fun exercise
+  for me in kind of
+2222: performance benchmarking, like on kind of the full stack, because, um, I, this
+  is something I had a
+2229: while ago is I was like, okay, well, I want to be able to run auto updates because
+  a lot of the time
+2234: when things break, we tend to get a fairly long tail of people who haven't run
+  the update, who file
+2240: the issue for something which is fixed, you know, a day, a week, sometimes even
+  a month, a month earlier.
+2246: And I've always kind of wanted to have that. But then the updater at that time
+  took probably about
+2251: 15 to 30 seconds, depending on where you are in the world and stuff like that
+  sort of minimum
+2256: to do that. And that always kind of frustrated me. So in the end, I kind of
+  poured some time into that
+2262: and tried to make it worked on a few things that made that really fast. And
+  one thing was kind of
+2269: more reliable, I guess. So one thing was kind of moving some of the auto update
+  stuff from Ruby into
+2275: bash, more just because Ruby gets more upset when you modify its own code underneath
+  it than bash does,
+2282: or at least it's easier to work around that in bash. The other thing that was
+  a kind of fun, but
+2288: completely overkill thing was with me being lucky enough to work GitHub. I noticed
+  that the slowest thing
+2294: thing by far was doing a git fetch on like a massive repository like Homebrew
+  that's had huge numbers
+2299: of pull requests and stuff like that. So that git fetch, just like a no-op git
+  fetch when there's
+2305: nothing to fetch was actually pretty slow. And so I was at that time on the
+  GitHub API team. So in my
+2314: kind of weekend, I figured I'd go and see if I could play around and figure
+  out a way to make that faster.
+2320: And because we have like a cache API layer and there's like an API code you
+  can use to get the
+2327: kind of latest state of a branch. So I kind of tweaked that a little bit. I
+  made it so you can
+2332: pass in the SHA one from git as the e-tag to that. So you get three or four
+  unmodified if nothing has
+2338: changed and therefore not use up your rate limit and allow us at GitHub to kind
+  of deliver that from
+2343: the cache. And basically, yeah, as a result, like flip that git fetch operation
+  to just being an HTTP
+2349: call. And that's like way, way, way faster and for both GitHub to process and
+  for Homebrew to process.
+2357: So as a result, I was able to kind of play around with that and do some parallelization
+  and stuff like
+2362: that. And now it's generally kind of under a second or around about a second
+  and down from kind of 30 when
+2370: you are kind of doing an auto update. So that seemed like a reasonable amount
+  of time for people to kind
+2376: of spend on every call, considering, you know, if you do a brew install, the
+  compilation and
+2381: extraction time are going to be significantly longer than that anyway.
+2384: Life is good when you control both sides of the API, right?
+2387: Yeah, no, it's much, much easier when you have that. It's nice to be able to
+  kind of jump in there and
+2396: play around. But I think even if I didn't control that side of things, there
+  might have been ways I
+2401: could have played around and made it a little bit faster. But no, it's certainly
+  easier, as you say,
+2405: when you have that. And when you have very smart co-workers who I can kind of
+  bump it off,
+2409: who kind of actually work on Git itself as their day job and then be like, okay,
+  am I being stupid here?
+2415: Like why this is slow and all this type of thing. And then discussing an approach
+  with
+2419: them. That was kind of pretty fun.
+2421: So just one aspect of user experience, I think focusing on the speed is key
+  there. And in fact,
+2428: Adam and I were kind of lamenting a little bit before the call about certain
+  bits of software
+2433: that do auto update, but you don't run them enough for them to ever be updated.
+  So my example,
+2439: for me, at least is Firefox, which I don't use on a regular basis, but I do
+  use if I'm doing browser
+2445: testing or for one off purposes. And it seems like I think they may do it in
+  the background now,
+2449: but it used to be every time I launched Firefox, it would say, hey, we have
+  an update update.
+2453: And it seems like brew for me, at least I use it all the time. So I don't have
+  that issue,
+2458: but it could be the kind of thing where you don't launch it very often. And
+  then it feels like every
+2461: time you're running the brew command is updating. Sometimes, sometimes, like,
+  I just got to get
+2468: this thing installed. I need this command so I can fix something that's on fire.
+  So speed,
+2474: I think is important to fix that is if it happens real fast, no big deal. But
+  in light of there is
+2480: a new update, does it automatically run that for you? Or does it prompt you
+  where you can say not
+2484: right now? Have you thought through those kinds of things?
+2486: Well, so we have, in terms of our commands, we have a separation between update
+  and upgrade.
+2492: So update is basically get all the definitions in the package manager,
+2495: have the latest version, and then upgrade is like, you know, install open SSL
+  1.1 instead of 1.0.
+2502: And so yeah, so we don't auto upgrade.
+2505: Sure. But I'm referring to like, say I run brew install jq, because I need to
+  parse some
+2511: some JSON on command line real fast.
+2513: Yeah. And you don't want to wait a couple of seconds for the update.
+2516: Yeah. I mean, that's one of those things that we, like we kind of considered,
+  but in the end,
+2522: the kind of support burden for that is, it's worth it for us. Like you would
+  not believe how many,
+2529: like annoying, because again, I don't think we mind that much about the issue
+  count or whatever,
+2536: or the number of issues people are filing. But what's the worst thing is when
+  you get the same
+2540: issue again and again and again, and the response to fix it is the same thing
+  again and again and again.
+2545: And like my attitude is always try and automate myself out the job.
+2549: So like if it's the same command, we're having to tell people to run like every
+  single time.
+2554: And if people are still not running that command, then it's like, well,
+2557: we're going to just run that command for you.
+2560: I think it's definitely that I think the pain is alleviated because of the small
+  payload size of
+2565: right of updating homebrew. Whereas in the, like, for example, with my Firefox
+  example, you got to
+2571: download like a 60 megabyte file or whatever it is. Um, so it's more of like,
+  okay, I'm gonna sit and
+2576: wait. But in this case, even when you do have, I run brew installed JQ and I'm,
+  you know, I'm a dot
+2583: release behind. We're talking like seconds to get that thing upgraded. Is that
+  right?
+2587: So that's the point where it's doing the, the auto updating is like when you're
+  doing a brew
+2590: install, not just brew update.
+2592: Yeah. Yeah. So, uh, we have, so basically a brew install now does a brew update
+  in the background.
+2599: Okay. I'm, I'm tracking now. I heard you said before, but I wasn't sure what
+  under which command
+2604: it was doing in the background. You said once per minute, something like, well,
+  if you do brew update.
+2609: Yeah. So if you do brew update, then it will basically skip them or the next
+  skip even looking
+2614: for the next minute. And then I, as I say, it's optimized for the no op case
+  where if you don't
+2619: actually have anything to update there, then it will just ignore it.
+2623: And as you said, it's just definitions, right? So it's just pulling back like
+  the
+2626: latest things are available to brew install.
+2628: Yeah. Yeah, exactly. Uh, and invariably that's, I think the other thing that's
+  kind of tricky
+2635: from a package manager perspective is that you have this conflict between what
+  people want and, uh,
+2641: what people need where, you know, humans myself included are lazy. And if you
+  can avoid upgrading
+2648: something now, and if you can kind of put it off until tomorrow, like most people
+  will,
+2652: but then there's some of this stuff that it's like, well, actually that's a
+  really big deal with
+2656: security. So you need to update this now. And if you don't want to update it
+  now, then we've got to
+2663: sort of like nudge you in the right direction so that you do that so that your
+  machine doesn't get
+2667: owned. And then it's, we're at least partly responsible. And as I say, it's
+  that kind of weird
+2673: conflict that you have where sometimes you've got to just force people to do
+  things or not
+2678: implement things that they want you to like a recent thing that could have made
+  the 1.0 release
+2683: notes, but actually it, I kind of pruned it from there is we don't, we used
+  to let you run homebrew
+2687: as root. Um, and like, you know, you would have to completely change all the
+  ownership. So it was
+2694: root and everything like that to almost emphasize that, look, I'm really sure.
+  But in the end,
+2698: we're just like, you know what, there's a use case for this, but it's just a
+  really bad idea.
+2703: Because if you run homebrew as root, but we don't, like other package managers
+  that run as root,
+2709: they drop privileges because that's what they're designed. So they will run
+  as root. And then when
+2713: it actually comes to doing installation or whatever, they'll go and just be
+  like, okay, I'm a user now
+2718: with no privileges, so I can't do stuff. Whereas in homebrew, because the vast
+  majority of our users
+2723: are not running as root, we haven't implemented that. And we don't have the
+  motivation to implement that.
+2727: So if you run homebrew as root, like a make file can now literally change any
+  file on your entire
+2732: system. And so like, that's bad. And we added a sandbox that means that obviously
+  you're running
+2741: as the same user. And then we stopped the build process from being able to write
+  to arbitrary
+2746: locations in your system. But again, to make it even worse, sandbox broke when
+  you were the root user.
+2751: So we had to disable the sandbox for the root user. And at that point, we were
+  like, okay,
+2755: this is just way too dangerous. And unfortunately, we need to make the call
+  that we know better than
+2761: other people do by assessing the risk in this situation. Because we've seen
+  what happens when
+2767: there's a make bar log that starts trying to just delete random files of your
+  system. And users maybe
+2771: haven't seen that. And when that happens and they destroy everything and they
+  don't have any backups,
+2777: they may not hold us responsible, but they kind of should if we have seen that
+  coming and we've not
+2782: addressed it properly. So yeah, fun times.
+2786: Well, while we're talking about technical changes, well, let's hit on one more.
+  And then we'll take
+2791: our next break, which is you've changed the default location of the homebrew
+  repository. In fact,
+2797: I believe as you upgrade it, we'll move it for you from user local to subdirectory
+  user local homebrew.
+2804: Yeah, can you speak to that change? And then the implications of what all what
+  all entails?
+2809: So there's always been a bit people have had a bit of a love hate relationship
+  with homebrew being
+2813: installed in user local. And the main reason homebrew is there is because originally,
+  at least,
+2820: was because that's in your compiler and a bunch of other Unixy tools, they look
+  there by default.
+2825: So that basically means with Ruby gems and various other things, if you have
+  a library in there and
+2830: user local lib, user local bin, then they will look in there. And you don't
+  need to like manually
+2835: specify your location. So that works kind of quite nicely for most people. And
+  again, when homebrew
+2840: kind of got started, that's something that helped is, again, like adding to
+  this sort of zero
+2844: configuration approach that homebrew is taking on things. So the problem with
+  this, as time goes on,
+2849: and we say in our repo, like, oh, yeah, we want to add a readme, we want to
+  add a code of conduct,
+2854: we want to, you know, add a bunch of stuff in our repository route. The problem
+  with that is
+2862: all that stuff ends up then getting dumped in user local. And then people like,
+  okay, well,
+2866: user local bin wget, okay, I'm fine with that. User local, like, readme.md,
+  that feels kind of
+2874: weird to me when there's other stuff in user local and people, people were getting
+  annoyed with that.
+2878: And I kind of understand that. So it was actually one of our users came out
+  with something which was
+2884: kind of, I mean, frankly, a hack that had never really been patched, which was
+2889: the homebrews, by default, homebrews what we call the prefix, which is user
+  local. And that's where
+2895: all your files get sim linked into, like user local bin, et cetera, as I was
+  saying before.
+2900: And that has actually remained unchanged. And that was the same as where we
+  had the repository
+2905: previously. But there was a hack you could do where you could install the repository
+  in a different
+2910: case, in a different place and sim link it funnily. And then it would put the
+  repositories files,
+2915: all the readme file, code of conduct, documentation, whatever, in a different
+  path that you specify
+2921: if you're choosing. And then user local would contain just the kind of sim links
+  and the installed
+2926: packages. And the nice thing about that is that user local, you may have seen
+  the user local seller
+2932: directory. Now that's where all the binaries are actually stored. And then there's
+  sim linked into
+2936: various different locations. The problem is, if we decided to move that, we
+  would have to rebuild all our
+2941: binary packages for all of our OSX versions. And that's basically a massive
+  pain that we don't
+2947: want to kind of have to go through. And so this kind of was this hack that like
+  this person suggested,
+2953: I kind of tried out on my own machine for a few weeks, and it was completely
+  flawless. Everything
+2957: just worked absolutely perfectly. And that allows us now, after the move, to
+  have all our binary
+2964: packages be the same, still have all the kind of the compiler search paths and
+  stuff like that be fine.
+2969: But now we can move stuff around in our repository on GitHub. You know, if we
+  want to put a readme.md
+2974: file or contributing.md file or change those file names or whatever, they can
+  all now live
+2979: inside user local homebrew instead. And we don't need to worry about kind of
+  junking up people's
+2986: user local. Another final benefit from that is, so we always, we would tell
+  people to take ownership of
+2993: user local and just recursively CHN that so you can always write anywhere in
+  there. The problem is,
+3000: is Apple's OSX installers, various other tools would reset that. Yeah, every
+  time. So every time there's
+3008: a new version of OSX that comes out, it would be that kind of reset process.
+  And it was a massive
+3013: pain for a lot of people. So now what we do instead is we create the root level
+  directories and user local,
+3018: get people to CHN them instead, which our installer does by default. And then
+  you just have those root
+3024: level directories, which kind of stick there. And anything else can dump files
+  and user local and
+3029: change the ownership of user local and, and all that good stuff. And that doesn't
+  affect us anymore.
+3034: So again, that's another example of somewhere where it's massively cut down
+  on a bunch of these issues
+3040: we would just see again and again on every error sex release. So yeah, it's
+  been great. Or macOS.
+3046: You've actually been bit by that bug once before.
+3048: Yeah. Yeah. I've been bit by that one several times before. I forget that it
+  happens and then
+3053: it happens and then everything explodes.
+3055: I just upgraded at 1.0 yesterday. And as part of the upgrade, because I, I upgraded
+  to Sierra
+3060: last week and I just did the upgrade to homebrew 1.0 yesterday. And I had to
+  change ownership
+3066: on a user local because homebrew had set it back to, was it root and wheel or
+  something like that?
+3071: So yeah, I could see that happening to everybody.
+3073: Yeah, exactly. And then nicely. Now we, after the migration, we then tell people,
+  okay,
+3077: you can actually now change this back. And then that's now the last time. So
+  when
+3081: Sierra plus one, I'm still hoping for macOS Sea Lion to come out, but when that
+  comes out or whatever,
+3088: uh, then yeah, hopefully these permission issues will just be gone for good
+  at that point,
+3092: which will be lovely. That's funny. Uh, as we're talking through all this, the
+  details, I'm, uh,
+3099: I'm just reflecting back on earlier in the show when you said that you, uh,
+  that you do this homebrew
+3104: stuff, as you said in the times whenever like you're running a test suite and
+  it takes five minutes
+3108: or something like that. Like, I'm just reflecting on all this detail and all
+  this
+3111: complexity and all this community and all this, you know, how important homebrew
+  is to so many
+3116: developers out there, how you and others do this in your spare time. And that's
+  just crazy to me.
+3120: I mean, yeah. So, I mean, I'd say kind of here and there time, but yeah, I mean,
+3123: in the run up to 1.0, I'd sort of decided I want to ship it all in around about
+  the Sierra release.
+3129: Um, so yeah, so in the two weeks before that, like I was just like doing pretty
+  much every,
+3135: every evening and weekend, like pretty much all evening and weekend. Like I,
+  I think there was,
+3141: we were getting to the point where my, uh, my dog and wife would have like not
+  tolerated any further.
+3148: As we know, you're a dog lover too. We can hear your pups in the background
+  there for
+3152: a second or two. So you got a little cameo on the show.
+3154: Yeah. Yeah. No, I, I do love my dog. She's pretty great. And she's in my
+3158: GitHub profile picture as well. So.
+3160: Well, cool. Let's, uh, let's pause there then when we come back, we got lots
+  of,
+3163: lots of other things to talk about. Software Freedom Conservancy, uh, the new
+  community site,
+3167: some of other things happening, uh, more community growth, and maybe even
+3170: more ways that the community can step in and support homebrew and, uh, ship
+  their own formula
+3175: or formulae as they, as you might say, or have changed the way you say it.
+3178: So let's pause here. We'll be right back.
+3180: Linode is our cloud server of choice. Get up and running in seconds with your
+  choice of
+3188: Linux distro resources and node location, SSD storage, 40 gigabit network, Intel
+  E5 processors,
+3195: use the promo code change log, 20 grade, $20 credit, two months free. One of
+  the fastest,
+3201: most efficient SSD cloud servers is what we're building our new CMS on. We love
+  Linode. We think
+3207: you love them too. Again, use the code change log 20 for $20 credit. Head to
+  linode.com/changelode to get started.
+3213: We're back with Mike McQuade talking about homebrew and, and Mike around homebrew,
+  there's several,
+3224: uh, terminologies used. You got cast, you got tap, you got brew, you've got
+  several things. You got
+3230: formula or formulae. I think that's changed if I'm correct. It's plural form.
+  It's plural form. Okay.
+3236: Um, walk us through some of the terminology, you know, do you tap a cast? Do
+  you tap a keg? What,
+3241: what is it? How does this work? Yeah. So I think the terminology is a bit sometimes
+  tenuous in places
+3247: and it's not quite, um, all adding up, but a tap is effectively what we call
+  it. A
+3254: a third party repository basically. So that, that was initially created. That
+  was one of kind
+3258: of Max's last big features he worked on. And a tap basically allows anyone to
+  be able to have
+3265: a git repository, which, well, it doesn't actually have to be a git repository
+  anymore, but a directory
+3270: with a collection of formulae or homebrew extension commands that they can go
+  and say to anyone, okay,
+3276: like here's this one command you can use to install a tap on your machine and
+  then brew update will then
+3282: keep that up to date and brew install will then let you install from any of
+  those taps as well.
+3287: So actually as part, a fun little fact is as when we split out homebrew into
+  the two repositories,
+3294: the formulae became their own tap. So previously you had all the kind of central
+  formulae and then you had
+3301: taps, but then now actually everywhere that contains formulae is always in some
+  sort of tap.
+3306: It seems like that's a promotion of the tap idea because back when I first started
+  using homebrew,
+3311: like using a third party, uh, repository for formulae was kind of like sketch.
+  And you're like, well,
+3317: if you really have to do this, but now it seems like that's very commonplace.
+  Is that a fair characterization?
+3324: Yeah, definitely. I think there's a recognition in that that a, that people
+  are going to want to do
+3329: stuff that we, you know, we don't have the, you know, if you work at a company,
+  you may well want
+3334: to have internal tools, which are installed, um, by homebrew through a tap.
+  But also there's,
+3339: it's helped us with some of the really long tail stuff because now we can say
+  to people if, you know,
+3345: if you're the only person interested in this, then you can just create your
+  own tap and you can keep
+3349: that up to date. And then if more and more people, particularly now we have
+  analytics for some of
+3353: this stuff, um, if more and more people use that, then we can consider kind
+  of bringing that into
+3358: homebrew itself. And before that we couldn't, not that kind of private taps
+  are revealed by analytics.
+3364: We're careful to not do that. But within, within the homebrew organization,
+  we have several kind of
+3368: taps and for different things. And it lets us as well kind of subdivide maintainers
+  based on
+3373: things that are interested in. So we have a science tap, a PHP tap, a Python
+  tap.
+3378: And, and those are not, you know, to install Python, you don't have to tap Python
+  tap,
+3383: but it provides some sort of stuff, which is deeper into that ecosystem and
+  stuff which we
+3387: wouldn't include in our main repository and can kind of find a home in some
+  of these taps instead.
+3392: And these taps can be run independently and a little bit looser on some of the
+3396: restrictions that we kind of have to have to kind of keep the core working effectively.
+3400: Tell us about cask. What's cask?
+3403: Yeah. So that was quite exciting. So brew cask was originally a thing made,
+  I can't remember what
+3408: year it was originally, but someone basically really liked homebrew, but they
+  hated the fact
+3413: that, you know, when you install Mac applications, you know, you have to download
+  the zip or the package
+3417: file, the Mg or whatever, and move the file there. And it's, you know, it's
+  almost always the
+3423: same process every time. And it's like, and I think they were just like, well,
+  why do I have to,
+3428: why can't I install my command line software beautifully? But then I had to
+  like physically
+3432: drag and drop a thing with my mouse and to, that's the, that's the sound I make
+  when I do it.
+3437: Exactly. I actually quite like drag and drop. I kind of missed that a little
+  bit in some ways,
+3443: like the little dragging the icon into the applications folder and it's all
+  nice and pretty.
+3447: You can still do it, Mike. No one's stopping you, man. You can still do it.
+3451: Yeah. My, my, my obsessive desire to script everything is stopping me, unfortunately.
+3457: But yeah, so like they made this brew cask command so that you could do that.
+  You could
+3462: do brew cask install and, you know, Google Chrome, whatever. And, and we had
+  a summer code student
+3469: this summer, Anastasia, who is a very, very smart Russian student who worked
+  on basically
+3477: trying to unify the two projects. So homebrew cask, they originally were kind
+  of almost extension,
+3483: I think in just a tap. And we kept, because we didn't provide any sort of official
+  API
+3488: for them, they kept, ended up being broken by our changes. So in the end, they
+  ended up vendoring
+3494: a lot of homebrew code, homebrew's code. So in Google's summer of code this
+  summer,
+3498: the student worked on basically de-vendoring all this stuff so that they could
+  kind of,
+3504: we could share a lot more code between the two projects and de-duplicating between
+  the two projects.
+3509: So we kind of stuff which didn't make sense to have in both, wasn't in both.
+  And both in terms
+3514: of like source codes, but also in terms of things that are installed when they
+  both installed identical
+3520: software that there wasn't a need to have them both. And then finally, actually
+  moving all of
+3525: homebrew cask's kind of package manager codes into the homebrew package manager
+  itself.
+3529: And so now we have homebrew cask living within homebrew itself. So when you
+  run brew cask,
+3536: now that's part of the homebrew package manager and part of the homebrew's release
+  process and stuff
+3540: like that. And we're able to do stuff like share a lot more code, share maintainers,
+  share testing,
+3546: and that kind of provides some guarantee as well that we're never going to break
+  homebrew cask stuff
+3550: because our package manager tests are now running all of homebrew cask's tests
+  as well.
+3555: I just did a brew cask list on my machine. And it turns out, even though I don't
+  know what cask is,
+3560: I have used it to install Screen Hero. So I believe someone said, "Yeah, just
+  type this." And I thought,
+3565: '"Oh, that''s really cool. You just type brew cask install Screen Hero," or
+  whatever the application'
+3570: is and magic happens. And then you forget that you did it and all is well.
+3574: So, and the cool thing that comes on top of a brew tap and brew cask as well
+  is, which not many people
+3581: know about, and I think partly because I've not done a good job of describing
+  it, is the thing brew bundle.
+3586: So that lets you have a brew file, kind of like a gem file or whatever, in which
+  you specify
+3592: a list of homebrew packages, cask packages, and actually like taps and eventually
+  even like Mac App Store
+3599: packages as well. And then it will automatically, you can run brew bundle and
+  it will go through
+3604: that list and install any of the ones that aren't installed. And you can also
+  do the reverse,
+3608: where you can kind of dump to a file and then add that as kind of almost like
+  a backup of everything
+3614: you've got installed and all the options they're installed with and stuff like
+  that.
+3617: So that's been really useful for letting people kind of almost import and export
+  their configuration,
+3622: but also for having like a system-wide installation. So you can have one script,
+3627: which then installs all of your software. But then we've been leaning on that
+  heavily inside of
+3631: GitHub as well. And to have that per project, so you can specify a definition
+  of this project requires
+3638: MySQL and Nginx and stuff like that. And there hasn't really been a good way
+  before that of kind
+3643: of defining that. Like often that's just in the documentation, but we can actually
+  have now in
+3648: the brew file. So we'll install the correct version of MySQL and then start
+  up a daemon in the background
+3654: on the system if it's not already running. And then that'd be a no-op if that
+  stuff is already
+3658: installed in the daemon's already running. And that brew file is really handy
+  for
+3662: descriptors. I've seen that actually, I think in maybe earlier versions of ThoughtBot's
+  laptop
+3669: project where they're doing lots of interesting things around. They actually
+  used to support Linux
+3673: and Mac and now it's just Mac, but it's kind of like their way of setting up
+  a development machine.
+3680: And I'm pretty sure I recall seeing a brew file in that, and that's kind of
+  where I actually
+3684: stumbled upon that and thought that's kind of interesting to see. Like, here's
+  a way you can
+3688: like just run a lot of brew commands basically.
+3691: Yeah. Yeah, exactly. So it's pretty neat for that. And again, being able to
+  standardize on these
+3696: things, I self-plug have like a little project called Strap that we, again,
+  use inside of GitHub
+3703: that is kind of a, you know, system bootstrap type thing. And that rather than,
+  it's a different
+3709: approach to ThoughtBot laptop because it's not opinionated at all about what
+  stuff should be
+3713: installed. So if you have a brew file in your .files directory, it will check
+  out your .files directory
+3718: and run the brew file in there. So every person can have their own almost custom
+  system bootstrap
+3724: script from that perspective and still yet have like a sort of centralized way
+  of running that for
+3729: everyone. So it's been quite neat. But yeah, my long-term dream, if I ever get
+  around to it,
+3734: which I probably never will, is to try and work with a few other people and
+  see if we can get some
+3739: sort of brew file definition format, which a bunch of package managers support
+  so that we can have a
+3746: way of you can declare in a project that, okay, I want to install my, this project
+  needs my SQL installed,
+3753: lib.xml2, whatever, like the kind of native package manager dependencies. And
+  that file can then be
+3759: read by, you know, whether you're on Fedora or NuGet on Windows, maybe even,
+  or Homebrew or Mac ports
+3766: and have a single file which could be used kind of as shared metadata across
+  all these package managers.
+3771: That's kind of a little dream of mine that may or may not happen one day.
+3774: That would be cool. I think RVM had a similar dream. Isn't that right, Adam?
+  For RVM3, I'm not sure
+3780: if you ever got there, but it was kind of like beyond Ruby versioning. It was
+  like versioning for
+3785: everything. You could just list all your, you know, this requires Postgres,
+  this requires Redis, for
+3791: instance. But definitely a dream to get everybody involved because that's a
+  lot of different software
+3797: projects that would need to come on board. And if I couldn't call it brew file,
+  it would have to be
+3801: like package file. Oh yeah, yeah. Yeah, obviously. Yeah. I'll submit the term,
+  you should call it
+3806: dependencies. Yeah. Yeah. That seems fine. People tend to like that one. Might
+  have to have some
+3814: slight pun on the name just because I'm British and that's, you know, that's
+  what happens to us.
+3819: Tell us about keg. So kegs are when, so that's one of the hardest metaphors
+  in that even the homebrew
+3829: maintainers probably disagree on what a keg actually is. But a keg is technically,
+  that's the directory
+3837: when you install homebrew a package in it. The directory is used as the prefix.
+  So this is going to get a bit
+3845: package manager, naval gazey. But the way most package managers work is they
+  have a unified prefix. And what
+3851: I mean by that is when you run configure or make install or whatever, say on
+  two pieces of software,
+3858: the prefix you set is say user local. And then what it does is it chucks binaries
+  and user local bin,
+3865: it chucks libraries and user local lib, etc. And that's the general way most
+  package managers work.
+3871: What homebrew does, which was actually aped off by Max's own admission off another
+  package manager,
+3877: whose name escapes me off the top of my head at the moment. But basically having
+  every single
+3881: package be in its own prefix by package and by version. So if you go into user
+  local seller,
+3888: you'll see you have user local seller and then the names of all your packages.
+  So user local seller,
+3892: and then a subdirectory called wget and then a subdirectory of whatever version
+  of wget is installed.
+3897: And then within that, then you have bin, lib, all these other directories. And
+  then what homebrew does
+3903: is we then symlink the contents of those subdirectories back into user local
+  bin. So in user local bin wget,
+3910: that's not actually the wget binary. That's a symlink to user local seller wget
+  version bin wget.
+3918: And basically the benefit for that is it lets you stop software from stomping
+  on each other. So you can
+3926: have software installed side by side, which installs conflicting things, but
+  they just both can't be
+3932: linked at the same time, rather than being like, "Okay, we actually just can't
+  install these two
+3938: things in the package manager at the same time."
+3939: I might actually suggest after this that, uh, that there actually be some sort
+  of like glossary
+3944: for homebrew because you'll have so many terms and I, I'd forgotten about seller
+  and we actually
+3950: asked about keg as a joke because I, I didn't think it was a real thing. I was
+  hoping you'd laugh,
+3954: but it's actually real. And so our next one is like, tell us about pints, but
+  yeah, pints are not real.
+3961: Well, I mean, they are real, but not in homebrews.
+3963: Yeah. Yeah. Um, so yeah, no, I mean, we definitely could do with having a glossary.
+  I mean, my...
+3969: I mean, if anything, it could be an attractor to contributors because it's funny.
+  It's just
+3974: a new way to like talk about your project and just have fun with what it is,
+  you know?
+3979: Yeah, exactly. I mean, so my, the reason why I, I, I didn't do that originally
+  is my whole thing
+3986: was I wanted to rename everything. So we wouldn't call kegs kegs anymore. We
+  wouldn't
+3990: be careful now.
+3991: Why? Exactly. Exactly. And, and that was an example.
+3994: You were concerned about the, uh, you know, the analytics people getting you.
+3997: This is the real reason he wanted to be lead maintainer. So he could rename
+  all of the,
+4001: would you just, would you come up with a brand new analogy or would you just
+  remove all analogies?
+4006: I mean, I think, yeah, we just call things packages. If there's an established
+  name already,
+4011: call them that packages, prefix, whatever. But I mean, I think the argument,
+  which I,
+4016: I probably mostly agree with at this point that pretty much every other person
+  in the world
+4020: said is that, okay, you might make things slightly easier for new users. But
+  at this
+4024: point, homebrew is at the point where you're probably going to confuse a lot
+  of people who've
+4028: learned the existing terminology more than you're going to help, you know, a
+  new user at a code
+4033: academy or whatever, understand this stuff. And yeah. And as you say, probably
+  the best middle ground
+4038: is just have a glossary and just define these things.
+4040: I guess it depends though on this change stuff. Now, you know, the, the naysayer
+  me says don't do that, but I think if, uh,
+4048: if the plan was wider adoption and, uh, a greater invitation and if the normalizing
+  of the puns, while we all love puns and just the play on words
+4059: kind of gets played out, so to speak, if it was, if reducing that helped invite
+  people and actually contributed to a greater project,
+4067: that might be for it, but it would hurt along the way. I'd cry a little bit.
+4071: Yeah. Yeah. No, I do agree. And I mean, it's, it's maybe whether we can change
+  some of these things whilst maintaining other things or whatever, like, you know,
+  we can certainly maintain the kind of beer theme and the little nice cute emojis
+  we have and stuff like that whilst maybe renaming some of these things. So yeah,
+  it's, it's, it's still a source of debate and torment for us all.
+4096: Adam sounds like he's for it. I'm against it. So there you go. You split us
+  down the middle.
+4100: I'm not exactly for it.
+4102: Embrace the analogy and just it's, it gives homebrew has personality. It has
+  a theme. It's, it's actually worked out better than most names in terms of like,
+  they have kegs and casks and taps. And I mean, those are things that actually have
+  make some sense. Now, once you get out of it, like, would you say boneyard or graveyard
+  or something?
+4122: Like, some things just don't match. Then you get mad because you're like, oh,
+  we can't think of a beer themed boneyard. But along the way, I think it's helped
+  massively. And I think it makes it kind of a joy in certain ways.
+4134: Yeah. Yeah. And I think that's, you know, I redesigned the website for, with
+  the help from an Australian designer, Danielle, whose full name is actually on the
+  website. But yeah. So I think that was part of what I was going for a little bit
+  with the redesign as well.
+4149: Cause she came up with these great new icons you may have seen, which it just,
+  they feel a lot more playful and kind of fun.
+4156: And like, it's, I feel like that, I love them when I set upon them at first,
+  because it, it just feels like that's the vibe of our project is we're trying to
+  have that sort of fun, slightly kind of jovial, slightly silly, like, you know,
+  part of that is the fact that, you know, we have prose guidelines.
+4174: And in our prose guidelines, we favor British English just because, you know,
+  Max was British.
+4180: I was, and partly just because, I mean, a little part of me, and I think this
+  is more Scottish thing than a British thing is I kind of just like being difficult.
+4186: You know, I'm one of those people when I worked with a cute back then as well,
+  when you define colors, that was a cute color.
+4195: And I would regularly name my cute colors, variables, color with a C-O-L-O-U-R,
+  just because, you know, because I'm a crotchety British person.
+4205: And I find it funny to do those type of things.
+4208: So I think part of that kind of creeps into homebrew and we do try and we kind
+  of have to remind people sometimes that, like, we know some of this stuff's a little
+  bit silly, but that's, that's the project.
+4218: We're not a company.
+4219: We're not a serious business.
+4220: And we can afford to be a little bit more silly, even when maybe sometimes it's
+  a little bit self-destructive because that fun is what keeps us working on it, I
+  guess.
+4230: Right. Well, now that you're getting kind of beyond yourself and talking about
+  the community and the group of people that are all involved with it, let's, let's
+  change focus.
+4238: We're getting a little bit low on time here, but let's talk about the social
+  side of things in 1.0.
+4242: And you have two, what I would call kind of social announcements or things that
+  have happened, at least in light of 1.0.
+4247: And one is the joining of the software Freedom Conservancy.
+4250: And the other is a setting up of the community discourse.
+4254: I'm not sure exactly when those things happen, but let's start with the software
+  Freedom Conservancy.
+4260: Homebrew has joined that.
+4261: What does that mean for the project?
+4263: It's one of those things that for open source that you don't really understand
+  until you run a big project for a while.
+4269: But when your project has like no possession, effectively, then there's not
+  really a need as much for a thing like software Freedom Conservancy.
+4278: The problem is when you have, we had a Kickstarter a few years ago, which was
+  really great.
+4282: Let us buy some Mac minis, which we use for our CI.
+4285: And as I get older, thankfully not that old, and I'm a bit of a paranoid person
+  anyway.
+4291: Part of me is like, okay, well, these CIs are in a data center, like a friend
+  of mine runs an ISP in the UK.
+4298: And we have a bunch of money in a bank account, which again, I have access to,
+  but I've given other people the credentials to and stuff like that.
+4305: What happens if I get hit by a car to those servers?
+4308: What happens when they go down?
+4310: What happens to the money in that bank account?
+4312: And I just, you know, that stuff gets a little bit more worrying.
+4317: And it becomes one of these things where you think, well, it's actually not
+  very responsible of me just assuming that this project will survive my health.
+4326: And it also means that if I ever did want to or have to step away from the project,
+  then the unwrangling of me from the project would be a lot more difficult.
+4335: And what the Software Freedom Conservancy provides is a legal entity to own
+  these things and a legal entity to, if hope we ever got sued for whatever reason,
+  then the Software Freedom Conservancy would defend us.
+4349: And also on top of that as well, they are a 501c3 or for non-Americans, a non-profit
+  in the US, which makes it a lot easier to accept donations, basically, which are
+  tax deductible for individuals and corporations to provide.
+4366: So that is not something we've not managed to do a massive amount of fundraising
+  yet.
+4370: That's probably my next big project to try and lean in on that a bit more because
+  our recurring monthly revenue is zero.
+4377: But basically, just all those things that kind of help provide some more kind
+  of infrastructure and architecture around the kind of the governance and running
+  of the project.
+4390: I'm surprised to see or to hear that it's zero, like there's no contributions,
+  there's no donations.
+4396: I mean, we're running low on time, so this is harder to kind of like tap into
+  to keep using our terms.
+4403: But it just surprises me that Homebrew is used by so many and depended upon
+  by so many.
+4410: I mean, I don't know a developer, that many developers out there that aren't
+  developing, at least on a Mac, more often Linux,
+4417: but not as often on Windows, although it's becoming more and more popular with
+  Ubuntu's announcement of Bash and Microsoft and all that good stuff.
+4426: But I'm just surprised. Wow.
+4428: Yeah, yeah. So, I mean, part of that, you know, we're coming to personal beliefs
+  and stuff.
+4434: But, you know, my whole thing is I don't feel happy spending money on a recurring
+  basis until I have money coming in on a recurring basis in both my personal life
+  and with Homebrew.
+4444: So it restricts the stuff we can do. There's certain things that it's like,
+  you know, I would love to just be able to spin up an AWS instance to run that, but
+  we don't have the money.
+4452: So we can't afford to do that.
+4454: And yeah, it is a bit of a pain and it's not hit us that adversely yet.
+4460: But as I say, on the flip side, we've not ever really, beyond the Kickstarter,
+  tried to do decent fundraising for that.
+4467: And that's something I do want to, you know, personally do in future.
+4470: Well, that's somewhere we can help you play a role a little bit.
+4474: I mean, I know that Jared and I, we both have some passions around that.
+4478: And, you know, we can always talk to you outside of this, the context of the
+  show to help you on that front, to give us some ideas, you know, collaborate in
+  that front a little bit.
+4487: And that's something I think we have some future ideas around, nothing that's
+  exactly solid, but definitely some passion.
+4493: And anytime we hear of something like homebrew, having zero recurring revenue
+  to do, even stickers, you know, anything that's like community outreach, not so
+  much like just have money, you know, that to have money, but, you know, to have
+  money to do things that are, you know, community related or growth related or, you
+  know, outreach or anything, anything whatsoever.
+4512: You can't sponsor one of the maintainers going to a talk because you just have,
+  you know, you have no funds to doing that stuff.
+4519: It's, it's very limiting.
+4520: And I think that there's so many people out there using it.
+4523: There's got to be some way you can bring in at least a buck a user and that'd
+  be a lot.
+4527: And I mean, yeah, well, let's cover real quick, even though we're real short
+  on time.
+4531: So give us the, uh, the information on the community discourse site and the
+  purpose and the setting up for that.
+4537: So that's something we shipped, I think on the same day as 1.0.
+4542: And it's basically just another way of communicating on homebrew is something
+  that the mailing list, we've got a mailing list, we've got an IRC channel, we've
+  got the issue tracker and like none of them are quite, you know, they all feel slightly
+  formal in their own ways.
+4556: And I think that the discourse has been kind of great since it started actually
+  of just allowing people a little bit more of a kind of free form place to talk,
+  to kind of post about issues in a little bit of a looser way and people to be able
+  to help each other as well.
+4570: That's the nice, it seems to be building an expectation there, which is nice,
+  which is that it's not just the maintainers who are kind of jumping in and kind
+  of helping people there.
+4578: And a bit more of a kind of discussion and stuff like that.
+4580: And yeah, no, it's been good.
+4582: One more thing I, I heard you mention earlier, but I'm just curious what the
+  tie-in is together.
+4587: Cause I see in the footer, it's, uh, it's Linux brew is maintained by Linux
+  brew, but earlier you mentioned Linux brew.
+4592: Yeah.
+4593: It also says as the homebrew package manager for Linux, is there an affiliation
+  there?
+4597: Is there, I know one of the maintainers crosses over at least it was, what's
+  the relationship there?
+4601: Just curious in closing.
+4603: So I think, uh, originally Linux brew was like just a fork.
+4607: Um, and then we, we kind of created that and they, they just kind of had a bunch
+  of patches on top of homebrew.
+4614: Um, but then with 1.0, like we have a kind of what I call a generic backend,
+  which is a backend that doesn't assume anything OSX or Linux centric and kind of,
+  kind of run the tests and run and install on, on Linux and Mac.
+4630: Um, so now that we have that backend, we're trying to do more porting to try
+  and get things into, um, from Linux brew's, uh, brew kind of package manager fork
+  into homebrew itself.
+4642: And then hopefully maybe a 1.1 or whatever, we'll have a point where Linux brew
+  brew, um, can go away entirely.
+4649: And we can run that entirely off homebrew's brew and we can have a unified package
+  manager that works on, um, on OSX and on Linux.
+4657: Nice.
+4658: Good stuff.
+4659: Is there anything we missed in this condo?
+4661: Jared and I had a quite of a list to talk through pretty much just based around
+  your 1.0 announcement, but is there anything we missed that you want to make sure
+  we talked about?
+4667: Uh, I don't think so.
+4668: I think that that was kind of everything I wanted to talk about.
+4671: Um, and I, I looked at your little notes about the common questions at the end
+  of the show.
+4676: I'm not sure if we were doing them or not, but I think we've touched on all
+  of, almost all of them anyway.
+4680: So there's one we want to camp out on, which is essentially a great invitation
+  from you and the other maintainers of homebrew to the community.
+4688: You know, so it, and there's lots of listeners of this show, uh, from all walks
+  of open source, all walks of developer life.
+4694: Um, so if you were putting out a widespread invitation to those who could step
+  into homebrew and help out in various ways, what would those ways be?
+4702: Yeah, that's a great question.
+4704: I think basically just getting involved at all is great.
+4707: We have a thing in our homebrew brew readme about the easiest ways to get involved,
+  which is basically we have a, an audit tool for kind of running through things and
+  seeing if there's any little violations, um, of our kind of style.
+4720: And that's a great way to get started and get kind of familiar with our workflow.
+4723: But I think the main thing I would just say is anyone who's sort of in the wider
+  homebrew community is just be nice to each other.
+4729: I think open source, as I kind of touched upon a little bit earlier, has a problem
+  with retaining and welcoming people, particularly people from more diverse backgrounds
+  than it's historically been.
+4740: And that's something I feel like everyone can do, whether it's on homebrew or
+  on any project to kind of make the open source ecosystem a better place is try and
+  just be nice, be friendly, be helpful, be kind to people in homebrew and on any
+  open source project.
+4757: Because that's the way we're going to grow this community.
+4759: And that's the way we're all going to make better software together, because
+  when you don't have those things, people stop working on things like homebrew, when
+  you don't have those things, people don't want to work on open source.
+4768: And that hurts us all, really.
+4770: I mean, it's kind of like a universal mini-so or mini-so.
+4774: What is it, Jared, for Matt's is nice, we are nice.
+4777: It can almost be like maintain, our maintainers are nice, we are nice kind of
+  thing.
+4781: You know, it's just universal.
+4782: Mini-swan, that's what it is.
+4784: No, I like that.
+4785: That's nice.
+4786: I mean, I think that every, you know, sure, everyone says they're nice and it's
+  a variation of nice, but, you know, maybe they're not nice.
+4795: Maybe there's a project out there that's just like led by somebody who's a complete
+  jerk or not a very nice person.
+4800: And so, therefore, their community is not very nice, but I think when you look
+  at the leadership of homebrew over the years, you know, starting out with Max and
+  the leadership that stepped up over these years, you've all been very nice and there's
+  no reason not to be nice back.
+4816: Well, we do try to be.
+4818: And I think that the thing I think that's important to remember is people, again,
+  when you're saying everyone kind of thinks they're nice, is you're as nice as the
+  way you treat the person you're angriest with, the person you're most disgusted
+  with, whatever.
+4833: Like, it's not when it's dealing your day-to-day, it's when you're really angry
+  or frustrated or disappointed or confused or whatever.
+4841: Like, that, your behavior in that situation is what, like, we're asking you
+  as, like, open source people and equally myself as well.
+4850: I've got as much to learn from this as anyone does.
+4852: Like, that's the stuff we need to kind of work on because it's very easy to
+  be kind of nice in the times where you think things are great, but it's harder in
+  the times where everything is broken and your house is on fire.
+4861: That is true.
+4862: That's actually a good example of when people are actually nice is when they're
+  angry or should be angry or could be angry or whatever.
+4871: That's totally true.
+4872: So, Mike, you know, one thing I want to mention to the listeners before we close
+  out is that we have this email called Change Law Weekly.
+4878: I don't know, Mike, if you subscribe to it or not, but every week on Saturday.
+4882: And, Jared, now it seems like Sundays because Sundays have kind of been a better
+  day for us.
+4886: We've just had such business going on between the news site going out, three
+  shows, lots of stuff happening around the business front.
+4893: I've been changing our verbiage to every weekend.
+4895: Every weekend, yeah.
+4897: I mean, I think Saturday has been a great day traditionally for us, but Sunday
+  has turned out to be the day we actually end up shipping this email.
+4903: But in that email, the most recent one, issue 124, we mentioned Hobrew 1.0.0
+  and many other awesome things.
+4912: So if you're not subscribed to that, go to changelog.com slash weekly.
+4916: Subscribe.
+4917: All we ask for is your email.
+4918: But if you put your name in there, we greet you nicely in the email.
+4921: So the name is optional, so don't feel like you have to.
+4924: But a lot of people listen to that, or sorry, a lot of people read that email,
+  include our latest episodes, everything that hits the, you know, our radar in terms
+  of open source, software development, encouragement, things like Mike's talking
+  about here with being nice and stuff like that.
+4939: So a lot of stuff around software development.
+4941: So if you don't subscribe to that, you know, Jared, what have we got?
+4945: Sad faces or happy faces?
+4947: Emoji sad face.
+4949: Emoji sad face.
+4950: Mike, so do you subscribe to this?
+4951: Just curious.
+4952: Yeah, I do.
+4953: As of three seconds ago.
+4956: What's your favorite issue?
+4958: That's all we ask.
+4959: That's all we ask.
+4960: Just because you just subscribed.
+4961: My favorite issue is the next one.
+4963: '125.'
+4964: Nice.
+4965: You're going to love it.
+4966: You're going to love it.
+4967: Now we get a lot of pressure on us to please Mike, which is hard.
+4971: I don't want to see an unsubscribe on Sunday.
+4973: I'm going to be, I'm going to email you.
+4975: I'm going to email you nasty things.
+4976: That's right.
+4977: Yes.
+4978: That's the way we do it.
+4979: but that's what I want to mention in closing,
+4981: just because we mentioned a homebrews 1.0 announcement recently in that
+4985: a great place to,
+4986: to mention that.
+4987: And if you listen to the show and you don't subscribe to that email,
+4989: it's just,
+4990: you're just missing out.
+4991: That's all I can say.
+4992: So do that now,
+4993: take our direction.
+4994: And that's it for the show,
+4996: fellas.
+4997: So let's say goodbye.
+4998: Bye.
+5009: Bye.

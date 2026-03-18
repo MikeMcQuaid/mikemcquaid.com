@@ -1,6 +1,7 @@
 ---
 items:
 - id: 00ff42fd-20a5-4705-bfa2-53638066d3fa
+  transcript-id: 00ff42fd-20a5-4705-bfa2-53638066d3fa
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: Getting Shit Done in Institutions
   description: "<p>David Yee, VP of Engineering at The New York Times and head of
@@ -16,6 +17,7 @@ items:
   podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/c0744bf875ca2fe6763dbe3f1a608bea63c7f091e4429bfa638ba97bd3d5a4fc/eyJlcGlzb2RlSWQiOiIwMGZmNDJmZC0yMGE1LTQ3MDUtYmZhMi01MzYzODA2NmQzZmEiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjk3M2RiMGU5NDc2NDAwMjBjOWMyMmY3L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjYtMS0yM19fMjEtMzMtMTgubXAzIn0=.mp3
   podcast_audio_length: '22201480'
 - id: 73c879d9-c88e-4f62-a81f-1b536ac5cb24
+  transcript-id: 73c879d9-c88e-4f62-a81f-1b536ac5cb24
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: Performance Reviews, Done Right
   description: "<p>Performance reviews have a reputation for being stressful, confusing
@@ -37,6 +39,7 @@ items:
   podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/b79e836cc46b251795082bcd9d9e5687a48af673e6fef781196968f71f6a9711/eyJlcGlzb2RlSWQiOiI3M2M4NzlkOS1jODhlLTRmNjItYTgxZi0xYjUzNmFjNWNiMjQiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjk2MDBmNGM5NGM4OTA4M2RlNTI1OWE5L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjYtMS04X18yMS0xMC01Mi5tcDMifQ==.mp3
   podcast_audio_length: '18492842'
 - id: aaa4075a-6710-4cef-9045-b066d00fd0eb
+  transcript-id: aaa4075a-6710-4cef-9045-b066d00fd0eb
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: Politics at Work Without Losing Your Soul
   description: "<p>In this episode, Mike and Neha are joined by Denise, an engineering
@@ -56,6 +59,7 @@ items:
   podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/596e9edc0528501a7c20b8c0ef2609bb4361b3f8524de68b08f28b3195af7372/eyJlcGlzb2RlSWQiOiJhYWE0MDc1YS02NzEwLTRjZWYtOTA0NS1iMDY2ZDAwZmQwZWIiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjk1Mjk5MmIxYmExMzE3NGUxMTQ3ZjUwL21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTItMjlfXzE2LTctMjIubXAzIn0=.mp3
   podcast_audio_length: '23109831'
 - id: 8051bf87-eaba-4d1a-9c47-cd7d7a6c8f84
+  transcript-id: 8051bf87-eaba-4d1a-9c47-cd7d7a6c8f84
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: 'Beyond Engineering: Healthy Tension'
   description: "<p>Product, design and engineering rarely agree and that’s a good
@@ -69,6 +73,7 @@ items:
   podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/caf8253f76c01b74c6262dac64a77720e139fe3439aab6d0fb7f134889c4ca1c/eyJlcGlzb2RlSWQiOiI4MDUxYmY4Ny1lYWJhLTRkMWEtOWM0Ny1jZDdkN2E2YzhmODQiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjk0NWE5ZjRiOWI2NGY5ZDFmZjU5Nzg5L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTItMTlfXzIwLTM5LTMyLm1wMyJ9.mp3
   podcast_audio_length: '20289227'
 - id: 1e69291e-fa42-4ca8-a722-0acb2dd87d32
+  transcript-id: 1e69291e-fa42-4ca8-a722-0acb2dd87d32
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: 'When Things Go Wrong: How Leaders Rebuild Trust'
   description: "<p>Mike and Neha explore how leaders can recognise when things are
@@ -82,6 +87,7 @@ items:
   podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/0e68337153f3e7e569d4edacdd6f58b6ee7f432d099d0935753bcb38bda7b767/eyJlcGlzb2RlSWQiOiIxZTY5MjkxZS1mYTQyLTRjYTgtYTcyMi0wYWNiMmRkODdkMzIiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjkxMTExM2Q2MzYwZWE2MWFhOWE5NzU2L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTEtOV9fMjMtMTAtNS5tcDMifQ==.mp3
   podcast_audio_length: '22439167'
 - id: f04135da-c684-4431-90c7-42087a1e6746
+  transcript-id: f04135da-c684-4431-90c7-42087a1e6746
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: Creating and Keeping Momentum
   description: "<p>Mike McQuaid and Neha Batra break down how leaders spark momentum
@@ -99,6 +105,7 @@ items:
   podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/37bf18543a6b783b04cb20ae560a7f4b5db1c255aa539b59a0e8b7d8f8f8562e/eyJlcGlzb2RlSWQiOiJmMDQxMzVkYS1jNjg0LTQ0MzEtOTBjNy00MjA4N2ExZTY3NDYiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjkwNGVkNDU0NWE5ZmQ1MDI4OGY2NDI4L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTAtMzFfXzE4LTktMjUubXAzIn0=.mp3
   podcast_audio_length: '29463062'
 - id: 7147f288-437f-464c-b30a-8b552ff25fd9
+  transcript-id: 7147f288-437f-464c-b30a-8b552ff25fd9
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: Psychological Safety vs. Telling the Truth
   description: "<p>How can teams feel safe to speak up while still hearing hard truths?
@@ -116,6 +123,7 @@ items:
   podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/837aad13d398c5c86b6e3c13e3c6b080a2d9530ec1c8569dc3ca530e555343f2/eyJlcGlzb2RlSWQiOiI3MTQ3ZjI4OC00MzdmLTQ2NGMtYjMwYS04YjU1MmZmMjVmZDkiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjhmOWY0Yjc4ZGNjNDlkZjE5NjNkODlkL21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTAtMjNfXzExLTI2LTE1Lm1wMyJ9.mp3
   podcast_audio_length: '28287410'
 - id: d5cc998f-a819-4ec4-9261-c15aa0bee877
+  transcript-id: d5cc998f-a819-4ec4-9261-c15aa0bee877
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: Leadership Is a Series of Decisions (and Compromises)
   description: "<p>In this episode of Minimum Viable Management, Mike McQuaid and
@@ -133,6 +141,7 @@ items:
   podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/61d0c8d81b43d6ece86544003c34dd632cca54f190a7c1d2e92af14b09a66929/eyJlcGlzb2RlSWQiOiJkNWNjOTk4Zi1hODE5LTRlYzQtOTI2MS1jMTVhYTBiZWU4NzciLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjhlZTRmMWJlNDJjYWNhOTllOWEzZTg1L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTAtMTRfXzE1LTI0LTQzLm1wMyJ9.mp3
   podcast_audio_length: '27053909'
 - id: 41e62267-3861-4998-bd86-42aba65f8a22
+  transcript-id: 41e62267-3861-4998-bd86-42aba65f8a22
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: Building Trust and Having Better Fights
   description: "<p>In the first episode of Minimum Viable Management, Mike McQuaid
@@ -148,6 +157,7 @@ items:
   podcast_audio_url: https://api.riverside.fm/hosting-analytics/media/41b92a7444b00e56b6c7b6531add5d7d8791fad78639b20242ebd6dd8293afb4/eyJlcGlzb2RlSWQiOiI0MWU2MjI2Ny0zODYxLTQ5OTgtYmQ4Ni00MmFiYTY1ZjhhMjIiLCJwb2RjYXN0SWQiOiI4NWZlZTgzNC1iMWNhLTRlYTItOGEwNy1lMjUyMDdmODQyZGYiLCJhY2NvdW50SWQiOiI2OGQ2YjhlNjU2NDE2OTA2NGI2MzAxMjYiLCJwYXRoIjoibWVkaWEvY2xpcHMvNjhlNTAxYzBkZTFjZTQ5NTVhNTYzYmE1L21pa2UtbWNxdWFpZHMtc3R1ZGlvLWNvbXBvc2VyLTIwMjUtMTAtN19fMTQtNC0xNi5tcDMifQ==.mp3
   podcast_audio_length: '26150642'
 - id: 6478eb02-da38-4964-beb1-313504ae1c30
+  transcript-id: 6478eb02-da38-4964-beb1-313504ae1c30
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Paul and Mike - Sibling Viralry
   link: https://mikemcquaid.com/balancingdads/
@@ -162,6 +172,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S02E02.mp3
   podcast_audio_length: '22691712'
 - id: 2e755c49-96fc-4457-be06-a88a96ec3c9c
+  transcript-id: 2e755c49-96fc-4457-be06-a88a96ec3c9c
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Derek Sivers - OxFord Focus
   link: https://mikemcquaid.com/balancingdads/
@@ -178,6 +189,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S02E01.mp3
   podcast_audio_length: '58550784'
 - id: 43c74d6d-a97e-4988-95a5-582a7dd3d8af
+  transcript-id: 43c74d6d-a97e-4988-95a5-582a7dd3d8af
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Paul and Mike talk Coronavirus
   link: https://mikemcquaid.com/balancingdads/
@@ -194,6 +206,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S01E11.mp3
   podcast_audio_length: '24507264'
 - id: f4022544-d28c-442f-80f0-b2be7727c6ea
+  transcript-id: f4022544-d28c-442f-80f0-b2be7727c6ea
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Tom Preston-Werner - Medisins of the Father
   link: https://mikemcquaid.com/balancingdads/
@@ -212,6 +225,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S01E10.mp3
   podcast_audio_length: '46674432'
 - id: e6830c1e-bd17-4972-a352-bcacf1c0d07b
+  transcript-id: e6830c1e-bd17-4972-a352-bcacf1c0d07b
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Paul and Mike - Axel Rosmeo and Juliat
   link: https://mikemcquaid.com/balancingdads/
@@ -231,22 +245,8 @@ items:
   guid: e6830c1e-bd17-4972-a352-bcacf1c0d07b
   podcast_audio_url: https://archive.org/download/balancing-dads/S01E09.mp3
   podcast_audio_length: '32589696'
-- id: 92ebba19-1c10-408f-a6ba-9bbcb933bc2d
-  source_feed_url: https://mikemcquaid.com/balancingdads.xml
-  title: Luke Hefson - Travel Advice from a Prodad Manager
-  link: https://mikemcquaid.com/balancingdads/
-  description: '<p>This time Mike and Paul get advice from with Luke Hefson: Shoreham-based
-    product manager at GitHub about traveling with kids and everyone talks about their
-    New Year''s Eves.</p><ul><li><p><a href="https://twitter.com/lukehefson">Luke
-    on Twitter</a></p></li><li><p><a href="https://twitter.com/mikemcquaid">Mike on
-    Twitter</a></p></li><li><p><a href="https://twitter.com/paulca">Paul on Twitter</a></p></li></ul>'
-  publication: Balancing Dads
-  date: '2020-01-08T21:27:51Z'
-  sort_unix: 1578518871
-  guid: 92ebba19-1c10-408f-a6ba-9bbcb933bc2d
-  podcast_audio_url: https://archive.org/download/balancing-dads/S01E08.mp3
-  podcast_audio_length: '44448000'
 - id: 728640ba-3344-4179-8b71-cb27a9246161
+  transcript-id: 728640ba-3344-4179-8b71-cb27a9246161
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Alex Lang and Thilo Utke - Paternity Leave(ing Work at 5:30)
   link: https://mikemcquaid.com/balancingdads/
@@ -264,6 +264,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S01E07.mp3
   podcast_audio_length: '31074048'
 - id: d554139d-0a81-478c-8f20-9da87a5e53a0
+  transcript-id: d554139d-0a81-478c-8f20-9da87a5e53a0
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Paul and Mike - Sick Child(r|m)en
   link: https://mikemcquaid.com/balancingdads/
@@ -278,6 +279,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S01E06.mp3
   podcast_audio_length: '26659444'
 - id: 21428587-c766-47d9-90e3-5f2daa807f2a
+  transcript-id: 21428587-c766-47d9-90e3-5f2daa807f2a
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Paul and Mike - Halloween(ers)
   link: https://mikemcquaid.com/balancingdads/
@@ -292,6 +294,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S01E05.mp3
   podcast_audio_length: '32396160'
 - id: 9382bc0c-83a0-41da-9872-673d748f1e20
+  transcript-id: 9382bc0c-83a0-41da-9872-673d748f1e20
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Jame McCrae - Infectious Dadsease Dadctor
   link: https://mikemcquaid.com/balancingdads/
@@ -312,6 +315,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S01E04.mp3
   podcast_audio_length: '35599592'
 - id: a27337f6-474f-46ad-9082-11c070310b6f
+  transcript-id: a27337f6-474f-46ad-9082-11c070310b6f
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Mike McQuaid - GitHusband Engineer
   link: https://mikemcquaid.com/balancingdads/
@@ -326,6 +330,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S01E03.mp3
   podcast_audio_length: '40212189'
 - id: 179e85e1-5e43-4bbe-9919-eebfbcf1de31
+  transcript-id: 179e85e1-5e43-4bbe-9919-eebfbcf1de31
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Lee Dohm - Community Dadager
   link: https://mikemcquaid.com/balancingdads/
@@ -341,6 +346,7 @@ items:
   podcast_audio_url: https://archive.org/download/balancing-dads/S01E02.mp3
   podcast_audio_length: '31430449'
 - id: f7f880aa-e2b8-4d35-a65f-5f40f53068c6
+  transcript-id: f7f880aa-e2b8-4d35-a65f-5f40f53068c6
   source_feed_url: https://mikemcquaid.com/balancingdads.xml
   title: Paul Campbell - CEdaddyO and Cofoundad
   link: https://mikemcquaid.com/balancingdads/

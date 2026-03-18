@@ -1,0 +1,717 @@
+---
+0: Hi, Mike. How's it going?
+2: It's going very well, thank you.
+4: This is our first time doing a little thing.
+6: Neha and I are having a conversation.
+8: We were having a conversation recently,
+10: and we thought that other people would be interested in what we had to say.
+13: So let's do it.
+15: So what we're going to do is give our introductions for each other
+18: because we thought they'd be more complimentary that way.
+20: So Neha was the best manager I've ever had in my career.
+25: We worked together until I left GitHub, I guess, like two and a bit years ago.
+31: Neha and I worked together at GitHub for about three years.
+34: She was at GitHub for eight years.
+36: And, yeah, just generally knows everything there is to know about management
+40: and moving teams and particularly about working very well with staff
+46: or principal engineers, which is what I was when we worked together.
+51: And Mike already said that we met, you know, and we worked together for three-ish
+  years.
+57: Mike's reputation preceded him at GitHub.
+62: I knew him as, like, the homebrew guy
+64: and someone who wasn't afraid to push a few buttons at work.
+69: I inherited him and I found that he became quickly my favorite curmudgeon.
+76: But it's not just the GitHub stuff.
+80: He's been an open source for 20 years.
+82: He's been working in Homebrew, I think, for, like, 16 years or something like
+  that.
+88: And he'd been at GitHub before me.
+90: And so he kind of knew his way around.
+92: We worked really well together because Mike is, while he is not afraid to speak
+  his mind,
+99: he's actually incredibly patient, he's kind, and he's willing to work with people
+103: who are willing to put in the work themselves.
+104: And I feel like that is, those are the qualities of some of my favorite people.
+109: Well, I now regret doing the intro thing because that was way too kind and disgusting.
+116: Compared to my description of you.
+119: No one could see my eye rolls when you were doing my description unless they're
+  watching
+123: the video.
+124: There we go.
+125: Well, so something we talked about recently is, I think last time we talked,
+  we were chatting
+129: about manager-y stuff.
+130: It's interesting because when we worked together, like, I had never been a manager
+  at that point.
+136: And I was, like, doing the whole staff engineer thing.
+138: I've since been a manager a little bit at my own startup when I was at WorkBrew.
+142: And then now I'm doing some management stuff as, like, a fractional CTO.
+147: And I wrote a wee post on my blog recently called, like, Minimum Viable Energy
+  Nearing
+151: Management based on, like, describing to people who might not have done it before,
+  like, what
+155: I see as the minimum expectations based on having been at GitHub when there was
+  no managers
+161: and then when there was managers when there was no expectations.
+164: But yeah, when we were talking about this earlier, Neha, you said that there
+  was some
+167: stuff from there that you thought might be missing that could be added.
+170: Well, I think we should first, like, I think it's absolutely fascinating.
+173: I think what we're missing here is that, like, Mike, you told me you're like,
+  I never want
+178: to be a manager like that.
+179: I absolutely don't.
+181: And then all of a sudden, right, you leave GitHub and you find yourself in a
+  manager position.
+185: And so, like, I actually think we should cover some of the things in that blog
+  post because,
+189: like, I, you've created your own definition of, like, what the table stakes are
+  for management.
+196: And, like, I feel like I've been in management for way too long to be critical
+  enough about
+201: And so, like, I think you should share, like, what you think are table stakes
+  for management
+207: and what worked for you in order to stay sustainable because you were still coding
+  alongside, right?
+212: Like, it was a small company and, like, you know, shit still needed to get done.
+216: So how do you balance that management with the day-to-day work and, like, do
+  what you think
+221: is, like, minimum viable?
+222: Yeah.
+223: So I guess why I ended up doing management, I guess, like, that was the expectations
+  when
+230: I joined the startup would be, like, yeah, so it was sort of the deal from the
+  outside.
+235: Well, that was helpful because it was like, okay, well, this is a thing that's
+  going to
+239: happen at some point.
+240: So, you know, I initially was just cranking out code or whatever.
+243: And eventually we started hiring some other engineers who weren't me.
+246: And it was like, okay, well, I'm going to keep writing code, but also have to
+  manage
+251: And I guess my experience with GitHub positive with you and negative with people
+  who would
+258: be unnamed in the past, like, showed me the various extremes of, like, management
+  and what
+265: should be done and shouldn't be done.
+266: And I don't know, like, I guess I've had experiences or seen people or had people
+  in my network in
+271: the past who, like, were part of a big company and all the management and the
+  HR reporting and
+276: blah, blah, blah was, like, really oppressive and they hated it.
+279: And then they're like, when I make my own startup, I'm not going to do any of
+  that, right?
+281: Like, I'd throw the baby out with the bathwater a little bit.
+285: And I was like, okay, like, how can I not be, like, really shit as a manager,
+  right?
+292: Because I'm just being too lazy.
+294: But how can I make sure it requires the minimum viable amount of my time?
+299: And how can I make sure I'm providing, like, the minimum viable, like, services,
+  I guess,
+304: to my reportees or team or whatever to make sure that that gets done?
+308: And then, I guess, in both roles that I've had where I've been doing that and
+  also, like,
+313: what can I potentially offload to other people in the team, be they, like, formal
+  managers
+318: or semi-managers or not managers or whatever?
+320: Yeah.
+322: And, like, in this blog post, right, you write about, you know, regular one-on-ones,
+  right?
+328: And it's not just about a rundown of everything you've done.
+332: It's about getting context and providing context.
+335: It's about delivering feedback and unblocking them.
+340: And it's about receiving feedback.
+341: But I think what's really interesting about your post is every section that you
+  have in
+346: your post is about a question.
+348: And that is because having conversations with your reports and working with them
+  is about
+355: And it's not about a one-way push of information.
+358: And I feel like when people start to think about it as, like, hey, I'm coming
+  into this
+362: one-on-one.
+363: You get on your soapbox for 30 minutes.
+365: Then you've, like, lost the plot.
+367: And it needs to be about a conversation back and forth.
+370: Yeah.
+371: I couldn't agree more.
+372: Like, I think what I hated being on the other side of that.
+376: And I try not to do it.
+378: Because I guess as, you know, as you maybe noticed or knew when we worked together,
+  like,
+384: I had an early reputation in GitHub for being, like, aggressively anti-any meeting,
+  right?
+390: Which I didn't necessarily do a quick job to shed because as a reputation, it's
+  good because
+397: it means people are, like, no, frightened would be a strong word.
+401: But people are maybe apprehensive to schedule a meeting with you unless it's
+  really important
+405: and it can only be done that way.
+407: And, like, yeah, you want them to think about it.
+408: Exactly.
+409: And I like that.
+411: I like that then.
+412: So for me, it's, like, I think there's a bunch of stuff you can do outside of
+  the one-on-one
+417: in terms of, like, information delivery.
+419: And, you know, if I just need to tell someone something, like, I'm not going
+  to wait till
+422: I'm going to tell them in Slack or an email or a GitHub comment or whatever.
+427: But then also, like, the other way around as well, like, where, you know, I think
+  I maybe
+431: mentioned Geekbot in the post.
+432: That's just my, like, Slack stand-up preferred tool of choice.
+436: But equally, like, I don't think it makes sense to have, like, a daily meeting
+  with someone
+439: where they just tell me what they're doing when they could just write that down
+  in a
+442: form that everyone can consume.
+444: So, yeah, so, like, that's why for me it's, as you say, like, around questions
+  and particularly
+449: around, like, difficult conversations, right?
+453: Like, having face-to-face video call, both people with their cameras on, synchronous
+  or
+459: in-person, like, that is something where, yeah, like, it's easier to have difficult
+  conversations
+465: that way than it is to just, like, quickly fire off a DM.
+468: And, yeah, and I guess for me, like, two-way feedback delivery is one of the
+  hardest things
+474: to do and receive.
+476: And, like, that's the best place to do that, I think.
+480: Yeah, yeah.
+481: And so I noticed in your post the one thing that I spend a lot of time on in
+  my one-on-ones
+487: that wasn't mentioned there is establishing connections.
+490: And so one thing that, I mean, I'm thinking about this from two perspectives,
+  but, you know,
+495: in the case, which was at GitHub, that I often had a greater sense of, like,
+  what the actual
+505: org chart was, like, the shadow org chart of how things work, I could kind of
+  put some pieces
+510: together and say, like, okay, cool, if you're blocked on this, you should talk
+  to this other
+514: Or I have a feeling that things are going to change in this certain area, and,
+  like, you
+521: should go make friends.
+522: And you want to make friends now before things hit the, get, become conflicted.
+529: I'm going to use appropriate language here.
+531: I don't know what the line is for a podcast yet.
+534: I've sworn already, so you can swear.
+536: We've already got the explicit tag.
+538: Yeah, when shit hits the fan, right?
+540: And so I think it's really important to establish connections.
+545: It's also great as a manager, because then I'm not the in-between, right?
+549: So I'm trying to think, okay, cool, who does Mike need to talk to so that they
+  can resolve
+553: their shit on their own and, like, not go through me?
+555: And it's all about, like, knowing who the influencers are and who are the blockers
+  and
+563: also not the influencers of today, but I'm trying to think about what this company
+  is
+570: going to look like in two years, in three years, and who the top contenders are.
+574: And I'm not just going to be like, Mike, here's, like, my play-by-play, and here's,
+  like, my
+578: brackets, and here's who I think is going to win.
+580: I have to tailor that to the individual.
+582: So I'm going to say, hey, Mike, like, if you're working in this area, you might
+  want
+586: to go reach out and make connections with these people.
+588: And establishing those connections, I don't know if it's minimal vibe.
+593: Minimum viable, but I do think it's, like, a very under-leveraged part of being
+  a manager.
+601: Yeah, I think I definitely found that really useful when we did that at GitHub,
+  and I definitely
+608: think, like, I guess, in my mind, at least some of that would, like, maybe fall
+  under
+613: kind of getting and providing context.
+616: Like, I think, yeah, I've written this, the piece probably from more of a, because
+  it's
+622: all I've ever done, mindset of, like, a smaller organization, right?
+626: So, like, the first organization.
+628: Yeah, so there isn't that much of an org chart, right?
+629: Yeah, exactly.
+630: So it's, like, so it's probably obvious to people a little bit more, like, who
+  they should
+634: But I think the interesting thing about that is, I think, something that you
+  and I were both
+639: very good at, and I think we shared this with each other when we were a manager,
+  but I think
+644: we also shared this with a bunch of other people in the wider team, was, like,
+  that idea of
+648: just being, like, you and I would both just, like, sit in a lot of, well, Slack
+  channels
+654: and maybe I'll be on some calls or documents or GitHub issues or whatever, and
+  just almost,
+660: like, absorb the information so that later on when someone on the team is, like,
+  why is
+664: this person doing that, we're, like, oh, I have the answer for you, actually,
+  on that
+668: because I've just read all this stuff with the anticipation that at some point
+  in the
+673: future, someone will need to know some of this stuff.
+675: I think also, like, especially if you're working with really high-level folks,
+  like, our conversations
+684: weren't always about, like, you know, this full structure, right?
+688: Because as you get more and more advanced, you don't need to.
+690: You are not just a staff engineer under me.
+691: You're also a principal, right?
+694: And, uh, it, it, once I became a director, it dawned on me that, like, I needed
+  to have
+702: opinions about things.
+703: And, like, those opinions weren't necessarily, I was so used to just being asked
+  and then trying
+708: to form my opinion, and I needed to get ahead of it, and I needed to establish
+  my own opinions.
+713: So what you and I would talk about a lot in our conversations would be, okay,
+  cool, this
+718: thing is going on.
+719: It's not bad yet.
+721: We don't need to interject.
+723: What do we think, right?
+725: And, like, I wanted your input, and your input wouldn't become my opinion.
+729: It would just be input, and I would share my perspective.
+732: And, like, we could influence each other, and we could try to grow each other
+  as we started
+736: to make assessments about what was going on, why, and then, like, you know, eventually,
+740: like, hey, do we want, what do we need to see to take action?
+744: I think the other part of that that I think is really interesting is that we're
+  a team.
+749: And we're tag teaming together, and we're, like, negotiating, okay, cool, who
+  goes first?
+754: Oh, actually, they might, like, receive you better, or they might receive me
+  better.
+757: And it's not about, like, you know, of course, we're like, oh, well, technically,
+  the principal
+762: engineer should weigh in here.
+763: Technically, the director should lead here.
+766: But it was always a consideration, and it wasn't, like, a rule, and it wasn't
+  about who
+771: wanted the most credit.
+772: It was about the outcome and how do we influence it.
+774: Yeah.
+775: I think that's something that, again, you and I shared there, which was good,
+  is, like,
+779: we both cared more about the outcome than who got the credit, right?
+782: And I also think, like, in my mind, with one-on-ones and, like, manager-managee
+  relationships,
+790: whatever, like, ideally, it's always, like, a two-way influence thing, right?
+794: And it's a two-way feedback thing, and it's a two-way collaboration thing.
+798: Like, and it's, obviously, sometimes it's going to need to be a little bit of,
+  like, command
+803: and control or whatever.
+804: But, like, that, you want to minimize that stuff, right?
+809: And I think something else that you and I were both, in my opinion, reasonably
+  good at
+815: or, like, at least aspired for, which is not always super common, is that expression
+821: of, like, servant leadership, right?
+823: Yeah, yeah, yeah.
+824: If there's, like, shit work to be done, if there's, like, maybe a little bit
+  of a boring
+828: task or a difficult conversation or someone has to be the bad guy
+834: or whatever, then it's, like, you or I would often sign up for that.
+838: And I think, in a funny way as well, that comes right through establishing connections,
+  right?
+843: Because I guess one way of looking at it is the way you mentioned it before with
+  the establishing
+847: connections of, like, hey, you should go and meet with this person, whatever.
+850: But you're also building connections with the people in your team, the people
+  you're reporting
+855: to the people who, you know, the people who are your manager, and you build those
+  connections
+860: and those trust often, I think, through vulnerability, through, like, being willing
+  to be a servant
+866: leader rather than being like, I can get away with this, but I'm in charge and
+  you can't.
+871: Yeah, I think it's, like, I've always thought about, like, you know, servant
+  leadership has such a bad
+883: connotation with it in some ways, right?
+885: Especially with, like, the movement of founder mode and blah, blah, blah.
+890: And, like, I think the way that you defined it was really good.
+895: It's not all that, like, crazy and, like, about sacrificing and, like, being
+  a martyr.
+901: It's just about getting in the trenches with people and, like, and being really
+  honest about what you
+905: deliver, right?
+906: I remember when I was, when I became a director, which is where we met, right?
+913: It was over a team that I had never worked with before.
+918: And, like, of course, we all knew each other by reputation, but it was, like,
+  terrifying for me,
+923: Because I was like, why would these people want to work with me?
+926: We had, you know, one of my favorite people in the world, Derek, right?
+932: Who was already a very respected leader and, like, who am I to come in?
+936: And then, obviously, I got, not obviously, but, you know, I got told that I would
+  be the
+943: directly responsible individual of this product that I hadn't even played with
+  that much and
+948: I didn't really know much about and I had to all of a sudden become in charge.
+952: And it was, like, instant organ rejection from the team.
+957: And what I had to do, which luckily was my instinct to do, it wasn't like I had
+  to change
+962: my personality or what I wanted to do.
+963: It was, like, okay, cool.
+964: Let me be really clear about what I offer, right?
+968: I'm the only one who's in those leadership rooms.
+970: I need to represent your opinions.
+972: And then I need to come back and I need to tell you what their feedback is.
+975: My job is to give you the best possible feedback, to argue back with them, to
+  minimize the work
+981: that you need to do and to be as honest as possible so you can do your work.
+985: Everyone just wants to do the best work that they possibly can and they want
+  to feel proud
+988: of what they do.
+989: And, like, being able to articulate what I offer and not do more than that, I
+  think, is,
+995: like, part of servant leadership.
+996: And I also think it's about bringing people in, right?
+1001: So it's, like, did I want to be in those meetings alone?
+1004: Absolutely not, right?
+1005: Like, that is terrifying to be representing every single decision when you don't
+  even know
+1010: what happened.
+1011: And so I immediately started my mission on trying to bring people in as quickly
+  as possible.
+1016: I feel like part of servant leadership is sharing that credit.
+1018: And especially if you're the default leader, you should be stepping out of the
+  limelight
+1025: as soon as it's effective, right?
+1027: Yeah.
+1029: That's my opinion.
+1030: There was something else you said, which was, like, oh, sometimes it's, like,
+  not about command
+1035: and control.
+1038: The best thing you can do as an in-servant leadership is to take over and help
+  people
+1047: out of a jam as well.
+1048: But that's probably, like, a 5% likelihood versus, like, the 95% is to be in
+  the trenches.
+1054: Well, I think, like, what I like about your framing is that idea of almost making,
+  I guess,
+1064: maybe jumping to engineer speak, like, making explicit, like, what your interface
+  is, like,
+1068: what your responsibilities are.
+1070: Here are my endpoints.
+1072: Yeah.
+1073: And I think that's, I think, like, making things explicit is, if you combine
+  making things
+1080: explicit, which include things that might not make you look good, right?
+1084: So something I'm enjoying about the fractional CTO work right now is the fact
+  that I am fractional
+1090: means that, like, I don't know a lot of stuff a lot of the time, right?
+1094: So, like, a lot of the time I'm trying to drive a decision without a strong
+  preference of what
+1101: that decision is.
+1102: But I'm just, like, I just want clarity, right?
+1105: And I do that a different way sometimes.
+1106: Sometimes I do that by asking questions.
+1109: And sometimes I do that by being like, I think we should do X, right?
+1112: And then the entire room erupts.
+1115: And I'm like, great, we're not doing X anymore, right?
+1118: Like, you will explain to me why we don't do that.
+1120: But, like, if I had asked you, like, what do you think about X?
+1123: There may have been crickets.
+1124: But if I say we're going to do it, then I get a reaction.
+1128: And then I can respond and iterate and change on that reaction.
+1131: And I just think, like, stuff like admitting you don't know, being willing to
+  change your
+1135: mind, like, all this stuff that maybe, I don't know if that's part of servant
+  leadership per
+1141: se, but I think there's a lot of stuff that is, like, viewed as maybe, like,
+  weakness.
+1145: And you don't want, you need to sort of strong leadership.
+1148: But actually, it's kind of the other way around.
+1150: Like, actually, it shows a lot more confidence and strength in some ways in
+  leadership to be
+1156: able to be honest about when you don't know things.
+1158: Yes.
+1159: I actually think that, like, you know, something that I'm always trying to do
+  in meetings is
+1163: think, okay, cool.
+1164: What is information that's, like, not explicit right now?
+1170: And, like, to call that out.
+1171: And then the opposite is, like, okay, if I'm confused, there might be other
+  people in the
+1176: You have to weigh it, right?
+1177: Like, you don't want to, like, make the whole meeting about you.
+1179: But sometimes if I ever get a DM where someone's like, hey, what's going on?
+1183: I will always ask that question.
+1185: And, like, I'll always be the one, well, you know, I'll always try to be the
+  one who's
+1190: vulnerable first and, like, willing to look a little bit stupid.
+1193: And I think you're absolutely right.
+1196: That actually is, you have to be extremely confident to ask questions.
+1200: And you can role model that, right?
+1202: You can role model this, like, curiosity and, like, to be willing to switch
+  up the conversation.
+1207: I think the other thing that you said is, like, you know, sometimes people are
+  in a deadlock
+1212: for a decision and you just need to give them something to react to.
+1216: And if they do that, what you're saying is you're willing for people to yell
+  at you in
+1224: the name of progress, right?
+1226: And, like, it's about, like, a good argument and you're, like, willing to say,
+  okay, cool,
+1231: let's start a good argument.
+1232: And if it's still, if it means the entire room is just yelling at you and telling
+  you
+1236: why, you're like, great, we've learned A, B, and C, and, like, now we have a
+  path forward.
+1241: And, like, no one's going to say thank you, but, like, you're welcome, right?
+1246: Yeah, I also love the idea of, like, a good argument or constructive conflict
+  or, you know,
+1253: all that type of thing.
+1254: But what does that look like to you?
+1256: What's a good argument or conflict or bad argument or conflict?
+1260: So I got this philosophy from Pivotal, the company I worked at before GitHub,
+  which is,
+1268: like, and it's not, I don't think it's invented by them, but, like, we talked
+  about it a lot
+1272: and it's, like, this concept of a balanced team, right?
+1275: And so at Pivotal, we had, every team had an engineer and, or an engineering
+  lead, a product
+1284: lead, and a designer lead.
+1285: And we always said that, like, this is our balanced team because we had to represent
+  three
+1289: personas, right?
+1290: The technology, the user, and the business.
+1294: And the thing is that, like, if we all thought the exact same thing, we wouldn't
+  have a better
+1301: We kind of need to argue with each other.
+1304: And we kind of need to represent different sides sometimes in order for us to
+  figure out
+1308: the best compromise.
+1309: And if you have people that you can argue with really well, I had, like, a product
+  counterpart,
+1315: Billy Griffin, when we were working on desktop and CLI.
+1317: I knew that if he had a different perspective, that he and I could argue about
+  it extremely
+1325: respectfully in order to figure out the context that we're missing on each other's
+  side.
+1330: And once we had all of our cards on the table, we could make a decision together.
+1335: And, like, arguing is about saying, hey, I think that there is really important
+  information
+1344: that we need to incorporate before we make the outcome.
+1346: Even if it is we don't change anything and we're just willing to accept those
+  risks, let's,
+1350: like, have that dialogue, right?
+1351: Yeah.
+1354: Yeah.
+1356: I think that's a really good way of thinking about it.
+1359: And I think, I guess, your example with Billy is, like, the classic argument,
+  right?
+1364: Like, the product and engineering.
+1367: And I've always thought this, like, is that I've seen it go problematic in both
+  directions,
+1373: right?
+1374: We're both where engineering is, like, no, we know best.
+1377: Like, products are just, you know, doing what they do always.
+1381: And, like, we're not going to listen to them.
+1382: We know the customer or whatever when they don't.
+1385: And they're not sometimes asking themselves in this situation, like,
+1389: do you want to sit on 10 customer calls this month, right?
+1391: And review their feedback?
+1392: I mean, some engineers do.
+1395: Like, but most engineers don't.
+1397: Like, so can you lean on the product person to do that?
+1400: But then the other extreme sometimes where engineers become utterly 100% deferential
+  to product.
+1409: Yeah.
+1410: Well, I mean, sometimes I think it's even, like, a power confusion thing, right?
+1415: Where it's some teams in some engineering cultures or whatever.
+1418: It's, like, the product manager is kind of like the manager who decides what
+  gets worked on by who and when, right?
+1424: And then sometimes you get engineers who are, like, but I don't agree.
+1427: Or, but my product manager wouldn't let me work on tech debt.
+1429: And, like, you know, it's maybe a little blunt, but I guess that's my vibe.
+1433: But my approach, I've said it, almost every company I've worked at or every
+  team I've worked at has been, okay, engineer, like, look in the org chart and tell
+  me where between you and the CEO is a product manager.
+1446: And almost always the answer is, oh, there's not.
+1448: Like, products are in their own area over there.
+1450: And it's like, well, that should tell you something.
+1452: And that thing is that, like, you're an engineer.
+1455: You were hired to do engineering.
+1456: Like, you need to collaborate with products, right?
+1459: And that doesn't mean just doing what you're told.
+1462: And it also doesn't mean refusing to give any ground because you control the
+  pull requests, right?
+1468: Like, it needs to be somewhere in the happy middle ground.
+1471: And I guess, yeah, there's a time I think of where at GitHub, one of my favorite
+  ones with that was, like, a PM who'd, like, given me a nice rank order list of what
+  needed to be worked on.
+1481: And I worked on item one, then two, then item, like, 15.
+1484: And they were like, why did you work on item 15?
+1486: And I was like, well, because the code was right next to item two, it took me
+  20 minutes.
+1490: And if I worked on it in order, next time I come around, it's going to take
+  me, like, four hours, right?
+1495: And then they were like, oh, that makes total sense now, right?
+1498: But, like, they were not, I was not wrong to not follow the list.
+1502: And they were not wrong to not call me on it, right?
+1504: Like, that's completely reasonable.
+1506: But we had that conversation.
+1507: And I guess you could maybe say an argument about it.
+1510: And then both of us left with, to use your point from earlier, like, more information
+  and context and whatever.
+1515: And, like, I think that, you know, I think a lot of people, when they enter
+  into tech especially, are not comfortable with that conversation, right?
+1526: Like, they could feel like, hey, I did the right thing.
+1529: And then my PM dares to question me on, like, what I did.
+1533: I don't need to explain myself.
+1534: Like, you need to trust me.
+1536: And I think that, like, where that ego comes in about, like, not feeling trusted
+  versus, like, finding the root of curiosity.
+1544: I think that it gets hard when, like, people are, you know, new to the conversation,
+  new to those arguments, maybe have a little bit of ego or a chip on their shoulder.
+1553: Or that, like, you know, those are sometimes things that you can't control depending
+  on who you work with.
+1559: The one thing that you have control over is phrasing your question in a curious
+  way.
+1563: And, like, the art of phrasing a question in a curious way.
+1567: To be like, hey, I noticed.
+1568: Can you tell me a little bit more about, right?
+1571: Instead of being like, why the fuck would you do that, right?
+1574: It kind of changes the dialogue a lot.
+1577: I think the other thing that this reminds me of is, I don't know if you remember,
+  but our first conversations had a different dynamic where you were very complimentary
+  of some of the things that I was doing.
+1593: And I was like, I hate this.
+1594: Like, please never kiss my ass again.
+1596: And I was like, what I want is someone who can argue back with me, right?
+1600: And, like, I think that most of my best relationships are people who are willing
+  to argue back.
+1604: And so I was kind of curious, from your perspective, if you're willing to share,
+  like, what, how you interpreted, like, especially now after we, like, have worked
+  together for three years.
+1616: What is it?
+1617: What do I really mean when I say I want people to argue back with me?
+1620: And, like, you know, what is that art of the argument when it comes to, like,
+  a manager in a report relationship?
+1628: Yeah.
+1629: I mean, I think what it meant to me, at least, is, like, everything is in negotiation.
+1634: And even if you state something as, I guess, to go back to earlier, right, like,
+  the kind of command and control thing is that, like, I don't, I think the thing
+  that was helpful is, I think you and I both had an idea of, like, we will just tell
+  the other person what to do sometimes.
+1650: With the understanding that if that person thinks it's a stupid idea, they're
+  going to be like, I'm going to tell you why I'm not going to do that or why we should
+  do something differently or whatever, right?
+1660: And it's, I think that saves a lot of time in some ways, rather.
+1665: And in some ways, even, like, the ass-kissing you mentioned in the beginning,
+  right, like, some of that was, like, you know, new manager, don't know her super
+  well.
+1671: Like, I'm going to figure out, like, how this goes.
+1675: And I generally default to, like, I'm going to, like, be nice, polite, friendly,
+  Mike, to begin with, right?
+1682: And then we're going to see how much you can handle of the, like, pushback and
+  the critique and whatever, right?
+1687: And I think we both did that, which is great.
+1689: Like, one of the things I was actually talking about you to someone in current
+  company yesterday, where I was talking about, like, the levels of feedback, right?
+1697: Where you were always great at giving me feedback.
+1699: I was, I think I always solicited a lot of feedback.
+1702: I remember every time at GitHub, the performance review process was, like, 100
+  was, like, yeah, fine, good job, whatever.
+1710: 200 was, like, oh, my goodness, you're, you've recreated the universe, like,
+  you're unbelievable.
+1716: You invented nylon.
+1717: Yeah, exactly.
+1718: You're unbelievably incredible.
+1719: And my view was, if I ever get less than 200 in a report, which was all of them,
+  then I want to know, I want constructive criticism on how I can improve.
+1729: And that blew some people's minds because they're like, oh, but is that not
+  going to make you feel sad?
+1734: And I'm like, no, it makes me feel sad to not get told how I can improve.
+1738: And one of the things I loved the most was, like, so initially, you know, you
+  would give me feedback.
+1742: And then we had almost, like, two levels of what I would call, like, unfair
+  feedback, right?
+1748: So level one was, like, okay, I'm going to give you feedback on something where
+  I never told you, no one ever told you, but ideally, you would have known that this
+  was the right thing to do without anyone ever telling you just based on your gut.
+1762: And then level two of unfair feedback, which we only got to right at the end
+  of our working relationship, which I kind of loved, was, like, I actually told you
+  to do something.
+1770: I was wrong to tell you to do that.
+1773: You should have refused and pushed back and done it your way.
+1778: And as a result, unfortunately, like, you can't get, you know, the top performance
+  rating or bonus or whatever on this project because the outcome, like, you did exactly
+  what you were told, but the outcome was not optimal.
+1792: And therefore, like, you're at the level where you're being judged on your outcomes
+  and not based on did you just do what you were told, right?
+1799: And that, to me, that takes a huge amount of trust between two people to be
+  able to deliver that.
+1803: And, like, that's, for me, almost, like, the so far, like, max level of, like,
+  delivering feedback when you can say that and when I can take that on the chin and
+  be like, yeah, that's fair.
+1814: I'm going to adjust going forward and whatever.
+1816: But you also know that you can, because I'm sure you had other people that you've
+  managed over the years who you knew you couldn't say that to them because that would
+  either.
+1823: No, absolutely not.
+1824: Because you have to be, like, comfortable with, like, okay, the outcome was
+  the outcome.
+1828: We both agreed that the outcome wasn't good.
+1830: And, like, we're both here to do the analysis together.
+1832: And, like, I think that, you know, also some people are like, cool, well, for
+  Neha, like, I'm getting a hit on my score, whereas Neha getting a hit on her score.
+1843: And, like, the system's unfair, right?
+1846: My manager may or may not have visibility into it.
+1849: My manager may or may not care.
+1851: And, like, there's different responsibilities at different levels, and you may
+  not get the retribution that you want.
+1857: And, like, that is what it is, right?
+1860: And so if you can kind of be like, okay, cool, it is what it is.
+1864: I'm willing to take a look at, like, the outcomes and, like, truly understand
+  what we can do differently.
+1870: Then you have a really rich conversation.
+1872: I think also part of those unfair conversations was, like, I tried to always
+  be, like, this was out of your control.
+1879: And it affected the outcome.
+1880: And, therefore, this is the score.
+1883: And, like, you just have to be okay with things that are out of your control
+  and then focus on what's in your control, even if it's a tiny slice, right?
+1890: Yep.
+1892: And I guess if anyone's listening and worrying, I also think that that's obviously
+  very reflective of your seniority, right?
+1898: Like, if you're a more junior engineer, like, you're not going to be held responsible
+  for stuff outside of your control.
+1903: But when, like, if you're a principal engineer, distinguished engineer, staff
+  engineer, maybe, depending on the company, like, yeah.
+1910: It's almost exclusively that.
+1911: Exactly.
+1912: Exactly.
+1913: Yeah.
+1914: No, the feedback absolutely changes as you go up the ranks as well.
+1918: And, like, as I go up the ranks, right, depending on my level and then my reports
+  level, both of those feedback changes a lot.
+1924: I want to have that again.
+1927: I want to, like, be able to have those, like, really intense feedback conversations.
+1931: I think I only hit that with, like, four or five people.
+1933: Well, I'm sure you'll get there again.
+1937: Do you have any almost, like, final stuff you want to tell people where they
+  can find you on the internet or what you're doing or any of that stuff?
+1943: Oh, well, I left GitHub a month ago.
+1947: So the closest you can do is probably find me on LinkedIn.
+1950: I'm Neha Batra.
+1952: I haven't started posting anywhere yet.
+1956: So you'll probably have to wait a little bit longer.
+1958: But I'm trying to start.
+1960: Oh, actually, I do a lot of, I did a lot of article writing on Lead Dev.
+1965: So if you go to leaddev.com and find me, Neha Batra, you can finally, you can
+  find some of, like, my philosophies.
+1971: And, I don't know, hopefully I'll start writing again soon.
+1973: What about you?
+1975: Yeah.
+1976: So I'm doing solo consulting stuff.
+1978: I'm doing a bit of fractional CTO work.
+1979: Like, I do writing on my blog at mikemcquay.com.
+1983: And, yeah, if people want me to write for them, talk to them, do some fractional
+  CTO work or consulting stuff or whatever, then that's the best way to get in touch.
+1991: Oh, and, like, if you are listening to this podcast and you're like, I really
+  want to hear the two of you talk about something, like, reach out and tell us.
+2000: And, like, maybe we'll incorporate that into another round if people like this.
+2003: 100%.
+2004: Thanks, Neha.
+2005: Have a good rest of your day.
+2006: You too.
+2007: Bye.

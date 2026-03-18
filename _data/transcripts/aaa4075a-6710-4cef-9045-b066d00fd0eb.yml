@@ -1,0 +1,720 @@
+---
+0: Hello, everyone. We are back. Neha and I have mostly recovered from plagues, I
+  think. And
+7: we decided, instead of you just listening to us cough for a full 30 minutes again,
+  that we could
+12: maybe bring on a guest who's appearing so far not to be coughing. So, Neha, do
+  you want to
+18: introduce our guest we've got today? Yes, this is Denise. Denise has worked with
+  me and Mike at
+24: GitHub. But I first saw Denise do a talk, I think, with RightSpeakCode a long
+  time ago,
+28: and I was captivated. Denise and I, I don't know, at the same time or not, we
+  both worked at
+33: Pivotal as well. So, we've had some shared understanding and we got to work on
+  the same
+37: team. I got to manage Denise for her first time as a manager, which was, I think,
+  a new experience
+43: for both of us, actually. I was just new to managing managers as well. And since
+  then, she's gone off to
+49: do amazing things everywhere. And most recently, I had the pleasure of watching
+  Denise do a talk
+55: at Lead Dev that I felt like struck such a strong chord with me because it was
+  stuff that we talked
+61: about a lot and stuff that Mike and I have talked about a lot. And it's about
+  like politics in the
+65: workplace. So, if you watch any one talk on the Lead Dev website, her talk is
+  called Leading
+72: Sustainably When Everything is on Fire. And I'll give my own summary if you want,
+  and then I'll let
+78: Denise kind of talk about herself and highlight any other points you wanted to
+  make. What resonated
+83: with me was that, you know, as managers, we navigate information asymmetry on
+  our team.
+88: And as you can see, she's used every word very carefully. You don't let everything
+  through.
+95: You don't prevent everything. You navigate it. You figure out what to let through.
+  And that asymmetry
+100: and acknowledging that that asymmetry exists is a very big part of being a manager.
+  She introduced this
+105: like currency called table flips. So, it's like a way to quantify political capital
+  in terms of like
+111: how you could spend it. And usually you think about like accruing it instead
+  of spending it. And so,
+116: Denise really flips the table on how to talk about it. And then I think there
+  was another quote that
+122: I wrote down because I loved it so much. And it was about making, especially
+  when you're trying to
+127: think about what to move and what not to move, you can't move every boulder.
+  And so, she said,
+133: it's about making good tactical decisions around the deployment around political
+  capital. And so,
+138: I just feel like I love talking to Denise about these things because every word
+  she selected is like
+144: very careful and very intentional. And she really thinks about the agency of
+  choice and the level of
+152: responsibility we have when it comes to these things. And so, that's why I'm
+  really excited to
+156: have Denise on the podcast. Denise, do you want to add anything and share anything
+  else that you thought
+162: about when you were making that talk? Yeah. Thanks so much to Nehan Mike for
+  having me on the podcast.
+167: Very excited to be here. It's been a hot second since I've done any podcast,
+  actually. So, this is super
+173: fun. Yeah, I was asked by LeadDev to do the talk back in January, February. So,
+  the worst thing that
+183: you can do to me is ask me to do a talk like nine months in advance because I
+  will just be spiraling
+188: about what I'm going to talk about for nine months. And so, I think I landed
+  on the topic of basically
+196: wanting to talk about politics at work, which is obviously a huge topic. And
+  I'm still relatively
+202: new to management. I haven't been doing management for decades. I've been doing
+  it for a couple of
+206: years now. So, I didn't feel like I was positioned to give the, you know, like,
+  here's the end-all
+214: guide to navigating politics in the workplace. I didn't feel comfortable coming
+  at it from that angle.
+219: So, it was extremely, the whole talk was extremely informed by my personal experiences
+  of making
+225: mistakes in this area. And then learning from those mistakes and applying what
+  I learned
+230: to my management practice to try to help others avoid the same kind of mistakes
+  that I made early
+236: career about not understanding, not understanding the basic premise that everything
+  you do at work
+241: involves political capital. And I know that is an uncomfortable thing to think
+  about for a lot of us,
+247: especially a lot of us who come from very technical backgrounds. We think that
+  things should be
+251: meritocratic. We think that things, we should be judged on the fruits of our
+  effort.
+255: It's our, you know, objective, measured, measurable outcomes, that kind of thing.
+  But my experience
+260: over the last, you know, decade plus of being in the tech industry has shown
+  that repeatedly, that's
+266: not true. Repeatedly, it's unfortunately not good enough to just do a really,
+  really good job at work
+271: every day. As you get into the higher ends of the career ladder or want to go
+  into the leadership track,
+277: building an understanding about workplace politics is actually a pretty critical
+  survival tactic,
+284: I think both for yourself and eventually for the team that you will be responsible
+  for.
+288: You know, what this makes me think about is like when I first met Mike at GitHub,
+294: he immediately was looking for a way to add value because I like, I'm suspicious
+  to anyone who's nice
+301: to me, which is due to childhood trauma that we are not going to talk about right
+  now. I was like,
+306: what is Mike up to? And I actually think that Mike's really good at building
+  political capital.
+311: He kind of understands the game, especially when new people come in. And I'm
+  kind of curious,
+315: Mike, from like, inside your head, how do you think about that?
+318: Yeah, I guess like, it's funny, because the way you were talking about kind of
+  table flips and stuff
+323: earlier, like, the word I've always used internally is like karma, not that I
+  believe in kind of like,
+328: philosophical karma, or whatever, on a real religious sense. But I definitely
+  like see in the
+335: workplace, right? Where if, if you're someone who just like takes, takes, takes
+  all the time,
+339: then generally people stop wanting to help you. And if you're someone who gives
+  a lot, then you kind
+345: of build up or political capital or ability to table flip or whatever you want
+  to call it.
+351: Right. And I guess I, I realized in GitHub, as GitHub kind of grew, I guess,
+  in my case, for context,
+359: for anyone listening, I joined when it was about 200 people, I left when it was
+  like, just under 4000.
+364: Seeing like, as the company gets bigger, you, as Denise said earlier, like, you
+  can't just do a great
+371: job and hope that everyone notices or whatever, like, you have to, like, be a
+  bit more strategic about
+376: how I'm going to get things done. And who's, who do I need to make happy to get
+  this over the line
+382: or whatever it may be. And also just sometimes being like, okay, I'm just going
+  to do this and
+387: maybe break some rules. And it's going to piss people off. But do I have enough
+  karma in the bank
+392: that this is going to stop me getting fired? Right. Because again, for me, like
+  that was the other
+396: part of the currency is that like, on one side is success, influence, getting
+  what I want done.
+401: And then the other side is, everyone hates me, I get fired, whatever it may be,
+  right?
+406: Yeah, I think so. And I think that like, you're good at sussing out someone who's
+  new and kind
+412: of figuring out how they fit into the big picture. That's like, also a really
+  critical part about
+416: being able to navigate a company is like, figuring out what they are, like, Denise
+  had this like,
+420: diagram of like, okay, cool, you might have political capital, but does your
+  manager have
+424: political capital? And what about like, their peers? And like, it's not enough
+  for you to do it
+429: yourself, you have to figure out how everyone fits into the puzzle. So Denise,
+  I was kind of curious,
+433: if you had any like, major realizations around political capital and leadership,
+  either recently,
+441: or like one that's like, stuck with you for a really long time?
+444: My current manager uses the phrase, I am cloaked in political capital all the
+  time as in kind of a
+451: healthy way. He recognizes that as a white guy, you know, in management, there
+  are a lot of things
+457: that he can get away with. And that was having this kind of conversation with
+  my manager over
+462: and over again, this past year has been one of the sort of like, you know, inputs
+  into the talk,
+466: I spend quite a lot of time pondering how, you know, white guys specifically
+  do have more ability
+476: to, you know, kind of do what they I also realized I didn't do this on purpose,
+  the mug that I have
+482: right now. The just like, it's a cartoon of a cat saying, I do what I want, putting
+  like middle
+488: fingers up, which I completely just grabbed by accident this morning. That's
+  the goal. That's the
+493: goal in life. Yeah, exactly. This is what we all aspire for in a perfect world
+  where we all have
+498: a perfect symmetry of political capital access. That's what we can all do. But
+  one thing I have
+503: been thinking about more recently is if you just have political capital and nothing
+  else, then like,
+509: what is your responsibility? So I'll give like, try to make that a little more
+  concrete. I've seen
+514: people get to the end of their journey with an organization where they sort of
+  realize, all right,
+520: I've, you know, I've learned all I can here. I've done the work that I want to
+  do here. Maybe it's time
+524: for me to move on. But sometimes when you get to that stage, you still have a
+  lot of political
+527: capital left in the bank, actually. And so one of my peers recently left the
+  company, also a white
+532: man who really like leaned into this. And I thought that was so cool. So he,
+  first of all, he's, he's in
+539: the EU where they have super, super long notice periods. So he was like, he had
+  a three month notice
+544: period, and he absolutely just lit things to fire on the way out. And I thought
+  that was so great. It's
+550: kind of like it can sometimes the fact that the company knows you're leaving
+  can sometimes dilute the
+554: impact of you doing this, because they just sort of write you off as like, oh,
+  he's out the door
+557: anyway. He doesn't really care. So maybe let's not like, you know, really deeply
+  engage with the
+562: question he's asking. But I did think it was really cool how on the way out,
+  he would just turn up to
+566: AMAs and be like, hey, remember when six months ago, you said this was going
+  to happen? What's the
+571: timeline on that? And still, you know, diplomatic courtesy of like, you know,
+  not not directly calling
+579: people out, but I'm still asking pointed questions and trying to create some
+  accountability. So I don't
+584: know, like I, it's an interesting time, I think with like, the industry is is
+  obviously changing
+593: a lot. I think a lot of the rules are being rewritten in an age when every company
+  is getting
+599: on the AI bandwagon and the standards for, you know, like what constitutes good
+  performance are
+604: changing a lot. I don't know that I necessarily want to get deeply into AI. But
+  I think it's one thing
+610: that I've been thinking about since the talk is, yeah, just sort of this theme
+  of like, if you have
+615: political capital and nothing else, if you don't have motivation, if you don't
+  have a reason to
+619: engage with a long term vision of your team or your company, then what are some
+  useful things you can
+625: still do? Yeah, I also think that's maybe where politics kind of gets a bad name,
+  right? Is because
+631: people like the, I guess, the case study example of what people don't like about
+  politics is when
+638: people exercise political capital purely for personal, like, let's say monetary
+  game, right? So I'm just
+645: trying to get promoted and a pay rise and a bonus and more headcount purely so
+  I can like build my
+651: empire. And like, I think that understandably makes people feel gross if it's
+  done in a way that only
+658: benefits you, right? Whereas, even while you were talking, Denise, it's like,
+  I, I'm too much of a kind of
+663: scaredy cat to light things on fire too much on my way out of places, but like
+  something I, I remember I
+669: did do when I knew I was kind of getting to the end of GitHub is I basically
+  had a list of people
+673: who I felt were like in my org who should have a promotion and I'm like, I'm
+  going to go and dedicate
+679: a ridiculous amount of my time to trying to get those people promoted on the
+  way out. I was able to get a
+684: bunch of them promoted and that felt really good, right? And again, like, that's
+  the type of thing where
+687: it's like, you know, if you go from advocating for one promotion to 10 in a six
+  month period,
+693: that kind of like burns some bridges in some ways, but also in other ways, obviously
+  like builds
+698: bridges and you're left with kind of a sense that like, Hey, this is good. And
+  also it's, it looks
+703: less naked. It doesn't look like I'm trying to almost like put all my pawns in
+  the right places
+709: or whatever. When you're doing that on your way out, it looks like you're just
+  trying to build people
+714: up. And I, I guess I would say to people who might be listening, who are like,
+  I don't know,
+719: not unsure about getting involved with politics or whatever. If, if you're still
+  unconvinced that
+724: you have to, then another way of looking at it is like, well, if you're like
+  trying to be a good
+729: person and trying to help people at work, then you can't do that without political
+  capital. Right.
+734: And if, if you almost like see a bunch of people who are playing politics and
+  winning in a way that
+739: you don't like, it's like, well, maybe you got to play the game. If you want
+  to like,
+743: let your team win. Right.
+745: I just wanted to respond to Mike's point and say that it's so interesting hearing
+  Mike talk about
+751: advocating for other people to get promoted because at GitHub, you were never
+  a manager.
+754: You were a staff engineer and then later principal engineer at GitHub. And that's
+  so cool because
+759: the talk that I did at LeadDev was mostly pitched at engineering managers, but
+  definitely like a huge
+765: part of it is that people at the senior plus level also have political capital.
+  Everybody has a little
+771: bit, but I wouldn't really expect junior and mid-level engineers that, you know,
+  you, you put your own
+775: oxygen mask on at that stage, but at the senior plus levels, everyone does have
+  a role to play
+780: in thinking about how you spend your political capital. And you absolutely, this
+  is one of the,
+785: the ways, like when we talk about leading from the back of the room or leading
+  without proper,
+789: without, you know, formal authority, like this is one of those things.
+792: Yeah. And I think like also going back to what Mike said around why should I
+  engage in politics if it's so
+798: icky, it is like, there's a natural equilibrium and there's like a natural way
+  that like things will
+805: fall into place. And if you don't like it, then you have to get into the ring.
+  Right. And let's be real.
+811: It is not going to be the natural equilibrium of a company is not going to be
+  in a way that like benefits
+817: the employees the most because that's like not, you know, uh, that's not how
+  capitalistic societies work.
+824: Um, and so obviously it's going to be a way that benefits the business or something
+  else.
+829: And so if you want to like as a manager, or as you grow in the leadership chain,
+  you want to put your thumb
+836: on the scale on something. Now you can't put your thumb on the scale on everything.
+  And it, because if you put
+841: your thumb on the scale and everything, one, it's diluted to, you spend it all
+  at once. And three, you're going to
+846: be putting your thumb on the scale on things that don't move. And that if you
+  keep on doing that and
+851: you expend energy on something that doesn't change, you will burn out. And so
+  you have to know, like,
+858: you know, one is understand accruing political capital level one level two is
+  like spending
+863: political capital. And then level three is like knowing when to spend political
+  capital. So you
+868: don't burn out as part of it. Right. I think like when you were talking, Denise,
+  I was like, okay,
+874: so as a non white man, I may not have the same political capital as someone else
+  does.
+882: And I want to motivate them to use political capital in a certain way. Like how
+  do you motivate
+888: someone else to use political capital? And like, how do you assess it and then
+  like understand and
+895: motivate someone else to use it? Mike, my question for you, which is like, not
+  fully spicy, but a little
+899: spicy. Have you ever felt like someone was approaching you and like asking you
+  to like blatantly
+904: spend your political capital on something? And like, when have you been like,
+  no? And when
+908: have you been like, yes, yes, I have. Often that person was called Neha. I was,
+  I was going to joke
+917: about that earlier. Neha and I would sometimes have these like little strategies
+  in our one-on-one
+922: where it's like, look, is this going to come best from like a principal engineer,
+  an open source
+927: maintainer, like the best manager GitHub's ever seen, the best director GitHub's
+  ever seen. Almost
+933: like part when we had the same goals in mind, almost like which of us going in
+  first is going
+940: to have a better impact there. Yeah. And like, obviously, you know, like I, as
+  a white man, I'm not
+945: aware of the, the level of privilege I have in certain ways. I don't know what
+  it's like to
+950: not be me, but you know, there was a certain amount of that in our discussions
+  as well, right? Where
+954: you, you know, people in the organization who are like, look, like if it's coming
+  from a woman of
+958: color or a white man, they're going to react the same. And then, you know, the
+  people in the
+962: organization who it's like, yeah, that person's going to instinctively have their
+  backup for people
+968: coming in who don't look and sound like them. So maybe someone else goes in first
+  and that,
+974: you know, I think that's the thing. Like for me, it's all about trying to be
+  pragmatic,
+979: right? Like I think, uh, Denise and I were talking a little bit before we got
+  started actually about
+984: how, so GitHub staff engineer, apologies. I'm going to butcher his name, Sean
+  Godek. I think
+991: something like that. And he works, yeah, I think he works on a team with a mutual
+  friend of the
+997: podcast, human long nowadays. Um, but he had a post recently where he was saying
+  software
+1002: engineers should be a little bit cynical in which one of the things that kind
+  of made me think
+1006: reading about it was like about how often like I see software engineers can
+  be so incredibly
+1012: idealistic about like, that's, we'll have the code and the tech and the architecture
+  can all be
+1016: beautiful and pure and whatever. But then like, Oh, politics and like maybe
+  even like making people
+1023: like me at work, like, Oh, that stuff's kind of icky and messy. And like, I'm
+  going to be sort
+1028: of cynical about that. And just his idea of being like, you know, it makes a
+  bit, you know, you
+1033: should be aware of the politics and how that all works in an organization. And
+  you do need to be
+1038: like, not a hundred percent cynical about it, but if you're like a hundred percent
+  idealistic about
+1043: it, you're going to, I guess, as you said earlier, Neha, like burn out. And
+  to your metaphor about
+1048: table flips, Denise, like, that's what I really like about that. Right. It reminded
+  me that metaphor as
+1053: well. Like I'm sure all of us had a wide variety of teachers in our schooling
+  experience. Right. Like,
+1060: and the difference between the teachers who like lost their shit regularly and
+  you would just tune it out
+1067: because it was just happening so often the teacher, the teacher who like you
+  were taught by them for five
+1071: years and only once did they properly lose their shit. And when that happens,
+  you're like, shit. Oh dear.
+1076: Like this is actually serious. Yeah. Yeah. And I feel like that's the same thing
+  with like
+1081: table flips at work. Right. Like if you're the type of person, like even aside
+  from political
+1085: capital, like even almost like the persona you present to your coworkers, if
+  you're just the
+1090: type of person who just like flies off the handle and it's like, this is unacceptable.
+  This is going
+1094: to destroy the company about like every single thing. Then people just stop
+  listening to you.
+1097: Right. But if you can like pick your battles and when you have the political
+  capital, when you've
+1103: got the right people in place, when people don't think you're just doing it
+  out of
+1106: self-interest, then I feel like that's when you really get stuff done and can
+  have an impact on
+1112: the stuff you care about. Right. Yeah. It was really clear. I think to build
+  on, you know,
+1117: echo everything Mike is saying to build on that. I think I've heard a lot of
+  people talk in the past
+1123: year about how it's important to bring my whole self to work or I want to engage
+  authentically with
+1129: work. I want to live my work life in a way that feels true to me. The term table
+  flippers, Neha,
+1134: do you know where table flippers came from? Do you remember the channel at Pivotal?
+1137: It might've been after my time. Oh, okay. Okay. So a brief history.
+1143: Anyway, tell me. Yeah. Table flippers. Like I didn't just make that up actually.
+  That was like
+1149: the most inside of inside baseball for any people, any women and non-binary
+  people who were at Pivotal
+1156: R&D, mostly R&D, I think from like 2016 to maybe 2017, 2018. That was the name
+  of a back channel
+1163: that we had for all female and non-binary employees that there were like hundreds
+  of people in there.
+1171: This was like the most active back channel that I've ever seen at any workplace,
+  but it was a place to
+1176: vent and for people to find safety and security in, you know, numbers and shared
+  identity. And one of the
+1183: most common themes of discussion that came up in that channel were, hey, I had
+  a really great
+1187: interaction with this, with my white male colleagues. Sometimes it would be
+  negative stories as well,
+1192: but a lot of it was positive. A lot of it was like, here's a story about allyship.
+  Here's a story about
+1197: a time that someone on my team really got my back. And so through that back
+  channel, all the women and
+1203: the non-binary folks in the company kind of learned who are the safe men, who
+  are the safe people we can
+1207: go to. Yeah. To sort of engage for, like we didn't, we never thought about it
+  as political capital back
+1214: at that time. But essentially that was what it was. It was like a whisper network
+  of the safe people that
+1219: you can go to, to ask for political capital and help and that sort of thing.
+  So that's, again, like
+1225: another one of those, like, here's my very, very personal experience shaped
+  into that, woven into this
+1230: like larger commentary about, you know, basically like how to, how to survive
+  at work, how to survive
+1236: under capitalism. I actually edited out a thing in the talk. I wanted to go
+  on this like four minute
+1242: rant about capitalism, but then I was like, I'm already at 27 minutes, but 25
+  minute time slot,
+1247: I need to cut this. But I, I think a lot of like bringing for, for people who,
+  you know, if, if you
+1254: hear the phrase, I want to bring my whole self to work and I want to live authentically
+  at work,
+1259: then maybe one way to do that is to figure out how you can send that signal
+  to people who have
+1265: less privilege than you and figure out like, you know, allyship obviously is
+  a word that we've had
+1270: for a very, very long time. And I think this is, this is basically an extension
+  of that, right?
+1273: It almost feels like oversimplifying to just say like, be a good ally. But I
+  think like that
+1279: is still pretty relevant. I don't know, even in 2025. So I think that's, that's
+  a big part of it.
+1286: I think I've been pretty lucky in my career so far to never have to directly
+  ask anyone
+1292: for that help, but to have people come out of the woodwork over and over again,
+  or to just,
+1297: just show through repeated behavior and repeated action that, you know, like
+  by, by putting messages,
+1302: a really good example, actually, of a way to indicate this is if you do AMAs,
+  if, if company has like
+1308: question section with our, come ask our leadership, anything, you're a woman
+  of color,
+1313: might not be totally safe to ask question like, Hey, what about those RSCs that
+  you promised
+1318: everyone? But maybe safer for, for someone who does have a little more privilege
+  to say like,
+1323: Hey, I've heard from a number of my peers that, you know, we're worried about
+  this RSC, you know,
+1327: whatever sort of frame it that way.
+1329: Yeah. I mean, I've definitely done that before. Well, I think there's a few
+  interesting layers to it.
+1334: So now when I'm trying to identify if someone like has like ally potential or
+  like ally interest,
+1339: right? Like even when you do all of these trainings, these DINB trainings, if
+  you're doing
+1344: them in a group or in person, right? Like at the end, they'll always be like,
+  Oh, what's your
+1347: commitment? Right. And like, most people will be like, I want to be more aware
+  of it. And so those
+1353: people in the trash, like clearly you don't want to change anything, but if
+  someone's like, okay,
+1357: cool. I want to try one or two things. I think I'm going to try this. I'm like,
+  okay,
+1361: cool. This person thinks they want to try it. Let's like give them a taste.
+  Right. And so I have
+1366: like this small list of people in my head that I'm like, okay, cool. Next time
+  I want to ask a
+1370: question in an MA, I'm going to approach them and I'm going to ask them if they
+  would ask on my behalf.
+1374: Now, at most of the companies that I've been with, I've accrued political capital
+  pretty quickly
+1379: and I don't necessarily need someone else to ask a question for me, but that's
+  not why I'm doing it.
+1383: I'm doing it to see if, Hey, is this person an ally and willing to do it? And
+  if they do,
+1388: then I will go back to my table flippers channel and I will be like, Hey,
+1393: I asked this person if they would ask a question for me, they did. Right. Like
+  action, completion,
+1399: check mark, right? Like we've got one check mark or maybe I'll wait until like
+  three check marks before
+1404: I like go back and tell the people. But like, I've had also people come to me,
+  you know, we got to work
+1410: in a team, which was very unique at some point because it was like 45% women
+  and non-binary and
+1418: it was like 40% people of color. And so finally, once we started bringing in
+  some white men into the
+1426: group, like cis white men, they would be like, Oh my God, this feels weird because
+  I feel like I'm
+1432: taking someone's spot. And like, this is all also kind of like shit you can't
+  fully say on stage,
+1436: but you know, fuck it. Um, uh, I would tell them you have a very important role.
+  Like if you think
+1444: that there's no place for you on the team, there absolutely is. Because if I
+  like, I mean, it would
+1450: be kind of great to just have like all women of color on a team, but like at
+  some point you were
+1456: going to have to connect with the rest of reality, which is like something you
+  talk about in your
+1460: talk, Denise, like you can't be in a bubble. You need to be in like a porous
+  time-based bubble. And
+1465: if we're going to re-engage with the world and they're not going to be at the
+  same level of
+1470: awareness and thinking and practice around, uh, weighing opinions equally, we're
+  going to need some
+1478: help. And so those people who say like, I don't know if this is like, is it
+  okay that I'm on this
+1484: team? I'm like, yes, we're going to ask you for help and you're going to do
+  it. And if you're ready
+1489: and you're committed and you're interested in experiencing something that you
+  might not be
+1492: able to experience before, because the composition is so fundamentally different
+  with people with
+1497: different backgrounds, you can have this privilege if you're willing to put
+  in the work. And I
+1501: absolutely would put everyone to the test. Now it's not like, Oh, cool. I've
+  like marked them for like
+1506: three tests or whatever, but those things just come up naturally because capitalism.
+  Right. And so my
+1512: favorite one that always happens is that, I mean, as you go higher and higher
+  up, your manager changes
+1518: all the time. So it's like every single time I got a new manager, they would
+  look at the team and
+1523: they'd be like, this is different. I can't tell what it is, but it feels different.
+  Is that bad? And I'd be
+1531: like, army of white men go. Right. And so like, Mike and others have like a
+  very important
+1537: responsibility, which was to take those questions and to answer with the late
+  laden with privilege that they
+1548: naturally had without even thinking or doing anything. I'm just like, Mike,
+  can you just answer the questions and
+1554: just say truthful things? And all of a sudden, you know, the eye of Sauron would
+  move on. Right. So
+1561: I don't know if you realized the full extent to, I mean, I was pretty transparent
+  with you, Mike. I'd be
+1567: like, Mike, you're a white guy. Like, can you do something for me? I don't recommend
+  doing that all
+1571: the time. But if you get to know someone pretty well, you can be a little bit
+  more transparent about it.
+1574: I think I was somewhat aware. I think like jumping back to something you talked
+  about earlier,
+1578: Denise, like, is like the whole, those of us who've been through employee surveys
+  and it's like,
+1584: you know, do you feel you bring your whole self to work? Like, it's funny because
+  I used to kind of
+1589: get grumpy about those for lots of reasons. And I've decided now, I think there's
+  like a sweet spot
+1594: in there, right? Where like 0% bring yourself full self to work is bad, but
+  also in some ways,
+1600: a hundred percent is also bad. And I think often like people who are, yeah,
+  like people like me grew up
+1607: as, you know, engineers do the computer science degree, like, you know, like
+  just have a very
+1612: stereotypical background into tech. It's like, to me, bringing a hundred percent
+  of my full self
+1618: to work is like, I get to monologue for 30 minutes about code quality. I get
+  to interrupt people
+1624: whenever I feel like it. Cause I like doing that. You know, it's like all of
+  these things where it's
+1628: like, well, maybe bring your whole self to work is not doing some of those things.
+  And maybe like
+1634: being like, I feel like I can bring 75% of myself to work, but actually that's
+  a better version of me
+1640: than my personal preferences. Like that feels like it sort of loops in with
+  both of what you were saying.
+1647: And also like this, like kind of like, oh, politics is icky. Like, I feel like
+  I'm compromising myself
+1652: by doing this. I feel like I'm compromising myself by like asking the question
+  that I don't really care
+1657: about, but Neha cares about. It's like, well, you know, you're compromising
+  yourself all sorts of
+1662: ways, right? Maybe this could be a way that you could do so that would actually
+  be good and help people
+1668: build a better organization and build a better team and all of this kind of
+  good stuff. And maybe like
+1674: shave off some of your round edges, which, you know, you may or may not have
+  learned in therapy is
+1680: probably a good idea everywhere in your life, not just in the workplace. So.
+1683: Yeah. I've learned over the years that I have a better time at work if I'm intentional
+  about what
+1688: percentage of myself I do bring to work and what percentage I sort of leave
+  at the, you know,
+1692: at the door. Well, work from home, so not really. But yeah, like one exercise
+  that I used to have,
+1697: I still sort of do, I still have like my, you know, direct reports do is, especially
+  if you're
+1702: unsure about what you want to get out of work or if you're feeling lost or confused
+  or you're like,
+1707: I think I want to leave this company, but I don't know what I want to do next.
+  It's like,
+1710: sit down and literally make some lists, right? Make one list that says, what
+  are the experiences,
+1716: skills and relationships that you want to get right now?
+1718: And make another list that represents what can this job, this like current team,
+1723: current job with no changes, like what can this situation offer you?
+1727: And figure out what's in the intersection between those two lists.
+1730: And that was just like something that I had people do to have them start to
+  think a little
+1735: bit more intentionally about work and make them realize that you actually do
+  have a little
+1739: more in your control than you might realize. And the more that you can kind
+  of strategize about
+1745: how you're going to relate to this job, the less you will find yourself losing
+  to, you know,
+1750: like hopefully we slow the roll of burnout, A, like that's sort of my interest
+  as a manager,
+1755: but B, like I want you to, you know, like accept that capitalism is just going
+  to extract from us,
+1760: right? That's something that none of us have control over. But what you do have
+  control over
+1764: is like, what do you actually want to extract from your current situation? And
+  then tell me,
+1769: tell me so that as your manager, I can position you to help you gain those skills
+  and experiences
+1774: and relationships. And I really try to emphasize relationships because, you
+  know, like look at us
+1779: three sitting here, like we don't all work in the same place anymore, but relationships
+  are such a
+1783: huge part of what you should aim to take out of every single job. Because there
+  will be a couple of
+1788: good people that you work with that you might want to work with again in the
+  future. It's not just,
+1792: you know, like learn Golang, learn test-driven development, whatever that stuff,
+  like you will
+1795: eventually learn those things. And I think that when it comes to, you know,
+  like the higher,
+1800: when you're at the senior, like management level and you're like, everyone goes
+  through the same
+1805: thing again, we're like, oh God, I don't know what I want to do next. Like,
+  I don't know. I'm not
+1809: getting, I'm not learning anymore. I'm not growing. What, what, what should
+  I be doing? So probably do
+1814: the same exercise again, right? Like, but, but think about what are the things
+  that you're currently
+1819: bringing? So what, what is a hundred percent of yourself? And then like, what
+  is the strategic 75%
+1824: of yourself that you can afford to still give to the job? And maybe what's the
+  25% that you need to
+1830: find and you need to express it in other ways in your life? Like, you know,
+  go, go join, I don't know,
+1836: improv comedy or something. I haven't done that, but go, go, go do something
+  in your personal life that
+1842: enriches you and ticks those boxes because it might be, um, unstrategic or it
+  might be dangerous to do
+1848: some of those things at work. Yeah. I think that, I mean, personally, I feel
+  like I'm never going to
+1853: bring a hundred percent of myself to work because y'all don't deserve it. Um,
+  like I'll give you a piece
+1858: of it, um, but not everything, right? Some things can be left to myself. I think
+  what I really liked
+1864: about what you said, Denise, is that it is really critical to be intentional
+  about what you're doing
+1871: this for, what you're getting out of it, what you're getting out of these experiences
+  and every single job or
+1877: every single place you go to is a CN box. And so I even feel like high school
+  was a CN box.
+1883: College was a CN box, right? Every job is a CN box. And if you feel like you're
+  not growing anymore,
+1888: test the limits. And if you've never been involved in politics anymore, if you
+  have enough capital to
+1894: be wrong once or twice, then you can test something out and try something new.
+  And like, understand that
+1902: the first out of the first three times, two of them are going to be failures.
+  Maybe you get beginner's luck,
+1906: but you may not necessarily have that continued streak. And if you do have a
+  continued streak of
+1912: being right every single time, you're not trying hard enough. Like there is
+  no reward if you don't take
+1917: risk. And it is important to be strategic about how you go about doing that.
+  And when you start to
+1923: have a purpose and you have something that you're experimenting with, things
+  get fun again and you
+1927: like can get into the flow. Yeah. That's kind of like a lot of different lessons
+  that you can learn,
+1933: especially if you might be on your way out and you have some political capital
+  to spend,
+1936: you can start experimenting a little bit and learn something about yourself
+  on your way out too.
+1940: Thank you both. That was an amazing conversation. Went a bit differently to
+  how I thought, but
+1945: this is the beauty of having a guest on who you don't know quite as well as
+  Neha, who I know
+1950: too well at this point. Thank you so much for joining us, Denise. Thank you,
+  Neha, for being here as
+1955: ever. And thank you everyone for listening and catch you next time.

@@ -1,0 +1,999 @@
+---
+0: So, Homebrew is an open-source package manager, primarily targeted at macOS.
+5: It's got tens of millions of users, something like 15,000 packages available,
+10: and it's pretty much the de facto kind of app store for developers on Macs.
+15: It's pretty crazy. Like, Homebrew is unusual, I think, in terms of just being
+  relentlessly obsessed with automation.
+22: Like, anything we can automate, we try and automate.
+25: While at the same time prioritizing the security side of things.
+29: Hi, this is Brian Douglas, and you're listening to Open Source Ready,
+34: a bi-weekly series where we discuss the evolution of open-source software and
+  its impact on the tech landscape.
+39: Along with my co-host, John McBride, we'll explore topics like open-source AI,
+43: the business, and the life and sustainability of open-source.
+46: Open Source Ready is brought to you by Heavybit, the leading investor of developer-first
+  startups.
+51: For more information, visit heavybit.com.
+53: If you're interested in being a guest on the show, or if you'd like to suggest
+  a topic,
+57: find us at x.com slash open-source ready.
+63: Welcome to the installment of Open Source Ready.
+65: John McBride, you're back again as co-host.
+67: How are you doing?
+68: Hey, I'm back.
+69: How are you doing, Brian?
+70: Yeah, thanks for never letting go.
+71: You're still holding on?
+72: I try.
+73: This is episode 14, actually, at this point.
+75: Wow.
+76: We haven't podfaded, as they say in the business.
+78: I think the number seven, where you quit.
+81: Okay.
+82: So we're over the peak, you would say.
+83: Over the peak.
+84: But we're not here to talk about that.
+86: We actually have some pretty cool guests.
+87: We got Mike McQuaid and John Britton from Workbrew.
+90: Mike, how you doing?
+91: Hello, very good.
+92: Thank you for having me today.
+93: Yeah, and John, you're here as well?
+95: Yeah, thanks.
+96: It's good to be here.
+97: Cool.
+98: So let's do some intros.
+99: Mike, you can go first.
+100: Tell us, who are you?
+101: What do you do?
+102: Why are you doing this?
+104: Yeah, I'm Mike McQuaid.
+106: I live in, today, actually, truthfully sunny Edinburgh in Scotland.
+110: I have worked on developer tools for the last probably 20-ish years.
+116: Most recently, I guess we'll talk about that later, I'm working at Workbrew.
+120: That's a company I started with John.
+122: And for the last 16 years, I've worked on Homebrew, the macOS and Linux package
+  manager.
+128: Which I've been kind of leading for the last few while as well.
+130: And I spent a decade at GitHub building developer tools there as well.
+134: Yeah, John, you've got a pretty extensive background, but what do you do?
+138: So I've spent most of my career also in developer tools, but mostly on the go-to-market
+  side.
+143: So I got my start as a developer advocate at Twilio.
+147: I also worked at GitHub for a number of years on the education side.
+152: And then later on kind of DevRel and then developer marketing.
+155: Until I came out and started working with Mike and started Workbrew a couple
+  of years ago now.
+160: So yeah, I've been doing developer tools and web development, that kind of stuff
+  for 20-plus years.
+166: Yeah, so honestly, we probably just want to not bury the lead.
+169: And let's just describe what Workbrew is and where it fits today.
+173: And so how you came to this conclusion that it needed to be in the world.
+176: I mean, I think the best way to start is to start with Homebrew.
+179: So Homebrew is an open-source package manager, primarily targeted at macOS.
+184: It's got tens of millions of users, something like 15,000 packages available.
+188: And it's pretty much the de facto kind of app store for developers on Macs.
+193: And with Mike's extensive history as project leader of Homebrew,
+197: it was obvious to me as early as, let's say, 2013, that there was an opportunity
+  here for a business.
+203: It took us quite a long time to figure out what that was.
+206: And after going out and talking to lots of companies, especially companies in
+  regulated industries,
+211: where they have kind of rules of, you know, things that they need to keep secure
+  and whatnot,
+217: we found that there was a need for kind of a managed version of brew.
+222: So that's where we ended up going and building Workbrew,
+225: essentially taking Homebrew from a single-player experience on one developer's
+  machine
+230: to a multiplayer, team-wide experience with kind of centralized management.
+234: Our core value proposition is that you have one place to manage all of the software
+239: installed across your entire fleet of devices.
+241: You get full visibility, you get the ability to, you know, kind of remotely manage,
+  patch, upgrade things,
+247: and set kind of some compliance guardrails to make sure that, you know,
+251: your developers are happy, but also safe and secure.
+253: Yeah, this is great and actually really resonates with me because years ago,
+  I built,
+259: I mean, it was really just a bunch of bash scripts for bootstrapping workstations
+  at Pivotal.
+264: And the way Pivotal worked was, you know, everybody just sat at a workstation
+268: to do pair programming together.
+269: So ideally, you could just like move around to any of these different computers.
+273: You had to do a bunch of this different stuff.
+275: And it was constantly breaking.
+276: So I can really appreciate this work and know that it's very, very valuable.
+281: Mike has an open source project from GitHub Times.
+284: Maybe you want to talk a little bit about Strat, Mike?
+285: Yeah, we did the same sort of things at GitHub where Homebrew is kind of fairly
+  integral
+291: to the developer experience there.
+293: So yeah, we built, well, I guess I built a thing called Strap that was basically
+  just the
+298: delivery mechanism for the first thing you could run on your laptop to get kind
+  of
+302: Homebrew set up in your machine.
+303: And then kind of on top of that, you could have your personal like brew file,
+  which is a big,
+309: maybe the coolest part of Homebrew I feel like people don't know a lot about,
+  which is basically
+313: like a declarative way that you can like list, I want all these packages on my
+  machine.
+317: And then you could keep that in your .files repository.
+320: And then basically that's, you can get everything from Homebrew bootstrapped
+  on your machine that
+325: But also in GitHub, we use them extensively across projects as well.
+329: So rather than having a new readme like, oh yeah, remember to install Postgres
+  and set
+333: You could have scripts that would call the brew file in the repo to make sure
+  that everything
+337: was, that the projects needed, had that installed in the right directory.
+340: So yeah, that all worked pretty nicely.
+343: And as you say, John, like I think the goal for this stuff is always onboarding,
+  making that
+349: speedy, turning documentation into code, making it consistent, all this good
+  stuff.
+355: Yeah, and John McBride, I don't know if you, you mentioned Pivotal in passing,
+  but like some
+360: people might not even know Pivotal's like engineering culture, where it was like
+  paraprogramming all
+364: the time, every day at the paraprogramming station, which is like amazing that
+  that was even a
+370: I don't know if that's still a thing at companies today, but like I've got like
+  my personal
+374: keyboard that has like my touch and feel, like I can't type without it.
+377: It goes everywhere with me.
+378: I couldn't imagine having, not only not having my keyboard, but also not having
+  my setup.
+383: And like just before we got on this call, I upgraded my Postgres to like 14.7
+  using brew
+389: Nice.
+390: So I was going to ask the question because I've been, so John's been working
+  on this like
+393: AI agent framework in Go, and I've been like testing it out.
+397: I'm not a Go, I don't feel like I'm a Gopher yet.
+399: And I don't really know a lot about setups.
+401: I just do, I used to be a copy and paster from Stack Overflow, but I constantly
+  run into
+406: like the problem of like, I don't have the right versions.
+409: I don't have the right things set up.
+410: My user bin, local, whatever, it's all messed up because I don't know how ZSH
+  works.
+416: So I guess the question is like, is Workbrew today, is that solving that for
+  like engineering
+421: Yeah.
+422: So I think basically like Workbrew has two main audiences in mind, right?
+427: So one of them is Mac admins that we talked about before, essentially like the
+  people in
+433: your IT or security team who are making sure that all the Macs have the right
+  software and
+437: are in compliance and stuff like that.
+439: And historically, that crowd has kind of not been a huge fan of Homebrew because
+  they don't
+444: The tools they use like Jamf, Kanji, MDM tools don't play nicely with Homebrew.
+449: So basically like that's the main first piece we've built right now.
+452: And then we also care a lot about developers.
+455: Obviously, like we are building a developer tool inside of Homebrew.
+459: And like the goal with Workbrew so far has essentially been to provide all of
+  the compliance and
+464: security stuff that those folks work and a identical developer experience, basically.
+469: A just as good, you wouldn't know that you're using Workbrew instead of Homebrew.
+472: But we're not ready to announce anything just now, but we definitely we have
+  stuff in the
+477: pipeline related to what you were talking about, Brian, where we have heard those
+  concerns
+483: before about like the issues around, say, reproducibility with Homebrew and being
+  able to set up a
+490: And then turns out everything that was working fine on the old machine is now
+  not working on
+494: the new machine.
+495: And basically like the only thing we can say there is like we've heard that loud
+  and clear
+499: and we at Workbrew are working on solving that.
+502: We just don't have the announcement for that type of stuff yet.
+506: Yeah.
+507: And I think like just to add to that, the idea behind Workbrew also is not just
+  to give the
+513: same level of experience on the developer side, but to make it better.
+518: How can we make things better for teams that are using Brew?
+521: I've used Brew with lots of different teams and generally there's some patterns
+  that people
+528: follow and find.
+529: Oftentimes it's like Mike said, there's a read need with a bunch of packages
+  you need to
+532: install.
+533: Maybe there's a script that calls Brew Bundle.
+535: Maybe there's different stuff, but there's not a recommended path, let's say.
+540: And I think we can go a long way in giving companies more of a recommended path
+  to make sure that
+545: their developer environments are consistent and reliable and easy to set up and
+  smooth and
+549: also secure and have the latest things and free from vulnerabilities and whatnot.
+554: So yeah, there's more to come on that front for sure.
+556: Yeah.
+557: So it seems like there's a very bright future for Workbrew and the Brew ecosystem
+  at large.
+563: Mike, I did want to ask you about like kind of the past and like where we're
+  coming from.
+568: Because I mean, for me, Brew itself is almost table stakes, even on like my Linux
+  desktop.
+574: Like there's just some packages I got to get off of Brew.
+576: But where has this like community gone?
+580: You know, you've been maintaining it for a long time.
+582: How do you handle all that pressure across, you know, basically every developer's
+  MacBook
+587: Yeah, it's pretty crazy.
+590: Like Homebrew is unusual, I think, in terms of how much stuff goes on and how
+  many packages
+596: we provide and how few people are involved day to day.
+599: So we have like, I think, 30 something maintainers.
+603: In reality, probably like 15 are pretty regular.
+607: And then on like a daily basis, you know, you might have, you know, 10 or so
+  who kind
+612: of are interacting with the project.
+614: And yeah, I guess that seems pretty crazy in terms of how do you keep on top
+  of version
+620: of taste for like 20,000 packages.
+621: And I guess the answer has been twofold.
+625: And I'd like to take credit for at least some of that.
+627: Like one is just being relentlessly obsessed with automation.
+632: Like anything we can automate, we try and automate.
+635: While at the same time prioritizing the security side of things.
+639: So for example, like John McBride, if you had a GitHub project or whatever, and
+  you release
+645: some new version and it's packaged in Homebrew, then basically we would have
+  software that
+649: would essentially detect that on a very regular basis and then just go, okay,
+  John's releasing
+655: more software, make a PR, build it, package it, test it, make sure everything
+  looks fine.
+661: But then we still have a human required to basically look at that, check the
+  results, check the pull
+666: requests, check the changes, essentially make sure the automation is going well,
+  and then
+672: So I guess I like to think that I was, you know, we were doing a human in the
+  loop before
+678: it was the buzzword du jour.
+680: Yeah.
+681: Honestly, a huge, huge mad respect to that because like, I mean, just the vast
+  amount of software
+688: that floats through Brew, like pretty insane, you know, the stability and the
+  secure aspect
+693: of that.
+694: So yeah, mad respect, honestly.
+696: The other, I think, piece of that, which I feel like doesn't get talked about
+  that much
+701: in open source really, is like being pretty aggressive with our like interpersonal
+  boundaries,
+707: right?
+708: So I am a member of two simultaneous camps that I don't think are unrelated.
+713: One is someone who's actually been continually maintaining the same piece of
+  software on a near
+717: daily basis for 15 years.
+719: And the second is being somewhat known as like a fairly brusque individual who
+  has very
+726: strict interpersonal boundaries when it comes to open source.
+728: And like for me, like that's how I've been able to not burn out, frankly, is
+  because I,
+734: and I encourage everyone on the project to behave the same way.
+736: Like I don't feel like I have to do things, right?
+740: And if people are being very rude or entitled or their behavior is inappropriate,
+  when they're
+746: dealing with a volunteer run open source project like Homebrew, it's like, well,
+  essentially
+750: you're living off the goodwill of the maintainers who are working on that.
+754: And actually, in almost all cases, they are just more important than you, right?
+758: If they burn out, many more people suffer than if your issue doesn't get responded
+  to
+762: or fixed or whatever it may be.
+764: So we've kind of really fostered this culture of like prioritizing the mental
+  health of the
+770: maintainers and stuff like that over necessarily trying to implement everything
+  that everyone
+774: might want us to implement.
+775: And in some cases, that's meant like getting rid of features in Homebrew because
+  lots of
+780: people like them, but the support burden is just too high.
+782: And that's the nice thing with Workbrew is that now finally, like A, when it's
+  actually
+787: a day job, you know, you can not just have to learn personal boundaries, but
+  you have an
+791: actual team and like contracts and all these nice, beautiful things that we have,
+  thanks
+796: capitalism.
+797: And also, you have the ability to support people at a higher level, right?
+800: Like if you're doing evenings and weekends stuff, right?
+803: If someone's like, hey, I need help for two weeks building some integration with
+  an MDM
+808: provider, like that's a no for me for my evenings and weekends.
+812: And that's a yes for me on my, you know, nine to five, Monday to Friday, right?
+815: Like I'm more than happy to do that stuff and build something awesome that does
+  what
+819: Yeah.
+820: Amen to that.
+821: Honestly, I've been on the burnout track for a long time with some of my open
+  source stuff.
+825: So yeah, that really resonates.
+827: It's hard to not like feel that burden.
+830: So it's amazing that you've been able to kind of separate yourself.
+833: I'm sure it's been like a big part of that sustainability.
+835: I know, Brian, do you, have you like experienced that before?
+838: Like in some of your open source work?
+840: Yeah, it's funny how, I can't remember I mentioned this on recording or before
+  the recording,
+845: but like I worked for John at GitHub and then I worked with Mike at GitHub as
+  well.
+849: And even like with Strap, actually the job before GitHub, I remember actually
+  using a sort
+855: of carbon copy of what Strap was to get started in our environment.
+859: But like so much of what Mike says, what he just said really about maintaining
+  open source
+863: is like what I've also kind of thought through.
+865: Like a lot of my open source is like GitHub Actions because I happen to be the
+  face of that
+870: But I'm like totally fine with like never responding to a random issue in action.
+874: And I just archived like three repos like just last week because I'm like, hey,
+  story
+878: changed.
+879: Like my goals have changed.
+880: Priorities have changed.
+881: I can't support this anymore.
+883: So like clone it, fork it, whatever.
+885: It's in the readme.
+886: So yeah, it's hard because like there's a lot of folks who have like main character
+890: energy when it comes to like and getting involved in open source and like, hey,
+  I found this
+895: cool thing and it's going to solve all my problems if you spend more time on
+  this.
+899: But I've got three kids and I prefer to make myself available to them first,
+  which means
+906: Outrageous.
+907: Yeah, right.
+908: I can imagine like growing a human in this world and like not being on my laptop
+  all the
+912: time.
+913: Like that's crazy.
+915: But I mean, people pick your poison.
+916: Like everyone's got their opportunities and their things that they want to get
+  accomplished.
+921: So I'm also 38 years old.
+923: So like I don't have the energy to spend all that time maintaining software that
+  was a cool
+928: like fever dream that I had like a few months ago.
+930: Can I just say I'm delighted to hear that you are archiving repos?
+934: Because fun fact, I actually built that feature.
+937: This is it all gets basically connected.
+939: I built that feature while on John's team, not in engineering at GitHub.
+943: Basically, just because I was hearing again and again from open source maintainers,
+  they
+947: were like, yeah, I'm just like done with this project.
+948: And basically my options are either I delete it, in which case that feels like
+  the nuclear
+953: option, or I just get spammed with issues for the rest of eternity.
+958: So yeah, so like there was some code in GitHub for like migrating repos to GitHub
+  Enterprise
+964: And I was like, yeah, but if you like sort of put them in like migration modes
+  and then
+968: just never take them out, then that's kind of like archiving, right?
+972: Like we can just make it shut up and then no one could contact you.
+975: And then yeah, like so it makes me very happy whenever I hear anyone being like,
+  oh yeah,
+980: I archived the repo just because I couldn't handle it anymore.
+982: I'm like, great, you did exactly what I hoped you would do.
+985: I think one of my favorite non-obvious sustainability options like that Homebrew
+  employs is the idea
+992: of not supporting every feature that people ask for and just saying, you know,
+  this is hard
+997: to support, so we're not going to make it.
+1000: Or, you know, kind of leaving the configuration available and telling the user,
+  this is officially
+1006: an unsupported configuration.
+1007: If you try to get support from us for this, we will not support you.
+1011: But, you know, proceed at your own risk, right?
+1013: So if you have a team, and we know of many companies where they effectively
+  take the open
+1019: source version of Homebrew and they run an internal mirror of it with their
+  own kind of security
+1023: and compliance functionality baked in, that's not officially supported by the
+  open source project.
+1029: And that's like, you know, some of those hooks are there and people can benefit
+  from that
+1032: But the maintainers of the project, it's not of their interest, you know, to
+  build features
+1039: that are custom tailored to like one giant corporation that has tons and tons
+  of money for free.
+1044: And that also creates a great opportunity for us to come along with Workbrew
+  and say, hey,
+1048: you know, we'll build that stuff for you and we'll turn into a product.
+1051: Yeah, that's a good point, John.
+1053: And I was gonna, like, I wanted to ask about Docker in a moment, but actually,
+  I know Solomon
+1058: Hikes, co-creator of Docker.
+1060: I actually sat down with him like a couple years ago, and was like, hey, why
+  did Docker
+1064: And this is like a public conversations on the open source podcast.
+1067: And the thing he cited like immediately, and I was like, oh, this is bold, but
+  also great
+1073: that you realize this is that they Docker got to the point where they said yes
+  to everything.
+1076: And like the challenge of them trying to get profitability and have VC scale,
+  but also enterprise
+1083: ready products, they just had too much bloat in the product and the company
+  and what they
+1088: And it got to a point where it couldn't really sustain itself.
+1091: So like going back to this conversation around homebrew, it's like, it is nice
+  to hear that
+1097: like, yeah, there's things that actually we're in a delete eventually.
+1099: There's things that probably belong in Workbrew and not in Homebrew, which it
+  sounds like
+1104: that seems like a very natural progression of like where people can get their
+  questions
+1108: answered and eventually hopefully pay for it.
+1110: But I want to ask the question of like the relation to Docker, because
+1113: like when I think about environments and like setups, and now we've got like
+  these like
+1117: agent environments where I cannot have a runtime for my agent in like in the
+  context
+1122: of AI, like where does Homebrew, Workbrew, where does that fit in that world?
+1126: Are we replacing Docker eventually?
+1128: You know, I kind of want to like frame this as a, you know, how developers get
+  their jobs
+1134: done kind of positioning.
+1136: And why does Docker exist?
+1138: Why do VMs exist?
+1139: Why do, you know, the cloud IDEs exist?
+1143: Ultimately, what we're trying to do is we're trying to give developers environments
+  to do
+1146: their work that are repeatable.
+1148: They're really easy to set up.
+1150: They're smooth.
+1151: They're fast.
+1152: They're inexpensive.
+1153: They're secure.
+1154: There's all kinds of things that we want.
+1155: But for me, one of the most important, you know, aspects of this is, is the
+  environment
+1159: ergonomic.
+1160: And what I mean by ergonomic is like what you were saying before.
+1163: I have my setup.
+1164: I can use my tools.
+1166: I can use my IDE.
+1167: I can use my file system.
+1168: I can use my network.
+1169: You know, I don't have to configure, you know, various mappings and all this
+  stuff.
+1173: And so ultimately, all of these different tools are trying to solve a problem
+  of like a great
+1179: developer experience, a great developer environment.
+1181: And they solve them with all different methods, right?
+1184: You know, with a VM, you have like a full copy of the operating system.
+1186: With Docker, you have a more lightweight copy, but you still have the drawbacks
+  of, you know,
+1190: high number usage, high battery usage, slow, lack of ergonomics, whatever.
+1194: With like cloud IDs and stuff like that, it's similar.
+1197: Maybe there's an additional cost.
+1199: You buy a $5,000 MacBook Pro just to like remote into a cloud ID environment
+  and pay Amazon
+1205: or Google or, you know, Microsoft per minute of your developer environment.
+1209: Like it just doesn't seem economical to do that kind of stuff.
+1211: And so, you know, with WorkBrew, our take on that is around like developers
+  are already
+1217: using Brew as part of their environment tool chain.
+1219: How can we level up that tool chain to the point that it's like better for teams,
+  better
+1224: for collaboration, better for that kind of stuff.
+1226: And so I would like try to frame all of this stuff around the idea of these
+  are all related
+1232: in the sense of we want to have a great experience, but they're doing it with
+  different
+1236: methods.
+1237: And I know Mike has like a bunch of opinions about this as well.
+1239: Yeah.
+1240: I mean, I would echo what John said, but I guess to go back to something you
+  said, Brian,
+1246: like it's funny because for me, I guess Docker didn't fail, right?
+1251: I think Docker is great.
+1254: But where I would agree is that like, yeah, Docker became overextended.
+1258: Like, so the original intent of Docker of being like, hey, particularly for
+  servers, right?
+1264: The kind of containership metaphor of you can just have like a fairly stupid
+  host that basically
+1271: just takes a Docker container, runs it, exposes some ports to the world, spins
+  it up, spins
+1277: it down, maybe you've got some Kubernetes in the background to go and do like
+  auto scaling,
+1281: whatever it may be.
+1282: Like that for me is wonderful, right?
+1285: Like, and we use that at Workbook right now.
+1287: Like we use Docker files for deploying all Linux servers.
+1290: And I love that.
+1292: I think it's a really perfect fit for that particular job.
+1295: Where I think things got messy is, and this is often what happens with Unix
+  tools, right?
+1299: Is when people tried to find every single hole that looked vaguely Docker shape
+  and just
+1305: like smash the Docker whale into the hole.
+1308: And the classic one for me was when, you know, when there was that wave of,
+  there's not much
+1313: of this anymore of like, oh yeah, everyone should go and run their developer
+  environments
+1316: inside a Docker container, right?
+1318: And like, sure, yeah, you get reproducibility and some other stuff from that,
+  but like at
+1324: what cost, right?
+1325: If you're someone who could just SSH in and Vim and clone your Docker files
+  inside the Docker
+1329: container, yeah, it wasn't that bad.
+1330: If you're someone who really loves like native Mac OS, like graphical tools
+  and that way of
+1335: dealing with things, then yeah, the developer experience sucks.
+1337: And it's somewhat the same way that if you use kind of some of the kind of cloud
+  development
+1343: environments, you know, say GitHub Codespaces, which I kind of briefly worked
+1348: on as well, like, you know, it solves some problems, but fundamentally the experience
+  compared
+1352: to just doing it on your local Mac is not good.
+1355: If you're on Linux, okay, things with Docker are a little bit less painful because,
+  you
+1359: know, you're not spinning up a full VM every time, but it's still this, you
+  know, you still
+1363: have the separation issues of essentially spinning up a full OS to go and run
+  somewhere else just
+1371: so that you can kind of get your libraries versioned the right way for a project.
+1375: And it just, I don't know, it just feels gratuitously overkill for me.
+1378: At the same time, I understand why people do that because sometimes that reproducibility
+1384: is not easy to find elsewhere and that's why they do it.
+1388: I certainly would never claim that we are out to completely replace Docker in
+  every single
+1394: way in every single circumstance.
+1395: Like to me, that would be falling prey to the very thing that Docker itself
+  did of realizing
+1402: what's the right tool for the job.
+1403: But I definitely think there are some kind of, say, local development uses of
+  Docker right
+1407: now that I look at and I'm like, yeah, we shouldn't be doing that.
+1410: We have better systems.
+1412: And, you know, we're all paying, if you've got a Mac, you've paid a decent amount
+  for some
+1417: shiny piece of Apple Silicon, right?
+1419: So you probably want to make use of that not by just firing up VMs and not by
+  SSHing to
+1426: some server that you're paying for by the minute.
+1428: Yeah.
+1429: It seems like one of the core kind of tenants of what you're really looking
+  at is that good
+1434: developer experience.
+1435: Something I've been thinking a lot about recently, and I don't know, maybe I
+  get wax poetic about
+1439: this, but just like the developer experience at large seems kind of like it's
+  converging or
+1445: just kind of getting, you know, gravitationally all pulled together towards
+  like one or two
+1449: things.
+1450: You know, maybe this is, you know, an age old question, but do you see things
+  kind of
+1455: coming together to being like, oh, you're probably just going to be on a VS
+  Code fork and you're
+1459: probably just going to use this like one package manager thing.
+1462: You're probably going to be on a Mac and like we could just expect that that's
+  going to be
+1465: what mostly everybody's going to be doing.
+1467: And like, is that okay?
+1469: And maybe it's the other question about that.
+1470: But yeah, do you see that convergence happening in your space, like working
+  in developer tooling
+1474: or is it more like diverse than I'm assuming?
+1477: I think that convergence exists.
+1479: I think where it gets tricky is, again, like almost everything in software,
+  right?
+1483: Is like going from 50% of people are using the same tooling to like 90% of people
+  using
+1489: Yeah, like we're probably seeing more of that.
+1493: We're probably seeing more people using some sort of VS Code fork than we were
+  previously.
+1497: You know, I used to be like a diehard text make guy, like Atom and VS Code are
+  too slow.
+1501: And eventually I'm just like, yeah, like this is too easy to not do.
+1506: And then nowadays I'm a cursor guy because, you know, that works well for me.
+1509: But for me, stuff like, I'm sure you probably have had or will have like the
+  Zed guys on
+1516: the podcast at some point.
+1517: But like, you know, you have things like Zed out there that are doing things
+  in a radically
+1522: I still have it installed my machine because it's just lightning fast for certain
+  tasks.
+1527: And like, I think in some ways we've seen with browsers what happens when you
+  get too much
+1533: of a monoculture, right?
+1534: Like there's problems that come from that.
+1537: So my like happy path is basically to be like, hey, there's like a paved path
+  for this stuff,
+1542: right?
+1543: If you're like a new developer, I feel like we're a lot better now being like,
+  do you have
+1548: an editor of choice already?
+1549: Because if not, it should probably be VS Code.
+1551: You're probably going to have an easier time.
+1553: But like, personally, I would feel very uncomfortable ever being in a company
+  where I'm like, anyone
+1558: who wants to use Vim is, you know, forbidden, right?
+1562: You shall not use Vim.
+1563: You shall use VS Code and the Vim plugin or whatever.
+1566: And if that's not good enough for you, then, you know, too late.
+1569: We as an industry have standardized on VS Code.
+1571: So I worry about that type of thing.
+1574: Because I think it leaves no room for innovation as well and things to get better.
+1578: We don't standardize on SourceForge and Subversion 20 years ago, right?
+1582: And it's probably a good thing that we didn't stay there.
+1585: It's kind of a fine line because there's also that, like, you know, the aspect
+  of, like,
+1589: over-customization.
+1590: When you sit down in your machine and you have, like, a million keyboard shortcuts
+  and you
+1594: sit down at a different computer and you, like, are totally useless.
+1596: You don't know what to do.
+1597: You don't know how anything works.
+1598: It's like, that's also got its drawbacks.
+1601: But, you know, having, like, a good middle ground where there's, like, sensible
+  defaults
+1605: that's mostly accepted and then the space for people to do things their own
+  way is also,
+1610: you know, quite nice.
+1611: Yeah, that's an amazing perspective.
+1613: I've definitely fallen prey to that other side where it's like, man, like, I
+  barely know
+1619: how to do anything outside of Vim.
+1621: Or I'm like, yeah, I got the Moonlander.
+1623: I mean, I was getting all this wrist pain with a normal keyboard.
+1626: So, you know, Brian, speaking of nice, shiny keyboards, check out the Moonlander.
+1631: Actually, on my list, I'm going to pick up one.
+1636: You know, I'm getting old.
+1637: I'm, what, a geriatric millennial at this point.
+1640: So, yeah, yeah.
+1641: Got to protect the wrist and make sure the fingers and arthritis are not inflamed.
+1645: Dude, I'm older than you and I'm just rocking the standard Apple.
+1649: Nice.
+1650: The standard Apple wireless keyboard.
+1652: Yeah, that's totally on brand for you, Mike.
+1654: It's like default.
+1656: Just use the macOS defaults.
+1658: Use the Apple defaults.
+1659: Don't do anything special.
+1660: Pretty much.
+1662: Speaking of Apple defaults, I did ask this to some of the Phlox people when
+  we last chatted
+1668: with them, but, you know, Apple and the Apple ecosystem, I still, it still just
+  shocks me
+1673: that they don't have a default package manager in macOS.
+1677: And, you know, maybe that's licensing reasons.
+1680: Maybe that's, you know, maintainability reasons.
+1682: But from y'all's perspective, do you see a reason that, you know, macOS and
+  Apple wouldn't
+1688: want to do this?
+1689: Well, the Apple old school pedant that I am would point out that they technically
+  do have
+1695: a package manager.
+1696: It's just really bad.
+1697: So every time you install a .pkg file, technically you're using Apple's package
+  manager to install
+1703: things using package util and they have a big list of things.
+1706: It just doesn't support anything like versions or dependencies or anything that
+  you were searching
+1712: or any of that good stuff.
+1713: Yeah, yeah.
+1714: It's funny because, again, this sort of leads to the conversation from previously,
+  I think,
+1718: where there was, I'm sure at some point there's been a conversation at Apple
+  about like, should
+1724: we make, you know, initially Mac ports because they had, they supplied a bunch
+  of hosting and
+1729: all this type of things.
+1730: Should we bake this into the US?
+1731: Should this be a default package manager?
+1733: But I kind of think we've ended up in a better place from not having a default
+  because, again,
+1739: it allows people to change in that way.
+1741: And also because, you know, the app store is a wonderful thing, but there's
+  a lot of things
+1747: that you don't need to do because you're not in the app store, right?
+1751: Like we had something in a package submitted to Homebrew a couple of weeks ago,
+  which was
+1757: a manager for your porn.
+1759: And we had a discussion as a group and it's like, you know, there's nothing
+  not safe for
+1765: work about the software itself, the packaging process or the website.
+1769: It's just designed for a not safe for work thing.
+1773: And it's like Apple on the app store would have probably not allowed that, right?
+1778: But we're like, hey, this is software.
+1780: People want to install it.
+1781: Like it's not malware.
+1782: It's not doing anything sketchy, right?
+1784: Like why wouldn't you let people?
+1786: And I think this, as much as I love Apple, like I think, I think they recognize
+  that internally
+1791: There's a certain amount of, if they were to bring one of these open source
+  projects into
+1795: the fold and be like, this is an Apple thing now, there's a bunch of stuff that
+1798: those projects do that they probably wouldn't be able to keep doing anymore.
+1800: And I think that would be a shame.
+1802: Yeah, it'd be a shame if it wasn't called OnlyBrews as well, that package manager
+  for
+1807: Amazing.
+1808: Your files.
+1809: Sorry, I was sitting on that one.
+1811: But speaking of that, I did want to really, before we wind down this conversation,
+  talk
+1815: about the Workbrew business model.
+1816: Because I think with open source and like Homebrew being a very strong community
+  and open
+1822: source project, what's the business model for Workbrew?
+1826: Like, what's the persona of the folks that are going to be reaching for this?
+1829: It's a really simple business model.
+1831: We write software and we sell it.
+1833: You know, it's pretty straightforward.
+1835: Actually, like, you know, there's all these different kind of open source models.
+1838: I'm kind of tongue in cheek when I say this, but like, there's all kinds of
+  different models.
+1841: But like, really, what we're doing is we're building a separate piece of software
+  that's
+1844: complementary to Homebrew.
+1846: And we're charging people money for that software.
+1848: So we're not putting functionality into the open source project and paywalling
+  it or anything
+1854: like that.
+1855: All of the existing Homebrew project is under MIT license or BSD2, Mike.
+1860: Am I saying this correctly this time?
+1861: Yeah.
+1862: So it's open source license.
+1864: You can get it and do whatever you want with it according to the license.
+1867: And we're doing the same thing.
+1868: We're helping our customers install Brew.
+1870: So we give them, as part of our free plan, the best way to install Brew on tens
+  or hundreds
+1876: or tens of thousands of Macs.
+1877: We give a simple deployment process you can use with like an IT MDM tool.
+1882: We give them visibility into everything that's going on.
+1885: And then give them a way to manage everything at scale.
+1888: And the way that we achieve that is by basically building a control plane.
+1892: So all of the work Brew software is how do we connect kind of these individual
+  developer
+1899: instances to a centralized place to have analytics and visibility and whatnot,
+  management functionality,
+1905: but without really modifying how Brew works.
+1909: So it's all about kind of putting a wrapper around how Homebrew works and giving
+  you one
+1913: coaxes package for a larger team or a larger company.
+1916: And yeah, and then we just charge money for that.
+1918: And customers are willing to pay for it.
+1920: That's awesome.
+1921: I mean, you said it's simple, but yeah, it makes sense.
+1924: And definitely appreciate the approach.
+1926: This week, there was an announcement of FaunaDB shutting down, which is quite
+  unfortunate.
+1931: Years of serverless databases.
+1933: And in the threads of folks on X chatting about it, it's like, someone asked
+  a question years
+1939: ago of like, what if Fauna shuts down?
+1940: What happens to my project?
+1942: And today, you've got 60 days to migrate it.
+1945: It sounds like whatever happens to Workbrew in the future, like you could still
+  have an
+1949: experience that mirrors what's happening in open source.
+1952: Yeah, I mean, kind of like the underlying architecture of Workbrew is the foundation
+  is Homebrew.
+1957: So to the extent that something that our customers need lives in Homebrew, we
+  get it into Homebrew
+1965: using the normal Homebrew open source process.
+1968: We'll make a pull request, somebody will go and send it, and we make sure that
+  it's valuable
+1971: to every user, you know, as many users as possible of Homebrew.
+1974: And then with those kind of underlying, you know, functionalities, we can build
+  on top
+1980: of it.
+1981: So for example of this, Homebrew has this functionality called taps.
+1984: Taps are libraries of collections of packages you can install.
+1988: And there are two official taps in Homebrew.
+1989: Homebrew core and Homebrew cast with about 15,000 packages.
+1993: When Mike was talking earlier about, you know, some human review going into
+  each of these,
+1996: you know, that's because the Homebrew project manages those taps.
+2001: But anybody can create a tap.
+2002: And so, you know, we built some functionality that lets companies create their
+  own taps and
+2006: distribute those taps without having to manage authentication, for example.
+2009: We also built some functionality around giving companies visibility to what
+  taps are in use
+2014: so they can find out if anybody's using an unofficial Homebrew tap.
+2018: Maybe there's some software that they're not happy that is being installed,
+  they can check
+2022: And they can also put guardrails around the process for adding new taps.
+2025: So by default, the Homebrew core and Homebrew cast taps are enabled.
+2029: And if you want to add additional taps that are through parties, that might
+  need to go through
+2032: a review process before they get added for everybody in their company.
+2035: And so all of that functionality, what's great about it is that it lives in
+  Homebrew as part
+2040: of the Homebrew configuration.
+2041: You go to the Homebrew man page, you can read about it, you can use it, and
+  you could build
+2044: your own control plane for that stuff.
+2047: We at Workbrew have built a control plane that uses those things, and you can
+  buy it instead
+2052: of building it yourself.
+2053: Cool.
+2054: Thanks for the clarification.
+2055: And at this point, I want to wind the conversation down and move us into reads.
+2059: So a question for John and Mike.
+2061: Are you ready to read?
+2062: Of course.
+2063: Let's do it.
+2064: Reads.
+2065: Excellent.
+2066: All right.
+2067: Well, John McBride, you've got some reads.
+2068: Do you want to walk us through this?
+2070: Yeah, sure.
+2071: I got two reads this week.
+2073: GIMP 3.0 is finally released, which is kind of insane.
+2078: I think this thing has been in development like five some years or something.
+2082: But this is pretty big, especially for anybody on desktop Linux wanting to modify
+  photos or
+2090: I'm sure anybody out there who wanted to avoid the belly of the beast doing
+  Adobe Photoshop
+2095: or something or Adobe Cloud now or whatever it is has used this.
+2099: So more modern design.
+2100: I'm just excited about it.
+2102: It's going to be great, especially when I reboot up my desktop Linux.
+2106: John, Mike, have you guys used GIMP in the past?
+2109: Of course.
+2110: A little bit.
+2111: Not a ton, but I used to run desktop Linux back in, I don't know, college.
+2116: So ever since I got a Mac, I stopped using desktop Linux.
+2119: Yeah, that's fair.
+2120: The other one I've been using recently is Pixelmatter Pro, which actually was
+  acquired by Apple.
+2126: Oh, I use that quite a lot.
+2127: Yeah, they were acquired by Apple, so good for that team.
+2130: Really excellent piece of software.
+2131: So yeah, excited to see this space moving forward and yeah, some cool stuff
+  happening.
+2136: I was going to say my GIMP experiences, my previous avatar on GitHub was like
+  a cartoon of me.
+2143: I made that in GIMP in college because my serial cracked Adobe Photoshop that
+  I had back in the day
+2151: no longer worked.
+2152: And then I found out that GIMP was a thing.
+2154: So earliest version of GIMP, I thought I was going to be a graphic designer
+  and I was a heavy user.
+2159: Interesting.
+2160: Yeah, yeah.
+2161: It's a good piece of software.
+2162: It's one of those that I feel like, yeah, everybody touches at least once in
+  their computing lifetime.
+2169: The other read I had this week was very interesting, especially from, you know,
+  work I've done in infrastructure and Kubernetes,
+2176: as well as some of the AI stuff and AI engineering.
+2179: This piece is titled, FOSS infrastructure is under attack by AI companies.
+2184: I thought this was especially interesting for John and Mike.
+2187: Kind of TLDR this is that, you know, a lot of these companies going and scraping
+  data just across the internet, you know, this isn't new.
+2195: But it seems, at least from what a lot of these FOSS free and open source software
+  sites, you know, they're like ignoring robots.txt and just like scraping and scraping
+  and scraping and bringing down infrastructure that is probably just like somebody's
+  home lab in their office.
+2213: So, nothing that can really sustain a lot of scraping.
+2216: I'm curious if you all have seen anything like this on, you know, things like
+  getting scraped off of Homebrew taps or even sites that you maintain or homebrew.org,
+  you know, having anything like this happen.
+2228: Curious if you've seen anything like this.
+2230: So, this is a nice, another maybe design principle of Homebrew is that Homebrew
+  has no hosting, basically, anywhere, right?
+2239: So, everything that can be done for free in Homebrew and done on GitHub pages
+  is done there.
+2244: The Homebrew, like, JSON API is actually hosted on GitHub pages.
+2248: If you want to see using liquid rendering to create a JSON file and watch the
+  parser crying while it does so, I would recommend checking out the Homebrew site
+  for that.
+2259: But, yeah, so as a result, like, we're fairly unaffected by this stuff.
+2263: I guess as an anecdote in the other direction, like, when our tooling gets flagged
+  for this stuff, then we try and be very communicative with development project.
+2275: And if they're like, hey, please don't do this, then we're like, okay, well,
+  we won't do this or we'll change our rates or whatever.
+2281: Like, yeah, it's, I don't know, it feels like a sad indictment of the modern
+  internet that we've decided to just ignore these types of conventions, right?
+2290: Yeah, I agree.
+2292: It's, I don't know, I don't know what the future of this is going to be.
+2295: Further down in the post, they talk about embellishing robots.txt with AI.robots.txt.
+2301: And, you know, starting to build in some, like, more features.
+2304: And, like, some of the things that people have started doing basically is adding
+  more of these, like, CAPTCHAs or, like, more obnoxious and difficult CAPTCHAs, which
+  just kind of makes the internet worse to use as a person, right?
+2317: That kills the experience for the end user.
+2319: That's why we can't have nice things on the internet.
+2322: Basically, anytime anything is nice, it gets, you know, tragic, it's a commons.
+2326: People just take, take, take, take, take until it's not sustainable.
+2330: Yeah, we'll put this in the show notes.
+2332: Definitely get this one read.
+2334: Cool.
+2335: I have a quick read, which is kind of related to the GIMP thing.
+2337: I was looking at X, it was an X.com thread of the Gemma 3 model is now taking
+  out the Shutterstock watermark, which is like, again, going back to my college days,
+  like, this is a dream of mine.
+2352: To be like, hey, can I use this image for free?
+2354: Folks listening, please pay for your content.
+2356: Please don't steal.
+2357: But college, Brian, would have loved this experience.
+2361: You also had cracked Photoshop.
+2364: Is that what I heard?
+2365: Yeah, it was a, it was dark times.
+2367: You know, I was, I was in college on scholarship, didn't have a lot of money.
+2371: So you had to, you know, it was a wild, wild west.
+2373: If you think it's bad now, back in the day, like, let me show you some bear
+  share and LimeWire and Torrance.
+2378: Yeah.
+2380: This actually reminds me of a story I was listening to.
+2382: It might have been on Hard Fork, but it was something about how Chegg, the cheating
+  website, they're like suing Google because, you know, now, you know, Google AI results
+  can just give you a bunch of stuff that they scraped off of Chegg, essentially.
+2398: Which is like, it's kind of hard to feel bad for them.
+2400: Like, okay, Chegg, like, maybe, maybe that wasn't, I don't know, I say that
+  now, but, you know, I'm not deeply familiar with their business model.
+2407: Is that kind of a similar thing, Brian?
+2409: Quick correction.
+2410: Like, I don't think Chegg's business model is specifically cheat on your test
+  in your college work, but that's what people use it for.
+2418: Okay, my bad, my bad.
+2419: Just saving ourselves from the legal blowback from the Chegg team.
+2423: So is this Shutterstock thing kind of similar to that where, you know, there's
+  an impending, I don't know, legal suit against, you know, AI use on these things?
+2432: I imagine, like, we saw with Reddit and also with Twitter slash X, they kind
+  of put a block on, like, API usage and how much data you can take off the platform
+  to then turn around and be like, no, we have our AI solution for Reddit and Twitter
+  and Stack Overflow and et cetera.
+2447: So it makes sense because, like, in the world of AI, like, the data is the most
+  expensive part, or sorry, the most valuable part, rather.
+2454: And, like, we're going to have these guardrails and these weird GDPR cookie
+  banners and stuff like that inside of our open source projects to prevent things
+  like this.
+2462: Like, I don't know, like, we're going to be looking at the old times and, like,
+  thinking very fondly.
+2468: I don't know, this is a weird therapy session on this podcast, but I remember
+  back in the day, like, we had cable TV, and you get this, I don't know if it was
+  like this in the UK, Mike, but you get the scrambled pay-per-view channels.
+2480: So I remember, like, you can get the audio of, like, the World Rumble, like
+  WWE, but you couldn't actually see it.
+2486: It was like, you'd have to get a de-scrambler.
+2487: So then I'd be, like, on the forums and trying to find out how you can de-scramble
+  your cable TV.
+2492: So, again, we're always going to find a way to work around things.
+2496: Folks, pay for your cable, pay for your whatever your streaming service is.
+2500: I'm, like, implicating myself.
+2503: I'll need a pardon from Trump pretty soon.
+2506: The thing that gets me about this is, like, again, this is another case where,
+  like, the end user, like, loses.
+2510: So you mentioned, you know, the CAPTCHA is being added, API access going away.
+2515: Like, you know, I'm a Reddit user.
+2518: I read a lot of stuff on Reddit.
+2520: And I used, like, you know, a Reddit mobile app.
+2523: And when they had their whole kind of API change-up happening, and it took away
+  all the access, all the apps died.
+2528: Luckily, I don't know how, but the app that I use managed to survive.
+2532: I think I'd pay, like, a dollar a month to use it for just, like, Reddit's API
+  access or something.
+2537: But, you know, ultimately, what ends up happening is you take away those things
+  and the engineers, you know, people building all these nice little apps, like all
+  the moderators.
+2545: Like Mike mentioned in Homebrew, like, they automate everything.
+2547: And these massive communities with hundreds of thousands, if not millions of
+  subscribers on Reddit now lose access to all their moderation tools because they
+  take away the API access to prevent data, you know, going to the AI companies.
+2557: Like, it has knock-on effects for everybody, so.
+2560: Well, I appreciate both of you coming on, chatting about Workbrew, Homebrew,
+  open source, and even some banter in the reads as well.
+2567: So, listeners, stay ready.
+2569: That's all the time we have for today.
+2572: If you're interested in being a guest on the show, or if you'd like to suggest
+  a topic, find us at x.com slash open source ready.
+2578: Open source ready is brought to you by HeavyBit, the leading investor of developer-first
+  startups.
+2583: For more information, visit heavybit.com.
+2586: "."

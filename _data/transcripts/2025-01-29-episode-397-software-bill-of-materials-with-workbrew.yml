@@ -1,0 +1,1502 @@
+---
+0: This week's episode of the Mac Admins Podcast is brought to you by Kanji.
+4: Imagine an AI assistant that speaks your language and knows your Apple fleet inside
+  and out.
+12: Meet Kai, Kanji's groundbreaking AI assistant for device management.
+17: It can give you insights on the state of your devices in Kanji in response to
+  conversational questions.
+23: You can ask Kai anything, which devices don't have FileVault enabled, or how many
+  iPad devices have been updated to iOS 18.
+33: You will get immediate answers and custom reports built for you whenever you need
+  it.
+37: Kai empowers every team member in IT with analyst-led insights, freeing you from
+  more creative and strategic work.
+46: You can request an invitation to experience Kai at kanji.io forward slash Kai.
+53: That's K-A-N-D-J-I dot I-O forward slash K-A-I.
+60: Thanks again to Kanji for sponsoring this episode of the Mac Admins Podcast.
+64: Hello and welcome to the Mac Admins Podcast.
+76: I'm your host, Tom Pridge.
+77: And Marcus, is it snowing where you are or is that just me?
+80: It's definitely just you.
+82: It is most definitely not snowing.
+84: I am wearing shorts, which doesn't happen very often.
+87: Oh, you lucky, lucky, lucky man.
+89: I don't know.
+90: It is freezing here.
+91: I may be lucky that people who are seeing my knees, not so lucky.
+93: Well, fair.
+96: Small price to pay.
+97: So what's it like where you are, Tom?
+98: Well, so I'm up in the mountains of West Virginia.
+102: And the state motto here is, of course, wild and wonderful.
+106: And I will agree with the wonderful part.
+108: Maybe the wild part.
+109: Okay.
+110: Maybe a little bit less.
+111: We've gotten about six inches of snow, which I understand doing the metric math
+  is like 15 centimeters.
+115: Does that sound close to right?
+118: It's a fair amount of snow-ish.
+120: It's more snow than I have.
+122: And yeah.
+123: And so I was going to say, it has caused me to still be here.
+127: We'd intended to leave this morning and go home.
+130: And I'd be recording this from the studio.
+132: But with the snow coming and the snow coming a lot, I was going to say, we've
+  gotten that six inches of snow in the last three hours.
+140: Roads being what they are, we decided to stay up in the mountains another day.
+144: So I was going to say, the conditions for sledding are incredible.
+148: I even attempted skiing and didn't die, for which I think a lot of people are
+  both, one, surprised, and two, a little grateful.
+159: But I was going to say, it's the winter holiday season here.
+162: We're having a blast.
+163: Awesome.
+164: Well, I'm just trying to think of a segue to go from skiing and snow into software
+  bill of materials.
+172: And I think that's about as good a segue as I can do.
+177: I think we have done that as about as good a segue as we can come.
+180: So we've got two incredible guests this week.
+183: Our friends from Work Brew are back.
+184: John Britton, Mike McQuaid, welcome back to the MacAdmin's Podcast.
+188: Thanks for having us.
+189: Thanks.
+190: And so it's been a little while since we talked.
+193: We talked last in March of 2024.
+195: How have things been going for Work Brew?
+197: You guys have really made a splash over the last year.
+199: Yeah.
+200: I mean, we've been incredibly busy, hard at work.
+203: Kind of the biggest news that we have is a couple of months ago, back in November,
+  we launched Work Brew 1.0.
+209: We have a slew of new features, including a free plan for unlimited devices and
+  unlimited features, which gives Mac admins the easiest way possible to deploy brew
+  to every device in their fleet and get full visibility into all of the packages
+  that are installed.
+223: And, you know, today's topic, SBOM, software bill of materials, knowing what's
+  installed on your devices is pretty important.
+230: So we're really excited about that.
+232: The other big announcement that we made back in November was our seed funding.
+237: So we raised $5 million in seed funding.
+239: And just last week, we completed our SOC 2 Type 1 certification.
+244: So we're, you know, coming along really well.
+247: The team is growing.
+248: So that would have been easy, straightforward, I'm guessing.
+253: Everything I know about SOC 2 compliance, it's just a walk in the park.
+256: I'd actually let Mike comment on that.
+259: Yeah.
+260: I'm the one who did most of the legwork on that.
+264: It was, you know what?
+266: It was not as bad as I was expecting it to be, put it that way.
+269: And I felt like I learned some things through the process.
+273: So there we go.
+274: That's the, yeah, I guess.
+276: Congratulations.
+277: Yeah.
+279: And last time that we spoke with you all back in March, we were kind of in a
+  position of private beta.
+284: We were working with early customers that were just really trying to get feedback
+  about how they're using brew and what kind of help they needed.
+291: And we've really kind of gotten to a rhythm with our customers and found that,
+  you know,
+295: there is a problem here.
+297: We kind of understand it pretty well and we're able to give people solutions
+  that they're looking for.
+301: So that feels really good.
+302: You know, when we were talking last time, it was still kind of a nascent idea
+  of like, what exactly is this thing?
+309: What are people trying to do?
+310: So that's been really great as well.
+313: I don't know if Mike, you want to share anything about some of the developments
+  on the product side, you know, stuff that's new, but, you know, that's kind of where
+  we're at now.
+321: I mean, on the product side, we're basically just continue.
+324: The nice thing about being a small company with a small but very effective team
+  is we ship features very, very quickly, which is very nice.
+333: It's nice to be able to be so responsive.
+335: I guess it's this nice, what do you call it, mutual cycle in software development
+  as we've got more customers and people getting interested in people using it, like
+  the product gets better.
+345: We listen to feedback.
+346: We fix things.
+347: We improve things.
+348: There you go.
+349: So, yeah, I guess at the higher level, we're just essentially like exposing more
+  of the parts of kind of working with homebrew that people maybe aren't aware of.
+357: Like there's these things called brew files that we kind of essentially it's
+  a way of kind of dealing with homebrew in a more declarative fashion where instead
+  of saying brew install this, brew update this, whatever, you can say, okay, here's
+  the state I want to be in and then let homebrew figure out how to do that.
+374: So, we found that's been quite a nice match.
+376: We call that kind of default packages.
+378: So, you can go and assign, okay, these particular machines, I want to have these
+  packages installed and these services upgraded and commands run and stuff like that.
+387: So, that's been kind of one of our bigger features that's been released more
+  recently on the workbrew side.
+391: And, yeah, on the homebrew side, it's the normal kind of we've had since we were
+  last on the podcast.
+397: We've got macOS Sequoia.
+399: I'm sure you folks have talked all about that.
+401: So, yeah, so not too bad on the homebrew side.
+404: Getting a few bits and pieces working there.
+406: There was some usual Apple fun on the workbrew side where some documented stuff.
+413: I'm sure a bunch of listeners to this dealt with this as well where they had
+  a UID range that was supported for creating groups.
+420: And then in Sequoia, they changed the range and some commands output the old
+  range and some output the new range.
+427: And, yeah, that was a lot of fun getting that all smoothed over.
+432: But, you know, we're in a good place now.
+433: And, yeah, just various security and performance improvements on the homebrew
+  side as well.
+437: Those are two big focuses there right now.
+439: My Sun Scout Trooper would refer to that as type 2 fun.
+444: You know, not the easy, you know, enjoyable type, but the type that is fun in
+  retrospect.
+449: You know, the other thing that I think would be really super interesting to hear
+  is that, you know, the last time we talked, you guys were both new to the Mac admins
+  community.
+462: You've had a really busy year this year.
+464: I think we ran into each other at Penn State.
+467: You know, I heard you were at Mac DevOps.
+470: How has it gone being part of the community over the last year?
+473: So I have a long background working in kind of developer communities, mostly
+  on API-focused products.
+480: And I've been in this position before of being kind of the new entrant into an
+  established community.
+485: And I have to say that the Mac admins community is outstanding in its level of
+  being welcoming and kind of the infrastructure that you all have built.
+494: Just having the foundation is very, like, so helpful.
+498: There's that Mac admins Slack channel.
+500: You know, our kind of entrance into this community was last March when we joined
+  the Mac admins podcast.
+505: And every single one of those events that I've been to, I've had dozens of people
+  come up to me and just say, hey, we heard about you on the Mac admins podcast.
+512: It was really great, you know, to have that interview and to chat.
+515: And I just can't say thank you enough to, you know, all of the individuals in
+  the community, but also all of the organizers and the people behind kind of the
+  foundation that make this community thrive, you know, so well.
+527: You know, as you mentioned, I was at Mac DevOps Vancouver.
+531: I was at PSU.
+532: I was at JNUC.
+533: And the other thing that I came to conclude is that there are so many great events
+  that it's actually impossible to be at them all.
+540: You know, some of them are happening at the same times on the other side of the
+  world from each other.
+543: And so, yeah, we're really enthusiastic about being part of the community and
+  participating in any way we can.
+548: And it's been outstanding.
+551: The thing I found sort of fascinating and very enjoyable as well is, I guess,
+  like John, being in a bunch of communities over the years, then the really nice
+  thing about the Mac admins community is it seems like it's actually one community
+  rather than, you know, in so many of these ecosystems, it's, you know, you've got
+  the Jamf people over here or the Kanji people over here.
+568: And they don't really talk to each other and they're all using different tools.
+570: And I feel like it's a really nice, like, sign of this community of how much
+  everyone seems to share information across their different parts of the ecosystem.
+580: But it's kind of in one place and one group of people who identify in the same
+  sort of way.
+585: So what you're saying is we need a good schism to sort of separate the community
+  and create tension and all of those sorts of things.
+591: No.
+592: Yes.
+593: I've definitely seen that happen elsewhere.
+596: But when the Mac admin Slack came out, there was a real moment there where people
+  were insisting that IRC was the way to go.
+607: And it looked like there was going to be that fragmentation.
+610: But it's been fantastic to see that pretty much everyone has come along for the
+  ride and stayed, you know, we argue like cats and dogs about everybody's particular
+  opinions and choices.
+624: But I think we're drawn together because we enjoy that arguing rather than thinking
+  that it divides us.
+630: Our love for insisting that we're right and everybody else is wrong is probably
+  what brings us together.
+637: Love to hear it.
+641: So we're here to talk about software bill of materials today.
+646: So do you want to give us a basic primer on what an S-BOM is?
+649: I'll take a stab at this.
+651: So, you know, for me, I think that the kind of high level view of what a software
+  bill of materials or an S-BOM is, is kind of like, if you use an analogy, the nutrition
+  facts on the food you buy at the grocery.
+664: It's a index key that tells you what comprises the software that you're consuming,
+  producing, distributing, selling, whatever it might be.
+675: And it's really valuable because it gives you, you know, insight to know what
+  exactly the components are.
+683: I mean, you know, we're both from kind of the open source free software, you
+  know, background.
+689: And one of the kind of key benefits of using open source or using, you know,
+  free software is that you can see what's inside.
+697: And it's a fact of life that you can't always see what's inside of all of the
+  software that we consume.
+701: But with S-BOMs, we can kind of help to surface some of that stuff so that you
+  have a better way to know what's going on, what comprises it.
+711: On the, like, more technical end, I think there are, you know, there are various
+  different formats and there's different kind of, you know, requirements of what
+  they might entail.
+720: But I think that's a good high level view.
+721: And so, really, it's just a listing of applications or binaries that might be
+  part of those applications.
+727: So, hey, we're using these developer tools.
+730: These developer tools also include things like curl and, you know, an SSL or
+  an SSH config and an SSL config and, you know, a bunch of other different pieces
+  of that that are underlying tools that represent part of that.
+744: Does that seem pretty fair?
+745: I'd say so.
+748: Mike, what do you think on the, you know, depth of S-BOMs?
+753: Well, I think the interesting thing with S-BOMs is, like, John's done a great
+  explanation already of almost what they are and how they look, you know, as a standard
+  format.
+763: But I guess it's worth thinking as well, like, why, to take a step back, why
+  do they even exist?
+768: Why do we care, right?
+770: And I think the open source example is a nice one to sort of start with, where,
+  you know, if you're thinking of homebrew or a Linux package manager or whatever
+  it may be, you can go and generally find some website or run some tool and be like,
+  okay, this depends on this, depends on this, depends on this.
+785: And you see this nice little chain of, like, all the things that go down in the
+  software, right?
+790: And unless you're actually, like, someone who's packaging software for a living,
+  you might not really care about that list other than why does all this stuff have
+  to be installed every time I want to just install the thing that I want to use.
+801: But it's thinking about, I guess, two big things would be, like, licenses and
+  vulnerabilities.
+807: So on the licensing front, if you're using, like, essentially every company is,
+  at this point nowadays, some amount of open source software, unless you're a hardcore
+  open source licensing nerd, like I proudly am, you know, I'm from an era of open
+  source where everyone cared about these things, maybe a little bit too much.
+828: But it's being aware of, like, okay, am I using MIT license software or BSD license
+  software or GPL software?
+835: Is it GPLv2 or GPLv3?
+837: Because all those things, it may be fine for you to use all of those in your
+  application, but all of them have slightly different requirements on what that means
+  as someone who builds and distributes that application.
+849: So you need to be able to know, okay, what licenses am I using here?
+852: On the vulnerability side, generally, kind of vulnerabilities and versions kind
+  of map one-on-one.
+857: And again, you know, back in the kind of pre-internet era where we're all shipping
+  software on CDs or whatever, it was fine.
+867: You know, you picked a version of a library, you shipped that version, and unless
+  people's houses are starting on fire, that's the version you should ship forever.
+874: Whereas now, you can't do that, right?
+876: You have to be keeping track of all the software, all the versions, all the vulnerabilities,
+  and making, and if there is a vulnerability, being like, okay, what software versions
+  that I have does that affect?
+887: Who do I need to notify?
+888: What do I need to do to change?
+890: What version do I upgrade to?
+891: How do I upgrade to that version?
+892: And all of this stuff.
+893: So basically, there's this kind of, the expression I would use is the software
+  supply chain of this idea of this very large chain of software, all of which is
+  kind of built on each other.
+905: And if you're a company, again, many, maybe even most software companies are
+  building software that is used by other companies that use other software, so your
+  vulnerabilities affect potentially other things up and down in that chain.
+918: So SBOMs are kind of a standardized way of essentially being like, okay, what's
+  in my software?
+922: How can I tell other people what's in my software, and how can they find out?
+926: An efficient way for lawyers and auditors to monetize free open source software,
+  I'm guessing, as well.
+934: I'm glad you raised the, well, because that's the other side of this stuff that
+  is interesting, is that there's been, I can't remember who it was, I'm sure we could
+  put it in the show notes, but there was an open source maintainer who wrote a post
+  last year who said, I believe it was titled something along the lines of I am not
+  your software supply chain, where it's like, hey, well, there's all these requirements
+  and people are saying these are the things that kind of software projects need to
+  do.
+957: But, you know, I do this in my evenings and weekends, and I have no interest
+  in being your supply chain or providing your SBOMs or whatever.
+964: The nice thing is, over in Homebrew and Workbrew land, we have, you know, Homebrew,
+  when you install things, you can get SBOMs for all the software you've installed,
+  we kind of generate that for you.
+975: But then in Homebrew, obviously, sorry, in Workbrew land, like, we are more than
+  happy to provide those levels of guarantees of like, and our tooling and our software
+  exists to let you know, rot is running on your machines, what is the software that
+  goes into building the software.
+991: So we are very happy to oblige when others may not be.
+995: Well, and I think this gets into a really interesting part of the questions for
+  how what SBOMs are for, and how organizations need to think about them.
+1003: You know, I was going to say, well, I was going to ask the very pointed question,
+  how are organizations using SBOMs?
+1009: And it feels like, you know, tracking, you know, the presence of software on
+  your machines has one set of value, which is, you know, tremendous for a lot of
+  organizations.
+1020: But are there other utilizations that are super important for us to think about
+  as we look at SBOMs generally?
+1026: I think they've, they've essentially filled this hole as being a nice data interchange
+  format, where because we have a standard way of defining this stuff, it basically
+  provides people, I guess, Marcus mentioned kind of auditors, like, I think we're
+  still in relatively early days of SBOMs, where I think the main thing they're being
+  used for is this kind of idea of
+1049: tracking, okay, what has gone into making this software that I have here.
+1054: But over time, I would not be surprised if we're seeing more and more tools
+  that essentially are using SBOMs primarily as their kind of import and output format,
+  so that we can have a standardized way of saying, hey, what is the software I'm
+  using and not using and all that type of thing.
+1069: Because, so at GitHub, I worked a while ago at a thing called GitHub Enterprise,
+  and they, as they went through their own compliance processes and stuff like that,
+  they realized,
+1079: hey, we need to provide an SBOM for GitHub Enterprise.
+1082: And the nice thing about stuff like that is it's like a lot of these tools,
+  day one, pretty much at Workbrew, I was, I installed all the same tooling that GitHub
+  used.
+1093: And then when we kind of went to raise financing and we had people who were
+  coming and saying, hey, can you tell us what software you're using?
+1100: Hey, we know this is probably going to take you a few weeks to give us the exact
+  versions and everything like that.
+1105: So no, no, I can do that for you in like two minutes, right?
+1108: So that's the other side of this stuff, is it's one of the things, like many
+  other areas of tech, where it's unfortunately going to become an additional requirement
+  of how we build software.
+1118: It's just getting this stuff sorted.
+1120: And it's much easier if you get that stuff sorted earlier in the software development
+  process, rather than later being like, oh, I have a thousand libraries, and I'm
+  going to have to figure out a way to track them all and handle them all.
+1132: Just for like an example of real world use case, you know, I talked to a lot
+  of people in the Mac admins kind of role.
+1138: And especially I talked to a lot of folks who work in regulated industries,
+  healthcare, finance, insurance, government.
+1146: And, you know, like Mike said, you know, licensing is a big part of it, vulnerabilities,
+  but also intellectual property.
+1153: And so I've seen these highly regulated organizations where they use SBOMs essentially
+  as a filter list to permit or reject new dependencies from their software ecosystem
+  that their developers might be pulling in, in an automated fashion.
+1168: So they might know that certain libraries use IP that they don't want in their
+  tool chain, or they might know that certain libraries or certain licenses are not
+  allowed in their tool chain.
+1179: And so they're building kind of automated tooling around this using SBOMs as
+  kind of the underlying infrastructure as well.
+1186: And I think we've seen as we're recording right now, we're in the midst of the
+  TikTok apocalypse, which sort of highlights in a way that it's really important
+  to know exactly what it is you're dealing with, with software, because there may,
+  you may be using something that is not allowed in a particular region for, you know,
+  political, social, whatever reasons.
+1213: You know, CapCut is a great tool for, you know, social media video editing,
+  which unfortunately, because it's made by ByteDance, means it's against the law
+  to use in the United States as we record this.
+1224: It's Sunday, January 19th.
+1226: I'm not to put too fine a date on it, but, you know, we're in an evolving state
+  of play, you know, with a lot of these licensing agreements.
+1233: And so knowing what your, what your own SBOM is for your organization is very
+  helpful when it comes time, when you have to deal with questions from legal or from
+  security on, well, what part of this, you know, TikTok apocalypse is, you know,
+  is going to affect our business?
+1252: Are we going to rapidly have to retool?
+1254: Are we going to have to, you know, figure out a new pathway for some of our
+  social media editors, for example?
+1260: A lot of organizations have one of those these days who may or may not be having
+  to switch to iMovie or God help them clips.
+1269: But, you know, there's, there are all sorts of, of ways to actually handle that.
+1275: But also, also just not having to get dragged into lots of meetings about these
+  things as well.
+1282: As you just mentioned, the ability to say, oh no, we have all that information.
+1286: We can give that to you is a lot better than anything.
+1290: You know, getting invited to five discussion groups to work out how we're going
+  to approach this problem.
+1295: The MacAdmins podcast is brought to you by 1Password.
+1300: Imagine your company's security for a moment.
+1302: Think about it a bit like the campus at a university.
+1305: Chemistry department over here, economics over there, and a big student union
+  all surrounded by a quad.
+1311: Those nice brick paths are your company-built infrastructure, like IT-approved
+  apps and managed employee identities.
+1317: But, of course, there's always a well-worn path outside those nice walkways,
+  isn't there?
+1322: A shortcut worn through the grass with a gap in the hedges that shows where
+  everyone actually walks.
+1327: Those are your unmanaged devices, your shadow IT apps, and contractor identities
+  that don't quite fit the usual path.
+1333: Most security tools only work on those happy brick paths, and a whole lot of
+  security problems take place on the shortcuts.
+1340: 1Password Extended Access Management is the first security solution that brings
+  all the unmanaged devices, apps, and identities under your control.
+1349: It ensures that every credential is strong and protected, every device is known
+  and healthy, and every app is visible.
+1356: 1Password Extended Access Management solves the problems traditional IM and
+  MDM can't.
+1361: It's security for the way we work today, and it's now generally available to
+  companies with Okta and Microsoft Entra, and in beta for Google Workspace customers.
+1370: I've been a 1Password customer for the better part of a decade now, and I just
+  can't imagine life without it.
+1376: I just got a new machine for work, and it was the first thing I put on there
+  after I got it.
+1381: 1Password's award-winning password manager is trusted by millions of users and
+  over 150,000 businesses from IBM to Slack.
+1388: And now they're securing more than just passwords with 1Password Extended Access
+  Management.
+1392: Secure every app, device, and identity, even the unmanaged ones, at 1password.com
+  slash macadminspodcast, all lowercase.
+1401: That's 1password.com slash macadminspodcast.
+1405: And thanks to our friends at 1Password.
+1407: So, you know, we talked a little bit about the format of the object, you know,
+  the SBOM itself takes on a specific format.
+1415: What does an SBOM actually mean to a security organization in that state or
+  to an IT team in that state?
+1421: So the thing that I hear over and over again talking to IT managers and security
+  managers is that one of the biggest challenges they face is disability, just knowing
+  what's going on.
+1432: And this can be true of, you know, your software dependency stack.
+1436: It can be true of your endpoints.
+1438: It can be true of your infrastructure.
+1439: It can be true of your CI.
+1440: You know, all the different components in your, you know, information systems,
+  just knowing what's going on is an incredibly difficult challenge.
+1450: And so what SBOMs do in some of those cases is makes it possible to just be
+  able to know what the differences are, know what has changed over time, and manage
+  that change, right?
+1463: If you don't know what's going on, you can't manage it.
+1466: You know, maybe this is a little bit tongue-in-cheek, but there is a bit of
+  box ticking that goes on with this as well.
+1471: You know, you often hear from the lawyers.
+1473: You hear from the, you know, compliance or risk departments.
+1476: And what it really is is it's just – it's a good practice to be able to know
+  that you can answer the question if it's asked, right?
+1485: And so, you know, like you were just saying before, that if the lawyers come
+  to you and ask, like, hey, what's in this, is it a three-week ordeal for you to
+  figure out or is it a two-minute kind of easy-to-do thing?
+1499: And then I think, like, the actual use cases kind of fall into, you know, two
+  buckets, proactive and reactive.
+1507: So proactive is kind of what I was just talking about.
+1509: It's like take your vitamins, know what's going on, be able to talk, you know,
+  in an informed way about what's happening and monitor change.
+1517: But then when an incident happens – so we've had numerous security incidents
+  over the years.
+1522: Like I think last time when we were on the podcast, we talked about the XE vulnerability.
+1527: And, you know, with SBOMS, you can know what of your systems are vulnerable
+  immediately and know how to respond to those things.
+1535: So, you know, I think that that's a lot of how it's being used right now.
+1539: And then I guess, like, kind of a third bucket is just inter-organizational
+  kind of operations.
+1546: So we have a lot of, you know, vendor approvals that we have to go through.
+1551: Being able to say to another company that's a customer or a partner, you know,
+  we know what's going on in our IT systems is very valuable.
+1561: And it helps build trust between different organizations as well.
+1563: What about – you know, we've spoken about software that's installed on your
+  machine or libraries you're using.
+1569: What about when the software is outside of your organization?
+1574: So, you know, software as a service and SaaS tools.
+1578: How does that affect SBOMS?
+1580: I think it's one of those things where currently you're not generally in a situation
+  where you can go to all of your vendors and be like, hey, I want to see all your
+  SBOMS for everything you're running, right?
+1593: That's not – I mean, that might be a world in which we get to.
+1597: Certainly, I'm aware that the U.S. kind of compliance changes around the SBOMS
+  and the kind of – at least the – I think, again, at time of recording, current administration's
+  executive orders around this stuff mean that that might be a future we end up with.
+1614: But I think in reality, it's more the stuff that they're trying to push is less
+  the idea of we're sending these lovely JSON files to each other and more this idea
+  of like, look, you've got to track your dependencies and licenses and stuff, right?
+1630: You need to be aware, right?
+1633: It's the type of thing of – again, to use a horrific metaphor, right?
+1637: It's getting people to like, look underneath their car before they drive off
+  to make sure there's nothing sleeping under there.
+1644: Not because they're like, there will always be an animal sleeping under your
+  car, but the idea of like, if you look, then we're going to avoid some problems,
+  right?
+1653: For every 10 people you make look, maybe only one of them needed to, but they're
+  going to solve these things.
+1660: And again, I think it depends on the part of the ecosystem you're in because,
+  again, from – if you're in open source land and GitHub land and all this type of
+  stuff, then it's like, hey, we've got – using Homebrew as an example, right?
+1675: Like Homebrew has – itself doesn't generate sbomb files for the application
+  itself and what goes into Homebrew.
+1684: But we have, okay, here's our gem file.lock because we're in Ruby land or package.json
+  for NPM-related stuff.
+1692: Then we have Dependibot, which goes on a daily or weekly basis, like checks
+  all the versions and updates them to the newest version and submits a pull request
+  and then submits emergency pull request if there's a security vulnerability.
+1704: And that's all hooked up to people's compliance databases and stuff like this.
+1707: So I think, like, sbombs are part of that piece that fits into that wider ecosystem
+  of basically being like, hey, make sure you're doing all this stuff properly.
+1716: Make sure, as I mentioned earlier, you're aware of your licenses.
+1719: Make sure you're aware that you're not running on some horribly unstable version
+  of something.
+1724: Or make sure that when you do get some vulnerability in XZ, we mentioned before,
+  like iTerm, I think that was a relatively big one in the last few months, that you
+  know how to be able to say, okay, I know what version I'm on.
+1738: I know who's running that version.
+1740: And I can get my whole fleet updated sooner or later.
+1743: And I think that's when it comes increasingly more over to, like, Mac admins
+  on IT folks is, again, it's less about sbombs in the file format, but more about,
+  like, okay, thinking about the software that you're providing on your systems and
+  how you can kind of keep track of that and keep everything up to date.
+1760: Well, in that vein, right, like, if we're really supposed to be thinking about
+  what's on our devices, if we're supposed to be thinking about, you know, what's
+  the version that we got, how did it get there, all of those things, what kind of
+  things should Mac admins be asking vendors, for example, when they're adding new
+  software to be ahead of these kinds of security challenges?
+1779: Because the last thing you want to do, I mean, anytime you add to your sbomb,
+  it's one more thing you've got to keep updated.
+1784: It's another thing that you've got to keep aware of.
+1787: It's another thing that you've got to kind of, like, have in the back of your
+  mind as part of that process.
+1792: So what kind of things should you be asking your vendors in terms of, like,
+  hey, how do you guys build what you build?
+1798: I think what you want to be, you know, rather than a specific question, you
+  know, hey, ask these two or three questions, it's what you need to evaluate, right?
+1808: And what you're really evaluating for is maturity of software or supply chain
+  management, right?
+1813: So if you're evaluating a vendor and you want to know, you know, is this a vendor
+  that I can trust, it's not as much do they use this format or that format, do they
+  use this tool or that tool, but do they have some rigor around how they manage,
+  you know, what's in and what's out in their systems, whether it's the software that
+  they build or their endpoints or all those different things.
+1834: And I would also, you know, add to that, that it's not just about the vendor,
+  but how does it impact your software supply chain management, right?
+1841: So what's your process?
+1842: And I've talked to, you know, folks in all different kinds of organizations
+  from, you know, small startups to Fortune 500s to regulated businesses.
+1852: And they all have different, you know, needs and different requirements around
+  what level of management they need in this stuff.
+1860: But, you know, at a base level, it's things like, do you know, do you track,
+  you know, what components are being used in your projects, on your endpoints and
+  whatnot?
+1868: Do you have any way to cross-reference that with vulnerabilities?
+1872: Are you able to respond to vulnerabilities and in what timeline, right?
+1877: Unfortunately, many of these conversations I have with, you know, folks who
+  are interested in Workbrew, they'll come on and they'll say, you know, our process
+  for a vulnerability happening is we heard there was vulnerability.
+1889: We go into Jamf, we write some custom script, we deploy it to all our devices,
+  we run it.
+1894: That script tells us with like a 90% confidence whether or not any of the hosts
+  have the vulnerability.
+1899: And then we have to, you know, build our own kind of process for patching it.
+1902: You know, in the more sophisticated places, they might have another tool that
+  they use for patching.
+1906: But, you know, you want to be looking into how do they manage responding to
+  those vulnerabilities.
+1912: And then also kind of the last thing I would think about is, is there a process
+  for accepting changes into your software buildings, into your supply chain?
+1922: That doesn't mean that every company needs to have a process that's heavy-handed,
+  that involves lots of paperwork.
+1929: But I've spoken to some organizations where they essentially warn all of their
+  software engineers.
+1936: They say, hey, look, we care a lot about, you know, what goes into our product.
+1939: We want to think twice about introducing new dependencies.
+1941: Whenever you add a new dependency, we want to make sure that you do these evaluations.
+1944: We leave it up to the software engineer to do the evaluation, but they train
+  them on how to evaluate software to make sure it's a good dependency.
+1951: You know, some heuristics you can use when you're evaluating the software is
+  how frequently is it updated?
+1955: Are there any known vulnerabilities?
+1957: When those vulnerabilities happened, how long was it before a patch was available?
+1961: And this is something that your team can do as they're introducing new software
+  into your, you know, into your organization to evaluate it.
+1968: And so going back to your original question, it's like, what should we be asking?
+1972: I think it's what, this is how you should evaluate this stuff for a potential
+  vendor that you're bringing in and also how you present yourself to others or how
+  you manage your supply chain.
+1981: So let's turn to WorkBrew now.
+1983: So how does WorkBrew fit into this world of SBOMs?
+1987: I think there's two ways of looking at how we sort of fit in.
+1990: So one is the, essentially, the kind of homebrew side of the equation.
+1996: So if you're someone who either themselves or people in your fleet that you're
+  organizing as a Mac admin, you have anyone running homebrew, then essentially, all
+  this conversation we had before about, okay, what versions are people running?
+2013: How do I upgrade them?
+2015: What do I do with this vulnerability?
+2016: How do I know whether there are vulnerabilities?
+2018: Essentially, WorkBrew just solves that for you, right?
+2021: So we give you all the packages you've got on all the machines.
+2025: You can see them in aggregate fashion.
+2027: You can see what are the known vulnerabilities that we have from the kind of
+  special vulnerability data that we pulled from many sources and mapped to homebrew
+  applications.
+2036: And then you can upgrade all those packages and all those machines in a single
+  click.
+2040: And coming fairly soon, like, you can just say automatically, if there's a vulnerability
+  of this level or whatever,
+2047: I want you to automatically upgrade on those machines.
+2049: So that's one side of the equation.
+2051: The other side, I guess, is what John was saying about, like, if you're an organization
+  thinking, what is even your process, right?
+2060: Like, to upgrading things.
+2062: So it might be that you deal with some great vendors and they are just like,
+  oh, yeah, whenever we have vulnerability, we'll just push you out and auto-update.
+2070: And that will auto-update on all the machines and no one will be able to use
+  the application until they have auto-updated if it's critical vulnerability or whatever.
+2078: Wonderful.
+2079: Or it might be you have some vendors who they don't have a built-in auto-updater.
+2083: You had to do some use auto-package or whatever to repackage it in a way that
+  works for you and all this type of stuff.
+2090: And then all of a sudden it becomes, oh, like, this is maybe a multi-day effort
+  when we have some critical vulnerability.
+2097: And Workbrew can help you on that side by almost essentially pushing more of
+  this stuff through Homebrew.
+2103: So you could use Workbrew to distribute more of this software so that essentially
+  then if you're distributing the software on the machine, you know, even stuff that
+  we might not associate with Homebrew like Visual Studio or Google Chrome or whatever
+  it may be.
+2119: And that's a way of installing these packages.
+2121: Then you can use everything I said before, get all the information you want
+  from Workbrew, get all the packages and stuff like that.
+2129: And then when you get a vulnerability, you can then push that out and upgrade
+  all your fleet in a way that is as simple to do as it would be with any other Homebrew
+  package.
+2137: This week's episode of the Mac Admins podcast is also brought to you by iAmazing,
+  the world's favorite iPhone manager.
+2149: Have you ever felt your MDM configurations leave much to desire when setting
+  up fleets of iPhones, iPads and more?
+2155: Say hello to iAmazing Profile Editor, the smarter way to take control of your
+  Apple device configurations.
+2163: Navigate the most extensive Apple settings catalog effortlessly with an intuitive
+  graphical interface and powerful deep search.
+2172: Ensure your configurations are tamper-proof with built-in profile signing.
+2179: Deploy with confidence, backed by extensive in-app documentation and integrated
+  validation tools.
+2185: Take your device management to the next level with iAmazing Profile Editor,
+  the free, powerful tool from the iAmazing Enterprise Suite.
+2195: Download it today and experience the difference at iAmazing.com slash profile
+  hyphen editor.
+2204: With Workbrew now out of beta and into 1.0 land and beyond, you've got a bunch
+  of new integrations that are out.
+2211: You know, as I was going to say, I looked and saw a couple up on your website.
+2214: So what can you do with Workbrew through these integrations for, say, mobile
+  device management and other tools?
+2222: Yeah, so the first thing I would say is that there are two different kind of
+  levels of MDM support that we have.
+2229: The first thing is when you deploy Workbrew to your fleet, you can deploy it
+  with any MDM.
+2235: If your MDM is capable of deploying a PKG file, you're going to be able to deploy
+  Workbrew with it.
+2242: We do have a deeper integration with several MDMs, Jamf, Kanji, Fleet, and Simple
+  MDM, where we do inventory management through the MDM as well.
+2253: And I expect in the future we'll be adding additional functionality that we'll
+  be able to pull from your MDM.
+2259: But for now, it's inventory management.
+2261: What I mean by inventory management is that part of the story of Workbrew is
+  we want to give you the easiest way possible to deploy Brew.
+2269: Whether it's your developers or other end users who you want to have a standard
+  way to deploy and deliver software and update and patch.
+2276: Or if it's you want to give your software engineers the ability to pull the
+  dependencies that they need.
+2282: We've heard over and over again from Mac admins that it's challenging to get
+  Brew out onto the fleet.
+2287: There's lots of different ways to do it.
+2289: There's the famous GitHub gist that lots of people use as like a Jamf policy.
+2293: And we really just want the best and easiest way to install Brew to be with
+  Workbrew.
+2298: So you take the Workbrew PKG, you put it into your MDM, everything's up and
+  running.
+2303: And add to that, you get full visibility into everything for free.
+2307: Unlimited devices, unlimited users.
+2309: Now, on the deeper integrations, the inventory management, playing along with
+  that keeping it easy,
+2318: we don't have end user accounts for the people who have the devices.
+2324: So the only people who get Workbrew accounts are your IT and security folks,
+2328: the people who are managing Workbrew at the company-wide level.
+2331: And what this means is that there's no sign-up process for your end users.
+2334: There's no login process.
+2336: There's no fiddling with keys or anything like that.
+2339: It's totally transparent, very, very easy to get them up and running.
+2342: But also for admins, it's not that easy to manage a fleet of devices.
+2348: And the more devices you have, the harder it gets if you just can look at the
+  serial number.
+2352: And so what we've done with the deeper MDM integrations is Workbrew will pull
+  all of your inventory data based off of serial number from your MDM.
+2360: So when you get up and running, you can install on hundreds or thousands of
+  devices in an afternoon and have full visibility and know which device belongs to
+  which person.
+2370: So that's some of the MDM integration that we have right now.
+2374: We have had some requests about integrations, mostly around sharing data to
+  third-party kind of integrators.
+2383: So that's like we want an integration with Splunk or we want an integration
+  with some other logging tool or alerting tool or pager duty.
+2392: And so our answer to that has been that we built a data export feature that
+  has, you know, JSON and CSV and, you know, different format support.
+2401: And we've also built an API that, you know, we have web hooks and we can send
+  events out to those users.
+2406: So, you know, there's a little bit of self-service around some of those integrations,
+  but we have an answer to some of that now.
+2411: And so where do folks go if they want to request an integration, like, for example,
+  with another MDM that isn't currently documented or part of the product?
+2421: What's the best way for them to speak to someone about that?
+2424: Absolutely.
+2426: So if you go to our website, we have a page that is called Works with Workbrew.
+2431: So it's just workbrew.com slash works dash with.
+2434: And from that page, you can see all the integrations, but you can also request
+  adding a new integration, whether that's, you know, if you're a representative of
+  a company that would like to integrate with us, that's a great way to get in touch
+  with us to do that.
+2445: Or if you're a customer who would like to see an integration added, you can.
+2447: I know, for example, there are several product managers.
+2451: There's some MDMs that listen to this podcast.
+2453: I would encourage all of them to give you guys a ring.
+2455: We'd be happy to talk to them.
+2456: Because I think that there's a lot of deep.
+2458: Now, are they happy to talk to you?
+2464: I was going to say some PMs are very, very closed about their roadmap.
+2468: And I totally get that.
+2469: I can respect that.
+2470: But I would definitely consider folks interested in that.
+2473: One of the things I think I'd love to ask around, you know, Brew, generally
+  speaking, is that we think about it for command line functionality.
+2479: We think about it for tools like Carl or, you know, SSH or any number of other
+  things along those lines.
+2484: But it's not just for that, though, is it?
+2486: It's also for applications?
+2488: Yeah, I think Mike is probably the best person to talk about this.
+2492: He can talk about the difference between formula and casks and kind of how all
+  that stuff fits in.
+2498: Yeah, so this is actually a nice trip down history lane in some ways for Homebrew.
+2502: Because Homebrew started off supporting just, it was focused primarily on command
+  line interface tools or, like, databases or whatever stuff.
+2512: You're going to run, install in your terminal, run it in your terminal.
+2515: And eventually someone kind of thought, hey, like, this seems like a nice way
+  of installing, like, potentially other software as well.
+2523: So they made this little thing called Homebrew Cask, which was, like, an unofficial,
+  like, third-party thing.
+2528: And over time, like, more and more people ended up using both, basically, and
+  then we integrated it in.
+2532: So now, nowadays, Homebrew has all the kind of beer methodology.
+2537: Some people hate it, but we're, in some ways, we're too far down this rabbit
+  hole to ever see the light of day again at this point, unfortunately.
+2545: So Homebrew has formula, which are, I guess, in the beer metaphor, you know,
+  the formula.
+2551: Because Homebrew was originally building everything from source.
+2553: That was your idea of almost, like, the description of how the beer is made,
+  the description of how the package is made.
+2557: So, like, you have formula, so that's how you install your CLIs, open-source
+  software, or whatever.
+2563: And you have casks.
+2564: And casks are this idea of, like, wrapping software provided by a third-party
+  vendor.
+2570: So that could be anything from 1Password, Google Chrome, VS Code, whatever.
+2575: So the nice thing about casks is some people might be like, okay, well, okay,
+  I can just install all that stuff outside of Homebrew.
+2582: Yeah, like, if I want to install MySQL and it's got, we mentioned dependency
+  earlier, like, 20 dependencies.
+2588: Okay, I'm not going to go and manually download all this open-source software
+  and build it from scratch on my machine.
+2593: But, like, I can just go to, you know, the Google Chrome website and click a
+  few buttons and have that installed.
+2600: And that's great.
+2601: I imagine, you know, this is the Mac Edmonds podcast, after all.
+2604: I imagine the Mac Edmonds amongst us are already thinking, like, well, actually,
+  like, you kind of want to be able to automate that stuff.
+2611: And really, we want a PKG file and all this type of stuff.
+2614: And basically, that's essentially what casks give you, which is the way I like
+  to look at it is the brew install Google Chrome that you can do, for example.
+2624: Essentially, you now have one API to install 10,000 pieces of different software,
+  right?
+2630: You want to install 1Password, you want to install Cursor, you want to install
+  whatever it may be on your machine.
+2635: You can essentially do that all through the same interface.
+2638: And we mentioned earlier the kind of brew files, brew files, they support formulas
+  and casks and various other bits and pieces.
+2646: You can actually even install stuff from the Mac App Store through there as
+  well.
+2649: So what this means, if you kind of join all this stuff together, if you're someone
+  who, like me, is obsessed with automating everything, perhaps unnecessarily to high
+  degrees,
+2661: then you can have, like, one little file, which I have, which essentially describes
+  all the software that's installed on my machine.
+2668: And if I were to throw my MacBook out my window, and you give me a new MacBook,
+  I would have all that software installed on my machine again, probably within about
+  10 minutes.
+2675: Because it's all using Homebrew or the Mac App Store or whatever, and you can
+  automate it and describe, here's everything that I want to be installed.
+2684: And obviously, from our perspective in Workbrew land as well, we see this as
+  being a huge opportunity for people who are deploying software across many, many
+  different machines and fleets and customizing things per users.
+2696: Because, okay, it's nice for Mike to have highly optimized a process that every
+  two to four years saves me a couple of hours of my time.
+2706: But if you're doing this on 100, 1,000, 10,000 Macs, and you're having to define
+  the software on each machine in a different way, and you want it to be up-to-date,
+2715: then I personally still think there's no better way of doing that than with
+  Homebrew.
+2721: Well, yeah, and getting to brew files, I mean, you know, I say this because
+  I'm on an iPad this week because I baptized my laptop unexpectedly this week.
+2728: And so it's off at Apple being repaired.
+2731: Boy, you know, the thing I, the genius was like, you know, hey, do you have
+  a backup of your data?
+2738: And I was like, yes, and I still don't necessarily want to have to reprovision
+  my entire device.
+2744: So, I mean, if it could come back the way it went out, that would be amazing.
+2749: But, you know, being able to know with some degree of comfort that between what's
+  in my iCloud account, what's in Monkey, and what's in my MDM,
+2759: I can deploy those things out and get into a state, a declared state of good
+  operation is probably the most comfortable thing I could have said in that moment.
+2770: I don't know what state my backup's in on that system because I haven't had
+  to think about it in a long time.
+2776: I'm going to care a lot about the restore when that machine comes back from
+  Apple.
+2782: But knowing that I could easily, you know, just get back the key resources because
+  I know how to declare that state of machine compliance is so helpful.
+2795: The other bit that I find fascinating, it's this intersection between, you know,
+  to quote a certain tech luminary, the intersection between Mac admins and developers.
+2807: And for Mac admins, the developers were always the, you know, the troubled child
+  that you had to deal with because they had lots of very strong opinions about how
+  their device should be set up, how it should be managed, wanting control for very
+  good reasons often that, you know, they needed it this way to be able to work efficiently.
+2828: And, you know, they have their people who are into automation and they need
+  their automations that they have to work really well.
+2835: So, having a way that Mac admins can allow the developers to have that degree
+  of control, but then also providing back that visibility and certainty and also
+  doing it using the tools that the developers trust and are familiar with.
+2850: I know, Tom, I'm guessing you've had situations before where you've had to go
+  and explain to developers, okay, so you're used to doing things this way.
+2858: So, we're going to bring in these tools called something you've never heard
+  of before that's going to look after that for you.
+2863: And that always goes well, doesn't it?
+2865: That's usually when the pitchforks and the torches come out of their desk drawer.
+2871: I don't know how they keep a lit torch in their desk drawer, but they usually
+  do.
+2876: And, yeah, I was going to say showing up with an alternative package manager
+  for, you know, for system use is, you know, usually the kind of thing that causes
+  uproar, revolt, and possible deposition.
+2890: For the stereotypically introverted folks, you can really bring developers out
+  of their shell pretty quickly by suggesting something like this.
+2903: Yes, you will definitely get to know everything about that developer very, very
+  fast.
+2909: You know, you say this thing that, like, you know, the developers are the problem,
+  you know, the problem child in this relationship.
+2917: We definitely have had a lot of conversations with, you know, IT and security
+  folks.
+2922: And what's great, what I love about this community is, like, you could have
+  this mindset of it's such a pain.
+2928: But actually, what most of these folks, the Mac admins have, is they totally
+  understand that it's all about the productivity for the end user, and they want
+  to give them the best possible solution.
+2939: And it's really actually not, like, a big fight between them, even though it
+  sometimes is presented that way.
+2946: Generally, they understand and they want to give, you know, the best experience
+  possible within the guardrails of what is legally allowed or what's within their
+  compliance department requirements or risk department.
+2958: So, yeah, it's just like another case of, you know, this community being great.
+2961: Yeah, for me personally, I think the other thing is a lot of people in, on both
+  sides, in the developer side of the Mac admin side, have been told for a long time
+  that this is some sort of zero-sum game.
+2973: And essentially, you have to pick between high levels of compliance and high
+  levels of security or giving the developers everything they want.
+2979: And I think, for me, with somewhat with Homebrew in the past and very much with
+  Workbrew now, I guess I just refuse to accept that those things are opposing forces.
+2990: I think you can deliver, which I think we have and are through Workbrew, the
+  highest class of developer experience while at the same time providing absolutely
+  everything the security and IT department need.
+3002: And I refuse to see the idea that, like, one party has to lose out of this.
+3006: And I think this is where I feel for both sides, because I think they've been
+  put in these discussions where, in the past, they have had to pick a side and say,
+  okay, either the Mac admin gets a bad time and the developers are allowed to run
+  right using whatever they want, or the developers get told, hey, you've got all
+  these projects you have to ship by the end of the year.
+3024: And by the way, you're going to have to do it with one hand tied behind your
+  back now.
+3027: And no, we can have great tools that are, you know, world class from the security
+  and developer perspective, I think.
+3033: So it's a bit like the SBOM discussion that, you know, these, you know, arguments
+  that we're set up to have can actually be, oh, yeah, that's a solved problem.
+3044: We can sort that out.
+3046: Move on.
+3047: Let's now tackle operating system updates, because that's also a solved problem.
+3055: Right?
+3059: This week's episode of the Mac Ammons podcast is also brought to you by SmallStep.
+3066: Remember Skep?
+3068: Yeah, that tire fire of a protocol for device certificates.
+3072: It's basically a password system for your devices.
+3075: And we all know how secure those are, right?
+3078: Not exactly the rock solid foundation you want for your company's security.
+3084: But what if I told you there was a better way to lock down your company devices,
+  a way to guarantee that only your devices access your most sensitive stuff, code,
+  financials, customer data, the whole shebang.
+3097: Enter SmallStep.
+3099: They saw the limitations of Skep and decided to do something about it.
+3103: They worked with Apple and Google to create a new IETF standard called Acme
+  device attestation.
+3111: This isn't just another security product.
+3114: It's a fundamental shift in how we think about device identity.
+3118: Acme DA leverages the hardware already built into your devices.
+3123: Secure enclaves.
+3124: TPM chips.
+3125: Strong stuff.
+3126: No more passwords.
+3128: Just secure.
+3129: Verifiable device identity.
+3132: Imagine this.
+3133: A new employee gets a laptop.
+3135: It automatically enrolls itself.
+3137: Gets the right certificates.
+3139: Secure access to everything they need.
+3142: No more Skep headaches.
+3143: Just smooth, automatic security that works everywhere.
+3147: macOS, Windows, even Linux.
+3150: SmallStep makes life easier for IET2 with centralized management, automation,
+  and seamless integration.
+3158: Less troubleshooting, more innovating.
+3161: SmallStep is the leader in high assurance device identity.
+3165: They're trusted by companies of all sizes to protect their most valuable assets.
+3170: Ready to take control?
+3171: Visit smallstep.com slash macadmins and lock down your devices today.
+3179: Thanks again to SmallStep for sponsoring this episode of the MacAdmins Podcast.
+3183: You know, like a lot of new products, you know, early adopters oftentimes provide
+  great feedback about additional functionality they'd love to see.
+3192: What are some of the common requests that you're hearing from people trying
+  out WorkBrew now?
+3196: I love this so much.
+3197: We get tons and tons of requests.
+3200: And what's been great about it is most of it is in the same direction.
+3204: You know, we get the same requests over and over and over again.
+3207: So I'll start with a couple that we actually have already addressed.
+3210: So one of the most frequent ones was default packages.
+3212: Everybody had been asking us, hey, is there going to be a way that we can, you
+  know, by default install these 20 packages on devices for our data science team
+  or our customer service team or engineers or, you know, whatever group it might
+  be.
+3228: And like Mike was saying before, he built brew files into WorkBrew and you can
+  do that.
+3231: Another one that we got a lot was about an API.
+3234: We have an upcoming, you know, API.
+3237: I don't know.
+3238: Mike can probably say whether or not it's shipped to production yet, but it's
+  very close to being shipped to production if it's not already.
+3245: And then on the upcoming kind of things that people have been asking about,
+  automation is one that comes up over and over again.
+3253: Right now within the WorkBrew product, we will service information to you in
+  real time, but making changes generally requires human intervention.
+3262: And that mostly comes from not wanting to disrupt the developer experience.
+3265: We don't want a situation where things are getting updated under a developer's,
+  you know, without them knowing just because an automation is set up.
+3274: And so we want to give finer grain control around when those automations might
+  run.
+3278: We talked a little bit before about integrations.
+3281: We've had a lot of requests for different types of integrations, whether it's
+  MDMs or if it's, you know, logging tools or alerting tools or things like that.
+3288: Another one is private taps.
+3291: Oftentimes, so I'll start with what is a tap.
+3294: In homebrew speak, a tap is a repository of packages that can be installed.
+3300: So homebrew has two official taps, homebrew core and homebrew cask that Mike
+  talked about earlier.
+3305: Those are for open source tools and binaries provided by vendors that are managed
+  by the homebrew project.
+3311: But anybody can create a tap and make available any arbitrary software.
+3314: And so when it comes to, you know, managing your software supply chain, taps
+  are a very important part of that.
+3320: You know, if you can insert whatever tap you want with whatever software in
+  it, you don't know what might be coming in.
+3326: And often customers will ask us for private taps and say, hey, we want a way
+  to control what's going out to our endpoints.
+3335: And they might ask for it for the wrong reason.
+3337: They might ask for it because they want to limit the available software to those
+  machines.
+3341: But the real reason why it's useful is actually to distribute your own internal
+  software.
+3345: So a private tap is valuable.
+3347: Say you have a bunch of command line tools that you've built for internal processes.
+3351: You can put them into a tap and make them available to your entire organization.
+3354: One of the challenges with that, though, is authentication to the tap.
+3358: So let's say you're in an environment where you have 5,000 MACs.
+3361: Every single one of those 5,000 MACs needs to have an authentication token that
+  can connect to your tap to keep it private.
+3367: And managing that is difficult.
+3368: So with Workbrew, we're making a way that, you know, you can do that without
+  having to manage the opportunity.
+3373: And then the last one, which is the most frequently requested functionality,
+  is an allow list.
+3379: And I saved the best for last because I kind of wanted to tee it up for Mike
+  so he can talk a little bit about, you know, kind of how we see allow lists with
+  regard to developer experience.
+3390: Because it's a very easy kind of knee-jerk reaction when folks see our product
+  to say, hey, how can I make it so only the software that I want to allow people
+  to install is available?
+3400: And, you know, that's what people are asking for, but may not be actually solving
+  the problem.
+3407: So, Mike, maybe you want to talk a little bit about allow lists and what we've
+  heard and what we've kind of come to.
+3412: Yeah, so I think, as John said, allow lists are a very interesting problem because
+  they seem like a fairly obvious thing, particularly if we're looking at it from
+  a Mac admin perspective, right?
+3423: Of, okay, well, I decide what is installed on my user's machine.
+3427: I maybe don't give them admin rights or Mac App Store rights or whatever it
+  may be.
+3430: So, in that applications folder, I essentially have a allow list of the things
+  that they have there.
+3437: So, I just want to do the same thing for my developers using Homebrew, right?
+3440: Easy.
+3442: Unfortunately, not very easy because what happens is, I mentioned earlier, a
+  good kind of introduction to this conversation when we're talking about SBOMs and
+  you have these kind of dependencies that go all the way down.
+3453: So, we have, you know, what we would in Homebrew call the dependencies for an
+  application, which is everything that it relies on to get its job done.
+3462: But then, also, those dependencies may themselves have dependencies, and we
+  call that recursive dependencies because you end up having to recurse all the way
+  down that tree.
+3471: And then, you call the reverse dependence when you have something that has something
+  that depends on it.
+3477: So, it all gets kind of relatively easy from an allow list perspective if you
+  assume, which is a reasonable assumption, that all software is static and you will
+  only ever need one version for the rest of time.
+3488: Sadly, the way that the software world works, and I say this particularly as
+  someone who builds software, unfortunately, there is sometimes a need to release
+  more than one version of a given piece of software.
+3500: And when that happens, when you have this dependency tree, as I mentioned earlier,
+  if you have an allow list, well, what happens when something underneath you gets
+  updated?
+3511: Because there's a critical update there.
+3512: Do you say, okay, that thing can update and then nothing else can update?
+3517: But then, that thing updating then breaks other things unless they also get
+  updated.
+3521: And then, some things have to be updated and then other things can't be updated.
+3524: And basically, you end up with this kind of nightmare that keeps people like
+  package maintainers and homebrew up at night of trying to figure out how to resolve
+  all these things.
+3535: And one of the nice things about being a homebrew maintainer is knowing that
+  you are solving these problems for people in this way.
+3542: So, essentially, what we've ended up with in Workbrew is that we get people
+  who ask for the allow list.
+3549: And what we talk about is, okay, like, instead of, as us technology people want
+  to do, instead of, like, jumping straight to the solution, let's hear about what
+  are the problems you're having, right?
+3560: And those problems are like, well, we need to control, we need to know what
+  people have installed, we need to have the ability to get them on the latest versions,
+  we need to respond to vulnerabilities quickly, we can't just have everyone installing
+  anything, we don't know what versions are vulnerable or not, we don't know what
+  software is vulnerable or not.
+3575: And we have generally found, like, if we can go to these people and say, well,
+  actually, we can give you everything that you need, and that you want from an allow
+  list, but without having to have the micromanagement that will involve for you with
+  that allow list, does that solve your problem?
+3593: And we're finding that that does solve the problem for those folks.
+3596: And we're building it from that perspective.
+3598: And again, this goes back to what I was saying before, where that idea of we
+  say, okay, we either optimize for the security perspective, we have the allow lists,
+  or we optimize for the kind of developer experience, and we let them install whatever
+  they want.
+3614: Again, I reject either of those poles of the spectrum.
+3618: And I think that we can have something where everyone gets what they want here,
+  right?
+3622: But it might just be that it's not exactly what everyone went into the conversation
+  thinking that they wanted.
+3628: The challenge around allow list is when there's regulatory frameworks that think
+  that they're a fantastic idea, and that they're achievable, which is also a fantastic
+  idea.
+3640: You know, I like to throw it back to people, we mentioned this before about
+  feature requests, because it's not even just, you know, updating all of the tools
+  further down the dependency list.
+3652: It's also those dependencies changing.
+3653: And so, see that feature request you had over there, would it surprise you to
+  know that that required additional tools to be included to be able to achieve that?
+3663: And so, the people, you know, who are saying we need this to be static and not
+  to be changed are also the same people who like new things and additional functionality,
+  because we're all, you know, wanting nice things.
+3676: So, you know, being able to frame that in what's actually going on and how complex
+  this is to achieve and why it's something that you actually need tools to help you
+  make this a better experience, rather than just something you can tick a box in
+  some sort of management tool and make everything stop.
+3699: I think this is what I love about dealing with the Mac admins community here
+  is that, you know, we in Workbrew and in Homebrewland have a reasonable amount of
+  support on Linux and Windows through WSL.
+3711: But, you know, Mac land is our, that's our original home and that's where we
+  kind of take a lot of our ethos from, like Apple's way of doing things.
+3720: And I think that's the nice thing about when you deal with Mac admins, because
+  they get this, right, is that, like, it doesn't fly to say to your users of macOS,
+  by the way, we're going to support macOS 12 for the next 10 years.
+3734: And then in a decade, we'll evaluate which is the next best version of macOS.
+3738: No, like, most of your users, most of the time, are going to want to upgrade
+  their OS every year, right?
+3744: And I've been in environments where the IT team or whoever's responsible for
+  those macOS updates are saying, hey, you can actually kind of upgrade for the, you
+  know, until six months after a major release is out.
+3756: And anyone who likes Apple devices gets very grumpy, right?
+3760: Because turns out you probably, as I have, bought on the hype train with various
+  new features.
+3766: And if you hear all the stuff about Apple intelligence and then say, oh, I now
+  can't touch any of these features, even the purely on device ones that have no meaningful
+  privacy implications.
+3778: I can't touch any of these features for six months because a team over there
+  says that I can't have it, right?
+3783: Like, the best people I've worked with in this community know that, like, hey,
+  you need to be able to provide this.
+3789: Maybe not on day one.
+3790: Maybe that's unrealistic in a large organization.
+3792: But, you know, you need to be able to provide some of this stuff to the people
+  in the timescales they expect.
+3798: And I think that's what I loved about what you were saying there, Mark, is that
+  I think that's the balancing out there is it's figuring out how can we give people
+  what they want and at the same time meet all our regulatory requirements.
+3810: Or you're like Tom, whose machine has taken a bath and he may have to get a
+  new one.
+3814: And the new one won't run Snow Leopard, sadly, Tom.
+3818: You're going to have to take a step down in operating system stability and quality.
+3824: Alas.
+3826: Maybe they'll run Mojave.
+3828: Maybe we can get a Mojave machine for me.
+3832: So, what can we expect?
+3834: You know, 2024 sounds like it's been a pretty big year for work, Bruce.
+3837: So, what can we expect for 2025?
+3839: We have a lot planned for 2025.
+3842: You know, just going off of what we were just talking about with allow lists,
+  the way that we're approaching trying to solve that problem on the product front
+  is using approval workflows.
+3853: So, rather than saying, here's a defined list of what's allowed up front, going
+  back to the original conversation around SBOMs, the idea is that how can we help
+  an organization have good governance around when they add things to their software
+  dependency list, their software supply chain onto their endpoints, and make it so
+  it's as easy as possible for their end users to do that within the framework that's
+  set by the organization.
+3878: So, as I had mentioned, you know, some of these organizations that we talk to,
+  you know, have policies where they just have their engineers evaluate the risk and
+  then accept it.
+3885: And there's no formal process or documentation or anything around that.
+3890: And so, I think that with Workbrew, we'll be able to help folks get a level
+  of hygiene around managing their dependencies and around managing what they're installing
+  on their machines very easily with very little negative impact on usability or developer
+  experience.
+3908: So, that's one thing that we're really focused on.
+3912: Another thing that I think is going to be coming in 2025 that we're, you know,
+  very excited about is more functionality for the developers.
+3920: So, when we started Workbrew, you know, Mike's been involved in Homebrew for
+  15 years, more or less.
+3927: And Homebrew is well-loved and well-liked.
+3931: And so, we really set out to, you know, build the multiplayer features.
+3934: You know, that's what Workbrew is.
+3936: It's how do you use Homebrew, you know, for an entire team and also how do you
+  make Homebrew more consumable to somebody who might not be an end-user developer
+  and make it valuable to them.
+3945: And so, I think in 2025, another one of our big focus areas is how can we build
+  more functionality for teams that are using Homebrew that's more focused on the
+  developer experience rather than on IT, you know, the Mac admin and the security
+  experience, but also helping to improve that.
+3961: And that will come with a lot of improvements on the free product as well.
+3965: A couple other things that I've been thinking about, you know, I don't want
+  to say that we're definitely doing this, but we've heard it come up quite a bit,
+  which is, you know, what's the intersection of Workbrew and, you know, DevOps, configuration
+  as code?
+3978: As you know, we have default packages.
+3980: They use a brew file.
+3981: You know, there could be a world where we say, hey, the way that we handle some
+  of this stuff is around using, you know, version control systems, using a code management
+  system with those files and making it so that it's more of a configuration of code
+  or DevOps operation.
+3997: And then, you know, we've met a lot of folks in this community from MSPs and
+  from other vendors, and so we're going to do as much as we can to get connected
+  with those folks.
+4008: So if you're an MSP service provider and you think this is interesting, you
+  can always reach out to me and also, you know, kind of as we said before, anybody
+  who's building an MDM or works with an MDM, we want to make sure that this tool
+  works with them really well.
+4020: And then lastly, I want to be at as many of the Mac admins community events
+  as we can.
+4025: So that'll be me.
+4026: That'll be Mike.
+4027: That'll be my co-founder, Vanessa.
+4028: We have some new folks joining the team as well.
+4031: So we're just going to be out there, you know, listening to what you all have
+  to say and trying to, you know, help solve your problems.
+4036: So you're going to aim for the Mac admins grand slam in 2025 of making every
+  Mac admins conference around the globe?
+4047: I don't know.
+4050: Well, there's some of them that are on the same days.
+4052: That's the problem.
+4053: I can't get to all of them, right?
+4054: I think it was, what's the one in, I think it's in Sweden?
+4058: Yeah, Max's admin and JNUC were at the same time.
+4062: Yeah, so I had the very hard choice that I had to go to one and not the other,
+  and I really wanted to go to Max's admin, and I ended up going to JNUC.
+4070: I hope that I can go next year.
+4071: They're separate weeks this year, so you don't have to be Phil Collins at LiveAid
+  taking a concord between continents.
+4079: Continents to be able to achieve that.
+4083: And I might suggest, Mike, I don't know if you want to add anything else on
+  kind of the end user developer experience for 2025 or potentially anything related
+  to Homebrew in 2025.
+4097: I'll start off with Homebrew.
+4098: I guess Homebrew has reached this kind of slightly funny place as a project
+  where, like, every big feature that we've kind of talked about over the years, we've
+  pretty much done them all at this point.
+4111: So, essentially, my Homebrew product roadmap at this point is driven mainly
+  off of people both on the internet and respected community members and nerd friends
+  I have who send me things on iMessage of, like, what are their haters hating about
+  the most, right?
+4131: And generally, people complain about Homebrew being slow.
+4134: So, that was one of our big focuses last year.
+4137: It's going to be one of our big focuses this year as well.
+4141: Like, we're going to try and work on more parallelization around downloading
+  and stuff like that, which should make at least the experience of I install a thing
+  and it is already a lot quicker.
+4155: On the Workbrew side, John mentioned some of the kind of developer-focused stuff
+  we're doing.
+4160: It's still in kind of more experimental stages there.
+4163: We hope to have more stuff to talk about kind of by the middle of the year.
+4166: But, essentially, one of the main problems we're focusing on is, I mentioned
+  earlier, kind of, you know, if you're in the Ruby ecosystem, you've got gem files
+  and gemfile.lock.
+4176: And if you're in the, you know, Node.js ecosystem, package.lock and all this
+  type of stuff.
+4182: Essentially, if you're working with Homebrew, I mentioned the brew files, but
+  we actually unshipped the brew file, sorry, the lock file support in brew files
+  because they were kind of complex because they were a lock file that you essentially
+  were just telling you what the state was rather than giving you any ability to control
+  that.
+4201: And a big problem that we've seen a lot of folks in the developer space say
+  is, like, hey, like, okay, being on the latest version of everything all the time
+  may work for some people with Homebrew.
+4212: But, actually, in a lot of teams, the way you expect to work with most language
+  package management ecosystems is to say, hey, I want to be on these versions of
+  all these things and keep me on those versions until I say otherwise.
+4224: So, thank you very much.
+4225: And John mentioned the kind of configuration as code stuff earlier.
+4229: So, we're basically working on some stuff in that area, basically.
+4232: The idea of giving more ability to have control over what versions you're running
+  of your software in Homebrew in your various projects that you're working on.
+4241: And that will be a free Workbrew feature that we kind of will release for people.
+4246: One of the nice, again, things with, like, Homebrew and Workbrew is that some
+  of these things, people might be like, well, why didn't Homebrew solve this?
+4254: Or why is this in Workbrew and not in Homebrew?
+4256: And there's a bunch of the features that people have been asking for in Homebrew
+  for a long time, like that, where the Homebrew folks said a long time ago and continue
+  to say now, like, we don't have the bandwidth to support this, right?
+4267: Like, we need someone, like a business or whatever, to step up and say, provide
+  the ability for this functionality because we as a bunch of volunteers don't have
+  that.
+4278: And that's been a nice thing that we've been able to do with more and more things
+  in the Homebrew ecosystem where we can say, hey, the first big one was MDM, right,
+  where the Homebrew folks are like, hey, no thanks, don't want to support this.
+4291: So, we can say, hey, on the Workbrew side, we can do this.
+4294: And, yeah, I expect that to grow more this year and in future as Workbrew evolves.
+4299: That's awesome.
+4301: We just want to take a minute to thank our wonderful list of Patreon backers
+  who help us get these episodes out to you every week.
+4312: So, a huge thank you to Weldon Dodd, Graham Gilbert, Bill Smith, Justin Holt,
+  Daniel McLaughlin, Chad Swadow, Tim Sutton,
+4322: Stefan Weinstein, our friends over at Command Control Power,
+4326: Seb Nash, Will O'Neill,
+4328: Jose Farah, Nate Sinahal,
+4331: Tim Purford,
+4332: Tobias Linder,
+4333: Adden Berg,
+4334: Hamlin Crouson,
+4336: Stu McDonald,
+4337: Jeffrey Compton,
+4338: Anoush Dovill,
+4340: Melvin Vives,
+4341: Bill Seitz,
+4342: Mike Boylan,
+4343: Rick Goody,
+4345: Adam Selby,
+4346: Dwan Maas,
+4347: Pax,
+4348: Julian Reddick,
+4350: Tim Camps,
+4351: Scott Blake,
+4352: and Tony Honorati.
+4354: Thank you so much for being a Patreon backer of the MacAdmins Podcast.
+4361: One of the rich traditions here on the MacAdmins Podcast is that of the bonus
+  question.
+4366: You know, the bonus question is often frivolous, and this year is no exception.
+4371: What in your world needs an equivalent to an S-bomb, but for something other
+  than software?
+4377: You know, we talked a little bit about the nutritional label, and that that
+  has its own value.
+4384: You know, what are you thinking in terms of, you know, you need a detailed understanding
+  of, you know, the internals of some organization.
+4393: John, I'll let you go first.
+4394: This is complicated.
+4396: You know, I think that there is maybe, are you talking about in my life or in?
+4404: Your whole life doesn't even have to be tech.
+4407: Okay, cool.
+4408: Yeah, I mean, I think like one of them, I would say, is probably just stuff.
+4414: Like, I have this habit of collecting things and never getting rid of them.
+4419: And it's not usually like big stuff.
+4420: It's like, you know, for example, I love to keep all the tickets to like every
+  concert I go to and my flight tickets and stops and stuff like that.
+4427: I just have boxes and boxes of that stuff that I just like, I'll organize that
+  someday.
+4431: I don't even know what's in there anymore.
+4433: Like, if I had like a beautiful inventory that told me everything and I could
+  easily locate it and know what it was and why I had it, that would be like incredibly
+  valuable to me.
+4443: I love that.
+4444: I think that's spectacular.
+4445: I, you know, I've been using Flighty for the last couple of years as I've done
+  a lot more flying.
+4451: And I feel like that's my equivalent for like flights that I've taken or the
+  boarding passes and other things like that.
+4457: It does a really nice like year-end summary of all the places you've gone and
+  how much time you've spent in the air and all of those things.
+4465: I think it's pretty neat.
+4466: What did they call that trend?
+4467: It was like in the 2000s when you like kept all the data about everything.
+4470: Do you know what I'm talking about?
+4471: Oh, yeah, yeah.
+4473: It is.
+4474: Oh, shoot.
+4476: It's at the tip of my tongue.
+4478: I love that kind of stuff, though.
+4480: Where you're just like logging.
+4482: It's like quantified self or something like that.
+4484: Yeah, quantified self.
+4485: So, yeah, my like kind of, you know, thing that I do in that space is just logging
+  all the places that I go.
+4491: So I used to live in New York City.
+4493: I was part of the New York City tech scene back in the early days when Foursquare
+  came on.
+4497: I still use one to this day.
+4499: And I've used it every day of my life for like 15 years.
+4502: So I have, you know, an incredible catalog of all the places I've ever been
+  all over the world, which I love.
+4507: I am the mayor of my coffee shop.
+4509: I'm just saying.
+4511: That hasn't been relevant for 20 years.
+4514: Almost.
+4515: But that is neither here.
+4517: I find that keeping that sort of information is a much better way of remembering
+  the things you've done and the events you've had rather than just, you know, holding
+  up a phone and trying to take photographs of everything.
+4528: I like to keep the memories and the imagery inside my head and just have those
+  sort of, like you were saying, concert tickets or, you know, boarding passes or,
+  you know, the lanyards from conferences, those sorts of things that just trigger
+  those memories.
+4545: And S-bomb would help to not have to dig through, you know, enormous plastic
+  tubs of stuff.
+4556: So, you know, the S-bomb can definitely stand for stuff.
+4561: What about you, Mike?
+4563: Stuff, bill of materials.
+4565: I love that.
+4568: I guess I guess I'm going to be cheeky and have sort of two.
+4571: So, the one that I feel like already exists is, I don't know how many of you
+  are gamers or whatever, but there's a website if you're building a PC called PCportpicker.com,
+  where you can basically like bind together all of the Lego pieces that are a modern
+  gaming PC.
+4590: So, that's fun for almost like having an S-bomb of like what's in my PC and
+  being able to share them and see other people's or whatever.
+4597: The one I would really like is the guys who are on video can see I've got some
+  instruments behind me that are somewhat defunct since I had children and no longer
+  have time to play them.
+4610: But like I would really love, particularly when I was trying to do a lot more
+  covers of music, if I could have an S-bomb for a given song where it could be like,
+  okay, this track was made in Logic.
+4620: This is the guitar the guy used.
+4623: This is the strings he used.
+4624: This is the effects pedals.
+4626: Like having that breakdown.
+4627: And it's funny because, again, in tech, like I feel like I can see Tom happily
+  noddling away.
+4634: Like a lot of tech people get this and I say this to like music people and they're
+  like, dude, why do you care?
+4640: Like just it sounds good, right?
+4641: Like why do you need to know like what pedals they used and what compressor
+  plug-in they put in Logic or whatever?
+4647: I'm with you on that.
+4648: I was literally the other day looking at some, you know, there are some amazing
+  fellow nerds out there who have documented this going through Stone Rose's songs
+  and documenting what John Squire was doing,
+4660: which particular model of MIDI verb he had and, you know, the next step from
+  that is that then means that we can create plug-ins for, you know,
+4669: whilst you have the collection like I do of all of these vintage instruments
+  and the original effects, you know,
+4677: it's you don't get the time to go in and settle that up and plug it in,
+4682: but we have these amazing digital modelers where you can just feed that in and
+  mess about for an hour and pretend that you're in a stadium somewhere
+4691: and that, you know, I'm actually a competent musician or anything like that.
+4695: So absolutely with you on that.
+4697: And it also is a nice way of justifying buying more instruments, equipment,
+  everything like that, which we all need.
+4707: It's not just tech.
+4709: We all need an, I don't know about an excuse, a justification to ourselves for
+  adding to the pile of stuff.
+4717: But what I'm suggesting is that we go even more like S-bombs and that we actually
+  have, you know, not just,
+4725: it's lovely that those people have made those websites trying to document this
+  markets,
+4729: but what I'm proposing is that some US president makes an executive order.
+4733: This is required.
+4734: Absolutely.
+4735: When I buy an album, I should be able to see the bill of materials for every
+  single track on that album.
+4741: I need the details.
+4742: That's my right as a listener of music.
+4745: More of those, please.
+4746: Exactly.
+4747: That's what we need.
+4748: The nutrition facts of the album.
+4749: And we could get jobs as auditors.
+4751: I'm here for it.
+4752: If a particular distortion pedal is deprecated and we need to revitalize that,
+  you know,
+4760: plug in a new distortion pedal, rebuild the track, soared.
+4764: Marcus, how about you?
+4767: What are you looking for?
+4768: For me, there was a discussion.
+4770: We're having some folks on Mac Admin Slack.
+4773: And I've realized, you know, whenever I go traveling, I'm about an hour away
+  from the airport.
+4779: And there's usually that moment about justice we've gotten on the freeway, either
+  in my own car or on Uber,
+4785: where it's like, did I pack X?
+4789: And the number of times I've pulled over onto the service road in the freeway
+  to go and check my bag to go,
+4796: yes, in fact, I do have that.
+4798: But to be able to do a live S-bomb of what is in my luggage and, most importantly,
+4803: what is not in my luggage, to be able to make that decision where,
+4807: is it easy to turn around and get the thing I don't have?
+4810: Or is this something I can just, you know, acquire when I get there?
+4814: Or just think about something else rather than what's in my freaking luggage.
+4819: So that's it for me.
+4821: What about you, Tom?
+4827: Well, you know, my choice may be a little controversial, but, you know, we've
+  made jokes in the United States for years
+4835: that our politicians should wear NASCAR suits with all the patches of the, you
+  know,
+4840: the people that are supporting their campaigns and that have contributed to
+  their PACs and all of those things.
+4847: I am all for this.
+4848: I think that that is exactly what you should do.
+4850: Right now in the media, there's frequently, it's, you get the person's name
+  and it's their party affiliation in the state that they're from.
+4858: And, you know, I would love to see, give me the, on the chyron, I mean, it was
+  going to say, it's a moving chyron.
+4865: It's not like the old days.
+4866: Give me the dynamic list of the top 10 people that donated to the last election.
+4871: And let's see what that looks like.
+4876: Because I think that would be a truth in lending kind of situation that I think
+  would be very, very valuable.
+4883: Especially, you know, now, here we are.
+4886: I was talking with some friends today about, of course, the TikTokpocalypse,
+  which is, it seems to be going and ongoing all at once.
+4895: We don't know where this is going to land.
+4896: But, you know, all of the different reasons why this was a really good idea,
+  terribly, terribly, terribly executed.
+4906: And I think that, you know, understanding, you know, some of the other things
+  that may weigh into their decision-making process would be a helpful thing.
+4915: So, that's my thought.
+4917: I will accept your letters at devnull at macadminspodcast.com.
+4922: Please address them appropriately.
+4924: I will give them all the due consideration there, that they aren't.
+4931: Mike, John, thank you both so much for spending the last hour with us.
+4935: It's been absolutely incredible talking with you guys about Workbrew.
+4938: We wish you guys nothing but the best this season.
+4939: Hope to see you guys.
+4941: Now, I was going to say, Mike, I'll give you a special invite because I know
+  you're in Edinburgh.
+4944: Four hours south of you, you know, five hours, I guess, in Brighton is Macad
+  in the middle of May this year.
+4950: May 14th through 17th.
+4952: If you guys happen to come up for that, I'd love to see your beers on me.
+4955: So, or we'll find some good music to go watch and that'll be even better.
+4959: So, come join us.
+4961: Thank you both so much for joining us today.
+4963: It's been such a pleasure to have you.
+4964: Thanks so much for having us.
+4966: It's great to be back and look forward to the next time.
+4968: Thanks for having us.
+4969: For sure.
+4970: And open invite.
+4971: If you've got something fun to talk about, we'd love to talk about it.
+4974: So, that's fantastic.
+4975: Thanks so much to our wonderful sponsors this week.
+4978: That's our friends at Kanji, 1Password, iMazing, and SmallStep.
+4982: And thanks, everybody.
+4983: We'll see you next time.
+4985: See you later.
+4986: The MacAdmins Podcast is a production of MacAdmins Podcast, LLC.
+5001: Our producer is Tom Bridge.
+5003: Our sound editor and mixing engineer is James Smith.
+5006: Our theme music was produced by Adam Kudiga the first time he opened GarageBand.
+5011: Sponsorship for the MacAdmins Podcast is provided by
+5014: the MacAdmins.org Slack, where you can join thousands of MacAdmins in a free
+  Slack instance.
+5019: Visit MacAdmins.org.
+5021: And also by Technolutionary, LLC.
+5023: Technically, we can help.
+5025: For more information about this podcast and other broadcasts like it,
+5029: please visit Podcast.MacAdmins.org.
+5032: Since we've converted this podcast to APFS,
+5035: the funny metadata joke is at the end.

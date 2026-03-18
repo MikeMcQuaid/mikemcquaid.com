@@ -1,0 +1,1838 @@
+---
+0: It's already been a big day, but we do have one more thing.
+7: Welcome to ChangeLogin' Friends, a weekly talk show about spatial computing.
+28: Thanks to our partners for helping us bring you great developer pods each and
+  every week.
+33: Check them out at FASI.com, fly.io, and typesense.org.
+38: Okay, let's talk.
+39: So we are here joined by Mike McQuaid with Homebrew.
+49: Hey, I'm going good.
+51: Thanks for having me on, guys.
+53: It's been a while.
+54: It has been too long, which is why we're so happy to have this new format where
+  we can just invite old friends on and talk to them.
+60: No, it's nice to come here.
+62: It's good timing as well with WWDC recently.
+65: Lots of interesting spicy things to talk about.
+68: We were joking in the Homebrew maintainer slack yesterday about how it's generally
+  our time of year to be like,
+75: what is Apple going to break this time that we have to desperately try and fix
+  in the next three months before everyone complains.
+81: Right, right.
+82: Well, you probably don't find that out on Monday, though.
+85: So the keynote goes out.
+86: But that's like the big consumer retail news.
+90: But like the developer news kind of trickles out throughout the week.
+93: Isn't that the case, usually?
+94: Yeah.
+95: But also there's, I think they've got, they landed one of the developer betas
+  for macOS Sonoma already.
+100: So like we actually, one of our maintainers fixed some stuff and made a release
+  yesterday so that Sonoma could work.
+107: Sonoma could work at a very high level.
+110: I not immediately like fail on startup when you run Homebrew.
+114: You're not declaring full support, but you probably think it's going to work.
+117: What are some of the things they tend to break when it comes to new OSs?
+122: I mean, you had the major change from obviously Intel to M1 or M2 or just the
+  Apple Silicon world.
+127: Right.
+128: That had to move where Homebrew actually lives in the file system.
+133: What typically breaks?
+134: I mean, it could be any number of the things we rely on, really.
+138: Like we use the macOS sandbox.
+140: So sometimes when they change stuff there, then we need to like work around things.
+144: It's sometimes like API calls or like Apple Attento as well, like make the really
+  big changes they want to make with like Xcode and like map those to like macOS versions
+  as well.
+155: So it might be the compiler all of a sudden starts doing slightly different things
+  or giving slightly different output.
+162: So it might be that they have deprecated the system Ruby and then finally they're
+  actually removing it or, you know, all these types of like little things that you
+  often have like a bit of advanced warning for, but like, you know, require work.
+177: Yeah.
+178: Right.
+179: Why the mood from slash user local to slash opt?
+182: This was an Apple Silicon thing, but I don't, and I had to do it on an install,
+  but I don't know, was there like, did they push you guys out of user local or was
+  it like easier to have to install at the same time?
+193: What was that change about?
+194: Yeah.
+195: It's interesting because we, we sort of debated a few different approaches around
+  that because I mean, there's been some people for like literally since day, well,
+  not literally day one, but probably not far off day one, probably literally since
+  day 30 or a hundred or something in homebrew.
+211: Sure.
+212: Who hate that homebrew isn't user local because they're like, that's not what
+  it's for.
+215: Other stuff uses it too.
+217: You just kind of jank it up with stuff.
+220: And so there's been that sort of like gentle pressure for a while that like,
+  this is not the best place to put homebrew.
+226: Maybe you should go somewhere else.
+227: But then I think the big one for us was when they released the first M1s, you
+  had Rosetta, which could run old homebrew very well.
+237: If you were happy on your Mac, just running x86 codes, well, x86-64 to be pedantic,
+  and you were fine with all that and you wanted to buy an M1 Mac and just keep doing
+  things that.
+250: That way, say like, you know, you're just using it to run CLI tools.
+253: Like you're not using it to like generate code that needs to be embedded in an
+  application of a particular architecture or whatever.
+259: Then, yeah, you could just continue to use user local then.
+262: And well before we had decent ARM support, that continued to work for you.
+268: But all our binary packages, well, most of them require you to be in a particular
+  location on disk.
+275: So if we built the binary package for user local, you can't randomly install
+  your homebrew somewhere else and have that binary package work.
+283: So we were like, well, we have these kind of three problems of A, we don't have
+  binary packages for ARM yet at all.
+293: B, some of the big stuff that we really need to make a lot of binary packages,
+  like in the, I think it was a pretty long time before we had Java working at all.
+301: And like lots of stuff relies on Java.
+304: So if you don't have any Java support, then you can't do a lot of things.
+307: And then C, this kind of desire to like be able to actually run two homebrews
+  side by side.
+314: So you could have the ARM stuff, maybe if you're building stuff locally that
+  you kind of care about, but you can have a separate homebrew installation that lives
+  away by itself that you can install everything.
+324: And that all works.
+325: And to be able to as well, like for us developing, to be able to kind of have
+  some sort of migration path between the two and stuff like that.
+331: So that's what sort of ended up with the two separate locations.
+335: And it's worked pretty well from that perspective there, I think.
+339: And I think literally the only downside really, other than just, you know, I
+  still occasionally get confused as to why I go to user local and all my homebrew
+  stuff's not there.
+349: And I'm like, oh wait, no, no, I moved that.
+352: Right.
+353: But yeah, the other minor one is like that some tools don't have user local almost
+  like built into their default kind of search paths.
+361: But I guess like homebrew is big enough and established enough now that like
+  homebrew in a lot of cases has just got added to those default search paths for
+  these other tools where when it was originally created, like that wasn't guaranteed
+  that that was ever going to happen.
+376: So some other installers have been using the home directory.
+379: So like ASDF will have like a hidden ASDF folder.
+382: A lot of tools now that are installing things.
+385: Did you guys consider that versus slash opt as just like make it user local to
+  their home directory?
+390: So that gets you back to that binary package problem I mentioned earlier.
+394: Okay.
+395: I guess what we could do is we could do that and mandate that everyone uses the
+  same username, which sounds like an amusing joke, but that's actually what we do
+  on Linux.
+404: So on Linux.
+405: Oh, really?
+406: It's under home Linux brew because the Linux homebrew port, which is now rolled
+  into the main project, but was originally called Linux brew.
+416: When they started, it was kind of from a scientific infrastructure perspective
+  and they found it was actually quite easy to get system administrators to just create
+  a user and give everyone on the system permissions to that user's home directory
+  more than it was to create some other random directory on disk, like under opt or
+  user local or whatever.
+434: So we effectively have like three different locations that are like the homebrew
+  defaults where binary packages are built depending on what platform and architecture
+  and things you're on.
+443: Fun.
+444: Indeed.
+445: Fun, fun, fun, fun.
+446: Well, as long as I can go without bringing up the big topic.
+452: I was like, I want to go one more layer, but it's bearing the lead, Jared.
+455: It's bearing the lead.
+456: Let's not do it.
+457: So yesterday, as we record this, this is Tuesday morning for us.
+462: As we record yesterday was Apple's WWDC keynote, as everybody pretty much knows
+  at this point.
+467: And we were watching it live in our Apple nerds channel, as we do, and just commenting
+  as we go.
+472: And about 80 minutes into that keynote, I posted this all caps message that said,
+  show us the VR thing.
+478: I'm getting bored.
+479: That's kind of what we've been doing so far.
+481: Shortly after that, Apple unveiled this Apple Vision Pro new product, but they
+  never actually did show us the VR thing.
+490: They said Apple Vision Pro will introduce us to spatial computing.
+493: So in the same way that Mac introduced us to personal computing and iPhone introduced
+  us to mobile computing,
+501: Apple Vision Pro will introduce us to spatial computing.
+505: They said augmented reality is a profound technology.
+509: I believe that augmented reality is a profound technology.
+513: And they said it's the first Apple product you look through, not at.
+517: It's the first Apple product you look through and not at.
+522: I thought that was interesting.
+523: They never said VR.
+524: They never said metaverse that I heard.
+526: They didn't even really bring up video games, or maybe I missed that part.
+530: But they're talking about augmented reality.
+534: I just love your guys' reaction to that.
+536: Because, Mike, we were talking about VR in our channel, and you have opinions
+  about VR.
+540: But this is not pitched as a VR thing.
+543: They said augmented reality.
+545: They said you look right through it, which is technically not true.
+548: But I guess conceptually, they want you to have this idea of looking through
+  these goggles and seeing the world, even though you're seeing a digital representation
+  of the world that's right in front of your face.
+557: So what do you guys think about that?
+559: Yeah, I thought that was interesting as well.
+561: I had a similar realization kind of this morning.
+563: And I guess it's like AR is kind of more social and kind of human, I guess.
+571: It was the vibe that they were going for, at least it felt like, from their pitch,
+  where it's a lot more kind of blended with your existing computing.
+579: Whereas AR, sorry, VR, like the thing I kind of love about it, like particularly
+  during periods in which, you know, when I was during COVID lockdowns, when we had
+  a three-month-old and a two-year-old who was potty training at home, like I find
+  it incredibly relaxing to just shut out the entire world in my VR headset and like
+  go to another place.
+601: And you have no peripheral vision, you can't see anything else, like you can
+  press a button to get like a really sort of janky sort of AR, where am I in my room,
+  just so you don't walk into things sort of view.
+613: But like this idea that you're completely put into another space and that was,
+  I guess, I felt I was expecting they were going to go down that route.
+622: And that feels like the metaverse route and that feels like not at all what they
+  were doing.
+627: Like, yeah, I think it's interesting for sure.
+630: Yeah.
+631: What do you think, Adam?
+632: Well, the metaverse route really removes the real world.
+637: The augmenting obviously keeps it, so it's not like escaping reality.
+642: It's more like blending realities, which is what augmented reality really is,
+  right?
+646: Yeah.
+647: Yeah, it's not what I was expecting them to do.
+649: Even from a safety standpoint, right, like that you can still see your surroundings,
+  whereas with you, if you've got like the Oculus Rift on or whatever it's called
+  these days, I can't even keep up with the direction of it.
+660: And I've got Quest.
+661: Is that what it's still called or was it the old name?
+662: There's the MetaQuest.
+663: MetaQuest.
+664: MetaQuest Pro.
+665: There you go.
+666: There's a two and a three.
+668: I know the three, they're about 500 bucks.
+669: I just hear these things.
+671: I've used one.
+672: But maybe, Mike, you have more because you've been purchasing different VR things.
+676: The point is, though, is when you put those on that you can't see the rest of
+  the world.
+679: Like you can fall over things.
+682: You can break an arm.
+683: You can break your TV.
+684: You can smash things.
+686: Go ahead, Mike.
+687: You've done this, I'm sure, right?
+688: I was going to say, you guys who are on video, for the benefit of the podcast
+  listeners, I'm pointing to a very slight discoloration of my wall behind me where
+  I think I literally thought I was crowbarring a head crab or something.
+701: And just punched my hand straight into my wall.
+704: Right.
+706: I didn't manage to destroy my VR controller in the process.
+710: But yeah, that's definitely a thing.
+712: And I guess some people can see that as, in some situations, that's the appeal.
+717: And in some situations, it's really not.
+719: Right.
+720: Well, we're talking about the positioning, really.
+722: It's like the positioning not in the metaverse.
+724: So it's really about that.
+725: It's like not versus.
+726: It's more like, how did they pitch this when meta is so well known with acquiring
+  Oculus, MetaQuest, etc.
+733: The whole name shift from Facebook to meta.
+736: Was about the metaverse, yeah.
+738: Is in of itself about the direction they're going.
+740: Right.
+741: So they didn't say metaverse.
+742: They didn't say VR.
+743: And I had a great pun, a world-class pun, thanks to Silicon Valley, the TV show,
+  because there's a slight spoiler in there.
+753: There's an acquisition of a VR company because they have to have this big old
+  hoolicon keynote, essentially.
+760: Everything falls apart.
+761: They had to make a last-minute change.
+762: And they acquired this VR company to make their keynote good.
+765: And long story short, he says, who out there's excited?
+768: I know VR.
+770: Like, that's a world-class pun, right?
+773: So there was no VR mentioned at all.
+776: Augmented reality, even spatial.
+779: The word spatial, to me, is pretty cool because it's like all the design stuff
+  in there was very touchable.
+784: They did a great job from a design standpoint.
+786: So spatial design, augmented reality.
+789: That's the good stuff, I think.
+791: I think they went the right direction, really.
+792: And they have the whole app store and all the apps that came with it, whereas
+  meta was really recreating the unknown, right?
+799: They were really trying to pioneer the future or what they perceived as the future.
+803: And it was not appealing because it's not relatable.
+807: You have Safari inside this thing.
+810: That's kind of cool.
+811: You have your apps in there.
+812: It's kind of, you already know what it does and how it works.
+815: So you can kind of, like, pull up your calendar.
+817: Yeah, it's familiar.
+818: Precisely.
+819: You know, messages there.
+820: It's like putting some of your apps that you're used to inside of iOS or macOS
+  right there inside of this thing.
+828: I don't honestly know, though, if I want that as much.
+830: Like, maybe I'm just the guy who's ready to escape sometimes.
+833: And I should say, like, the pitch is augmented.
+836: But if you notice, they have this digital crown, which they stole from the watch,
+  right?
+840: They put it on the top of these goggles.
+841: And you crank this crown, and it changes the size of what is being presented.
+845: And you can go, like, full VR mode, it seems like.
+848: It's just not what they're talking about.
+850: Because a lot of their pitch was entertainment.
+853: And it was like, look at these big movies you can watch right in front of your
+  face.
+856: But they're, like, inside this AR.
+859: But they're also, like, putting a screen inside of augmented reality.
+862: But you can crank that screen up to, like, full size.
+864: To where there's nothing else to see.
+865: So I think they get there.
+867: They're just coming at it from a different angle.
+868: It reminded me in some ways.
+870: It's funny you mentioned the Apple Watch.
+871: It reminded me of the Apple Watch keynote as well.
+874: I can't remember what I thought at the time when I saw it.
+877: But I definitely remember being somewhat underwhelmed, right?
+881: Because they pitched it as a particular type of device that I didn't care about.
+886: Yes.
+887: It was a fashion thing.
+888: A lot of it was fashion.
+889: It was fashion.
+890: It was apps.
+891: It was all this type of stuff.
+892: Whereas for me, like, I love my, like, health and fitness measurements, right?
+895: And I sent a thing from my Apple Watch today to my wife where it's, like, my
+  resting heart rate.
+901: I had a fever over the weekend.
+902: And I sent her, like, a thing.
+904: And I was, like, spot when I was sick, right?
+906: And you can see my resting heart rate's normal.
+907: And at the weekend, it tanks up and then slowly gets better.
+910: And then, like, there's a weird thing, like, even today, where it's, like, today's
+  the first day my resting heart rate is kind of back to normal.
+915: And almost, like, psychologically being, like, oh, like, maybe that means I'm
+  better now.
+920: Like, I might go and do my spin class this week.
+922: Like, it feels like it feels like it's providing almost, like, metrics data that
+  I might use in, like, an ops role.
+929: But on my own body measurements.
+931: Like, and that was not pitched at all, right?
+934: And it felt like what they were doing yesterday was throwing out, like, 20 use
+  cases.
+940: And, like, 10 of them will be flops, right?
+943: 10 of them will, it will just be bad.
+945: And one of the ones to me, for example, like, like, reading about the resolution
+  and stuff like that, the idea that I'm going to do my work on these things, like,
+  and these kind of floating windows in front of me instead of using monitors for
+  any, like, meaningful amount of time.
+960: Like, I'm not going to say that that won't happen, but they made a big deal about,
+  like, 4K per eye, right?
+965: Put your face right up to your 4K monitor and see how impressive that is, right?
+970: If you let the 4K monitor completely fill your peripheral vision, that's not
+  actually a lot of pixels, right?
+975: It's a lot of pixels when it is, you know, a foot, like, half a meter away from
+  your face.
+980: But it's not a lot when it's that close.
+982: And we have other VR headsets already that will do that sort of resolution.
+986: And, like, people already do not find them sufficiently high resolution enough
+  to do that type of work all the time, right?
+993: Like, it's going to be annoying compared to a 4K monitor unless you're in a situation
+  where you need their kind of, like, I need to just have, like, 500 windows all around
+  me that I can kind of turn my neck around and look around and all this type of stuff.
+1004: But on the flip side, some people thought it was slightly dystopian, but maybe
+  I'm enough of a nerd that I thought it was awesome.
+1010: Like, the idea of, like, being at your kid's birthday party, right, and, like,
+  putting this thing on and taking a 3D video, which you can, in then 1, 2, 5, 10,
+  20 years, watch back and put yourself effectively in, like, an almost, like, VR
+  fixed viewpoint.
+1027: 3D.
+1028: Yeah, I mean, because for me, like, I buy the new iPhone every year because
+  I have young children and I want to capture their temporary likenesses in as high
+  a resolution as I can.
+1039: Yeah, yeah, yeah.
+1040: Because I look back at those memories and, like, I love looking back at pictures
+  from my kids.
+1045: I'm with you, Mike, on that one for sure because for me, I have the, and I think
+  you do too, Jared, you have the photos widget placed somewhere in your phone.
+1054: And, like, every day I'm getting some memory, and I'm an iCloud believer because
+  I got my photos in there, and they're doing a great job of, like, reminding me of
+  my life.
+1063: Now, the thing is, though, while that's amazing, this is the ultimate new dad
+  camcorder kind of situation, right?
+1069: Like, this is, like, remember dad's back in the day?
+1071: It is.
+1072: You got the dad with the camcorder who looks like a doofus, basically.
+1075: But the memory is captured, so you've got that memory, and that's, you sort
+  of sacrifice, you know, maybe your ego for the moment.
+1081: But I don't know if I want to wear that.
+1083: I want the artifact after Mike, but I don't want to be the dad wearing this
+  headgear during my kid's birthday.
+1089: Like, I want them to remember me just as much as us remember that memory.
+1093: So I think this is temporary.
+1095: The actual video of the guy, you know, like, you're not going to be like, hold
+  on, don't move.
+1099: I'm going to go put these goggles on, you know?
+1101: Like, none of us are going to actually do that unless we're going to be the
+  camcorder dad, because we can see the future use of it.
+1107: I think that's temporary.
+1108: So, like, the recording side, that does look dystopian.
+1111: Like, I'm looking at this real-world thing through goggles that show me a digital
+  representation of the real-world thing.
+1116: Minority Report had that.
+1117: Yeah, but I think the actual, the playback is what we want.
+1120: And so that's what we all agree on.
+1121: And so I think, like, 3D recording is going to come to the iPhone, right?
+1125: Like, you'll be able to record 3D on some other thing and then watch it back
+  on these goggles and get that immersive experience.
+1132: Yes.
+1133: For now, it's, like, just a weird place where it's, like, it also records.
+1136: Where's the robot?
+1137: Put those goggles on a robot that has infinite charge, never dies.
+1142: I'll let my robot wear that thing on my behalf, and it's fine, because, like,
+  Rosie can do that.
+1146: That's the name of the, I believe that was the name of the robot in the Jetsons,
+  right?
+1150: Like, Rosie, I believe?
+1151: So give me a Rosie.
+1153: Is there any girl out there who can resist the charms of a solar-powered alloy
+  chassis with turbo-driven schematics and LED eyes?
+1161: A robotic maid named Rosie changed the Jetsons.
+1165: Well, speaking of infinite charge, I mean, there's so many indicators that this
+  device is just not, I mean, the price, of course, but, like, the device is not going
+  to be ready for regular consumer usage when it ships.
+1176: It's going to be for enthusiasts, developers, business people, and that's about
+  it.
+1180: The ultra-wealthy?
+1181: Yeah, ultra-wealthy, of course.
+1183: But they just buy everything, don't they?
+1184: So everything's for them if they want it.
+1186: Two-hour charge, and you've got to have a battery stick in your pocket.
+1190: I did watch a video this morning, the hands-on, because they let some YouTubers
+  get access yesterday.
+1197: Yeah, I think O'Malek had a hands-on with it as well.
+1200: I didn't catch that, though.
+1201: Who'd you see?
+1202: This is Sarah Dietschy, I think, rhymes with peachy.
+1205: She saw it, and she wore it, YouTuber, and she said...
+1209: There is a reason why the battery pack is not on the headset, because the headset
+  is heavy.
+1215: It is very heavy.
+1216: I think a lot of initial reports said, oh, we're going to put the battery pack,
+  so it's going to be lighter than a Quest, lighter than, you know, any headset out
+  there.
+1224: They did that because it would just be too heavy if the battery pack was on
+  the headset.
+1230: So with that out of the way, that it is heavy, it will be uncomfortable on your
+  face for probably more than an hour.
+1236: So that was kind of a bummer to hear, but she did say that the actual 4K display,
+  kind of against what you're saying there, Mike, I don't know what's the truth, but
+  she said, like, it's spectacular.
+1246: The eye tracking is insane.
+1249: So you do a setup that takes one or two minutes.
+1251: The digital crown is essentially your home button, and you have all of your
+  apps on the home screen, and you just look at whatever you want, and then you pinch
+  to select.
+1260: If you're scrolling through photos or Safari, you basically pinch and then scroll.
+1266: And the clarity of, say, a Safari tab, you're reading an article, is so good.
+1271: The words are super crisp, and I honestly felt more excited about the productivity
+  elements to it than even the entertainment.
+1279: And I think it's like three or four times what resolutions that the MetaQuest
+  currently has.
+1283: Maybe that's enough, but she's, like, incredibly impressed with that and was
+  like, this is the future, but it just, it's going to hurt.
+1290: And that's kind of where a lot of these things are.
+1292: I think it depends on the content a lot on this stuff.
+1295: Like, I think for movies and stuff, like, I think the resolution doesn't, I
+  mean, you know, like a 4K movie looks great, right?
+1301: But, like, when we were watching 1080p stuff, it looks pretty, like, you know,
+  you were watching Lord of the Rings and 1080p being like, oh, I can see the pixels.
+1310: Yeah, this film's ruined.
+1311: Like, I think it's all relative.
+1313: And I think, like, video content and, like, gaming experiences, whatever, I
+  think lend themselves to that kind of blend.
+1319: But I think it feels like reading text on a non-retina display now is just like,
+  ugh.
+1324: Like, ugh.
+1325: Why would I go through that, right?
+1327: And it, I guess I can't imagine, like, write code, say, like, spending a long
+  day, like, looking at text for significant periods of time, that I would do that
+  in a headstone.
+1336: But, Mike, what if you weren't writing the code?
+1338: What if you weren't writing the code?
+1340: What if you were...
+1341: Watching it, code.
+1342: Conjuring the code through voice and LLM behind it that, you know, knows homebrew
+  through and through.
+1348: Knows it better than you do.
+1349: Yeah.
+1350: All this good stuff.
+1352: And all you're doing is watching the code, really.
+1354: Yeah, just get ChatGPT to generate the 95% right, 5% catastrophically wrong
+  code for me.
+1360: But, no, I guess it's funny because, like, you know, again, like, on the weight,
+  right?
+1365: Like, I have my nice, meaty valve index here.
+1369: And, like, that's more than twice the weight.
+1371: And, like, even by default, and I actually bought more weights to add on the
+  back to kind of counterweight the thing.
+1378: And it makes it feel better.
+1380: And, like, when my kids play around with it, like, they don't have their necks,
+  like, getting crushed forwards by it and stuff like that.
+1387: And it's funny because, like, on the comfort side, I would agree, like, that
+  that you don't want to be wearing that for hours and hours and hours.
+1394: But, like, it's interesting to me to see for, I guess, a mass market appeal
+  that something, like, dramatically lighter is still, like, too heavy, wouldn't be
+  comfortable.
+1403: I kind of wonder whether that's just something where, I don't know, like, Apple
+  are good at making things smaller and lighter, right?
+1409: But, like, at the end of the day, like, wearing something reasonably heavy on
+  your head, like, even, like, a big pair of headphones.
+1414: Like, some people would just find a big pair of over-the-ear cans uncomfortable
+  to wear for a few hours, right?
+1420: And you're not going to get, like, a vision thing with built-in headphones that's
+  going to be lighter than a pair of cans.
+1426: I imagine down the road, you know, you're probably looking at something similar
+  to what Adam's wearing right now, which is, like, thick-rimmed glasses.
+1433: And all the tech can fit into those glasses, you know, kind of what the Google
+  Glass wanted to be.
+1438: And so, at that point, like, you could, and depending on battery life and stuff,
+  you could just wear these things all day long.
+1444: It goes back, again, to the VR-AR distinction because you don't want to augment
+  your reality for just, like, you know, 45 minutes.
+1451: It's like wearing your Apple Watch for half the day.
+1453: You're like, I'm missing out on the other half of the day's steps.
+1455: But to escape reality, right, to have a VR moment, to watch a movie for two
+  hours or to play a game for an hour.
+1461: I know some people play games for hours upon hours upon hours, but that seems
+  more feasible even for, like, the heavy headsets that you've been buying, Mike.
+1469: Like, I'll put up with it.
+1470: Yep.
+1471: But for, you know, 18 hours, it's going to have to be lighter and smaller.
+1475: And, yeah, like you said, Apple's good at these things over time.
+1478: We'll see if it gets there.
+1480: Did you see the movie Ready Player One, Mike?
+1483: I didn't, actually.
+1484: I've had a bunch of people, particularly in the VR space, who've said, oh, you,
+  I basically haven't seen any good films since my kids were born, really.
+1492: I wouldn't call it a good film.
+1494: It's a great film, but not a, I don't know.
+1496: Is it good or better than great?
+1497: Hold on.
+1498: Let's stop.
+1499: It's not good, but it's great.
+1500: Please, tell us more.
+1502: Well, you got Robert Zemeckis behind it.
+1506: Pop culture references galore, which is always, you know, that's a classic right
+  out the gate, you know?
+1512: It opens up with a quintessential rock song from, I believe, the 80s.
+1517: I can't remember the name of it in this moment.
+1518: But did you see it, Jared?
+1520: But you talk about it a lot, so I feel like I know something about it.
+1523: Well, I'm not going to talk about the movie necessarily, but more or less reference
+  it because this Vision Pro looks almost identical to the film.
+1531: And there's even, during those cut scenes and montages and demonstrations they
+  showed, there's even this one where the person holds them out and then puts them
+  on and that camera sort of swoops around and you see through them.
+1543: That is literally shot for shot, angle for angle from Ready Player One.
+1547: So they stole that or it was an homage?
+1549: It could be an homage.
+1550: They could have licensed it.
+1551: I don't know.
+1552: I'd love to know the legality is there.
+1554: But, like, it was exactly like Ready Player One.
+1556: And Ready Player One is all about escaping, but it's not what Apple went.
+1561: But the point I'm trying to make is, like, if you've seen that film, these goggles,
+  Vision Pro, look almost, like, shape-wise identical.
+1571: And you can see through them.
+1572: So there's a lot of, like, inspiration.
+1575: Like, you've got, what was the thing called from Star Trek?
+1578: I'm not a Star Trek fan, unfortunately.
+1579: That was, like, the iPhone.
+1582: Yeah, the Tricorder.
+1583: Tricorder.
+1584: So, like, that predated the iPhone.
+1586: So, like, there's science fiction meets, you know, future reality.
+1590: So at some point we dream about it and then they're like, well, that's actually
+  really possible if we do this, this, and this.
+1595: Digital crown that.
+1596: Speakers here.
+1597: And, you know, on our iPhones today we have all those cameras in the front to
+  do face ID and whatnot.
+1602: Like, they've already got a lot of the tech in place, you know.
+1606: I don't know if it's, what's the material of this thing?
+1608: Like, the rest of their gear?
+1610: According to them, a singular piece of three-dimensionally formed laminated
+  glass flows into an aluminum alloy frame that curves to wrap around your face.
+1619: Aluminium.
+1620: Aluminium.
+1621: Aluminium, indeed.
+1622: Yeah, so, like, I was going to say, I think that's the interesting thing about
+  it as well.
+1625: Because I think the other thing that may help bring the price down is right
+  now that thing has so many freaking sensors on it, right?
+1633: Like, it's got, like, I think it's, like, 15 cameras.
+1636: It's got the iris reader on the inside.
+1638: It's got that screen on the outside to, like, show you the eyes of the person
+  inside because...
+1643: The creepiest part.
+1645: You need to see that.
+1646: Yeah, like, it's got all this stuff.
+1648: Like, when you're Apple's size, right, you can build loads of things, throw
+  them at the wall, right, and see what sticks.
+1656: I don't think that's a bad thing either.
+1658: I'm not criticizing that.
+1660: Mike's dog Lucy makes a cameo here shortly.
+1663: Don't worry, she only sticks around for a minute or so.
+1665: And her second cameo near the end of the show is totally on point.
+1669: I'm not criticizing that.
+1671: I'm jealous because, you know, I'm co-founding a startup nowadays where we have
+  the exact opposite problem of, like, grand visions and...
+1680: Lack of resources.
+1681: Yeah, and right now, like, 1.4 people to actually build them.
+1687: But, yeah, like, it's interesting.
+1689: And it wouldn't surprise me if that's what ends up bringing the price down,
+  is that they can have the non-pro edition or whatever just doesn't have the screen
+  on the front, right?
+1699: Because no one, turns out, no one cared about that.
+1701: And even, like, you know, we've been talking a lot about the AR, VR thing.
+1705: And arguably, this is a device where there's been a few devices in the past
+  in this kind of space.
+1710: I would say all of them are primarily VR or primarily AR.
+1715: And this is the one that does seem to be, like, it is being described as an
+  AR device.
+1719: But it's definitely one that seems equally competent at both, right?
+1724: I think it was the Microsoft HoloLens.
+1726: I never actually used one in person.
+1727: But that was a lot more of an AR thing.
+1729: Like, the Valve Index I've got here, it has two, like, basically black and white
+  cameras on it for doing really limited AR of, like, you know, am I going to step
+  into a wall without...
+1742: Like, it does, like, when I get too near to a wall, it shows, like, a green
+  sort of matrix-style outline of, like, what I'm near or whatever.
+1750: So I can kind of see and step out of the way and all this type of stuff.
+1752: They could have gone, right, let's stick some really high-end cameras in here
+  and make an amazing AR device and build amazing AR games.
+1759: But they decided to not do that.
+1760: They decided to go the VR direction.
+1762: So it does make me wonder whether if Apple decides to go full AR, they can probably
+  throw away a bunch of the kind of VR side of things and make something that might
+  look a bit better.
+1771: Because that's the other reason why they're ski goggles and not glasses, right,
+  is if you want to do VR and you want to have that level of immersion, you have to
+  be able to block out all of the light.
+1780: Everything else.
+1781: But then on the AR side, if you want to do that, you're going to have to have
+  a lot more high-end cameras and you have to be able to maybe do some of the kind
+  of eye-tracking stuff and things like that.
+1791: I guess that was another interesting thing we've not mentioned as well is, like,
+  there's no controllers.
+1795: That's another distinction between all of the VR kit is it's all, like, hand
+  gestures, eye gestures, all this type of stuff.
+1802: As opposed to these, like, physical controllers and stuff like that.
+1805: And that's going to be another thing that it's going to be interesting to see
+  how well that goes, right?
+1810: Yeah, they didn't show us how you calibrate it.
+1811: Like, with Face ID, you've got to do that weird head motion to, you know, teach
+  the thing at your, you know, your face from all angles.
+1818: So they didn't show any of that calibration stuff.
+1819: So it was probably, like.
+1820: So Sarah Dietschy said there's, like, one or two minutes set up.
+1822: Okay.
+1823: It's, like, a two-minute eye calibration.
+1824: She said the eye-tracking is spectacular.
+1826: Like, you look at the thing and it focuses the, you know, the context.
+1829: Like, if you look on this Safari tab, it's going to switch tabs.
+1831: And she says it works pretty much the way you'd expect it to work very, very
+  well.
+1836: She didn't talk about the hand gestures to me because there's, like, downward-facing
+  cameras.
+1840: That are, like, looking at your hands.
+1841: And as you, you know, you pinch and stuff with your hands, just the air.
+1845: And that's the other aspect.
+1846: So it's eyes and finger motions.
+1848: Which, to me, kind of looks like the person in the demo, in the video is, like,
+  having a mini seizure, you know, as they sit on their couch.
+1855: And their hands are, like, shaking in weird ways.
+1856: But I guess we do all kinds of weird things.
+1859: You know, like, talking to the air with our AirPods in our head.
+1862: And I guess the idea that you can use one of your existing input devices as
+  well.
+1867: You can use your keyboard or mouse on your Mac or your game controller or whatever.
+1871: But, like, I mean, it's definitely, again, in comparison to, like, the actual
+  hardware I have.
+1875: Like, the Valve Index has kind of some of the kind of better controllers.
+1878: And, like, they have these ones that you put your hands inside.
+1882: And then it has finger tracking.
+1883: So when I do, like, this, I can see in a game, say, like, my fingers move around
+  because it knows where my fingers are all relative to the controller.
+1890: Right.
+1891: But I'm not having to actually, like, hold the thing.
+1893: It's, like, sort of attached in this weird.
+1895: If anyone's on the podcast, you can go and look that up.
+1898: You can see how your hand sort of fits in, sort of like a glove.
+1900: And, again, it's the thing where, I guess, moving on to kind of gaming stuff
+  as well.
+1905: They had a slide about gaming where I think they showed it was something like
+  their 11 kind of launch games.
+1911: But I don't know.
+1912: I love Apple and I love games.
+1913: But I think for, like, people who would describe themselves, like, as a gamer
+  and play, like, AAA, big budget games, like, Apple's not a meaningful gaming platform.
+1923: It's, like, something where, you know, if you're someone who plays a game for
+  a couple of hours every year, you can get enough stuff that you could play a game
+  on your Mac or whatever.
+1931: Like, that's fine.
+1932: But if you want to do, like, serious gaming on your Mac, like, you're in for
+  a pretty sad time.
+1937: And, like, in some ways, like, that, here are launch titles, like, these kind
+  of 11 things.
+1942: Like, the fact that you can fit them on a slide is, like, is very Apple, like,
+  in a good and a bad way.
+1950: Because it shows, like, we've carefully selected these, like, 11 beautiful representations
+  or whatever.
+1957: One of the games is one that I have played in VR.
+1960: I guess it's almost like being, like, our drinks menu in our restaurant has
+  11 drinks on it.
+1966: Across all alcoholic and non-alcoholic drinks, we've selected 11 of the nicest
+  drinks.
+1971: And it's like, well, I don't like any of those.
+1973: Well, okay, don't come to our restaurant.
+1976: Go to the one next door where the drinks menu has 200 instead.
+1979: Like, and that's the sort of Apple take it or leave it sort of way that, like,
+  to me shows that they're not, again, certainly, I think a lot of people thought
+  that this was going to be, like, primarily a gaming device.
+1991: And that's very much not what they're doing.
+1993: Like, in some ways, I find it interesting that they had any mention of gaming
+  at all because it seems to be so not what they're going for.
+2001: Let's fill up the script a little bit, though.
+2003: Let's not look at it from a, I've got a Valve index and I kind of know some
+  things like you do.
+2009: Think of it from a game developer standpoint.
+2012: What do you think game developers are thinking about this?
+2015: Like, if you're in that space and you can make things for brand new, I mean,
+  we have to recognize this is sort of a brand new world, a brand new computing platform.
+2024: What do you think game developers are thinking?
+2027: While there may only be 12 in this launch and you got to start somewhere.
+2031: '11.'
+2032: Sorry.
+2033: I was, I was going for the baker's dozen.
+2035: No, actually, that's 13.
+2036: Sorry about that.
+2037: Either way, I have one more.
+2039: What do you think, Mike?
+2041: What do you think the game developers are thinking?
+2042: Like, what do you think about this paradigm?
+2044: Because I'm thinking, like, you could do some really interesting things with
+  it, not in the typical gaming way, potentially, even.
+2052: Like, what do you think they're thinking about?
+2053: I'm friends with some game developers, but I've never worked in that space.
+2056: But I think, I think the interesting thing there is, like, even PC VR gaming,
+  right, the long running joke about it has been it's kind of a niche within a niche,
+  right?
+2064: Because I have, for reasons due to not wanting to reward scalpers and all this
+  type of thing, I have, like, a, you know, one and a half K dollars-ish graphics
+  card in my machine that sounds like a small jet engine in my house.
+2081: It's ludicrously overpowered, like, and I have, as I said, like, all my VR set
+  up that required me to physically drill things into my walls to mount my VR stations.
+2091: And, you know, I guess the point I'm making is, like.
+2093: You went pretty far.
+2094: It's taking it pretty far, right?
+2095: Right.
+2096: Enthusiast.
+2097: But even all of this stuff, you're probably talking less than half the price
+  of Division, right?
+2103: So, I think that's the thing.
+2105: I think if you're targeting it as a game developer, you would need to be targeting,
+  like, either multiple platforms, in which case you're somewhat limited in being
+  able to do really intriguing things just for the vision alone.
+2119: Or you're targeting it thinking this is going to become a mass market device
+  when they bring the cost down or whatever it may be.
+2126: Like, or you're doing it as, like, some interesting proof of concept that kind
+  of, like, buys into another platform or whatever.
+2132: But imagine how it is right now where it's, like, I don't know, say, like, Sony
+  has announced the PS6 or whatever.
+2138: And they're going to release it in 2024.
+2140: And it's going to cost you $3,500.
+2142: And you can only buy it in North America.
+2145: Like, people would probably not be rushing out to build stuff for that and really
+  excited about that.
+2151: And that's the opposite of the direction that console gaming seems to have gone,
+  where it's more and more commodity hardware.
+2157: It's more and more, like, kind of incremental changes and not these kind of
+  big bang revolutions and stuff.
+2164: Massive paradigm shifts, yeah.
+2165: I think the potential is huge.
+2166: Like, I think, like, you could do some really, really interesting things, I
+  think, particularly with the kind of the VR-AR blend there that I've looked for
+  a long time for games that will use the even very limited, like, AR kind of functionality
+  in my VR headset.
+2181: Just because I think it's sort of an intriguing idea to sort of, like, combine
+  those two spaces.
+2186: But I don't know.
+2187: It just seems like it's so expensive right now that it would be hard to see
+  that.
+2192: I guess the thing I could maybe see, like, rather than games, is, like, for
+  high-end training or whatever, like, flight simulation or the type of thing where,
+  basically, almost like conference tickets, right?
+2205: Where the idea, like, of, again, now that I'm actually, like, a co-founder somewhere,
+  you notice the fact that, like, oh, this conference costs, like, $2,000 or $3,000.
+2215: Like, that's actually quite a lot of money when I can't get my employer to pay
+  for it for me, right?
+2220: Like, I'm probably not going to pull out my credit card and spend the price
+  of, like, a family vacation on going to a conference.
+2228: For sure.
+2229: And I feel it could be the same in reverse here, right?
+2231: Where am I, as a gamer, going to, like, buy one because some launch title looks
+  really great?
+2237: Like, no.
+2238: But, like, if my employer can get more than 3.5K's worth of value out of it
+  and it's dramatically better than some of the alternatives there, then, yeah, I
+  wouldn't imagine that would be particularly hard for people to justify.
+2253: Like, if you could kind of tap into that sort of market, I guess, like, high-end
+  training for whatever.
+2260: Such a small, well, maybe not a small market, but such a specific market where,
+  like, you almost have highly specialized devices where Apple is not known to be
+  open API.
+2271: They're not known to be not literally open APIs in the open API.
+2275: You get what I'm trying to say.
+2277: You know, that you can program for it, but you don't have full access like you
+  do even on a Mac.
+2281: Like, you have a lot more access to the system, you know, in iOS devices, tvOS,
+  et cetera, iPadOS, and now VisionOS.
+2291: I got to imagine, like, these highly specialized things require certain APIs
+  that you may not have access to, you know, and you're going to spend a lot of money
+  to get into that ecosystem.
+2300: And you sort of have to follow where Apple may allow you to go because they're
+  in control of the keys, the kingdom.
+2307: So specialized, that's a highly specialized spot for sure.
+2310: Well, I did think, like, when, Mike, you held up that controller, like, that
+  thing screams video games, right?
+2317: Like, just, like, you have buttons, you have D-pads, you have joysticks, et
+  cetera.
+2323: And the fact that there is nothing like that, it's such a more of an iPhone
+  kind of a thing, right?
+2328: Like, it's an Apple thing to be like, well, we're going to have cool new games
+  that you're going to use your fingers to, you know, manipulate the air and play.
+2334: And it's like, that's going to create a certain type of game.
+2337: Just like the iPhone, you know, the single pane of glass created a certain kind
+  of game that was different than other kinds of games.
+2344: And I feel like they had a huge opportunity.
+2347: They had so much interest, and still do, of just people using these things to
+  create a gaming platform that just blew everything else out of the water.
+2355: And they just did kind of what they did to the podcast for many years, was just
+  ignore it, you know?
+2359: They just let it go.
+2360: They didn't provide the developers what they need to really have a different
+  monetization option.
+2366: So everything went in-app purchase.
+2368: Everything went Candy Crush.
+2370: And it ended up being, like, these very shallow, addictive, but ultimately,
+  I guess, unsatisfying games that ended up ruling the iOS platform.
+2380: And it's probably similar, I would guess, that eventually would rule this thing,
+  unless they actually get dedicated to it early in order to provide developers, game
+  developers, what they need to make better games.
+2392: And I just don't see Apple ever, like you said, Mike, I just don't think they
+  care about it that much.
+2396: They're going to have their 11 games.
+2397: They'll all be beautiful and very handpicked.
+2401: But ultimately, you're like, well, I get bored of 11.
+2405: In fact, I only like three of the 11.
+2406: And now what are we going to do?
+2407: Hello, friends.
+2411: This is Jared here to tell you about Changelog++.
+2415: Over the years, many of our most diehard listeners have asked us for ways they
+  can support our work here at Changelog.
+2423: We didn't have an answer for them for a long time.
+2425: But finally, we created Changelog++, a membership you can join to directly support
+  our work.
+2433: As a thank you, we save you some time with an ad-free feed, sprinkle in bonuses
+  like extended episodes, and give you first access to the new stuff we dream up.
+2444: Learn all about it at changelog.com slash plus plus.
+2447: You'll also find the link in your chapter data and show notes.
+2451: Once again, that's changelog.com slash plus plus.
+2455: Check it out.
+2456: We'd love to have you with us.
+2463: Let me give you a scenario.
+2464: You're in the doctor's office, right?
+2466: You're there waiting for your next turn, right?
+2468: You're just there for a random checkup.
+2470: And, you know, somewhere in the room, you got, now you currently have like an
+  iPhone talk or somebody's on the phone talking super loud in a waiting room.
+2480: It's just like a non-social norm, right?
+2483: Now, flip the script and say, okay, now affordable, years down the road, whatever,
+  even today, whenever this thing's available, somebody's sitting next to you with
+  this Vision Pro on their face, and you can kind of see their eyes or whatever.
+2493: You can just, maybe you hear nothing from them because maybe, I don't even know.
+2497: I don't know if it makes sound.
+2498: If it's just for you or if it's for everybody else, they can hear it.
+2501: But just imagine them going to town on like whatever it could be.
+2504: It could be Candy Crush.
+2505: They could be like, they could be safariing.
+2508: They could be photoing.
+2509: They could be doing whatever they want.
+2510: You know, like just imagine that scenario.
+2512: Like you see somebody sitting across to you with this Vision Pro on their face
+  in a social setting, which is totally possible.
+2517: Fully immersed in Tetris.
+2519: What are you thinking?
+2520: Well, obviously, I'd just, I'd steal their wallet.
+2522: That's the move.
+2524: It wouldn't have anything in it because they've bought an Apple VR headset.
+2528: That's right.
+2529: You got to steal the goggles if you're going to steal anything of value.
+2533: I don't know.
+2534: It's funny because with a lot of the VR stuff, like you've seen some of those
+  transitions for games as well.
+2539: And I've seen this with my kids as well.
+2541: Like Fruit Ninja, the like the iPhone game, they have a VR version that my like
+  five-year-old really likes where you physically have two actual swords that you
+  use to cut fruit coming through the air and stuff.
+2554: And I think that's the fascinating like paradox with VR stuff is that you don't
+  need instructions or tutorials for most games because it's immediately obvious.
+2565: Like you can put someone who's not even a gamer in and within seconds they know
+  because it's what you're doing in the space and whatever.
+2573: But on the flip side, you have this problem which a small minority of people
+  have with like existing games.
+2579: So I had a flatmate at university college who couldn't play first-person shooters
+  because they made it motion sick, right?
+2585: And I'd be like, you're just making that up.
+2587: That's not true.
+2588: And I saw him and I was like, oh, that's actually a thing, right?
+2591: But with VR, like that affects a lot more people and a lot, like some people
+  just can't really handle VR games.
+2597: And certainly like VR where you have like motion and stuff like that.
+2601: Like if you're sitting in a moving car in VR, I played a lot of VR, I don't
+  get motion sick in real life and stuff like that.
+2607: But that will make me motion sick and I need to stop, right?
+2610: And some of that is like programming.
+2612: Some of that is just like essential, like how your brain works.
+2615: And, you know, it's tricky because I think that's the other thing that could
+  stop this going, for gaming at least, going super-duper mainstream.
+2622: It's like you just can't necessarily build something that everyone's brain and
+  vision system and stuff like that can handle.
+2629: I guess one of my biggest fears, though, of all of this is that like this, whenever
+  Apple releases some big visionary product like this,
+2637: I think of, do you guys remember the legendary like slash dot comment from Commander
+  Taco 2001 about the iPod?
+2645: No wireless, less space than a nomad, lame.
+2648: Lame.
+2649: Right, yes.
+2650: He still isn't living it down.
+2651: And you just, I can just imagine like everything we've said in this conversation
+  today brought up in five or ten years where everyone's just wearing their goggles
+  24-7.
+2661: And they're just like, you guys are such fools.
+2664: You knew nothing about what would come.
+2666: And how we'd all embrace our Apple goggles.
+2669: The lore inside could be enough at some point, but like I just come back to
+  current, I don't know, would you call that user experience?
+2675: To be how you wear it?
+2676: I think it's more like inside the thing.
+2678: It's more like just experience generally.
+2681: It's a headset.
+2682: Who wants to wear a headset for several hours at a time?
+2686: I barely want to wear these headphones.
+2687: And I'm a, you do, Mike?
+2689: Mike does it.
+2690: He's playing his games.
+2691: So like, I, again, I'm with you to an extent I would put on the headset and
+  I've played the VR games.
+2696: I feel like an old person right now.
+2697: I've played the VR.
+2698: I love, I've had a lot of fun, even with groups, you know, because like you're
+  watching the person, they're acting a fool and you can get them to cast up onto
+  a TV.
+2706: So you're kind of seeing what they're seeing.
+2707: It's not exactly the same, but you're actually there with them to an extent.
+2710: And it's a riot, like it's not isolationist.
+2713: Like it can be a communal experience, which is really cool, but that's for a
+  constrained time period.
+2719: And I'm not going to wear anything for all day long on my face.
+2724: Even that, like the thing that makes it social is the fact that the person in
+  VR who's actually getting to play right now when everyone else is not able to play
+  looks like a massive dork, right?
+2734: Yeah, exactly.
+2735: That is the bonding experience is like you're having the time of your life and
+  you look like a loser while you're doing it.
+2740: Right.
+2741: It's hard to see that almost like mapping to like a Fortune 500 boardroom, you
+  know?
+2747: Well, maybe it would, you know, let the boss use it for a while and all laugh
+  at the boss, you know, while they're doing their thing.
+2757: Here's Jared coming in on their Vision Pro.
+2759: Hey, Jared, how you doing?
+2761: And they're augmented, basically.
+2763: Speaking of that, they have this FaceTime feature.
+2765: Like, how does that work?
+2766: Because you can FaceTime inside the Vision Pro.
+2769: But if I'm on the other side of that call with you, right?
+2772: I'm seeing what?
+2773: Because you have goggles on.
+2775: Am I seeing just your eyes?
+2776: You're seeing Zuck.
+2777: You're seeing Zuckerberg, man.
+2778: It's the persona thing, right?
+2780: Like, they had, it's like this.
+2782: Okay, so that's more metaverse.
+2783: Yeah, it's almost like this little, like, fuzzy avatar thing.
+2786: I think they had a little bit of that during the demo.
+2788: Okay, I might have missed that part.
+2790: Yeah.
+2791: Seems not ideal.
+2792: But, you know, again, we are seeing what we've seen yesterday.
+2796: But, you know, this is going to be a product that iterates.
+2798: Apple is so good at just relentless iteration.
+2803: Just year after year, small incremental changes that after five, ten years,
+  it's amazing.
+2809: I mean, the iPhone 4 and 5, those models compared to the original iPhone, it's
+  absolutely astonishing how much progress they made in half a decade.
+2820: Yeah, if you have the original iPhone or the 3, 4, 5, and now, what, the 14,
+  you see the progress in the iteration.
+2829: And I think that Apple is the kind of company that would not get into the ring
+  unless they can do some damage, essentially.
+2834: They can do something with the platform.
+2837: And even if it's a niche for a while, that's probably okay for them because
+  that's why it's priced so high.
+2843: So, they can go down from here.
+2845: If you came out at, like, you know, $599 and $899, maybe that's a harder selling
+  point for them.
+2851: They're not going to get in the ring unless they could do something.
+2853: That's for sure.
+2854: That's the kind of company they are.
+2856: So, they've definitely made everybody pay attention to spatial design, augmented,
+  and if not VR, then, you know, augmented reality, AR.
+2866: Something that Box founder Aaron Levy said, and this just sort of, like, kind
+  of goes back to some things you said, Jared, about Saradici.
+2875: He says, just got to try the Apple Vision.
+2877: Definitely wild.
+2878: Hand and eye tracking is basically perfect.
+2882: Instantly understandable UX.
+2884: The graphics are incredible.
+2886: And the setup was seconds.
+2887: So, that gives you, like, a good base.
+2889: Like, even wherever it could go, it's got an incredible, you know, easy setup.
+2894: It's not kludgy.
+2895: It's not hard.
+2896: So, all the things you can improve on it over time will only get better.
+2899: The weight, the size, you know, whatever it might be.
+2903: Maybe they introduced controllers next year.
+2905: Hey, now we have these controllers making.
+2907: Now you're happy.
+2908: And, by the way, we can give you, like, these coin-sized, just slap them on
+  your wall sensors rather than having to drill.
+2915: You just tape it, and it's there.
+2917: And it's infinitely powered by, I don't know, gravity or something like that,
+  you know.
+2922: So, you've got, you know, in a year's time, maybe you can have, or a couple
+  years' time, you can have brand new paradigm shifts in this platform that make it
+  far more appealing.
+2929: I think that's interesting.
+2930: I guess the thing is, I keep forgetting this myself because I get so overexcited.
+2935: But, you know, my wife has seen me phone over enough Apple product launches
+  that she was like, yeah, but didn't you always say that you shouldn't buy the first
+  generation of new Apple stuff because the second release is always, like, fixes
+  all the really big problems?
+2948: And I was like, yeah, yeah, you're right.
+2950: Like, that for me is, like, that combined with the price.
+2953: I think Apple are, again, really lucky with their customer base because a ton
+  of people are going to go out and buy this, right, and give them really great feedback
+  on what the second iteration of the device should be.
+2964: And when they do make a device that's half the price, a third the price, whatever,
+  like, what the mass market needs that device to be.
+2972: The other thing that occurred to me while you were talking, Adam, is just, like,
+  just the demo they did yesterday.
+2976: I mean, they're so good at, like, these types of demos.
+2979: It's kind of absurd.
+2980: Like, and when you look at the head start that Meta has had here, and, like,
+  I mean, basically, Meta have been, like, gaming and this weird second life metaverse
+  thing that, like, everyone just, like, literally laughs at, right?
+2995: Whereas Apple, before they were even ready to show the headset to anyone, they
+  have, like, 20 integrations, right, like, in the demo, and they've got a bunch of
+  launch partners on board, and they've got Disney on board.
+3007: And, like, you know, they're just, I mean, obviously, it's an early product,
+  but it's an early Apple product.
+3013: And, like, the level of polish, I've seen various memes today about, like, how
+  Zuck must be feeling after that keynote yesterday.
+3021: But, like, yeah, I mean, it's...
+3022: I'd be excited if I were him.
+3024: It's not good, right?
+3025: If you're a company that's, like, betting on the metaverse, and someone who's
+  not even in this space comes along and, like, does this, like, it reminds me of
+  when the iPhone came out, right?
+3035: And all the phone companies were, like...
+3037: I literally remember speaking to a high-level Nokia executive about six months
+  after the iPhone came out, and they said, we're not worried.
+3043: They're not a phone company.
+3044: Like, and it's like, well, now you're not a phone company.
+3048: Right, right.
+3050: You know, and it makes me wonder whether we could say the same sort of thing
+  with, like, VR, metaverse, and AR, and whatever, where it's, like, you just didn't
+  deliver a good enough product.
+3059: And someone else has taken their time, delivered something good, and your lunch
+  could well be stolen.
+3065: Yeah.
+3066: What's interesting about this time around is that Apple has announced and shown
+  their cards, but there's no pre-sale.
+3073: There's no, you know, get it here.
+3074: It's a year away.
+3075: I mean, they're saying it's next year.
+3077: That's a long time period.
+3078: I remember the first iPhone, I think it was six months, announced in January,
+  shipped at the end of June, something like that.
+3084: I think the Apple Watch was maybe another six months, maybe three-quarters of
+  a year.
+3088: I can't remember exactly the...
+3089: Yeah, good point.
+3090: I had them in North America as well.
+3092: Yeah, and, you know, prohibitively expensive for consumers.
+3096: So three things that they don't normally do.
+3098: They're definitely changing their playbook slightly.
+3100: I wonder why they felt like they had to get it out there a year before they're
+  actually ready to ship.
+3105: Was it pressure from something?
+3106: I mean, I know that the rumor mill had been, you know, swirling for years.
+3111: They said that they've been building the technology for a decade.
+3114: But I think I heard they've been...
+3116: They've actually had a dedicated team earnestly working on this for seven years.
+3120: So, I mean, that's a long time to work without ever shipping something.
+3123: Maybe it was like, you know, we got to ship something.
+3125: They're still not shipping, but at least they're showing.
+3127: That's interesting to think about.
+3130: Well, one thing Insider did say, a headline at least, that we can potentially
+  agree on is,
+3136: Apple shortkicked Meta's butt today.
+3139: That's their headline?
+3142: That's their headline.
+3143: And they say, Apple finally released its new headset Monday.
+3145: It sure seems a lot better than Meta's headset if the marketing is to be believed.
+3150: But does anybody really want to put something on their face like this?
+3153: And Mike, you raise your hand.
+3154: You say, yeah.
+3155: So, I guess the answer is, yeah.
+3156: If I were Zuck, though, I'd be like, you know what?
+3159: I'm a little worried because they're good at hardware.
+3162: They're being Apple.
+3163: But at the same time, it's like, here's part of the Fang mafia, basically,
+3168: throwing their product into the ring to say, let's go to battle.
+3172: It just deepens the pot, really.
+3175: Like, it's going to be the future of something.
+3177: Doesn't really matter.
+3178: I mean, will Apple take over the entire market share?
+3182: I don't know.
+3183: Android's still out.
+3184: There's still tons of Android users.
+3186: Just because Apple's out there kicking butt and taking Meta names doesn't mean
+  that
+3191: Meta can't still find a way to make their own place.
+3195: And maybe they're focused on immersive, true VR, which is quite different than
+  this.
+3201: But if Apple gets this right in this augmented space, like you said before,
+  Mike,
+3206: it's not a far stone's throw to get into the VR space, too.
+3210: Like, if they conquer this and rule this, they could have two products.
+3214: Vision Pro and Vision VR, you know, they can divide the market.
+3218: It is interesting.
+3219: They shipped with a pro, like, in the whole concept.
+3221: Like, they're announcing the Vision Pro.
+3223: And, like, normally you announce a product and then you kind of come out with
+  the pro line.
+3227: I mean, that's been their style.
+3228: Right.
+3229: But maybe they're just like, this thing is so expensive.
+3230: We've got to call it the pro.
+3231: I don't know.
+3232: That could be it, Jared.
+3233: That's how I read it.
+3234: And also just, like, what I was saying earlier about, like, the number of sensors
+  and, like,
+3238: the amount of functionality this device has is, like, unnecessary for some of
+  the use cases.
+3244: I actually really wouldn't be surprised if you end up essentially with the pro.
+3250: This is why they don't let me work in branding.
+3251: Whether you have something like a Vision AR, a Vision VR, and then the Vision
+  Pro can kind of do both of those things.
+3259: And it has essentially all of the sensors and all of the chips for both devices.
+3263: And instead, the other two devices are, like, a third of the cost.
+3267: Yeah.
+3268: What about the Vision Pro Max?
+3269: When are they going to come out with that?
+3271: That's just if you've got a really big head.
+3274: Yeah.
+3275: Well, I guess somewhat sliding into that concept, you know, people wear glasses.
+3280: And so this is something.
+3282: Like, what about Adam?
+3283: He's got glasses.
+3284: Are those just for fashion or are those actually corrective?
+3286: These are corrective and fashion.
+3288: Okay, so you've got corrective lenses on over there.
+3290: And the thing's expensive as is, but they have a solution for glasses wearers.
+3294: They partner with some sort of a lens company.
+3296: Zeiss.
+3297: I didn't pay close attention.
+3298: Okay.
+3299: The most well-known lens maker in the world.
+3302: Of course Apple would do that.
+3303: You can buy lenses for your goggles or they fit them perfectly.
+3307: I don't know exactly how it works.
+3308: But so, like, if you have bad vision, you're paying even more.
+3312: You've got to have the corrective lenses added to your goggles.
+3316: So that's interesting.
+3318: And this one doesn't work with old versions.
+3320: So now you've got to get new lenses and you're trying to sell your exact prescription
+  on eBay.
+3324: Trying to hawk it.
+3325: What a world, right?
+3326: And you can't swap lenses because they've been, like, you know, sealed into
+  the thing.
+3330: Because that's the way Apple does it.
+3332: Where are we all most excited?
+3333: I've got to have the most excited myself where I would put down some dollars
+  for this.
+3337: Not at this price point.
+3339: But I would put out, and maybe, I don't know.
+3341: It would be to combine this kind of thing with what I already have.
+3345: I was saying in our Apple Nerds chat.
+3347: By the way, you heard Jared mention that at the top of the show.
+3350: You can join it.
+3352: ChangeLaw.com slash community.
+3353: It's totally free.
+3354: Hang with Mike, me, Jared, and many others whenever WWDC happens and other things.
+3359: But I would combine Vision Pro with an existing home theater setup.
+3365: So if I could take, I mean, and maybe you already have your screen and that's
+  super cool.
+3369: But if this thing is to be believed and it is that cool and I can immerse myself,
+3373: imagine if I can watch a movie as if I'm hovering over the earth, right?
+3377: The augmented reality around me, you know, my reality is sort of like,
+3381: is there still yet to some degree if somebody walks in?
+3383: But I'm hovering above the earth or I'm kind of hanging out in the universe.
+3386: And I've got this just massive screen in front of me.
+3389: And I've got a banging sound system around me literally there.
+3393: So I don't have to listen on, you know, headphones or whatever the Vision Pro
+  offers in terms of
+3399: audibility.
+3400: I can use existing high-end, super awesome audio and this thing to just make
+  the experience
+3406: different.
+3407: That might be something that's pretty cool.
+3410: It is still a niche because, I mean, how many people have banging home theaters?
+3414: Not many people, but they are people who shell out lots of dollars.
+3417: Yep.
+3418: And just to give an example, I bought a 120-inch screen.
+3423: This is not a TV.
+3424: This is just a screen to project onto recently.
+3427: More than $3,000 for this thing.
+3429: Oh, my goodness.
+3430: Yeah.
+3431: "$3,500?"
+3432: You could have got a Vision Pro.
+3433: I could have gotten, yeah, I could have gotten a Vision Pro.
+3435: I could have gotten a Vision Pro.
+3437: But so you got people like that that are willing to spend that kind of thing.
+3440: I mean, you could build your own, but it's not as good.
+3442: I mean, yeah.
+3443: I won't make excuses for why I justified the expenditure, but I did.
+3448: "$3,500 for, you know, this just screen to project onto on the wall."
+3452: So, I mean, people will pay for experiences.
+3455: Well, they do, for sure.
+3456: I mean, for me as well, like, I'm currently sporting a nice pair of Apple AirPods
+  Max.
+3463: I actually own, I have AirPods, AirPods Pro, and AirPods Max, and I use them
+  all in different situations.
+3469: Oh, man, you collected them all.
+3471: But, like, yeah, like, the Max, like, they're so expensive, and I really weighed
+  it up for a long time, like, whether I would get them, and I was like, okay, I'm
+  going to indulge myself.
+3481: Would you buy them again?
+3483: And, yeah, in a heartbeat, they're absolutely incredible.
+3485: That's the thing.
+3486: And I think, like, that's part of the thing that makes me think with Apple on
+  these cases, right, is that the funny thing is, for me, is, like, the pairing, when
+  you were talking about that, Adam, like, I kind of want what you want, but almost
+  the opposite.
+3499: And I do have a pretty nice surround sound system at home and stuff like that.
+3504: But whenever I watch, like, TV or movies right now, like, it's generally when
+  my kids are sleeping, right?
+3510: And if I watch some, like, war movie or the Game of Thrones finale, like, I'm
+  quite an audio-influenced person.
+3517: I'm a sort of pre-children musician, all this type of thing, right?
+3520: So, for me, like, I love the idea of being able to watch, like, Lord of the
+  Rings or some other big epic battle scene with my AirPods Max over my ears, like,
+  my vision on my face, have this enormous cinema screen, have it, like, absolutely
+  blasting into my ears.
+3537: And I'm not bothering anyone else, right?
+3539: And I could do that in my house when my kids were sleeping.
+3541: I could do that on a plane.
+3543: That was the other case that I could see.
+3545: If I was doing a lot of business travel, like, I had done in the past, I'm not
+  anymore, really.
+3549: But if I was traveling, like, long haul every month or so, people would drop
+  almost half that on really decent noise-canceling headphones, right?
+3558: So, like, the idea that, like, it's the best possible way to watch a movie on
+  a plane, like, people would do that, right?
+3565: Or be able to work on a plane, like, if you can have all your desktop in front
+  of you, like, yeah, it's not as nice as your 4K display, but...
+3572: Like, slapping the stewardess accidentally as she walks by because you're pinching
+  in Zoom.
+3576: Oh, I didn't mean to pinch you.
+3577: I was trying to pinch Safari.
+3578: That's terrible.
+3579: I wasn't, I didn't pinch you on purpose.
+3581: You can get yourself, you know, thrown in jail for that.
+3584: That's right.
+3585: Actually, the plane is the most compelling moment.
+3587: Like, when would I actually use this?
+3589: For me, it's none of the real-life moments, like, that they demoed.
+3592: It's literally, like, when I see them on a plane and thinking, like, what do
+  I want to do when I'm on a plane?
+3597: I want to just tune out everything around me and have some sort of distraction.
+3601: And for me, like, that epic movie with the spatial audio right there in your
+  ears, it blacks out everything else.
+3607: I go full VR mode and watch a movie for two hours on a two-hour flight.
+3611: Like, that to me is, like, I would like to do that.
+3614: I want to go to there.
+3615: But that's pretty much it.
+3616: Everything else, I don't even like to have, like, I'm watching a movie on my
+  iPhone, like, holding it here.
+3620: I set it on my leg.
+3622: I put it on the table in front of me.
+3624: I'm always like, is this person next to me watching?
+3626: Actually, I watched Game of Thrones one time on a plane for, like, a few minutes.
+3630: And it was inappropriate.
+3632: And I was, like, super embarrassed, you know?
+3634: Because you have to, like, tell the person, like, no, this is Game of Thrones.
+3637: This is not softcore, you know?
+3638: Yeah.
+3639: And they're just not going to hear you on that.
+3641: So I don't like that experience on a plane.
+3643: I would love to just tune everybody else out and be able to have an escape.
+3647: Yeah, that's true.
+3648: This would make it totally private.
+3649: No one else can see what you're seeing.
+3650: And, yeah, that's exactly where I would want to do that.
+3653: And I would even say when they get the price point down, if they can just make
+  it about immersive viewing of any sort.
+3660: Maybe not, you know, interacting like a game, but immersive viewing.
+3663: Anybody that has the tiniest apartment would totally drop some dime on this.
+3668: Because, like, if you can skip buying a TV for $500, $300, and fill the rest
+  of it up with, you know, the remaining amount with the expense of buying this, and
+  you have immersive viewing, then maybe.
+3679: And you live alone, potentially, and you only have cats.
+3682: You know, this is getting more and more niche.
+3684: But either way, you don't have the ability to install a screen, or, you know,
+  it's not really feasible to put a big old TV there or something like that.
+3691: All it really requires is maybe internet and battery.
+3697: That, to me, is interesting.
+3698: That's the other thing.
+3699: Like, even if it is feasible to get the screen, you know, like, we've, I've
+  been historically limited by previous houses and by my lovely spouse on, like, how
+  big our TV is allowed to be.
+3710: For sure.
+3711: And now we're in a place that, like, we could have a redonkulous-sized TV.
+3716: And once you start to get really big OLED TVs, like, you're definitely stepping
+  above the Vision Pro in terms of a price point, right?
+3724: They're expensive, for sure.
+3725: So, I guess that's another thing, is that, like, if they can nail the experience
+  such that, like, it is actually a cinema-like movie theater-like experience, then,
+  yeah, again, maybe that's compelling, right?
+3739: Like, if you're really into watching stuff, like, you could have one more nail
+  in the coffin of the current kind of cinema movie theater industry post-COVID.
+3749: Well, I mean, there's usually only one person, maybe, who really enjoys the
+  biggest of big TVs.
+3755: I mean, everyone else will endure it if they have to, but, like, there's usually
+  one person vying for the biggest experience, the most expensive things.
+3762: And in my household, it's usually me.
+3764: My wife's like, this size TV is perfectly fine.
+3767: And I've moved on to projectors and screens versus TVs because I want big.
+3772: As I mentioned, my screen is 120 inches diagonal, so that's, like, way bigger
+  than most TVs you can buy at a feasible price.
+3780: Although I did disclose how much I pay for the screen only, so there's that.
+3785: Either way, you know, you can drop the dime on this thing because you got one
+  person, maybe, in the household who's really wanting the more immersive version
+  of it.
+3793: You know, so maybe you get a typical TV or a common TV for everybody else, and
+  then you get the Vision Pro for the one person who's like, you know what?
+3801: I want to hover above the earth and watch a film.
+3803: I love the mental picture of, like, having, like, a 20-inch TV that everyone
+  is watching perfectly happy with, except for, like, Michael Adam, who's just sitting
+  there with a Vision Pro on their face.
+3816: Watching it on, like, the virtual...
+3819: With the biggest smile ever.
+3820: Yeah, the virtual biggest TV in the world.
+3822: Yeah, all by himself.
+3825: So there were, believe it or not, there were other things announced at this
+  event.
+3830: We've been talking about this the whole time.
+3832: I was going to say, Jay, we're deep on Vision Pro only.
+3835: We can stop here, or maybe we can hit on a few things.
+3838: Maybe let's just talk a few highlights from each of us on the other things mentioned,
+  because they are shipping some new hardware, 15-inch MacBook Airs.
+3846: The Mac Studio gets an upgrade.
+3848: Mac Pro for the first time with Apple Silicon.
+3851: By the way, talk about banking.
+3853: Starting at $69.99.
+3855: "$7,000 starting price on that, so you know that's not the actual price you're
+  going to pay when you land one of those."
+3861: As well as iOS 17 updates, a bunch of stuff.
+3865: iOS, iPad OS 17, new Mac OS.
+3868: We don't have time to go through everything, but what were some highlights for
+  you guys from this event?
+3873: Looking forward to things that are actually shipping either right now or soon.
+3877: So for me, a bizarre one that really stuck out was the family sharing for iCloud
+  Keychain.
+3884: I'm sad to say that I have fallen out of luck with 1Password.
+3889: I was a 1Password very early adopter.
+3891: I've got all my family using it and all this type of stuff.
+3893: And I just, in the last year or so, it's felt like it is annoying me more than
+  it helps me.
+3899: And stuff that used to work is not working anymore and whatever.
+3901: So yeah, so like it's one of those things where I'm kind of like, if I can use
+  the defaults and if I can use Apple's built-in stuff, I generally try and do that.
+3911: So for me, like the iCloud, like family sharing of passwords, like that's the
+  one thing that was my super hard blocker for being able to like potentially move
+  myself and my wife.
+3922: Or even like my parents over to using iCloud's keychain instead.
+3927: So yeah, so for me, like that's, that's pretty compelling.
+3930: Like I'll need to kind of give that an investigation of whether I can kind of
+  migrate over.
+3934: The issue with 1Password is not, it's not native and it's never going to be
+  native.
+3938: I mean, it's native to the platform.
+3940: I guess actually it's not now.
+3942: It's less native now because now they're on Electron.
+3945: It's going to be always a third-party application, obviously, unless it gets
+  acquired by Apple.
+3950: The problem for me, Mike, and I want to believe in that world, is that I have
+  things that aren't only in the Apple ecosystem.
+3956: And so for those reasons, it makes me want to have a robust, not first-party
+  because I'm not only in the Apple world.
+3964: And I store other things in there like credit cards and driver's license and
+  just other sensitive information
+3968: that I would not want to have to put on an encrypted disk or in a password-protected
+  file, you know, with permissions or whatever.
+3976: Like that's, to some degree, more harder to share because I can't share that.
+3980: So I want to believe in that.
+3981: If they can do what they can do, first-party, but also give me actual 1Password
+  type of things,
+3986: store my driver's license in there, you know, store my credit cards in there,
+3990: share them with my wife and other family members or whatever, that would be.
+3994: And I guess I kind of do that already with like purchase sharing to some degree,
+  like wallet or whatever.
+3998: If they can kind of make that more in the Apple world, but also let me have
+  things that are non-Apple in there
+4005: and an actual application to control it, then I'd be in it with you.
+4008: Because I like the idea of the sharing, but that's why I've never really bought
+  into the Apple first-party ways
+4014: because I need more than it gives.
+4017: I've heard this said, I think maybe Jason Snell wrote about it, but what they
+  really need is an actual passwords app, you know, like a first-party.
+4024: Because it's in there, like it's part of the settings.
+4027: It's super weird when I have to like show my parents that, yeah, you can just
+  get your passwords out there.
+4031: Like how?
+4032: I'm like, well, I just swipe down and search for passwords and it's had different
+  names throughout the years, throughout the versions.
+4037: And so it's really just an unknown feature for so many people.
+4040: But like if they had an actual app, just like they have a wallet app, have an
+  app called passwords with all this stuff centralized.
+4046: I think that would go a long way for people realizing how good their password
+  offerings are.
+4051: Because they have, I mean, you can do one-time passwords, you can do all kinds
+  of stuff inside there, but people just don't know about it.
+4057: So they should do that.
+4058: I just used my first passkey today with Home Depot.
+4061: I actually enabled Home Depot to have a passkey to allow it to use the device,
+  the website, to use either my thumbprint, which I'm not using, or my face ID.
+4071: So that's first passkey user, literally, yesterday.
+4074: Yeah, GitHub's passkey support is pretty good, actually.
+4077: Like I think they maybe even shipped like after I left, but yeah, it works pretty
+  nicely, actually.
+4082: Like it's just whenever you would have been prompted for 2FA, like you just
+  get prompted for your biometric information and it's synced between all your devices
+  using iCloud.
+4090: And, you know, if you need to log in on a Windows machine, it can't be like
+  your only like secondary authentication or whatever.
+4096: But yeah, it works pretty nicely for another one.
+4098: And yeah, I think I enabled on my Google account as well.
+4100: So it will similarly do that instead of prompting for my 2FA code or spamming
+  my YouTube app on my phone.
+4107: That is a kludgy experience.
+4109: It's secure.
+4110: 2FA with like a Verify or Authenticator, I believe it's called, is secure, but
+  it's not convenient.
+4118: It's like, oh gosh, let me get this OTP out real quick.
+4120: And it's just not cool.
+4122: I got to remember it.
+4123: And then if you're like in a social setting, you can potentially be phished
+  quickly.
+4127: Yeah.
+4128: Because I don't know about you, but I can't remember six characters without
+  like somehow saying them out loud, either my brain or literally out loud to myself.
+4135: I might whisper it like 603452.
+4137: It's like, you know, I got to do that to some degree to like remember that six
+  digit number.
+4141: Okay, Jared, what about you?
+4143: What's something that stood out to you for this one?
+4144: Find my Apple TV remote already.
+4147: Come on, people.
+4148: Finally, they're breezing through the Apple TV portion and they announced that
+  you can now find your Apple TV remote from your phone when you lose it, which we
+  lose ours constantly.
+4160: And I've long said they just need to put an AirTag in that thing.
+4163: Just build an AirTag into the Apple TV remote.
+4166: What's interesting is this just seems like a software upgrade.
+4169: Like they didn't say and you have to get a new Apple TV remote or I don't know
+  if it like makes a noise.
+4175: It was also fast.
+4176: I'm sure I could go back and watch it again and see exactly how it works.
+4178: But somehow I'm sure it makes a noise or it locates.
+4181: And so, yeah, you know, you got your Apple TV between the couch cushions or
+  your three-year-old takes it downstairs to the other TV for some reason and leaves
+  it and you lose it for days upon days.
+4192: No longer going to find that sucker.
+4195: So that, I mean, it's small, but like quality of life improvements.
+4199: Did you guys see how this is going to work?
+4201: I didn't see it.
+4202: All I know is it's like just with a new TV OS, it's going to work now.
+4206: It's like, what?
+4207: Why did you guys wait so long?
+4208: I thought it was going to be like the hardware literally didn't exist inside
+  the remote, you know?
+4213: And so you have to upgrade your remote to get the findable one.
+4215: I figured they would do that eventually.
+4217: Like, and this new Apple TV has a findable remote.
+4219: Is the remote Bluetooth or is it IR?
+4221: It's Bluetooth.
+4222: Well, then that means it's already there, right?
+4224: Like you can just like beak into the Bluetooth with your phone or your network.
+4228: That's why you have that allow applications to search your network thing.
+4232: But does that give, like, how do they know where it's located in the room?
+4235: Does Bluetooth provide that?
+4237: Oh, that's true.
+4238: I guess spatially.
+4239: True, man.
+4241: They're tracking my stuff already.
+4244: If any of y'all know how they're doing this, holler at us because I would love
+  to know.
+4247: But I don't actually care all that much because as long as it works, I can find
+  my remote.
+4251: Life's going to be good.
+4253: I'm excited about the completion of the Mac transition to Apple Silicon.
+4257: That's what I'm excited about.
+4258: Just being done.
+4260: I'm sure you are too, Mike.
+4261: I'm like, you're like, no more surprises.
+4263: We got some OS surprises once every two years.
+4266: Let's have no more hardware surprises or any other chip surprises that you can't
+  navigate around.
+4271: You know what that means, which I knew this today would be coming from basically
+  the day they announced the M1 chip, right?
+4277: It's like counting down the days until there is a macOS release that does not
+  support Intel anymore.
+4282: You should run a sweepstakes or something for the listeners of like, how many
+  more releases do we get after Sonoma before, if you're on an Intel chip, you can't
+  upgrade.
+4293: Right?
+4294: Oh, probably two more, three more, maybe I'd say.
+4298: I think about that sort of ballpark as well.
+4300: Like I would be surprised if they killed it off like next year or whatever,
+  but like.
+4304: It'll freeze you to a certain OS.
+4305: Yeah.
+4306: Are they still selling Intel-based anything?
+4309: As of this, no.
+4310: The last one was this Mac Pro.
+4312: They were still selling it.
+4313: When did they sell their very last Intel?
+4315: So as of yesterday or maybe Sunday, they may have sold a Mac Pro that was Intel.
+4320: With laptops, they've not been selling Intel like MacBooks for two years plus,
+  probably now.
+4326: It was funny how much of the ecosystem had not woken up to this.
+4330: I definitely saw a few times where some companies ended up with slightly unpleasant
+  situations
+4335: announcing that, oh, we will support doing this on M1 in a few years.
+4339: And be like, oh, everyone who buys a new Apple MacBook today cannot run your
+  stuff anymore.
+4344: Had a slightly faster turnaround once one of their internal developers pointed
+  that out to them.
+4349: But the M2 Ultra, which I heard in the chat, everyone could say MKUltra, which
+  is a mind control thing.
+4357: MK is mind control.
+4359: Yeah, there's a really good movie.
+4360: I think it's called Kill Room, if I recall correctly.
+4362: If you haven't seen that film and you like the idea of MKUltra and not so much
+  the idea of it,
+4369: but like just storylines around it.
+4371: What about The Manchurian Candidate?
+4373: Wasn't that also about MKUltra?
+4375: The Manchurian Candidate.
+4376: Well, I would say Kill Room is better, though, than that movie.
+4378: Yeah.
+4379: Manchurian Candidate was a really good movie, too, though.
+4381: But just not as good as Kill Room.
+4383: Pick which one you want.
+4384: Watch both, Jared.
+4385: You know this.
+4386: Why choose one where you can watch both?
+4387: That's true.
+4388: Watch them both.
+4389: M2 Ultra and now, I guess, PCI Expansion.
+4393: I won't need it myself, but, you know, anybody who needs, like, massive amount
+  of NVMe storage,
+4399: you can get carrier cards, PCI Expansion cards, which I think is pretty cool.
+4403: You can have 30-some terabytes of NVMe storage.
+4406: So if you're doing, like, I don't know.
+4408: Right.
+4409: That's where I fail.
+4410: I can't even hypothesize what you might be doing, but you have extreme needs.
+4413: Well, there you go, then.
+4414: You can do that with the Mac Pro.
+4416: I think that's kind of cool that they left it, because they could have abandoned
+  it.
+4418: I mean, not many people need PCI Expansion, but when you have a device with
+  a $7,000 starting price tag,
+4426: you should probably keep that, right?
+4428: Just for the enthusiast.
+4430: You can get two Vision Pros for that much.
+4432: I mean, come on.
+4433: Does anyone else have a least favorite feature that was announced yesterday?
+4438: One that you're dreading?
+4439: Oh, good question.
+4440: Good question.
+4441: Mine was them changing the Hey Siri to being just Siri, because I have, maybe
+  it's the Scottish
+4448: accent, but I have a dog called Lucy and a wife called Lindsay, and when I say
+  either of
+4455: those things, all of my devices, particularly Lucy, like when I'm angry at my
+  dog for doing
+4460: something disgusting, I'm like, Lucy, then all of my devices are like, oh, you're
+  asking
+4467: Yeah, they already think that I'm asking for Siri, so I look forward to every
+  time I say
+4473: my dog's name, every Apple device spamming me.
+4477: Yeah, that's a good one.
+4479: So while you're talking Siri, I should close the loop on my prediction from
+  a few months back.
+4484: So I went on record when we had Simon Wilson on the show, I think that was LLM's
+  Break the
+4489: Internet, and I said, I think this year's WWDC, which is usually in June, end
+  of May, early
+4496: June, I think Apple's going to have an answer to what's all been going on.
+4500: I think they can't afford to do nothing for much longer.
+4503: My guess is they're going to have some sort of either like upgraded Siri or
+  Siri replacement
+4508: that will be LLM powered.
+4510: And I think they almost have to at this point.
+4514: So I think it's coming.
+4515: I think they're just waiting.
+4516: I agree that they got some serious constraints around the way it needs to work
+  and how good
+4521: it has to be in order to keep their brand intact.
+4524: But I think they're going to have something to announce.
+4526: And I have no idea.
+4527: I just just make sense.
+4528: And they totally didn't.
+4531: They did mention transformer powered autocorrect and transformer based dictation
+  inside of the
+4539: Those are like I was waiting for the large language model keyword and they never
+  use it.
+4544: They did mention transformers a few times, but Siri didn't get touched except
+  for taking
+4547: the hay off the front was pretty much all they've done there.
+4550: So Siri still useful.
+4552: I thought they would step up their game in that way.
+4555: I'm sad you're wrong.
+4557: Honestly, I really wish they would just make Siri more intelligent.
+4561: Siri's really bad at this point.
+4563: Like it's kind of embarrassing, like how it's embarrassing.
+4567: It almost feels like the Siri, like when you compare Siri to something like,
+  I know it's
+4571: got the voice recognition part as well, but like when you compare Siri to like
+  chat GPT
+4575: or whatever nowadays, it's like what we were saying earlier about like meta
+  and, you know,
+4579: how Zuck must be feeling right now.
+4581: Like it's just, yeah, like Siri's imagine trying to use Siri for like the stuff
+  that you're
+4587: trying to use chat GPT for, right?
+4589: It's embarrassing, right?
+4590: Like it's a Nokia compared to an iPhone back in whatever it was, 2007.
+4594: Like it's a phone company.
+4596: Yeah.
+4597: It feels like the tough conflict there is like Apple's approach to AI about
+  being very privacy
+4604: focused, very on device as much as possible.
+4606: Maybe that just means you can't do AI well, right?
+4610: Like compared to the like privacy invasive, we're wrong 1% of the time approach.
+4617: Like, right.
+4618: I kind of respect them for that if that's the case, but yeah, I still just wish
+  it was
+4622: It seems like we're moving to a place where Apple's on device stuff is really
+  going to pay
+4627: It just, they're just sleeping on it because the ability to take these large
+  models, put
+4632: them on your device, right?
+4633: Pre-trained and then fine tune and do inference on device just makes to me a
+  lot of a sense.
+4639: In terms of least wow moments, like when I'm going to go to the bathroom, I
+  don't really
+4642: care that this was announced, but I honestly don't care that it was announced
+  was new app
+4646: journal.
+4647: I just went to the bathroom.
+4649: Oh, that's a bummer.
+4650: I just don't care about their journal app.
+4652: I don't journal.
+4654: I don't want it.
+4655: I don't need it.
+4656: It's going to go into a folder or whatever you call that thing and never be
+  used again.
+4660: But that's just me.
+4661: Adam, what about you?
+4662: Least favorite and then we'll call it a show.
+4663: Well, I want to layer on one for you with that.
+4666: So day one is a pretty well-known, well-designed iOS, macOS, native application,
+  I believe.
+4673: I don't think they're on other platforms.
+4674: I could be wrong.
+4675: No, actually it says Android, iPad and Mac.
+4678: So maybe they're on Android.
+4679: I think the journaling is a good thing.
+4681: I was not excited about it, but it's kind of cool that it might be native, just
+  like
+4685: I think for me, I kind of go to sleep anytime iPad's mentioned because I'm not
+  an iPad user
+4690: and I see some of the things they're doing there and I'm like, that's kind of
+  cool.
+4693: But every time I see myself wanting to use an iPad, I think it might be consumption,
+  but
+4698: then I'm like, I got this big phone so I can just like sacrifice some pixels
+  for this experience.
+4703: I know Nick Neesey in the chat said that he primarily uses his iPad for consumption
+  and
+4709: I'm just like, you know, in every case, shape and form, if I was a digital artist
+  and I used
+4713: the Apple pen and I used specific things that the iPad enables for an artist,
+  then I'd
+4719: probably be excited about the iPad.
+4720: But I'm not, so I'm not.
+4722: And so for me, anytime I hear iPad things, I just think like, I just wish they
+  would make
+4727: a super inexpensive internet device that my kids can use in the Apple ecosystem
+  that wasn't
+4734: 500 plus dollars or more.
+4736: Like that's just so much to shell it to a kid.
+4738: And you do want to give them, you know, these fun things and stuff like that
+  on trips, especially
+4742: on trips.
+4743: We're taking trips all the time.
+4744: It's like, gosh, when we're driving, let's give them something to do so they
+  can, you know,
+4748: I'm not going to buy them a Vision Pro.
+4750: So you stole my joke.
+4752: Sorry about that, Mike.
+4754: You set us up and then you stole the joke.
+4756: Well, that's how it goes.
+4758: That's my least favorite thing though.
+4759: Is anything iPad related?
+4761: Just because it's to me, iPad for me in particular is just a, give me a smaller
+  form factor, kids
+4767: focused device that is affordable for parents that has privacy features.
+4772: That's something I'd be excited about.
+4773: I like the iPad for what it is, but not for me.
+4776: Closing loop on day one.
+4777: I said, doesn't Microsoft own that?
+4779: Once again, owned by our friends at Automatic, owners of things such as WordPress.com,
+  Tumblr.
+4785: That's right.
+4786: Pocket Casts, other cool, Matt Mullenweg just building like this really interesting
+  software
+4791: conglomerate.
+4793: What do you call it when you have disparate products?
+4794: I don't know.
+4795: He just owns a lot of cool stuff.
+4796: Yeah.
+4797: Well, Paul Main should really get some credit there because Paul Main drove
+  that from day one.
+4802: Thank you.
+4803: Little class puns.
+4805: And then I think they partnered with Automatic, which just made it a good acquisition,
+  but they're
+4809: still separate from what I understand.
+4811: Owned by Automatic, got the resources, but still very much operating as Bloom
+  built LLC
+4817: if Google's correct.
+4818: So Paul Main is behind that.
+4821: Been wanting to help people take notes.
+4824: Great for forever, basically.
+4826: Great for forever.
+4827: All right.
+4828: Let's wrap it right here.
+4829: These have been our WWDC hot takes.
+4831: A lot of Vision Pro hot takes.
+4834: We'll see how well they cool off over time.
+4836: Hopefully better than Commander Taco on the iPod.
+4841: We'll see.
+4842: Time will tell.
+4843: Mike, thanks for hanging out with us and chatting.
+4845: Always a joy.
+4846: Where's the best place folks can connect with you on the internet?
+4848: Thanks, dudes.
+4849: Primarily, probably Mastodon nowadays.
+4852: I'm MikeMcQuaid at Mastodon.social.
+4855: There we go.
+4856: But yeah, also my everything's linked and I've got some writing and stuff like
+  that on my
+4860: website at MikeMcQuaid.com.
+4862: You'll probably have to look at how to spell my lovely surname, but that's the
+  best place
+4867: to find me.
+4868: We'll leave that as an exercise for the listener.
+4869: Of course, the links are always in the show notes, so you can click through
+  there as well.
+4873: All right.
+4874: Anything else, Adam?
+4875: Let's try to spell McQuaid.
+4878: I don't know how to spell McQuaid.
+4880: How do you spell McQuaid, Mike?
+4883: M-C-Q-U-A-I-D.
+4885: Okay.
+4886: I thought I was right.
+4887: MikeMcQuaid.com.
+4889: That's it.
+4890: All right, y'all.
+4891: We'll catch you on the next one.
+4892: There you have it.
+4898: Our Apple Vision Pro hot takes.
+4900: What do you think?
+4901: Let us know in the comments.
+4903: We'd love to hear from you.
+4904: There's a link in your show notes for easy clicking.
+4907: We have Matt Reier queued up for the next Change Login, friends.
+4911: The topic is still to be determined, but we better come up with one soon, or
+  he'll show up and want to just play his guitar for an hour.
+4918: Special thanks again to our partners Fastly.com, fly.io, and typesense.org.
+4925: And to Breakmaster Cylinder for bumping out the best beats in the entire biz.
+4929: If you dig the stuff we're putting out, share the Change Login with developers
+  you know.
+4933: Tell them we have the software world's best weekly news brief on Mondays, deep
+  technical interviews on Wednesdays, and this talk show on Fridays.
+4941: They'll thank you later, and I'll thank you right now.
+4943: We appreciate you spreading the word.
+4945: All right, that's it.
+4946: This one's done.
+4947: But let's talk again real soon.
+4953: But this is for, like, those ultra-high-end film studios, potentially, or somebody
+  who needs, like, extreme I.O., or they need infinite amount of M.2.
+4963: Jeez, I just got a frog in my throat.
+4968: M.V.M.E., M.2, drives, and that kind of thing.
+4972: You should say that again, because it sounds like you're crying.
+4975: Just clear your throat and say it again.
+4977: Doesn't it sound like you got choked up?
+4979: Yeah, gosh.
+4980: I was crying about M.2.
+4983: King Kong!

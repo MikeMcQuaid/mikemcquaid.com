@@ -5,10 +5,14 @@ require "fileutils"
 require "open3"
 require "pathname"
 require "uri"
+require "time"
+require "yaml"
 
 class TranscriptGenerator
+  CONTENT_DIRS = %w[_talks _interviews].freeze
+  EXTERNAL_PODCASTS_PATH = Pathname("_data/podcasts_external.yml")
+
   def initialize
-    @talks_dir = Pathname("_talks")
     @audio_dir = Pathname("tmp/audio")
     @models_dir = Pathname("tmp/models")
 
@@ -27,11 +31,13 @@ class TranscriptGenerator
     changed = false
     entries.each do |entry|
       begin
-        changed ||= process_entry(entry)
+        changed |= process_entry(entry)
       rescue StandardError => e
-        warn "transcripts: #{entry.fetch(:file)}: #{e.class}: #{e.message}"
+        warn "transcripts: #{entry.fetch(:label)}: #{e.class}: #{e.message}"
       end
     end
+
+    changed |= flush_external_podcast_updates!
 
     changed
   end
@@ -39,15 +45,21 @@ class TranscriptGenerator
   private
 
   def find_entries_with_sources(paths: nil)
-    candidate_files(paths: paths).sort.each_with_object([]) do |file, entries|
+    @external_podcast_updates = {}
+
+    entries = candidate_files(paths: paths).sort.each_with_object([]) do |file, acc|
       entry = build_entry(file)
-      entries << entry if entry
+      acc << entry if entry
     end
+
+    entries.concat(build_external_podcast_entries) if paths.nil? || paths.empty?
+
+    entries
   end
 
   def candidate_files(paths: nil)
     if paths.nil? || paths.empty?
-      return @talks_dir.glob("*.md")
+      return CONTENT_DIRS.flat_map { |dir| Pathname(dir).glob("*.md") }
     end
 
     paths.map { |path| Pathname(path) }
@@ -57,7 +69,7 @@ class TranscriptGenerator
 
   def transcript_collection_file?(path)
     text = path.to_s
-    text.start_with?("_talks/") || text.include?("/_talks/")
+    CONTENT_DIRS.any? { |dir| text.start_with?("#{dir}/") || text.include?("/#{dir}/") }
   end
 
   def build_entry(file)
@@ -91,56 +103,93 @@ class TranscriptGenerator
     }
   end
 
+  def build_external_podcast_entries
+    return [] unless EXTERNAL_PODCASTS_PATH.exist?
+
+    data = YAML.safe_load(EXTERNAL_PODCASTS_PATH.read, permitted_classes: [Date, Time]) || {}
+    (data["items"] || []).map do |item|
+      audio_url = (item["podcast_audio_url"] || "").strip
+      next if audio_url.empty?
+
+      transcript_id = sanitize_transcript_id(item["id"] || item["guid"] || item["title"])
+      next if transcript_id.empty?
+
+      {
+        label: item["title"] || transcript_id,
+        file: nil,
+        source: { type: :podcast, url: audio_url },
+        youtube_id: "",
+        transcript_id: transcript_id,
+        external_podcast_id: item["id"] || item["guid"]
+      }
+    end.compact
+  end
+
+  def flush_external_podcast_updates!
+    return false if @external_podcast_updates.nil? || @external_podcast_updates.empty?
+
+    content = EXTERNAL_PODCASTS_PATH.read
+    @external_podcast_updates.each do |podcast_id, transcript_id|
+      content = content.gsub(
+        /^(- id: #{Regexp.escape(podcast_id)}\n)/,
+        "\\1  transcript-id: #{transcript_id}\n"
+      )
+    end
+    EXTERNAL_PODCASTS_PATH.write(content)
+    puts "transcripts: updated #{@external_podcast_updates.size} external podcast entries"
+    true
+  end
+
   def entry_needs_work?(entry)
     transcript_path = data_transcript_path(entry)
     return true unless transcript_path.exist? && transcript_path.size.positive?
+
+    return false if entry[:external_podcast_id]
 
     frontmatter_needs_update?(entry)
   end
 
   def frontmatter_needs_update?(entry)
-    content = entry.fetch(:file).read
-    transcript_enabled = content.match?(/^transcript:\s*true\s*$/)
-    return true unless transcript_enabled
+    file = entry.fetch(:file)
+    return false unless file
 
-    return false unless needs_transcript_id?(entry)
-
+    content = file.read
     current_id = frontmatter_value(content, "transcript-id")
     current_id != entry.fetch(:transcript_id)
   end
 
   def process_entry(entry)
-    file = entry.fetch(:file)
     transcript_id = entry.fetch(:transcript_id)
+    label = entry[:label] || entry[:file]&.basename.to_s
     changed = false
 
-    puts "transcripts: #{file.basename}: start"
+    puts "transcripts: #{label}: start"
 
     if data_transcript_path(entry).exist? && data_transcript_path(entry).size.positive?
-      puts "transcripts: #{file.basename}: transcript already present"
-      changed ||= ensure_transcript_frontmatter!(entry)
+      puts "transcripts: #{label}: transcript already present"
+      changed |= ensure_transcript_frontmatter!(entry)
       return changed
     end
 
     transcript_cache_path = @audio_dir / "#{transcript_id}.yml"
     if transcript_cache_path.exist? && transcript_cache_path.size.positive?
-      puts "transcripts: #{file.basename}: using cached transcript"
+      puts "transcripts: #{label}: using cached transcript"
       copy_transcript_to_data_dir(transcript_cache_path, transcript_id)
       changed = true
-      changed ||= ensure_transcript_frontmatter!(entry)
+      changed |= ensure_transcript_frontmatter!(entry)
       return changed
     end
 
-    puts "transcripts: #{file.basename}: generating transcript"
+    puts "transcripts: #{label}: generating transcript"
     return changed unless generate_transcript(entry)
 
     if transcript_cache_path.exist? && transcript_cache_path.size.positive?
       copy_transcript_to_data_dir(transcript_cache_path, transcript_id)
       changed = true
-      changed ||= ensure_transcript_frontmatter!(entry)
-      puts "transcripts: #{file.basename}: transcript written"
+      changed |= ensure_transcript_frontmatter!(entry)
+      puts "transcripts: #{label}: transcript written"
     else
-      warn "transcripts: #{file.basename}: transcript generation finished but no output file"
+      warn "transcripts: #{label}: transcript generation finished but no output file"
     end
 
     changed
@@ -151,18 +200,19 @@ class TranscriptGenerator
     source = entry.fetch(:source)
     audio_path = source_audio_path(entry)
     transcript_path = @audio_dir / "#{transcript_id}.yml"
+    label = entry[:label] || entry[:file]&.basename.to_s
 
     if audio_path.exist?
-      puts "transcripts: #{entry.fetch(:file).basename}: using cached audio"
+      puts "transcripts: #{label}: using cached audio"
     elsif source.fetch(:type) == :podcast
-      puts "transcripts: #{entry.fetch(:file).basename}: downloading podcast audio"
+      puts "transcripts: #{label}: downloading podcast audio"
       return false unless download_podcast_audio(source.fetch(:url), audio_path)
     else
-      puts "transcripts: #{entry.fetch(:file).basename}: downloading YouTube audio"
+      puts "transcripts: #{label}: downloading YouTube audio"
       return false unless download_youtube_audio(source.fetch(:youtube_id), audio_path)
     end
 
-    run_whisper(audio_path, transcript_path, entry.fetch(:file).basename.to_s)
+    run_whisper(audio_path, transcript_path, label)
   end
 
   def data_transcript_path(entry)
@@ -216,6 +266,7 @@ class TranscriptGenerator
       "--fail",
       "--silent",
       "--show-error",
+      "--user-agent", "mikemcquaid.com",
       "--output", output_path.to_s,
       url
     ]
@@ -342,7 +393,14 @@ class TranscriptGenerator
   end
 
   def ensure_transcript_frontmatter!(entry)
+    if entry[:external_podcast_id]
+      @external_podcast_updates[entry[:external_podcast_id]] = entry.fetch(:transcript_id)
+      return false
+    end
+
     file = entry.fetch(:file)
+    return false unless file
+
     content = file.read
     match = content.match(/\A---\s*\n(.*?)\n---\s*\n/m)
     return false unless match
@@ -351,38 +409,25 @@ class TranscriptGenerator
     body = content[match.end(0)..] || ""
     changed = false
 
-    unless lines.any? { |line| line.match?(/^transcript:\s*true\s*$/) }
-      lines.insert(insert_after(lines, %w[youtube-id podcast_audio_url link]), "transcript: true")
-      changed = true
-      puts "transcripts: #{file.basename}: added transcript flag"
-    end
-
-    if needs_transcript_id?(entry)
-      transcript_id = entry.fetch(:transcript_id)
-      idx = lines.index { |line| line.match?(/^transcript-id:\s*\S+/) }
-      if idx
-        current = normalize_frontmatter_scalar(lines[idx].sub(/^transcript-id:\s*/, ""))
-        if current != transcript_id
-          lines[idx] = "transcript-id: #{transcript_id}"
-          changed = true
-          puts "transcripts: #{file.basename}: updated transcript-id"
-        end
-      else
-        lines.insert(insert_after(lines, %w[transcript youtube-id podcast_audio_url link]), "transcript-id: #{transcript_id}")
+    transcript_id = entry.fetch(:transcript_id)
+    idx = lines.index { |line| line.match?(/^transcript-id:\s*\S+/) }
+    if idx
+      current = normalize_frontmatter_scalar(lines[idx].sub(/^transcript-id:\s*/, ""))
+      if current != transcript_id
+        lines[idx] = "transcript-id: #{transcript_id}"
         changed = true
-        puts "transcripts: #{file.basename}: added transcript-id"
+        puts "transcripts: #{file.basename}: updated transcript-id"
       end
+    else
+      lines.insert(insert_after(lines, %w[youtube-id podcast_audio_url link]), "transcript-id: #{transcript_id}")
+      changed = true
+      puts "transcripts: #{file.basename}: added transcript-id"
     end
 
     return false unless changed
 
     file.write("---\n#{lines.join("\n")}\n---\n#{body}")
     true
-  end
-
-  def needs_transcript_id?(entry)
-    youtube_id = entry.fetch(:youtube_id)
-    youtube_id.empty? || entry.fetch(:transcript_id) != youtube_id
   end
 
   def insert_after(lines, keys)

@@ -1,0 +1,1224 @@
+---
+0: hey welcome back to another episode of the ruby rogues podcast this week i'm talking
+  to mike
+11: mcquade mike is one of the maintainers of homebrew uh if you have a mac you know
+  and if you don't
+19: have a mac then we'll we'll get into what it is but yeah cool stuff uh calling
+  in from scotland
+27: is that what you said yep edinburgh and scotland very cool um i have some scottish
+  in me i have a
+34: whole bunch of other european countries in me too but anyway uh do you want to
+  just jump in and let
+40: us know what else people ought to know about you before we get rolling hey folks
+  this is charles
+45: maxwood i've been talking to a whole bunch of people that want to update their
+  resume and find a better
+50: job and i figure well why not just share my resume so you if you go to topendevs.com
+  slash resume
+56: enter your name and email address then you'll get a copy of the resume that i
+  use that i've used
+62: through freelancing through most of my career as i've kind of refined it and tweaked
+  it to get me
+68: the jobs that i want uh like i said topendevs.com slash resume will get you that
+  and you can just kind
+75: of use the formatting it comes in word and pages formats and you can just fill
+  it in from there
+80: sure so yeah as uh charles honestly said i'm mike mcquade uh he said my name perfectly
+  which is not
+89: always something you can rely on which is very nice and so i'm currently working
+  on uh homebrew in my
+97: you know volunteer life spare time sort of stuff worked on it for 15 years since
+  2009
+104: 2009 i got involved i think i was the third person to get a commit bit on the
+  project and i'm
+109: oh wow i'm still standing after that time and i'm like the project leader which
+  basically means i'm
+113: sort of an elected like figurehead slash tech lead etc um so yeah so in my kind
+  of outside of my homebrew
+121: life work-wise and i'm working right now started a company last year with some
+  ex-github people
+126: called workbrew where we're working on commercializing some stuff around homebrew
+  and
+132: basically building the features that kind of small medium large companies need
+  that homebrew does not
+137: have so that they can work in the way they want to work while homebrew plays
+  nicely with that and then
+142: before i was working here i worked at github for 10 years and i left as like
+  a principal engineer
+147: last year and i was bounced all over the place there but particularly i guess
+  focused on like
+152: developer experience stuff and open source and scratching my own itches basically
+156: very cool yeah i've uh known a few people who've worked at uh github i also remember
+  way back in
+164: the day when chris and tom put their heads together and started the thing as
+  kind of a project in a
+170: restaurant or something and yeah it's kind of funny to look at where it all wound
+  up with
+175: microsoft buy in them and everything else um let's just kind of start with the
+  fundamentals here
+181: i did kind of mention that if you have a mac you probably know what homebrew
+  is but do you want to
+186: people a rundown of what it is sure so homebrew is a open source package manager
+  for mac os primarily
+193: and also increasingly linux as well interestingly oh really could talk a little
+  bit more about that
+197: later because that's sometimes confusing to particularly mac people um but yeah
+  so basically
+202: if you you write brew which is the kind of shorthand brew install and then pretty
+  much any
+207: application you would want and you can install that on your mac um so it's i
+  believe i then kind of
+214: we have some degree of evidence that you know about 30 million people and or
+  bots make use of homebrew
+221: and it's yeah in our opinion like the best way of installing open source software
+  on your mac well
+227: you may not know as well with homebrew it started off just being like a building
+  everything from source
+231: package manager for like open source tools wget curl whatever whereas nowadays
+  you can also install
+237: like upstream binaries so like say like chrome which i i'm a diehard safari guy
+  so i'm streaming in chrome
+243: today because i had my usual sadness of learning the website didn't support safari
+  so i fired up chrome
+249: but i i install chrome by just typing brew install google chrome and then it
+  sticks everything in my
+254: applications folder sets it all up and and all that type of things and there's
+  a long tail of like
+258: ecosystems where you can have like brew bundle is another favorite of mine where
+  you can have like
+263: declarative ways of telling homebrew what to do and all this type of stuff so
+  yeah that's basically
+269: and my uh my non-tech explanation of homebrew is like a app store for open source
+  in your terminal
+276: right yeah you just brew install whatever you want and off it runs and does its
+  thing
+284: in fact a lot of tutorials if you need a particular piece of the puzzle a lot
+  of the gems and things
+292: that i use in ruby it'll it'll basically say go brew install your blah blah blah
+  right and then
+297: and then you can run from there so yeah it's definitely something that i use
+  and i reach for
+303: and i don't even think anymore that oh gee somebody actually made this right
+  it's just part of life so
+309: anyway um so yeah so i'm kind of curious uh as we kind of get into this a little
+  bit and there's a
+317: lot to talk about right because i do want to get into workbrew and what what
+  that's all about but
+321: um before we do that uh for those of us who have used homebrew for a long time
+  and are excited to see
+329: um you know maybe where it came from and what all is entailed in it um where
+  did it come from
+336: you said you weren't in it from necessarily the beginning but you got to commit
+  yeah pretty early
+341: so yeah what's the story there i think i got involved about you know maybe started
+  using it four or five
+347: months and started contributing pretty short after when it was first created
+  it was made in 2009
+352: by a guy called max howell uh who was in london i think he was working at last
+  fm at the time
+358: it's a blast from the past that probably still exists but not as widely used
+  as it once was
+364: um so he had i have kids younger than homebrew yeah i'm sure yeah i i also have
+  kids younger than
+372: homebrew it's and it's distressing when you meet kids who are the same age as
+  homebrew and how articulate
+376: that they are um so he basically had played around with all the package managers
+  on the mac at the time
+384: you know there's mac ports and think and uh oh yeah i remember those yeah i can't
+  remember what the
+389: other one was um but yeah yeah mac ports is probably the dominant one um and
+  he didn't have a huge amount
+396: of like good time using mac ports felt that it kind of did too much and he didn't
+  like the approach
+402: so he built homebrew which was this kind of beer themed package manager um and
+  yeah and the other
+409: still called casks yeah the packages are still called like formulae and casks
+  and it still got all the
+415: the beer themes all over the place but one of the interesting things he did as
+  well is it was you know
+419: this was i can't remember you probably know charles actually what year github
+  opened to the public
+424: but certainly this was in 2009 so github was like relatively new i'm pretty sure
+  when homebrew first
+430: got created the pull request didn't exist yet and but max from the outset had
+  decided like hey i want
+437: to make this thing but i can't maintain thousands of packages all by myself so
+  i'm going to have to
+442: kind of open this up and make it a community effort to do that and so yeah so
+  that's basically what
+448: happened and more and more people kind of particularly in the ruby community
+  like i think the ruby community
+452: was one of the early adopters of homebrew because homebrew itself was written
+  and it still is
+456: primarily within ruby and uh yeah basically just it kind of grew more people
+  got involved more people
+462: contributed and then you know people who contributed lots and end up doing a
+  bunch of reviews and stuff
+467: like that i guess folks like me ended up kind of becoming maintainers and then
+  the projects just sort
+473: of grown and grown over the time so yeah it went from originally like just max
+  in 2009 to nowadays
+478: we've got i think 30 something maintainers we probably had like wow 50 total
+  all time and then we've had
+484: like over 10 000 people contribute to some part of the project at least once
+  very cool so
+493: i have so many questions um so one of them is is there there are kind of a bunch
+  of different pieces to
+503: this right you've got the command line interface and then you've got the hey
+  go grab the thing and how
+509: do i know how to build the thing and how do i know where to put the thing and
+  how right and so um
+514: let's just start with the command line interface so um what what tools did you
+  start out working with
+522: and and has that changed over the last what 13 14 years yeah yeah so homebrew
+  was written originally
+531: exclusively in ruby pretty much um and it's still primarily ruby like uh the
+  the irony in homebrew land
+541: compared to maybe other bits of ruby where because we're like a cli and because
+  we're we are installing
+547: a bunch of stuff related to compilers and things but we can't rely on them necessarily
+  being there
+550: and we haven't wanted to ship native binaries for the application itself when
+  we want to make things
+556: faster in homebrew often they are ported from ruby to bash so an increasing amount
+  of wow they're kind
+563: of very performance intensive bits of homebrew like the bits where like you want
+  to be able to run a
+568: command and have a response instantly or you want to be able to have a command
+  that you can run every
+573: time you open your shell and then not have too much overhead so some of that
+  more of that stuff is
+579: kind of ported to like bash and like the updaters and bash and because homebrew
+  installs its own ruby
+585: nowadays because the you know we originally used just the whatever ruby ship
+  with mac os and that
+590: worked all right for a pretty long time but i think last year we were speaking
+  to our kind of apple
+595: contacts and they'd theoretically deprecated ruby i think a few years ago in
+  the system and we said hey
+600: can we get a newer one i think it's still there it is still there but it's a
+  2.6 yeah i was gonna say
+606: it's not a current version yeah pretty ancient and so yeah so we we ended up
+  we we were rolling our
+612: own for really old mac os versions and for linux anyway so we just like well
+  we can roll our own for
+617: for everyone now and just make it mandatory right and i think it's ruby 3.1 or
+  2 or something like
+623: that uh-huh nowadays and yeah and that's a much nicer experience for us and makes
+  everything a bit
+628: faster and snappier and stuff so yeah so the main package manager is all in ruby
+  and then
+631: we have i guess two main repositories so there's like homebrew brew we would
+  call it which is like
+637: yard.com slash homebrew slash brew that's the package manager and that's like
+  that's my personal like
+643: favorite happy place to live and i kind of review pretty much every pr that is
+  in that repo and and
+650: then there's like homebrew slash homebrew core and so that's like the core formula
+  like basically
+656: everything in there has to be open source and there's like 6 000 packages or
+  whatever in there
+660: and that again is i think one of the reasons why ruby was such a good pick originally
+  like is that
+665: the like the the files that kind of describe how to install something or known
+  as formula and
+672: and again going down the beer theme and that it's like a really nice ruby dsl
+  that kind of
+678: is i would say fairly if you're if you kind of have a basic understanding of
+  almost like you know
+684: configure make make install like how unix programs are generally built like it's
+  you can read through
+689: that and it's pretty obvious how to get started and if you've ever had the this
+  episode is brought
+695: to you by spreaker the platform responsible for a rapidly spreading condition
+  known as podcast brain
+700: symptoms include buying microphones you don't need explaining rss feeds to confused
+  relatives
+705: and saying things like sorry i can't talk right now i'm editing audio if this
+  sounds familiar you're
+712: probably already a podcaster the good news is spreaker makes the whole process
+  simple you record your show
+717: upload it once and spreaker distributes it everywhere people listen apple podcasts
+  spotify
+723: and about a dozen apps your cousin swears are the next big thing even better
+  spreaker helps you
+728: monetize your show with ads meaning your podcast might someday pay for well more
+  microphones start your
+735: show today at spreaker.com spreaker because if you're going to talk to yourself
+  for an hour you might as
+741: well publish it uh misfortune of having to try and package like rpms or like
+  debian packages or whatever
+749: which are very very robust arguably better than homebrew once they're there but
+  like the actual just
+755: process of going from nothing to something that works is very time consuming
+  in my experience um whereas in
+762: homebrew you can just uh you know like make a fairly short little thing and then
+  have yourself up and
+769: running installing applications in a pretty quick time and and i think that's
+  why it's grown and stayed
+774: big because it's quite easy for people to contribute and modify and change things
+  and it's just you know
+779: you can do it all on github nowadays right so when i was in college i w i was
+  a systems administrator on
+787: mostly red hat systems and so i've i've written some fugly bash scripts to do
+  all kinds of things and
+795: and i've also done rpm packaging and you know later on i yeah there are a few
+  things that i've had to
+801: fiddle with and maybe put into a debian package and yeah that is not a fun process
+806: and then you just kind of have to put it out there and then pull it in with your
+  package manager or with
+811: some utility that can pull it in and unpack it and do whatever it does and oh
+  man yeah homebrew's
+820: pretty nice that way uh also done plenty of stuff with make which is it's a powerful
+  utility but it's
+826: a little arcane sometimes and so yeah i i definitely feel you there so um
+833: um yeah so it's all written in ruby is it pretty is it pretty simple or there
+  are a lot of edge cases
+841: you have to handle or is that mostly in the packages or the formula or whatever
+  yeah a bit of both like
+846: i mean there's i think with with stuff like homebrew is like a really long tail
+  so i guess with the stuff
+852: that max created in the first place um you know i can't remember how many packages
+  he's almost like
+857: shipped with to begin with but um it's one of those things where if you have
+  a hundred packages
+863: everything seems pretty simple if you have a thousand things start to get a bit
+  more complex
+866: and then when you start getting up to like five six thousand it's like it gets
+  really messy all the
+871: weird and wonderful things that things do and as a packager of software you have
+  this kind of weird
+878: decision framework where there's often the way the the people who write their
+  software originally i guess
+885: we would refer to them as upstream and the way they want to release their software
+  is not necessarily
+891: the way your users want to consume the software or the way you want to be keeping
+  it up to date and
+895: stuff so you're trying to sort of balance these things and yeah i mean the thing
+  i've enjoyed about
+901: it personally is like i've always been a bit of a kind of generalist software
+  ride so like with ruby
+906: particularly when i was doing a lot more of the packaging stuff than i do probably
+  today you know in
+910: a given week you could be writing ruby c c plus plus haskell like having to play
+  around with like
+916: 10 20 different languages and frameworks and you kind of develop a sense of how
+  this stuff plays
+922: nicely together and what the what the edge cases are and what you need to watch
+  out for and everything
+927: like that but yeah i mean software is a a wily beast uh and packaging it's no
+  less so
+936: interesting so um yeah so what are your dependencies i know that you have to
+  have the xcode build tools
+944: installed does it yes in the rest of them for me yeah basically that's you on
+  a mac like that's all
+951: you need you just need to have the xcode uh like utilities installed um and then
+  even then like we've
+958: we've sort of tried in the past like sometimes to make them not required but
+  it's it's pretty hard
+963: given like the state of right things in apple land to to go completely without
+  that and you know every
+969: few years apple introduced some new requirement which requires using a cli that
+  only they
+974: provide and there's no open source version and we're kind of back to square one
+  there so
+978: yeah basically just the xcode command line tools are the only dependency and
+  then if you're running
+983: hobo and linux there's a few other bits and pieces there but and the big one
+  i mentioned before like
+988: ruby like we we build our own kind of statically compiled ruby which you can
+  just use anywhere that's
+994: auto installed for you and everything so i guess uh some of the something else
+  that i'm wondering is
+1001: are you taking advantage of some of the newer features in ruby so for example
+  you've got
+1006: yjit right that speeds things up quite a bit or uh the other one is like uh
+  fiber scheduler and stuff
+1012: like that which gives you some level of concurrency or are you digging into
+  any of that or is that kind
+1017: of upcoming when you get to it yeah so we've we've played around with like bits
+  and pieces around
+1022: there like so it's it's funny because homebrew is very much you know that there's
+  been this kind of
+1027: meme in the ruby community for a while that like people get sad that like ruby
+  is associated almost
+1033: entirely with rails most of the time um and like homebrew is pretty much as
+  as far away from that as you can
+1040: get you know we're not we're not even a web app we're not attached to a database
+  like you're running
+1045: a cli so it's funny um i i guess a lot of the places from where the jets come
+  from like it never
+1052: say never like it may well make things faster in the future but right now all
+  of the kind of jets
+1057: different jets we've tried in the different jet sessions we've tried like just
+  the way homebrew runs
+1062: even if it's doing a relatively complex task like a this episode is brought
+  to you by spreaker the
+1068: platform responsible for a rapidly spreading condition known as podcast brain
+  symptoms include
+1074: buying microphones you don't need explaining rss feeds to confused relatives
+  and saying things like
+1079: sorry i can't talk right now i'm editing audio if this sounds familiar you're
+  probably already a
+1085: podcaster the good news is spreaker makes the whole process simple you record
+  your show upload it once
+1091: and spreaker distributes it everywhere people listen apple podcasts spotify
+  and about a dozen
+1096: apps your cousin swears are the next big thing even better spreaker helps you
+  monetize your show with
+1101: ads meaning your podcast might someday pay for well more microphones start your
+  show today at
+1108: spreaker.com spreaker because if you're going to talk to yourself for an hour
+  you might as well publish it
+1115: the run times are relatively short the process only sticks around right for
+  you know at most probably
+1120: a few minutes um but then a lot of the time it's just around for a second and
+  there's new data every
+1127: time so you can't necessarily cache things super hard um and like basically
+  everywhere where homebrew is
+1135: slow and like that's the most common complaint about homebrew is that homebrew
+  is slow um the almost
+1140: everywhere it's slow it's slow because of um the like io basically like we're
+  either downloading
+1147: something off the internet we're writing something to your your hard drive we're
+  reading something from
+1150: your hard drive whatever and we can maybe do a little bit more parallelization
+  but again like in the past
+1155: uh there's been times where uh there's been times where i've and again some
+  of this may be changing
+1159: from spinning platters to ssds or whatever there's been times where i've ripped
+  out paralyzed code that
+1165: we have in homebrew and it's actually dramatically faster running really than
+  it is parallel um so yeah
+1172: i mean we we we definitely have a decent amount of like profiling tools like
+  we rely on like stack but
+1177: basically everything you would expect in rubyland stack prof co-prof all these
+  types of things
+1181: um but yeah but we do try and make things as fast as we can and the jets don't
+  seem to really be
+1187: helping much for us at the moment but as i say maybe yeah so um i'm going to
+  move on a little bit
+1197: to you mentioned homebrew core so is that the list of casks and formulae so
+  homebrew core is the list of
+1205: formula so we have homebrew cask and homebrew core so the difference between
+  casks and
+1211: formula are like homebrew costs used to be a certain like separate project and
+  that's the way
+1216: that's what you use for installing like binaries from other people so like right
+  like google chrome
+1222: or one password or whatever like if you're installing that basically if if the
+  project is
+1229: whether it's open source or not if if the main way that that's delivered is
+  like a pre-compiled
+1234: thing or like a dot app or dmg or dot pkg or whatever then you're installing
+  that with homebrew
+1239: cask like the essentially to the user the interface is more or less the same
+  nowadays like you type
+1244: brew install google chrome or brew install wget and it's it looks essentially
+  transparent under the
+1249: hoods but right yeah they're they're managed in separate repos like this was
+  previously like a
+1254: requirement due to some open source political nonsense um but yeah so everything
+  in homebrew core
+1260: is open source software and everything and homebrew cask has a much looser uh
+  requirement basically there
+1267: um so yeah they're managed separately they have roughly the same amount of packages
+  but then like
+1271: again the the dsl that's used are kind of slightly different and homebrew cask
+  is a bit more friendly
+1276: to like proprietary software for guis whatever and then homebrew core is a bit
+  more friendly to like
+1280: clis and there's open source software i gotcha so yeah and see i didn't even
+  know you could install
+1289: some of those binaries with homebrew because i always just go to the website
+  and download it and
+1294: run the installer and right yeah or open the dmg and drag it to applications
+  or whatever so that that's
+1302: really interesting um as you get into some of the open source stuff in particular
+  how do you know how to
+1309: build it are you always looking for the make file or is there something else
+  to it or so sometimes there's
+1314: instructions in like a github repo or whatever or sometimes there's kind of
+  you know it's got to
+1320: make file and sometimes you just kind of try it out and figure it out and hopefully
+  you can do the
+1327: right thing and then two years later the the author pops up and they say hey
+  you're building this totally
+1331: wrong and it's like well you didn't tell us what to do dude so like that's that's
+  what's gonna happen
+1337: yeah so yeah it's it's always a like a there's definitely like uh a certain
+  amount of kind of
+1344: trends and traits of things that behave pretty similarly and those projects
+  are very nice to
+1351: deal with and then there's projects who decide hey i'm gonna invent my own build
+  system because
+1357: all the other ones suck and yeah those are less fun to deal with right so um
+  essentially if i do a brew
+1366: install on something like google chrome it's just gonna pull the binary off
+  of wherever and it's
+1376: gonna put it wherever it goes and make sure it's in my path or whatever whatever
+  it has to do in order
+1381: for me to be able to run it yeah exactly and then for a formula it's going to
+  go through some kind of
+1387: build process and it sounds like you don't like auto detect uh the build script
+  you go and you look it
+1395: up and you add that to the formula and tell it how to build it yeah exactly
+  so what we we try and do
+1401: like certain bits of water detection and for an end user for the you know if
+  you're running brew and
+1405: saw on your machine uh the experience is actually kind of similar because you're
+  you're still downloading a
+1409: binary most of the time if you installed homebrew on like a supported macOS
+  version which is one of the
+1415: the last three and the kind of default location right then what it will do is
+  essentially when
+1421: someone submits a formula or an update to a formula we have our pull requests
+  on github
+1427: our continuous integration we'll go and like build that and then when that works
+  we then
+1430: have a process that kind of that build artifact gets uploaded we call those
+  like bottles the binary
+1437: packages and okay like that that was my probably favorite contribution to homebrew
+  was doing that
+1444: just for the amount of time it's probably saved the world uh because before
+  that you know if you
+1449: wanted to install wget it would take five minutes and everyone would essentially
+  spend five minutes with
+1454: their cpu fans you know in the days before right silicon like going 100 to spit
+  out essentially the
+1460: the same binary at the end um so yeah now we kind of have these binary packages
+  and those are downloaded
+1467: on your machine and installed and it's all nice and and also it's way less error
+  prone because um with
+1473: the compilation stuff there's always things where you know you have some random
+  utility on your machine
+1478: and the build script detects that and then blows up or whatever so you don't
+  have those same issues with
+1483: the binaries and hey there this is charles maxwood i'm excited because i wanted
+  to let you know about
+1491: this thing that i pulled together that i had just i've been dying to have this
+  for years and i never
+1497: felt like i could and then i just realized that there's no reason why i can't
+  so um i'm putting
+1501: together a book club and we're going to read development focused books career
+  books you know
+1506: technical books whatever the first book that we're going to do is going to be
+  clean architecture by
+1512: uncle bob martin if you're not familiar with clean code or some of the other
+  stuff that bob has done
+1517: check that out i've also talked to him on the clean coders podcast which is
+  on top end devs
+1521: but uh yeah we're going to get on he's going to show up to some of our meetings
+  and what i'm
+1525: thinking is we'll probably have like five or six people uh part of the conversation
+  along with bob and
+1530: i at the same time and we'll just uh so somebody can come on they can ask their
+  question
+1536: and then we'll just rotate people through so we'll we'll mute one person unmute
+  another person
+1541: when it's their turn to come on and be part of the discussion so we'll do that
+  for like an hour
+1546: hour and a half and then the other part of it that i'm putting together is just
+  kind of a meet and
+1550: greet gather area on gather town and so after the the meetup and the call what
+  we'll do is we'll all
+1558: go over to gather town and you can just log in walk up to a group and have a
+  conversation and that
+1563: way we can all kind of get to know each other and and make friends and and get
+  to know people
+1568: across the world uh one thing that i'm finding is that yeah the meetups are
+  starting to come back
+1572: but a lot of people don't have the opportunity to go to a meetup and i really
+  want to meet you guys
+1576: and talk to you so we're going to put all that together it'll all be part of
+  that book club you
+1580: can go to topendevs.com book club to be part of it and i'm looking forward to
+  seeing you there the
+1585: first book club meeting will be in december the beginning of december we're
+  starting the first week of
+1590: december and um you'll also be part of the conversation about which book we
+  do next i have
+1597: one in mind but i want to see where everybody's at so there you go right so
+  it looks at my setup and
+1604: says oh i know that this bottle's compatible so i'm just going to give you the
+  binary instead of
+1610: making you build it totally and then if it can't for whatever reason then it'll
+  do the build step
+1616: or the build process yeah yeah and i mean that that essentially should never
+  happen on you know
+1623: a supported mac and a supported location but yeah if you're outside of that
+  then it will fall back to
+1628: kind of building from source and when it can't do that otherwise uh but yeah
+  but most most things
+1634: most of the time will always be you get like a binary package for most users
+  so right so just backing
+1643: up a little bit because you mentioned homebrew core and homebrew casks is kind
+  of the places where
+1649: these things live is homebrew literally going to github and cloning it or like
+  how does it get that
+1656: list yeah originally well until very recently yes we we did that uh to get hubs
+  yeah so the original
+1665: updater for homebrew was just it had one repo uh which was like mxcl which is
+  max house github uh
+1673: mxcl slash homebrew and that would just be cloned in a directory and when you
+  ran brew update
+1678: to like you know pull the latest packages that was just doing a git pull basically
+  um so over over
+1683: time that became more and more sophisticated um as homebrew grew that became
+  slower and slower like
+1690: even the no-op operation of just doing a git fetch on that repo and it's telling
+  you you don't need
+1695: anything that was taking like a couple of seconds at the time i worked at github
+  and i was getting
+1700: annoyed with how slow it was so i actually added a entry to the github api to
+  specifically to make
+1707: homebrews updates faster and uh like it ended up being used by a bunch of other
+  cases and package
+1713: managers or whatever essentially what you could do is you could just like pass
+  the the hash that you
+1717: have i i have used the the uh what's called the http e tag so you could pass
+  the the git commit hash as
+1726: the e tag and then you would get a whatever i can call it is the the status
+  code that says no not
+1732: modified essentially so it would do that and it also wouldn't count against
+  your github rate limit
+1737: because that was very heavily cached that operation so that basically meant
+  you could get a really really
+1741: fast response for like github repos and we still rely on that api to this day
+  um and yeah so until
+1748: very recently like that was still how it was done and we would like fetch stuff
+  or whatever but um
+1753: over time that was getting slower and slower and also like github were like
+  you know they were pretty
+1758: nice about it all but i think at some point i believe there was like a dedicated
+  bare metal server
+1763: that was essentially just 24 7 serving homebrew core to people uh because also
+  the way that that
+1769: that repo had super long history loads of contributors right didn't i did a
+  lot of like uh squash and
+1776: rebasing so like not very kind like history management um and again like thousands
+  of files in a folder
+1784: which we never knew when humbrew was created is extreme if you have very deep
+  histories get gets very
+1790: angry and the performance goes to um bad places pretty quick this episode is
+  brought to you by
+1796: spreaker the platform responsible for a rapidly spreading condition known as
+  podcast brain symptoms
+1802: include buying microphones you don't need explaining rss feeds to confused relatives
+  and saying things like
+1808: sorry i can't talk right now i'm editing audio if this sounds familiar you're
+  probably already a podcaster
+1815: the good news is spreaker makes the whole process simple you record your show
+  upload it once
+1820: and spreaker distributes it everywhere people listen apple podcasts spotify
+  and about a dozen apps your
+1825: cousin swears are the next big thing even better spreaker helps you monetize
+  your show with ads
+1831: meaning your podcast might someday pay for well more microphones start your
+  show today at spreaker.com
+1838: spreaker because if you're going to talk to yourself for an hour you might as
+  well publish it
+1844: um so yeah so as of i think it was year and a half maybe two years ago uh like
+  someone one of the home
+1852: room maintainers kind of started the first attempt at like a little project
+  to see about okay well we
+1859: can we you can effectively turn pretty much all the homebrew packages into like
+  json output anyway right and
+1865: when you're just downloading binary packages you're basically just downloading
+  a thing off the internet
+1869: and sticking it in um like installing it that way anyway you don't need all
+  the kind of sophisticated
+1875: build information for every package um so yeah so as of yeah like about a year
+  ago i think we've
+1881: migrated entirely to what we call our kind of json api which is downloading
+  just a single json file which
+1887: provides all the details for those packages um and then you just have that single
+  download you don't
+1892: need to have that git repository on your machine anymore which saves a bunch
+  of space and it's like a lot quicker
+1897: of downloading um right and yeah and the implementation of that api is another
+  disgusting uh thing where so
+1904: perhaps because i'm scottish um we are known for such things or just i don't
+  know uh i don't like
+1910: paying for things and and in open source projects i think that's universal even
+  less uh so our our json api
+1918: is actually on github pages um and it's yeah so it's all like it's a statically
+  generated api essentially
+1925: so like every 15 minutes we like regenerate our packages and what that means
+  is that it's really
+1930: really really fast and essentially you know nigh infinitely scalable for github
+  to stick a cdn
+1936: in front of that and host it that way and and it's also pretty easy for us to
+  kind of download and
+1941: debug and we're not maintaining some like complex um like you know when i worked
+  on the the api github
+1948: like maintaining the performance on that thing when you were at the scales we
+  were at was not an easy
+1956: feat and yeah and i i saw that i guess for homebrew and i was like nope i'm
+  gonna if i can make this
+1961: just entirely static unauthenticated api then let's do that so that's the route
+  we went down and it's been
+1967: working pretty well for us that's awesome i love that it also makes me think
+  a little bit that
+1975: sometimes i might be over complicating my life by trying to make it work the
+  other way
+1979: right the more traditional i'm gonna build i'm gonna build an endpoint on rails
+  and it's gonna
+1984: give all this stuff and it's gonna check all these things instead of just saying
+  hey it doesn't matter
+1989: if everybody knows this and it'll be way faster and it's not that big a file
+  so yeah just
+1997: go get it yeah it's funny because i had this idea for like over a decade about
+  like building
+2002: essentially static apis where because you know like static site i've used like
+  jackal and github
+2009: pages for my oh yeah for a long time um i i kind of like that sort of static
+  site builder model and
+2015: you know the results are nice and super fast and it's really cheap and easy
+  to host and very
+2020: non-error prone right once once you've generated the files you're like well
+  nothing can go wrong now
+2025: right compared to like maintaining a rails app um but yeah so i always kind
+  of like the idea of having
+2031: something behind i was i was pleased that i was actually finally able to do
+  it because in cases
+2034: where essentially you want to deliver the data to absolutely everyone the data
+  is the same it's not
+2040: like user dependent whatever and the data only needs updated like not very often
+  like you're not updating
+2046: like second by second from some database but you're updating it like you know
+  a few times an hour then
+2051: yeah like this approach has actually been really quite cool and fun and yeah
+  and encourage others
+2057: to play out below uh play around with the approach and maybe not on get on pages
+  because get on my gang
+2062: room so well i can imagine though because i'm just thinking through maybe what
+  i want to do with
+2069: building an app for the podcast network right yeah and yeah like 99 of the stuff
+  that i'm putting out
+2077: there it's going to be the same for everybody and it's all public and right
+  so i i don't have to protect
+2084: it at all and so yeah why not just have a static file out there that it can
+  just go oh you want the
+2090: list of podcasts here right oh you want this podcast and all of its episodes
+  here right now granted some of
+2097: the podcasts have more than 500 episodes at this point and so you might get
+  a little longer json file
+2103: but still it's not terribly large and you know you start getting into it really
+  when you start pulling
+2109: down images or audio files yeah you know i can put those in as urls on the json
+  and just make it really
+2115: wicked fast and then it's okay now i have restricted access for memberships
+  and stuff like that that's where i can
+2123: you know maybe put a check in front of it but still then just have them pick
+  up a statically generated
+2129: thing because once you're authenticated that's all the same too so yep totally
+  i'm really digging this
+2135: yeah it's it's been fun i think i don't know that this is the thing i like about
+  working with open
+2140: source and stuff like homebrew is that you know you get i guess the thing i've
+  learned in my career is the
+2146: most interesting projects are the ones often with any sort of constraints right
+  like the projects would
+2152: like you know take as long as you want you have as many people as you want do
+  it whatever you want
+2158: in whatever language you want like they're they're often like maybe i'm just
+  a masochist but i i find
+2162: them often like less fun whereas the fun thing with something like homebrew
+  as well it's like you're
+2166: building homebrew's api and it's like well we we have like i i guess the way
+  i describe homebrew's
+2172: financial situation is like not enough to pay anyone but too much for stickers
+  right so you have
+2177: like this like middle ground of money uh and as a result like it's this tricky
+  thing of like well i
+2185: don't really want to put us in a situation where we're paying vast hosting bills
+  so let's try and
+2190: figure out a way of doing this for free essentially but it has to be able to
+  scale to like you know
+2196: millions if not tens of millions of people like using this thing um so yeah
+  so like that's been a
+2202: a fun kind of comparison uh compared to as i say you know like github days where
+  you're scaling to
+2208: many more people than that but you also have particularly post microsoft acquisition
+  like
+2213: many more resources to your disposal in order to achieve those scales and you're
+  not working quite as
+2219: much as much about the bottom line as you go along yeah yeah the other thing
+  that i i just went through
+2226: my head was and this isn't json it's xml but rss feeds right oh yeah yeah yeah
+  yep so yeah um
+2235: all right so we've kind of talked through how the repository works and um let's
+  say that i decided i
+2244: wanted to build the cli and it was moderately complex are there are there things
+  that you
+2249: recommend to me as a ruby developer as places to get started um i mean the funny
+  thing is i i wasn't
+2259: you know i realized this uh maybe um i don't know a controversial take for the
+  podcast but like i mean
+2265: nowadays i probably wouldn't necessarily reach for ruby for a cli like it's
+  it's okay for like doing
+2272: doing you know i still think it's great for doing web apps but like you know
+  when i've i've been
+2277: building like a new cli for some of the stuff we've been doing with work brew
+  um and like go feels like
+2284: a more i was basically weighing up between like go rust and swift basically
+  um as oh okay like
+2290: the switch i wouldn't have pegged swift for that well i yeah i i didn't peg
+  swift in the end for
+2295: various reasons but you know i ended up going with go which i it's i don't know
+  like
+2301: for me go is just it's good at what it does it's such a boring language i i
+  don't have any fun when
+2308: i'm writing go but you can ship a single static oh it's fast yeah and it's super
+  fast and for cli
+2314: it's like it's like the responsiveness is really great i think i think that's
+  the thing that i maybe
+2319: i'm just burned for like 15 years of working on a ruby cli but like there's
+  a certain amount of
+2323: people will complain about the slowness that it's like literally even like a
+  ruby interpreter spinning up and
+2329: saying hello world is like unacceptably slow to some people right and at that
+  level i can't
+2335: really do anything to make it it faster but yeah i guess if you if you are going
+  down the route of
+2341: almost like really wanting to get into a make it some sort of ruby cli or whatever
+  i guess i would
+2345: just say like you know the beauty of ruby is that you can start with like a
+  single script right you can
+2351: just right have a script stick the shebang at the top like the for those who
+  don't know that's the thing
+2356: where it has um like exclamation mark hash like user bin anyway like user bin
+  ruby or whatever and then
+2366: you can just start writing ruby code straight away right and and like that's
+  that's how i think is the
+2373: best way to maybe get started with like clis whatever it's just like rather
+  than almost like
+2377: reaching for some option parsing framework whatever no just go and just start
+  writing some ruby and right
+2384: just read the argv which is the array of like the arguments you pass into the
+  script and like just
+2389: read that yourself and just you know don't don't go too fast too quickly and
+  you'll probably have
+2395: like a good time because again like when you're clis if you're wanting to distribute
+  them to other
+2400: people like if they you know if you start relying on loads of other gems and
+  stuff then it becomes like
+2406: a little bit more of a headache to kind of distribute and use these things and
+  keep them up to date and
+2410: whatever so like yeah i think the beauty of ruby is like ruby has like a pretty
+  decent broad standard
+2416: library you could do a lot with like a single script and even like an old version
+  of ruby like the ones
+2420: that ship with like mac os like there's still you know it's still a powerful
+  like pleasant language to
+2426: work in so yeah very cool um so yeah so is there anything new coming in homebrew
+  or
+2436: yeah i mean we're always working on this it's funny because uh people quite
+  people ask periodically
+2443: about like the roadmap for homebrew and because we're essentially i mean maybe
+  except for me now
+2448: like essentially almost everyone is like a volunteer the the roadmap for homebrew
+  is kind of like
+2452: well let's see what people want to work whatever people want to work on right
+  and it's yeah like
+2458: the product management on homebrew kind of looks more like uh nerds attempting
+  to nerd snipe other
+2464: maintainers into um solving problems than it does like you know building a team
+  and assigning them a
+2470: six-month project right so yeah i mean i think like a big thing is like performance
+  like we're continually
+2476: trying to kind of eke out better performance where we can um and then yeah and
+  i guess like i'm looking
+2481: at it from the kind of work brew end as well of being like okay well so if uh
+  if me and a team of
+2488: people are actually able to work on homebrew full-time or like spend like a
+  decent amount of time putting
+2494: into homebrew like what are the really big impactful things in homebrew that
+  kind of might people might
+2500: look at and say that's just impossible that we could do if we have like a paid
+  team of people who are
+2505: working on this stuff full-time um and i don't want to you know i don't want
+  to be too spoilery with
+2510: that but um yeah there's definitely there's definitely some stuff we're exploring
+  where
+2514: if we see that there's interest and we can kind of pull it off i think people
+  will really say wow about
+2521: but um i in the short term medium term i think there's more along the lines
+  of yeah just like
+2526: making homebrew faster more secure making the contribution process better and
+  just trying to
+2530: do everything we do right now like better basically like i mean i i'm a big
+  fan at github and on homebrew
+2537: of like um when i was at github that was like reading really really heavily
+  into automation so again
+2543: like a lot of what we're trying to do on homebrew sometimes it's like we've
+  only got 30 people
+2548: maintaining the the project but yeah the throughput of like prs we have and
+  it's fairly ridiculous and we
+2554: just try and have so much automation lean have more and more and more heavily
+  into that and any time
+2559: you know i catch people doing things that i'm like a bot could do this then
+  it's like right i try and
+2564: write some code and get the humans doing the human things and save the the bot
+  work for the bots
+2571: so i was gonna ask about work brew and i'm gonna ask about in a second but you
+  did mention um
+2577: uh maintainers and so if somebody is like oh i've got a great idea for homebrew
+  or um you know i use
+2587: this all the time and i'd like to contribute back to it right is is there a
+  good way for people to get
+2592: started with contributing yeah so homebrew the best way to get started is there's
+  like a contribution
+2597: section on the readme of the homebrew brew so if you go there then you'll or
+  if you even just search
+2603: for like contributing to homebrew like the result like results are pretty decent
+  i would say our our
+2607: docs are probably like on the better end uh for like contribution like our tooling
+  is probably pretty
+2613: good but like i would say like it's a really easy project to get started with
+  um and we we really
+2620: try to kind of cheerlead the people who want to get involved with the project
+  so like if you're in
+2625: any doubt just try something and we'll help you out and you can mention me by
+  my github handle or
+2631: whatever if you say that it's your first pr and you're struggling and i'll try
+  and do what i can to
+2634: help you and stuff like that um it's a yeah i as i say i think it's a really
+  good project to kind of
+2639: get started with um but as you know for some of us at least it's also can be
+  uh fairly addictive
+2646: at times so be be wary from that perspective as well yep all right so the other
+  question i have
+2654: then is yeah do you want to talk about work brew like what it is and where you're
+  heading with that
+2660: yeah so i mean as i mentioned earlier with like homebrew like i've been working
+  on homebrew for
+2665: about 15 years and for you know probably 10 of those years there's been people
+  who have been
+2671: encouraging me at various points that oh you know you should make a company
+  doing stuff around homebrew
+2675: and i i have been historically kind of down on this idea or fairly cynical particularly
+  when
+2682: i mean i'm not going to name any names but you know there's been various companies
+  who kind of
+2686: have done open source stuff and then you know they complain down the line when
+  everyone uses their
+2692: software but they're not making enough money or whatever it may be and right
+  i guess to me it's like
+2697: open source itself is not a business model i know and also like i you know i
+  kept like you mentioned
+2703: earlier like you've got you know kids younger than homebrew and stuff like i
+  i also feel like homebrew is
+2708: kind of my first child and i feel quite precious of it and i wouldn't want to
+  you know like destroy it
+2714: or whatever so it's it yeah it took a while for me to get to a place that i
+  was like yeah actually it
+2719: feels like a few things have come together so one is like homebrew feels i mean
+  even with the road map
+2725: stuff like if we'd had this conversation a year ago or two years ago i probably
+  would have said like
+2729: more stuff on the horizon but it feels like fairly close to kind of feature
+  complete at this point
+2734: and without almost like a big um injection of kind of effort and stuff so that
+  was one part the other
+2740: part is like we've got i won't go into all the boring details of like open source
+  governance but you
+2745: know but we have an open collective we have a like a leadership committee we
+  have elections every year
+2750: we have like ways of getting involved with the project beyond just like current
+  docs and stuff
+2754: like that we have money that we're using to like provide stipends to some maintainers
+  and pay for
+2760: them to kind of come and meet each other in person and stuff so the project
+  feels like it's in a really
+2764: good mature place and it's also in a place where no one party could ever kind
+  of completely take
+2770: over homebrew even if they wanted to and so yeah so and it it's also on the
+  backdrop of this i guess
+2776: like you know i left github last year and was sort of looking for a new challenge
+  or something new and
+2782: you know again over the last 10 years there's been various times where companies
+  come and say hey
+2786: we'd like you know homebrew to do this or that or whatever and this episode
+  is brought to you by
+2791: spreaker the platform responsible for a rapidly spreading condition known as
+  podcast brain symptoms
+2797: include buying microphones you don't need explaining rss feeds to confused relatives
+  and saying things
+2802: like sorry i can't talk right now i'm editing audio if this sounds familiar
+  you're probably already a
+2809: podcaster the good news is spreaker makes the whole process simple you record
+  your show upload it once
+2815: and spreaker distributes it everywhere people listen apple podcasts spotify
+  and about a dozen apps your
+2820: cousin swears are the next big thing even better spreaker helps you monetize
+  your show with ads
+2826: meaning your podcast might someday pay for well more microphones start your
+  show today
+2832: at spreaker.com spreaker because if you're going to talk to yourself for an
+  hour you might as well
+2838: publish it essentially what a lot of homebrew features come down to is like
+  do the volunteers
+2842: who are mainly working in their spare time want to build and support this right
+  and for a lot of like
+2848: big enterprise stuff i don't know charles have you ever had the misfortune of
+  uh reading through like
+2853: a saml spec or something like that before but you know once once you get into
+  this like big enterprise
+2858: tech like it's often not very fun and it's not what people want to spend their
+  evenings and weekends
+2862: doing and i previously worked like before my homebrew days in like an open source
+  company back when i
+2867: was a kde contributor and this company uh consulting company and they hired
+  more kde contributors than
+2873: anyone else and i worked and i thought sweet i'm gonna be able to work on open
+  source most of the time but i
+2877: i learned pretty quickly that their open source projects were actually not super
+  fun because they
+2881: were basically stuff that people would pay a consulting company to go and like
+  hey like we've got this
+2886: stuff which we can't get anyone to do for fun so will you do this for money
+  and then they're like okay
+2892: well fine um so with work brew i kind of see it as being a similar thing where
+  what we're trying to do
+2898: is you know there's a lot of talk about sustainability and open source and stuff
+  right now um and i guess that's
+2904: on my mind i worked on the original team of people who built get up sponsors
+  and have helped kind of
+2909: homebrew yeah have that open collective and to me like this is the next almost
+  like step in the
+2913: evolution of like what sustainability could look like for homebrew is having
+  a commercial entity where
+2919: we're trying to kind of make a sustainable like commercial entity who has an
+  interest in making money
+2925: in the homebrew ecosystem but not charging money directly for homebrew itself
+  homebrew itself will
+2930: is and will always remain like free of charge but we're going to make homebrew
+  better by making
+2935: workbrew better and be providing services to companies um in the homebrew ecosystem
+  through
+2940: our expertise and by building stuff that tightly integrates with homebrew so
+  essentially the version
+2945: of workbrew that i like run on my local machine today it looks and behaves almost
+  exactly the same as
+2950: homebrew right except it's got a little coffee cup instead of a beer emoji um
+  but it's you know it's
+2956: running in a different way it's running in a more isolated like fashion a multi-user
+  fashion right
+2960: it's like reporting back to do fleet management so someone could upgrade like
+  if i've got critical
+2966: vulnerabilities remotely and so that people can see kind of oh like you've um
+  you haven't updated in six
+2972: months and we've got some problems with that whatever it may be um so yeah so
+  essentially that's what we've
+2977: tried to do we're trying to build something that provides a better experience
+  for using homebrew at work
+2982: um but for most hobbyists i i mean we very much have the goal that if you in
+  five or ten years if
+2988: we're successful even if you've never heard of workbrew even if you never interact
+  with workbrew you will
+2992: look at essentially roundabout now as being an inflection point where homebrew
+  gets really really
+2999: good in the next five or ten years and it gets noticeably better for everyone
+  using it because we're
+3003: able to kind of get involved and improve the sustainability of the project through
+  the commercialization of this
+3009: part of the ecosystem that's cool um if people want to know a little bit more
+  about
+3017: what's going on with that like you have a mailing list or something or yeah
+  so date somehow yeah the
+3024: best way of like getting in touch with us we've got a contact form on our website
+  if you go to workbrew.com
+3029: contact and then you can like send us a message and then we can go and get in
+  touch and we'll kind of
+3036: send you emails and stuff like that and you can also see if you go to workbrew.com
+  our demo of
+3040: what we have in private beta right now which is essentially like a fleet management
+  for homebrew
+3045: and kind of integrated with mdm tools and so that basically like mac admins
+  and primarily and you
+3051: know security professional developer experience folks can basically get a nicer
+  experience of using
+3055: um homebrew at work and so yeah so we're recruiting like design partners for
+  that right now which
+3061: essentially means like people who will give us lots of feedback while we make
+  the beta kind of
+3066: more to their requirements so again if you're interested in that best way is
+  reaching out through
+3070: the contact form and and if you have any thoughts equally as well if it's easier
+  if you're one of
+3075: these people who gets spooked by contact forms you can send me an email um my
+  email address is pretty
+3080: easily findable on the internet so if you do that or it's just mike at workbrew.com
+  or at brew.sh if you want my
+3087: open source email awesome all right well um if people want to connect with you
+  on some other level
+3096: where do they find you on the internet so i'm still i'm basically read only
+  mainly on twitter nowadays uh
+3105: i'm mike mcquade on there but the best place probably is uh i'm mike mcquade
+  at mastodon.social
+3111: on like mastodon nowadays um or if you just find my website at mike mcquade.com
+  that's basically got
+3116: you know my i try and kind of put if i write blog posts or like do talks and
+  all my contact
+3124: information is there and stuff as well so yeah and you'd be surprised how few
+  people actually just
+3130: email me to say hi or share their opinions so feel free to do that for almost
+  anything except for
+3136: saying my home is broken please fix it in which case right all right good deal
+  well i'm gonna go ahead
+3143: and uh roll us into the picks here have you ever wish that you had a group of
+  people that were just
+3148: as passionate about writing code as you are i know i did i did that for most
+  of my career i'd go to the
+3153: meetups i try and create other opportunities and it was just really hard right
+  the meetups i got some
+3159: of that but they were only like once or twice a month and it was just really
+  hard to find that group
+3163: of people that i connected with and and really wanted to you know talk about
+  code a lot right
+3169: i mean i love writing code i think it's the best and so i've decided to create
+  this community and
+3175: create it a worldwide community that we can all jump in and do it so we're going
+  to have two workshops
+3181: every week one of those or two of those every month there are going to be q
+  a calls right where
+3186: you can get on you can ask me or me and another expert questions uh the rest
+  of them are going to
+3190: be focused on different aspects of career or programming or things like that
+  right so it'll go
+3196: anywhere from like deployments and containers all the way up to managing your
+  401k and negotiating your
+3202: benefits package well we'll cover all of it okay and then we're also going to
+  have meetups every month
+3208: for your particular technology area so we have shows about javascript react
+  angular view and so on
+3214: we're going to have meetups for all of those things i'm going to revive the
+  freelancer show
+3218: we'll have one about that right so you can get started freelancing or continue
+  freelancing if
+3222: that's where you're at and i'm working on finding authors who can actually do
+  weekly video tutorials
+3229: on something for 10 minutes this related again to those technology areas so
+  that you can stay current
+3234: keep growing so if you're interested go to topendevs.com/signup and you can
+  get in right now for 39
+3243: when we're done that price is going to go up to 75 and the 39 price gets you
+  access to two calls per week
+3252: the the full price at 150 which is going to be 75 over the next few weeks that
+  price is going to get
+3261: you access to all of the calls and all of the tutorials and everything else
+  that we put out from
+3266: top end devs along with member pricing for our remote conferences that are coming
+  up next year so go check it
+3272: out top end devs.com/signup um and i we usually have the host go first so i'll
+  go first um one of the
+3282: first picks i have i always pick a board game when i uh when i do my picks and
+  so i'm going to pick a
+3288: board game called fire tower and basically it's a it was a relatively simple
+  game let me look it up on
+3297: board game geek real quick while i tell you how how it's played but um essentially
+  all of the players
+3303: have uh fire towers in the corners of the board and
+3307: uh so what you're trying to do is you're trying to burn everybody else's tower
+  down before the fire
+3316: gets to and burns your tower down and so um you can play two to four players
+  we played it with four
+3324: people it was a lot of fun uh board game geek rates it at 1.77 uh i tell people
+  that a two is
+3330: kind of a reasonably complicated game it's complicated to be fun but not so
+  complicated that it's hard to
+3336: pick up and so yeah this is right in there at that level um playing time it
+  says 15 to 30 minutes i think
+3343: we played at 45 but it was our first time um uh yeah 10 plus player or 10 plus
+  on age i honestly think
+3353: my eight-year-old could play this game right um it's it's pretty simple and
+  after she played it once
+3358: or twice she'd probably get most of the strategies figured out right don't have
+  the wind blow toward
+3363: your tower um put put down the fire tokens in a way that gets it closer to the
+  other people's towers
+3371: i mean right anyway so um so i'm gonna go ahead and pick that uh it was a super
+  fun game really
+3379: enjoyed it um one other one that i'm gonna pick is we were talking about some
+  of the install stuff
+3387: and daniel kehoe who's used to be in the ruby community way back in the day
+  uh he has a website
+3394: mac.install.guide and it walks through how to install like ruby and a bunch
+  of other stuff and it
+3400: pretty heavily uh refers people to homebrew so um anyway i'm gonna refer to
+  that just as a resource
+3409: that people can uh go check out and then um
+3414: i had something else and i'm i'm just kind of blanking on it anyway i'm the
+  the the where i talked
+3423: to daniel most recently was when i picked up the rails composer.com domain from
+  him
+3427: um and so um i'm working on that you can actually watch me build rails composer
+  and all of the
+3434: different uh rails engines that i plan on putting together for that um on the
+  rails clips um
+3444: video series so just go to topendevs.com you can find it i think i also own
+  rails clips.com and i think
+3451: that goes to the right place so uh go check that out but uh anyway um yeah good
+  stuff uh mike what do
+3460: you want to pick on the show yeah okay i guess i will do three little picks
+  uh so one would be i'm
+3468: reading a book right now by a guy called alistair reynolds and he's a science
+  fiction author he's
+3473: written a lot of kind of space opera stuff i've written read all of his books
+  uh that he's ever
+3478: written so far um and he released a new one a couple of months ago which i'm
+  88 of the way through
+3483: called machine vendetta that you penny arcade talked about it um and you probably
+  don't want to jump
+3488: straight into uh machine vendetta as there's been a couple of books preceding
+  it in the series
+3493: unless you want to deal with the discussion of hyper pigs in the first paragraph
+  which may throw you
+3498: off um my second recommendation would be a band uh you may or may not be into
+  their vibe they're called
+3505: ale storm uh like a storm of beer and i guess you can see there's a theme going
+  on they are a scottish
+3512: pirate metal band um i'm seeing them live uh next sunday uh in scotland uh but
+  they play internationally
+3520: and they my kids really like a song from their latest album called uh pirate
+  party because it has a
+3527: a moment with a man drinking from a shoe which is apparently very funny when
+  you're four and six
+3531: years old uh but generally i would not recommend most of their songs to children
+  and as they are
+3536: very heavily expletive written in some of them but you but you know whatever
+  they may work for you or
+3543: not and my final recommendation i guess on the theme of um open source maintenance
+  in particular is
+3549: therapy i've been doing therapy intermittently since 2020 and i've something
+  i found tremendously
+3556: helpful personally um with all sorts of things in work personal life my uh relationships
+  with my
+3564: friends family kids wife and and even on occasion i have sessions where i talk
+  about a particular
+3571: difficult person i'm dealing with open source land uh in a given therapy session
+  so if you're if you're
+3576: interested i would highly recommend it and i've written a blog post on my website
+  of like a step-by-step
+3581: guide if that's your way of doing things of like how to find a therapist so
+  if you are interested and
+3586: that's useful to you please consider doing that oh man given the last few months
+  that i've had
+3594: i might need that anyway uh what was the name of the band again and if you can
+  put a link into the
+3599: comments that'd be great yeah yeah i will drop a link into the band obviously
+  um but yeah we'll go ahead
+3607: and wrap up here um one other thing i was just going to put out there this is
+  the thing i forgot
+3611: is that uh my contract work has slowed down a bit so if you're looking i'm either
+  looking for a full-time
+3618: job or a contract prefer contract but you know if you've got an interesting
+  set of problems and
+3624: you're gonna pay me well to fix them then i am happy to consider full-time work
+  um you can just
+3629: email me chuck at top endevs.com all right thanks for coming mike this was really
+  really interesting
+3637: thanks for having me chuck and have a good rest of your day everyone yeah you
+  too max out everybody
