@@ -5,6 +5,7 @@ require "time"
 require "open3"
 
 require_relative "content_link_metadata"
+require_relative "download_media_images"
 require_relative "generate_transcripts"
 require_relative "podcast_feed_importer"
 
@@ -33,6 +34,9 @@ class EnrichMetadataCLI
     when "link-metadata"
       @args.shift
       link_metadata(@args)
+    when "download-media"
+      @args.shift
+      download_media(@args)
     when "new"
       create_new_thought
     when "transcripts"
@@ -53,11 +57,26 @@ class EnrichMetadataCLI
   private
 
   def usage
-    puts "Usage: bin/enrich-metadata [run|update|link-metadata|transcripts|podcast-feeds|new|add-githooks|remove-githooks|status-githooks] [files]"
+    puts <<~USAGE
+      Usage: bin/enrich-metadata <command> [files]
+
+      Commands:
+        run              Run all enrichment (default)
+        update <files>   Enrich metadata and download media for specific files
+        link-metadata    Enrich link metadata and generate transcripts
+        download-media   Download and optimise all media images
+        new              Create a new thought
+        transcripts      Generate transcripts
+        podcast-feeds    Import external podcast feeds
+        add-githooks     Enable pre-commit hooks
+        remove-githooks  Disable pre-commit hooks
+        status-githooks  Show current hooks status
+    USAGE
   end
 
   def add_githooks
     system!("git", "config", "core.hooksPath", ".githooks")
+    warn "enrich-metadata: git hooks enabled (.githooks)"
   end
 
   def remove_githooks
@@ -75,6 +94,14 @@ class EnrichMetadataCLI
     end
   end
 
+  def ensure_githooks
+    hooks_path = capture("git", "config", "--get", "core.hooksPath").strip
+    return if hooks_path == ".githooks"
+
+    system("git", "config", "core.hooksPath", ".githooks")
+    warn "enrich-metadata: enabled git hooks (.githooks)"
+  end
+
   def update(files)
     if files.empty?
       warn "no files provided!"
@@ -82,12 +109,21 @@ class EnrichMetadataCLI
     end
 
     ContentLinkMetadata.run(files)
+    DownloadMediaImages.run_for_paths(files)
     TranscriptGenerator.new.run(paths: files)
   end
 
   def link_metadata(files)
     ContentLinkMetadata.run(files)
     TranscriptGenerator.new.run(paths: files)
+  end
+
+  def download_media(args)
+    if args.empty?
+      DownloadMediaImages.run
+    else
+      DownloadMediaImages.run_for_paths(args)
+    end
   end
 
   def run_transcripts
@@ -101,6 +137,8 @@ class EnrichMetadataCLI
   end
 
   def run_all(args)
+    ensure_githooks
+
     paths = []
 
     args.each do |arg|
@@ -109,6 +147,11 @@ class EnrichMetadataCLI
     end
 
     ContentLinkMetadata.run(paths)
+    if paths.empty?
+      DownloadMediaImages.run
+    else
+      DownloadMediaImages.run_for_paths(paths)
+    end
     TranscriptGenerator.new.run(paths: paths.empty? ? nil : paths)
     PodcastFeedImporter.new.run
   end
@@ -148,7 +191,13 @@ class EnrichMetadataCLI
 
     system!("git", "add", file)
     update([file])
-    system!("git", "commit", "--no-verify", file, "-m", "Add thought #{timestamp}")
+    system!("git", "add", file, "images/media")
+    system!("git", "commit", "--no-verify", "-m", "Add thought #{timestamp}")
+
+    warn "enrich-metadata: running Jekyll build to check for errors..."
+    unless system("bundle", "exec", "jekyll", "build", "--quiet")
+      warn "enrich-metadata: Jekyll build failed! Check the output above."
+    end
 
     return unless $stdin.tty?
 
