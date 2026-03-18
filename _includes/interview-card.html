@@ -12,7 +12,7 @@
   {% if interview_podcast_audio_url != "" and interview_podcast_audio_length != "" %}
   {% assign interview_has_audio = true %}
   {% endif %}
-  <a href="{{ include.interview.link }}" title="{{ include.interview.title }}">
+  <a href="{{ include.interview.url | absolute_url }}" title="{{ include.interview.title }}">
     <h2>
       {{ include.interview.title }}
     </h2>
@@ -30,8 +30,7 @@
     </strong>
   </span>
   {% if interview_has_youtube %}
-  <iframe class="interview-media-embed" title="{{ include.interview.title | strip_html | escape }}"
-    src="//www.youtube-nocookie.com/embed/{{ interview_youtube_id }}" loading="lazy" allowfullscreen></iframe>
+  {% include youtube-lite.html id=interview_youtube_id title=include.interview.title %}
   {% endif %}
   {% if interview_has_youtube == false and interview_link and interview_link != "" and interview_link_image and interview_link_image != "" and
   interview_link_image != interview_link %}
@@ -46,14 +45,17 @@
     <a href="{{ interview_podcast_audio_url }}">Download audio</a>
   </audio>
   {% endif %}
-  {% if include.interview.transcript and include.interview.transcript-id and include.interview.transcript-id != "" %}
-  {% include transcript.html id=include.interview.transcript-id video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
-  {% elsif include.interview.transcript and interview_youtube_id != "" %}
-  {% include transcript.html id=interview_youtube_id video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
-  {% endif %}
   <span>
     {% if include.interview.content and include.interview.content != "" %}
     {{ include.interview.content }}
     {% endif %}
   </span>
+  {% if include.include_transcript %}
+  {% assign interview_tid = include.interview.transcript-id | default: "" | strip %}
+  {% if interview_tid != "" %}
+  {% include transcript.html id=interview_tid video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
+  {% elsif include.interview.transcript and interview_youtube_id != "" %}
+  {% include transcript.html id=interview_youtube_id video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
+  {% endif %}
+  {% endif %}
 </li>

@@ -1,0 +1,56 @@
+---
+layout: base
+---
+{% assign interview_youtube_id = page.youtube-id | default: "" | strip %}
+{% assign interview_podcast_audio_url = page.podcast_audio_url | default: "" | strip %}
+{% assign interview_podcast_audio_length = page.podcast_audio_length | default: "" | strip %}
+{% assign interview_link_image = page.link_image | default: "" | strip %}
+{% assign interview_has_youtube = false %}
+{% if interview_youtube_id != "" %}
+{% assign interview_has_youtube = true %}
+{% endif %}
+{% assign interview_has_audio = false %}
+{% if interview_podcast_audio_url != "" and interview_podcast_audio_length != "" %}
+{% assign interview_has_audio = true %}
+{% endif %}
+<div class="type-post">
+  <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
+    <h2>
+      {{ page.title }}
+    </h2>
+  </a>
+  <p class="post_date">
+    <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
+      {{ page.date | date_to_long_string }}
+    </a>
+  </p>
+  <span>
+    <strong>
+      Interviewed by {{ page.publication }}
+    </strong>
+  </span>
+  {% if interview_has_youtube %}
+  {% include youtube-lite.html id=interview_youtube_id title=page.title player_id="youtube-player" %}
+  {% endif %}
+  {% if interview_has_youtube == false and page.link and page.link != "" and interview_link_image and interview_link_image != "" and
+  interview_link_image != page.link %}
+  <a class="interview-link-card" href="{{ page.link }}">
+    <div class="thought-link-card-image">
+      <img src="{{ interview_link_image }}" alt="" loading="lazy" />
+    </div>
+  </a>
+  {% endif %}
+  {% if interview_has_youtube == false and interview_has_audio %}
+  <audio class="interview-audio-embed" controls preload="none" src="{{ interview_podcast_audio_url }}">
+    <a href="{{ interview_podcast_audio_url }}">Download audio</a>
+  </audio>
+  {% endif %}
+  {{ content }}
+  {% assign interview_transcript_id = page.transcript-id | default: interview_youtube_id %}
+  {% if page.transcript or page.transcript-id %}
+  {% include transcript.html id=interview_transcript_id video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
+  {% endif %}
+  {% if interview_has_youtube or interview_has_audio or page.transcript or page.transcript-id %}
+  <script defer src="{{ '/js/media-lite.js' | absolute_url }}?v={{ '/js/media-lite.js' | cache_bust }}"></script>
+  {% endif %}
+</div>

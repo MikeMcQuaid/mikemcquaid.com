@@ -98,6 +98,10 @@
         {% if item.collection == "interviews" %}
           <p>Interviewed by {{ item.publication }}.</p>
           {{ item.content }}
+          {% assign feed_tid = item.transcript-id | default: item.youtube-id %}
+          {% if feed_tid and feed_tid != "" %}
+          {% include feed-transcript.html id=feed_tid %}
+          {% endif %}
         {% elsif item_is_external_podcast %}
           {% assign item_audio_url = item.podcast_audio_url | default: "" | strip %}
           {% assign item_podcast_description = item.description | default: item.content | default: "" | strip %}
@@ -115,8 +119,18 @@
           {% if item_audio_url != "" %}
             <p><a href="{{ item_audio_url }}">Download audio</a></p>
           {% endif %}
+          {% assign feed_tid = item.transcript-id | default: "" | strip %}
+          {% if feed_tid != "" %}
+          {% include feed-transcript.html id=feed_tid %}
+          {% endif %}
         {% else %}
           {{ item.content }}
+          {% if item.collection == "talks" %}
+          {% assign feed_tid = item.transcript-id | default: "" | strip %}
+          {% if feed_tid != "" %}
+          {% include feed-transcript.html id=feed_tid %}
+          {% endif %}
+          {% endif %}
         {% endif %}
         {% if item.collection == "thoughts" and item_has_link and page.include_posse_post == false %}
           <p><a href="{{ item_href }}">{{ item_href }}</a></p>

@@ -1,12 +1,17 @@
 {% assign transcript_data = site.data.transcripts[include.id] %}
 {% if transcript_data and transcript_data.size > 0 %}
+{% assign has_video = false %}
+{% if include.video_id and include.video_id != "" %}
+{% assign has_video = true %}
+{% endif %}
+{% assign has_audio = false %}
+{% if include.audio_url and include.audio_url != "" %}
+{% assign has_audio = true %}
+{% endif %}
 <details>
   <summary>Show transcript</summary>
-  <ul>
+  <ul{% if has_video %} data-video-id="{{ include.video_id }}"{% endif %}>
     {% for item in transcript_data %}
-    {% comment %}
-    Format HH:MM:SS from seconds with Liquid only
-    {% endcomment %}
     {% assign s = item[0] | plus: 0 %}
     {% assign text = item[1] %}
     {% assign h = s | divided_by: 3600 %}
@@ -20,8 +25,15 @@
     {% assign ss = sec | prepend: "0" | slice: -2, 2 %}
 
     <li>
+      {% if has_video %}
       <a href="https://www.youtube.com/watch?v={{ include.video_id }}&t={{ s }}s" class="transcript-timestamp"
         data-timestamp="{{ s }}">{% if h > 0 %}{{ h }}:{% endif %}{{ mm }}:{{ ss }}</a>
+      {% elsif has_audio %}
+      <a href="{{ include.audio_url }}" class="transcript-timestamp" data-timestamp="{{ s }}"
+        data-audio-url="{{ include.audio_url }}">{% if h > 0 %}{{ h }}:{% endif %}{{ mm }}:{{ ss }}</a>
+      {% else %}
+      <span class="transcript-timestamp">{% if h > 0 %}{{ h }}:{% endif %}{{ mm }}:{{ ss }}</span>
+      {% endif %}
       <span>{{ text }}</span>
     </li>
     {% endfor %}
