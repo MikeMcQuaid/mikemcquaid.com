@@ -1,16 +1,32 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-metadata_files=()
+staged_files=()
 while IFS= read -r line; do
-  metadata_files+=("$line")
-done < <(git diff --cached --name-only --diff-filter=ACM -- _thoughts/*.md)
-while IFS= read -r line; do
-  metadata_files+=("$line")
-done < <(git diff --cached --name-only --diff-filter=ACM -- _interviews/*.md)
+  staged_files+=("$line")
+done < <(git diff --cached --name-only --diff-filter=ACM -- '_thoughts/*.md' '_interviews/*.md' '_talks/*.md')
 
-if [[ "${#metadata_files[@]}" -eq 0 ]]; then
+podcasts_changed=false
+if git diff --cached --name-only --diff-filter=ACM -- '_data/podcasts_external.yml' | grep -q .; then
+  podcasts_changed=true
+fi
+
+if [[ "${#staged_files[@]}" -eq 0 ]] && [[ "$podcasts_changed" == "false" ]]; then
   exit 0
 fi
 
-bin/enrich-metadata update "${metadata_files[@]}"
+if [[ "${#staged_files[@]}" -gt 0 ]]; then
+  bin/enrich-metadata update "${staged_files[@]}"
+fi
+
+if [[ "$podcasts_changed" == "true" ]]; then
+  bin/enrich-metadata transcripts
+fi
+
+# Re-stage files modified by enrichment and any downloaded media images/transcripts.
+if [[ "${#staged_files[@]}" -gt 0 ]]; then
+  git add "${staged_files[@]}"
+fi
+if [ -n "$(git ls-files --others --modified -- images/media _data/transcripts _data/podcasts_external.yml 2>/dev/null)" ]; then
+  git add images/media _data/transcripts _data/podcasts_external.yml
+fi

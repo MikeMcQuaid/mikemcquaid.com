@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+hooks_path="$(git config --get core.hooksPath 2>/dev/null || true)"
+if [[ "$hooks_path" != ".githooks" ]]; then
+  echo "Warning: git hooks are not enabled. Run 'bin/enrich-metadata add-githooks' to enable them." >&2
+fi
+
 if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
   eval "$(brew bundle --check --install env)"
 fi

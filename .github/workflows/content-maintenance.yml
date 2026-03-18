@@ -45,17 +45,19 @@ jobs:
             if (( count <= 10 )); then
               continue
             fi
+            slug="$(basename "$file" .md)"
             rm -f "$file"
+            rm -f "images/media/thoughts/${slug}.jpg"
           done
 
       - name: Commit Pruned Thoughts
         if: github.event_name != 'pull_request'
         run: |
-          if git diff --quiet -- _thoughts; then
+          if git diff --quiet -- _thoughts images/media/thoughts && [ -z "$(git ls-files --deleted -- _thoughts images/media/thoughts)" ]; then
             echo "No changes to commit."
             exit 0
           fi
-          git add _thoughts
+          git add _thoughts images/media/thoughts
           git commit -m "Prune old thoughts"
 
       - name: Set up Homebrew
