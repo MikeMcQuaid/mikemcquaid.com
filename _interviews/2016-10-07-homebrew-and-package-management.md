@@ -2,8 +2,9 @@
 title: "Homebrew and Package Management"
 link: https://changelog.com/podcast/223
 publication: "The Changelog"
-link_image: https://snap.fly.dev/podcast/223/img
+link_image: "/images/media/interviews/2016-10-07-homebrew-and-package-management.jpg"
 podcast_audio_url: https://op3.dev/e/https://cdn.changelog.com/uploads/podcast/223/the-changelog-223.mp3
+transcript-id: 2016-10-07-homebrew-and-package-management
 podcast_audio_type: audio/mpeg
 podcast_audio_length: '80743303'
 ---

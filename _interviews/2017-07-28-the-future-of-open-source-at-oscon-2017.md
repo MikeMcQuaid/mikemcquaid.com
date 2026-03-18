@@ -2,8 +2,9 @@
 title: "The Future of Open Source at OSCON 2017"
 link: https://changelog.com/podcast/259
 publication: "The Changelog"
-link_image: https://snap.fly.dev/podcast/259/img
+link_image: "/images/media/interviews/2017-07-28-the-future-of-open-source-at-oscon-2017.jpg"
 podcast_audio_url: https://op3.dev/e/https://cdn.changelog.com/uploads/podcast/259/the-changelog-259.mp3
+transcript-id: 2017-07-28-the-future-of-open-source-at-oscon-2017
 podcast_audio_type: audio/mpeg
 podcast_audio_length: '82003436'
 ---

@@ -2,8 +2,9 @@
 title: "Homebrew! Part Deux"
 link: https://changelog.com/podcast/337
 publication: "The Changelog"
-link_image: https://snap.fly.dev/podcast/337/img
+link_image: "/images/media/interviews/2019-03-06-homebrew-part-deux.jpg"
 podcast_audio_url: https://op3.dev/e/https://cdn.changelog.com/uploads/podcast/337/the-changelog-337.mp3
+transcript-id: 2019-03-06-homebrew-part-deux
 podcast_audio_type: audio/mpeg
 podcast_audio_length: '116435906'
 ---

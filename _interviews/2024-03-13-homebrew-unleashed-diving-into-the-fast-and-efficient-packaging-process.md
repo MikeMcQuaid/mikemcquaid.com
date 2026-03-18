@@ -3,6 +3,7 @@ title: "Homebrew Unleashed: Diving into the Fast and Efficient Packaging Process
 link: https://web.archive.org/web/20251114092113/https://topenddevs.com/podcasts/ruby-rogues/episodes/homebrew-unleashed-diving-into-the-fast-and-efficient-packaging-process-ruby-628
 publication: "Ruby Rogues"
 podcast_audio_url: https://dts.podtrac.com/redirect.mp3/api.spreaker.com/download/episode/59122795/stream.mp3
+transcript-id: 2024-03-13-homebrew-unleashed-diving-into-the-fast-and-efficient-packaging-process
 podcast_audio_type: audio/mpeg
 podcast_audio_length: '55489261'
 ---
