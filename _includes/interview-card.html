@@ -53,9 +53,9 @@
   {% if include.include_transcript %}
   {% assign interview_tid = include.interview.transcript-id | default: "" | strip %}
   {% if interview_tid != "" %}
-  {% include transcript.html id=interview_tid video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
+  {% include transcript.html id=interview_tid video_id=interview_youtube_id audio_url=interview_podcast_audio_url no_links=true %}
   {% elsif include.interview.transcript and interview_youtube_id != "" %}
-  {% include transcript.html id=interview_youtube_id video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
+  {% include transcript.html id=interview_youtube_id video_id=interview_youtube_id audio_url=interview_podcast_audio_url no_links=true %}
   {% endif %}
   {% endif %}
 </li>

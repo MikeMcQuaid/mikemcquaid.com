@@ -19,5 +19,11 @@
   {% include speakerdeck-lite.html id=talk_speakerdeck_id title=talk_title ratio=talk_speakerdeck_ratio %}
   {% endif %}
   {{ talk.description }}
+  {% if include.include_transcript %}
+  {% assign talk_tid = talk.transcript-id | default: talk_youtube_id %}
+  {% if talk.transcript or talk.transcript-id %}
+  {% include transcript.html id=talk_tid video_id=talk_youtube_id no_links=true %}
+  {% endif %}
+  {% endif %}
   <div class="clearboth"></div>
 </li>

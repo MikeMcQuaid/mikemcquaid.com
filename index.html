@@ -14,7 +14,7 @@ layout: base
   {% assign has_thoughts = true %}
   {% include thought-card.html thought=item %}
   {% elsif item.collection == "talks" %}
-  {% include talk-card.html talk=item talk_date=item.date %}
+  {% include talk-card.html talk=item talk_date=item.date include_transcript=true %}
   {% elsif item.collection == "interviews" %}
   {% include interview-card.html interview=item index_page=true include_transcript=true %}
   {% elsif item.source_feed_url and item.podcast_audio_url %}

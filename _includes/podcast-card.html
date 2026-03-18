@@ -27,7 +27,7 @@
   {% if include.include_transcript %}
   {% assign podcast_transcript_id = include.podcast.transcript-id | default: "" | strip %}
   {% if podcast_transcript_id != "" %}
-  {% include transcript.html id=podcast_transcript_id audio_url=podcast_audio_url %}
+  {% include transcript.html id=podcast_transcript_id audio_url=podcast_audio_url no_links=true %}
   {% endif %}
   {% endif %}
 </li>
