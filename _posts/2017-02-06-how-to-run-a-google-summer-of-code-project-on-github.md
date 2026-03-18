@@ -11,7 +11,7 @@ Google provides some guidance on how to effectively run a Google Summer of Code 
 
 Make a dedicated file or repository for documenting project ideas and discuss them in issues. The ideas should be things that are going to be useful to your project, would take a maintainer a week or two to complete and you think should take a student between a month and a month and a half to complete. You can populate these from `help wanted`-labeled issues in your repository. They should be brief enough to stimulate discussion on their implementation but not detailed enough for students to be able to copy-paste any part into their proposal.
 
-For example, the Homebrew project has [a repository for these ideas](https://github.com/Homebrew/Outreachy-and-Google-Summer-of-Code) (updated for GSoC 2017).
+For example, the Homebrew project has [a repository for these ideas](https://web.archive.org/web/20170206215645/https://github.com/Homebrew/Outreachy-and-Google-Summer-of-Code) (updated for GSoC 2017).
 
 Strongly encourage students to adopt one of your ideas rather than their own. You have a much better idea than they do on what will be useful, achievable, and mergeable.
 

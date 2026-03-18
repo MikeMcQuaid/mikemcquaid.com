@@ -37,7 +37,7 @@ contributions make them eligible for:
 This is partly a matter of security
 ([principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)),
 partly a matter of responsible use of
-[our funds](https://opencollective.com/homebrew?hostname=opencollective.com#category-BUDGET)
+[our funds](https://opencollective.com/homebrew#category-BUDGET)
 and partly a matter of fair recognition, making "Homebrew maintainer" reflect those doing the actual work.
 
 We built a command for this in Homebrew:
@@ -69,7 +69,7 @@ Remember: [principle of least privilege](https://en.wikipedia.org/wiki/Principle
 These are the core metrics that I use to evaluate whether someone is maintaining Homebrew.
 The tools and data are open.
 Also, because we use OpenCollective,
-[the money coming into and out of Homebrew is open](https://opencollective.com/homebrew?hostname=opencollective.com#category-BUDGET).
+[the money coming into and out of Homebrew is open](https://opencollective.com/homebrew#category-BUDGET).
 
 ## 💎 RubyGems Contributions
 
@@ -483,7 +483,7 @@ I wanted to contribute data to a conversation that currently lacks it.
 That’s not to say who should or shouldn’t be in the RubyGems or any other GitHub organisation.
 
 I wish we had data like
-[Homebrew's OpenCollective budget](https://opencollective.com/homebrew?hostname=opencollective.com#category-BUDGET)
+[Homebrew's OpenCollective budget](https://opencollective.com/homebrew#category-BUDGET)
 to similarly analyse finances, but it doesn't seem to be public.
 
 This situation also highlights how funding and transparency can shape open source dynamics.

@@ -41,7 +41,7 @@ Notification emails on GitHub provide the notification reason through email head
 * You commented on an issue or pull request
 * You opened, commented on, or closed an issue or pull request
 
-Read more about email headers in [the notification email documentation](https://help.github.com/articles/about-notification-emails/#unified-mail-headers).
+Read more about email headers in [the notification email documentation](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#about-custom-notifications).
 
 ### Automatically triage your inbox
 
@@ -51,7 +51,7 @@ If you find receiving email notifications more useful, you can also disable web 
 
 ## Continue work in progress
 
-Your notifications are now organized, but there will still be times you'll want to pick up right where you left off. Use your [created pull requests page](https://github.com/pulls) and [created issues page](https://github.com/issues) to see your most recent work on GitHub. This will also help you complete your pull requests—always a good idea before opening new ones.
+Your notifications are now organized, but there will still be times you'll want to pick up right where you left off. Use your [created pull requests page](https://github.com/pulls) and [created issues page](https://github.com/issues?q=is%3Aopen+is%3Aissue+author%3A%40me) to see your most recent work on GitHub. This will also help you complete your pull requests—always a good idea before opening new ones.
 
 ---
 
