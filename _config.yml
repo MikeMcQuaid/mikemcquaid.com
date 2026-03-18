@@ -27,7 +27,9 @@ social:
 permalink: "/:title/"
 
 exclude:
+  - AGENTS.md
   - bin
+  - CLAUDE.md
   - CNAME
   - Gemfile*
   - LICENSE.txt
@@ -58,6 +60,11 @@ defaults:
       layout: talk
   - scope:
       path: ""
+      type: interviews
+    values:
+      layout: interview
+  - scope:
+      path: ""
       type: thoughts
     values:
       layout: thought
@@ -75,7 +82,8 @@ collections:
     output: true
     permalink: "/thoughts/:name/"
   interviews:
-    output: false
+    output: true
+    permalink: "/interviews/:title/"
 
 github:
   repository_nwo: MikeMcQuaid/mikemcquaid.com
