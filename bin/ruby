@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
+  eval "$(brew bundle --check --install env)"
+fi
+
+bundle exec ruby "$@"

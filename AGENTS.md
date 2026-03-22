@@ -69,3 +69,10 @@ _data/
 images/media/     Locally cached media (youtube/, talks/, thoughts/, interviews/)
 lib/              Ruby scripts for enrichment and transcription
 ```
+
+## Commands
+
+- Use `bin/jekyll` for Jekyll commands. It handles `brew bundle` and
+  `bundle exec`.
+- Use `bin/ruby` for Ruby commands. It handles `brew bundle` and
+  `bundle exec`.
