@@ -10,7 +10,7 @@ redirect_from:
 <ul class="index-lists">
   {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
   {% for post in sorted_posts %}
-  {% include article-card.html article=post %}
+  {% include article-card.html article=post show_date=true %}
   {% endfor %}
 </ul>
 

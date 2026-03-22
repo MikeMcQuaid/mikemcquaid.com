@@ -10,9 +10,11 @@
   {% else %}
   <h2>{{ include.podcast.title }}</h2>
   {% endif %}
+  {% if include.show_date != false and include.show_date != "false" %}
   <p class="post_date">
     {{ include.podcast.date | date_to_long_string }}
   </p>
+  {% endif %}
   {% if include.podcast.publication and include.podcast.publication != "" %}
   <p><strong>{{ include.podcast.publication }}</strong></p>
   {% endif %}

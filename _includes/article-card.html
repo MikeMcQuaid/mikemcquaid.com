@@ -4,7 +4,7 @@
       {{ include.article.title }}
     </h2>
   </a>
-  {% if include.show_date %}
+  {% if include.show_date != false and include.show_date != "false" %}
   <p class="post_date">
     {{ include.article.date | date_to_long_string }}
   </p>

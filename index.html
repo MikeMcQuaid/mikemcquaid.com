@@ -3,32 +3,22 @@ title: Mike McQuaid
 layout: base
 ---
 {% assign empty_list = "" | split: "" %}
-{% assign external_podcasts = site.data.podcasts_external.items | default: empty_list %}
-{% assign combined = site.posts | concat: site.talks | concat: site.thoughts | concat: site.interviews | concat: external_podcasts %}
-{% assign sorted = combined | sort: 'date' | reverse %}
+{% assign homepage_items = site.data.homepage_items | default: empty_list %}
 {% assign has_thoughts = false %}
-{% assign shown_post_urls = "" %}
 <ul class="index-lists index">
-  {% for item in sorted limit:25 %}
+  {% for item in homepage_items %}
   {% if item.collection == "thoughts" %}
   {% assign has_thoughts = true %}
-  {% include thought-card.html thought=item %}
+  {% include thought-card.html thought=item show_date=false %}
   {% elsif item.collection == "talks" %}
-  {% include talk-card.html talk=item talk_date=item.date include_transcript=true %}
+  {% include talk-card.html talk=item talk_date=item.date include_transcript=true show_date=false %}
   {% elsif item.collection == "interviews" %}
-  {% include interview-card.html interview=item index_page=true include_transcript=true %}
+  {% include interview-card.html interview=item index_page=true include_transcript=true show_date=false %}
   {% elsif item.source_feed_url and item.podcast_audio_url %}
-  {% include podcast-card.html podcast=item include_transcript=true %}
+  {% include podcast-card.html podcast=item include_transcript=true show_date=false %}
   {% else %}
-  {% assign shown_post_urls = shown_post_urls | append: "|" | append: item.url %}
-  {% include article-card.html article=item show_date=true %}
+  {% include article-card.html article=item show_date=false %}
   {% endif %}
-  {% endfor %}
-  {% for post in site.posts limit:5 %}
-  {% assign post_marker = "|" | append: post.url %}
-  {% unless shown_post_urls contains post_marker %}
-  {% include article-card.html article=post show_date=true %}
-  {% endunless %}
   {% endfor %}
 </ul>
 <script defer src="{{ '/js/media-lite.js' | absolute_url }}?v={{ '/js/media-lite.js' | cache_bust }}"></script>

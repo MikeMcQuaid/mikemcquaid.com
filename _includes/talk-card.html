@@ -10,9 +10,11 @@
       {{ talk_title }}
     </h2>
   </a>
+  {% if include.show_date != false and include.show_date != "false" %}
   <p class="post_date">
     {{ talk_date | date_to_long_string }}
   </p>
+  {% endif %}
   {% if talk_youtube_id != "" %}
   {% include youtube-lite.html id=talk_youtube_id title=talk_title %}
   {% elsif talk_speakerdeck_id != "" %}

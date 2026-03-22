@@ -17,9 +17,11 @@
       {{ include.interview.title }}
     </h2>
   </a>
+  {% if include.show_date != false and include.show_date != "false" %}
   <p class="post_date">
     {{ include.interview.date | date_to_long_string }}
   </p>
+  {% endif %}
   <span>
     <strong>
       {% if include.index_page %}

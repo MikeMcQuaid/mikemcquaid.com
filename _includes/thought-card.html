@@ -11,9 +11,11 @@
     <img class="thought-avatar" src="{{ '/images/me.jpg' | absolute_url }}" alt="Mike McQuaid" width="64" height="64" />
     <div class="thought-meta">
       <span class="thought-author">Mike McQuaid</span>
+      {% if include.show_date != false and include.show_date != "false" %}
       <time class="thought-date" datetime="{{ thought_date | date_to_xmlschema }}">
         <a href="{{ thought_url }}">{{ thought_date | date: "%-d %B %Y at %-H:%M" }}</a>
       </time>
+      {% endif %}
     </div>
   </header>
   <div class="thought-body">
