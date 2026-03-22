@@ -11,4 +11,6 @@ if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
   eval "$(brew bundle --check --install env)"
 fi
 
+export JEKYLL_ENV="${JEKYLL_ENV:-development}"
+
 bundle exec jekyll "$@"
