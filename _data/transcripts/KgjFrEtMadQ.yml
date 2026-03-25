@@ -1,0 +1,718 @@
+---
+0: Hello, thanks everyone for having me.
+22: So if you've seen the schedule, you've seen this is the name of the talk.
+26: But because I'm an idiot and I listen to people I respect, one of my co-workers
+  who's here
+33: today sort of nerd sniped me into just completely changing the talk.
+38: So if you like this talk, I did it before, so you can go to this link and watch
+  a video,
+46: preferably not while I'm doing the talk right now, or at least wear headphones
+  or something.
+52: I've tried to make it so that the bits where you laugh will be exactly the same
+  in each
+56: talk.
+57: So if you wait, we'll start at the same time, then everything should go a little
+  bit better.
+61: This is the actual talk I'm going to do.
+62: I'm going to talk about what I call Ruby on guardrails, which is the way we've
+  been building
+69: stuff at my new gig at Workbrew, and generally the kind of guardrails that exist
+  already in
+76: the Ruby ecosystem.
+77: How we've been leading into them super hard, why I think that's a good idea, why
+  you might
+81: want to try at least doing some of that too, and why you should love guardrails.
+87: So firstly, I want to hear about you.
+89: So can you, there's going to be a bit of hand raising during this talk, I apologise
+  in advance.
+96: If you write Rails stuff mainly for work, can you put your hand in the air please?
+100: Okay, lots of people.
+103: If you write Ruby stuff for work that is not Rails, can you put your hand in
+  the air?
+107: Okay, a few people.
+109: If you write Ruby in your free time, put your hand in the air.
+113: If you haven't already put your hand in the air, put your hand in the air.
+116: Anyone who put their hand in the air in the last batch, just shout out why are
+  you here?
+122: What are you doing?
+123: Like, I'm actually genuinely interested.
+125: Someone shout something out.
+127: We had lunch together, so you can shout something out.
+130: There we go, getting back into it.
+133: Great reason.
+134: Thank you very much, sir.
+135: Right, so, me, I got a lovely introduction from James already, but I'm going
+  to introduce
+139: myself as well, because why not?
+142: I've been spending too much time around Americans, so, you know, you need to
+  big yourself up.
+146: You need to sell yourself, all that type of stuff.
+149: So, I'm an engineer based here at Edinburgh, and I'm going to talk about a few
+  Ruby projects
+153: I've worked on to begin with, and then I'll talk about what I've sort of learned
+  and the
+157: guardrails through them through that.
+159: So, Homebrew, I've worked on since 2009.
+163: Those of you who might not have used it or heard of it already, it's a macOS
+  primarily,
+168: but nowadays Linux as well, package manager for open source software.
+171: I started working on it about five months in.
+173: A few of the previous talks have kind of resonated a little bit with me today.
+176: Like, it started, I guess, as Ollie said, as my kind of creative side project,
+  and it started
+182: off being low-risk, low-pressure, labor of love.
+185: It's still a labor of love, but, you know, it's not really the other things.
+189: And similar to how Ayers said he found kind of Bridgetown.
+192: Like, in my case, the story there was very similar in that I was sort of trying
+  to hack
+198: something around Mac ports to work essentially in the way that I later learned
+  that Homebrew worked.
+203: So then I was like, okay, I'm going to abandon my own crappy solution and go
+  and get involved
+206: with this thing instead.
+208: And I guess, for me, again, there's been encouragement already today to get involved
+  with open source.
+213: Also, I would heavily recommend it.
+215: The way I got into it, which I still think is the best way to get into it, is
+  the expression
+219: we used to use back in the day of, like, scratching your own itch.
+221: Find a problem that you already have and try and solve that problem.
+224: Don't go out trying to solve other people's problems for them because you feel
+  good about
+228: doing that or because you want a green contribution graph or something on your
+  CV.
+232: Like, you're not going to be motivated unless it's actually solving a problem
+  for you.
+234: So sometime after Homebrew, I got my first job where I was actually paid money
+  to write
+241: Ruby, and I worked at this company Old Trails for a couple of years.
+243: I was employee number eight, so it was a nice little small startup environment.
+246: The Rails app was probably only a year and a half, two years old at this point.
+250: And then I went on fairly quickly from there to work at GitHub, where I was for
+  10 years.
+255: I left as a principal engineer last year, and I worked on their kind of huge
+  Ruby on Rails
+259: application and, yeah, learned a lot of stuff about Ruby at scale.
+264: And yes, Ruby does scale and how to do things well and sometimes how to not do
+  things so well as well.
+271: And then nowadays, I left GitHub last year, started a company with some ex-GitHub
+  people,
+276: which we're calling Workbrew, which is basically, well, I'll tell you about that
+  in a minute.
+281: But basically, we're building a Ruby on Rails application from scratch as our
+  kind of like
+286: cloud part of what we're building.
+288: It looks a little bit like this.
+289: It's basically a Rails application for kind of businesses to be able to view
+293: all the packages installed across all the devices in their fleet.
+296: If you're already running like an MDM solution, Jamf, Kanji, whatever, it integrates
+  nicely with those
+302: and basically just provides kind of Workbrew support and integration for those
+  tools where
+305: they're already lacking.
+307: And there's a pricing slide because capitalism or something.
+309: If you're interested in learning more about this, send me an email.
+313: I will happily tell you more.
+315: Don't worry.
+316: I won't do it again.
+317: Right.
+318: So let's start with some background on what I was saying before.
+320: So no, that's sorry.
+322: That's not the right one.
+323: Homebrew doesn't.
+325: So Homebrew doesn't actually support this version anymore.
+328: So we can't do this.
+329: Right.
+330: So why am I even here?
+332: Like, why am I doing this talk?
+334: So I think we have like a fundamental tension in Ruby land, right?
+339: We -- I would assume it's common knowledge for basically everyone in the room
+  at this point
+343: that, like, Ruby is pretty great.
+345: Like, Mac's already spelled out a bunch of reasons today why we all love Ruby.
+349: I imagine we share some or all of those ourselves.
+352: And I think part of the thing that, for me, makes Ruby really good is because
+  it's --
+359: such a kind of -- once you get familiar with it at least, you can move really,
+  really fast.
+362: Developer productivity is really high.
+364: Developer happiness is really, really high.
+365: I'll talk more about that later.
+366: But it's also really good at, like, breaking things, right?
+370: I guess there's -- I don't imagine this was what Zuck was referring to back in
+  the day.
+375: I guess particularly because it's a PHP shop.
+377: But what I mean is, as I say, this is very much coming from a, like, you know,
+  we're all Ruby people here.
+382: It's like with my brothers or when I see my kids together.
+387: You know, I can talk shit about Ruby because I love Ruby, right?
+390: We're not going to let the node people say it's rubbish.
+392: But we can -- in this closed room, we can say these things, right?
+397: How many of you have seen errors like this, right?
+400: If you've seen an error like this less than about a thousand times a year,
+404: then you're a considerably better programmer than me.
+408: I'm sure we've all lost non-trivial amounts of our lives being, like, oh, turns
+  out, like,
+413: I didn't check for nil in this particular place.
+416: And that happened -- that's, like, the thing, right?
+418: Like, it's -- for all that I love about Ruby, this is the most consistently annoying
+  thing.
+423: And if there's one takeaway from this talk, it is, okay, I'm going to point you
+  to ways
+428: that you might be able to see fewer or maybe even none of these in future.
+434: So if you've worked with a compiled language, like, you know, Go or Rust or whatever,
+438: the compilers are pretty good at, like, spotting these types of issues and giving
+  you a decent,
+444: like, heads up.
+445: It's a compile time thing.
+446: These types of problems don't make it as often into production.
+449: But, like, the Ruby interpreters, you know, it's good at what it does.
+452: But you can say, hey, Ruby, read this file.
+455: Make sure everything looks okay.
+457: The syntax is all right.
+458: And then until you're actually running that code, you have no idea whether it
+  works.
+462: So I guess the common kind of maybe Ruby ecosystem solution to this is, like,
+  cool,
+469: we'll write lots of tests, right?
+470: And I think that's good.
+472: I think let's write tests.
+474: Please, please write some tests.
+476: But I think there's more than that that we can learn on.
+479: And maybe even a way to write fewer tests.
+482: So I'm going to basically tell you what, you know, we're doing pretty good.
+486: We're, like, nine minutes in on this talk.
+489: And I'm going to tell you the solution to the problem, right?
+491: Are you ready?
+492: Oh, no.
+493: It's not actually as simple as that.
+495: So obviously, like, anything in engineering, right?
+499: Anyone who tells you that, like, there's an easy solution, you just need to do
+  X.
+502: And if you do X, it will solve all your problems is either, like, a noob or trying
+  to sell you
+508: something or, I don't know, smarter than me.
+512: But what I'm going to talk about is what do I want to optimize for?
+516: Like, why am I going in the direction I'm going on?
+519: Why do I care about Ruby on guardrails, as I call it?
+522: So for me, in descending order of priority, the most important thing, perhaps
+  controversially,
+528: is developer happiness, right?
+530: Again, this is partly comes out maybe my working at developer tools companies,
+  right?
+537: And even more so in open source, because in open source land, like, I can't make
+  anyone do anything,
+542: Like, I can stop people from doing things.
+544: I can, like, make aggressive request changes on a pull request and be like, thou
+  shall not pass,
+550: or whatever.
+551: But if I can't say to someone, hey, like, I would really like you to spend the
+  next month working on
+556: this refactoring that's really overdue.
+558: So ultimately, people need to be relatively happy in open source land, or they're
+  not going to do stuff
+565: at all. And in work land, again, well, I mean, certainly if I was giving this
+  talk two or three
+570: years ago, but even, even somewhat now, if people aren't happy, they will leave
+  and be able to get
+575: trivially a better job elsewhere. I'm sure everyone in here is like a super amazing
+  engineer. So I'm
+579: sure none of you would have any problems with that. Right. Number two, customer/user
+  happiness.
+585: Again, perhaps controversially, like, this is below developer happiness. Again,
+  for me, this is why
+591: I think tools like Ruby are important, is, you know, if I still think that's
+  the best way to build
+597: customer/user happiness, but you're optimizing first for making the developers
+  happy and productive
+601: in what they're doing. Thirdly, again, maybe slightly controversial, velocity/quality
+  balance.
+607: I'm sure we've all worked with some engineers on either end of the spectrum,
+  people who move really,
+613: really fast just vomiting out page after page of code that sort of works but
+  then is impossible to
+621: maintain and fix and debug and whatever. And then on the other end, actually
+  probably equally as
+627: problematic but not quite as shamed by our community, I guess, is the people
+  who will fixate on making
+633: sure everything and every PR is exactly perfect and if there's one piece of white
+  space that's not quite
+638: right, then we're going to block this PR that would deliver customer value today
+  for another month just
+642: while you would fix the white space. Yeah, not good either. We need to find that
+  some sort of happy
+646: middle ground. And the last thing for me is, I'll talk more about this a little
+  bit later on, I'll just
+651: leave it as it is for now, but this idea of robot pedantry, human empathy. Okay,
+  so let's drill into
+657: these a little bit. Like, what do I actually mean when I say these various things?
+  So developer happiness,
+663: said before, keep developers happy or they will quit and then you'll have to
+  do it by yourself. That doesn't sound
+668: good. For me, that is why I use Ruby and why I think others should use and like
+  using Ruby because it's
+677: pretty much the only language and ecosystem that feels really, really aggressively
+  optimized for developer
+683: happiness. And I feel like as a community, we lean into that pretty hard as well.
+  And I think there's a reason why so
+690: many people in this room and in the Ruby wider ecosystem have stuck with Ruby
+  even when it's not
+696: cool anymore, right? But I think there's still more we can do and I'll get to
+  that later. And then, okay,
+702: customer, user happiness. Okay, customers generally want software that works.
+  And what I mean by software
+711: that works is it's going to have some bugs. Ideally, as many bugs as possible
+  are caught in test environments,
+717: development environments, whatever, before they get into production and the bugs
+  have to be experienced
+722: by customers. But if they do get into production, then customers generally want
+  a low MTTR, which has
+730: helpfully two different meanings, of which I'm going to pick one, mean time to
+  repair. So basically,
+734: the time from them discovering that bug to that bug being fixed and the fix being
+  rolled into production,
+742: if you can get that time really nice and small, then your customers are going
+  to be much happier. There's
+747: we're in the stage of a business where some of our customers are so elated about
+  having a fix
+754: out 20 minutes after reported, like, it almost makes me want to add more bugs.
+  They seem happier
+760: with the bug being fixed that quickly than they would have done if the bug never
+  happened.
+763: Similarly, okay, velocity quality balance. Like, this is really hard. Like, this
+  is arguably
+771: one of the hardest problems in all of software engineering is how to get this
+  right. And you're
+775: probably never going to get this quite right. And it's going to be an eternal
+  balancing act. And that's
+779: fine. But to me, that's basically, if you're going to ship fast, you're going
+  to ship with some bugs
+785: sometimes, right? If you try and eliminate all the bugs, and ship fast with no
+  bugs, you're not going to
+792: ship fast at all, you're just going to ship really slowly. And if you just entirely
+  prioritize velocity,
+797: you're just going to ship a lot of bugs, and people are not going to be very
+  happy with that at all.
+802: And also, that's when when you work in this way, even in a relatively short time
+  scale, that's when
+808: your tech that ends up getting ramped up and up and up. Robot pedantry, human
+  empathy, what do I mean by
+814: that? Well, I did like, I've got another kind of blog post and stuff like that
+  about this. So I'm not
+819: going to go into this in too much level, too much detail if you're interested.
+  But the TLD offer that
+824: for me is essentially, I am just like addicted to automation, anything that can
+  be automated away,
+831: should in my mind be automated away. The reason why I call it human empathy in
+  that is because at the
+837: time, there was a bit of stuff kind of going on GitHub, where people would be
+  like, hey, like,
+841: we can also automate welcoming people to our project and telling them good job,
+  and kissing our
+846: loved ones goodbye, because before we go on a trip, and parents go, okay, like,
+  there's a level at which
+851: it goes too far. But like, generally, people are very tolerant of letting robots,
+  I guess, when I said it
+860: back there, I mean, you know, stupid CI jobs, rather than AI agents, or whatever.
+  But basically,
+866: people are way more tolerant of Rubicop or a CI build going, you need to fix
+  your style here,
+873: here, here, here, here. If you got a co-worker in the same team who expressed
+  exactly the same intent,
+878: they would not be very well liked, right? But it's okay, we don't have to like
+  the robots,
+884: they're coming for us. So why like them? So essentially, one of the practices
+  I've tried to
+890: adopt, particularly on Homebrew, but on most kind of projects I've worked on,
+  is if you see the same
+895: review comments coming up again, and again, and again, on multiple PRs, if you
+  see the same classes
+899: of bugs coming up again, and again, and again, then figuring out how can we automate
+  catching this,
+905: so it's not a human who's having to do this every time. My goal in my projects,
+  which periodically bites
+912: me, is to essentially be such that, say, like a dependency update, if CI is green,
+  I can just merge. I
+918: don't need to read the release notes, I don't need to read the diff, CI is green,
+  I have confidence
+922: the app is working, and 99.99% of the time, that is true, and the rest of the
+  time I have a bad day.
+928: Okay, again, let's get actually more specific about what I'm talking about. I've
+  talked about some
+935: principles we should be adopting, I've talked about what we're optimizing for,
+  but let's go into the
+940: nitty-gritty of what I actually recommend. Let's name some actual tools. Right,
+  so I'm going to clump
+948: these into a few groups. They're maybe a little bit tenuous to buckets, I apologize,
+  but this is a talk,
+953: so what can you do? I'm defining linters as anything that helps you catch issues
+  in either local
+961: development or automated test environments. They are probably not running in
+  any form in production,
+967: and they are basically good at screaming at you about things that may be a problem
+  or may not be
+972: a problem, so that humans don't have to do the same thing. So number one for
+  me is, you know, our
+979: everybody's friend and everyone's enemy, Rubicop. I try and lean really, really,
+  really hard into
+985: Rubicop, personally. I've seen in Homebrew, as our adoption has gone up of Rubicop,
+  it has really,
+991: really helped us, particularly there where we are accepting lots of external
+  contributions on having a
+995: consistent style across the entire code base. My take is enable essentially everything
+  you can in a tool
+1001: like Rubicop and then disable what you don't want, and that's fine. I also have
+  seen various degrees of
+1009: trust in things like Rubicop's ability to auto-correct things. I personally,
+  I guess having done it at
+1014: Homebrew and GitHub, have a very, very high degree of trust in Rubicop's safe
+  auto-corrections,
+1020: and just feel free to run that en masse over a million lines of source code,
+  and in my experience,
+1027: for like the enabled by default Rubicop cops, you will not see bugs from doing
+  that. It is,
+1032: when they say safe, they mean safe. I'm sure people in the room have different
+  experiences and
+1037: will disagree, but I'm making myself a sacrificial lamb for this one. Right,
+  number two,
+1044: on my list is erblint, essentially Rubicop and a few other bits and pieces that
+  run on your ERB.
+1049: Gets your views looking nice, gets your views looking somewhat more consistent
+  with the rest
+1056: of the code in your code base, and also catches a few other bits and pieces
+  there as well.
+1060: Better HTML, that's more of like a runtime thing, which is kind of seeing and
+  making sure that your
+1066: HTML is like roughly consistent and well formatted and stuff like that. Again,
+  this is kind of more of a
+1072: development time check when you're editing views and stuff like that. Better
+  HTML will go and basically
+1077: throw up big errors for stuff that just looks like that your browser would probably
+  handle just fine,
+1082: but we can get some nicer HTML, so let's do that. I have no idea how to say
+  this word,
+1087: but I'm going to call it Prozopite. Who knows what an N+1 is?
+1092: Folks in the room, yeah. Who has had to deal with someone joining the team who
+  didn't know what N+1 is?
+1099: And then, yeah. So anyone who doesn't know what N+1 is, that is essentially
+  the class example would be
+1105: if you do something in a Rails view, you have maybe a dot each, and you're looping
+  over something,
+1111: then an N+1 would be when each run through that each, you're ending up doing
+  a separate database
+1117: query. So you're querying the same table quite possibly again and again and
+  again. So say you
+1122: might display a page where you should list 10 users, you're going, hey, user
+  table, I want this. Hey,
+1127: user table, I want this. Hey, user table, I want this. Rather than doing a single
+  query where you
+1130: query everything in advance and then pass it through to the view. Prozopite,
+  it's a bit fiddly. It
+1135: doesn't work all of the time, but it's pretty good at catching a lot of these
+  things. Again, if you
+1139: enable in development and test, then you can get a nice situation where you
+  stop yourself from being
+1145: bitten by N+1s in production and you catch more of them in development instead.
+  This is a slightly more
+1152: weird abstract one that almost certainly none of you care about except maybe
+  CTO types, but it's one of
+1159: those tools where if you use it sooner rather than later, you'll probably be
+  glad. It came out of
+1164: GitHub. It's called licensed. It's basically a sort of linter for what licenses
+  of your dependencies
+1173: you have in your code base. So you can plug it into like Go, NPM, Ruby gems,
+  and basically just be like,
+1180: okay, what licenses are all these things on there? You may not care about open
+  source licensing. Few people do.
+1187: And if you do, I feel sympathy for you as a kindred spirit. But it's one of
+  those things where it's
+1193: very easy to not care until it bites you in the ass. I don't know if anyone
+  heard about the Winamp
+1198: stuff in the last couple of weeks, where yeah, essentially, there was a bunch
+  of stuff where
+1203: people had just not been following the licenses. And, you know, they've taken
+  the repo off GitHub,
+1208: and there was some drama and whatever. But I mean, people can legitimately end
+  up in court and being
+1213: sued for this stuff. And it probably won't affect Winamp because it's more or
+  less a defunct company
+1218: or product or whatever at this point. But like, this is real things that destroys
+  companies, right?
+1222: So and it's really not that hard to just have a list of licenses that are standardized
+  and approved and
+1228: stuff like that. So I would recommend getting on this train when you can. It's
+  also if you're someone who
+1235: is in a startup, and you have VCs or other maybe very security focused companies
+  who need to do an
+1243: audit of you, it's really nice to be able to have the information they need
+  like instantly rather than
+1248: being like, yes, I will go through my gem file and individually check the license
+  of all of the
+1253: software in there. Right, action lint, again, not super exciting thing. But
+  if you're using who's using
+1262: GitHub Actions nowadays, yeah, lots of people. Basically, just make sure your
+  GitHub Action
+1269: workflows are more likely to work before you push the commits than not. And
+  also, avoid those cases
+1276: which you've probably all had where you push the commit and you've managed to
+  fuck the workflow file
+1282: in GitHub Actions sufficiently such that it won't just run any of your CI anymore
+  at all. No errors,
+1287: it would just be like bad yaml. So yeah, let's not have that. Let's run action
+  lint. And then ES lint,
+1294: because inevitably, as much as we don't want to, we're probably all going to
+  have to write some
+1298: JavaScript at some point. And finally, I mean, as this list of seven things
+  already probably indicates,
+1304: I'm basically addicted to linters. So if you see anything here, they're like,
+  Mike, there's another
+1309: linter you should really try. And I mean, my coworkers will probably say, please
+  don't send that to me. But
+1315: please send that to me. I really, anything I can lint, I want to lint. If you
+  just wanted to take my
+1323: opinion for it and just like dump this shit straight in your gem file, it would
+  be something like this.
+1327: Similarly, when you're configuring Rubicop, remember, if you put stuff in your
+  gem file,
+1332: you need to remember to actually require it in here. Otherwise, Rubicop might
+  not do it.
+1335: You also probably want to remember, this is another kind of common gotcha, is
+  set your target Ruby
+1341: version. Because if you're using a nice newer version of Ruby, then you can
+  get additional things which
+1345: nudge you to use or not use depending on your preference. Newer Ruby syntax
+  features. If you're
+1352: really wild like me, then new cops and enabled by default just means as soon
+  as Rubicop adds any cop,
+1359: no matter how weird or broken it is, you'll get it straight away. But then I
+  like that because I
+1366: prefer to then be like, okay, I can individually disable those cops and whatever.
+  And then remember,
+1371: like, rather than disabling a cop globally, if you want to, you can just say,
+  hey, turns out these
+1377: migration files are auto-generated, so I actually don't really care about the
+  layout of them. Thanks
+1383: very much. Similarly, a pattern I would encourage you to do if you're really
+  into linters like me,
+1388: and I apologize in advance for the at least two people in here who will continue
+  to get me making
+1394: these comments on every code review until I die. If you disable the linter,
+  please consider adding a
+1400: comment above the linter explaining why you're disabling the linter. Now, this
+  might seem really,
+1404: really annoying, but it is actually useful to do this stuff. Because often in
+  cases like this, this is
+1410: a particularly good example because it actually states a thing that in future
+  may not be true. So we want
+1417: to actually explain why I've done that rather than just be like, oh, I actually
+  don't care. And also,
+1422: this is a linter that I imagine may have literally triggered some of you in
+  the room, because it's
+1427: essentially any time you do anything that is going to skip the model validations,
+  you have to explicitly
+1432: disable the linter and add a comment. So in our code base, there's a few of
+  these comments, and I can
+1437: suspect some of you right now are being like, this seems very silly and pointless.
+  Why are you doing this?
+1443: But bear with me, I will come to that. Right, on to tests. So I'm defining tests
+  as a little bit more loosely
+1453: than we might otherwise do. I'm basically going to call it anything that requires
+  the developer to
+1457: actually write additional code that is not run in production to catch problems.
+  And also, again, maybe
+1463: slightly controversially, you actually want as few of these as you can to maximally
+  exercise your code base.
+1470: So we're using RSpec on Workbrew, mainly because we're using on Homebrew. I
+  actually don't care
+1476: very much about whether you use RSpec or Minitest. We were talking about this
+  over dinner last night.
+1480: I feel like if you do want to write RSpec, consider, again, RuboCops for RSpec
+  that will make your RSpec
+1486: actually look like nice RSpec and not just Minitest in another name.
+1492: SimpleCov, I don't know whether you do code coverage stuff. Shout out to GitHub,
+  who didn't,
+1499: and it was very annoying. But it's generally, even if you're not aiming for
+  a particular number or
+1506: guarding on code coverage or whatever, it's generally useful to be able to run
+  a given test or a given
+1513: test suite and say, "Which lines did this actually run?" So you have an idea
+  of what's being tested or not.
+1519: Playwright, I'll come back to this in a minute. But basically, if you're using
+  Selenium to drive your
+1526: Rails system tests and you're like, "Why is this so flaky all the time?" It's
+  because of Selenium. If you
+1532: switch to Playwright, everything gets way less flaky almost immediately. I have
+  a citation for that in a
+1538: minute. VCR, again, I imagine most of you use that perhaps already. If you don't,
+  VLCR lets you,
+1545: essentially the first time you run a test that hits a remote endpoint, it lets
+  you store the response
+1551: from that endpoint. And then that will be replayed like a VCR cassette every
+  time you run that test.
+1558: So it's a kind of nice middle ground between like just mocking out the request
+  and having tests that
+1563: actually hit remote endpoints. Because it means you can run them offline, it
+  means your output is stable,
+1567: but then you do actually have the way to basically check, "Okay, this is actually
+  what the production
+1573: data looks like." And then you could re-record the cassette in VCR's terminology
+  in future to get
+1579: better production data and then update it and whatever. Similarly, parallel
+  tests. We've all got
+1585: lots of cores on our laptops now. Let's make them work. Unfortunately, you don't
+  get-- they remove the
+1591: data. It's actually a feature when you've got Apple Silicon Macs in that it
+  no longer heats up your room
+1595: quite as effectively and makes that noise that we all loved with our Intel Macs.
+  But it's still useful
+1602: for running things much faster, in my experience. And like I set this up for
+  our codebase the other day,
+1607: it took me like, I don't know, a couple of hours. And it's more than halved
+  the speed of our test
+1613: suite. So consider doing that. CodeCov, it's got a free tier. It's like a paid
+  product and stuff.
+1621: I'll show you an example in a minute of like the one thing I love with CodeCov.
+  But basically,
+1624: code coverage tool as a service plugs into SimpleCov and bear with me and I'll
+  show you the cool thing.
+1631: And then finally, GitHub Actions. I mentioned that already. But essentially,
+  you're probably
+1634: going to want to run those tests somewhere. But in general, as I said before,
+  like, I want to just
+1639: automate everything. So I push a bunch of stuff into GitHub Actions that maybe
+  has no business
+1644: being there, but I like it. On Playwright versus Selenium, if you are not convinced
+  by me just stating
+1651: something as a fact, go see my friend Justin Sorles' post on this that explains
+  kind of how he
+1658: transitioned this over and why. And I think you will also have a good time.
+1662: On CodeCov, this is essentially like the single nicest feature I think that
+  you get from CodeCov and
+1670: really the only thing I care about in the entire product, which is if you have
+  a code base that has
+1674: more than 0% coverage and less than 100%, you can have on individual PRs, it
+  will comment being like,
+1681: hey, this particular line was not hit by any of the tests in your test suite.
+  And this is really useful,
+1687: not because every single time you see this box, you have to write a new test,
+  because particularly
+1692: with stuff like homebrew, that's not always completely practical, but because
+  it at least lets
+1699: you be more scared, I guess, when you're reviewing the code. When I am reviewing
+  a PR and I see a lot
+1705: more of these than usual, then I'm like, okay, I need to basically do the job
+  that the test suite might
+1709: otherwise be doing. As an example of stuff that I excessively automate, I have
+  a GitHub Action that
+1717: basically just essentially on every PR pretty much will run Rubocop and try
+  and autocorrect all the
+1723: offenses and then push. Same with ERBLint, same with Sorbet, which I'll come
+  to later. And then you can get
+1732: nightly jobs as well. They do nice little things like this where, again, if
+  there's a new bundler version,
+1736: it would just open a PR and then a human like my colleague Carlo and I can review
+  this and then
+1742: we can just merge it. And it saves a human from having to go and manually create
+  this PR and check
+1746: it out and merge it and whatever. Right. So I'm going to speed through the last
+  little bits because
+1754: I'm running a little bit low on time. This is our test suite in Workbrew. I
+  was telling you, it's nice
+1760: to see 10 different processes. And this is the vaguely interest bit. I don't
+  show this really as a flex,
+1765: but because I guess on test coverage, I would vaguely encourage you, if you're
+  anywhere close to 100%
+1772: test coverage to get to 100% test coverage and then make it mandatory because
+  some magical things
+1778: happen when you have it, which is like you don't have dead code anymore because
+  once you have dead
+1783: code, it becomes a blocking thing for your tests and you end up deleting the
+  dead code unless you have
+1789: silly tests that extract dead code and you can delete them as well. And it can
+  encourage you to lean into
+1793: your type system a little bit more as well, which I'll talk about shortly. If
+  you want to just copy my
+1797: gem file again, that's what's there. Right. Monitoring. I imagine we all have
+  some sort of
+1804: monitoring tools. I'm really not going to dwell on this because I don't really
+  care. But essentially,
+1808: you want some sort of error performance monitoring tool of your choice. My choice
+  is Sentry. You want
+1813: some sort of logging tool of your choice. My tool is LogTail. You want some
+  sort of alerting,
+1818: monitoring, uncalled tool of your choice. My tool is BetterStack. If you do
+  that with these gems,
+1824: there you go. You can get woken up in the night about your crappy code.
+1827: So finally, types. In Ruby, this basically means pick which of the type systems
+  you want to use.
+1835: I have picked and it is Sorbet. I have used Sorbet at GitHub and Homebrew and
+  Workbrew and it works
+1841: great in all the cases I've used it. And some people hate it, but they hate
+  it less over time.
+1845: This is an example of what it might look like if I was using Sorbet. This is
+  very much like a happy path
+1852: sort of Sorbet usage where I can say okay, I'm creating this view component
+  here. I'm taking in a
+1858: user. I know that it's a user because I've told you it's a user. I know that
+  I'm going to give back a
+1862: user and here I've got this user here. The thing that's notable about this,
+  which I want you to pay
+1867: attention to, is at no point do I ever check if they passed a no user in there
+  or a nil in there,
+1874: because this is actually being verified both at runtime and at check time by
+  Sorbet. And therefore,
+1881: that no class thing we saw earlier on, essentially, if you lean in hard enough,
+  if you use Sorbet in
+1886: strict mode of your entire code base, you too can never see no class method
+  not available in production
+1893: again. And this is the type of thing you might want to add to your gem file.
+  So, finishing up,
+1899: I expect this is the part where I guess we can get some nice ad hominems in
+  there. You can say,
+1904: well, Mike, it's very easy for you to say you're working on this Greenfield
+  project. I saw you've
+1909: got like three tests. Your code base obviously has like six lines of code at
+  this point. Like,
+1914: yeah, okay. Some of us are dealing with real problems, okay? Yeah, okay, yeah.
+  It is easier for
+1920: me than it is for you. But then again, you know, I do stuff on Homebrew. Homebrew's
+  code base has been
+1924: around for like 15 years. Like GitHub, when I worked there, their code base
+  was around for,
+1928: you know, I guess, more than 15, coming up to sort of 20 years.
+1934: Like, perfect is the enemy of good. You can always make things better. In Homebrew
+  and in GitHub,
+1940: many of the tools I mentioned, certainly tools like Sorbet and Rubicop, were
+  adopted incrementally
+1946: over time. And in the case of Sorbet, went from zero to non-zero. And that made
+  the code quality better.
+1953: There is no app too big in the world to adopt these tools. You can always get
+  to a better place from
+1960: where you are today. Finally, I guess another common objection perhaps to my
+  approach with this stuff
+1966: is like, Mike, this sounds really oppressive and overwhelming. Like, you've
+  got just like all of
+1971: these robots shouting at you all the time. And you've enabled all these things.
+  And you're trying to get
+1974: 100% test coverage. And doesn't this just suck all the joy out of it? No, because
+  you too can cheat.
+1980: So what I do is I have all of these like guardrails I built for myself to try
+  and make me do good code.
+1987: And I will liberally just do things where I rewrite code to have 100% line coverage
+  by put it like,
+1995: essentially putting a branch on one line instead of two, right? And is that
+  somewhat stupid? Yes.
+2001: Is that maybe a really weird and bad attitude? Yes. But it still gets to a better
+  place, I think,
+2008: than if you don't set these guardrails at all. Again, perfect is the enemy of
+  good. You're still going
+2013: to end up with dramatically better code from trying to have more guardrails.
+  And it will make you and
+2019: your team and your customers slash users happier. The key to success is knowing
+  when to break your own
+2025: rules. Let's just not tell the robots that. If you have any questions, then
+  we're not doing it now. But
+2030: you can send me an email or find me on the internet. And if you want to read
+  a blog post of this talk,
+2035: it went out about an hour ago. And you can see it at this URL. Thank you very
+  much.
