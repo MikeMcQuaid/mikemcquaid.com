@@ -5,6 +5,11 @@ layout: base
 {% assign interview_podcast_audio_url = page.podcast_audio_url | default: "" | strip %}
 {% assign interview_podcast_audio_length = page.podcast_audio_length | default: "" | strip %}
 {% assign interview_link_image = page.link_image | default: "" | strip %}
+{% assign interview_link = page.link | default: "" | strip %}
+{% if interview_link != "" %}
+{% assign interview_link = interview_link | absolute_url %}
+{% else %}
+{% endif %}
 {% assign interview_has_youtube = false %}
 {% if interview_youtube_id != "" %}
 {% assign interview_has_youtube = true %}
@@ -32,9 +37,9 @@ layout: base
   {% if interview_has_youtube %}
   {% include youtube-lite.html id=interview_youtube_id title=page.title player_id="youtube-player" %}
   {% endif %}
-  {% if interview_has_youtube == false and page.link and page.link != "" and interview_link_image and interview_link_image != "" and
-  interview_link_image != page.link %}
-  <a class="interview-link-card" href="{{ page.link }}">
+  {% if interview_has_youtube == false and interview_link != "" and interview_link_image and interview_link_image != "" and
+  interview_link_image != interview_link %}
+  <a class="interview-link-card" href="{{ interview_link }}">
     <div class="thought-link-card-image">
       <img src="{{ interview_link_image }}" alt="" loading="lazy" />
     </div>
@@ -46,6 +51,9 @@ layout: base
   </audio>
   {% endif %}
   {{ content }}
+  {% if interview_link != "" %}
+  <p><a href="{{ interview_link }}">{{ interview_link }}</a></p>
+  {% endif %}
   {% assign interview_transcript_id = page.transcript-id | default: interview_youtube_id %}
   {% if page.transcript or page.transcript-id %}
   {% include transcript.html id=interview_transcript_id video_id=interview_youtube_id audio_url=interview_podcast_audio_url %}
