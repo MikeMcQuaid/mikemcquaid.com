@@ -19,7 +19,7 @@ layout: base
 {% assign interview_has_audio = true %}
 {% endif %}
 <div class="type-post">
-  <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
+  <a href="{{ interview_link | default: page.url | absolute_url }}" title="{{ page.title }}">
     <h2>
       {{ page.title }}
     </h2>

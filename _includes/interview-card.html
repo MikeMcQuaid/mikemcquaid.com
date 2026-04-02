@@ -1,9 +1,14 @@
 <li class="interview-card">
   {% assign interview_link = include.interview.link %}
+  {% assign interview_title_link = include.interview.url | absolute_url %}
   {% assign interview_link_image = include.interview.link_image | default: "" | strip %}
   {% assign interview_youtube_id = include.interview.youtube-id | default: "" | strip %}
   {% assign interview_podcast_audio_url = include.interview.podcast_audio_url | default: "" | strip %}
   {% assign interview_podcast_audio_length = include.interview.podcast_audio_length | default: "" | strip %}
+  {% if include.include_transcript and interview_link and interview_link != "" %}
+  {% assign interview_title_link = interview_link | absolute_url %}
+  {% else %}
+  {% endif %}
   {% assign interview_has_youtube = false %}
   {% if interview_youtube_id != "" %}
   {% assign interview_has_youtube = true %}
@@ -12,7 +17,7 @@
   {% if interview_podcast_audio_url != "" and interview_podcast_audio_length != "" %}
   {% assign interview_has_audio = true %}
   {% endif %}
-  <a href="{{ include.interview.url | absolute_url }}" title="{{ include.interview.title }}">
+  <a href="{{ interview_title_link }}" title="{{ include.interview.title }}">
     <h2>
       {{ include.interview.title }}
     </h2>
