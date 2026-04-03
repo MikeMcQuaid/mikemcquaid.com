@@ -1,7 +1,16 @@
-<li class="interview-card">
-  {% assign podcast_link = include.default_link | default: include.podcast.link | default: include.podcast.podcast_audio_url | strip %}
-  {% assign podcast_audio_url = include.podcast.podcast_audio_url | default: "" | strip %}
-  {% assign podcast_description = include.podcast.description | default: include.podcast.content | default: "" | strip %}
+{% assign podcast_anchor_id = include.podcast.title | default: include.podcast.id | default: include.podcast.guid | slugify %}
+{% assign podcast_anchor_base = include.default_link | default: "/podcasts/" | strip %}
+{% assign podcast_link = include.podcast.url | default: "" | strip %}
+{% assign podcast_audio_url = include.podcast.podcast_audio_url | default: "" | strip %}
+{% assign podcast_description = include.podcast.description | default: include.podcast.content | default: "" | strip %}
+{% if podcast_link != "" %}
+{% assign podcast_link = podcast_link | absolute_url %}
+{% elsif include.podcast.link and include.podcast.link != "" %}
+{% assign podcast_link = include.podcast.link | absolute_url %}
+{% else %}
+{% assign podcast_link = podcast_anchor_base | append: "#podcast-" | append: podcast_anchor_id | absolute_url %}
+{% endif %}
+<li class="interview-card" id="podcast-{{ podcast_anchor_id }}">
   {% assign podcast_title_is_link = podcast_link != "" and podcast_link != page.url %}
   {% if podcast_title_is_link %}
   <a href="{{ podcast_link }}" title="{{ include.podcast.title }}">

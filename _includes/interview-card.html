@@ -5,10 +5,6 @@
   {% assign interview_youtube_id = include.interview.youtube-id | default: "" | strip %}
   {% assign interview_podcast_audio_url = include.interview.podcast_audio_url | default: "" | strip %}
   {% assign interview_podcast_audio_length = include.interview.podcast_audio_length | default: "" | strip %}
-  {% if include.include_transcript and interview_link and interview_link != "" %}
-  {% assign interview_title_link = interview_link | absolute_url %}
-  {% else %}
-  {% endif %}
   {% assign interview_has_youtube = false %}
   {% if interview_youtube_id != "" %}
   {% assign interview_has_youtube = true %}
@@ -57,6 +53,9 @@
     {{ include.interview.content }}
     {% endif %}
   </span>
+  {% if interview_has_youtube == false and interview_has_audio == false and interview_link and interview_link != "" %}
+  <p><a href="{{ interview_link }}">{{ interview_link }}</a></p>
+  {% endif %}
   {% if include.include_transcript %}
   {% assign interview_tid = include.interview.transcript-id | default: "" | strip %}
   {% if interview_tid != "" %}
