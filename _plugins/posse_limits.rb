@@ -91,9 +91,12 @@ module Jekyll
         if link != ""
           link_title = doc.data["link_title"].to_s.strip
           link_description = doc.data["link_description"].to_s.strip
-          if link_title.empty? || link_description.empty?
+          missing = []
+          missing << "link_title" if link_title.empty?
+          missing << "link_description" if link_description.empty?
+          unless missing.empty?
             raise Jekyll::Errors::FatalException,
-                  "Thought link metadata missing: #{doc.relative_path}"
+                  "Thought link metadata missing `#{missing.join("`, `")}`: #{doc.relative_path}"
           end
           posse_post["title"] = link_title
           posse_post["summary"] = link_description
