@@ -18,12 +18,11 @@ Remote-first since 2009, with hands-on adoption of AI coding assistants and revi
 
 Improving the world's best training management system where I:
 
-* Own product and engineering strategy, roadmap prioritisation and execution against company goals
-* Lead product managers and engineers including hiring, coaching, performance management and team design
-* Drive architecture, reliability, velocity, quality, productivity, culture and technical debt management
-* Grow, coach and improve agentic AI usage inside engineering and the rest of the company
-* Partner with Sales, Marketing and Customer Success on GTM priorities and customer-facing roadmap decisions
-* Track and improve product and engineering KPIs
+* Own product and engineering strategy, roadmap prioritisation and execution
+* Took engineering engagement from 18th to 64th global percentile and eNPS from 11 to 60 in 9 months through transparency, trust and team design
+* Hit all department KPIs while coming in 20% under budget, reducing security vulnerabilities by 45% and maintaining ISO and SOC 2 compliance
+* Drive agentic AI adoption across engineering and the company, eliminating manual processes and growing team velocity with reduced headcount
+* Led cross-functional restructures with clear career paths, measurable 30/90-day goals and AI enablement
 
 #### [Homebrew](https://brew.sh) — Project Leader (2009 – Present)
 
