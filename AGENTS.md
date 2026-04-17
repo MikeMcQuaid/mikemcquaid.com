@@ -70,6 +70,21 @@ images/media/     Locally cached media (youtube/, talks/, thoughts/, interviews/
 lib/              Ruby scripts for enrichment and transcription
 ```
 
+## AI and prose content
+
+All prose content (posts, thoughts, talks, interviews) is written
+fully first by a human (Mike McQuaid). AI is used only for light
+review and editing afterwards (e.g. spelling, grammar, sentence
+length). AI must never generate prose content from scratch, ghostwrite
+posts or rewrite sections in its own voice.
+
+When editing prose:
+- Preserve the author's voice, tone and style
+- Do not add or remove opinions, arguments or claims
+- Do not add emojis unless the author has already used them
+- Use UK English spelling (e.g. organised, colour, parallelise)
+- Flag issues rather than silently rewriting where the intent is unclear
+
 ## Commands
 
 - Use `bin/jekyll` for Jekyll commands. It handles `brew bundle` and
