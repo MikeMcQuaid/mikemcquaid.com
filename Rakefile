@@ -35,7 +35,7 @@ task test: :jekyll do
     ignore_files: [
       %r{/making-dizzy-shine-with-ajax/}
     ],
-    ignore_status_codes: [0, 302, 303, 400, 415, 418, 429, 521],
+    ignore_status_codes: [0, 301, 302, 303, 400, 415, 418, 429, 521],
     ignore_urls: [
       %r{^https://twitter.com/},
       %r{^https://web\.archive\.org/web/},
@@ -71,6 +71,7 @@ task test: :jekyll do
       'https://www.numerama.com/tech/260469-comment-github-contribue-a-lessor-du-developpement-en-open-source.html',
       'https://github.com/MikeMcQuaid/GitInPractice#git-in-practice',
       'https://github.com/Homebrew/brew#donations',
+      %r{^https://github\.com/.+/blob/.+#.+},
       'https://stackexchange.com/users/3692/mike-mcquaid',
       'https://stackoverflow.com/help/minimal-reproducible-example',
       'https://www.meetup.com/openuk-glasgow-edinburgh/events/296929069/',
