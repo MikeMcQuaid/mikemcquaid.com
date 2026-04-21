@@ -1,32 +1,28 @@
 ---
 layout: base
 ---
+
 <div class="type-post">
-  <h2>
-    {{ page.title }}
-  </h2>
-  <p class="post_date">
-    <a href="{{ page.url | absolute_url }}" title="{{ page.title }}">
-      {{ page.date | date_to_long_string }}
-    </a>
-  </p>
-  {{ content }}
+    <h2>{{ page.title }}</h2>
+    <p class="post_date">
+        <a href="{{ page.url | absolute_url }}" title="{{ page.title }}"> {{ page.date | date_to_long_string }} </a>
+    </p>
+    {{ content }}
+    <p>
+        <small>Written by me, not an AI. I solicit AI suggestions and apply only when I agree (often I don't).</small>
+    </p>
 </div>
 
 <div id="latest-posts">
-  <h3>Latest Articles</h3>
-  <ul>
-    {% for post in site.posts limit:5 %}
+    <h3>Latest Articles</h3>
+    <ul>
+        {% for post in site.posts limit:5 %} {% if page.url == post.url %} {% continue %} {% endif %}
 
-    {% if page.url == post.url %}
-    {% continue %}
-    {% endif %}
-
-    <li>
-      <a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+        <li>
+            <a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
 
 {%- include newsletter.html -%}
