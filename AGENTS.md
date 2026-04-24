@@ -85,6 +85,34 @@ When editing prose:
 - Use UK English spelling (e.g. organised, colour, parallelise)
 - Flag issues rather than silently rewriting where the intent is unclear
 
+When reviewing or editing blog posts, watch for recurring improvement areas:
+- Tighten recent technical posts that drift into tool lists, link lists or
+  repeated caveats instead of a clear essay shape
+- Prefer a structure of problem, decision frame, recommended default and when
+  the recommendation breaks down for longer posts
+- Link to canonical posts for repeated themes (e.g. saying no, maintainer
+  boundaries, automation and remote work) rather than rearguing them
+- Keep strong asides, swearing and emojis only where they add precision or
+  humour, especially in posts likely to date quickly
+- Strengthen endings with a final "what I'd do now" or "if you remember one
+  thing" paragraph rather than a casual sign-off
+- Suggest adding a counterargument or "where this breaks down" section to
+  personal or opinion pieces where it would make the argument more robust
+- Suggest a story arc (setup, tension, decision, consequence, lesson) when a
+  post is based on lived experience but reads like notes or a chronology
+- Prefer concrete scenes, named examples or fictionalised case studies before
+  abstract advice when they make the argument easier to feel and remember
+- Cut anecdotes, chronology or colourful details that do not change the
+  reader's understanding of the argument
+- For technical posts that should travel well in technical communities, suggest
+  a precise, curiosity-provoking title without clickbait
+- Front-load the surprising, broadly useful or counterintuitive lesson so
+  readers understand why the post matters in the first few paragraphs
+- Prefer concrete data, implementation details, tradeoffs and failure modes over
+  high-level positioning or marketing language
+- Make the post useful to readers who do not already know Mike, Homebrew or the
+  surrounding context
+
 ## Commands
 
 - Use `bin/jekyll` for Jekyll commands. It handles `brew bundle` and
