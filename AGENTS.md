@@ -108,6 +108,14 @@ When reviewing or editing blog posts, watch for recurring improvement areas:
   a precise, curiosity-provoking title without clickbait
 - Front-load the surprising, broadly useful or counterintuitive lesson so
   readers understand why the post matters in the first few paragraphs
+- Treat the opening as borrowed attention: do not spend the first few
+  paragraphs defining familiar concepts, reciting the origin story of the post
+  or delaying the useful point
+- Avoid unnecessary first-person framing; use `I` when Mike's perspective,
+  story or responsibility materially matters, otherwise state the argument
+  directly without `I think`, `I believe` or similar hedges
+- Flag `obviously` and similar words: if the point is obvious the qualifier is
+  redundant and if it is not, the word can sound dismissive or defensive
 - Prefer concrete data, implementation details, tradeoffs and failure modes over
   high-level positioning or marketing language
 - Make the post useful to readers who do not already know Mike, Homebrew or the
