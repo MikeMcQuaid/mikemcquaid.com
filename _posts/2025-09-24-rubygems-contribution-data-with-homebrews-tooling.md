@@ -1,5 +1,6 @@
 ---
 title: RubyGems Contribution Data with Homebrew's Tooling
+image: /images/a/homebrew.png
 description: "Using Homebrew's contribution tooling to share RubyGems organisation activity data, explain access decisions, and advocate for transparent, metrics-driven discussions."
 ---
 

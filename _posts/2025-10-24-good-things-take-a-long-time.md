@@ -1,5 +1,6 @@
 ---
 title: Good Things Take A Long Time
+image: /images/a/good-things-take-a-long-time.png
 description: "Reflections on long-term commitments in life, work and hobbies, why patience compounds results, and when quitting is the right move."
 ---
 

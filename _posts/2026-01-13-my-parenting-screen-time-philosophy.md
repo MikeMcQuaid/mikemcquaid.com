@@ -1,5 +1,6 @@
 ---
 title: 'My Parenting "Screen Time" Philosophy'
+image: /images/a/screenzen.jpg
 description: 'Raising kids in an addictive internet without losing your mind (or theirs)'
 ---
 Like many people who now work with computers, I was told as a child I spent "too much time on screens" and then built a career out of it.

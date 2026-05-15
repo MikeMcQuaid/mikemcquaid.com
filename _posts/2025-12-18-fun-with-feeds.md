@@ -1,5 +1,7 @@
 ---
 title: POSSE, Blog and Feed Updates
+image: /images/a/posse-blog-feed-updates.png
+homebrew_description_as_excerpt: true
 description: "How I leaned harder into POSSE on this site: added a Thoughts section, reshuffled feeds and homepage, wired everything to POSSE Party/newsletter, and what subscribers should do."
 ---
 I've been following what [Justin Searls](https://justin.searls.co/) has been doing with his blog for some time.

@@ -1,6 +1,7 @@
 ---
 title: Curriculum Vitae
 layout: page
+classes: cv-page
 redirect_from: /resume/
 ---
 ### Mike McQuaid

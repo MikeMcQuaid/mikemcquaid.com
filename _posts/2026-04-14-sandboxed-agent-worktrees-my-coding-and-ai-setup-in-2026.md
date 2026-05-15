@@ -1,5 +1,6 @@
 ---
-title: "Sandboxes and Worktrees: My secure Agentic AI Setup in 2026"
+title: "Sandboxes and Worktrees: My secure Agentic AI Setup"
+image: /images/a/superset.png
 description: "Stop babysitting one AI at a time. Sandboxing lets them run wild safely, Git worktrees let them run in parallel. Use more tokens, get more velocity."
 ---
 I've been using AI tools since early 2021 when I was invited to test out the Copilot internal alpha at GitHub (where I spent 10 years).

@@ -1,6 +1,7 @@
 ---
 title: About Me
 layout: titled
+classes: text-page
 description: Hi, I’m Mike McQuaid.
 redirect_from:
 - /blog/about/

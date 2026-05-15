@@ -1,5 +1,6 @@
 ---
 title: Bootstrapping gem.coop Governance
+image: /images/a/open-source-economics.png
 description: "How I helped gem.coop bootstrap democratic governance and financial transparency, why I stepped back, and hopes for community-led Ruby stewardship."
 ---
 

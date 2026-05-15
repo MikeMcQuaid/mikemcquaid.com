@@ -85,6 +85,10 @@ When editing prose:
 - Use UK English spelling (e.g. organised, colour, parallelise)
 - Flag issues rather than silently rewriting where the intent is unclear
 
+When changing homepage/content-specific behaviour, prefer front matter
+or data fields over hardcoded title, slug, path or filename checks in
+templates, includes, plugins and scripts.
+
 When reviewing or editing blog posts, watch for recurring improvement areas:
 - Tighten recent technical posts that drift into tool lists, link lists or
   repeated caveats instead of a clear essay shape
@@ -127,3 +131,13 @@ When reviewing or editing blog posts, watch for recurring improvement areas:
   `bundle exec`.
 - Use `bin/ruby` for Ruby commands. It handles `brew bundle` and
   `bundle exec`.
+- Use `playwright-cli` for visual layout checks after homepage or CSS
+  changes. With the site running locally, use commands such as
+  `playwright-cli -s=mikemcquaid-home open http://localhost:4000/`,
+  `playwright-cli -s=mikemcquaid-home resize 1365 768`,
+  `playwright-cli -s=mikemcquaid-home screenshot` and
+  `playwright-cli -s=mikemcquaid-home eval "..."`.
+- If `playwright-cli` cannot find Chrome, run
+  `playwright-cli install-browser chrome` once. Screenshots and snapshots are
+  written to `.playwright-cli/`; use them for inspection but do not commit
+  them.

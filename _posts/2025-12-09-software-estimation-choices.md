@@ -1,5 +1,6 @@
 ---
 title: Software Estimation Choices
+image: /images/a/software-estimation-choices.png
 description: "Breaks estimation into quality, scope and delivery-date tradeoffs, argues you can only pick two at once, and suggests padding and communication to set realistic expectations."
 ---
 

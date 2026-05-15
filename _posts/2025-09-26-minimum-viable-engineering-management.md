@@ -1,5 +1,6 @@
 ---
 title: Minimum Viable Engineering Management
+image: /images/a/minimum-viable-management-thumbnail.png
 description: "Guide to lightweight engineering management when you lack full-time managers: clear 1:1s, feedback, context sharing and just enough process to keep teams effective."
 ---
 

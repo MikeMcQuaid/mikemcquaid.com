@@ -1,6 +1,7 @@
 ---
 title: Projects
 layout: titled
+classes: projects-page
 description: A portfolio of my career and hobby projects.
 ---
 ### Current

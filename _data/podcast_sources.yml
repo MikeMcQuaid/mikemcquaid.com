@@ -1,3 +1,5 @@
 sources:
   - feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
+    image: /images/a/minimum-viable-management-thumbnail.png
   - feed_url: https://mikemcquaid.com/balancingdads.xml
+    image: /images/balancingdads-podcast-logo.jpg

@@ -23,15 +23,9 @@
     {{ include.interview.date | date_to_long_string }}
   </p>
   {% endif %}
-  <span>
-    <strong>
-      {% if include.index_page %}
-      Interviewed by
-      {% else %}
-      {% endif %}
-      {{ include.interview.publication }}
-    </strong>
-  </span>
+  <p class="interview-card-publication">
+    {% if include.index_page %}Interviewed by {% endif %}{{ include.interview.publication }}
+  </p>
   {% if interview_has_youtube %}
   {% include youtube-lite.html id=interview_youtube_id title=include.interview.title %}
   {% endif %}

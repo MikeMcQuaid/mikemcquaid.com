@@ -1,10 +1,11 @@
 <form id="newsletter" action="https://buttondown.com/api/emails/embed-subscribe/mikemcquaid" method="post">
-  <h3>
+  <h3 class="newsletter-title">
     <label for="newsletter-email">Subscribe to be notified about new content</label>
   </h3>
-  <p>
-    <input id="newsletter-email" type="email" name="email" />
+  <p class="newsletter-description">Occasional updates by email. RSS/Atom feeds are linked below.</p>
+  <p class="newsletter-controls">
+    <input id="newsletter-email" type="email" name="email" autocomplete="email" placeholder="you@example.com"
+      required />
+    <input id="newsletter-submit" type="submit" value="Subscribe" />
   </p>
-
-  <input id="newsletter-submit" type="submit" value="Subscribe" />
 </form>

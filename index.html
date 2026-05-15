@@ -4,26 +4,88 @@ layout: base
 ---
 {% assign empty_list = "" | split: "" %}
 {% assign homepage_items = site.data.homepage_items | default: empty_list %}
-{% assign has_thoughts = false %}
-<ul class="index-lists index">
-  {% for item in homepage_items %}
-  {% if item.collection == "thoughts" %}
-  {% assign has_thoughts = true %}
-  {% include thought-card.html thought=item show_date=false %}
-  {% elsif item.collection == "talks" %}
-  {% include talk-card.html talk=item talk_date=item.date include_transcript=true show_date=false %}
-  {% elsif item.collection == "interviews" %}
-  {% include interview-card.html interview=item index_page=true include_transcript=true show_date=false %}
-  {% elsif item.source_feed_url and item.podcast_audio_url %}
-  {% include podcast-card.html podcast=item include_transcript=true show_date=false %}
-  {% else %}
-  {% include article-card.html article=item show_date=false %}
-  {% endif %}
-  {% endfor %}
-</ul>
-<script defer src="{{ '/js/media-lite.js' | absolute_url }}?v={{ '/js/media-lite.js' | cache_bust }}"></script>
-{% if has_thoughts %}
-{% include thought-actions.html %}
-{% endif %}
+<div class="homepage-layout">
+  <section class="homepage-feed-top" aria-label="Selected recent work">
+    <ul class="index-lists homepage-rows">
+      {% for item in homepage_items limit: 4 %}
+      {% include homepage-row.html item=item featured_rank=forloop.index %}
+      {% endfor %}
+    </ul>
+  </section>
+  <aside class="homepage-sidebar" aria-labelledby="latest-by-type-heading">
+    <h2 id="latest-by-type-heading" class="homepage-section-heading">Latest</h2>
+    <section>
+      <h3><a href="{{ '/thoughts/' | relative_url }}">Thoughts</a></h3>
+      {% assign sorted_thoughts = site.thoughts | sort: 'date' | reverse %}
+      {% for thought in sorted_thoughts limit: 5 %}
+      {% if site.future == false and thought.date > site.time %} {% continue %} {% endif %}
+      <article class="homepage-sidebar-thought">
+        <a class="homepage-sidebar-thought-date" href="{{ thought.url | relative_url }}">
+          <time datetime="{{ thought.date | date_to_xmlschema }}">{{ thought.date | date: "%-d %b" }}</time>
+        </a>
+        <div class="homepage-sidebar-thought-body">
+          {{ thought.content }}
+          {% if thought.link and thought.link != "" %}
+          <p><a href="{{ thought.link | absolute_url }}">{{ thought.link }}</a></p>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </section>
+    <section>
+      <h3><a href="{{ '/articles/' | relative_url }}">Articles</a></h3>
+      <ol>
+        {% for post in site.posts limit: 5 %}
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><a class="homepage-sidebar-date"
+            href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b" }}</time></a></li>
+        {% endfor %}
+      </ol>
+    </section>
+    <section>
+      <h3><a href="{{ '/interviews/' | relative_url }}">Interviews</a></h3>
+      <ol>
+        {% assign sorted_interviews = site.interviews | sort: 'date' | reverse %}
+        {% for interview in sorted_interviews limit: 5 %}
+        <li><a href="{{ interview.url | relative_url }}">{{ interview.title }}</a><a class="homepage-sidebar-date"
+            href="{{ interview.url | relative_url }}"><time datetime="{{ interview.date | date_to_xmlschema }}">{{ interview.date | date: "%-d %b" }}</time></a></li>
+        {% endfor %}
+      </ol>
+    </section>
+    <section>
+      <h3><a href="{{ '/talks/' | relative_url }}">Talks</a></h3>
+      <ol>
+        {% assign sorted_talks = site.talks | sort: 'date' | reverse %}
+        {% assign displayed_talks = 0 %}
+        {% for talk in sorted_talks %}
+        {% if displayed_talks == 5 %} {% break %} {% endif %}
+        {% if site.future == false and talk.date > site.time %} {% continue %} {% endif %}
+        {% if talk.homepage == false %} {% continue %} {% endif %}
+        <li><a href="{{ talk.url | relative_url }}">{{ talk.title }}</a><a class="homepage-sidebar-date"
+            href="{{ talk.url | relative_url }}"><time datetime="{{ talk.date | date_to_xmlschema }}">{{ talk.date | date: "%-d %b" }}</time></a></li>
+        {% assign displayed_talks = displayed_talks | plus: 1 %}
+        {% endfor %}
+      </ol>
+    </section>
+    <section>
+      <h3><a href="{{ '/podcasts/' | relative_url }}">Podcasts</a></h3>
+      <ol>
+        {% assign sorted_podcasts = site.data.podcasts_external.items | default: empty_list | sort: 'date' | reverse %}
+        {% for podcast in sorted_podcasts limit: 5 %}
+        {% assign podcast_anchor_id = podcast.title | default: podcast.id | default: podcast.guid | slugify %}
+        {% assign podcast_url = '/podcasts/#podcast-' | append: podcast_anchor_id | relative_url %}
+        <li><a href="{{ podcast_url }}">{{ podcast.title }}</a><a class="homepage-sidebar-date"
+            href="{{ podcast_url }}"><time datetime="{{ podcast.date | date_to_xmlschema }}">{{ podcast.date | date: "%-d %b" }}</time></a></li>
+        {% endfor %}
+      </ol>
+    </section>
+  </aside>
+  <section class="homepage-feed-rest" aria-label="More selected recent work">
+    <ul class="index-lists homepage-rows">
+      {% for item in homepage_items offset: 4 limit: 12 %}
+      {% include homepage-row.html item=item %}
+      {% endfor %}
+    </ul>
+  </section>
+</div>
 
 {%- include newsletter.html -%}

@@ -27,11 +27,7 @@ layout: base
       {{ page.date | date_to_long_string }}
     </a>
   </p>
-  <span>
-    <strong>
-      Interviewed by {{ page.publication }}
-    </strong>
-  </span>
+  <p class="post_date">Interviewed by {{ page.publication }}</p>
   {% if interview_has_youtube %}
   {% include youtube-lite.html id=interview_youtube_id title=page.title player_id="youtube-player" %}
   {% endif %}

@@ -5,18 +5,19 @@ module Jekyll
     safe true
     priority :lowest
 
-    HOMEPAGE_LIMIT = 25
-    TYPE_ORDER = %w[posts interviews talks podcasts thoughts].freeze
-    WEIGHTED_CYCLE = %w[posts interviews posts talks posts interviews podcasts posts thoughts].freeze
+    HOMEPAGE_LIMIT = 16
+    TYPE_ORDER = %w[posts interviews talks podcasts].freeze
+    WEIGHTED_CYCLE = %w[posts interviews posts talks posts interviews podcasts posts].freeze
 
     def generate(site)
-      site.data["homepage_items"] = select_items(
+      items = select_items(
         site.posts.docs +
         site.collections.fetch("interviews").docs +
         site.collections.fetch("talks").docs +
-        site.collections.fetch("thoughts").docs +
         Array(site.data.dig("podcasts_external", "items"))
       )
+      items.each { |item| add_homepage_image(item) }
+      site.data["homepage_items"] = items
     end
 
     private
@@ -54,9 +55,26 @@ module Jekyll
     end
 
     def item_type(item)
+      return nil if %w[false no 0 hidden].include?(value_for(item, "homepage").downcase) ||
+                    %w[true yes 1].include?(value_for(item, "hide_from_homepage").downcase)
       return "podcasts" if value_for(item, "source_feed_url") != "" && value_for(item, "podcast_audio_url") != ""
 
       item.collection.label
+    end
+
+    def add_homepage_image(item)
+      image = %w[link_image image thumbnail cover_image cover poster og_image card_image]
+              .map { |key| value_for(item, key) }
+              .find { |value| value != "" }.to_s
+      image = "" if image == "/images/default-card.jpg"
+      youtube_id = value_for(item, "youtube-id")
+      image = "/images/media/youtube/#{youtube_id}.jpg" if image == "" && youtube_id != ""
+      youtube_link_match = value_for(item, "link").match(%r{youtube\.com/watch\?v=([^&]+)})
+      image = "/images/media/youtube/#{youtube_link_match[1]}.jpg" if image == "" && youtube_link_match
+      content_image_match = item.content.match(%r{/images/[^'")\]\s]+}) if image == "" && item.respond_to?(:content)
+      image = content_image_match[0] if image == "" && content_image_match
+      item.data["homepage_image"] = image if image != "" && item.respond_to?(:data)
+      item
     end
 
     def item_date(item)

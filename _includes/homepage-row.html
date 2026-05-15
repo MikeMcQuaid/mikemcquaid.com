@@ -1,0 +1,71 @@
+{% assign item = include.item %}
+{% assign item_type = "Article" %}
+{% assign item_type_url = "/articles/" | relative_url %}
+{% assign item_title = item.title %}
+{% assign item_url = item.url | relative_url %}
+{% assign item_date = item.date %}
+{% assign item_source = "" %}
+{% assign item_uses_jekyll_excerpt = true %}
+{% assign item_image = item.homepage_image | default: item.link_image | default: item.image | default: "" %}
+{% if item_image == "" and item.source_feed_url %}
+{% for podcast_source in site.data.podcast_sources.sources %}
+{% if item.source_feed_url == podcast_source.feed_url and podcast_source.image %}
+{% assign item_image = podcast_source.image %}
+{% break %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% assign item_summary = item.homepage_excerpt | default: item.excerpt | default: item.description | strip_html | normalize_whitespace | strip %}
+{% assign item_summary_words = item.homepage_excerpt_words | default: "" %}
+{% if item.homebrew_description_as_excerpt %}
+{% assign item_summary = item.description | strip_html | normalize_whitespace | strip %}
+{% endif %}
+{% if item.collection == "talks" %}
+{% assign item_uses_jekyll_excerpt = false %}
+{% assign item_type = "Talk" %}
+{% assign item_type_url = "/talks/" | relative_url %}
+{% assign item_title = item.title | default: item.slug %}
+{% assign item_summary = item.homepage_excerpt | default: item.description | strip_html | normalize_whitespace | strip %}
+{% elsif item.collection == "interviews" %}
+{% assign item_uses_jekyll_excerpt = false %}
+{% assign item_type = "Interview" %}
+{% assign item_type_url = "/interviews/" | relative_url %}
+{% assign item_source = item.publication %}
+{% assign item_summary = item.homepage_excerpt | default: item.content | strip_html | normalize_whitespace | strip %}
+{% elsif item.source_feed_url and item.podcast_audio_url %}
+{% assign item_uses_jekyll_excerpt = false %}
+{% assign item_type = "Podcast" %}
+{% assign item_type_url = "/podcasts/" | relative_url %}
+{% assign podcast_anchor_id = item.title | default: item.id | default: item.guid | slugify %}
+{% assign item_url = "/podcasts/#podcast-" | append: podcast_anchor_id | relative_url %}
+{% assign item_source = item.publication %}
+{% assign item_summary = item.homepage_excerpt | default: item.description | default: item.content | strip_html | normalize_whitespace | strip %}
+{% endif %}
+{% capture item_summary_text %}{% if item_summary_words != "" %}{{ item_summary | truncatewords: item_summary_words }}{% elsif item_uses_jekyll_excerpt %}{{ item_summary }}{% else %}{{ item_summary | truncatewords: 55 }}{% endif %}{% endcapture %}
+<li class="homepage-row{% if item_image and item_image != "" %} homepage-row-with-image{% endif %}{% if include.featured_rank %} homepage-row-featured{% endif %}{% if include.featured_rank == 1 %} homepage-row-featured-1{% endif %}">
+  {% if item_image and item_image != "" %}
+  <a class="homepage-row-image" href="{{ item_url }}">
+    <img src="{% if item_image contains '://' %}{{ item_image }}{% else %}{{ item_image | relative_url }}{% endif %}" alt="" loading="lazy" />
+  </a>
+  {% endif %}
+  <div class="homepage-row-body">
+    <a class="homepage-row-title" href="{{ item_url }}">{{ item_title }}</a>
+    <div class="homepage-row-meta">
+      <a class="homepage-row-type" href="{{ item_type_url }}">{{ item_type }}</a>
+      {% if include.featured_rank == 1 %}
+      <span class="homepage-row-separator" aria-hidden="true">/</span>
+      <time class="homepage-row-date" datetime="{{ item_date | date_to_xmlschema }}">{{ item_date | date: "%-d %b %y" }}</time>
+      {% else %}
+      {% if item_source and item_source != "" %}
+      <p class="homepage-row-source">{{ item_source }}</p>
+      {% endif %}
+      <p class="post_date">
+        <time datetime="{{ item_date | date_to_xmlschema }}">{{ item_date | date: "%-d %b %y" }}</time>
+      </p>
+      {% endif %}
+    </div>
+    {% if item_summary_text != "" %}
+    <p class="homepage-row-summary">{{ item_summary_text }}</p>
+    {% endif %}
+  </div>
+</li>

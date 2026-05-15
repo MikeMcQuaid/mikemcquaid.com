@@ -4,6 +4,7 @@ items:
   transcript-id: 00ff42fd-20a5-4705-bfa2-53638066d3fa
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: Getting Shit Done in Institutions
+  homepage_excerpt_words: 28
   description: "<p>David Yee, VP of Engineering at The New York Times and head of
     its new AI platforms and products mission, joins Mike McQuaid and Neha Batra for
     a candid, behind-the-scenes conversation about why institutions are built to resist
@@ -20,6 +21,7 @@ items:
   transcript-id: 73c879d9-c88e-4f62-a81f-1b536ac5cb24
   source_feed_url: https://api.riverside.fm/hosting/Ryz8eZPj.rss
   title: Performance Reviews, Done Right
+  homepage_excerpt_words: 28
   description: "<p>Performance reviews have a reputation for being stressful, confusing
     and often disconnected from reality. Too often they surface feedback that should
     have been shared months earlier or reduce a year of work into a single rating.

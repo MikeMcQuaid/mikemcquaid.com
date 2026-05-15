@@ -1,4 +1,5 @@
 brew "ruby", version_file: ".ruby-version"
+brew "playwright-cli"
 brew "xz"
 
 ENV["HOMEBREW_INSIDE_BUNDLE"] = "1"
