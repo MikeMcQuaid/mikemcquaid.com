@@ -10,7 +10,7 @@
   {% if page.collection == "talks" or page.url == "/" or page.url == "/talks/" %}
   <link rel="dns-prefetch" href="https://speakerdeck.com">
   {% endif %}
-  <link rel="preload" as="image" href="{{ '/images/header.jpg' | relative_url }}">
+  <link rel="preload" as="image" href="{{ '/images/header-mirror.png' | relative_url }}">
   {% seo_custom %}
   {% assign description = page.description | default: page.excerpt %}
   {% if description and description != "" %}

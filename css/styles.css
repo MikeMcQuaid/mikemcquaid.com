@@ -62,9 +62,13 @@ a:visited {
 #header {
   min-width: 29em;
   background-color: #000;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.18)), url('/images/header.jpg');
-  background-position: bottom;
-  background-size: cover;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.02) 58%, rgba(0, 0, 0, 0.18)),
+    url('/images/header-mirror.png');
+  background-position: bottom, calc(50% + 20em + 0.8px) bottom;
+  background-repeat: no-repeat, repeat-x;
+  background-size: 100% 100%, calc(80em + 3.2px) auto;
+  overflow: hidden;
 }
 
 @media print {
@@ -90,7 +94,6 @@ a:visited {
 #title h1 a {
   color: #fff;
   display: inline-block;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
 }
 
 .site-subtitle {
@@ -100,12 +103,17 @@ a:visited {
   font-weight: 600;
   line-height: 120%;
   margin: 0 0 0.18em 0;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
 }
 
 #title,
 #menu {
   text-align: center;
+}
+
+#title h1 a,
+.site-subtitle,
+#menu a {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
 }
 
 h1 {
@@ -182,6 +190,7 @@ h2 a:hover,
   color: #111;
   outline: none;
   text-decoration: none;
+  text-shadow: none;
 }
 
 #main {
