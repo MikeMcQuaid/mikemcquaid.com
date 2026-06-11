@@ -1,0 +1,851 @@
+---
+0: so I don't know if any of you actually read Amazon blog last week it was all
+8: talking about AI driven development lifecycle for financial services I'm
+12: trying to get the title right they basically talked last week about six
+16: engineers rebuilding the entire bedrock inference engine in 76 days using their
+21: Kiro Amazon agentic coding service proprietary the original estimate for
+27: that was over 40 engineers and a full year that wasn't a proof of concept right
+32: that's one of the biggest production infrastructures currently powering the
+37: world's largest proprietary AI service we're seeing lots of vendors touting the
+43: benefits of AI we're seeing lots of consultancies talking about the AI
+47: bandwagon team structures target operating models what your day is going to look
+52: like in the agentic space talking all those benefits but at the same time I
+57: we're hearing different things in the community lots of maybe horror stories
+61: even so we're going to jump into that in this panel as Amanda said I'm Chris Plank
+66: thanks for coming to our site I hope you're enjoying our campus and the the day
+72: thanks to my leadership for actually making this happen for open UK and for us
+76: really appreciate you know the investment that they made in doing this I'm going
+  to
+81: talk moderator today for this lovely group of humans I'm a open UK ambassador
+  I'm a CNCF
+91: technical community group leader I talk a lot about platform engineering I work
+  at the
+96: bank yeah with that I'm just going to introduce yourselves but I'm going to start
+  at the far end
+101: Paula thanks Chris hi my name is Paula Kennedy I'm the co-founder of a company
+  called Syntasso we make a
+110: framework for building internal developer platforms the core of which is open
+  source and then we have
+115: enterprise versions as well hi I'm Mike McQuaid I guess my open source life as
+  I've worked on various
+125: open source projects for 20 years homebrew is my main one kind of Mac Linux a
+  little bit Windows package
+132: manager which I worked on for 17 18 years and I'm the project leader for that
+  I run something called
+139: open invention Network which is a 21 year old activity designed to neutralize
+  patent risk associated
+146: with the adoption of open source and we have over 4,000 companies in our community
+  and we continue to
+153: grow and support creating opportunities for open source to to be in every space
+  possible and to be used
+161: without fear of litigation I'm Justin Cormack I was a docker for 10 years I was
+  the CTO involved with CNCF
+169: worked with OAN because people were suing our customers about some ridiculous
+  pattern trolling
+176: activities and being involved in open source for a long time cool okay so let's
+  start off nice and easy
+186: and we'll start talking as I said in the intro about tools and productivity you
+  know we've we've seen
+192: things people talking about like team topologies how that's all going to change
+  in the agenda here
+196: what your day is going to look like maybe start with you Paula first really talking
+  about kind of what
+201: you're seeing in the use of tools productivity all that area sure so I think
+  Finton's talk just before
+208: set us up really nicely because he talked about the tools that we're using for
+  software and code
+214: development and there's lots of different models out there but what we're seeing
+  the impact which I
+219: think Finton presented really nicely was we're producing more code we're producing
+  it faster we're having more
+225: commits more pull requests like the the explosion that GitHub has seen in just
+  like number of commits is
+232: incredible the thing that I really liked how Finton ended his talk with the tale
+  of two AIs because
+239: what's interesting is I don't know if you folks have read the most recent DORA
+  report which is I think
+244: it's called the state of the ROI of AI assisted software development because
+  the interesting thing that
+250: DORA is flagging is that we're seeing huge amounts of more code but not necessarily
+  better kind of
+258: outcomes for business in fact code is actually seen as a liability and now that
+  the cost to create more
+264: code is basically zero the cost to maintain and run that code is where we're
+  seeing like more increase in
+272: fact because it's harder now to kind of keep up with the amount of code that's
+  being generated and so it's
+278: interesting for us when I when I read the DORA report recently I was like it's
+  quite interesting that
+283: actually people are seeing supposed increases in productivity but actually more
+  of a negative impact
+289: on throughput was one of the things they flagged because the amount of like issues
+  that are coming
+295: up and the time it takes now to kind of keep code accurate and current is actually
+  slowing teams down
+301: somewhat so Mike when we were having a chat just at lunchtime very briefly we
+  started having a
+307: conversation about kind of these consultancies that are coming in McKinsey and
+  others talking about
+312: like the team structure and how you know you might have three people in a team
+  you may have like an
+318: architect a product owner and a coder of some sort and then they're doing using
+  the genetics and doing
+325: like development during the day and so the whole lifecycle is all changed and
+  I start to talk to you
+330: about what does that mean for people who you know they normally contribute to
+  open source at
+335: night and they might you know they might not do it during the day because that
+  might not be their main job you
+339: know like me and I work in a bank right and we have people who banking is our
+  day to day and stuff we've got to
+345: do but we contribute to open source as well you had a view a very strong view
+  on that so I thought we'd let's get some airtime to that thought and share that
+  with the audience
+353: yeah so I think that the thing is interesting I guess as Paul was speaking is
+  I come over who it was that said
+360: this but this idea with AI in the with software if you were doing things well
+  five years ago and you throw AI and
+368: increase velocity into the mix then a lot of things are going better and better
+  whereas if things were
+374: all a bit of a mess then you throw the AI velocity into the mix everything is
+  getting worse and worse and I
+379: think this goes a lot of areas and I think open sources is one of them right
+  where like something
+384: I've been kind of bang on about for years is that what I think is the most important
+  thing in open source
+389: sustainability is actually sustainability for like the humans and their lifestyle
+  and not just the money
+396: right and part of what that has mean for me and a lot of the other maintainers
+  I know
+401: some of which will say so publicly a lot of which are not is that a lot of us
+  do do our open source work
+408: during the daytime at our jobs you know and some of us have when I was at GitHub
+  they had a lovely liberal
+415: employment contract that meant I could do that whenever I want and that said
+  it was fine I had
+419: liberal management and working structures which meant I could do that and I know
+  other people who don't
+424: have that and either ask for exemptions in their contracts their co-workers don't
+  have or they just decide to do the
+430: driving 32 miles an hour in a 30 limit approach of just like well I'll do it
+  and see how it goes but
+436: I think in a funny way AI has okay it's made it may be difficult because the
+  work is more strenuous
+441: during the day but if you're someone you know the current rave thing with AI
+  and agents is like
+448: having work trees so you can have 20 different agents doing different things
+  at different times and
+452: with that approach if I'm paying for my own agent I'm using my open source project
+  and a bug comes in
+459: during the day and I click assign to agent and then I spend 15 seconds in you
+  know 15 30 minutes when
+465: it's done reviewing it and then pushing it to GitHub which takes me another 15
+  seconds I mean for me
+470: okay you could say well you've stolen that 34 seconds we were employer but it's
+  like my employer
+475: doesn't care right so I actually think in some ways we're even better set up
+  than we were five years
+481: so if you have those boundaries and kind of personal sustainability to do this
+  and use these AI tools
+487: to make open source projects easier to maintain including easier to maintain
+  during your working
+492: day but again if you have a punitive employer or you can't use AI on your project
+  for whatever
+498: reason or whatever then maybe not punitive but like some of the some of the ways
+  they're describing
+503: the the working day you're going to come in and you're going to review what the
+  your AI squad has
+509: done overnight you're almost AI babysitting right especially if that's broken
+  during the night you
+513: haven't unpick it and figure out what you're going to do and they seem to be
+  coming up with a kind of
+517: work cycle that's going to involve you coming in doing that in the morning then
+  you have your lunch
+521: then you're setting things up in the afternoon I don't particularly want to work
+  like that just to
+526: me doesn't sound great I mean just I think a lot of how we think about working
+  how we learn to work
+533: together in software has come from open source if you look at github and the
+  you know git was invented
+538: by an open source project to to work how they want to work github the the pull
+  request was something
+545: that came really from how open source communities were working and the last big
+  software productivity
+552: revolution we had was incorporating open source software in every belief software
+  we build and so
+557: everything really about how we work in software has come from watching people
+  do it in the open source
+563: community so I think that it's part of our responsibilities to show people how
+  to work with
+567: AI I think it's all very new and everyone's very confused and people are kind
+  of inventing how they
+573: think it's going to work rather than finding out what really works and finding
+  out what really works
+578: is something that is best done in public yeah and from the slides were brilliant
+  because the one
+582: thing that we saw there was like the exponential growth almost and everything
+  you know whether it's
+587: commits or the usage everything is completely changed there is no maturity at
+  the moment that was another
+594: thing really to pick out your slides right there's that you know when openclaw
+  came out at the start of
+599: the year we had microsoft making an announcement this week that was talking about
+  that's now going to be part
+604: of windows that's changed in the course of like a week so there is no maturity
+  everyone's making this stuff
+610: up is pretty much what you're saying right i think mike's point is is spot on
+  about the if you've got good
+617: systems in place so one of the things the door report called out was AI is really
+  an amplifier and if
+622: you've got good systems in place already good practices good team boundaries
+  good kind of ownership models
+629: then bringing in AI bringing in agents your fundamentals are already in place
+  and AI amplifies
+635: and makes as an organization go faster and your teams can go faster if you've
+  got a bit of a shambles
+641: i was going to swear i'm not going to swear if you've got a bit of a shambles
+  going on in your organization
+645: AI is going to amplify that i think yeah but what about people getting overwhelmed
+  by that AI shambles
+654: yeah i mean i think there's a big problem with that i mean again we've got to
+  work we've got to learn
+657: how to work together again and how to work as teams again and right now a lot
+  of people are kind of
+663: giving up temporarily because they're finding it really hard and people are like
+  well we just have
+666: one person per project and we won't work we won't collaborate on our projects
+  anymore because we
+672: can't work out how to do it because one person with AI it seems more manageable
+  right now than teams but
+679: we're going to want to actually you know work in teams again to build bigger
+  even bigger more complex
+683: things the way we always have and we've got to work out how to do that again
+  so i think it's you know
+688: there's this weird sort of transitional period and i think part of it's about
+  trust i mean working
+694: with other people with AI you have to really trust because you're not going to
+  read the code you've got
+698: to trust that they have done the right thing and they're they and you trust the
+  code that they're
+705: bringing with them and right now people you know are quite validly not in that
+  trust situation because
+712: people are bringing them code that's terrible and they and they're either sort
+  of you know they they
+717: don't know how to have those discussions about like how do we you know how do
+  we how do we keep the
+722: quality up how do we work together how do we what are we going to do when this
+  goes wrong and those
+727: conversations are often not happening and people are getting really unhappy they're
+  not talking to
+732: each other they're not communicating effectively people are leaving like good
+  people are leaving you know
+737: all sorts of things are happening and it's a it's a real mess right now yeah
+  i'm going to come back to trust because i mean if you know
+741: if you know it's about trust that's where we're talking now i do want to bring
+  keith into the
+745: conversation and start talking about things like the linux foundation guide uh
+  to use an AI because
+750: you were talking about contribution right so um what um what else could projects
+  need to consider in this
+757: AI world i think they're you know the normal set of things that when you work
+  in AI that everybody's
+763: learned over the last 40 plus years in terms of the license under which the code
+  has contributed
+769: understanding how it can be used and what the requirements are in terms of compliance
+  and
+773: governance that's usually managed by legal department inside the organization
+  the OSPO kind of takes
+780: control of that for the on the front end and then works with maybe two or three
+  in some cases
+786: ByteDance has uh six of the of the best legal minds i've seen working in open
+  source that are dedicated
+792: purely to legal issues and open source that's not an unusual thing because they
+  emulated what what
+798: Huawei does and they actually have some people from Huawei that helped them organize
+  this and Huawei got
+804: those ideas from IBM everybody's learning from each other in the open source
+  legal world as they emulate
+811: what's going on actually in collaborative collaborative development on the technology
+  front and so what
+816: we're doing is actually looking at models like OAN has just been borrowed from
+  by sale which is something
+824: that Meta is primarily responsible for but a number of like 15 or 20 companies
+  came together they took two
+833: years the better part of two years to be able to launch something that focuses
+  on allowing people to feel
+840: comfortable utilizing foundation models so it basically insulates you from patent
+  risk associated with your
+847: your adoption of foundation models so that was like a lot of collaboration yeah
+  and so these kinds of
+852: of collaborative kind of activities and to Anastasia's point Anastasia's point
+  before
+858: you know I was approached by this is not you know I'm not telling tales out of
+  school but it's a very
+863: interesting development is that and while we doesn't do these things without
+  approval from a higher power
+869: but while we approached me and said you know you're involved in doing all kinds
+  of things and supporting
+874: freedom and and helping and there they've been a member of our organization for
+  a number of years
+879: and they said let's get the data issues right help us get the data issues the
+  right because we have
+884: approval to be able to contribute data to be able to kind of deal with the issue
+  of provenance
+890: because they see it as an as a significant issue uh that if we can basically
+  just create a data commons
+897: and collect data from we'll start out with 20 companies we create a data commons
+  and we create
+902: clean data what's acceptable clean data and then we understand what we're each
+  using and drawing from
+908: and irrespective of what our training what our what the training sets look like
+  we're actually
+914: drawing from clean data so we can there's a providence to what we're producing
+  in terms of the
+919: models that we're producing and it's not just huawei that will do that it's baidu
+  ali tencent
+925: it's the companies that own the most in fact one third of the most important
+  patents in ai
+931: are owned by chinese companies one third one third you need to let that sink
+  in a little bit it's very
+937: significant and and unlike american companies or european companies or even japanese
+  companies
+944: chinese companies file their patents in every major jurisdiction irrespective
+  of cost they don't care
+951: because they want to have the coverage and so they not only have the coverage
+  in china but they have
+956: the coverage in every other jurisdiction of the important jurisdictions of major
+  in major countries and
+962: that means there's much more value to their patents as it as they spread out
+  into these environments
+968: there's a lot there a lot there and some of the things that anastasia said as
+  well you know talking
+973: about that open license model just look at my notes uh copyright i started to
+  think about the
+979: hyperscalers and we've seen this before the hyperscalers are really good at using
+  open source
+984: software and making a lot of money out of that but that money doesn't necessarily
+  trickle down to the open source
+990: companies that have been developing that and the developers who've been doing
+  it maybe you know
+994: it's it's a community event they don't they they're contributing that they're
+  not making any money from
+999: it at all right so in this new world what kind of model could we have where we
+  could change that
+1006: and try and get i think you said where she's went uh shift left um is there
+  something we could do to
+1014: actually in this new uh open source ai era to shift the balance and get some
+  of that money that's going
+1022: to the hyperscalers instead coming back to the projects i don't know who wants
+  to pick that one up
+1028: the some of the work that open uk is doing actually i think is really important
+  around that um and i'm
+1035: not just saying that because amanda's there but uh it's always been a question
+  it's not even just an ai
+1042: question there's always been a question of how does open source make money how
+  do we make it sustainable
+1047: for the humans who are doing all of the work and you know the classic cartoon
+  of like one person's
+1052: of holding up a whole massive economy and the big companies profiting from the
+  people doing it in
+1057: their spare time right there's always been a always been a question i think
+  one of the things open uk
+1062: has been trying to do is talk to uk government about sort of setting up a fund
+  setting up a foundations we've
+1070: talked already this morning a lot about sovereignty and autonomy and where your
+  data sits and who
+1075: controls access and who controls like who has control actually um and so it's
+  not like
+1083: i have the answer but i think the work amanda and open uk are doing is trying
+  to lobby uk government
+1088: to say can we invest money in the uk to have a fund that can pay open source
+  maintainers and and sort of
+1095: support uh a foundation in the uk where we can have sort of a creative commons
+  or we can have data that
+1101: we can put together and we can work together and i i know amanda's been like
+  tirelessly campaigning uk
+1108: government for that type of activity but it's it's an uphill battle i think
+  we could end up with a
+1113: situation where people realize that maybe they should actually open source more
+  software than they had
+1118: before because software isn't if software becomes cheaper to produce um then
+  and it's easy to copy
+1125: proprietary software and we've seen a few cases so far but of people sometimes
+  copying open source
+1131: projects but you can also copy proprietary software very easily now and i've
+  seen um quite um you know
+1137: people who've copied cloned google docs and things like that and like there's
+  a lot of the software that's
+1143: now potentially cheaper but potentially people will realize that actually makes
+  more sense to open
+1147: source more of your software there's actually like yes sure we can just generate
+  lots and lots of
+1152: software but actually having community around software having resilience there's
+  also the whole security
+1158: aspect and there's the maintainability aspect and things like that and so i
+  think we could end up
+1162: with a situation where ai means that we get more open source software as people
+  realize that keeping it
+1168: secret is no longer going to preserve it from from copying and reproduction
+  and things like that and
+1174: and so we could actually end up in a world where where people understand the
+  benefits of open source
+1179: and produce more of it and there's more of it but what also about the the opposite
+  effect projects
+1184: closing down yeah i mean i think that you know we we're we're we're seeing a
+  very weird kind of
+1194: transitional state at the moment where you know ai is new a lot of projects
+  uh whenever you know we're
+1200: in a bad situation before you know as paula said like the people who were people
+  who were happy and
+1205: productive and had things you know you know financially stable up front are
+  doing okay but the people who
+1212: um are suddenly seeing lots of security issues they're not getting this any
+  support and they're even
+1218: less happy than they were before are kind of in a worse position we're seeing
+  this you know everywhere
+1222: we're seeing this kind of thing if you were in a good position before it's it's
+  better and you can
+1227: it's sustainable if you were in a bad position everything's getting worse and
+  we're seeing that
+1231: everywhere so ai is an amplifier of everything whether it's traffic whether
+  it's problems there's a lot of
+1238: amplification of everything because of ai yeah we probably expand you know you
+  think of how many
+1243: thousands of projects exist and just within you know if you look at the three
+  major project management
+1249: organizations in the world they have thousands of projects and they're just
+  the the simple fact is
+1256: there aren't enough talented people to manage those projects and give give them
+  the attention that they
+1261: need and and why are we using project management organizations if we if they're
+  not providing talent
+1267: to help manage well which is my concern about amanda's comment if we nationalize
+  or develop national
+1274: project management organizations we can't we don't have enough people that are
+  involved in it now if we
+1280: create we create a potential problem of divisiveness of regionalism or nationalism
+  around project
+1287: management activities and contribution and we what we're trying to do is break
+  all the barriers down
+1293: so embrace the the the chinese embrace good countries around the world where
+  there may be geopolitical
+1300: issues that are that get in the way but the beauty of open source is that we're
+  collaborating under the
+1304: radar yeah irrespective of the form of government uh we are creating this seditionist
+  approach to to
+1312: information management sharing and it's it's truly powerful and and that's there's
+  kind of a dichotomy there
+1319: because we've also got a rise of sovereignty if you look at like sap and what
+  they're doing neon office
+1324: over in germany quite a lot of the germans they're starting up their own almost
+  like foundation yep
+1329: they're making it very uh i don't want to say insular because i've got friends
+  who work there
+1333: um but it's you know it's very uh it was extremely europe focused it is for
+  europe brand new projects
+1339: rather than using things that are kind of maybe the the lead contributors are
+  based in the states yeah and
+1346: you i mean look at the kubernetes is was a seven-year incubated project and
+  then it was it was homegrown
+1354: incubated and then it pushed out and maybe docker's participation in open source
+  projects kind of
+1360: drove it and then there was a whole period where both were kind of coexisting
+  and now they coexist in
+1365: a different way inside cncf but cncf is the biggest target for patent trolls
+  and operating companies that
+1372: want to attack uh that maybe aren't with the open source program so we've got
+  lots of risks that
+1378: come from this space one thing that i just want to mention before we lose time
+  and i or i forget is
+1383: that we are also being asked to focus on associated areas you can't discuss
+  if you're going to have
+1392: indiscriminate use and uncontrolled use of ai with the burden that it imposes
+  in terms of uh on the
+1399: costs of power consumption associated with data centers that have to do all
+  this processing we need
+1405: to move to risk five and we need to move quickly and not have a have a a mellow
+  hockey stick that we've
+1412: had over the last 12 years and we've got now an opportunity to accelerate the
+  adoption of ai to be able to
+1419: support more data center chips that are designed for the purpose rather than
+  having all this this
+1425: unused capacity in the background uh on these chips very very topical because
+  just last night uh over
+1432: in fife not far from here and just a tiny little village the village hall was
+  packed out with people
+1438: who didn't want a multi-story i think it's like 16 story data center built behind
+  their village you know
+1444: green fields lovely rural scotland but some ai company wants to come and it
+  wants to build a big
+1450: data center yeah i think part of kind of what the governance the government
+  the governance everything
+1456: that's put in place really needs to start thinking about we shouldn't be building
+  on green land like
+1461: that we should be using old industrial space there's lots of it in the world
+  right we should really
+1466: be putting it there instead in fact for a lot of these places why are we not
+  even burying it underground
+1471: right yeah there's no real reason for it to actually be built it's just it's
+  cheapness follow the money
+1477: yeah okay um probably went that was a that was a local topic so i thought i
+  would give that some air
+1483: time just um i kind of want to come back to like projects closing down with
+  with you if i can justin i
+1492: think there was some like projects like the nhs were again becoming quite insular
+  and saying
+1498: actually we don't want to use open source we want to close these things down
+  we want to stop all of
+1501: that yeah that was a a weird one that was around the security issues because
+  they were worried that
+1508: being open would let people find security issues despite the fact that um most
+  of the code that they
+1515: have is not anything that would be security relevant anyway um and in general
+  they're more likely to
+1522: find people who are going to help them fix security issues and things are open
+  and um you know i think
+1527: that um you know i think that people are you know people have always you know
+  a lot of people have
+1534: been very confused about what the role of open source software is when they're
+  not part of you know open
+1540: source communities and they don't work with them every day and understand that
+  that's just how you
+1544: know how we develop software nowadays um and that the security for open projects
+  is almost always
+1550: better than for closed projects and they should see some of the stuff that uh
+  goes behind closed doors
+1555: that p that doesn't have any security visibility um so i think there's a lot
+  of you know kind of um
+1563: you know people in that sort of confused situation and again like as i was saying
+  like i think it's
+1569: likely you know i think people should realize that they should do more in the
+  open now with ai but
+1575: they might you know there's definitely a kind of um well we don't need dependencies
+  we we don't have
+1581: to depend on other things we can just write rewrite all this code ourselves
+  from scratch but then
+1586: um you you won't you know you don't have to take on the the responsibility of
+  keeping it secure
+1591: yourself you don't have any help and there's a huge amount of effort that things
+  like the learners foundation
+1596: does to help projects be more secure that's really incredibly valuable um you
+  know i spent a lot of
+1602: time involved in in in the security group with the yeah and and the way and
+  with cncf and helping
+1609: projects you know paying for security audits for projects and those and really
+  valuable stuff and
+1615: helping them work out threat models and understand how they should be thinking
+  about security and all
+1619: those things that like the big open source projects do really well and you and
+  your old company you know
+1625: docker gave an awful lot of tools to the projects in the cncf via that relationship
+  that they've got to
+1632: actually help with the security stuff right yeah they give them access to actually
+  like tighten up their
+1637: container images push those through the pipeline have kind of more cve free
+  or certainly reduced cvs in a lot
+1643: quicker time there's um have we seen anything else like that coming out of kind
+  of the foundations
+1649: and those partnerships i mean i think that um i mean those foundations generally
+  has been very good at
+1655: working with companies who want to you know help or give give their tooling
+  to open source developers
+1661: they're they've been involved in the mythos preview so um those foundation projects
+  have had access to
+1666: mythos and uh to find vulnerabilities and things like that so there's there's
+  already work going on to
+1672: you know particularly in the security side of things at the moment because that's
+  obviously very high
+1675: priority but to help projects mike i'm going to come back to you as a as a developer
+  right and and
+1681: and a contributor maintainer um i was listening to stephan podran who's the
+  lead developer for the flux
+1688: project talk about the kind of the benefits of ai for his project and what he
+  was doing but i'm going
+1693: to come back to that trust thing as well he said the human still has to be in
+  the in the loop do you
+1698: think all developers are going to actually act like that with ai uh no probably
+  not uh but i think
+1705: this goes back to what justin was saying way earlier so i think we in the i
+  guess open source is part of
+1712: the wider tech industry something we love doing is making people problems into
+  tech problems and we say oh
+1719: this person's doing this really problematic behavior that keeps messing up our
+  systems or our customers
+1725: or whatever how can i write some code to stop that well you can have a conversation
+  with that human
+1731: right so again like back to your example from earlier actually when you said
+  like oh well you know what
+1736: it's like to wake up in the morning and have all these agents who've generated
+  all that code and then
+1741: i have to go and review it and isn't that exhausting it's like well welcome
+  to being an open source
+1745: maintainer right like that's that's the job right and a lot of us it's like
+  well that's what we signed
+1751: up for and it's it's good and i enjoy doing that and if i don't enjoy doing
+  that i'll quit and that's
+1756: also good because that's people enforcing their boundaries so some of the projects
+  that quit and
+1761: people that shut down what they're doing i actually think that can be a positive
+  thing rather than a
+1765: negative one but yeah but i think back on that like it all we need to do as
+  individuals as projects as
+1774: companies as groups of people as technologists is just again like what we're
+  saying the things that
+1780: were going well versus the things that were not going well before we had ai
+  right so on homebrew
+1784: something we've always done is we've been i i have a bit of a reputation of
+  being assertive with how we
+1792: deal with some community members with this stuff and if someone opens a pull
+  request and it's 30 000
+1797: lines of code and it's obviously ai generated they haven't looked at it they've
+  got an ai generated
+1802: message we just have a bot that automatically closes that even before ai we
+  would just close
+1807: that and we wouldn't even comment on it and then if they said well why have
+  you closed my pr without
+1811: comment and it'd be like well look you know why right and if if that doesn't
+  work for people or it's
+1818: not enough then you can have a longer conversation but i mean again the nice
+  thing about the difference
+1823: between open source and why i think boundaries are how we solve our way out
+  of this problem in open
+1829: source is at work i have to then sit down and have a call and explain to that
+  person who might not
+1834: have been told before that 30 000 line change is essentially impossible to review
+  so you're gonna have
+1839: to split that into 30 smaller ones please if not more but in open source i can
+  just be like no lock
+1844: thread i don't have to teach you what to do because this is my spare time and
+  i'm not being paid to do
+1850: this right and i think and you could actually write ai with those guard trails
+  to stop it in the first
+1858: place right you could i mean somewhat some of the time at least but i think
+  this is this is what i worry
+1864: about when we go too far down the lens of being like well we need to pay all
+  the maintainers we need
+1870: all these open source companies whatever is we forget like what we're doing
+  it for in the first
+1875: place like the beauty of open source software in my mind is like the original
+  like licenses which say
+1881: in them we disclaim all warranties we'd say this may not be fit for use and
+  we've we've got to this
+1887: world where we think that being a responsible open source maintainer means being
+  monitoring your supply
+1892: chain doing this doing that responding to reviews and this time the chaos report
+  says that i need to do
+1897: this the door report no you don't have to do anything you don't want to do you
+  literally do not like if
+1903: you are a company in this space it's the company's job to make sure that you
+  are doing what they want
+1909: them to do and if you're not doing it then that's when they can pay you they
+  can ask it they can fork
+1913: it whatever right but if you are doing stuff in your evenings and weekends like
+  you have absolutely no
+1919: business bending over backwards for individuals or corporations who are not
+  supporting you in doing that
+1925: right it needs to be fun for you and that in my mind is that all of the parts
+  of open source that i have
+1931: seen that were healthy 20 years ago and are healthy today are groups of people
+  working together throughout
+1937: the globe as keith said again there's a beautiful like cross boundary like most
+  of us don't care what
+1942: country anyone is in what nationality is anyone is in but we're friends and
+  we're working on something
+1946: that we find fun together and we enjoy that right and that's what it has to
+  be and that's what it has to
+1953: remain and that is the thing that will kill open source is if we kill that right
+  but everything
+1959: else we can figure out as long as we're having fun we'll be okay paula talking
+  of having fun
+1968: talking of having fun uh you and your team are heavily involved in the kind
+  of platform engineering
+1974: community the cncf kubecon we have a lot of fun every time we meet up and we
+  go there right we do
+1980: a lot of serious conversations we never have fun it's all work we never have
+  fun it's serious okay
+1983: what you're talking about yeah this is recorded isn't it all work but you know
+  what have you seen
+1988: change because of ai in in like the community space and the things that we do
+  you know in the last
+1994: sort of six to 12 months i mean there's so many impacts i think in the community
+  one of the things
+2000: i do a lot is conferences so um speaking at them but also reviewing cfps so
+  i think one one slight
+2007: negative impact i've seen and i'm sure everybody's seen it is the amount of
+  proposals that now get
+2012: submitted to conferences that are entirely generated by ai and you you you can
+  tell obviously i mean not even
+2021: just with m dashes but like the the style the the flow the kind of the sentence
+  structure and it means
+2028: where you might have had for a cfp i don't know let's say 100 submissions and
+  maybe now you get 300
+2033: submissions which takes twice because that right now is still humans reviewing
+  that type of content so i
+2038: think in that part of the community space ai is having a slight negative impact
+  but then on the other
+2044: hand maybe it's leveling the playing field for people who wouldn't have submitted
+  because they
+2048: wouldn't have known how to frame their thoughts and they can put in a few prompts
+  and they can submit
+2052: so um and we've seen benefits there i mean i've been involved as you have in
+  other organizations
+2058: reviewing cfps and things like a scoring rubik that actually give some guidance
+  to people when they're
+2062: writing examples people talking about it is really helping them to stop doing
+  that ai slop because we
+2069: did for maybe 12 months so an awful lot of horrible things coming through it's
+  just like ben not even
+2075: going to read it i don't want to see exclamation marks and light bulbs and all
+  sorts of things
+2080: but then i think on the you mentioned also about the kind of the platform engineering
+  space i think
+2085: going into that just a tiny little bit one thing we've been talking about
+2088: just now all of us is kind of the boundaries the communication the talking to
+  the humans
+2094: um and i think in the platform engineering space we're seeing a lot of like
+  uh thinking about apis
+2101: boundaries between teams and how the platform uh works with kind of the agents
+  as well as the humans
+2107: and talk about ai being the amplifier it's a similar practice with agents and
+  and controls in your
+2114: organization one thing we're we're thinking about a lot of in our team at the
+  moment is building the
+2118: internal platform that serves humans and agents and it's it's not necessarily
+  even different if you think
+2125: about your agents like humans you need to have like clear documentation clear
+  boundaries kind of uh clear
+2131: review processes guardrails etc everything that you have to have for humans
+  you just need the same in
+2135: your platform to serve your agents yeah okay we've got a few minutes left we're
+  going to open it up to
+2141: the audience if they want to ask this panel uh any questions at all i've got
+  a mic i'm not going to do
+2146: what one of my friends victor doesn't jump off the stage but i will i will walk
+  oh you got one ah i'll
+2154: stay up here perfect thanks ian um thanks um open source maintainers have limited
+  resources to invest in
+2164: and mentoring the next generation of maintainers for their projects ai kind
+  of breaks the link between
+2169: code contributions and a sign of effort and thus a signal of where to invest
+  that effort in the next
+2172: generation of maintainers how do you think projects should respond to sort of
+  those changes in the
+2177: community around the code yeah i think it's really it's really hard at the moment
+  because people are
+2180: trying to work this out the zig project's taken a really strong stance on that
+  which is interesting
+2185: and very different for everyone else there's like we're not going to use ai
+  because the primary role
+2190: of us is to uh mentor the next generation of long-term committers and the only
+  way we can do that is by
+2195: not using ai at all in the entire project and that's a really extreme stance
+  and i don't i don't see many
+2201: projects taking that but they've they're doing it for that very reason and i
+  think because i think a
+2205: lot of the time you look at contributions and like well someone's just prompted
+  their ai agent with this
+2212: issue i could have done that i don't like that kind of contribution has less
+  value than it used to
+2217: have because the you know it's it's it's not the kind of thing we used to need
+  but i think that you
+2224: know we have to come up with a new way of thinking about like what what's a
+  valuable contribution in the
+2230: age of ai to a project and it's you know new ideas and new new ways of using
+  the project new new kind
+2236: of in a innovation pieces to the project or projects that are complementary
+  to the project and work well
+2242: with it that were didn't exist before and things like that so i think um we
+  need to think of new ways
+2248: in which we can work together on projects i'm particularly interested in like
+  we can build really
+2254: large scale things that were just really hard before um and would have taken
+  you know it used
+2259: to take a decade to build a database it doesn't take a decade anymore that means
+  we can build more
+2264: databases and databases are kind of cool things like that so there's lots of
+  new software we can
+2268: build but we have to you know we have to work out what the forms of collaboration
+  are that work really
+2274: well for the kinds of new things we want to build too and coding isn't the only
+  form of contribution
+2279: i also like throwing that in all the time right there's lots of people who do
+  contribute to open
+2282: source who don't do any code stuff at all there's lots of people who shadow
+  other projects and you
+2288: know shadow people who are doing things so they can then step into the next
+  role so there's there's
+2292: many ways of learning shadowing is probably one of the good ways things like
+  you know the kubernetes
+2296: project is probably a good example of that where you can actually be on the
+  release team
+2299: you can shadow you can work on documentation you can do all sorts of kind of
+  uh chop wood carry
+2305: water i think is what people call that right there's lots of different ways
+  of contributing to
+2308: open source not just code quite passionate about that because i don't write
+  code anymore
+2312: it's decades since i wrote code but i need to try all right anyone got another
+  question
+2321: yeah
+2324: hi uh james from microsoft also linux distribution maintainer
+2330: we've talked a lot about the direct impact of ai but i'm also thinking about
+  the indirect impact so
+2337: picking up on mike's point about keeping it fun uh spare afford for the linux
+  distribution maintainers
+2345: a lot of the popular distribution is commercial but they often have community
+2349: underpinnings people doing this in their spare time and with the advent of ai
+  they're now facing
+2355: massively increased workloads bumping packages ensuring everything works together
+  as a whole
+2361: um checking for changes to make sure there's no malicious code there you don't
+  want another exe utils
+2366: uh fiasco and they you know they may have their own misgivings about ai the
+  users may even if they
+2375: wanted to use ai to solve this problem they might not have the resources to
+  do it so and they can't just
+2380: reject the changes because they need these dependencies to keep the distribution
+  working and
+2386: some we've had to make some difficult choices so so how do we deal with that
+  yeah i guess like that's
+2392: been somewhat my world for a while like so i i feel your pain there very much
+  i i think as i said before i
+2400: actually don't think ai has changed much beyond just the velocity right so in
+  my mind the the best thing
+2410: we're fit to do now is just lean even harder into automation have more automation
+  more tooling
+2416: more lints more checking like all this type of stuff like everything you can
+  get a computer to do
+2422: instead of a human to do and one of the nice things is that i hate writing yaml
+  files and bash scripts
+2429: and various other things that the ai's can often be quite good at so i think
+  even if you can't use ai
+2436: to directly almost like do the work for you like if you have a bunch of tedious
+  workflows or scripts
+2442: or whatever or a document that needs to turn into a script like ai can be quite
+  good at you know making
+2448: your life a little bit easier and go faster even if those never even leave your
+  machine right but ideally
+2453: within a project within a distro with an open source community we build these
+  things we share these
+2457: things we can benefit from them with each other and that all of the stuff that
+  helps each other scale
+2462: we can all share with each other and grow and have fun yeah i think we when
+  it was hard writing software
+2468: we under invested in tooling and we should we there was always stuff that you
+  wanted that you didn't
+2472: have and you're like well i i would love to automate this stuff but it's it
+  would take me too long i mean
+2479: you know software we still did a lot of automation but there there's there was
+  much more we could have
+2483: done and i think increased testing increased automation and things are really
+  really powerful things you
+2489: can point at your ai at and you know i think that um you know i think those
+  distributions have become
+2496: a lot more automated than they used to be back in the day and i mean things
+  like nix have been very
+2501: successful and large scale you know huge made huge loads distributions through
+  massive automation
+2507: earlier on and things like that so i think there's a lot you know i think there's
+  a lot we can learn from that
+2512: and with that that's just out of time i'd like to thank the panel thank you
+  all for the questions as well
