@@ -255,7 +255,7 @@ class TranscriptGenerator
     _, stderr, status = Open3.capture3(*cmd)
     return true if status.success?
 
-    warn "transcripts: YouTube download failed: #{stderr}"
+    warn "transcripts: YouTube download failed:\n#{cmd.join(" ")}\nstderr: #{stderr}"
     false
   end
 
