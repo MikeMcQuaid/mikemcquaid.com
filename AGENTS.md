@@ -131,6 +131,13 @@ When reviewing or editing blog posts, watch for recurring improvement areas:
   `bundle exec`.
 - Use `bin/ruby` for Ruby commands. It handles `brew bundle` and
   `bundle exec`.
+- After adding or editing any post, talk, interview or thought, run
+  `bin/jekyll build` to validate it. The `_plugins/posse_limits.rb`
+  generator fails the build if a feed item's POSSE text exceeds the
+  X/Twitter limit. For interviews that text is `title` plus
+  `Interviewed by <publication>.` plus the body quote, so keep the body
+  short enough that the whole thing fits; trim by selecting a shorter
+  verbatim portion of the quote rather than paraphrasing.
 - Use `playwright-cli` for visual layout checks after homepage or CSS
   changes. With the site running locally, use commands such as
   `playwright-cli -s=mikemcquaid-home open http://localhost:4000/`,
