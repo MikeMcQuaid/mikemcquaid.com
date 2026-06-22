@@ -23,7 +23,7 @@ for 16 years and have been the Project Leader since the position was created in 
 Some of
 [my responsibilities](https://docs.brew.sh/Homebrew-Leadership-Responsibilities#project-leader-sole-responsibilities)
 include assessing whether
-[Homebrew maintainers'](https://github.com/homebrew/brew#who-we-are)
+[Homebrew maintainers'](https://github.com/homebrew/brew#-who-we-are)
 contributions make them eligible for:
 
 - retaining commit access and membership in the [Homebrew GitHub organisation](https://github.com/homebrew/)

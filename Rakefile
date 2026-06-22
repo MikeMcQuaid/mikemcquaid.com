@@ -77,6 +77,7 @@ task test: :jekyll do
       'https://www.meetup.com/openuk-glasgow-edinburgh/events/296929069/',
       'https://venturebeat.com/business/github-says-fridays-are-for-open-source-work/',
       'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en',
+      'https://www.newscientist.com/article/2527761-flood-of-ai-garbage-is-pushing-open-source-developers-to-the-limit/',
       'https://www.splinter.com/meet-the-tweet-deleters-people-who-are-making-their-tw-1793845430'
     ],
     parallel: { in_processes: Etc.nprocessors },

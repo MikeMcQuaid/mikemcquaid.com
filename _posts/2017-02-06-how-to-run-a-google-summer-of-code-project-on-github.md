@@ -21,7 +21,7 @@ Rather than angsting over student technical interviews or their proposals docume
 
 In general any established GitHub open source repository should have an easy way for new, aspiring contributors to submit a useful pull request. In Homebrew's case they have a `brew audit` linting tool where some lints are deliberately left unfixed to give newcomers an opportunity for an easy first pull request.
 
-For example, the Homebrew project's process is [documented in their README](https://github.com/Homebrew/brew#contributing).
+For example, the Homebrew project's process is [documented in their README](https://github.com/Homebrew/brew?tab=contributing-ov-file).
 
 You should not help students any more than any new contributor or provide any more guidance than what's already documented in your project. If they ask for help, point them to the instructions (and consider improving them). If they cannot figure out what other contributors can: they are unfortunately not good candidates for GSoC which requires them to be self-motivated, driven and able to learn independently over the summer.
 
