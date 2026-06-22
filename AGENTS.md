@@ -110,6 +110,10 @@ When reviewing or editing blog posts, watch for recurring improvement areas:
   reader's understanding of the argument
 - For technical posts that should travel well in technical communities, suggest
   a precise, curiosity-provoking title without clickbait
+- Write the post `description` so it works as a standalone social post line:
+  syndicated posts render as title, then description, then URL (each separated by
+  a blank line), so the description should complement the title rather than
+  repeat its words and entice on its own
 - Front-load the surprising, broadly useful or counterintuitive lesson so
   readers understand why the post matters in the first few paragraphs
 - Treat the opening as borrowed attention: do not spend the first few
