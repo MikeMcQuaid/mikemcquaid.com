@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "${repo_root}"
+
+if [[ $# -eq 0 ]]; then
+  echo "Usage: bin/transcript <youtube-url-or-id> [transcript-id]" >&2
+  exit 1
+fi
+
+if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
+  export HOMEBREW_NO_AUTO_UPDATE=1
+  eval "$(brew bundle --check --install env)"
+fi
+
+bundle exec ruby -Ilib -r generate_transcripts \
+  -e 'TranscriptGenerator.new.transcribe_youtube(ARGV[0], transcript_id: ARGV[1])' \
+  "$@"

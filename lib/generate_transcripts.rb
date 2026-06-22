@@ -42,7 +42,29 @@ class TranscriptGenerator
     changed
   end
 
+  def transcribe_youtube(video, transcript_id: nil)
+    Dir.chdir(File.expand_path("..", __dir__))
+
+    youtube_id = youtube_id_from(video)
+    process_entry({
+      label: youtube_id,
+      file: nil,
+      source: { type: :youtube, youtube_id: youtube_id },
+      youtube_id: youtube_id,
+      transcript_id: sanitize_transcript_id(transcript_id || youtube_id)
+    })
+  end
+
   private
+
+  def youtube_id_from(video)
+    return video unless video.include?("/")
+
+    uri = URI.parse(video)
+    return uri.path.split("/").last if uri.host.to_s.include?("youtu.be")
+
+    URI.decode_www_form(uri.query.to_s).to_h["v"] || uri.path.split("/").last
+  end
 
   def find_entries_with_sources(paths: nil)
     @external_podcast_updates = {}
