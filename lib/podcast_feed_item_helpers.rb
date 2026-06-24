@@ -27,11 +27,16 @@ module PodcastFeedItemHelpers
 
     audio_url = enclosure&.[]("url").to_s.strip
     audio_url = enclosure&.[]("href").to_s.strip if audio_url.empty?
+    audio_type = enclosure&.[]("type").to_s.strip
+    audio_length = enclosure&.[]("length").to_s.strip
+
+    return { url: "", type: "", length: "" } if audio_length == "0"
+    return { url: "", type: "", length: "" } if !audio_type.empty? && !audio_type.downcase.start_with?("audio/")
 
     {
       url: audio_url,
-      type: enclosure&.[]("type").to_s.strip,
-      length: enclosure&.[]("length").to_s.strip
+      type: audio_type,
+      length: audio_length
     }
   end
 end
