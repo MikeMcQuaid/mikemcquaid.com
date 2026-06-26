@@ -1,0 +1,757 @@
+---
+0: welcome to the tech lounge with me christian chiller in this episode i have mike
+  mcquade
+11: back now previously he was on to talk about his work with homebrew and workbrew
+  but now he's
+19: actually back with something a little different called oss resistance open source
+  software
+25: resistance a sort of quiet revolutionary ask to recognize open source in a somewhat
+  different way
+33: anyway i will save further explanation of that for when he joins me when we recorded
+  this it was a
+39: while ago the weather now is quite different from when we were recording it i
+  am very hot we weren't
+47: when we recorded this but that's the nature of recording schedules if you are
+  also looking for
+54: maybe a more commercial equivalent to something like homebrew have a look at setup
+  it's a
+61: subscription service that gives you all sorts of really interesting mac os and
+  ios apps for a flat
+67: fee head towards go.christianchiller.com forward slash setup for more information
+  and to throw a few
+76: cents the show's way mike how are you doing this i don't know fine afternoon i'm
+  not really sure how
+84: much better or worse it is where you are yeah it's uh i'm in edward in scotland
+  it's looking quite
+89: drizzly out the window um it's pretty much the same yeah we basically have a rainy
+  day and a half
+97: before it gets super hot over the weekend yeah it's maybe my least favorite weather
+  right now of being
+103: rainy and warm and humid oh god yeah i hate that kind of weather as well uh i
+  always say this to
+110: people it's hard to describe and i think english speakers get me this kind of
+  like cloudy stuffy
+115: weather always makes me feel stuffy i don't even know what i mean by that but
+  it just makes me feel
+120: kind of muddled well i literally have a cold as well so apologies if i'm sounding
+  a bit a bit blocked
+126: up at the same time it seems to be all right anyway we were not here to talk
+  about this is actually
+133: something far stronger you sort of announced this i don't know a week or two
+  ago um sort of out of i
+140: guess not out technically out of nowhere you probably had a reason for doing
+  it um with the name of
+146: open source resistance which is pretty pretty uh
+151: i don't know if confrontational is the right word but it's a pretty strong
+156: name um yeah i mean i can hazard some guesses as as someone who's maintained
+  open source projects for
+163: some time i think you've been generally outspoken about this subject for a while
+166: but what sparked this in particular i guess yeah well i i don't want to name
+  this specific
+172: person because it's definitely not on them but i listened to a talk relatively
+  recently
+176: and they were mentioning like the open source pledge and various other kind of
+  efforts to sort of
+182: you know get maintainers better pay or sustainability or whatever and it just
+  i had this light bulb
+190: moment where i was like yeah like both a lot of the discussion around this stuff
+  doesn't really match
+197: my experience right and also that a lot of it is to use maybe a silly psychological
+  language like
+205: outside of people's locus of control right so do i just hope that century or
+  another company involved
+213: the open source pledge deigns to drop a bunch of money in my lap and then that
+  will solve my problems
+218: like um that to be you know to be very clear as i say on the kind of manifesto
+  like that's not saying
+225: that that's bad it is good it is definitely a net positive and things would be
+  better if we had more
+231: of that but it is not in itself the solution to the problem and what i realized
+  is like what i have done
+237: for quite a long time relatively quite well increasingly less quietly is i do
+  a lot of my
+245: open source work during my working hours right and i have just kind of balanced
+  that with my work and
+253: um you know i i'm not spending the majority of my working hours doing open source
+  and i'm not
+261: getting as much as i would maybe like to done but also like it's not really negatively
+  impacting my
+266: employer in any meaningful way more than if i spent a similar amount of time
+  using tiktok or buying
+273: stuff on amazon or smoking or making coffee or watercolor or whatever exactly
+  any wide variety of other
+281: things that people do yeah so i spoke to a few people about it and i just thought
+  like yeah i'll make
+287: this kind of manifesto basically just saying hey just do this on your company
+  time and it's
+292: ironic because uh when i was at github maybe exactly 10 years ago from now or
+  so uh i was pitching
+299: something called open source friday which was like yeah a similar model but asking
+  essentially your
+305: employers to kind of give you permission to do this right and i guess 10 years
+  on i'm not sure how much
+311: is my worldview changing and how much of it's i can say what i maybe thought
+  10 years ago and
+316: get away with it more but it's just like well maybe don't ask for permission
+  maybe you don't need to
+322: get permission and check that you're not going to get trouble if you get caught
+  but then even then
+328: if you get caught like you're not gonna you know spend 15 minutes on answering
+  a ticket on github
+334: on your open source project and then someone catches you you get fired instantly
+  but that's not
+338: how these things go right um so yeah so that that was the the motivation that
+  sprung this
+344: manifesto into being and i suppose i mean first i guess we should clarify you
+  don't necessarily
+350: even mean open source projects are related to your job it could be something
+  no completely disconnected
+356: no i i mean it's obviously it's easier the closer it is related to your job there
+  are people for whom
+363: their job is being paid as an open source maintainer so i would say they don't
+  really fit into this
+368: bucket um i guess the next bucket would be oh i have this problem at work with
+  an open source library
+375: we're using can i fix it on work time i mean i think we're at the point that
+  all but the most
+380: idiotic companies would say yes of course um but i what i'm proposing is you
+  know again depending on your
+388: kind of comfort level it might be in my case every company i've used has used
+  homebrew but the the
+394: bunks i fix during work time are not necessarily bunks that anyone in my company
+  hits uh and i guess
+400: further away just being like well you maintain some random thing and that's important
+  to some people
+405: in the ecosystem but your company doesn't use it yeah and i still think that
+  is okay right uh because
+412: as i say in comparison to i'm going to spend that time on tiktok or whatever
+  right like i think that's
+418: a net positive for everyone including your employer yeah because even if it's
+  not directly related you
+422: are probably still learning things which you then bring into your day job right
+  unless you're in
+428: some sort of what's the tv show where they you know severance or whatever where
+  they cut people
+432: oh brains to do that i've not watched it but it's an interesting premise and
+  people sort of act a
+438: little bit like that's what's happening sometimes when it's not i i guess so
+  the sort of the it's
+444: interesting because you've got this very strong like resistant terminology but
+  in some respects it
+449: feels like a very sort of quiet resistance but maybe that's uh luck on my part
+  because in my mind i
+457: sort of feel like i don't think i've ever actively worked for a company that
+  would dissuade this
+462: so do you know of people who have actually been in that opposite situation where
+  it's like there are
+467: mechanisms in place that really are negatively so negatively encouraging that's
+  called discouraging
+473: there's a word for that discouraging people on doing something like this yeah
+  i mean it's i have
+479: had i will not name and shame them right now but i've had companies that i've
+  been interested in
+485: uh applying to work there and as part of the process they've said hey um during
+  the hiring process
+493: basically you need to stop doing your open source i think i know which companies
+  you're referring to
+498: knowing your past well there's probably there's probably more than you might
+  think oh for sure
+504: and yeah it's like you know you need to stop this and legal will check into it
+  and approve it and
+509: you know that process takes normally a month after you start and that's fine
+  and i guess for me i'm like
+515: well you're only interested well maybe not only but like you you seem to be interested
+  in me
+521: pretty heavily because of my open source work and you're now saying i can't do
+  that in this
+526: company i'm thinking of this case i can't do that in my evenings and weekends
+  even for a month if i
+531: join you yeah uh so you know i didn't say it quite like this but my view is fuck
+  off like i think
+538: it's i i find it ridiculous that organizations do not see the inherent contradiction
+  in making those
+546: sorts of requests of people and particularly when you know those organizations
+  at least some people
+550: inside them rely on open source software and it's like literally your own policies
+  are trying to kill
+556: the golden goose for whom their eggs you rely on right like it's yeah but yeah
+  i i'm with you in
+563: that like most of the places i have worked have been fine with this right and
+  in some cases explicitly
+569: fine in some cases implicitly fine yeah um but i guess i find it interesting
+  the kind of social media and
+578: hacker news commentary around this stuff clearly there are some people who feel
+  very differently
+582: because there was various comments along the lines of you know this guy's going
+  to get fired for doing
+588: this and ironically my current boss said oh i saw this on hacker news i gave
+  it an upvote right so
+595: but yeah but i mean obviously there is a large number of organizations for which
+  this would be
+603: well at least the perception of the people working there is that they could never
+  possibly do this
+607: right and they would be immediately fired if they did so and i had various people
+  who reached out to
+612: me who said as much um and i guess you know you can be a little bit more nuanced
+  on a call like this
+619: than you can be on in writing but i guess i'm dubious about that yeah like i'm
+  dubious to the extent to
+626: which all of those people like i i think there's obviously like a a long line
+  on this stuff between
+631: you know punching your boss in the face yes probably that will get you instantly
+  fired and it should
+636: uh to the the employment equivalent of driving at 31 miles an hour in a 30 zone
+  yeah where
+643: everyone does it no one cares right and the examples of you you know using tiktok
+  ordering something on
+650: amazon replying to a personal email at work like if you read your information
+  security documentation
+655: probably all of those are forbidden by your employer it's very true yeah everyone
+  does them
+659: anyway yeah it doesn't really matter um i i do wonder whether there's also a
+  certain amount in the
+665: software industry of people tend to be kind of quite binary in the way they look
+  at things and people
+670: are like well my employer says i'm not allowed to do this therefore i cannot
+  rather than well in my
+677: employment contract it says i'm not allowed to do an awful lot of things and
+  actually they probably
+681: don't care and the company's lawyers will ram in as much stuff in there as they
+  can and also like in
+686: my case like i've i've interviewed for i mean almost every company i have interviewed
+  for there's been
+691: something in the contract that says um you know we own all your ip you've actually
+  got this explicitly
+698: as a point here and definitely i've done the same thing where that's what you
+  sign but when you say
+703: hey i work on this open source project it has nothing to do with the company
+  product kind of
+709: whatever it's just a thing in the contract well and and and also i guess to maybe
+  hammer home on that
+716: even more if you're like me and you're you are a little bit more of a stickler
+  for it's a thing in
+719: a contract like if you were negotiating this at the right stage which is you
+  have made an offer they've
+724: accepted they've probably declined other candidates so you could say well if
+  it's just a thing in a
+728: contract you don't care about remove the sentence from the contract and i will
+  sign the contract but
+732: until then i can't sign the contract i'm sorry and that in my experience has
+  worked 100 of the time
+737: right because it's you usually get exceptions added and things like that i've
+  had that even for
+743: side jobs which i get paid for yeah which are nothing to do with the like when
+  i've done journalism
+749: stuff and it's like well it's nothing to do with you as long as i don't write
+  about a competitor
+753: but sometimes it is best to have it explicitly there just in case and to call
+  out a company
+759: doing this well rather than you know my former employer github you know they
+  open sourced their
+763: ip agreement on this stuff which is they had like a balanced ip agreement which
+  i don't know the state
+768: of it today or github's ip agreement today but suddenly they were like literally
+  you can work on
+772: a side project using your company computer during nine to five monday to friday
+  and unless it's your
+778: work we do not own the ip yeah you can then go off and make a startup like based
+  on that this is it's
+784: an interesting one um because i sometimes wonder this reflects of course the
+  nature of a company if
+790: it's everyone in the office kind of thing it's possibly a little harder to do
+  it even if that's just
+796: peer pressure whereas a sort of remote company that also doesn't use things like
+  key loggers or screen
+803: monitoring and stuff like that it's kind of no one really knows what you're doing
+  anyway unless they
+808: really want to go and so there's a little bit of i don't know if privilege is
+  the right word but
+812: there's obviously a somewhat relation to the nature of the company you work for
+  as well but yeah i think
+819: that's definitely true yeah and yeah those organizations where they're using
+  those type of
+824: things that mean that you would be scared to order something on amazon for you
+  know your personal life
+830: on your work computer like yeah like it probably is not going to fly there but
+  i would also you know
+835: obviously people as you say that you have the privilege some people can choose
+  where they work
+839: and some people can't yeah if you have the choice i would advocate that you do
+  not work at those
+844: places yeah and also in some cases like it might be worth saying maybe a 10 a
+  cut is worth it to not
+850: work in those places with those conditions true it's very true obviously lots
+  of news right now about
+856: meta and their various employees being upset about things that are being done
+  with their working
+862: conditions you know and obviously there's some people say if you've got someone
+  there on an h1b
+867: who is like well yeah i have to leave the country and my family and my home and
+  everything if i quit
+872: then they you know whereas there's other people who probably get job offers on
+  a regular basis who
+877: could leave might have to take a lower salary but maybe they want to do that
+  and maybe if it gets
+882: bad enough they will so i mean you bring up an interesting point like if we're
+  having this conversation
+886: five years ago yeah i think it would be easier to sort of say yeah yeah whatever
+  you know there's there's
+893: other places but of course the market is a little bit different now so is there
+  a little bit of an issue
+898: of timing with with this announcement do you think of encouraging people to do
+  to bend the rules ever so
+903: slightly in a not great job market yeah well i mean i think the interesting thing
+  about it is it's like
+910: so for example uh one of my kind of workflows like i wrote about the most recent
+  kind of blog post on
+918: my website was about i'm kind of embracing like multi-work tree agentic workflows
+  which you know
+924: get all the buzzwords out there but essentially you know you get ai agents to
+  work on multiple things at
+929: once and in some ways it feels like i'm back to the old days of like when i was
+  you know a c++ dev and i
+937: would have a project that would take 20 minutes to compile and you do your stuff
+  and then you hit
+941: enter and then you wait for 20 minutes right and in that time you find other
+  stuff you can do and
+946: sometimes you run out of work still and i guess with the agents it's like well
+  one of the other
+950: things i can do now sometimes is copy and paste the bug report into another agent
+  which i pay for
+956: myself and get it whirring away in the background um to do that so i guess it's
+  like you could make an
+962: argument that like oh well you're using you know like what whose resources are
+  being used in what
+967: way but let's say you do this like as as by the book as possible and you have
+  that other agent running
+975: on a different computer and you're using you know your open source project or
+  your personal tokens and
+979: not your works tokens and and everything like that like i find it i find the
+  argument that that is
+985: somehow devastating to your employer to be one that's kind of hard to believe
+  really and and also
+993: like you know i've worked with lots of people over the years like people in those
+  little periods where
+997: you've got or i have five minutes between two meetings one meeting left ended
+  early another one
+1001: does i mean are you really gonna get much productive work done in that time
+  right like and the idea that
+1009: like open source would be one of the worst things you could do rather than one
+  of the best things you
+1013: can do again it's very cultural dependent it's very company dependent um but
+  yeah i mean you are right
+1019: again though to point with the privilege with part of this where you know if
+  you are a very junior
+1025: engineer and this is your first job and the conditions are terrible and you've
+  got a key lock on your
+1028: machine like i don't know i think yeah this is a smarter move for you right
+  but then again there's a flip
+1036: side to this where it's like well a i'm in a position in my career that i can
+  say things like
+1042: this and this might close doors for me but i'm okay with that you're okay also
+  i think it's
+1048: exactly yeah also i think it's important for people to know that there's like
+  this is a thing you could
+1053: do and in my case like my me doing lots of open source work has dramatically
+  improved my job
+1059: opportunities in the longer term so there your intro there was a great post
+  by uh rand
+1065: like uh rands who writes like ransom repose i remember i think he said something
+  along the lines
+1071: in one of his career advice books in the past about you know you should imagine
+  yourself as even if
+1077: you're employed that you essentially have one employer which in my case is mike
+  mcquade limited and
+1082: that's the only company you will ever work for and you're even if you're employed
+  you're essentially
+1087: doing freelance work for other companies in exchange for money right and for
+  some people you are self
+1092: employed and that is how it works but i think lots of people are employed it's
+  it's easy to confuse
+1098: what your company's view is on your professional and career development with
+  what's actually maybe
+1104: best for you it's a very european perspective but yeah
+1106: and in this case like me doing this and a bunch of other maintainers i know
+  doing this
+1113: like i mean so i guess to there was a quote there i added from jeremy allison
+  who created samba
+1120: and co-created samba and was at google that it's the duty of all free software
+  developers to steal as
+1125: much time as they can from their employers for software freedom right and i
+  had another maintainer who
+1129: remained nameless who messaged me about this and said like yeah like i essentially
+  built my career as an
+1135: open source developer off the back of being a bad employee right and and i i
+  think these are the
+1140: types of things where you know it's maybe an interesting ethical discussion
+  or whatever for
+1145: some people but like i i i feel like as long as i'm doing what is asked of me
+  at work and i'm
+1150: meeting the requirements right like exactly maybe a b grade performance is better
+  than an a grade
+1156: performance for me in my life right because but you've you've hopefully also
+  done a lot of b grade work
+1162: in other places at the same time so yeah yeah and you know i remember that like
+  like a b grade at least
+1170: when i was at school was was good that was fine like that's well done that's
+  you could do better but
+1175: like you did good enough right and i think there is a sort of slightly sociable
+  thing there about like
+1182: is giving all of your energy and bandwidth and everything to your employer is
+  that the maximally
+1189: effective thing and the funny thing is i guess i see in almost like even the
+  kind of maybe the the ceo or
+1195: vc class or whatever it may be like they've kind of moved away from that you
+  know whereas now it's
+1200: kind of cool for well cool for a lot of these kind of ceos and vcs and big people
+  at public companies to
+1207: like go to the gym and get ripped and all this type of thing and it's like previously
+  20 years ago that
+1212: would be like a counter signal because it's like oh no you shouldn't be exercising
+  you should be
+1216: living in the office all the time right whereas and and i guess my view is you
+  know again you may not
+1221: have the privilege to do that but it's worth looking at those people and being
+  like well are they doing
+1227: are they living a radically different uh lifestyle from what they expect of
+  me yeah and if they are
+1234: then it's they're probably not going to be the ones to tell you hey maybe don't
+  work all night
+1240: tonight or like chill out or spend a bit of time working on open source right
+  like that's going to have
+1244: to come from you and you have the power to make that decision right so i mean
+  what some of the other
+1253: alternatives you mentioned here like the open source pledge is obviously a kind
+  of uh a relatively
+1258: last time i looked at it anyway a relatively sort of large company uh club
+1264: generally it's been a little while since i kind of checked in on it but you
+  know century is one of
+1271: the main people behind it having a look at some other companies here i recognize
+  the names of um
+1276: you know there's a there's a sort of active part in getting people to sign up
+  and commit and etc etc
+1283: whereas the open source resistance seems very much more like a just hey think
+  about this i don't even
+1288: see any kind of sign up or anything it's just a just a manifesto so i mean is
+  there
+1295: a trackable end goal here or is it just a here's an idea yeah i i think my trackable
+  end goal is just
+1304: that more people this i think the tricky thing is i'm essentially asking people
+  to like be a little
+1311: bit naughty right so it's um so that there's a if you could excuse a very weird
+  parallel is in the u.s
+1320: it is illegal to take most performance enhancing drugs and steroids and things
+  like that right but
+1327: then you have sports where you know world's strongest man is maybe the most
+  notable example
+1333: of which you cannot compete or like bodybuilding like you you cannot win those
+  things without taking
+1339: enormous amounts of steroids so you put people in a slightly silly situation
+  where these people are
+1344: obviously taking steroids they allude to it but when they are asked particularly
+  on certain tv programs
+1349: certain times are you taking steroids they say no of course not because otherwise
+  they're saying yes i
+1354: am breaking the law right like and i think there's a similar thing with here
+  where i would love to
+1360: have a world in which i could have a essentially like a sign up for the manifesto
+  and say that you
+1365: too are going to do this but particularly some of the the less pleasant employers
+  we've talked about
+1370: before um that might not necessarily work very well and also i think this is
+  a thing where
+1377: so far uh it's reminds me of there's a post i wrote again probably about 10
+  years ago called
+1383: open source maintainers owe you nothing yeah yeah which looked at the licenses
+  and whatever and point
+1389: out that i was like look like we it says in the like we don't look at closed
+  source software and all
+1396: the eulahs in terms of service and whatever we we're like okay the company is
+  trying to like protect
+1401: itself whatever but for some reason we don't either as maintainers or users
+  of open source don't seem to
+1406: internalize that like we essentially have eulahs for open source software that
+  is the license and the
+1411: license says if it breaks like it's available as is if it's full of bugs or
+  it breaks or your supply
+1418: chain is compromised whatever that's not on me like that and you agree in using
+  the software
+1423: that's not on me right exactly so i i think there's a like that that post was
+  kind of interesting because
+1431: it it i'm annoyed and continues to annoy a lot of people in open source but
+  the people who are annoyed
+1439: by are sort of the people i intend to be annoyed by it because you you were
+  annoyed by me stating
+1445: something to be the case which you do not agree with but that it is the case
+  like you might not
+1450: like it but it is true yeah and i've had a lot of maintainers over the years
+  kind of share it with each
+1454: other or um essentially be like i found this really helpful or this can help
+  me convince me to quit or
+1462: whatever it may be and i think my goal with this is the same sort of thing is
+  that like essentially i
+1468: if i've convinced even one person to spend a bit more time in the working hours
+  working on open
+1473: source then i will consider that a success um and i expect that what that will
+  look like is private
+1480: emails or dms or people saying to me at conferences like oh yeah so listen i
+  started trying to do it
+1485: right quiet resistance exactly because i i just don't think it's necessarily
+  people's best interest to
+1492: to shout about it and i i see my position as being as you say like sufficiently
+  privileged
+1498: yeah well i will shout about it so that people who can't true it's a good point
+  like there's a there's
+1504: another flip side that just came into my head though around this like you know
+  when times were slightly
+1508: different um and a lot of well not a lot but there was a handful of companies
+  that had
+1515: yeah this uh 20 percent time or the the fridays you mentioned or there were
+  companies that would
+1521: actually pay you a little bit extra each month for working on open source projects
+  and things and whilst
+1527: you know in some respects the open source resistance is a bit more in the spirit
+  of
+1534: well these people don't actually owe you anything so don't expect it it was
+  kind of nice that some
+1539: companies stepped up so is there a concern that by having this and saying hey
+  well we're just going
+1545: to do it anyway those companies that maybe might start considering things like
+  that again like
+1549: well what's the point um why bother yeah yeah i i think that's a fair point
+  i mean i would imagine the
+1555: companies that are doing that are already not helping right so uh i guess uh
+  but i i think some of it's
+1564: a kind of an ethos thing where i'm not i i guess like what i would expect a
+  company that says i don't
+1572: i won't bother is like maybe they're saying okay i'm not gonna sign up for the
+  open source pledge but
+1577: instead i'm going to let my you know i'm going to share this internally or let
+  my people internally like
+1583: work on open source and kind of turn a blind eye to it or whatever and in my
+  mind i would depending on
+1589: the person and projects involved that might be more positive right because things
+  like the open source
+1594: pledge like i think the thing that's good about those things is that obviously
+  it's a direct like
+1599: monetary transaction but it has a bunch of problems built into it so one of
+  which is i guess let's use
+1607: myself as a case study right so if you say i want to pledge a hundred thousand
+  pounds a year to homebrew
+1614: right like well that's like it unless the homebrew project agrees like yeah
+  let's just pay mike now
+1624: full-time to do that then it's like that money doesn't magically just create
+  more work out of nowhere and in some ways like a better amount would be a you know
+  say like 10 000 pounds which for anyone not uh
+1637: ofay with the uk's currency is not an amount that anyone in the uk can really
+  live off um by
+1644: a long way and as a result it's like well so how does that money translate into
+  ours if everyone doing it
+1651: already has a job then okay maybe we can get some ai tokens or do various things
+  to speed things up but
+1659: if your goal is to turn money into time then actually there's a bunch of like
+  tricky boundaries
+1666: to get over that and even if it was enough money to pay me to quit my job then
+  it's like well how many
+1671: years does that get me and if i go and apply for a mortgage and i tell them
+  like the situation they
+1678: will be like no mortgage for you sir like so i i think and i guess another part
+  of this stuff is that
+1685: generally the money flows to projects that are easier to measure and detect
+  so if if you are running
+1691: a project and you use npm like and your javascript project it's very easy to
+  measure which of those
+1697: npm libraries are widely used and important and maybe maintained and maybe need
+  the money or or whatever
+1703: right but it's very hard to notice that like well how did you install npm well
+  through homebrew like
+1708: well you don't have any code that even says the word brew in it it's buried
+  in an onboarding dock
+1713: right and everyone just knows that this is how you do it and then going deeper
+  right so maybe you're
+1718: running homebrew on linux well like you're running it in a terminal app like
+  how are you detecting
+1724: that that terminal app is in gnome or kd how are you detecting that your system
+  is on linux like
+1729: this is all stuff that kind of gets missed from the detection tooling right
+  yeah and as a result like
+1735: i think we have this idea that we can force enough money through the system
+  it will solve a lot of these
+1740: problems but i actually think the money ends up cooling in the places and the
+  projects that are
+1746: optimized for receiving the money as much as true anything else and yeah and
+  that's pro that's
+1751: probably the right thing to happen but it doesn't almost like get us to the
+  open source sustainability
+1757: nirvana where everyone can just quit their jobs and do this yeah or it's you
+  know again it's companies
+1764: that do um invest a bit more in open source hiring those people and then yeah
+  even if they don't intend
+1770: to they end up with a degree of influence on a project they might it may not
+  be explicit but it's kind of
+1775: going to be implied because they're working for that company um yeah there's
+  many examples of that it's not
+1783: malicious it's just passive pressure yeah but also that can go both ways so
+  like homebrew for example um
+1793: has an enormous amount of uh free stuff that we get from github yeah like more
+  than the average project
+1801: right um and probably some of that is because there was a reasonable amount
+  of time when i was working
+1807: at github right and i could go straight to the ceo yeah at various points and
+  say hey can we have this
+1812: thing like and they would say yes and then that's great cool now we have a free
+  thing um so yeah i i
+1818: think again like not all company not all projects are homebrew not all companies
+  are github but like it's
+1823: you know i i think i i guess again maybe with this manifesto and talking about
+  it i think it's just almost
+1830: like getting people's eyes open to like there is a different way of doing some
+  of this that people
+1837: haven't talked about very loudly like the the jeremy allison court i mentioned
+  earlier like i that
+1843: that had been shared with me uh as a response to this kind of manifesto and
+  i hadn't actually heard it
+1847: before um but even finding that post actually like where it was referenced was
+  kind of it was pretty buried
+1855: right and it's there's not a lot of conversation around stuff like this despite
+  the fact that it
+1862: it actually i think is maybe the primary contributor to open source sustainability
+  is
+1868: maintainers doing this in their working hours at least yeah the maintainers
+  i know that i meet at conferences
+1872: and for them and various communities right like this is a lot and like this
+  is how they talk about this stuff
+1878: and again maybe some of it's like an age thing as well right where you know
+  yeah it's a little when
+1883: you're 25 it's much easier to maybe spend all your evenings and weekends doing
+  this stuff it's if you
+1889: enjoy it and it empowers you but like when you get you know spouse and kids
+  and dog and house and all
+1895: these type of things like it's much harder to just be like sorry i'm gonna go
+  spend all my time
+1901: sharking off my family commitments working on something that that pays me nothing
+  uh to be
+1905: shouted out on the internet it's an interesting uh we have it's a whole sort
+  of separate conversation
+1909: but to think about the kind of the the impacts of the recent ways of ai tools
+  on this whole
+1915: even the whole concept of open source yeah you know it's happening in the sas
+  world and the commercial
+1919: world but also potentially in the open source world it's like well why bother
+  contributing to an open
+1924: source project when i could just make it myself and a lot of those end up on
+  github as well or
+1930: whatever that they're in their own state of flux at the moment but um it is
+  basically just a file
+1939: storage or is it actually or is it actually an open source project because yeah
+  uh it's quite easy to
+1946: recreate now um so it's interesting to see if we'll even have this conversation
+  in 10 years or something
+1952: i don't know that's a broader conversation um i i just a couple of final questions
+  around that i
+1962: also think your your be careful out there section is a very good guidance just
+  purely for like side
+1970: projects full stop yeah and things to think about it's very easy to accidentally
+  leak things left
+1976: right and center when you're swapping hats and stuff like that um so that is
+  a useful
+1981: uh fact in there anyway um and also what could you explain the photo at the
+  top what is going on in
+1988: this photo uh so i'm glad you asked about that so that there is uh the the initial
+  draft of this i
+1996: shared with a few people and it had a ai generated image of a pirate ships sailing
+  a sea of binary which
+2004: was i thought pretty awesome actually but like someone gave me the feedback
+  which i agree with um
+2011: well if i didn't agree with that i wouldn't mean it that like look there's a
+  certain demographic of
+2014: person now who will see an ai generate a bit of art and immediately be like
+  oh this like and there
+2021: is nicer to have something that may be a little bit more human so um as i you
+  know i didn't want to
+2027: go into the stock photo era so this is you can't really tell from the little
+  snippet but this is me
+2033: sticking my thumbs up while at the homebrew stand in fos them wearing a giant
+  beer costume um oh okay
+2040: it just looks like a white t-shirt for me yes yeah yeah so like that's that's
+  probably for my benefit
+2046: but yeah the the white t-shirt is in fact the froth at the top of the beer costume
+  um and yeah and even
+2052: the story behind that like the get us getting organized for fos them the homebrew
+  maintainers
+2058: are not always the most organized bunch we're very good with like security vulnerabilities
+  but not so
+2062: much with like getting people in meat space and so somewhat someone posted before
+  this particular
+2069: fos them about six months before and was like aha look it's a beer isn't this
+  a funny beer so we
+2074: should make mike wear it and i was like i don't trust any of you to be organized
+  enough to actually
+2079: get a beer suit to fos them but if you do then i will wear it uh and they did
+  and i did so so uh 81
+2086: who wants to do web accessibility or optimization will note that if you right
+  click the image has just
+2091: been cropped so you can find the original image by doing a web inspector
+2096: yeah i think it's yeah it's available somewhere now i found it i think maybe
+  even on a homebrew
+2102: page there's a picture of me you know it makes a bit more sense because out
+  of context you look like
+2105: some kind of 90s bro trader but then you take a look at the whole picture it's
+  quite different
+2115: and some obligatory club mate there as well which i also i was back in melbourne
+  during fos them
+2120: i discovered club mate has now made it to australia which is kind of weird
+2125: and they had some very bizarre marketing around it which um oh yeah i bet what
+  was the use of the
+2131: word mate actually that was an obvious one which they didn't go for but they
+  had like pictures of
+2137: berlin clubs saying the energy that keeps berlin club scene going or something
+  like that i can't
+2142: remember it was a bit weird it was very very odd to see it uh but yeah okay
+  well i don't really know
+2149: whether this is something to say good luck i don't know it's kind of uh but
+  i guess keep spreading the
+2154: word and you don't i don't mean this in a bad way i mean this in probably a
+  good way there's no kind
+2160: of like uh shareables here i think this is a i like the idea of this kind of
+  quiet resistance of like
+2166: if you see mike say something uh if you feel like sharing it do but it's sort
+  of all very like up to
+2172: you which i kind of i kind of sort of suits the the vibe of the whole thing
+  i guess so yeah i think
+2179: that's the funny thing with you know i guess the modern internet i'm sure you've
+  been around the
+2184: block enough chris as well i'm sure you've also questioned your relationship
+  towards social media
+2189: and virality mostly not using it these days so yeah yeah same here so i it's
+  funny because again like
+2196: maybe in contrast to some big company initiative where you try to get people
+  to sign up like it's
+2201: yeah there is no call to the call to action here is a quiet resistance and it
+  may be that
+2207: the people who are influenced by this never tell me about it and i also don't
+  you know again talking
+2212: where was my turn i don't have any analytics on this page by design i don't
+  know how many people
+2218: have viewed it will view it whatever but like so long as it keeps seeming to
+  influence people in
+2223: a positive way i'll i'll keep it up as long as i can justify doing so so yeah
+  and and my goal is that just
+2229: it makes people maybe think about these things a little bit differently yeah
+  it's an interesting uh
+2236: campaign it feels like an odd one because yeah there is no direct cta but that's
+  kind of half
+2240: the fun half the point the web should be a bit more like that again maybe uh
+  yeah well good luck
+2250: and uh thanks for joining me again yeah thanks again chris and that was my interview
+  with mike mcquade
+2258: talking about oss resistance hope you enjoyed the interview next time we're
+  back with another live
+2265: interview recorded at the pytorch con in paris earlier this year and again please
+  take a look at setup at
+2274: go.christianchiller.com forward slash setup for a subscription service for mac
+  apps and head to
+2281: christianchiller.com forward slash podcast for more on tech lounge thank you
+  for joining me and see you all
+2289: next time.
+2319: you
