@@ -1,6 +1,0 @@
-{% assign feed_transcript_data = site.data.transcripts[include.id] %}
-{% if feed_transcript_data and feed_transcript_data.size > 0 %}
-<details><summary>Show transcript</summary>
-<p>{% for t in feed_transcript_data %}{{ t[1] }} {% endfor %}</p>
-</details>
-{% endif %}
