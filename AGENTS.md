@@ -90,6 +90,19 @@ or data fields over hardcoded title, slug, path or filename checks in
 templates, includes, plugins and scripts.
 
 When reviewing or editing blog posts, watch for recurring improvement areas:
+- Look for a clear, defensible point that a reasonable reader could disagree with;
+  flag drafts that remain scattered thoughts, summaries or agreement without a
+  distinct claim
+- Treat writing as a way to think and learn: identify where research, evidence
+  or drafting sharpened or challenged the starting position, and flag claims
+  that have not been tested against likely objections
+- If the conclusion expresses a clearer thesis than the introduction, suggest
+  revising the opening to reflect what the author learned while writing
+- Do not discourage unfamiliar subjects solely because Mike is not an expert;
+  scrutinise factual and technical claims, distinguish evidence from inference
+  and ensure relevant limits of expertise are transparent
+- Prioritise concrete factual or technical misunderstandings over generic
+  advice to moderate claims or add hedges
 - Tighten recent technical posts that drift into tool lists, link lists or
   repeated caveats instead of a clear essay shape
 - Prefer a structure of problem, decision frame, recommended default and when
@@ -100,8 +113,9 @@ When reviewing or editing blog posts, watch for recurring improvement areas:
   humour, especially in posts likely to date quickly
 - Strengthen endings with a final "what I'd do now" or "if you remember one
   thing" paragraph rather than a casual sign-off
-- Suggest adding a counterargument or "where this breaks down" section to
-  personal or opinion pieces where it would make the argument more robust
+- Test the central claim against the strongest counterargument or failure mode;
+  suggest a dedicated section only when it materially changes the argument,
+  rather than adding defensive caveats throughout
 - Suggest a story arc (setup, tension, decision, consequence, lesson) when a
   post is based on lived experience but reads like notes or a chronology
 - Prefer concrete scenes, named examples or fictionalised case studies before
