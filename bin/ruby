@@ -7,4 +7,6 @@ if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
   eval "$(brew bundle --check --install env)"
 fi
 
+export BUNDLE_AUTO_INSTALL=1
+
 bundle exec ruby "$@"
