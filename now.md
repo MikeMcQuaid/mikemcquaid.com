@@ -23,6 +23,8 @@ I continue to lead and contribute to Homebrew, which I will have maintained for 
 
 I'm enjoying [powerlifting](https://www.openpowerlifting.org/u/mikemcquaid) again, especially as a Masters 1 lifter.
 
+I've won the 83kg Masters 1 raw full-power gold medal at the Scottish Masters 3 times and bronze medal at the British Masters once.
+
 #### Reading
 
 I continue to avoid reading the [news and social media]({{ '/how-i-procrastinate-less/' | absolute_url }}) focusing instead on books.
