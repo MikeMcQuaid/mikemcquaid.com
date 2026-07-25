@@ -1,13 +1,20 @@
 ---
-title: Two Years Building Workbrew, a Remote-First Enterprise Homebrew Startup
-description: "Lessons from two years building Workbrew after leaving GitHub—pivoting, fundraising, shipping an enterprise Homebrew layer, and running a remote team."
+title: Two Years Building Workbrew
+description: "Lessons from two years building Workbrew after leaving GitHub — pivoting, fundraising and running a remote team."
+excerpt: "I left GitHub after 10 years to cofound Raise.dev. After an early failed experiment building IoT developer tools, we pivoted and built Workbrew: a fleet-management layer around Homebrew, a project I've maintained since 2009 and led since 2019. Two years in, we'd raised VC funding and built a remote team. Here's what I learned so far."
+redirect_from: /two-years-building-workbrew-a-remote-first-enterprise-homebrew-startup/
 ---
+
+> **Update, July 2026:** This post is a historical account; I no longer have any role with Workbrew and do not speak for the company.
+>
+> Homebrew’s [security and supply-chain protections](https://docs.brew.sh/Homebrew-Security-and-Supply-Chain) are among the strongest of any package manager: every package change is reviewed by a maintainer, downloads are pinned to checksums, bottles are built from source on Homebrew’s own sandboxed CI with verifiable build provenance and API data is cryptographically signed and verified.
+> Homebrew is secure by default, needs no third-party product to be used securely and is what I use and recommend for individuals and organisations alike.
 
 I left GitHub after 10 years to cofound Raise.dev.
 After an early failed experiment building IoT developer tools, we pivoted and built
-[Workbrew](https://workbrew.com): an enterprise-friendly layer over
+[Workbrew](https://workbrew.com): a fleet-management layer around
 [Homebrew](https://brew.sh), a project I've maintained since 2009 and led since 2019.
-Two years in, we’ve raised VC funding, built a remote team, and have happy, paying customers.
+Two years in, we’d raised VC funding and built a remote team.
 Here's what I learned so far.
 
 ## Leaving GitHub
@@ -31,14 +38,11 @@ The money was good but, at least for me, feeling like you're actually having ind
 ## Raise.dev
 
 The startup I joined as a CTO and cofounder on March 1st 2023 was named "Raise.dev".
-It had been started in 2019 by John Britton, my friend and former manager at GitHub.
-In 2021 Vanessa Gennarelli, another friend and former teammate joined him there.
+It had been started in 2019 by John Britton, my former manager at GitHub.
+In 2021 Vanessa Gennarelli, another former teammate joined him there.
 I _almost_ joined him in February 2020 but my youngest child's refusal to sleep and the prospect of a staff engineer promotion changed my mind.
 
-![Mike and John]({{ '/images/a/mike_john.jpg' | absolute_url }})
-
-John, the classy guy that he is, didn't do a "hard sell" for me to join him at Raise.dev.
-If anything, it was the opposite.
+John didn't do a "hard sell" for me to join him at Raise.dev.
 He introduced me to various other founders and actively encouraged me to interview elsewhere and think about it.
 He also said he was looking for a cofounder rather than an employee; something that was initially intimidating for me.
 
@@ -62,7 +66,8 @@ When we next met up as a three to discuss what features to build next: I propose
 I didn't know what to, just that what we were doing didn't seem to match our strengths.
 
 John had been trying to convince me for literally about 10 years at this point to make "a [Homebrew](https://brew.sh) startup".
-If you haven't heard of it, Homebrew is an open-source package manager I've been working on since 2009.
+If you haven't heard of it, Homebrew is the de-facto standard macOS package manager and also runs cross-platform on Linux and Windows (via WSL).
+It's free, open-source, used by tens of millions of developers and built by more than 10,000 contributors; I've been working on it since 2009.
 He (and others) had intro'd me to VCs several times and I'd always gone "where's the business here, though?" and declined to take it any further.
 It also felt, in that era of open-source, that most "open-source startups" were a bait-and-switch where a free, liberally licensed project was inevitably yanked away from the community for "commercial reasons" later.
 I wanted no part in helping someone make a quick buck out of the Homebrew community I'd worked so hard to cultivate.
@@ -72,15 +77,9 @@ I wanted no part in helping someone make a quick buck out of the Homebrew commun
 John said: "well, if we're going to play to our strengths: that's the Homebrew startup".
 I left the meeting, had dinner with my kids and thought: shit.
 He's right.
-We couldn’t play more to our strengths than this.
-Homebrew now has solid
-[finances](https://mikemcquaid.com/making-homebrew-financially-sustainable/) and
-[governance](https://docs.brew.sh/Homebrew-Governance),
-meaning it’s resilient against negative disruption from any organisation.
-John, Vanessa and I all have most of our background in developer tools and open source.
 It just made sense.
 
-Of course, minutes into the next meeting discussing it, John comes up with the perfect name: "Workbrew".
+Of course, minutes into the next meeting discussing it, John comes up with the name: "Workbrew".
 
 ## Workbrew
 
@@ -88,35 +87,31 @@ A major advantage of being open-source was having more than a decade’s worth o
 Many of these people were told "no" by me.
 [Apparently I'm good at that](https://mikemcquaid.com/saying-no/).
 
-With a bit of digging, the main things that jumped out were:
+With a bit of digging, some company requests that stood out were:
 
-- Homebrew's inability to play nicely with [MDM](https://en.wikipedia.org/wiki/Mobile_device_management) tools
-- A need to restrict access to Homebrew packages that violate compliance or regulatory requirements
-- Security concerns around Homebrew's filesystem permissions model
-
-![Workbrew 1.0 architecture]({{ '/images/a/workbrew_1_0.png' | absolute_url }})
+- integration with specific [MDM](https://en.wikipedia.org/wiki/Mobile_device_management) tools
+- the ability to restrict packages under internal compliance or regulatory policies
+- alternative permissions and deployment models for centrally managed fleets
 
 I realised fairly quickly this would necessitate the:
 
-- **Workbrew Installer**: install Homebrew and Workbrew, play nicely with MDMs (written in macOS `.pkg` and Bash)
-- **Workbrew Agent**: send state/receive commands to Console, provide security-enhanced wrapper for Homebrew (written in Go)
+- **Workbrew Installer**: install Homebrew and Workbrew, work with MDMs (written in macOS `.pkg` and Bash)
+- **Workbrew Agent**: send state/receive commands to Console, provide a wrapper around Homebrew (written in Go)
 - **Workbrew Console**: used by administrators to send commands/receive state from devices (written in [Ruby on (Guard)Rails](https://mikemcquaid.com/ruby-on-guard-rails/))
 
 I built the basic architecture solo, dogfooded it with myself, John and Vanessa and showed it to some people.
-This would make the open-source Homebrew project better and allow us to build an independent commercial product, Workbrew, to handle enterprise needs that Homebrew wouldn’t or couldn't.
+This would allow us to build a commercial product, Workbrew, to handle fleet management needs.
 We got a better response than I anticipated.
 I guess it was time to go raise some funding.
 
 ## VCs
 
 Raise.dev already had some money in the bank from an existing round that was sustaining the three of us.
-With Workbrew gaining momentum, we knew it was time to raise more funding to grow the team.
-
-![John, Mike and Vanessa]({{ '/images/a/john_mike_vanessa.jpg' | absolute_url }})
+With Workbrew underway, we knew it was time to raise more funding to grow the team.
 
 The TL;DR is we spoke to many VCs, I learned to be less Scottish in terms of both self-deprecation and swearing and raised a round.
 In true remote-first fashion, we got our first offer before the three of us had even been in the same room together as cofounders.
-[HeavyBit](https://www.heavybit.com) were our lead investor and have proved to be a great partner and source of wisdom for us.
+[HeavyBit](https://www.heavybit.com) were our lead investor and proved to be a great partner and source of wisdom.
 They were (pleasantly) starting to badger me to go and hire a team so: it was time.
 
 ## Hiring
@@ -126,54 +121,31 @@ I left GitHub as a ["Principal Engineer"](https://mikemcquaid.com/what-is-a-staf
 ![Workbrew Engineers]({{ '/images/a/workbrew_engineers.jpg' | absolute_url }})
 
 I've written
-[a longer post on exactly what my interview process was](https://mikemcquaid.com/how-and-why-i-interview-engineers-for-workbrew/)
+[a longer post on exactly what my interview process was](https://mikemcquaid.com/how-and-why-i-interviewed-engineers-at-workbrew/)
 but, suffice to say, it worked out pretty well.
-We've got an incredible, world-class remote-first team with strong cultural alignment.
-Today, ~63% of us are ex-GitHub employees.
+I hired an incredible, world-class remote-first team with strong cultural alignment.
+At the time of writing, approximately 63% of the team were former GitHub employees.
 Only the cofounders came directly from there.
-Our shipping velocity is absurdly fast (with [guardrails](https://mikemcquaid.com/ruby-on-guard-rails/)).
-We help each other, we improve each other and we prioritise kindness and empathy.
-We work mainly async together across 7 countries and 3 continents.
-I love it.
+The team's shipping velocity was absurdly fast (with [guardrails](https://mikemcquaid.com/ruby-on-guard-rails/)).
+They helped and improved each other and prioritised kindness and empathy.
+We worked mainly async across 7 countries and 3 continents.
+I loved working with them.
 
 ## Customer Feedback
 
-So far, we have managed to get a decent number of happy, paying customers.
+By the time of writing, we had gained paying customers.
 Customer feedback is a beautiful and valuable thing.
-We're following our tweaked versions of a few great existing processes:
+We were following our tweaked versions of a few existing processes:
 
 - [Shape Up](https://basecamp.com/shapeup) for 6 week "sprints" on feature work, 2 week "cooldowns" for less structured work
 - the "First Responder" pattern for managing engineering support escalations and other unplanned work
 - shipping "minimum loveable products" of our features with the goal of getting something useful out to customers ASAP and iterate based on their feedback
 
-In the words of Level:
-
-> We're happy to have integrated Workbrew into our stack.
-> We also wanted to mention that the Workbrew team has been very responsive to even the silliest of questions and it's been a real delight conversing with them.
->
-> <https://web.archive.org/web/20250813140218/https://levelvc.com/brewing-better-builds-with-workbrew>
-
-## The Future
-
-![Workbrew MacBook]({{ '/images/a/workbrew_macbook.jpg' | absolute_url }})
-
-Things are going well and everything is trending in the right direction.
-We're working with our sales and GTM folks to delight existing and new customers.
-
-## Reflections
+## Advice
 
 I'd read a lot about cofounding a company before doing it.
 I swore I'd never do it.
 Whoops.
-The only thing I knew for sure was that I didn’t want to do this alone (and I’m glad I didn’t).
-John and Vanessa and I all love, help, praise, improve and irritate each other in equal measure.
-It's an incredibly intense relationship and experience.
-Vaguely similarly to being a parent: the highs are higher and the lows are lower than I expected.
-I've never felt like I've been growing more and faster than I am now, though.
-It's incredibly motivating to be learning so much and building a company of people who love being here.
-
-## Advice
-
 I feel like I have almost zero actual advice to give other founders but I feel obligated to try some:
 
 - Starting a company requires ignoring just the right amount of conventional wisdom.

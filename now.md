@@ -6,18 +6,18 @@ classes: text-page
 
 (This is [a now page](https://nownownow.com/about), and if you have your own site, [you should make one, too](https://sivers.org/now2)).
 
-Updated December 11th, 2025, from my home in Edinburgh, Scotland.
+Updated July 25th, 2026, from my home in Edinburgh, Scotland.
 
 #### Work
 
 I’m currently focused on my role as CTPO at Administrate.
 I initially worked with them as a Fractional CTO, while doing other consulting work, but have now joined full-time.
 
-I left my full-time role as CTPO at Workbrew but continue in a fractional role as Homebrew Fellow and Advisor.
+I co-founded Workbrew and was its CTPO until 2025; I have had no role there since July 2026 and do not speak for the company.
 
 #### [Homebrew](https://brew.sh)
 
-I continue to lead and contribute to Homebrew, which I will have maintained for 16 years as of September 2025.
+I continue to lead and contribute to Homebrew, which I will have maintained for 17 years as of September 2026.
 
 #### Exercise
 

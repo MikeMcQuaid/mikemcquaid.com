@@ -1,12 +1,15 @@
 ---
 title: Why Open Source Maintainers Thrive in the LLM Era
 description: "From early Copilot to Cursor/ChatGPT, I share how LLMs changed my workflow and why open source maintainers can thrive rather than be displaced in the LLM era."
+excerpt: "At the time of writing (June 2025), the prevailing view in the software industry is that LLM-powered AI is either completely useless or will imminently destroy all software engineering jobs. As you might expect, the reality is somewhere in between. In this post, I'll share my journey with LLM tooling, from reviewing an early, internal alpha of GitHub Copilot to my current daily usage of Cursor, ChatGPT, and the latest Copilot offerings."
 ---
+
+> **Update, July 2026:** References to Workbrew in this post are historical; I no longer have any role with Workbrew and do not speak for the company.
 
 At the time of writing (June 2025), the prevailing view in the software industry is that LLM-powered AI is either completely useless or will imminently destroy all software engineering jobs.
 As you might expect, the reality is somewhere in between.
 In this post, I'll share my journey with LLM tooling, from reviewing an early, internal alpha of GitHub Copilot to my current daily usage of Cursor, ChatGPT, and the latest Copilot offerings.
-My perspective is that of a startup founder (of Workbrew) and long-time open source software maintainer (of Homebrew)
+My perspective draws on my continuing role as a long-time Homebrew maintainer and my experience co-founding Workbrew.
 
 ![Mike in Homebrew beer costume]({{ '/images/a/homebrew_beer_mike.jpg' | absolute_url }})
 
@@ -111,7 +114,7 @@ Similarly, as much as people talk about "exponential progress" with AI and immin
 I expect the remaining large user-facing improvements of this generation of AI to be primarily be around UI and UX.
 The belief that we'll "any day now" achieve deterministic results from fundamentally stochastic systems seems to stem from either a technological misunderstanding or wishful thinking.
 
-All that said, [I'd rather hire someone today](https://mikemcquaid.com/how-and-why-i-interview-engineers-for-workbrew/) who overuses LLM tooling over someone who refuses to use any.
+All that said, [I'd rather hire someone today](https://mikemcquaid.com/how-and-why-i-interviewed-engineers-at-workbrew/) who overuses LLM tooling over someone who refuses to use any.
 Ultimately, as technologists in a for-profit company within a capitalist economy, we are hired to generate business value.
 LLM tools allow businesses to do more (features, tests, automation, etc.) with less (employees, hours, budget).
 Lean into that.

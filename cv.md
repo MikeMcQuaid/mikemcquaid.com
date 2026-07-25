@@ -47,26 +47,22 @@ Designed and taught O'Reilly's live course "AI and the Coding Interview", helpin
 
 ##### Homebrew Fellow and Advisor (2025 – 2026)
 
-Deliver fractional advisory and technical leadership to Workbrew, focused on seamless integration with Homebrew’s open-source ecosystem and solving complex engineering challenges.
-
-* Homebrew Fellow: funded to support my role as Homebrew Project Leader, primary liaison between Homebrew maintainers and Workbrew organisation.
-* Technical Advisor: provide strategic guidance and expert support on critical engineering and product decisions.
+Provided limited independent advisory support relating to Homebrew and technical escalations.
 
 ##### CTPO and Cofounder (2023 – 2025)
 
-Workbrew brings the power of Homebrew to enterprise macOS fleets.
 As CTPO, set product direction, owned engineering execution and established company-wide processes.
 
 * I was described by one of our investors as "one of the best zero-to-one engineering leaders in the industry".
-* Singlehandedly shipped first versions of Workbrew Console, Agent and Installer and secured first reference customer which resulted in raising $3.2m VC seed round with Heavybit in 2023.
+* As the sole engineer at the time, shipped first versions of Workbrew Console, Agent and Installer and secured first reference customer which resulted in raising $3.2m VC seed round with Heavybit in 2023.
 * Recruited and led an async, six-person product engineering team across five countries and three continents
 * Introduced Shape Up, achieving predictable product feature delivery while maintaining agility
 * Primarily responsible for achieving SOC 2 Type 1 compliance in 2024 and Type 2 in 2025.
 * Implemented DORA metrics and LLM-assisted code reviews which resulted in PR open-to-merge time of 0.5 days and > 35 PRs per engineer/month
-* Scaled platform to 1,725 managed devices (May 2025) and enterprise launch
+* Scaled the platform to 1,725 managed devices by May 2025 and supported the public launch
   [featured in TechCrunch](https://techcrunch.com/2024/11/19/workbrew-makes-open-source-package-manager-homebrew-enterprise-friendly/)
 * Embedded AI tools (ChatGPT, Cursor, Copilot) across the org; designed an
-  [LLM-native hiring process](https://mikemcquaid.com/how-and-why-i-interview-engineers-for-workbrew/)
+  [LLM-native hiring process](https://mikemcquaid.com/how-and-why-i-interviewed-engineers-at-workbrew/)
   referenced on
   [LeadDev](https://leaddev.com/hiring/ai-first-hiring-everywhere-not-slowing-down)
 

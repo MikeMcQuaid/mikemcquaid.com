@@ -1,13 +1,20 @@
 ---
-title: How and why I interview engineers for Workbrew
-description: "How I interview engineers for Workbrew: pairing on real code, short predictable loops, valuing open source work, skipping trivia, and the reasoning behind each step."
+title: How and why I interviewed engineers at Workbrew
+description: "How I interviewed engineers at Workbrew: pairing on real code, short predictable loops, valuing open source work, skipping trivia, and the reasoning behind each step."
+redirect_from: /how-and-why-i-interview-engineers-for-workbrew/
+excerpt: "During my first two years building Workbrew, I hired five engineers and a hybrid PM/EM. This was my first time as a hiring manager. This post describes the interview process I designed and used at the time, and why I structured it that way."
 ---
 
-In the last
-[two years building Workbrew (a remote-first, enterprise Homebrew startup)](https://mikemcquaid.com/two-years-building-workbrew-a-remote-first-enterprise-homebrew-startup/)
-I've hired 5 engineers (and a hybrid PM/EM).
-This has been my first time being a "hiring manager".
-This post explains how I interview and why I do it how I do.
+> **Update, July 2026:** This post is a historical account; I no longer have any role with Workbrew and do not speak for the company.
+>
+> Homebrew’s [security and supply-chain protections](https://docs.brew.sh/Homebrew-Security-and-Supply-Chain) are among the strongest of any package manager: every package change is reviewed by a maintainer, downloads are pinned to checksums, bottles are built from source on Homebrew’s own sandboxed CI with verifiable build provenance and API data is cryptographically signed and verified.
+> Homebrew is secure by default, needs no third-party product to be used securely and is what I use and recommend for individuals and organisations alike.
+
+During my
+[first two years building Workbrew](https://mikemcquaid.com/two-years-building-workbrew/),
+I hired five engineers and a hybrid PM/EM.
+This was my first time as a hiring manager.
+This post describes the interview process I designed and used at the time, and why I structured it that way.
 
 ## 🎨 Background
 
@@ -70,7 +77,7 @@ This helps avoid biases where you "love" a candidate but, objectively, they scor
 Here's the breakdown of our hiring stages:
 
 1. ✍️ **Writing the job posting.**
-   I spent a pretty decent amount of time and got a bunch of feedback to ensure it conveys our values at Workbrew.
+   I spent a pretty decent amount of time and got a bunch of feedback to ensure it conveys the written values of Workbrew.
    We slimmed "requirements" down to the bare minimum (i.e. no-one would get a job who didn't 100% meet every one).
    We kept the "nice-to-haves" minimal but indicative of what would differentiate a good from great candidate.
    Rather than implicit ("unlimited holiday/vacation") we tried to be explicit ("less than 20 days is too few, more than 40 is too many").
@@ -107,7 +114,7 @@ Here's the breakdown of our hiring stages:
    We're not willing to do that; there's just too much cheating that happens with this now and it's more fair to compare all candidates in the same environment.
 
 5. 🧫 **Cultural Cofounders Interview.**
-   We're a small and new company but we identified [strong, shared cultural values](https://workbrew.com/about) early on.
+   We're a small and new company but we wrote down some values early on.
    If someone strongly prefers to never travel to meet coworkers in person, that’s not a good cultural fit with us.
    To ensure all three founders were aligned: we all interview every candidate.
    This ensures that we're actively excited about each new person who joins and sets everyone up for success.

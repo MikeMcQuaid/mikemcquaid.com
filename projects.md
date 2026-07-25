@@ -54,11 +54,8 @@ Designed and taught a live O'Reilly course on AI-assisted coding interviews, inc
 
 ![Workbrew]({{ '/images/a/workbrew.png' | absolute_url }})
 
-I started Workbrew in 2023 to provide missing features and support for companies using Homebrew.
-Workbrew's 1.0 release was in November 2024.
-It offers vulnerability reporting and mitigation, MDM integration, fleet configuration, remote `brew` execution and more.
-As of May 2025, Workbrew managed 1,725 devices.
-I’m currently Workbrew’s fractional Homebrew Fellow and Advisor, offering input on Homebrew integration, technical leadership and product direction.
+I co-founded Workbrew in 2023 to build fleet-management tooling around Homebrew and was its CTPO until 2025.
+I no longer have any role with Workbrew.
 
 #### [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
 
