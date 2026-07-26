@@ -76,7 +76,9 @@ This all works nicely but: what if you want to share code more easily between yo
 I would normally clone all my OSS repositories into `~/OSS/*` and employer's (currently [Administrate](https://getadministrate.com)) into e.g. `~/Administrate`.
 Instead, I now clone under the Sandvault-created `/Users/Shared/sv-mike` into `/Users/Shared/sv-mike/repositories` and create `/Users/Shared/sv-mike/worktrees` (more on that later).
 
-This lets me have somewhere safe that's readable and writable to both users.
+I don't keep another checkout in my home directory: my `~/OSS/*` entries are symlinks to these shared repositories.
+The repositories and worktrees aren't copied into the sandbox; my normal user and the Sandvault user work on the same files under `/Users/Shared`.
+This gives me somewhere safe that's readable and writable to both users.
 Note, you'll need to add to your `~/.gitconfig` for both to not freak out `git` with the group writable permissions:
 
 ```config
@@ -114,7 +116,7 @@ I set my "Agents" to use their Sandvault commands (same for "No Prompt" and "Wit
 
 These are all those that Sandvault supports today (I easily added OpenCode a few days ago with a few lines of code).
 
-I then added a bunch of "Projects" based on those I'd cloned into `/Users/Shared/sv-mike/worktrees`.
+I then added a bunch of "Projects" based on those I'd cloned into `/Users/Shared/sv-mike/repositories`.
 For those where it's useful, I have them run a basic e.g. `script/bootstrap` so the project is better set up.
 
 ## 🙋 Prompting
@@ -125,6 +127,8 @@ Creating worktrees is where this actually gets fun and powerful though:
 ![Superset worktree prompt]({{ '/images/a/superset-prompt.png' | absolute_url }})
 
 This lets you spin up an agent in a sandboxed new worktree based on a single prompt.
+Superset creates the worktree under `/Users/Shared/sv-mike/worktrees` and launches the agent as the Sandvault user inside it.
+I can open that same worktree as my normal user: there isn't a separate "host" checkout to keep in sync.
 
 Once you have this working: the sky is the limit.
 My personal workflow has gone from:
@@ -139,7 +143,8 @@ Sometimes I'll just fire up multiple agents with different approaches to run at 
 
 ![Fork Git GUI]({{ '/images/a/fork.png' | absolute_url }})
 
-I always review any agent-produced work locally before I share it with others.
+I always review any agent-produced work as my normal user in the same shared worktree before I share it with others.
+I push from there myself; the agents don't push for me.
 Review can involve one or more of:
 - reading all generated output (e.g. using [Fork](https://git-fork.com), a nice macOS Git GUI)
 - manually editing generated output (e.g. using [Zed](https://zed.dev), my current editor of choice)
