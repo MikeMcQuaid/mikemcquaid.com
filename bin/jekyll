@@ -7,12 +7,9 @@ if [[ "$hooks_path" != ".githooks" ]]; then
   echo "Warning: git hooks are not enabled. Run 'bin/enrich-metadata add-githooks' to enable them." >&2
 fi
 
-if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
-  export HOMEBREW_NO_AUTO_UPDATE=1
-  eval "$(brew bundle --check --install env)"
-fi
+source "$(dirname "${BASH_SOURCE[0]}")/../script/bootstrap"
+bundle_bootstrap
 
 export JEKYLL_ENV="${JEKYLL_ENV:-development}"
-export BUNDLE_AUTO_INSTALL=1
 
 bundle exec jekyll "$@"
