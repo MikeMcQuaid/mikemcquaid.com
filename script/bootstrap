@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
-
 bundle_bootstrap() {
   if [[ "${HOMEBREW_INSIDE_BUNDLE:-}" != "1" ]]; then
     export HOMEBREW_NO_AUTO_UPDATE=1
@@ -17,6 +15,7 @@ bundle_bootstrap() {
 }
 
 if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  set -euo pipefail
   bundle_bootstrap
   bundle check || bundle install
 fi
