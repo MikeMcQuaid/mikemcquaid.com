@@ -1,0 +1,960 @@
+---
+0: Hello everyone and welcome back to another episode of Giant Robots Smashing Into
+  Other
+11: Giant Robots, the podcast where we explore the design, development and business
+  of your
+17: great products.
+19: Now today I am joined by Mike McQuaid, Administrate CTPO, Homebrew Project Leader,
+  an engineering
+26: and product leader with 18 years of experience reducing developer friction and
+  scaling open
+32: source software used by tens of millions.
+36: How do I find you on this morning, Mike?
+38: Yeah, very good.
+39: This morning always feeling slightly cringy after my intro that my American co-workers
+45: in the past have helped me to write because apparently my previous one was far
+  too humble.
+50: But yeah, otherwise good.
+52: How are you today, Sam?
+53: Yeah, I'm doing good.
+55: As we mentioned, kind of off air, it's a strange one with England recently going
+  out
+59: the World Cup.
+61: I'm happy this is not a sports podcast.
+63: We don't have to deal with that too much.
+65: But often what I do is I try to do research a bit about my guests before they
+  come on.
+70: I mean this as a compliment that it was particularly difficult to do research
+  on yourself because
+75: there's so much out there.
+77: Like you're doing lots of talks, you're writing lots of articles.
+81: How would you package yourself?
+83: And this is going to be even more cringe than your intro.
+85: How would you, if you were me, how would you have introduced yourself?
+90: Oh, I mean, probably similarly, right?
+94: I guess for me, what I've found interesting.
+97: So I've had an interesting kind of career in open source, if you can call it,
+  I guess, career
+103: in inverted commas.
+104: And then a parallel kind of career doing proprietary software, various companies,
+  right?
+110: And I think for me, it's been interesting seeing the commonalities between the
+  two and what
+114: each can learn from each other and how they can feed into each other.
+118: And also the very stark differences between the two.
+121: So I think more recently, maybe my talks, blog posts, et cetera, are either I'm
+  trying to
+128: speak to both audiences or I'm trying to explain to both audiences why the other
+  audience is
+133: very, very different from what they might expect.
+136: But those, so those worlds, so just so people understand, so if I'm correct,
+  you're talking
+140: about open source, you mainly are working with Homebrew, which is a package manager
+  for
+146: macOS that helps people to kind of install third-party software.
+150: It might do more than that.
+151: That's how, that's what my usage is of it.
+154: And then you're also working with Administrate.
+158: Are you saying those two worlds, which seem quite disparate, actually influence
+  and intersect
+165: with each other?
+166: Yeah.
+167: So I think there's commonalities there.
+168: I mean, I guess the thing that might be surprising to anyone, maybe not surprised
+  to you, Sammy,
+172: might be surprising to some of the listeners, at least on this, is Homebrew,
+  package manager,
+177: used by a bunch of people using Macs, although increasing numbers on Linux and
+  Windows now too.
+182: But I have never been paid to do that as my full-time job ever.
+188: Homebrew has never had enough money to ever have essentially an employee.
+191: Like, I probably have had three-month periods sporadically when things have intersected
+  with
+197: my employer and homebrew such that I've been able to spend the majority of my
+  time doing
+201: homebrew-related stuff.
+202: That's probably happened two or three times in my 17 years or whatever working
+  on it.
+207: So, yeah.
+208: So those worlds are pretty separate from that perspective.
+211: And, you know, I have an old-day job.
+212: I'm a CTPO now, which is Chief Technology Product Officer.
+217: I've got like, I don't know, 20-something people under me in the org.
+221: And, yeah, so I guess, okay, so what, in my mind, what are the differences between
+  the two?
+227: I think they're fairly, some of them are fairly obvious.
+229: Like, one of them is for money.
+231: The other is either no or essentially close to zero money.
+237: But I think the commonalities there are more interesting, I guess, as you mentioned.
+243: So I think, so I spent 10 years working at GitHub.
+246: I ended up being a principal engineer there by the time I left.
+248: And they were quite into early on of like working quite like an open source project
+  in lots of ways of,
+256: you know, being a bit more self-directed.
+258: People work when they want to work.
+259: People communicate primarily asynchronously in writing on GitHub or, like, I
+  guess,
+266: particularly later on, like a chat or whatever.
+268: But, like, the expectation was not we will resolve all problems in a meeting,
+  right?
+273: If anything, there was quite a lot of cultural pressure, particularly early on,
+  to not do that.
+278: And I would say that's kind of similar in open source as well.
+281: And I think what the two worlds can learn from each other, I guess,
+285: like particularly a lot of the companies I've been at is, you know,
+289: we're in this post-COVID world where a lot of us had never done any remote work
+  really before COVID.
+296: Well, I was fortunate enough to have done it since 2009 exclusively.
+300: But we have a lot of companies now who work at least somewhat remote some of
+  the time.
+305: If you're also a big enough company that you have people in, say, the U.S. and
+  Europe, right,
+310: then those companies can really benefit from that open source, writing-centered,
+  asynchronous way of working, right?
+320: And in my experience, many companies, maybe most companies, suck at that because
+  no one really told them or explained to them how that should work.
+330: And also different parts of the company have strongly positive or negative associations
+  with let's write everything down and do everything async as opposed to let's have
+  meetings to resolve every problem.
+341: That's really interesting because I did a podcast a couple months ago with a
+  senior developer, maybe even a principal, from 37 Signals.
+350: And they operate heavily on like this async policy kind of the way they work.
+356: And one of the things she said to me was like, it was really, really hard to
+  get used to.
+361: You're basically writing a lot of things down and there's very little kind of
+  synchronous communication.
+368: But she was kind of describing like the power of it.
+370: And we do work a lot like that at Thoughtbot as well.
+372: We're kind of set up as a remote company.
+374: And a lot of decisions and things are done through even pull requests on GitHub
+  where we can have discussions and track those discussions.
+383: It's a really good way of working.
+385: I want to drop back to when you talked about Homebrew and kind of being an open
+  source maintainer.
+392: I've never spoken to an open source maintainer before, but I've used your things.
+398: I don't know if I've ever appreciated that you do everything for free.
+402: Like, what does that look like?
+403: Because how much time are you giving to this project?
+407: So, I mean, the time is really variable and probably very hard to measure because
+  a bunch of it is multitasking, right?
+418: Because there'll be times where I'm waiting for some CI on a work thing.
+422: And I'm like, well, I could just stare at a wall, right?
+426: Or I could quickly review and merge a Homebrew pull request or whatever, right?
+430: So, that's a hard part of it.
+433: I guess there's also – I made a little mini site recently called the Open Source
+  Resistance that was essentially spelling out how I and a bunch of other maintainers,
+  many of whom didn't want to be specifically named, work.
+444: Which is like, that's how I've done the majority of my Homebrew work probably
+  for the last 10 years is my employer has not specifically said, right?
+451: You can spend 20% of your time working on Homebrew or whatever.
+454: I've just done it.
+455: They've known about it and they've been fine with it.
+457: And the specific amount of time on a given day, a week, a month is variable and
+  not documented or written down or whatever.
+464: And that's fine with them and it's fine with me, right?
+467: And, you know, different companies have different approaches on that.
+470: But I guess my idea was like, okay, this is actually how most open source happens,
+  right?
+474: Like, we talk a lot about evenings and weekends in open source maintenance, but
+  certainly if you're like me and you're married and you have a family and stuff like
+  that, then the evenings and the weekends become a little bit of a tougher sell.
+484: So, I don't do as much in evenings and weekends now.
+487: I do more during the day.
+489: But back to the specific, like, the payment side of things.
+491: Yeah, I mean, so basically, like, Homebrew – it's funny because I've been working
+  on it for so long.
+495: Like, Homebrew, when I started, has essentially no costs.
+498: It was just a project on GitHub and everything was done with our local machines
+  or the machines of the contributors and that was that.
+505: And then over time, we have costs.
+508: So, alongside costs, we did fundraising and donations and all this type of fun
+  stuff, right?
+515: But we're in this slightly awkward middle size right now where we get about,
+  I think, roughly about $100,000 a year.
+522: We probably, you know, spend but a reasonable amount of that.
+527: And some of it, to increase the amount that we are spending, goes to, like, some
+  proportion of maintainers.
+534: If you're active enough over a three-month period, each quarter, you're entitled
+  to a $900 stipend, basically, which equates to $300 per month, which, for at least
+  the amount of time that I put into Homebrew,
+546: I would imagine most 12-year-old children who do paper rounds get better dollar
+  per hour of their outputs than I am getting.
+553: So, it's definitely, it's a, like, a nice thank you, here's some of our money.
+558: But we're not in a place that we can afford to pay someone full-time.
+562: But then what drives you?
+564: What's driving you to do this?
+565: And I know that might sound like a really shallow question.
+568: No, it's a really important question, I think.
+570: Yeah, I want to understand it.
+571: So, I mean, originally, like, back when I got started, so I guess in some ways,
+  my open source, like, career, if you will, right?
+578: So, I got into tech relatively traditionally, went to university, studied a computer
+  science degree, fell into the, you know, the habit that is Linux on the desktop.
+590: When I got to university, like, got very involved with, like, well, I was an
+  active, I guess, participant in forums and IRC channels and bug trackers and whatever.
+600: Started dabbling with some code of my own.
+602: Got involved.
+603: I was, shortly after leaving university, I became a maintainer of, like, for
+  a few years of KDE.
+609: Like, I contributed through that, through Google Summer of Codes.
+612: I was then involved with KDE for a few years, and then that kind of dropped down,
+  and Homebrew kind of picked up and sort of took over.
+619: But as a result of that, it's like, so something they used to say a lot when
+  I was getting started that I rarely hear now, and I wish I heard more, is people
+  would be like, how do I get started in open source?
+628: And the advice everyone always gave was scratch your own itch, right?
+632: So, find a problem with an open source project that you yourself have, and go
+  and fix that problem, right?
+638: And we are, I mean, this is a longer conversation, I guess, but we are lucky
+  enough in the age of AI and LLMs that if the project accepts AI and LLMs, and if
+  you're respectful and careful with how you use, it's never been easier to scratch
+  your own itch with the project you use.
+655: And, basically, that's how I got involved.
+657: I started doing that, and Homebrew, in Homebrew's case, I sort of built a sort
+  of clunky version of Homebrew myself.
+665: I saw Homebrew, I was like, this is much better.
+666: I switched to that.
+667: I started using it, and I was like, I found problems, so I fixed the problems,
+  and then I just never really stopped doing that for 17 years.
+674: But, I guess, the motivation of, like, why do I do it now, my probably biggest
+  thing there is because I enjoy it, right?
+680: Like, I do it because I find it fun, and I find it enjoyable.
+684: And, again, I think that's a helpful framing, because I think it can't and doesn't
+  need to be fun for every single maintainer every second of every day, but it needs
+  to be fun more often than not.
+697: When I go to my lovely wife at the end of the day, and I've been doing a bit
+  of other stuff, it needs to be that it's something that lifts me up and doesn't
+  drag me down.
+706: If I'm going to be grumpy with my children in the evening or whatever because
+  I'm grumpy about something that happened today, if that's paying my bills, then,
+  okay, that's not ideal, but it is what it is.
+717: If that's something where I'm, like, literally not really getting paid anything,
+  and certainly the time and energy and personal expenses I put in, I'm probably spending
+  more of my own money than I am getting, then that's not sustainable, right?
+728: And my wife and friends and family, whatever, have told me a few times over the
+  years, it's not sustainable, and I've made changes, and that's why I'm still doing
+  it and haven't burned out and all that good stuff.
+737: Yeah, that's amazing to hear because there is a lot of conversation about burnout
+  in the open source file.
+744: Like you're saying, you're giving a lot of time.
+746: It's probably costing you.
+748: Is there anything, then, you've learned over the 17 years that, you know, you
+  could share or you wish you would have known when you started that would have been
+  helpful tips?
+759: In a funny way, I think I was really lucky to get a lot of those pretty early.
+764: As I said, like, I, you know, I had the early experiences working with KDE.
+768: Like in the period in which I was a contributor, I attended this KDE conference
+  that was called Academy with a K in the Canary Islands in, I can't remember what
+  year it would have been, like 2008 or something like that.
+780: And the other funny thing about that conference, that time in that year, was
+  they co-located it with the GNOME conference.
+787: So if you're not a Linux person, like, you might not be aware that essentially,
+  like, KDE and GNOME are almost like the big competitor kind of desktop environments,
+  right?
+796: And in some ways, it would be, like, Apple and Microsoft both being, like, our
+  company off-site this year, I guess maybe not even them, like, more like, right
+  now, OpenAI and Anthropik being, like, okay, let's host our company off-site together
+  and collaborate together and whatever, right?
+811: And it was, like, that was a bit of a, like, mind-blown sort of moment because,
+  again, like, often the people online, the conversation would be all of these GNOME
+  users fighting with all these KDE users about, you know, GNOME sucks and KDE rocks
+  and vice versa, right?
+824: But the actual people involved are happily collaborating together in a way.
+828: But the other big thing was, like, you saw that there's so many friendships and
+  relationships and whatever, and I guess I realized quite early on, maybe it took
+  me a while to articulate it, but, like, the people working on KDE are not doing
+  it primarily for the users.
+844: They're primarily doing a lot of what they do for their friends who also work
+  on KDE, right?
+849: So, actually, what you need is not, it's kind of, you know, we always go on about
+  work.
+855: I'm sure you've had the same county of, like, you know, you need to think of
+  the customer and the user and blah, blah, blah.
+859: I actually think in open source, you maybe need to do a bit less of that, right?
+862: And think of the maintainers.
+864: How do you build good relationships with other maintainers that have good interactions
+  and have those people be your friends and your support network and whatever?
+870: Because at the end of the day, if there's an issue that's kind of urgent or whatever,
+  I'm going to fix that for my maintainer friend who I've had a bunch of beers with
+  in Brussels at Fosdheim over the years more quickly than I am going to do it for
+  some random user.
+883: And in fact, that random user, they might be like, this is going to cost us $10
+  million as a company if this isn't fixed by tomorrow.
+889: And I'm like, again, a privilege of open source.
+891: I'm like, I don't care.
+893: Like, that's not my job to fix your stuff.
+896: Like, that's your job to make sure your stuff is fixed.
+899: And that's the way open source works.
+901: But if it's my friend asking me for help, I'm going to help them.
+904: Yeah, there definitely is a bit of tension there.
+907: When using open source, you do see, like, people open issues, want things to
+  be fixed, but then don't necessarily contribute to the fix or aren't willing to
+  open a PR when a maintainer says, that's great.
+918: Thank you for finding it.
+920: Can you have a go at trying to fix it?
+922: What do you wish they knew or understood about maintainers that might make that
+  relationship a little bit more comfortable?
+929: So I think the, I wrote a blog post about this a while ago, right?
+934: That was rather inflammatoryly, if that's a word.
+938: Yeah.
+939: It's not, I invented it.
+942: Named open source maintainers owe you nothing, right?
+945: And the, in some ways, the reveal is in the title, right?
+949: But what I draw into is, if you look at the license of basically any open source
+  project, what it says is, it's essentially like a EULA, right?
+956: Like, we have all these, when you use various bits of software, you've got EULA
+  or your terms of service or whatever.
+961: And back in the days when we were using desktop software, you had to click through
+  this license agreement in the installer in order to install the software, right?
+968: Open source actually has the same thing, right?
+970: And if you read that, like, and as boring as it may be for some people, I encourage
+  you, if you use open source, even more vaguely regularly, right?
+977: Pick a nice short open source license, like the MIT license or whatever, and
+  read through it from top to bottom.
+982: And then actually think about what that means and articulate it.
+984: So some spoilers, if you haven't read it already.
+987: It basically says, we disclaim all warranties, all guarantees of fitness for
+  use.
+991: What does that mean in human speak?
+992: Basically, this might not work, and we're not even saying it does work, but you're
+  agreeing that through your use of this, if it doesn't work, and if it blows up and
+  causes you a huge mess, that's not our problem.
+1004: Like, we've said that's not our problem, and you've agreed that it's not our
+  problem, right?
+1008: And that is not how most users of open source, and frankly, most maintainers
+  of open source view it.
+1014: But if you can view things through that lens, both sides can have a much more
+  productive relationship.
+1020: Because, again, so, again, another random, I don't mean to bang on about my
+  blog posts, but, like, for me, it's often when I've thought about something for
+  a while, that's my main output, right?
+1031: So my father-in-law is a professor of economics, right?
+1034: And we had a nice chat about, like, economics in open source and whatever, right?
+1039: And he was saying, which surprised me as a newbie who's never really studied
+  in economics, is that economics is not always about money, right?
+1047: We generally talk about it from the realm of money.
+1049: It's about the, I can't remember what his exact words were saying, the use of
+  constrained resources, right?
+1056: And in a capitalist economy, that's usually money.
+1059: But the interesting thing in open source is it's not money, right?
+1061: Like, people love talking about money in open source all the time.
+1064: As someone who's brought a lot of money into open source, partly through Homebrew,
+  partly through, I was one of the four people that built GetUp sponsors, right?
+1070: Money is great, and it solves a lot of problems.
+1073: It also introduces some new problems, and it also doesn't fix all the problems
+  you think it's going to, right?
+1077: And in the case of open source, money is not the constrained resource, right?
+1082: So say a project like Homebrew, I mentioned before, we make about $100,000 a
+  year.
+1086: If you give an extra $100 to Homebrew, firstly, thank you very much, that's
+  kind, that's going to help us run the project.
+1091: But that does not magically unlock X percent more maintainer time, because if
+  you think about how it works, it's, I can't remember the mathematical term or whatever,
+  but essentially, you need to hit a threshold at which someone can afford to take
+  something currently in their life, probably that they're being paid to do, and say,
+  I'm not going to do that.
+1109: I'm now going to do this open source stuff instead.
+1112: And that doesn't happen for a lot of projects a lot of the time.
+1115: So actually, the constrained resource is maintainer time.
+1119: And actually, if you dig before even that, like, because maintainers are doing
+  it in their free time, it's like maintainer motivation, right?
+1126: So if you're one of those people, and there's one in Homebrew at least every
+  day, who just drops some drive-by negativity on an open source project being like,
+  this sucks, your message sucks, I don't like your response to this, thumbs down,
+  thumbs down, thumbs down, whatever.
+1139: Like, I literally am not exaggerating when I say you are doing your bit to destroy
+  open source, because you have just made it less likely that that maintainer wants
+  to do any fucking open source today at all, because it just, it makes them feel
+  rubbish when they receive that type of feedback and that type of input, right?
+1158: So that's basically the most important thing is like, again, it sounds very,
+  it's tough to swallow.
+1163: But if you're an open source user, you are less important than the maintainers
+  by a long way, right?
+1169: Homebrew, we estimate we've got about 10 million users, they've got 30 maintainers.
+1173: So it's like, so if you do those numbers, if you're a user, like, if you want
+  to get something done, you need to invest disproportionate amounts more of your
+  time in order to get your needs met than the maintainer does to meet your needs.
+1186: So a good example, going back to what you said before, if you're someone opening
+  an issue, and it's really important to you that that gets resolved, right?
+1193: And you maybe don't have the skills or the time or whatever it may be that you
+  think to fix that yourself and kind of make a contribution, the best thing you can
+  do is open a really, really good bug report or an issue report that's like, here's,
+  and if you're a project like Homebrew, like, we've done half the work for you because
+  we have a mandatory issue template where we give you all the, we basically require
+  you to enter all the information that we know that we need to do that.
+1219: Again, first step would be, if you think you know better than us on the information
+  we need, you are wrong, just do what you're told, give us the information we need.
+1227: Don't pick your battle on the first issue you open.
+1230: But basically, if you can open an issue and you can say, look, every machine
+  I've tried this on, if you run this command, this command, this command, this is
+  what happens, this is what the output is, this is what I would expect the output
+  to be, this is why it's surprising, this is why it's important.
+1243: And you can do that all in a nicely worded, respectful way, then that is, particularly
+  with AI agents now, that is very, very easy for the maintainer to fix.
+1252: If you are vague, if you are lazy, if you are, like, disagreeable, if you are
+  rude, any or all of these things make it dramatically less likely that anyone is
+  going to be interested in spending any time trying to fix your problem.
+1263: And I think the biggest cause of open source burnout, frankly, is maintainers
+  who bend over backwards to help people who are not willing to put in the effort,
+  and in some cases are not willing to be kind, respectful, considerate of the maintainers
+  and their time and the gift that they have given to open source through doing their
+  work.
+1279: Yeah, when you, it's been so funny, because this conversation to me is, it doesn't
+  surprise me at all, what does surprise me is, like, seeing these open issues or
+  open PRs, where, almost like trolling, the way you speak about, like, kind of the
+  thumbs down, or the all or nothing thinking, like, oh, this is terrible, we could
+  do it in this way.
+1303: So, lack of gratitude, it's almost more of a human problem than it is a coding
+  problem.
+1309: It is, but also, I think the thing with these types of human problems is, there's
+  two ways of looking at it, right?
+1318: There's, like, the, I need to fix how millions of humans interact, or you can
+  be like, I'm going to fix how I interact, right?
+1327: So, in my case, what that looks like on Homebrew, and the culture that I think
+  I sort of somewhat started, but is very much the dominant culture there, and why
+  I think we don't have people burning out, is if you are someone who opens a completely
+  legitimate issue about an actual bug, and you are very rude about it, we will close
+  your issue and often not even respond to what you're saying.
+1347: And if you are so unbelievably rude, you will get blocked, and you will never
+  get unblocked, right?
+1352: And people might think, but that's a bug, you need to fix that, that's outrageous
+  behavior, whatever.
+1356: And it's like, no, because that person is, I guess, the constrained resource
+  I said before, maintainer, like, motivation to work on open source.
+1364: That person is doing significantly more damage than they are solving, right?
+1368: When you're borderline, my experience, and again, this actually works well in
+  lots of areas of life, if you can calmly and politely explain to that person, like,
+  hey, that's not cool, please don't do that, right?
+1381: If they then respond with, even, you know, some people grow up, they're young,
+  they've never heard a good apology in their life, they're going to give a, I'm sorry
+  you feel that way, blah, blah, blah, whatever.
+1390: But if they're even vaguely trying to actually apologize and be like, okay,
+  I will do better next time, right?
+1398: Then you can sometimes fix those and get to a productive place, and that, you
+  know, and maybe you don't block that person, whatever it may be.
+1405: Whenever that person doubles down, and they say, like, how dare you, like, or
+  whatever, or they're like, you know, who are you to tell me how to submit this issue
+  on your open source project?
+1415: We just block them, because literally never in my entire open source experience
+  have I seen a relationship go from that to a productive one later on.
+1423: And also, again, as I mentioned before, there are lots and lots of users of
+  Homebrew, right?
+1427: We can afford, of those at least millions of people, we can afford to block
+  quite a few rude people along the way, because at the end of the day, again, with
+  a project like Homebrew, an important principle we say to people as well, is to
+  be a good maintainer for Homebrew, you must be a user of Homebrew, right?
+1442: Like, if you no longer use Homebrew, if you stop using it at work, whatever
+  you're using, where you work somewhere where you use Nix, and you don't ever touch
+  Homebrew anymore, like, no hard feelings, but you're not well placed to be a maintainer
+  anymore.
+1454: Like, you're not going to have that spark, you're not going to have that connection
+  to the user, because you're no longer a user.
+1458: And what that helps us do is say, okay, well, as long as we have 30 maintainers,
+  we have at least 30 users, right?
+1465: We can afford to lose everyone else, and in reality, we're never going to do
+  that.
+1470: We're never going to be so unbelievably outrageous that we lose everyone else.
+1473: But I think it is important for people to understand that, like, that's where
+  we're at.
+1477: And the alternative model for a lot of projects is the maintainer just goes,
+  like, nah, had enough, closed, archived, whatever.
+1485: I'm not going to deal with this person, this project, whatever, ever again,
+  right?
+1488: It does happen, yeah.
+1491: And I actually think that's a good thing, personally.
+1493: Like, I don't think it's a good thing that the community makes that person feel
+  that way.
+1498: But every time that someone quits, I'm like, good, healthy.
+1502: It's probably, you are probably well beyond the point in which this has become
+  a positive thing for your life, and you should move on, right?
+1509: And if the community goes like, oh, but you've left me in the larch or my supply
+  chain or whatever, and it's like, well, sorry, that's your problem, right?
+1516: And you should have thought about that before this person was at that point.
+1521: Yeah, it's a really interesting phenomenon because I don't know any other industries
+  that operate with such reliance on, like, people they don't know who are giving
+  free time to keep lots of things running.
+1537: I think if people really knew about this, people who, let's say, don't work
+  directly writing the code or in the software, I don't think people will realize
+  how many systems that's through the NHS banking systems are being upheld by open
+  source software like this that is maintained for free.
+1555: And if it was to disappear, there would be a lot of trouble.
+1558: It's funny, because I don't know that I know as many industries like that.
+1562: But again, maybe something that helped me with open source is I used to be,
+  I'm no longer, I used to be a fairly religious guy.
+1571: And I, you know, the church in the UK that I was involved with, various churches
+  of the years, do a lot of voluntary work, right?
+1579: And they do stuff, you know, most of them would do things with, like, youth
+  work, they do stuff, work with homeless people, they do work with, like, music that
+  I was pretty involved in and stuff like that.
+1590: And you see in these environments, like, there's, it often is, if you squint
+  enough, like, vaguely looks a bit like some bits of open source software, because
+  you have, you know, like, say, like, a big, whatever it might be, like, a church
+  service, or a homeless, like, soup kitchen, or whatever, you may have a very small
+  number of people who are on a payroll to make that happen, right?
+1617: But most of the time, most of those things could just could not occur, were
+  it not for a lot of volunteers, right?
+1624: And the closest equivalent I can think of with some of these things would be,
+  like, if the majority of people that came along to a soup kitchen were very abusive
+  to the volunteers in the soup kitchen, a lot of the time, then the volunteers in
+  the soup kitchen are probably going to be like, nah.
+1641: But the irony is, right, is that I think, and my experience in those environments
+  is we actually, like, often, not to get on a political soapbox, but often, like,
+  homeless people or people with kind of substance abuse difficulties or whatever,
+  are able to behave at a higher average standard in terms of the, how nice they are
+  to the volunteers who are helping them out.
+1665: And despite the fact that most of those people's lives are in some of the hardest
+  situations imaginable, but yet some of the highest paid tech workers in the world,
+  arguably some of the most privileged people, like, in the entire 8 billion people
+  we have on earth, are not able to meet the same sort of standard.
+1683: And that is the bit that continues to be truly wild to me.
+1688: It's just the way some people will behave, particularly the way some people
+  will behave when they literally have a GitHub profile with their actual face, their
+  actual name, it's attached to their actual employer, and they will say and do just
+  outrageous things, right?
+1702: And it's sometimes not even outrageous things, sometimes just like that, just,
+  like, drumbeat of just, like, unpleasant negativity that they wouldn't, I would
+  hope that they would never do in person, right?
+1713: But, you know, who knows?
+1716: The soup kitchen analogy is actually really good, because you would have no
+  qualms or criticism if the soup kitchen decided to shut up shop because of, like,
+  the levels of abuse that they were receiving.
+1728: Do you think it's got worse over the years, like, you've done this for 17 years,
+  have you noticed, like, kind of these keyboard warriors, has it, is it getting worse,
+  has it been getting worse?
+1737: I don't think it's got, I think, to be honest, I think the big, and I worked
+  at GitHub for 10 years, before I worked there, I applied for three times before
+  I got a job there, right?
+1746: Like, I was and am still a fairly big fanboy of GitHub, right?
+1752: But, I think it's the one thing GitHub made much worse, unintentionally, in
+  open source, is the accessibility of open source maintainers.
+1761: So, again, back in my KDE days, if you wanted to go and say, hey, KDE Delapro,
+  you suck, right?
+1768: Like, you had to sign up for a mailing list, or sign up for a Bugzilla account,
+  or whatever it may be.
+1773: And for each individual open source project, you have to follow a completely
+  different flow, right?
+1777: You still got some people that did that back then, but then, again, similarly,
+  a lot of them got banned very quickly and moved on.
+1785: And there also wasn't, you know, that was pre or at least very early social
+  media.
+1791: So, you didn't have this thing where, like, a thread goes viral on social media
+  or hacker news or whatever.
+1796: People were, like, jumping in for the lols and whatever, right?
+1800: And people, like, I mean, some people on GitHub, and I know because my name
+  isn't a bunch of them, like, literally almost, like, curate lists of, like, ha-ha,
+  open source drama, right?
+1808: Like, and I don't know, I think, I think more or less probably since GitHub
+  got fairly mainstream in the kind of mid-2010s onwards, right?
+1819: It's, I don't know that it's got, yeah, it's not really got better or worse
+  than that time.
+1824: It's just been this sort of steady background noise.
+1827: But, again, like, the unfortunate aspect of human psychology is even if one
+  in 100,000 home new users are unpleasant in their interactions with you, like, that
+  is enough to sometimes just, like, when I was younger, that can ruin your day, that
+  can ruin your weekend, right?
+1843: Yeah, for sure, for sure.
+1845: And that, it's kind of like a double-edged sword, which is, like, the accessibility
+  to these projects and to the maintainers is a good thing for people who want to
+  get involved and help.
+1855: But it's also opening the door for people who, like you're saying, want to be
+  critical or abusive, which kind of leads me to another double-edged sword in this
+  area, which I've been thinking about, which is AI.
+1868: Because on the one hand, like you mentioned it a bit before, like, it's never
+  been easier to contribute.
+1873: So, people can, without as much knowledge as they used to have or without knowledge
+  of the exact syntax, they can start to really help open-source projects with, you
+  know, using AI in the right way.
+1887: But then we're also seeing lots of people in open-source maintainers just having
+  to sift through too many PRs.
+1895: They're just having to reject and reject and reject because they're just, you
+  know, one-shotted by AI.
+1899: So, what's that experience been like?
+1902: So, I think it's been, I feel probably neutral to positive about it.
+1908: I think a lot of what AI has done, like, inside open-source and also inside
+  technical organizations is it's changed the bottleneck, right?
+1918: The bottleneck for a lot of things used to be a human sitting down with a keyboard
+  and writing the code.
+1922: And that's no longer the bottleneck.
+1924: And depending on what your other bottlenecks were or are, I think, is how good
+  or bad you're having a time right now.
+1933: So, on homebrew and bar, I mean, in general, like, in everywhere, like, I have
+  always been obsessive about, perhaps many would have said, excessive levels of automation.
+1942: So, I used to say to homebrew maintainers, if you leave the same review comment
+  on three PRs, I want you to turn that into an automated check, right?
+1950: And just this idea of, like, you're going super, super hard on, like, I guess,
+  you know, we're both Rubyists, right?
+1955: Homebrew has maybe 100 plus, at this point, custom Ruby cops that only apply
+  to homebrew, right?
+1960: Oh, wow.
+1961: That's a lot.
+1962: Well, and the funny thing is, AI has made it dramatically easier to write more
+  of those as well, which is great.
+1969: Because previously, I used to be, like, a bit of a hypocrite, where I was like,
+  you should write a Rubicop for this.
+1974: But then whenever I sat down to write a Rubicop, I was like, oh, ASTs.
+1978: Like, this is so much easier to just do with regexes in a disgusting way.
+1982: But doing it the Rubicop AST way is the right way of doing it.
+1986: And now it's become considerably easier to do it the right way.
+1988: But the nice thing about that is, like, if you, so there's that, like, I guess,
+  in AI speak, we would say deterministic guardrails.
+1996: Like, Homebrew was very good at having lots of deterministic guardrails well
+  before, like, the current kind of AI wave took off.
+2004: And we continue to kind of lean into that even more.
+2007: So, like, it's been great from, like, a personal output perspective, where I
+  mentioned earlier we have a fairly rigid issue template.
+2015: One of the benefits of that is most issues, most of the time, I would say now,
+  like, I think, let me have a brief check live on the current count of, like, on
+  Homebrew Brew, which is the, like, main Homebrew issue tracker.
+2027: Yeah.
+2028: So, right now, there are no open issues on Homebrew.
+2031: And that doesn't mean that there's no bugs.
+2032: But, like...
+2033: Nothing has been reported and hasn't been handled.
+2035: Nothing has been reported that hasn't been handled relatively recently.
+2039: And a big part of that is because more or less my default flow now is an issue
+  comes in and I assign it to an agent.
+2046: And when I read the issue, if I'm like, oh, like, their proposed solution is
+  not quite right, I add an extra sentence on the end that's basically like, and instead
+  of doing this, do this.
+2055: Like, and I would say 50% of the time, I get a perfect solution out first time.
+2060: Right.
+2061: Perfect as in if a user as a first-time contributor came along and this was
+  the diff in the PR that I reviewed, I would say, thanks, approved, merge.
+2070: And that would be it.
+2072: But, yeah, so, like, that's been great.
+2074: I think the kind of AI slot PR, it's interesting because it's a very variable
+  spectrum because there's some people who come along and do first-time PRs now, which
+  previously would have been like, this level of quality in a first-time PR is like
+  a once every six months to a year thing.
+2088: And we're probably seeing this once a week now of just being like, these are
+  really good.
+2093: Partly, that's all the guardrails we have.
+2095: Partly, that's all the, you know, we invest in our agents.md and in the repo
+  and stuff like that.
+2099: But then there is the downside of people that come in and open PRs and they
+  don't really understand what they're doing.
+2106: And I get the impression whether or not it's true that essentially every response
+  that I'm getting is just, Claude, Mike has asked me this, tell me the answer, coffee,
+  case, it's the issue.
+2117: And at that point, and again, like, this is when it comes back to the personal
+  boundaries type thing.
+2121: At that point, I am more than happy to say, yeah, like, look, this is, it feels
+  like I'm just talking to an LMP here.
+2129: If I'm going to be talking to an LMP, I'll talk to my own one on my own machine,
+  and I can have the back and forth there.
+2135: And sometimes I'll just, people have essentially described what they're doing
+  in the PR and the bug they're fixing.
+2140: And instead, I'll just copy, copy, paste, copy the bug that they're doing it,
+  open my own agent, do that, open the PR, say to them in that PR, sorry, this was
+  no longer a great use of either of our time.
+2151: I've opened my own version, which is better.
+2152: It's going to replace your version and you're not going to get credit for this
+  this time.
+2155: I would imagine that would not fly for a wide variety of reasons on a lot of
+  projects, but that's the workflow that I think actually makes a lot more sense,
+  right?
+2162: And like that, that's, we have to do stuff like that so that the project can
+  be sustainable.
+2167: And I think that's part of it.
+2169: So also we have automated bots where we have this issue template format, AI
+  as well, to not fill in the issue template.
+2176: So we have a bot that if you don't fill it in, just automatically close it because
+  we can't mandate the template being used and you open it through the API, which
+  is something that basically only applies to it.
+2185: Yeah, yeah, yeah, yeah.
+2186: So yeah, so we basically have a bunch of stuff now, including some of the features
+  that GitHub have provided.
+2191: So essentially just like reduce the velocity of slop input and auto-manage some
+  of that.
+2195: But even then culturally, we had pre-AI the expectation that like, if you have
+  an issue that it's just like, you've been very lazy, you've not put thought into
+  this and you've not added the information, we're not going to say, oh, please, would
+  you mind doing that?
+2207: We just close it.
+2208: And often we just don't even respond, right?
+2211: And if the person says, why did you do that?
+2213: Again, if it's patently obvious, again, even that might not get a response,
+  right?
+2217: Because again, we don't actually owe people any of this stuff.
+2221: Yeah, yeah, you're not there to serve them.
+2223: I'm wondering, can you shed some light on this?
+2225: Because it's not something which I understand, but given what we've spoken about,
+  like, what do people mean then when they say like, oh, AI is going to replace open
+  source software?
+2234: Like, what do they even mean by that?
+2235: And is there any accuracy to that statement?
+2238: Yeah, so I think there's almost two, like, variables that may be talking about
+  there, or two changes.
+2245: So one of them is, I guess, the bit that you mentioned or alluded to before,
+  which is that the incoming slop wave slash mythos-powered security vulnerability
+  wave to all of these projects is just going to make open source so unbelievably
+  fun right now that all of the maintainers are going to leave and stop doing it,
+  right?
+2266: But that's a problem.
+2267: That's not a solution.
+2268: Yeah, but again, I don't think, I think that's overstated.
+2273: Well, I don't think that's actually going to happen, right, to be clear.
+2277: I think it will happen with some projects and some maintainers.
+2280: And as I say, I think it's some of those cases that's maybe good, because I
+  think it's just open source is changing.
+2287: As it changed when GitHub got introduced to a different way of working, we're
+  working in a different way now.
+2292: You might not want to work that way.
+2293: And I have absolutely no issue with anyone that doesn't want to work that way.
+2295: And they should shut up shop and work differently.
+2298: Or if they don't want to accept AI contributions, like, personally, I would
+  think that is a mistake.
+2303: But every project maintainer has every right to do that.
+2306: And I actively encourage those who don't want to wade through those PRs, don't
+  do so.
+2311: I think the other part of it is, I think it's more interesting, and I think
+  we see less evidence of, but it's this idea that, like, well, I'm using this NPM
+  library.
+2322: I may be using 10% of the capabilities of it.
+2324: The maintainer hasn't merged any PRs or bug reports or issues in a while.
+2329: So I'm going to just get my AI to reimplement the 10% I need and vendor that
+  in my project, and that can be code I maintain.
+2336: And then I don't need to worry about this, right?
+2337: And same with all the kind of open source supply chain stuff.
+2340: I'm just being like, well, like, I, rather than me having to, like, keep up
+  with the pendable every day, week, month, whatever,
+2347: and all these critical vulnerabilities that are constantly rolling into my thousand
+  dependencies that I have in my JavaScript project,
+2353: like, I'm just going to get most of those and throw them in the bin and re-implement
+  myself internally.
+2359: And so I think that may well, in some ecosystems, reduce the use of some types
+  of, like, NPM modules or open source projects or whatever.
+2369: I also don't think that's necessarily a bad thing.
+2371: But I guess the reduction would add a certain there is, like, are we saying
+  that the Linux kernel is just going to be forked 8 billion times
+2379: and everyone is going to be in every version of the kernel?
+2382: Clearly they're not going to.
+2383: So I think if you zoom out, it's like, well, what does open source exist for?
+2389: Like, why do we care about this stuff?
+2391: And I guess, so something like Homebrew, it's like, okay, package manager on
+  macOS, like, you know, many of your listeners may know what that is or means or
+  whatever.
+2400: But it's like, the way I sometimes would describe it is it's an abstraction
+  layer to install a bunch of different software
+2408: that has a bunch of different ways of being installed on your machine.
+2411: And we essentially provide a unified API to do that, right?
+2416: So it's like, is every company going to maintain their own version of that unified
+  API?
+2422: Probably not, right?
+2423: And is there an advantage in us pooling knowledge and resources and interfaces
+  such that if you're a macOS developer and you go from company one that uses Homebrew
+  to company two that uses Homebrew,
+2434: and it works the same way in both places.
+2436: And if I want to install my SQL on my machine, it's going to be functionally
+  identical from company A to company B.
+2442: Like, is that advantageous to the industry?
+2444: And it's like, well, yes.
+2446: But a lot of these things, I think it's a pendulum swinging moment, right?
+2449: Where, like, again, I remember when I entered the industry and it was still
+  a decent number of companies,
+2455: particularly in places like the UK, particularly in bigger organizations,
+2458: were not trusting the source software for things.
+2460: But, like, everything we get needs to be bought from Microsoft or even libraries.
+2464: You would buy a library.
+2465: The vendor would deliver the binaries.
+2467: You're not allowed to look at the source.
+2469: And you get the binaries and the docs.
+2471: And then if there's an issue, you're just like, I'll send them an email and
+  in a year they'll fix it, right?
+2478: And that sucked in lots of ways.
+2481: And we entered this open source world where, like, oh, we can all contribute
+  and share and isn't that great?
+2485: And then, you know, like, I don't mean to pick on the NPM ecosystem,
+2489: but, like, it has made it easy with some of these things because I think they
+  swung the furthest to the extreme
+2495: of, like, of tiny little modules that do every possible thing and shrinking
+  everything to that,
+2502: to the smallest degree that could be trivially re-implemented by almost any
+  engineer in any situation, right?
+2508: And we went all the way to that end.
+2510: And it's like, actually, that has its own share of problems such that some companies
+  or people who, you know,
+2518: have been in the industry a wee while look back at the, like,
+2521: I pay a vendor for a binary and some docs with, they're like, that's, those
+  days were better than the days where
+2529: every project has a thousand plus dependencies, right?
+2532: Like, and I think that's what it is.
+2534: I think AI, for good or ill, whether you like it, whether you hate it, whatever,
+2538: whether you want to use it or not, whether you think it's good for the world,
+  destroying the world,
+2542: AI is just the latest in many, and this will not be the last either,
+2546: in many pendulum shifts that mean that things are swinging back, right?
+2550: While I'm on a little bit of a rant about that as well, but again, it's the,
+2554: I remember the days where people were saying, not, you know, maybe not open
+  source, maybe pivoting,
+2559: but like being a, someone, I graduated from my CS degree in 2007, going to the
+  industry,
+2564: working, wanted to work as a software engineer, and being told,
+2567: that's a really stupid thing to do in the UK, because within five years,
+2572: all of the UK software engineering jobs will have been outsourced to, like,
+2576: cheaper companies in East Africa or India or whatever, right?
+2579: And AI has just become, you know, I think we've accepted now that AI is not
+  going to take everyone's jobs,
+2584: but in six, 12 months ago, it was the same thing.
+2586: It's like, why would you possibly qualify as a software engineer now?
+2588: The AI code agents are going to do it all for you.
+2590: And it's like, well, is that going to be true?
+2593: Probably not, in the same way that it was before.
+2595: Is it going to change everything in the same way that arguably outsourcing to
+  other countries change things?
+2600: Yeah, probably it will, right?
+2601: But we'll adapt, we'll change, we'll do things better, we'll do some things
+  worse, we'll move on, et cetera.
+2608: But before we go, I've got one last question, which I wanted to pick your brains
+  on,
+2614: because as a father of four kids, my oldest being nine,
+2619: and begging me to stay up 2 a.m. is when the England-Mexico game was,
+2622: and I said, not a chance.
+2625: You've talked a bit about screen time as a parent yourself,
+2629: and you had quite an interesting take.
+2631: Can you give me a little bit more information about that?
+2634: Yeah, so my screen time take kind of comes from being a frustrated 90s nerd,
+2640: where my, again, back in the day before,
+2643: going to software seemed like a reasonable career choice,
+2647: and my parents basically being like,
+2649: you're wasting your life on this computer thing,
+2651: like, it's never going to amount to anything, whatever.
+2654: And also, like, I guess, in a rainy Scottish winter evening,
+2659: when they were like, go play outside instead of spending all your time on the
+  computer,
+2663: at 6 p.m. in the evening, and it's like,
+2665: clearly I'm not going to do that,
+2666: so can I play computer games for another 30 minutes?
+2669: So I always wanted my kids to be, like, a bit more chill about it.
+2672: In fact, for those who have the benefit of video,
+2675: you can see in the background, I actually have my Steam Deck is now,
+2678: I bought a USB-C monitor now, so that my eldest child, who's, I guess, going
+  to be nine in a month,
+2686: can play, like, real PC games with a keyboard and mouse, which he is absolutely
+  delighted about.
+2692: But yeah, so, and then I went off, and again, much to people's surprise,
+2697: perhaps I married a physiotherapist, right, who has differing views from me
+  on screen time and exercise, whatever.
+2702: So essentially, the middle ground that we get to is we try and almost think
+  on, I guess, maybe two dimensions.
+2708: So one dimension is almost like, in a given day, what's the balance of screen
+  time to other things, right?
+2713: So I think both of us as parents would rather our kids maybe had three hours
+  of screen time in a day,
+2719: which is quite a lot, if that means they had six hours running around in a park,
+2724: or doing outdoor stuff, or whatever, when the weather's nice, and, like, exhausting
+  themselves doing other things, right?
+2730: Like, that's kind of a nice balance, right?
+2732: And that might be better than two hours of screen time, but the rest of the
+  time, they're just sat inside, staring at a wall, or whatever.
+2740: So that's the first dimension.
+2742: The other dimension is almost like, I think not all screen time is equal, right?
+2748: And this is where I get my apologies in advance, maybe a little bit preachy,
+2752: in that I think this section applies as much to the parents as it does to the
+  children, I'm afraid.
+2758: In my mind, as a gamer, I'm somewhat biased here, but, like, I essentially have
+  a hierarchy where I'm like,
+2765: okay, to what extent are you thinking and involved in whatever?
+2770: So for me, my personal screen time use, I would say, like, the highest on the
+  spectrum of my screen time
+2775: is either, like, stuff that I find incredibly relaxing, playing computer games,
+  where I'm engaging my brain, whatever,
+2782: or stuff where, like, I'm making money doing it, or I guess we've talked about
+  homebrew.
+2786: Like, when I have fun screen time doing homebrew stuff, lots of other people
+  get to benefit from that.
+2791: And then below that, I would say it's almost, like, passive, but yet still enjoyable
+  entertainment,
+2796: like sitting on the sofa with my wife, watching our latest Netflix show.
+2800: We just finished The Diplomat, which was very good.
+2803: And stuff like that, right?
+2804: And then below that, I would put, like, doing a similar thing, but maybe on
+  my phone, by myself,
+2810: in a corner, right?
+2811: Or particularly maybe short-term, short-form content that's been algorithmically
+  recommended for me
+2817: that I don't particularly want to watch, but I've just been slurped into that,
+  right?
+2822: And then, you know, you can work your way down on that hierarchy.
+2825: And essentially, we try and think about both what we're doing as parents,
+2829: but also what our kids are doing along those hierarchies.
+2832: So I would not give my kids for an exceptionally long time a phone that had
+  TikTok on it
+2837: because fundamentally, I just think that's going to be bad for their development.
+2841: And they don't need it.
+2842: Like, if they want to do that when they're 18, they can do that when they're
+  18.
+2845: Maybe slightly younger.
+2846: That's fine.
+2847: Not when they're nine.
+2849: But stuff like them playing computer games or them doing creative stuff on an
+  iPad or whatever,
+2855: like, I'm more willing and able to kind of entertain a bit more of that and
+  encourage that.
+2860: Same with us sitting as a family.
+2862: Like, we have watched over the last year all nine of the main Star Wars films
+  of various degrees of goodness.
+2869: Good going, yeah.
+2870: But yeah, but it's like, but all of those were like, we sat down as a group
+  and what, well,
+2874: my wife chose not to partake.
+2876: But the three boys, me and my two sons, we sat down, we watched the Star Wars
+  films.
+2880: It was a nice, bonding moment.
+2882: And yeah, like, that feels, like, more positive than spending the equivalent
+  amount of time
+2887: individually looking at something on our phones.
+2890: You can create, like, I think people forget that as a family, you can create
+  special memories
+2895: in different ways.
+2897: And one of those mediums can be through screen time.
+2901: Gaming is, some of my best memories have been from gaming as a kid, probably
+  spending too
+2907: much time playing Call of Duty and play Lego.
+2910: But it was a good time to be alive.
+2912: Look, we've hit time, but thank you so much for your time on this podcast.
+2918: And also, I think it's fair to say your contributions towards Homebrew, I use
+  it extremely often.
+2924: That's my package manager.
+2926: And so to speak to someone who is, you know, given their time to make things
+  so easy for
+2930: everyone else, a lot of appreciation.
+2934: If people have listened to this episode, interested in yourself, want to get
+  hold of you, perhaps
+2940: want to even contribute towards Homebrew.
+2942: What's the best way they could do that?
+2944: Well, so if you're interested in me and what I've been saying, you can go to
+  my website,
+2947: which is mikemcquade.com.
+2950: And yeah, that's basically, I've like, the joys of AI, I've essentially built
+  my own like
+2954: little Twitter clone that's like built into the website that cross posts elsewhere.
+2958: So if you see me on social media, and you reply to me, I probably won't see
+  it.
+2962: But if you go to my website to my email, send me an email, I'll reply and listen,
+  whatever.
+2966: If you're interested in Homebrew, if you go to the main Homebrew package manager
+  page on
+2970: GitHub or our website, which we'll link you over there, which is homebrew slash
+  brew on
+2975: GitHub, or the website for Homebrew is brew.sh.
+2979: And if you go to kind of contributing on there, then it will kind of explain
+  to you like various
+2982: ways you can get involved and the best kind of ways of getting started.
+2985: But as I said, the best way of doing it is like, if you use Homebrew and you're
+  like,
+2989: this should work differently, it'll be better or whatever, then give it a go,
+  make it better.
+2993: And I'll probably review your work.
+2995: And hopefully I'll like it.
+2997: Just do it with a little bit of respect, people.
+3000: We'll drop some links, things that we've spoken about into the notes of the
+  podcast.
+3004: You can find notes and a complete transcript for this episode at giantrobots.fm.
+3009: If you have questions or comments, you can email us at host at giantrobots.fm.
+3014: Don't forget that Thoughtbot we're here as consultants and we can help you with
+  your technical
+3019: needs, technical challenges.
+3021: So if you need to reach out to us, please do.
+3023: This podcast is brought to you by Thoughtbot.
+3026: Thanks for listening and I'll catch you on the next one.
