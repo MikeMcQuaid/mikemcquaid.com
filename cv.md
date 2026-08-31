@@ -8,10 +8,11 @@ redirect_from: /resume/
 
 #### CTPO and Homebrew Project Leader
 
-Engineering and product leader with 18 years of experience reducing developer friction and scaling open source software used by tens of millions.
+Engineering and product leader, remote-first since 2009, with 19 years experience reducing developer friction and scaling open source software used by tens of millions.
 Currently CTPO at Administrate and Homebrew Project Leader, former GitHub Principal Engineer (employee #232) who led initiatives including Merge Queue and internal developer environment, cofounder and former CTPO of Workbrew.
+Diagnoses an organisation's real constraints, publishes the plan, and then fixes a large share of it personally with AI coding assistants, agents and automated tooling.
+As comfortable rewriting a CI pipeline or a legacy application as managing four business functions and hard board conversations.
 Published author (Git in Practice), writer and frequent speaker (50+ talks) on engineering leadership, open source, automation, remote work and Git.
-Remote-first since 2009, with hands-on adoption of AI coding assistants and review tooling to increase velocity.
 
 ### Experience
 
@@ -19,11 +20,16 @@ Remote-first since 2009, with hands-on adoption of AI coding assistants and revi
 
 Improving the world's best training management system where I:
 
-* Own product and engineering strategy, roadmap prioritisation and execution
-* Took engineering engagement from 18th to 64th global percentile and eNPS from 11 to 60 in 9 months through transparency, trust and team design
-* Hit all department KPIs while coming in 20% under budget, reducing security vulnerabilities by 45% and maintaining ISO and SOC 2 compliance
-* Drive agentic AI adoption across engineering and the company, eliminating manual processes and growing team velocity with reduced headcount
-* Led cross-functional restructures with clear career paths, measurable 30/90-day goals and AI enablement
+- Own product, engineering, support and implementation, having grown the remit from engineering as each function was brought under a single owner
+- Published a first-principles diagnosis of the engineering organisation in my first two weeks and then executed it: 60% fewer repositories, 99% fewer production errors, zero ongoing unresolved issues and an 80% reduction in mean security-alert age while maintaining ISO and SOC 2 compliance
+- Cut pull request to production from five working days to same-day by designing and building a pipelined merge queue that batches an order of magnitude more changes into each validated deployment
+- Took engineering engagement from 18th to 64th global percentile and eNPS from 11 to 60 in 9 months, and promoted leaders from within rather than hiring over them
+- Hit all department KPIs and >10x PRs throughput on primary repository while coming in 20% under budget with a smaller team than I inherited
+- Rebuilt support and implementation end to end: reviewed all 71 customer support agreements to ground SLA and priority terms in what we actually deliver, then shipped contractual SLA tracking, company-wide priority and incident definitions and 95% customer satisfaction
+- Worked well beyond engineering on commercial systems ownership, pricing and packaging, board reporting, compliance evidence and the marketing discoverability to AI tools
+- Drove agentic AI adoption across engineering and the wider company, from a standing start to the primary way work gets done
+- Built a documentation software factory of markdown authored in a repository and synced to the Zendesk help centre, the platform monorepo and soon the public website, with LLM-generated release notes and automated maintenance, plus sync layers across Notion, GitHub, Zendesk and the CRM so support, implementation and engineering work from one business source of truth
+- Remained a principal-level individual contributor throughout, personally authoring the error-reduction programme, merge queue work, an order-of-magnitude reduction in CI spend per build, and the automation above
 
 #### [Homebrew](https://brew.sh) — Project Leader (2009 – Present)
 
