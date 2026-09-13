@@ -10,7 +10,7 @@ As part of that announcement it was mentioned that I was helping
 set up
 [a governance process](https://github.com/gem-coop/governance/pull/1),
 continuing the work I'd first started helping with
-[on RubyGems](https://github.com/rubygems/rfcs/pull/61).
+[on RubyGems](https://github.com/rubygems/rfcs-archived/pull/61).
 
 I think it speaks well of the gem.coop maintainers that they brought me on board given I’ve:
 

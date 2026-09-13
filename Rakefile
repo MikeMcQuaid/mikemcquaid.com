@@ -53,6 +53,8 @@ task test: :jekyll do
       "https://comp-soc.com/",
       "https://www.yelp.com",
       "https://chatgpt.com",
+      'https://basecamp.com/shapeup',
+      'https://rands-leadership.slack.com/archives/CUAAP1A3G',
       'https://www.scotlandis.com/scotsoft-2022/developer-conference/',
       'https://fellowship.mlh.io',
       'https://shepherd.com/best-books/becoming-a-great-open-source-software-engineer',

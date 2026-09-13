@@ -153,7 +153,7 @@ In my opinion, you want as few of these as you can to maximally exercise your co
   Particularly nice to have it e.g. comment inline on PRs with code that wasn't covered.
 - 🤖 [**GitHub Actions**](https://github.com/features/actions): run your tests and any other automation for (mostly) free on GitHub.
   I love it because I always try to test and automate as much as possible.
-Check out Homebrew's [`sponsors-maintainers-man-completions.yml`](https://github.com/Homebrew/brew/blob/master/.github/workflows/sponsors-maintainers-man-completions.yml) for an example of a complex GitHub Actions workflow that opens pull requests to updates files.
+Check out Homebrew's [`sponsors-maintainers-man-completions.yml`](https://github.com/Homebrew/brew/blob/main/.github/workflows/sponsors-maintainers-man-completions.yml) for an example of a complex GitHub Actions workflow that opens pull requests to updates files.
 Here's a [recent automated pull request updating GitHub Sponsors in Homebrew's `README.md`](https://github.com/Homebrew/brew/pull/18573).
 
 I add these tests to my Gemfile with something like this:

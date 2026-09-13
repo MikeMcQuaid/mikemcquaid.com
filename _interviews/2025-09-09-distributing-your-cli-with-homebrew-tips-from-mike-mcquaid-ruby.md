@@ -2,7 +2,7 @@
 title: "Distributing Your CLI with Homebrew: Tips from Mike McQuaid"
 link: https://topenddevs.com/podcasts/ruby-rogues/distributing-your-cli-with-homebrew-tips-from-mike-mcquaid-ruby-678
 publication: Ruby Rogues
-podcast_audio_url: https://topenddevs.com/podcasts/ruby-rogues/distributing-your-cli-with-homebrew-tips-from-mike-mcquaid-ruby-678/download.mp3
+podcast_audio_url: https://api.spreaker.com/v2/episodes/67690098/download.mp3
 transcript-id: 2025-09-09-distributing-your-cli-with-homebrew-tips-from-mike-mcquaid-ruby
 podcast_audio_type: audio/mpeg
 podcast_audio_length: '103824973'

@@ -83,7 +83,7 @@ Let's combine the two.
 
 First, who are the owners, maintainers, contributors and members of the RubyGems organisation?
 It's not an easy question to answer, so I've built a list based on the people who either participated or were CCd by `indirect` on the
-[Proposal for RubyGems Organizational Governance](https://github.com/rubygems/rfcs/pull/61).
+[Proposal for RubyGems Organizational Governance](https://github.com/rubygems/rfcs-archived/pull/61).
 I've also included the [current members of the RubyGems organisation](https://github.com/orgs/rubygems/people)
 
 ---
