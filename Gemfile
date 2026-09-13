@@ -14,6 +14,8 @@ gem "csv"
 # stops message being printed every startup
 gem "faraday-retry"
 
+gem "nokogiri"
+
 group :jekyll_plugins do
   gem "jekyll-asciidoc"
   gem "jekyll-optional-front-matter"
