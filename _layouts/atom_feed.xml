@@ -150,7 +150,7 @@
       {% endif %}
 
       {% assign item_image = item.image.path | default: item.image %}
-      {% if item_image and item_has_link == false %}
+      {% if item_image and item_has_link == false and item.collection != "posts" %}
         {% unless item_image contains "://" %}
           {% assign item_image = item_image | absolute_url %}
         {% endunless %}
