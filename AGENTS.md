@@ -156,8 +156,9 @@ When reviewing or editing blog posts, watch for recurring improvement areas:
   `Interviewed by <publication>.` plus the body quote, so keep the body
   short enough that the whole thing fits; trim by selecting a shorter
   verbatim portion of the quote rather than paraphrasing.
-- Use `playwright-cli` for visual layout checks after homepage or CSS
-  changes. With the site running locally, use commands such as
+- Use `playwright-cli` for visual layout checks only after HTML or CSS
+  changes. Markdown-only changes, including adding images, do not need
+  browser previews. With the site running locally, use commands such as
   `playwright-cli -s=mikemcquaid-home open http://localhost:4000/`,
   `playwright-cli -s=mikemcquaid-home resize 1365 768`,
   `playwright-cli -s=mikemcquaid-home screenshot` and
