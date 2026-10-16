@@ -50,6 +50,8 @@ task test: :jekyll do
       %r{^https://archive\.org/download/},
       %r{^https://ibanez\.fandom\.com/wiki/},
       %r{^https://ibanez\.wikia\.com/wiki/},
+      %r{^https://www\.mendeley\.com(?:/|$)},
+      %r{^https://www\.cholangiocarcinoma\.org/donate/?$},
       "https://comp-soc.com/",
       "https://www.yelp.com",
       "https://chatgpt.com",
