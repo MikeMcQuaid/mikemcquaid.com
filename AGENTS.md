@@ -89,13 +89,12 @@ When changing homepage/content-specific behaviour, prefer front matter
 or data fields over hardcoded title, slug, path or filename checks in
 templates, includes, plugins and scripts.
 
-When reviewing or editing blog posts, watch for recurring improvement areas:
+When reviewing or editing blog posts:
 - Look for a clear, defensible point that a reasonable reader could disagree with;
   flag drafts that remain scattered thoughts, summaries or agreement without a
   distinct claim
 - Treat writing as a way to think and learn: identify where research, evidence
-  or drafting sharpened or challenged the starting position, and flag claims
-  that have not been tested against likely objections
+  or drafting sharpened or challenged the starting position
 - If the conclusion expresses a clearer thesis than the introduction, suggest
   revising the opening to reflect what the author learned while writing
 - Do not discourage unfamiliar subjects solely because Mike is not an expert;
@@ -108,7 +107,10 @@ When reviewing or editing blog posts, watch for recurring improvement areas:
 - Prefer a structure of problem, decision frame, recommended default and when
   the recommendation breaks down for longer posts
 - Link to canonical posts for repeated themes (e.g. saying no, maintainer
-  boundaries, automation and remote work) rather than rearguing them
+  boundaries, automation and remote work) rather than rearguing them; summarise
+  essential context inline so links and tooltips are optional further reading
+- Make follow-ups stand alone: avoid opening with "in my last post" and recap
+  only what the current argument needs
 - Keep strong asides, swearing and emojis only where they add precision or
   humour, especially in posts likely to date quickly
 - Strengthen endings with a final "what I'd do now" or "if you remember one
@@ -117,31 +119,27 @@ When reviewing or editing blog posts, watch for recurring improvement areas:
   suggest a dedicated section only when it materially changes the argument,
   rather than adding defensive caveats throughout
 - Suggest a story arc (setup, tension, decision, consequence, lesson) when a
-  post is based on lived experience but reads like notes or a chronology
-- Prefer concrete scenes, named examples or fictionalised case studies before
-  abstract advice when they make the argument easier to feel and remember
-- Cut anecdotes, chronology or colourful details that do not change the
-  reader's understanding of the argument
+  post based on lived experience reads like notes or a chronology
+- Prefer concrete scenes and examples to abstract advice; cut details that do
+  not advance the argument
 - For technical posts that should travel well in technical communities, suggest
   a precise, curiosity-provoking title without clickbait
-- Write the post `description` so it works as a standalone social post line:
-  syndicated posts render as title, then description, then URL (each separated by
-  a blank line), so the description should complement the title rather than
-  repeat its words and entice on its own
-- Front-load the surprising, broadly useful or counterintuitive lesson so
-  readers understand why the post matters in the first few paragraphs
+- Write the post `description` as a standalone social post line that complements
+  the title rather than repeating it; syndication renders title, description and
+  URL separated by blank lines
+- Front-load the surprising, broadly useful or counterintuitive lesson; aim for
+  the title and first three sentences to establish the target reader and benefit
 - Treat the opening as borrowed attention: do not spend the first few
-  paragraphs defining familiar concepts, reciting the origin story of the post
-  or delaying the useful point
-- Avoid unnecessary first-person framing; use `I` when Mike's perspective,
-  story or responsibility materially matters, otherwise state the argument
-  directly without `I think`, `I believe` or similar hedges
-- Flag `obviously` and similar words: if the point is obvious the qualifier is
-  redundant and if it is not, the word can sound dismissive or defensive
+  paragraphs defining familiar concepts or reciting the origin story of the post;
+  count career histories, decorative images and quotations as preamble too
+- Use `I` when Mike's perspective, story or responsibility matters; otherwise
+  state the argument directly without `I think`, `I believe` or similar hedges
+- Flag redundant or dismissive qualifiers such as `obviously`
 - Prefer concrete data, implementation details, tradeoffs and failure modes over
   high-level positioning or marketing language
-- Make the post useful to readers who do not already know Mike, Homebrew or the
-  surrounding context
+- Assume readers know Homebrew is an open source package manager, but not Mike's
+  history, Homebrew's internals or his toolchain; explain tools, acronyms and
+  jargon unfamiliar to the intended audience briefly when first needed
 
 ## Commands
 
