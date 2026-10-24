@@ -29,7 +29,7 @@ Improving the world's best training management system where I:
 - Worked well beyond engineering on commercial systems ownership, pricing and packaging, board reporting, compliance evidence and the marketing discoverability to AI tools
 - Drove agentic AI adoption across engineering and the wider company, from a standing start to the primary way work gets done
 - Built a documentation software factory of markdown authored in a repository and synced to the Zendesk help centre, the platform monorepo and soon the public website, with LLM-generated release notes and automated maintenance, plus sync layers across Notion, GitHub, Zendesk and the CRM so support, implementation and engineering work from one business source of truth
-- Remained a principal-level individual contributor throughout, personally authoring the error-reduction programme, merge queue work, an order-of-magnitude reduction in CI spend per build, and the automation above
+- Remain a principal-level individual contributor, personally authoring the error-reduction programme, merge queue work, an order-of-magnitude reduction in CI spend per build, and the automation above
 
 #### [Homebrew](https://brew.sh) — Project Leader (2009 – Present)
 
@@ -43,7 +43,7 @@ Homebrew is the de-facto macOS package manager with tens of millions of users wo
 
 #### [OpenUK](https://openuk.uk/) - Board Member (2026)
 
-Strategic board member at OpenUK, the UK open technology industry body, helping drive sector growth, policy engagement and community development for open source and related technologies.
+Served as a strategic board member at OpenUK, the UK open technology industry body, helping drive sector growth, policy engagement and community development for open source and related technologies.
 
 #### [O'Reilly Media](https://www.oreilly.com/live/event-detail.csp?series=0642572207397&event=0642572207380) - Live Course Instructor (2025)
 
@@ -74,14 +74,14 @@ As CTPO, set product direction, owned engineering execution and established comp
 
 #### Mike McQuaid Consulting (2025)
 
-Offer fractional CTO/CTPO and Principal Engineer services through remote or in-person engagements for growth-oriented tech companies CEOs, investors and leadership.
+Offered fractional CTO/CTPO and Principal Engineer services through remote or in-person engagements for growth-oriented tech companies CEOs, investors and leadership.
 
-* Developer Velocity: multi‑week developer velocity deep dives, defining productivity metrics, optimizing CI/CD pipelines and eliminating workflow friction. TL;DR: makes your most expensive resource (your engineers) get more done in less time.
-* AI Coding Assistants: deliver focused deep‑dive evaluation and implementation playbooks for e.g. Cursor, Copilot, ChatGPT and other LLMs.
-* Open-Source Strategy: advise on sustainable governance, community growth and commercial licensing models.
-* Staff+ Mentorship: define clear career paths and mentor senior and staff+ engineers to maximise their impact.
+* Developer Velocity: delivered multi‑week developer velocity deep dives, defined productivity metrics, optimised CI/CD pipelines and eliminated workflow friction. TL;DR: made your most expensive resource (your engineers) get more done in less time.
+* AI Coding Assistants: delivered focused deep‑dive evaluation and implementation playbooks for e.g. Cursor, Copilot, ChatGPT and other LLMs.
+* Open-Source Strategy: advised on sustainable governance, community growth and commercial licensing models.
+* Staff+ Mentorship: defined clear career paths and mentored senior and staff+ engineers to maximise their impact.
 
-Existing clients include startups, "Big Tech" notable software companies, financial companies and other consulting companies.
+Clients included startups, "Big Tech" notable software companies, financial companies and other consulting companies.
 
 #### GitHub (2013 – 2023)
 
