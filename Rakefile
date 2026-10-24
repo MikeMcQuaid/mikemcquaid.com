@@ -52,6 +52,8 @@ task test: :jekyll do
       %r{^https://ibanez\.wikia\.com/wiki/},
       %r{^https://www\.mendeley\.com(?:/|$)},
       %r{^https://www\.cholangiocarcinoma\.org/donate/?$},
+      %r{^https://positive-internet\.com/?$},
+      %r{^https://www\.macports\.org/?$},
       "https://comp-soc.com/",
       "https://www.yelp.com",
       "https://chatgpt.com",

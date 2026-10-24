@@ -6,6 +6,14 @@ description: A portfolio of my career and hobby projects.
 ---
 ### Current
 
+#### [Administrate](https://www.getadministrate.com)
+
+![Administrate]({{ '/images/a/administrate.png' | absolute_url }})
+
+CTPO.
+Improving the world's best training management system.
+Own product, engineering, support and implementation.
+
 #### [Homebrew](https://brew.sh)
 
 ![Homebrew]({{ '/images/a/homebrew.png' | absolute_url }})
@@ -26,12 +34,32 @@ Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.o
 Organised first ever Homebrew maintainer meeting.
 Migrated Homebrew to GitHub Packages which required extensive changes and collaboration in both Homebrew and GitHub.
 
-#### [Minimum Viable Management]({{ '/minimum-viable-management/' | absolute_url }})
+#### [AgentIDE](https://github.com/MikeMcQuaid/AgentIDE)
 
-![Minimum Viable Management]({{ '/images/a/minimum-viable-management.png' | absolute_url }})
+![AgentIDE]({{ '/images/a/agentide.png' | absolute_url }})
 
 Creator.
-A podcast where [Neha Batra](https://www.linkedin.com/in/nbatra/) and I talk about the messy, human side of engineering leadership and management.
+A native macOS app for running, prompting and reviewing sandboxed AI coding agents in parallel `git` worktrees.
+Worktrees, conversations, code reviews, pull requests and CI live in one window.
+Agents run inside a separate, non-admin [sandvault](https://github.com/webcoyote/sandvault) sandboxed user with no access to sensitive files or credentials, so they can work unattended without endangering the rest of the machine.
+
+#### [MinMaxCal](https://github.com/MikeMcQuaid/MinMaxCal)
+
+![MinMaxCal]({{ '/images/a/minmaxcal.png' | absolute_url }})
+
+Creator.
+Minimal menu bar calendar, maximal full-screen notifications.
+Most of the time it shows only your next event or reminder and a compact countdown.
+When that item is due, MinMaxCal takes over every display with everything you need and one click to get where you are going.
+
+#### [MailSearch](https://github.com/MikeMcQuaid/MailSearch)
+
+![MailSearch]({{ '/images/a/mailsearch.png' | absolute_url }})
+
+Creator.
+A native macOS menu bar app for searching email directly on IMAP servers.
+It discovers accounts from Mail.app, shows results from each server as they arrive and lets you preview, flag and unflag messages.
+Finds mail across accounts and folders without waiting for a local index or keeping another email client open.
 
 #### [Strap](https://github.com/MikeMcQuaid/strap)
 
@@ -42,6 +70,13 @@ A script to bootstrap a minimal macOS development system.
 Built for GitHub ([replacing Boxen]({% post_url 2016-06-15-replacing-boxen %})) to reduce development downtime for all GitHub-employed engineers.
 
 ### Past
+
+#### [Minimum Viable Management]({{ '/minimum-viable-management/' | absolute_url }})
+
+![Minimum Viable Management]({{ '/images/a/minimum-viable-management.png' | absolute_url }})
+
+Creator.
+A podcast where [Neha Batra](https://www.linkedin.com/in/nbatra/) and I talked about the messy, human side of engineering leadership and management.
 
 #### [O'Reilly Live Course: AI and the Coding Interview](https://www.oreilly.com/live/event-detail.csp?series=0642572207397&event=0642572207380)
 
@@ -64,7 +99,7 @@ I no longer have any role with Workbrew.
 Maintainer.
 Like Ruby's bundler but for non-Ruby dependencies from Homebrew and various other sources.
 Brought into GitHub organisation and integrated with the rest of the Homebrew ecosystem.
-Now merged into Homebrew itself.
+Merged into Homebrew itself.
 
 #### [GitHub](https://github.com)
 
@@ -96,8 +131,8 @@ A small application to delete your old, unpopular tweets.
 ![Balancing Dads]({{ '/images/a/balancingdads.png' | absolute_url }})
 
 Creator.
-An inactive podcast that assumes it's normal for working dads to be present in their kids' lives.
-We speak to fathers about their work-life balance and what works (and doesn't) with their kids.
+Balancing Dads was a podcast that assumed it was normal for working dads to be present in their kids' lives.
+We spoke to fathers about their work-life balance and what worked (and didn't) with their kids.
 Was hosted by [Paul Campbell](https://twitter.com/paulca) and I.
 
 #### [Open Source Guides](https://github.com/github/opensource.guide)
@@ -140,7 +175,7 @@ An opinionated, intermediate/advanced Git book.
 
 ![AllTrails and AllSnow]({{ '/images/a/alltrailssnow.png' | absolute_url }})
 
-Full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end.
+Worked as a full stack engineer developing Rails/MySQL back-end and Coffeescript/SASS front-end.
 Developed features, APIs and optimised performance.
 Set up Jenkins CI and automatic Chef deployment for Rails and mobile applications HockeyApp deployment.
 Managed and improved AWS EC2 infrastructure.
@@ -181,7 +216,7 @@ Transitioned project to community ownership and (eventually) archived status.
 ![Hookhand]({{ '/images/a/hookhand.png' | absolute_url }})
 
 Creator.
-A small web application which runs scripts from web hooks.
+A small web application which ran scripts from web hooks.
 
 #### [LockOldIssues](https://github.com/MikeMcQuaid/LockOldIssues)
 
@@ -268,7 +303,7 @@ Wrote WM8711 Linux kernel driver which was
 Contributor.
 Improved and merged the
 [long-running launchd patchset](https://bugs.freedesktop.org/show_bug.cgi?id=14259).
-Bug fixes for macOS.
+Fixed bugs for macOS.
 [Released in 1.4.1](https://dbus.freedesktop.org/doc/NEWS).
 
 #### [libgcal](https://code.google.com/archive/p/libgcal/)
