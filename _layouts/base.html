@@ -35,6 +35,10 @@
     href="{{ '/podcasts.xml' | absolute_url }}" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }} (Thoughts)"
     href="{{ '/thoughts.xml' | absolute_url }}" />
+  {% if page.feed %}
+  <link rel="alternate" type="application/rss+xml" title="{{ page.title | escape }}"
+    href="{{ page.feed | absolute_url }}" />
+  {% endif %}
   <link rel="stylesheet" type="text/css"
     href="{{ '/css/styles.css' | relative_url }}?v={{ '/css/styles.css' | cache_bust }}" />
   {% if page.collection == "posts" %}
@@ -46,7 +50,7 @@
   <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
 </head>
 
-<body{% if page.url == "/" %} class="home"{% endif %}>
+<body{% if page.url == "/" %} class="home"{% elsif page.body_class %} class="{{ page.body_class | escape }}"{% endif %}>
   <div id="header">
     <div id="title">
       <h1>

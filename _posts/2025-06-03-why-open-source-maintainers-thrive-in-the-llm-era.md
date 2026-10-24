@@ -2,9 +2,8 @@
 title: Why Open Source Maintainers Thrive in the LLM Era
 description: "From early Copilot to Cursor/ChatGPT, I share how LLMs changed my workflow and why open source maintainers can thrive rather than be displaced in the LLM era."
 excerpt: "At the time of writing (June 2025), the prevailing view in the software industry is that LLM-powered AI is either completely useless or will imminently destroy all software engineering jobs. As you might expect, the reality is somewhere in between. In this post, I'll share my journey with LLM tooling, from reviewing an early, internal alpha of GitHub Copilot to my current daily usage of Cursor, ChatGPT, and the latest Copilot offerings."
+workbrew_disclosure: true
 ---
-
-> **Update, July 2026:** References to Workbrew in this post are historical; I no longer have any role with Workbrew and do not speak for the company.
 
 At the time of writing (June 2025), the prevailing view in the software industry is that LLM-powered AI is either completely useless or will imminently destroy all software engineering jobs.
 As you might expect, the reality is somewhere in between.

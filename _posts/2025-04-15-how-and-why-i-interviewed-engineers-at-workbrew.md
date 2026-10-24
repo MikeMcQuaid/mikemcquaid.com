@@ -3,10 +3,9 @@ title: How and why I interviewed engineers at Workbrew
 description: "How I interviewed engineers at Workbrew: pairing on real code, short predictable loops, valuing open source work, skipping trivia, and the reasoning behind each step."
 redirect_from: /how-and-why-i-interview-engineers-for-workbrew/
 excerpt: "During my first two years building Workbrew, I hired five engineers and a hybrid PM/EM. This was my first time as a hiring manager. This post describes the interview process I designed and used at the time, and why I structured it that way."
+workbrew_disclosure: true
 ---
 
-> **Update, July 2026:** This post is a historical account; I no longer have any role with Workbrew and do not speak for the company.
->
 > Homebrew’s [security and supply-chain protections](https://docs.brew.sh/Homebrew-Security-and-Supply-Chain) are among the strongest of any package manager: every package change is reviewed by a maintainer, downloads are pinned to checksums, bottles are built from source on Homebrew’s own sandboxed CI with verifiable build provenance and API data is cryptographically signed and verified.
 > Homebrew is secure by default, needs no third-party product to be used securely and is what I use and recommend for individuals and organisations alike.
 

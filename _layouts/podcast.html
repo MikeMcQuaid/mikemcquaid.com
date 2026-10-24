@@ -1,0 +1,40 @@
+---
+layout: base
+---
+<article class="podcast">
+  <header class="podcast-hero">
+    <img class="podcast-cover" src="{{ page.image | relative_url }}" alt="{{ page.title }} cover art"
+      width="600" height="600" fetchpriority="high" />
+    <div>
+      <p class="landing-eyebrow">Podcast archive</p>
+      <h2>{{ page.title }}</h2>
+      <p class="podcast-tagline">{{ page.description }}</p>
+      <p class="podcast-hosts">Hosted by {{ page.hosts }}.</p>
+      <a class="landing-button" href="#episodes"><span aria-hidden="true">▶</span> Listen to the episodes</a>
+      <p class="podcast-intro">{{ page.intro }}</p>
+    </div>
+  </header>
+
+  <nav class="podcast-platforms" aria-label="Listen to {{ page.title }}">
+    <p class="landing-eyebrow">Listen on</p>
+    <ul>
+      {% for platform in page.platforms %}
+      <li><a href="{{ platform.url | relative_url }}">{{ platform.name }} <span aria-hidden="true">↗</span></a></li>
+      {% endfor %}
+      <li><a href="{{ page.feed | relative_url }}">RSS feed <span aria-hidden="true">↗</span></a></li>
+    </ul>
+  </nav>
+
+  {% assign podcast_about = content | strip %}
+  {% if podcast_about != "" %}
+  <div class="podcast-about">{{ podcast_about }}</div>
+  {% endif %}
+
+  <section class="podcast-episodes" aria-labelledby="episodes">
+    <div class="podcast-episodes-heading">
+      <h2 id="episodes">Episodes</h2>
+      <a href="{{ page.feed | relative_url }}">RSS feed <span aria-hidden="true">↗</span></a>
+    </div>
+    {% include podcast-list.html publication=page.title include_interview_podcasts=false show_publication=false default_link=page.url %}
+  </section>
+</article>

@@ -1681,3 +1681,445 @@ details ul li {
     padding: 0.5em 0.15em;
   }
 }
+
+.landing-page {
+  --landing-accent: #9d3e16;
+  --landing-panel: #f2eee8;
+  --landing-border: #d8d2c9;
+  --landing-muted: #615b55;
+}
+
+.landing-page #content {
+  max-width: 66em;
+  hyphens: none;
+}
+
+.product {
+  padding: 3.5em 0 1em;
+}
+
+.product a code {
+  font: 1em ui-monospace, monospace;
+}
+
+.product-hero {
+  text-align: center;
+}
+
+.landing-eyebrow {
+  color: var(--landing-accent);
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.landing-eyebrow span {
+  padding: 0 0.6em;
+}
+
+.product-hero h2 {
+  font-size: clamp(2.3em, 5.4vw, 4.4em);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+  padding: 0.22em 0;
+}
+
+.product-hero h2 span {
+  display: block;
+}
+
+.product-hero h2 span:last-child {
+  color: var(--landing-accent);
+}
+
+.product-intro {
+  max-width: 32em;
+  margin: 0.9em auto 1.3em;
+  color: var(--landing-muted);
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.landing-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.4em;
+}
+
+.landing-actions a {
+  font-weight: 600;
+  text-underline-offset: 0.2em;
+}
+
+.landing-page .landing-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2em;
+  padding: 0.85em 1.25em;
+  border-radius: 5px;
+  background: #191714;
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.landing-page .landing-button:hover {
+  background: var(--landing-accent);
+}
+
+.landing-page a:focus-visible {
+  outline: 3px solid var(--landing-accent);
+  outline-offset: 5px;
+}
+
+.product-requirements {
+  margin: 1em 0 0;
+  color: var(--landing-muted);
+  font-size: 0.75em;
+}
+
+.product-screenshot {
+  margin: 3em 0 0;
+  padding: clamp(0.5em, 2vw, 1.4em);
+  background: var(--landing-panel);
+  border: 1px solid var(--landing-border);
+  border-radius: 10px;
+}
+
+#content .product-screenshot img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.product-screenshot figcaption {
+  padding-top: 1em;
+  color: var(--landing-muted);
+  font-size: 0.75em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.product-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5em;
+  padding: 3em 0;
+}
+
+.product-number {
+  color: var(--landing-accent);
+  font: 0.8em ui-monospace, monospace;
+}
+
+.product-benefits h3 {
+  margin: 0.6em 0;
+  font-size: 1.25em;
+  letter-spacing: -0.025em;
+}
+
+.product-benefits p,
+.product-detail p,
+.product-install-description,
+.product-install-note {
+  color: var(--landing-muted);
+  font-size: 0.95em;
+  line-height: 1.65;
+}
+
+.product-detail,
+.product-install {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em;
+  align-items: center;
+  padding: 3em;
+}
+
+.product-detail {
+  background: var(--landing-panel);
+  border-top: 1px solid var(--landing-border);
+  border-bottom: 1px solid var(--landing-border);
+}
+
+.product-detail .landing-eyebrow {
+  color: var(--landing-accent);
+  font-size: 0.8em;
+}
+
+.product-detail h3,
+.product-install h3 {
+  margin: 0 0 0.7em;
+  font-size: clamp(1.5em, 2.7vw, 2.2em);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.product-detail a,
+.product-install-note a {
+  text-underline-offset: 0.2em;
+}
+
+.product-install pre {
+  padding: 1em;
+  border: 1px solid var(--landing-border);
+  border-radius: 5px;
+  font-size: 0.85em;
+  overflow-x: auto;
+}
+
+.product-install-note {
+  font-size: 0.8em;
+}
+
+.product-credits {
+  border-top: 1px solid var(--landing-border);
+  padding: 2em 3em;
+  color: var(--landing-muted);
+  line-height: 1.65;
+}
+
+.product-credits h3 {
+  margin: 0 0 0.8em;
+}
+
+.product-credits p {
+  max-width: 60em;
+  margin: 0;
+  font-size: 0.85em;
+}
+
+.product-footer nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5em 1.5em;
+}
+
+.product-footer {
+  border-top: 1px solid var(--landing-border);
+  padding-top: 1.2em;
+  color: var(--landing-muted);
+  font-size: 0.8em;
+}
+
+.podcast {
+  padding: 3.5em 0;
+}
+
+.podcast-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 3.5em;
+}
+
+#content .podcast-cover {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 1em 2em #0002;
+}
+
+.podcast-hero h2 {
+  max-width: 18ch;
+  font-size: clamp(1.9em, 3.8vw, 3.2em);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  padding: 0;
+  margin: 0.3em 0;
+  text-wrap: balance;
+}
+
+.podcast-tagline {
+  font-size: 1.15em;
+  line-height: 1.5;
+}
+
+.podcast-hosts,
+.podcast-intro,
+.podcast-about {
+  color: var(--landing-muted);
+  font-size: 0.9em;
+  line-height: 1.65;
+}
+
+.podcast-intro {
+  margin: 1.5em 0 0;
+}
+
+.podcast-platforms {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em 2em;
+  margin: 3em 0 2em;
+  padding: 1.5em 0;
+  border-top: 1px solid var(--landing-border);
+  border-bottom: 1px solid var(--landing-border);
+}
+
+.podcast-platforms p,
+.podcast-platforms ul {
+  margin: 0;
+}
+
+.podcast-platforms ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  padding: 0;
+  list-style: none;
+}
+
+.podcast-platforms a {
+  display: block;
+  padding: 0.6em 1em;
+  border: 1px solid var(--landing-border);
+  border-radius: 5px;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.podcast-platforms a:hover {
+  background: var(--landing-panel);
+}
+
+.podcast-about {
+  max-width: 48em;
+}
+
+.podcast-episodes {
+  margin-top: 3em;
+}
+
+.podcast-episodes-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1em;
+  border-bottom: 2px solid var(--landing-border);
+  padding-bottom: 1em;
+}
+
+.podcast-episodes-heading h2 {
+  padding: 0;
+}
+
+.podcast-episodes-heading a {
+  font-size: 0.85em;
+}
+
+.podcast .podcasts > li {
+  padding: 2em 0;
+  margin: 0;
+  border-bottom: 1px solid var(--landing-border);
+}
+
+.podcast .podcasts h2 {
+  padding: 0;
+  font-size: 1.35em;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.podcast .podcasts .post_date {
+  color: var(--landing-muted);
+  margin: 0.5em 0 1em;
+  font-size: 0.8em;
+}
+
+.podcast .podcasts span p {
+  max-width: 50em;
+  font-size: 0.95em;
+  line-height: 1.65;
+}
+
+.podcast .interview-audio-embed {
+  display: block;
+  max-width: 40em;
+  margin: 1em 0 0;
+}
+
+@media (max-width: 700px) {
+  .landing-page #header,
+  .landing-page #main,
+  .landing-page #footer,
+  .landing-page #content,
+  .landing-page #sidebar {
+    min-width: 0;
+  }
+
+  .product,
+  .podcast {
+    padding-top: 2em;
+  }
+
+  .product-hero h2 {
+    font-size: clamp(1.75em, 6.9vw, 2.8em);
+  }
+
+  .product-intro {
+    font-size: 1em;
+  }
+
+  .product-benefits,
+  .product-detail,
+  .product-install,
+  .podcast-hero {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+    padding: 2em 0;
+  }
+
+  .product-benefits > div + div {
+    border-top: 1px solid var(--landing-border);
+    padding-top: 1.5em;
+  }
+
+  .product-detail,
+  .product-credits {
+    padding: 1.5em;
+  }
+
+  .product-detail p:last-child {
+    margin-bottom: 0.8em;
+  }
+
+  .podcast-hero {
+    padding: 0;
+  }
+
+  #content .podcast-cover {
+    max-width: 18em;
+  }
+
+  .podcast-platforms {
+    margin-top: 2em;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .landing-page {
+    --landing-accent: #efa87f;
+    --landing-panel: #201e1b;
+    --landing-border: #443d35;
+    --landing-muted: #bab4ac;
+  }
+
+  .landing-page .landing-button {
+    background: #f0e8dc;
+    color: #191714;
+  }
+
+  .landing-page .landing-button:hover {
+    background: var(--landing-accent);
+  }
+}
