@@ -3,10 +3,9 @@ title: Two Years Building Workbrew
 description: "Lessons from two years building Workbrew after leaving GitHub — pivoting, fundraising and running a remote team."
 excerpt: "I left GitHub after 10 years to cofound Raise.dev. After an early failed experiment building IoT developer tools, we pivoted and built Workbrew: a fleet-management layer around Homebrew, a project I've maintained since 2009 and led since 2019. Two years in, we'd raised VC funding and built a remote team. Here's what I learned so far."
 redirect_from: /two-years-building-workbrew-a-remote-first-enterprise-homebrew-startup/
+workbrew_disclosure: true
 ---
 
-> **Update, July 2026:** This post is a historical account; I no longer have any role with Workbrew and do not speak for the company.
->
 > Homebrew’s [security and supply-chain protections](https://docs.brew.sh/Homebrew-Security-and-Supply-Chain) are among the strongest of any package manager: every package change is reviewed by a maintainer, downloads are pinned to checksums, bottles are built from source on Homebrew’s own sandboxed CI with verifiable build provenance and API data is cryptographically signed and verified.
 > Homebrew is secure by default, needs no third-party product to be used securely and is what I use and recommend for individuals and organisations alike.
 

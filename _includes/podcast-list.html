@@ -15,6 +15,6 @@
 
 <ul class="index-lists podcasts">
   {% for item in feed_items %}
-  {% include podcast-card.html podcast=item default_link=include.default_link %}
+  {% include podcast-card.html podcast=item default_link=include.default_link show_publication=include.show_publication %}
   {% endfor %}
 </ul>

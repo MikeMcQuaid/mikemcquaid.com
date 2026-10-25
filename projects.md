@@ -34,7 +34,7 @@ Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.o
 Organised first ever Homebrew maintainer meeting.
 Migrated Homebrew to GitHub Packages which required extensive changes and collaboration in both Homebrew and GitHub.
 
-#### [AgentIDE](https://github.com/MikeMcQuaid/AgentIDE)
+#### [AgentIDE]({{ '/agentide/' | absolute_url }})
 
 ![AgentIDE]({{ '/images/a/agentide.png' | absolute_url }})
 
@@ -43,7 +43,7 @@ A native macOS app for running, prompting and reviewing sandboxed AI coding agen
 Worktrees, conversations, code reviews, pull requests and CI live in one window.
 Agents run inside a separate, non-admin [sandvault](https://github.com/webcoyote/sandvault) sandboxed user with no access to sensitive files or credentials, so they can work unattended without endangering the rest of the machine.
 
-#### [MinMaxCal](https://github.com/MikeMcQuaid/MinMaxCal)
+#### [MinMaxCal]({{ '/minmaxcal/' | absolute_url }})
 
 ![MinMaxCal]({{ '/images/a/minmaxcal.png' | absolute_url }})
 

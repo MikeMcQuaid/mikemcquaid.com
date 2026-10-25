@@ -1,0 +1,75 @@
+---
+layout: base
+---
+<article class="product">
+  <header class="product-hero">
+    <p class="landing-eyebrow">{{ page.title }} <span aria-hidden="true">/</span> Native macOS app</p>
+    <h2>
+      {% for line in page.headline %}<span>{{ line | escape }}</span>
+      {% endfor %}
+    </h2>
+    <p class="product-intro">{{ page.description }}</p>
+    <div class="landing-actions">
+      <a class="landing-button" href="#install">Install with Homebrew <span aria-hidden="true">↓</span></a>
+      <a href="{{ page.repository }}">View on GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="product-requirements">Free and open source · Apple silicon · macOS 26+</p>
+  </header>
+
+  <figure class="product-screenshot">
+    <a href="{{ page.image | relative_url }}" aria-label="View full-size {{ page.title }} screenshot">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}"
+        width="{{ page.image_width }}" height="{{ page.image_height }}" fetchpriority="high" />
+    </a>
+    <figcaption>{{ page.image_caption }}</figcaption>
+  </figure>
+
+  <section class="product-benefits" aria-label="Why {{ page.title }}">
+    {% for benefit in page.benefits %}
+    <div>
+      <span class="product-number" aria-hidden="true">0{{ forloop.index }}</span>
+      <h3>{{ benefit.title }}</h3>
+      <p>{{ benefit.description }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="product-detail" aria-labelledby="product-detail-heading">
+    <div>
+      <p class="landing-eyebrow">{{ page.detail.label }}</p>
+      <h3 id="product-detail-heading">{{ page.detail.title }}</h3>
+    </div>
+    <div>
+      {{ page.detail.description | markdownify }}
+      {% if page.detail.link %}
+      <a href="{{ page.detail.link | relative_url }}">{{ page.detail.link_label }} <span aria-hidden="true">↗</span></a>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="product-install" id="install" aria-labelledby="product-install-heading">
+    <div>
+      <p class="landing-eyebrow">Get {{ page.title }}</p>
+      <h3 id="product-install-heading">{{ page.install_heading }}</h3>
+      <p class="product-install-description">Install with <a href="https://brew.sh">Homebrew</a>. Update with <code>brew upgrade</code>.</p>
+    </div>
+    <div>
+      <pre><code>{{ page.install_command }}</code></pre>
+      <p class="product-install-note">{{ page.install_note | markdownify | remove: '<p>' | remove: '</p>' }} <a href="{{ page.repository }}/blob/main/README.md">Setup guide <span aria-hidden="true">↗</span></a></p>
+      <a href="{{ page.repository }}/releases/latest">Or download for Mac <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  {% if page.credits %}
+  <section class="product-credits" aria-label="Open source credits">
+    {{ page.credits | markdownify }}
+  </section>
+  {% endif %}
+
+  <footer class="product-footer">
+    <nav aria-label="{{ page.title }} resources">
+      {% for link in page.links %}<a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
+    </nav>
+  </footer>
+</article>

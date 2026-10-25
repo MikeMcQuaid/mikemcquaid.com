@@ -24,7 +24,7 @@
     {{ include.podcast.date | date_to_long_string }}
   </p>
   {% endif %}
-  {% if include.podcast.publication and include.podcast.publication != "" %}
+  {% if include.show_publication != false and include.podcast.publication and include.podcast.publication != "" %}
   <p><strong>{{ include.podcast.publication }}</strong></p>
   {% endif %}
   {% if podcast_description != "" %}
