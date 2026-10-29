@@ -39,9 +39,10 @@ Migrated Homebrew to GitHub Packages which required extensive changes and collab
 ![AgentIDE]({{ '/images/a/agentide.png' | absolute_url }})
 
 Creator.
-A native macOS app for running, prompting and reviewing sandboxed AI coding agents in parallel `git` worktrees.
-Worktrees, conversations, code reviews, pull requests and CI live in one window.
-Agents run inside a separate, non-admin [sandvault](https://github.com/webcoyote/sandvault) sandboxed user with no access to sensitive files or credentials, so they can work unattended without endangering the rest of the machine.
+A native macOS app for running Claude Code and Codex safely in parallel, always in YOLO mode.
+As Homebrew's Project Leader and a CTPO, I want agents to work unattended across projects without access to my GitHub credentials or the rest of my home directory.
+Agents work on shared repositories and cannot access your home directory, tokens or environment variables.
+You control sensitive actions such as signing, pushing and pull requests from the app.
 
 #### [MinMaxCal]({{ '/minmaxcal/' | absolute_url }})
 
