@@ -3,48 +3,48 @@ title: AgentIDE
 layout: product
 body_class: landing-page
 permalink: /agentide/
-description: A native macOS app for Claude Code and Codex. Take a GitHub issue through coding, review and a merged pull request entirely by clicking.
+redirect_from: /sanductor/
+description: Run Claude Code and Codex safely in parallel, always in YOLO mode. Agents run as a sandboxed non-admin macOS user separate from yours, with no access to your home directory, tokens or environment variables.
 repository: https://github.com/MikeMcQuaid/AgentIDE
 headline:
-  - From issue to
-  - merged pull request.
+  - Run agents in parallel.
+  - Keep your tokens private.
 image: /images/a/agentide.png
 image_alt: The worktree sidebar, an agent's terminal and its review beside it
 image_width: 3110
 image_height: 2070
-image_caption: A native SwiftUI workspace with repositories, agent conversations and code review in one window.
+image_caption: On the happy path, go from a GitHub issue prompt through code review comments and failing CI to a merged pull request, entirely by clicking in the app.
 benefits:
-  - title: Start from an issue
-    description: Select a GitHub issue and launch Claude Code or Codex to work on it. Each task gets its own git worktree, so several agents can work at once.
-  - title: Review and fix
-    description: Read the diff beside the conversation. Request an agent, Copilot or CodeRabbit review, then start an autofix loop to address review comments and failing checks.
-  - title: Merge the pull request
-    description: Use an AI-drafted commit message, sign and push, then open and merge the pull request. Split larger changes into stacked pull requests and merge them from the app too.
+  - title: Protect your personal account
+    description: Give agents access to shared repositories while keeping your personal files, GitHub credentials and host environment variables private.
+  - title: Keep multiple projects moving
+    description: Give each task its own Git worktree and run Claude Code or Codex across repositories at once. See which agents are working, finished or waiting for you in one window.
+  - title: You control sensitive actions
+    description: Review diffs yourself in the app, request human review on GitHub or get AI feedback from a fresh agent, Copilot or CodeRabbit. You control signing, pushing and pull requests.
 detail:
-  label: Built with SwiftUI
-  title: A native Mac app.
+  label: Why I built AgentIDE
+  title: My credentials stay outside.
   description: |
-    Native windows, menus and notifications, with Shortcuts and Siri support for starting work.
-    Agents run as a separate, non-admin sandvault user, away from your personal files and credentials.
-    Their sessions keep running when you close the app.
-
-    Schedule recurring tasks daily, weekly or monthly while the app is open.
-    See agent activity and CI checks across repositories in the sidebar, with notifications when an agent finishes or needs you.
+    As Homebrew's Project Leader and a CTPO, I take both developer productivity and coding agent security very seriously.
+    I assume any token an agent can access will eventually be misused.
+    I want agents to work unattended without giving them my GitHub credentials or access to the rest of my home directory.
+    AgentIDE puts that workflow in one native macOS app.
   link: /sandboxed-agent-worktrees-my-coding-and-ai-setup-in-2026/
-  link_label: The workflow behind AgentIDE
+  link_label: My sandboxed Homebrew workflow
 install_heading: Install AgentIDE
 install_command: brew install --cask agentide
 install_note: >-
   The cask installs [`herdr`](https://herdr.dev), [`ripgrep`](https://github.com/BurntSushi/ripgrep)
-  and [`gh`](https://cli.github.com). You'll also need Git, a configured sandvault user
+  and [`gh`](https://cli.github.com). You'll also need Git, sandvault 1.29 or later with its sandbox user configured
   and Claude Code or Codex CLI signed in inside the sandbox.
 credits: |
   ### Built on open source
 
-  AgentIDE uses [`herdr`](https://herdr.dev) for persistent agent sessions,
+  AgentIDE is free and open source under the AGPLv3 licence.
+  It uses [sandvault](https://github.com/webcoyote/sandvault) for user separation and macOS sandboxing,
+  [`herdr`](https://herdr.dev) for persistent agent sessions,
   [`gh`](https://cli.github.com) for pull requests and
   [`ripgrep`](https://github.com/BurntSushi/ripgrep) for search.
-  All three are installed by [Homebrew](https://brew.sh).
 links:
   - label: Discussions
     url: https://github.com/MikeMcQuaid/AgentIDE/discussions
