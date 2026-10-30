@@ -34,9 +34,9 @@ Brought Homebrew into the [Software Freedom Conservancy](https://sfconservancy.o
 Organised first ever Homebrew maintainer meeting.
 Migrated Homebrew to GitHub Packages which required extensive changes and collaboration in both Homebrew and GitHub.
 
-#### [AgentIDE]({{ '/agentide/' | absolute_url }})
+#### [Sanductor]({{ '/sanductor/' | absolute_url }})
 
-![AgentIDE]({{ '/images/a/agentide.png' | absolute_url }})
+![Sanductor]({{ '/images/a/agentide.png' | absolute_url }})
 
 Creator.
 A native macOS app for running Claude Code and Codex safely in parallel, always in YOLO mode.
