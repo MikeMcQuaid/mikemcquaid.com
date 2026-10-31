@@ -14,7 +14,7 @@
   {% seo_custom %}
   {% assign description = page.description | default: page.excerpt %}
   {% if description and description != "" %}
-  {% assign safe_description = description | strip_html | escape %}
+  {% assign safe_description = description | markdownify | strip_html | strip | escape %}
   <meta name="twitter:description" content="{{ safe_description }}" />
   {% endif %}
   <meta property="og:logo" content="{{ site.logo | absolute_url }}" />

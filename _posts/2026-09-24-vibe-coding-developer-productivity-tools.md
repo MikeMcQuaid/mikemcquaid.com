@@ -47,8 +47,7 @@ Because it was macOS only and I've got a newish MacBook: fuck it, I'll use Apple
 
 Shortly after Golden Gate got released, I had open-sourced Sanductor.
 It was added to Homebrew and used by a few coworkers and Homebrew maintainers.
-You can install it now with `brew install agentide`.
-The Homebrew cask will be [renamed to `sanductor` soon](https://github.com/Homebrew/homebrew-cask/pull/298501).
+You can install it now with `brew install sanductor`.
 
 ## 🌊 Sanductor Flow
 
