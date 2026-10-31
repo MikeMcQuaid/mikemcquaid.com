@@ -32,9 +32,8 @@ detail:
   link: /sandboxed-agent-worktrees-my-coding-and-ai-setup-in-2026/
   link_label: My sandboxed Homebrew workflow
 install_heading: Install Sanductor
-install_command: brew install agentide
+install_command: brew install sanductor
 install_note: >-
-  The Homebrew cask will be [renamed to `sanductor` soon](https://github.com/Homebrew/homebrew-cask/pull/298501).
   The cask installs [`herdr`](https://herdr.dev), [`ripgrep`](https://github.com/BurntSushi/ripgrep)
   and [`gh`](https://cli.github.com). You'll also need Git, sandvault 1.29 or later with its sandbox user configured
   and Claude Code or Codex CLI signed in inside the sandbox.
