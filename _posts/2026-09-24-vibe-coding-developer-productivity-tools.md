@@ -4,7 +4,7 @@ image: /images/a/agentide.png
 description: "Agentic coding has let me replace everyday tools with software that works how I want."
 ---
 I discussed in [my last post on the topic from April 2026]({% post_url 2026-04-14-sandboxed-agent-worktrees-my-coding-and-ai-setup-in-2026 %}) my agentic workflow using Superset, Fork and Zed.
-I'm now completely off Superset and almost entirely off Fork and Zed by (vibe) building my own tool: [AgentIDE](https://github.com/MikeMcQuaid/AgentIDE/).
+I'm now completely off Superset and almost entirely off Fork and Zed by (vibe) building my own tool: [Sanductor](https://github.com/MikeMcQuaid/Sanductor/) (formerly AgentIDE).
 It's an "agentic IDE" built by me just for my workflows and it has made me more productive and happy working with agents.
 
 ## 🎄 Agents and Worktrees
@@ -37,20 +37,22 @@ In the spirit of Unix philosophy, it builds heavily on a few other tools under t
 - `gh`: authenticate and communicate with GitHub. Agents never see it as it's only run as your user.
 - [`herdr`](https://herdr.dev): used to multiplex agent sessions so they aren't tied to the GUI running.
 - [`mosh`](https://mosh.org): used for more performant `herdr` sessions accessed from a phone.
-- `brew` ([Homebrew](https://brew.sh)): install and update AgentIDE: I don't want to fuck around with the Mac App Store or Sparkle and this installs the above dependencies.
-- [Moshi](https://getmoshi.app): an iOS SSH client for using `mosh` and `herdr` to communicate with AgentIDE agent sessions.
+- `brew` ([Homebrew](https://brew.sh)): install and update Sanductor: I don't want to fuck around with the Mac App Store or Sparkle and this installs the above dependencies.
+- [Moshi](https://getmoshi.app): an iOS SSH client for using `mosh` and `herdr` to communicate with Sanductor agent sessions.
+  I'm now using Sanductor's own iOS client.
 
 The beauty of building these tools for yourself is you can have whatever insane requirements you choose.
 I was an early adopter of the macOS Golden Gate Public Beta so I thought, fuck it: I'll require that.
 Because it was macOS only and I've got a newish MacBook: fuck it, I'll use Apple's local models for some stuff.
 
-Shortly after Golden Gate got released, I had open-sourced AgentIDE.
+Shortly after Golden Gate got released, I had open-sourced Sanductor.
 It was added to Homebrew and used by a few coworkers and Homebrew maintainers.
 You can install it now with `brew install agentide`.
+The Homebrew cask will be [renamed to `sanductor` soon](https://github.com/Homebrew/homebrew-cask/pull/298501).
 
-## 🌊 AgentIDE Flow
+## 🌊 Sanductor Flow
 
-![AgentIDE showing repositories, an agent session and a code review]({{ '/images/a/agentide.png' | absolute_url }})
+![Sanductor showing repositories, an agent session and a code review]({{ '/images/a/agentide.png' | absolute_url }})
 
 It has a three-pane approach:
 1. the left sidebar: lists all repositories/projects and any worktrees along with the branch/PR status
@@ -66,7 +68,7 @@ A typical session looks like:
 
 I could do all this with Superset, it's just now I can do it all entirely in one app.
 In the happy path where the agent one-shots the solution: I sometimes do all of this without typing a single character, only clicking.
-I'm also nudged into the workflow I still want to use i.e. usually some manual code review before pushing (although, perhaps ironically, not for AgentIDE's Swift itself).
+I'm also nudged into the workflow I still want to use i.e. usually some manual code review before pushing (although, perhaps ironically, not for Sanductor's Swift itself).
 This was not easily possible with Superset, Fork and/or Zed.
 
 ## 🚅 Results
@@ -91,7 +93,7 @@ It's called [MinMaxCal](https://github.com/MikeMcQuaid/MinMaxCal), it's also ope
 
 ![MinMaxCal showing calendar events, reminders and a meeting notification]({{ '/images/a/minmaxcal.png' | absolute_url }})
 
-It has required even less maintenance than AgentIDE; less than an hour in months for a tool that Just Works.
+It has required even less maintenance than Sanductor; less than an hour in months for a tool that Just Works.
 
 ## 🔮 Future
 
