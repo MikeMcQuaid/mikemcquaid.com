@@ -153,8 +153,9 @@ Authored WM8711 Linux-kernel driver ([released in v2.6.26](https://github.com/to
 
 ## Honours and Awards
 
-* **OpenUK "Social Influencers of Open Source"** (2024)
-* **JavaOne Rock Star** (2014)
+* **[OpenUK Individual Award Winner](https://openuk.uk/awards/)** (2026)
+* **[OpenUK New Year's Honours List](https://openuk.uk/community/openuk-honours-lists/2024-honours-list/)** (2024)
+* **[JavaOne Rock Star](https://web.archive.org/web/20150323034036/https://www.oracle.com/javaone/rock-stars/index.html#McQuaid)** (2014)
 
 ## Education
 
