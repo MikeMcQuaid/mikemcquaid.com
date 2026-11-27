@@ -7,6 +7,8 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    outputs:
+      artifact_id: ${{ steps.pages.outputs.artifact_id }}
     env:
       JEKYLL_ENV: production
     steps:
@@ -44,12 +46,13 @@ jobs:
         run: bundle exec rake test
 
       - name: Upload GitHub Pages artifact
-        if: always()
+        id: pages
+        if: ${{ !cancelled() && hashFiles('_site/index.html') != '' }}
         uses: actions/upload-pages-artifact@v5
 
   deploy:
     needs: tests
-    if: ${{ always() && github.ref_name == 'main' }}
+    if: ${{ !cancelled() && github.ref == 'refs/heads/main' && needs.tests.outputs.artifact_id != '' }}
     runs-on: ubuntu-latest
     permissions:
       pages: write
