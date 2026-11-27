@@ -90,6 +90,10 @@ task test: :jekyll do
       'https://www.splinter.com/meet-the-tweet-deleters-people-who-are-making-their-tw-1793845430'
     ],
     parallel: { in_processes: Etc.nprocessors },
+    # GitHub's file viewer can return 503 while the raw file is available.
+    swap_urls: {
+      %r{\Ahttps://github\.com/([^/]+/[^/]+)/blob/([^?#]+)\z} => 'https://raw.githubusercontent.com/\1/\2'
+    },
     validation: {
       report_eof_tags: true,
       report_invalid_tags: true,
