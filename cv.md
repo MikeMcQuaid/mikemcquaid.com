@@ -18,18 +18,17 @@ Published author (Git in Practice), writer and frequent speaker (50+ talks) on e
 
 #### [Administrate](https://www.getadministrate.com) - CTPO (2025 - Present)
 
-Improving the world's best training management system where I:
+I joined Administrate to lead engineering. I now lead product, engineering, support and implementation for the world's best training management system.
 
-- Own product, engineering, support and implementation, having grown the remit from engineering as each function was brought under a single owner
-- Published a first-principles diagnosis of the engineering organisation in my first two weeks and then executed it: 60% fewer repositories, 99% fewer production errors, zero ongoing unresolved issues and an 80% reduction in mean security-alert age while maintaining ISO and SOC 2 compliance
-- Cut pull request to production from five working days to same-day by designing and building a pipelined merge queue that batches an order of magnitude more changes into each validated deployment
-- Took engineering engagement from 18th to 64th global percentile and eNPS from 11 to 60 in 9 months, and promoted leaders from within rather than hiring over them
-- Hit all department KPIs and >10x PRs throughput on primary repository while coming in 20% under budget with a smaller team than I inherited
-- Rebuilt support and implementation end to end: reviewed all 71 customer support agreements to ground SLA and priority terms in what we actually deliver, then shipped contractual SLA tracking, company-wide priority and incident definitions and 95% customer satisfaction
-- Worked well beyond engineering on commercial systems ownership, pricing and packaging, board reporting, compliance evidence and the marketing discoverability to AI tools
+- My remit includes commercial systems, board reporting, compliance evidence and making our marketing discoverable to AI tools.
+- Published a first-principles diagnosis of the engineering organisation in my first two weeks. Cut the number of repositories by 69%, production errors by over 90% and end-of-life components by 96%. Reduced open security alerts by 97% in four weeks while maintaining ISO 27001 and SOC 2 compliance.
+- Retired a 22-year-old, 361,000-line PHP monolith using feature flags and staged switch-offs, deploying daily throughout without a feature freeze
+- Built a pipelined merge queue so pull requests that took five working days to reach production now ship the same day, often within an hour. We merged and deployed over 550 pull requests in 30 days.
+- Raised engineering engagement from the 18th to the 64th percentile globally and eNPS from 11 to 60 in nine months. Promoted leaders from within and stayed under budget.
+- Rebuilt support and implementation. Reviewed all 71 customer support agreements, shipped contractual SLA tracking and defined priorities and incidents company-wide. Customer satisfaction reached 95%.
+- Put almost every engineer on call, with high-urgency pages acknowledged in about a minute
 - Drove agentic AI adoption across engineering and the wider company, from a standing start to the primary way work gets done
-- Built a documentation software factory of markdown authored in a repository and synced to the Zendesk help centre, the platform monorepo and soon the public website, with LLM-generated release notes and automated maintenance, plus sync layers across Notion, GitHub, Zendesk and the CRM so support, implementation and engineering work from one business source of truth
-- Remain a principal-level individual contributor, personally authoring the error-reduction programme, merge queue work, an order-of-magnitude reduction in CI spend per build, and the automation above
+- Built a pipeline that publishes Markdown from one repository to the Zendesk help centre, platform monorepo and public website, with LLM-generated release notes and automated maintenance. Synced Notion, GitHub, Zendesk and the CRM so support, implementation and engineering share one source of truth.
 
 #### [Homebrew](https://brew.sh) — Project Leader (2009 – Present)
 
