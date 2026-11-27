@@ -1,0 +1,45 @@
+name: Update Ruby
+
+on:
+  schedule:
+    - cron: "23 6 * * *"
+  workflow_dispatch:
+
+concurrency: update-ruby
+
+jobs:
+  update-ruby:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+        with:
+          core: false
+          cask: false
+
+      - name: Update Ruby version
+        id: ruby
+        run: |
+          brew bundle install
+          echo "version=$(cat .ruby-version)" >> "$GITHUB_OUTPUT"
+          if ! git diff --quiet -- .ruby-version; then
+            JEKYLL_ENV=production bin/jekyll build
+          fi
+
+      - name: Open or update pull request
+        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
+        with:
+          branch: update-homebrew-ruby
+          add-paths: .ruby-version
+          commit-message: Bump Ruby to ${{ steps.ruby.outputs.version }}
+          title: Bump Ruby to ${{ steps.ruby.outputs.version }}
+          body: Update `.ruby-version` to match the Homebrew Ruby formula used by CI.
