@@ -14,32 +14,69 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    env:
+      PR_BRANCH: update-homebrew-ruby
+      PR_BODY: Update `.ruby-version` to match the Homebrew Ruby formula used by CI.
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v7
         with:
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
-        with:
-          core: false
-          cask: false
 
       - name: Update Ruby version
         id: ruby
         run: |
           brew bundle install
-          echo "version=$(cat .ruby-version)" >> "$GITHUB_OUTPUT"
           if ! git diff --quiet -- .ruby-version; then
             JEKYLL_ENV=production bin/jekyll build
+            echo "title=Bump Ruby to $(cat .ruby-version)" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Open or update pull request
-        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
+      - name: Configure Git user
+        if: steps.ruby.outputs.title != ''
+        uses: Homebrew/actions/git-user-config@61b401267256bb9c047d6d1481b176d5772a0ba7 # 2026.11.23.1
         with:
-          branch: update-homebrew-ruby
-          add-paths: .ruby-version
-          commit-message: Bump Ruby to ${{ steps.ruby.outputs.version }}
-          title: Bump Ruby to ${{ steps.ruby.outputs.version }}
-          body: Update `.ruby-version` to match the Homebrew Ruby formula used by CI.
+          username: github-actions[bot]
+
+      - name: Push Ruby update
+        if: steps.ruby.outputs.title != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: ${{ steps.ruby.outputs.title }}
+        run: |
+          git commit -m "$TITLE" -- .ruby-version
+          remote="origin/$PR_BRANCH"
+          if git show-ref --verify --quiet "refs/remotes/$remote" &&
+             git diff --quiet "$remote" HEAD && ! git merge-base --is-ancestor "$remote" "$GITHUB_SHA"; then
+            exit 0
+          fi
+          gh auth setup-git
+          git push --force-with-lease origin "HEAD:refs/heads/$PR_BRANCH"
+
+      - name: Get or open Ruby pull request
+        id: pr
+        # TODO: Pin a released Homebrew/actions commit and add its version tag.
+        uses: Homebrew/actions/get-or-create-pull-request@b4c226ae32acab42c7c2c0745ad224a1e9958022
+        with:
+          base: main
+          head: ${{ env.PR_BRANCH }}
+          title: ${{ steps.ruby.outputs.title }}
+          body: ${{ env.PR_BODY }}
+          create-if-missing: ${{ steps.ruby.outputs.title != '' }}
+
+      - name: Update existing Ruby pull request
+        if: steps.pr.outputs.number != '' && steps.pr.outputs.created == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ steps.pr.outputs.number }}
+          TITLE: ${{ steps.ruby.outputs.title }}
+        run: |
+          if [[ -n "$TITLE" ]]; then
+            gh pr edit "$PR" --title "$TITLE" --body "$PR_BODY"
+          else
+            gh pr close "$PR"
+          fi
